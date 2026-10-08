@@ -6,13 +6,17 @@
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion bundle",
-    "render": "remotion render HelloWorld out/video.mp4",
+    "render": "remotion render Cambio out/cambio.mp4",
     "upgrade": "remotion upgrade",
-    "lint": "tsc"
+    "lint": "tsc",
+    "render:hello": "remotion render HelloWorld out/video.mp4"
   },
   "license": "UNLICENSED",
   "dependencies": {
     "@remotion/cli": "4.0.534",
+    "@remotion/fonts": "4.0.534",
+    "@remotion/noise": "4.0.534",
+    "@remotion/paths": "4.0.534",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "remotion": "4.0.534"
