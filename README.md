@@ -41,9 +41,20 @@ Recreación en español de un edit de tipografía cinética con objetos en pixel
 - `sprites.ts`: los objetos en pixel art como cuadrículas de colores (fáciles de editar).
 - `elementos.tsx`: piezas reutilizables (destello, grano, silueta, mano, trazos a mano).
 
-### Agregar audio
+### Música y sonido
 
-Copia tu voz en off o música a `public/` y pásala como prop:
+La banda sonora (`public/audio/banda-sonora.mp3`) es original: está sintetizada desde
+cero por `scripts/generar_banda_sonora.py`. Es música lo-fi a 120 BPM con arpegios
+chiptune, más efectos sincronizados con cada escena: teclas, *pops* de los objetos,
+whooshes, el destello, el rasguño de vinilo, latidos y lápiz. Para regenerarla después
+de cambiar tiempos o sonidos (requiere Python 3 con numpy y ffmpeg):
+
+```bash
+python3 scripts/generar_banda_sonora.py banda-sonora.wav
+ffmpeg -y -i banda-sonora.wav -b:a 192k public/audio/banda-sonora.mp3
+```
+
+Para usar otro audio (por ejemplo, una voz en off), cópialo a `public/` y pásalo como prop:
 
 ```bash
 npx remotion render Cambio out/cambio.mp4 --props='{"audio":"voz.mp3"}'

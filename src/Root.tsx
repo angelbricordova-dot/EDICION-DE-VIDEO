@@ -12,7 +12,7 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={1440}
         height={1080}
-        defaultProps={{ audio: null } satisfies PropsCambio}
+        defaultProps={{ audio: "audio/banda-sonora.mp3" } satisfies PropsCambio}
       />
       <Composition
         id="HelloWorld"
