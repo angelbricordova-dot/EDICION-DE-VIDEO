@@ -1,0 +1,25 @@
+{
+  "name": "edicion-de-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proyecto de edición de video con Remotion",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render": "remotion render HelloWorld out/video.mp4",
+    "upgrade": "remotion upgrade",
+    "lint": "tsc"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}
