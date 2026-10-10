@@ -60,6 +60,24 @@ Para usar otro audio (por ejemplo, una voz en off), cópialo a `public/` y pása
 npx remotion render Cambio out/cambio.mp4 --props='{"audio":"voz.mp3"}'
 ```
 
+## Prueba de 8 s (`src/prueba/`)
+
+Video cuadrado (1080×1080) hecho siguiendo las skills instaladas: tiempos en
+`src/prueba/timeline.json`, un punto rojo que recorre todo el video y se abre como iris,
+y sonido en Do mayor sincronizado con el mismo timeline.
+
+```bash
+npm run render:prueba                                  # out/prueba.mp4
+python3 scripts/sonido_prueba.py prueba.wav            # regenerar el sonido
+ffmpeg -y -i prueba.wav -b:a 192k public/audio/prueba.mp3
+```
+
+## Skills de Claude Code
+
+En `.claude/skills/` hay skills de motion design revisadas antes de instalarlas
+(Remotion oficial, claude-motion y LottieFiles). Origen, commit y licencia de cada una
+en `.claude/skills/FUENTES.md`.
+
 ## Estructura
 
 - `src/index.ts`: punto de entrada (`registerRoot`)

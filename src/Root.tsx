@@ -1,6 +1,8 @@
 import { Composition } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Cambio, DURACION, FPS, PropsCambio } from "./cambio/Cambio";
+import { Prueba } from "./prueba/Prueba";
+import timelinePrueba from "./prueba/timeline.json";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -13,6 +15,15 @@ export const RemotionRoot: React.FC = () => {
         width={1440}
         height={1080}
         defaultProps={{ audio: "audio/banda-sonora.mp3" } satisfies PropsCambio}
+      />
+      <Composition
+        id="Prueba"
+        component={Prueba}
+        durationInFrames={timelinePrueba.duration * timelinePrueba.fps}
+        fps={timelinePrueba.fps}
+        width={1080}
+        height={1080}
+        defaultProps={{ audio: "audio/prueba.mp3" as string | null }}
       />
       <Composition
         id="HelloWorld"
