@@ -1,0 +1,31 @@
+{
+  "fps": 30,
+  "duration": 28,
+  "camara": [4.2, 9.3, 11.9, 19.0, 23.7],
+  "e1": { "orden": 0.15, "chat": 0.9, "escribe": 1.3, "envia": 2.3, "liberar": 3.2 },
+  "e2": { "banco": 4.7, "check": 5.5, "falta": 6.6, "signo": 7.1, "tu": 7.5, "burbuja": 8.0 },
+  "e3": { "tarjeta": 9.95, "titulo": 10.4, "linea": 10.9 },
+  "e4": {
+    "orden": 12.2,
+    "banco": 12.6,
+    "letras": 13.5,
+    "error": 15.0,
+    "palabras": 16.3,
+    "coincide": 17.7
+  },
+  "e5": { "fila1": 19.5, "liberas": 20.1, "fila2": 21.0, "noLiberes": 21.6, "tachado": 22.2 },
+  "e6": { "buscador": 24.1, "escribe": 24.5, "enter": 25.7, "proximo": 26.4 },
+  "guion": [
+    { "t": 0.3, "texto": "Te escriben: «Ya te pagué. Libera.»" },
+    { "t": 3.1, "texto": "¿Liberas?" },
+    { "t": 4.7, "texto": "Revisas tu banco y el dinero llegó…" },
+    { "t": 6.6, "texto": "…pero no dice quién te pagó." },
+    { "t": 9.95, "texto": "Antes de liberar, revisa una sola cosa." },
+    { "t": 12.2, "texto": "Compara el nombre de la orden con el de tu banco." },
+    { "t": 15.0, "texto": "Letra por letra: María no es Mario." },
+    { "t": 16.3, "texto": "Aquí sí coincide." },
+    { "t": 19.5, "texto": "Si coincide, liberas." },
+    { "t": 21.0, "texto": "Si no coincide, no liberes." },
+    { "t": 24.1, "texto": "Practícalo sin riesgo en ivmp2p.com/practica." }
+  ]
+}

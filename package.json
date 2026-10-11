@@ -13,7 +13,8 @@
     "render:prueba": "remotion render Prueba out/prueba.mp4",
     "draft": "remotion render Prueba out/draft.mp4 --scale=0.5 --crf=28",
     "sheet": "node scripts/sheet.mjs --timeline src/prueba/timeline.json",
-    "wave": "node scripts/wave.mjs --timeline src/prueba/timeline.json public/audio/prueba.mp3"
+    "wave": "node scripts/wave.mjs --timeline src/prueba/timeline.json public/audio/prueba.mp3",
+    "render:ivm": "remotion render IvmExplicador out/ivm-explicador.mp4"
   },
   "license": "UNLICENSED",
   "dependencies": {

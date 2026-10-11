@@ -3,6 +3,8 @@ import { HelloWorld } from "./HelloWorld";
 import { Cambio, DURACION, FPS, PropsCambio } from "./cambio/Cambio";
 import { Prueba } from "./prueba/Prueba";
 import timelinePrueba from "./prueba/timeline.json";
+import { Explicador, PropsExplicador } from "./ivm/Explicador";
+import timelineIvm from "./ivm/timeline.json";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -24,6 +26,15 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1080}
         defaultProps={{ audio: "audio/prueba.mp3" as string | null }}
+      />
+      <Composition
+        id="IvmExplicador"
+        component={Explicador}
+        durationInFrames={timelineIvm.duration * timelineIvm.fps}
+        fps={timelineIvm.fps}
+        width={1920}
+        height={1080}
+        defaultProps={{ audio: "audio/ivm-explicador.mp3", subtitulos: true } satisfies PropsExplicador}
       />
       <Composition
         id="HelloWorld"
