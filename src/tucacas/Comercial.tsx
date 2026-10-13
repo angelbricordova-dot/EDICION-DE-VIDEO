@@ -17,7 +17,7 @@ const ContenidoPlano: React.FC<{ plano: Plano; t: number }> = ({ plano, t }) => 
     case "foto":
       return <Foto encuadre={plano.encuadre} p={p} />;
     case "grabacion":
-      return <Grabacion archivo={plano.archivo} inicio={plano.inicio} />;
+      return <Grabacion archivo={plano.archivo} inicio={plano.inicio} desde={plano.desde} />;
     case "telefono":
       return <Telefono t={t} desde={plano.desde} diaNoche={plano.diaNoche} />;
     case "cierre":

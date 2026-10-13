@@ -6,6 +6,7 @@ import timelinePrueba from "./prueba/timeline.json";
 import { Explicador, PropsExplicador } from "./ivm/Explicador";
 import timelineIvm from "./ivm/timeline.json";
 import { Comercial, GUIONES, Portada, PropsComercial } from "./tucacas/Comercial";
+import { ComercialWeb, GUIONES_WEB, PortadaWeb, PropsWeb } from "./tucacas/web/ComercialWeb";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -52,6 +53,19 @@ export const RemotionRoot: React.FC = () => {
         />
       ))}
       <Still id="TucacasPortada" component={Portada} width={1080} height={1920} />
+      {(["30s", "60s"] as const).map((version) => (
+        <Composition
+          key={`web-${version}`}
+          id={`TucacasWeb${version}`}
+          component={ComercialWeb}
+          durationInFrames={GUIONES_WEB[version].duracion * 30}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{ version, audio: `tucacas/audio/mezcla-web-${version}.mp3`, subtitulos: true } satisfies PropsWeb}
+        />
+      ))}
+      <Still id="TucacasWebPortada" component={PortadaWeb} width={1080} height={1920} />
       <Composition
         id="HelloWorld"
         component={HelloWorld}

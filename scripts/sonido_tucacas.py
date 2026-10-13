@@ -351,9 +351,11 @@ def main():
     ap.add_argument("--voz", help="locución (mp3/wav); si se pasa, la música se agacha debajo de la voz")
     ap.add_argument("--musica", help="pista de música generada (mp3); si no, se sintetiza")
     ap.add_argument("--efectos", help="carpeta con los sfx-*.mp3 generados; los que falten se sintetizan")
+    ap.add_argument("--guion", help="otro guion JSON (p. ej. src/tucacas/web/guion-web-60s.json)")
     a = ap.parse_args()
 
-    guion = json.loads((RAIZ / f"src/tucacas/guion-{a.version}.json").read_text())
+    ruta_guion = Path(a.guion) if a.guion else RAIZ / f"src/tucacas/guion-{a.version}.json"
+    guion = json.loads(ruta_guion.read_text())
     dur = guion["duracion"]
     est = ESTRUCTURA[a.version]
     m = Mezcla(dur)
@@ -370,9 +372,13 @@ def main():
         for f in guion["frases"]:
             dentro = (t >= f["desde"] - 0.15) & (t <= f["hasta"] + 0.25)
             nivel[dentro] = db(-18)
-        nivel = np.convolve(nivel, np.ones(int(0.12 * SR)) / int(0.12 * SR), mode="same")
-        voz = normal(leer_audio(a.voz, m.n))
-        m.bus += voz
+    # De noche la música baja 6 dB más y quedan los grillos.
+    if guion.get("noche"):
+        a0, b0 = guion["noche"]
+        nivel[(t >= a0) & (t < b0)] *= db(-6)
+    nivel = np.convolve(nivel, np.ones(int(0.12 * SR)) / int(0.12 * SR), mode="same")
+    if a.voz:
+        m.bus += normal(leer_audio(a.voz, m.n))
     m.bus += mus * nivel
 
     # Efectos a −14 dB.

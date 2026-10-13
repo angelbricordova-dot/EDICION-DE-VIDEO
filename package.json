@@ -16,7 +16,9 @@
     "wave": "node scripts/wave.mjs --timeline src/prueba/timeline.json public/audio/prueba.mp3",
     "render:ivm": "remotion render IvmExplicador out/ivm-explicador.mp4",
     "render:tucacas30": "remotion render Tucacas30s out/tudia-30s-vertical.mp4",
-    "render:tucacas60": "remotion render Tucacas60s out/tudia-60s-vertical.mp4"
+    "render:tucacas60": "remotion render Tucacas60s out/tudia-60s-vertical.mp4",
+    "render:tucacasweb30": "remotion render TucacasWeb30s out/tudia-web-30s-vertical.mp4",
+    "render:tucacasweb60": "remotion render TucacasWeb60s out/tudia-web-60s-vertical.mp4"
   },
   "license": "UNLICENSED",
   "dependencies": {

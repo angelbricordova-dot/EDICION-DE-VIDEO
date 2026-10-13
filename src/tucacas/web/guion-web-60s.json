@@ -1,0 +1,928 @@
+{
+ "id": "web-60s",
+ "duracion": 60.0,
+ "planos": [
+  {
+   "tipo": "video",
+   "desde": 0,
+   "hasta": 1.712,
+   "archivo": "recorrido.mp4",
+   "inicio": 0.2,
+   "zoom": [
+    1.18,
+    1.06
+   ],
+   "entrada": "nada"
+  },
+  {
+   "tipo": "video",
+   "desde": 1.712,
+   "hasta": 2.78,
+   "archivo": "aereo.mp4",
+   "inicio": 0.6,
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "entrada": "flash"
+  },
+  {
+   "tipo": "video",
+   "desde": 2.78,
+   "hasta": 4.383,
+   "archivo": "habitacion-ventana.mp4",
+   "inicio": 1.4,
+   "zoom": [
+    1.1,
+    1.0
+   ]
+  },
+  {
+   "tipo": "telefono",
+   "desde": 4.383,
+   "hasta": 17.201,
+   "entrada": "whip",
+   "fondo": {
+    "tipo": "video",
+    "archivo": "aereo.mp4",
+    "inicio": 2.0
+   },
+   "escenas": [
+    {
+     "t": 4.383,
+     "tipo": "perfil",
+     "toque": 7.09
+    },
+    {
+     "t": 7.39,
+     "tipo": "navegador",
+     "sube": true,
+     "vistas": [
+      {
+       "t": 7.39,
+       "archivo": "01-inicio-recorrido.mp4",
+       "inicio": 0
+      },
+      {
+       "t": 10.258,
+       "archivo": "01-inicio-recorrido.mp4",
+       "inicio": 4.2
+      },
+      {
+       "t": 11.326,
+       "imagen": "calendario.png",
+       "toques": [
+        {
+         "t": 12.176,
+         "x": 930,
+         "y": 906
+        },
+        {
+         "t": 12.776,
+         "x": 279,
+         "y": 1047
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "camara": [
+    {
+     "t": 4.383,
+     "escala": 1.0,
+     "x": 540,
+     "y": 960,
+     "giro": 0
+    },
+    {
+     "t": 6.19,
+     "escala": 1.0,
+     "x": 540,
+     "y": 960,
+     "giro": 0
+    },
+    {
+     "t": 6.74,
+     "escala": 1.7,
+     "x": 470,
+     "y": 742,
+     "giro": -2
+    },
+    {
+     "t": 7.49,
+     "escala": 1.7,
+     "x": 470,
+     "y": 742,
+     "giro": -2
+    },
+    {
+     "t": 8.09,
+     "escala": 1.05,
+     "x": 540,
+     "y": 960,
+     "giro": 0
+    },
+    {
+     "t": 11.326,
+     "escala": 1.12,
+     "x": 540,
+     "y": 900,
+     "giro": 0
+    },
+    {
+     "t": 11.926,
+     "escala": 1.45,
+     "x": 604,
+     "y": 1126,
+     "giro": 0
+    },
+    {
+     "t": 13.249,
+     "escala": 1.45,
+     "x": 604,
+     "y": 1126,
+     "giro": 0
+    },
+    {
+     "t": 13.549,
+     "escala": 1.3,
+     "x": 640,
+     "y": 1350,
+     "giro": 0
+    },
+    {
+     "t": 15.738,
+     "escala": 1.3,
+     "x": 640,
+     "y": 1350,
+     "giro": 0
+    },
+    {
+     "t": 16.138,
+     "escala": 1.3,
+     "x": 540,
+     "y": 1100,
+     "giro": 0
+    },
+    {
+     "t": 17.201,
+     "escala": 1.2,
+     "x": 540,
+     "y": 1000,
+     "giro": 0
+    }
+   ]
+  },
+  {
+   "tipo": "telefono",
+   "desde": 17.201,
+   "hasta": 19.872,
+   "entrada": "whip",
+   "fondo": {
+    "tipo": "marca"
+   },
+   "escenas": [
+    {
+     "t": 17.201,
+     "tipo": "navegador",
+     "vistas": [
+      {
+       "t": 17.201,
+       "archivo": "02-apartamento-n30.mp4",
+       "inicio": 12.2
+      }
+     ]
+    }
+   ],
+   "camara": [
+    {
+     "t": 17.201,
+     "escala": 1.0,
+     "x": 540,
+     "y": 960,
+     "giro": 3
+    },
+    {
+     "t": 19.872,
+     "escala": 1.25,
+     "x": 540,
+     "y": 900,
+     "giro": 0
+    }
+   ]
+  },
+  {
+   "tipo": "foto",
+   "desde": 19.872,
+   "hasta": 20.94,
+   "encuadre": {
+    "foto": "fotos-nuevas/sala.jpg",
+    "foco": "50% 55%",
+    "zoom": 1.08
+   },
+   "entrada": "flash"
+  },
+  {
+   "tipo": "video",
+   "desde": 20.94,
+   "hasta": 22.008,
+   "archivo": "habitacion-ventana.mp4",
+   "inicio": 5.6,
+   "zoom": [
+    1.0,
+    1.06
+   ]
+  },
+  {
+   "tipo": "foto",
+   "desde": 22.008,
+   "hasta": 23.076,
+   "encuadre": {
+    "foto": "fotos-nuevas/sala-tv.jpg",
+    "foco": "50% 50%",
+    "zoom": 1.08
+   }
+  },
+  {
+   "tipo": "video",
+   "desde": 23.076,
+   "hasta": 24.145,
+   "archivo": "recorrido.mp4",
+   "inicio": 45.0,
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  },
+  {
+   "tipo": "iconos",
+   "desde": 24.145,
+   "hasta": 26.281,
+   "entrada": "whip",
+   "fondo": {
+    "tipo": "foto",
+    "encuadre": {
+     "foto": "fotos-nuevas/habitacion-aire.jpg",
+     "foco": "50% 30%",
+     "zoom": 1.08
+    }
+   },
+   "iconos": [
+    {
+     "tipo": "aire",
+     "texto": "Aire en todos los ambientes",
+     "t": 24.54
+    }
+   ]
+  },
+  {
+   "tipo": "iconos",
+   "desde": 26.281,
+   "hasta": 27.883,
+   "fondo": {
+    "tipo": "foto",
+    "encuadre": {
+     "foto": "fotos-nuevas/sala-tv.jpg",
+     "foco": "50% 40%",
+     "zoom": 1.08,
+     "escala": 1.1
+    }
+   },
+   "iconos": [
+    {
+     "tipo": "wifi",
+     "texto": "WiFi de fibra óptica",
+     "t": 26.847
+    }
+   ]
+  },
+  {
+   "tipo": "iconos",
+   "desde": 27.883,
+   "hasta": 30.02,
+   "fondo": {
+    "tipo": "marca"
+   },
+   "iconos": [
+    {
+     "tipo": "aire",
+     "texto": "Aire",
+     "t": 27.883
+    },
+    {
+     "tipo": "wifi",
+     "texto": "WiFi de fibra",
+     "t": 28.033
+    },
+    {
+     "tipo": "agua",
+     "texto": "Tanque de agua propio",
+     "t": 28.174
+    }
+   ]
+  },
+  {
+   "tipo": "video",
+   "desde": 30.02,
+   "hasta": 32.69,
+   "archivo": "aereo.mp4",
+   "inicio": 2.4,
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "entrada": "whip"
+  },
+  {
+   "tipo": "video",
+   "desde": 32.69,
+   "hasta": 34.827,
+   "archivo": "recorrido.mp4",
+   "inicio": 2.2,
+   "zoom": [
+    1.12,
+    1.0
+   ],
+   "entrada": "flash"
+  },
+  {
+   "tipo": "telefono",
+   "desde": 34.827,
+   "hasta": 41.77,
+   "entrada": "whip",
+   "fondo": {
+    "tipo": "marca"
+   },
+   "escenas": [
+    {
+     "t": 34.827,
+     "tipo": "navegador",
+     "vistas": [
+      {
+       "t": 34.827,
+       "imagen": "calendario.png",
+       "boton": {
+        "t": 35.766,
+        "toque": 37.936
+       }
+      }
+     ]
+    },
+    {
+     "t": 38.286,
+     "tipo": "chat",
+     "envio": 41.01
+    }
+   ],
+   "camara": [
+    {
+     "t": 34.827,
+     "escala": 1.0,
+     "x": 540,
+     "y": 960,
+     "giro": 0
+    },
+    {
+     "t": 37.136,
+     "escala": 1.0,
+     "x": 540,
+     "y": 960,
+     "giro": 0
+    },
+    {
+     "t": 37.686,
+     "escala": 1.45,
+     "x": 540,
+     "y": 1700,
+     "giro": 0
+    },
+    {
+     "t": 38.336,
+     "escala": 1.45,
+     "x": 540,
+     "y": 1700,
+     "giro": 0
+    },
+    {
+     "t": 38.986,
+     "escala": 1.65,
+     "x": 520,
+     "y": 1690,
+     "giro": 0
+    },
+    {
+     "t": 40.71,
+     "escala": 1.65,
+     "x": 560,
+     "y": 1690,
+     "giro": 0
+    },
+    {
+     "t": 41.51,
+     "escala": 1.3,
+     "x": 540,
+     "y": 1450,
+     "giro": 0
+    },
+    {
+     "t": 41.77,
+     "escala": 1.0,
+     "x": 540,
+     "y": 960,
+     "giro": 0
+    }
+   ]
+  },
+  {
+   "tipo": "video",
+   "desde": 41.77,
+   "hasta": 44.44,
+   "archivo": "habitacion-ventana.mp4",
+   "inicio": 0.6,
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "entrada": "whip"
+  },
+  {
+   "tipo": "video",
+   "desde": 44.44,
+   "hasta": 48.713,
+   "archivo": "recorrido.mp4",
+   "inicio": 46.5,
+   "zoom": [
+    1.0,
+    1.06
+   ]
+  },
+  {
+   "tipo": "telefono",
+   "desde": 48.713,
+   "hasta": 50.315,
+   "entrada": "whip",
+   "fondo": {
+    "tipo": "marca"
+   },
+   "escenas": [
+    {
+     "t": 48.713,
+     "tipo": "navegador",
+     "vistas": [
+      {
+       "t": 48.713,
+       "archivo": "03-modo-dia-noche.mp4",
+       "inicio": 3.0
+      }
+     ]
+    }
+   ],
+   "camara": [
+    {
+     "t": 48.713,
+     "escala": 1.0,
+     "x": 540,
+     "y": 960,
+     "giro": -2
+    },
+    {
+     "t": 50.315,
+     "escala": 1.08,
+     "x": 540,
+     "y": 960,
+     "giro": 0
+    }
+   ]
+  },
+  {
+   "tipo": "video",
+   "desde": 50.315,
+   "hasta": 52.986,
+   "archivo": "churuata-noche.mp4",
+   "inicio": 0.4,
+   "zoom": [
+    1.0,
+    1.08
+   ],
+   "entrada": "flash"
+  },
+  {
+   "tipo": "cierre",
+   "desde": 52.986,
+   "hasta": 60.0,
+   "icono": true,
+   "entrada": "whip"
+  }
+ ],
+ "textos": [
+  {
+   "desde": 0.1,
+   "hasta": 1.712,
+   "estilo": "grande",
+   "lineas": [
+    "¿Vienes a",
+    "Tucacas?"
+   ],
+   "ts": [
+    0.12,
+    0.644
+   ],
+   "acento": [
+    1
+   ]
+  },
+  {
+   "desde": 2.78,
+   "hasta": 4.383,
+   "estilo": "grande",
+   "lineas": [
+    "Reservar",
+    "es más fácil"
+   ],
+   "ts": [
+    2.78,
+    3.49
+   ],
+   "acento": [
+    1
+   ]
+  },
+  {
+   "desde": 4.8,
+   "hasta": 7.29,
+   "estilo": "pastilla",
+   "lineas": [
+    "Toca el enlace"
+   ],
+   "y": 170,
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 8.293,
+   "hasta": 10.258,
+   "estilo": "pastilla",
+   "lineas": [
+    "Nuestra página nueva",
+    "tudiaentucacas.netlify.app"
+   ],
+   "y": 150,
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 16.138,
+   "hasta": 17.201,
+   "estilo": "pastilla",
+   "lineas": [
+    "Libre",
+    "Ocupado"
+   ],
+   "y": 170,
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 17.401,
+   "hasta": 19.872,
+   "estilo": "pastilla",
+   "lineas": [
+    "Apartamento N°30"
+   ],
+   "y": 170,
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 20.858,
+   "hasta": 24.145,
+   "estilo": "pastilla",
+   "lineas": [
+    "Las fotos",
+    "Lo que incluye",
+    "Dónde queda"
+   ],
+   "ts": [
+    20.858,
+    21.722,
+    23.057
+   ],
+   "y": 300
+  },
+  {
+   "desde": 30.02,
+   "hasta": 32.69,
+   "estilo": "grande",
+   "lineas": [
+    "5 min",
+    "de los muelles"
+   ],
+   "ts": [
+    30.4,
+    31.474
+   ],
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 32.69,
+   "hasta": 34.827,
+   "estilo": "pastilla",
+   "lineas": [
+    "Piscina con tobogán"
+   ],
+   "y": 300,
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 35.766,
+   "hasta": 37.936,
+   "estilo": "pastilla",
+   "lineas": [
+    "Reservar por WhatsApp"
+   ],
+   "y": 170,
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 38.618,
+   "hasta": 41.77,
+   "estilo": "pastilla",
+   "lineas": [
+    "Sale listo con tus fechas"
+   ],
+   "y": 170,
+   "acento": [
+    0
+   ]
+  },
+  {
+   "desde": 41.77,
+   "hasta": 44.44,
+   "estilo": "grande",
+   "lineas": [
+    "En la página",
+    "no se cobra nada"
+   ],
+   "ts": [
+    41.77,
+    42.936
+   ],
+   "acento": [
+    1
+   ]
+  },
+  {
+   "desde": 44.44,
+   "hasta": 48.713,
+   "estilo": "pastilla",
+   "lineas": [
+    "Confirmas por WhatsApp",
+    "Rápido y en confianza"
+   ],
+   "ts": [
+    44.44,
+    46.841
+   ],
+   "y": 300,
+   "acento": [
+    1
+   ]
+  },
+  {
+   "desde": 50.315,
+   "hasta": 52.986,
+   "estilo": "grande",
+   "lineas": [
+    "La churuata",
+    "te espera"
+   ],
+   "ts": [
+    50.315,
+    50.815
+   ],
+   "acento": [
+    0
+   ]
+  }
+ ],
+ "frases": [
+  {
+   "desde": 0.147,
+   "hasta": 4.56,
+   "texto": "¿Vienes a Tucacas? Ahora reservar con nosotros es mucho más fácil.",
+   "clave": "mucho más fácil"
+  },
+  {
+   "desde": 4.8,
+   "hasta": 7.52,
+   "texto": "Entra a nuestro perfil y toca el enlace.",
+   "clave": "el enlace"
+  },
+  {
+   "desde": 7.696,
+   "hasta": 11.28,
+   "texto": "Esta es nuestra página nueva: Tu Día en Tucacas.",
+   "clave": "página nueva"
+  },
+  {
+   "desde": 11.493,
+   "hasta": 17.28,
+   "texto": "Eliges tus fechas, cuántas personas vienen, y ves al momento qué está libre.",
+   "clave": "qué está libre"
+  },
+  {
+   "desde": 17.48,
+   "hasta": 24.0,
+   "texto": "Conoces el apartamento treinta por dentro: las fotos, lo que incluye y dónde queda.",
+   "clave": "por dentro"
+  },
+  {
+   "desde": 24.44,
+   "hasta": 30.0,
+   "texto": "Aire en todos los ambientes, WiFi de fibra y tanque de agua propio.",
+   "clave": "tanque de agua propio"
+  },
+  {
+   "desde": 30.4,
+   "hasta": 34.56,
+   "texto": "A cinco minutos de los muelles, y con piscina para los chamos.",
+   "clave": "cinco minutos"
+  },
+  {
+   "desde": 34.92,
+   "hasta": 41.8,
+   "texto": "¿Te gustó? Tocas «Reservar por WhatsApp» y el mensaje sale listo con tus fechas.",
+   "clave": "WhatsApp"
+  },
+  {
+   "desde": 41.92,
+   "hasta": 48.56,
+   "texto": "En la página no se cobra nada: todo lo confirmas con nosotros, rápido y en confianza.",
+   "clave": "no se cobra nada"
+  },
+  {
+   "desde": 48.96,
+   "hasta": 52.48,
+   "texto": "Y cuando cae la noche, la churuata te espera.",
+   "clave": "la churuata"
+  },
+  {
+   "desde": 52.747,
+   "hasta": 55.6,
+   "texto": "Tu Día en Tucacas… empieza aquí.",
+   "clave": "empieza aquí"
+  }
+ ],
+ "efectos": [
+  {
+   "t": 0.0,
+   "sonido": "olas",
+   "gain": 0.7
+  },
+  {
+   "t": 0.3,
+   "sonido": "chapuzon",
+   "gain": 0.5
+  },
+  {
+   "t": 1.512,
+   "sonido": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 1.712,
+   "sonido": "gaviotas",
+   "gain": 0.6,
+   "pan": 0.3
+  },
+  {
+   "t": 4.133,
+   "sonido": "whoosh",
+   "gain": 0.9
+  },
+  {
+   "t": 7.09,
+   "sonido": "clic"
+  },
+  {
+   "t": 7.39,
+   "sonido": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 12.176,
+   "sonido": "clic",
+   "gain": 0.8
+  },
+  {
+   "t": 12.776,
+   "sonido": "clic",
+   "gain": 0.8
+  },
+  {
+   "t": 17.001,
+   "sonido": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 19.872,
+   "sonido": "llave",
+   "gain": 0.6
+  },
+  {
+   "t": 23.945,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 24.44,
+   "sonido": "control",
+   "gain": 0.8
+  },
+  {
+   "t": 29.82,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 30.02,
+   "sonido": "lancha",
+   "gain": 0.5,
+   "pan": -0.3
+  },
+  {
+   "t": 32.69,
+   "sonido": "chapuzon",
+   "gain": 0.8
+  },
+  {
+   "t": 34.627,
+   "sonido": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 37.936,
+   "sonido": "clic"
+  },
+  {
+   "t": 38.286,
+   "sonido": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 41.01,
+   "sonido": "mensaje",
+   "gain": 1.2
+  },
+  {
+   "t": 41.57,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 44.44,
+   "sonido": "brisa",
+   "gain": 0.6
+  },
+  {
+   "t": 48.513,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 49.915,
+   "sonido": "grillos",
+   "gain": 1.0
+  },
+  {
+   "t": 52.786,
+   "sonido": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 53.486,
+   "sonido": "olas",
+   "gain": 0.8
+  },
+  {
+   "t": 53.986,
+   "sonido": "brisa",
+   "gain": 0.5
+  }
+ ],
+ "noche": [
+  49.313,
+  52.986
+ ]
+}

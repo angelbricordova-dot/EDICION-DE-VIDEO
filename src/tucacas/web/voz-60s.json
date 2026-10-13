@@ -1,0 +1,61 @@
+{
+  "audio": "public/tucacas/voz/juana-60s.mp3",
+  "duracion": 55.6,
+  "lineas": [
+    {
+      "texto": "¿Vienes a Tucacas? Ahora reservar con nosotros es mucho más fácil.",
+      "t": 0.147,
+      "fin": 4.56
+    },
+    {
+      "texto": "Entra a nuestro perfil y toca el enlace.",
+      "t": 4.8,
+      "fin": 7.52
+    },
+    {
+      "texto": "Esta es nuestra página nueva: Tu Día en Tucacas.",
+      "t": 7.696,
+      "fin": 11.28
+    },
+    {
+      "texto": "Eliges tus fechas, cuántas personas vienen, y ves al momento qué está libre.",
+      "t": 11.493,
+      "fin": 17.28
+    },
+    {
+      "texto": "Conoces el apartamento treinta por dentro: las fotos, lo que incluye y dónde queda.",
+      "t": 17.48,
+      "fin": 24.0
+    },
+    {
+      "texto": "Aire en todos los ambientes, WiFi de fibra y tanque de agua propio.",
+      "t": 24.44,
+      "fin": 30.0
+    },
+    {
+      "texto": "A cinco minutos de los muelles, y con piscina para los chamos.",
+      "t": 30.4,
+      "fin": 34.56
+    },
+    {
+      "texto": "¿Te gustó? Tocas «Reservar por WhatsApp» y el mensaje sale listo con tus fechas.",
+      "t": 34.92,
+      "fin": 41.8
+    },
+    {
+      "texto": "En la página no se cobra nada: todo lo confirmas con nosotros, rápido y en confianza.",
+      "t": 41.92,
+      "fin": 48.56
+    },
+    {
+      "texto": "Y cuando cae la noche, la churuata te espera.",
+      "t": 48.96,
+      "fin": 52.48
+    },
+    {
+      "texto": "Tu Día en Tucacas… empieza aquí.",
+      "t": 52.747,
+      "fin": 55.6
+    }
+  ]
+}

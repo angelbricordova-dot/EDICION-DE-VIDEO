@@ -1,0 +1,41 @@
+{
+  "audio": "public/tucacas/voz/juana-30s.mp3",
+  "duracion": 25.76,
+  "lineas": [
+    {
+      "texto": "¿Vienes a Tucacas? Ahora reservas en un toque.",
+      "t": 0.32,
+      "fin": 3.84
+    },
+    {
+      "texto": "Entra a nuestro perfil y toca el enlace.",
+      "t": 3.893,
+      "fin": 6.08
+    },
+    {
+      "texto": "Eliges tus fechas y ves al momento qué está libre…",
+      "t": 6.293,
+      "fin": 10.8
+    },
+    {
+      "texto": "…conoces el apartamento por dentro…",
+      "t": 10.84,
+      "fin": 13.68
+    },
+    {
+      "texto": "Aire, WiFi de fibra y tanque de agua propio.",
+      "t": 13.8,
+      "fin": 16.96
+    },
+    {
+      "texto": "Tocas «Reservar por WhatsApp» y listo: el mensaje sale con tus fechas.",
+      "t": 17.4,
+      "fin": 22.8
+    },
+    {
+      "texto": "Tu Día en Tucacas… empieza aquí.",
+      "t": 23.067,
+      "fin": 25.76
+    }
+  ]
+}

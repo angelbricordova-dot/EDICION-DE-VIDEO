@@ -1,0 +1,11 @@
+{
+  "frases": [
+    { "texto": "¿Vienes a Tucacas? Ahora reservas en un toque.", "clave": "un toque" },
+    { "texto": "Entra a nuestro perfil y toca el enlace.", "clave": "el enlace" },
+    { "texto": "Eliges tus fechas y ves al momento qué está libre…", "clave": "qué está libre" },
+    { "texto": "…conoces el apartamento por dentro…", "clave": "por dentro" },
+    { "texto": "Aire, WiFi de fibra y tanque de agua propio.", "clave": "tanque de agua propio" },
+    { "texto": "Tocas «Reservar por WhatsApp» y listo: el mensaje sale con tus fechas.", "clave": "WhatsApp" },
+    { "texto": "Tu Día en Tucacas… empieza aquí.", "clave": "empieza aquí" }
+  ]
+}

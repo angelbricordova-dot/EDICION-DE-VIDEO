@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { AbsoluteFill, continueRender, delayRender, Img, OffthreadVideo, staticFile } from "remotion";
+import { AbsoluteFill, continueRender, delayRender, Img, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { evolvePath } from "@remotion/paths";
 import { C, clamp01, DEGRADADO_PORTADA, easeIn, F, FPS, H, lerp, POP, prog, SEGURA, sp, W } from "./estilo";
 import type { Encuadre, Frase, Icono, Rotulo } from "./guiones";
 
-const foto = (archivo: string) => staticFile(`tucacas/fotos/${archivo}`);
+// "sala.jpg" está en tucacas/fotos; "fotos-nuevas/sala.jpg" se toma tal cual dentro de tucacas/.
+const foto = (archivo: string) => staticFile(archivo.includes("/") ? `tucacas/${archivo}` : `tucacas/fotos/${archivo}`);
 
 /** Interpola dos posiciones "x% y%" (para paneos). */
 const interpolarFoco = (a: string, b: string, p: number) => {
@@ -63,14 +64,17 @@ export const Foto: React.FC<{ encuadre: Encuadre; p: number }> = ({ encuadre, p 
 };
 
 /** Grabación de la página a pantalla completa (recortada a 9:16 desde arriba). */
-export const Grabacion: React.FC<{ archivo: string; inicio: number }> = ({ archivo, inicio }) => (
+export const Grabacion: React.FC<{ archivo: string; inicio: number; desde: number }> = ({ archivo, inicio, desde }) => (
   <AbsoluteFill style={{ background: C.arena, overflow: "hidden" }}>
-    <OffthreadVideo
-      src={staticFile(`tucacas/grabaciones/${archivo}`)}
-      startFrom={Math.round(inicio * FPS)}
-      muted
-      style={{ position: "absolute", left: 0, top: 0, width: W, height: (W * 2338) / 1080 }}
-    />
+    {/* La Sequence hace que la grabación empiece en `inicio` cuando arranca el plano. */}
+    <Sequence from={Math.round(desde * FPS)} layout="none">
+      <OffthreadVideo
+        src={staticFile(`tucacas/grabaciones/${archivo}`)}
+        startFrom={Math.round(inicio * FPS)}
+        muted
+        style={{ position: "absolute", left: 0, top: 0, width: W, height: (W * 2338) / 1080 }}
+      />
+    </Sequence>
   </AbsoluteFill>
 );
 
@@ -342,12 +346,14 @@ export const Telefono: React.FC<{ t: number; desde: number; diaNoche?: [number, 
           }}
         >
           {enDiaNoche ? (
-            <OffthreadVideo
-              src={staticFile("tucacas/grabaciones/03-modo-dia-noche.mp4")}
-              startFrom={Math.round(diaNoche[1] * FPS)}
-              muted
-              style={{ position: "absolute", left: 0, top: 0, width: PANTALLA.ancho, height: (PANTALLA.ancho * 2338) / 1080 }}
-            />
+            <Sequence from={Math.round(diaNoche[0] * FPS)} layout="none">
+              <OffthreadVideo
+                src={staticFile("tucacas/grabaciones/03-modo-dia-noche.mp4")}
+                startFrom={Math.round(diaNoche[1] * FPS)}
+                muted
+                style={{ position: "absolute", left: 0, top: 0, width: PANTALLA.ancho, height: (PANTALLA.ancho * 2338) / 1080 }}
+              />
+            </Sequence>
           ) : (
             <>
               <Img

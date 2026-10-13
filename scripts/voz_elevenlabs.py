@@ -62,17 +62,17 @@ def listar_voces():
         print(f"{v['voice_id']}  {v['name']}  ({etiquetas})")
 
 
-def generar(timeline, voz, salida, estabilidad, similitud, estilo):
+def generar(timeline, voz, salida, estabilidad, similitud, estilo, modelo, prefijo, destino=None):
     tl = json.loads(Path(timeline).read_text())
-    lineas = [g["texto"] for g in tl["guion"]]
-    # Un espacio entre frases; la puntuación de cada una marca las pausas.
-    texto = " ".join(lineas)
+    # Acepta el formato de los timelines ("guion") y el de los guiones de comerciales ("frases").
+    lineas = [g["texto"] for g in (tl.get("guion") or tl.get("frases"))]
+    texto = (f"{prefijo} " if prefijo else "") + " ".join(lineas)
     r = pedir(
         "POST",
-        f"/text-to-speech/{voz}/with-timestamps?output_format=mp3_44100_128",
+        f"/text-to-speech/{voz}/with-timestamps?output_format=mp3_44100_192",
         {
             "text": texto,
-            "model_id": MODELO,
+            "model_id": modelo,
             "voice_settings": {
                 "stability": estabilidad,
                 "similarity_boost": similitud,
@@ -85,13 +85,20 @@ def generar(timeline, voz, salida, estabilidad, similitud, estilo):
     Path(salida).write_bytes(base64.b64decode(r["audio_base64"]))
 
     al = r.get("alignment") or r.get("normalized_alignment")
+    chars = "".join(al["characters"])
     inicios, fines = al["character_start_times_seconds"], al["character_end_times_seconds"]
     resultado, pos = [], 0
     for linea in lineas:
-        a, b = pos, pos + len(linea) - 1
+        # Se busca cada frase dentro del texto alineado (las etiquetas como [cálida] pueden desplazarlo).
+        a = chars.find(linea, pos)
+        if a < 0:
+            a = chars.find(linea[: max(8, len(linea) // 3)], pos)
+        if a < 0:
+            sys.exit(f"No encontré la frase en la alineación: {linea!r}")
+        b = min(a + len(linea) - 1, len(fines) - 1)
         resultado.append({"texto": linea, "t": round(inicios[a], 3), "fin": round(fines[b], 3)})
-        pos += len(linea) + 1
-    destino = Path(timeline).with_name("voz.json")
+        pos = b + 1
+    destino = Path(destino) if destino else Path(timeline).with_name("voz.json")
     destino.write_text(
         json.dumps({"audio": str(salida), "duracion": round(fines[-1], 3), "lineas": resultado}, indent=2, ensure_ascii=False)
         + "\n"
@@ -110,13 +117,16 @@ def main():
     ap.add_argument("--estabilidad", type=float, default=0.45)
     ap.add_argument("--similitud", type=float, default=0.8)
     ap.add_argument("--estilo", type=float, default=0.25)
+    ap.add_argument("--modelo", default=MODELO, help="eleven_multilingual_v2 (por defecto) o eleven_v3")
+    ap.add_argument("--prefijo", default="", help="etiquetas de Eleven v3 al inicio, p. ej. '[cálida, sonriendo]'")
+    ap.add_argument("--tiempos", help="dónde guardar los tiempos por frase (por defecto voz.json junto al timeline)")
     a = ap.parse_args()
     if a.listar_voces:
         return listar_voces()
     voz = a.voz or os.environ.get("ELEVENLABS_VOICE_ID")
     if not (a.timeline and voz and a.salida):
         ap.error("hacen falta timeline, --voz (o ELEVENLABS_VOICE_ID) y --salida")
-    generar(a.timeline, voz, a.salida, a.estabilidad, a.similitud, a.estilo)
+    generar(a.timeline, voz, a.salida, a.estabilidad, a.similitud, a.estilo, a.modelo, a.prefijo, a.tiempos)
 
 
 if __name__ == "__main__":
