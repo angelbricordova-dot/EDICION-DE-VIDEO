@@ -22,6 +22,11 @@ Igual para `60s`. Los tiempos de cada plano, rótulo, frase y efecto están en
   usa un cuadro recortado a 1080×1920 que deja ambos fuera, y el botón de WhatsApp es un
   rótulo propio.
 - **TikTok:** no aparece (pendiente en el brief).
-- **Audio provisional:** música y efectos sintetizados con `scripts/sonido_tucacas.py`
-  hasta generarlos con ElevenLabs. Al tener la voz: `--voz voz-30s.mp3` agacha la música a
-  −18 dB debajo de la voz (−10 dB donde no hay voz), efectos a −14 dB, total −14 LUFS.
+- **Audio:** música (ElevenLabs Music con un plan de secciones) y los 11 efectos del brief,
+  generados en `public/tucacas/audio/el/` (ignorado por git). Mezcla:
+  `python3 scripts/sonido_tucacas.py 30s salida.wav --musica public/tucacas/audio/el/musica-plan-30s.mp3 --efectos public/tucacas/audio/el --voz voz-30s.mp3`
+  agacha la música a −18 dB debajo de la voz (−10 dB donde no hay voz), efectos a −14 dB,
+  total −14 LUFS. Sin `--musica`/`--efectos` usa los sintetizados.
+- **Voces candidatas** (Voice Library, acento venezolano, Eleven v3): Andrea
+  `O5hbneAmtjLMgfg5UFIm`, Juana `5inFyqqaiwLzjXSTojIq`, Jania `xXmLO8kXWeHzmuDv00gw`,
+  Maggie `bfzeMrk4OVi07v1gHaGo`.

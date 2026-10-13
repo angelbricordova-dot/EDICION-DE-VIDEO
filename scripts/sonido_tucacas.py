@@ -304,11 +304,53 @@ def leer_audio(ruta, n):
     return np.pad(x, (0, max(0, n - len(x))))[:n]
 
 
+def leer_estereo(ruta, n):
+    crudo = subprocess.run(
+        ["ffmpeg", "-v", "error", "-i", str(ruta), "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"],
+        capture_output=True,
+        check=True,
+    ).stdout
+    x = np.frombuffer(crudo, dtype=np.float32).astype(float).reshape(-1, 2).T
+    return np.pad(x, ((0, 0), (0, max(0, n - x.shape[1]))))[:, :n]
+
+
+# Nombre del efecto en el guion -> archivo generado con ElevenLabs (sección 6.3 del brief).
+ARCHIVOS_EFECTOS = {
+    "olas": "sfx-olas",
+    "gaviotas": "sfx-gaviotas",
+    "brisa": "sfx-brisa-palmeras",
+    "chapuzon": "sfx-chapuzon",
+    "llave": "sfx-llave",
+    "control": "sfx-control-aire",
+    "whoosh": "sfx-whoosh",
+    "clic": "sfx-clic-ui",
+    "mensaje": "sfx-mensaje",
+    "lancha": "sfx-lancha",
+    "grillos": "sfx-grillos",
+}
+
+
+def efecto(nombre, carpeta):
+    """El efecto de ElevenLabs si existe en `carpeta`; si no, el sintetizado."""
+    if carpeta and nombre in ARCHIVOS_EFECTOS:
+        ruta = Path(carpeta) / f"{ARCHIVOS_EFECTOS[nombre]}.mp3"
+        if ruta.exists():
+            crudo = subprocess.run(
+                ["ffmpeg", "-v", "error", "-i", str(ruta), "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"],
+                capture_output=True,
+                check=True,
+            ).stdout
+            return np.frombuffer(crudo, dtype=np.float32).astype(float)
+    return EFECTOS[nombre]()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("version", choices=["30s", "60s"])
     ap.add_argument("salida")
     ap.add_argument("--voz", help="locución (mp3/wav); si se pasa, la música se agacha debajo de la voz")
+    ap.add_argument("--musica", help="pista de música generada (mp3); si no, se sintetiza")
+    ap.add_argument("--efectos", help="carpeta con los sfx-*.mp3 generados; los que falten se sintetizan")
     a = ap.parse_args()
 
     guion = json.loads((RAIZ / f"src/tucacas/guion-{a.version}.json").read_text())
@@ -317,7 +359,11 @@ def main():
     m = Mezcla(dur)
 
     # Música: −10 dB donde no hay voz; −18 dB mientras se habla (si hay voz).
-    mus = normal(musica(dur, est["secciones"], est["final"]))
+    if a.musica:
+        mus = leer_estereo(a.musica, m.n)
+        mus = mus / np.max(np.abs(mus))
+    else:
+        mus = np.tile(normal(musica(dur, est["secciones"], est["final"])), (2, 1))
     t = np.arange(m.n) / SR
     nivel = np.full(m.n, db(-10))
     if a.voz:
@@ -327,12 +373,11 @@ def main():
         nivel = np.convolve(nivel, np.ones(int(0.12 * SR)) / int(0.12 * SR), mode="same")
         voz = normal(leer_audio(a.voz, m.n))
         m.bus += voz
-    m.bus[0] += mus * nivel
-    m.bus[1] += mus * nivel
+    m.bus += mus * nivel
 
     # Efectos a −14 dB.
     for e in guion["efectos"]:
-        x = normal(EFECTOS[e["sonido"]]())
+        x = normal(efecto(e["sonido"], a.efectos))
         m.poner(e["t"], x, db(-14) * e.get("gain", 1), e.get("pan", 0))
 
     Path(a.salida).parent.mkdir(parents=True, exist_ok=True)
