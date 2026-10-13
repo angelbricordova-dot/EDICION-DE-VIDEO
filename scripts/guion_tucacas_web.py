@@ -22,6 +22,7 @@ DIA_20 = (279, 1047 + NAV)
 MAS = (926, 1480 + NAV)
 LEYENDA = (540, 1302 + NAV)
 BOTON = (540, 1700)
+BOTON_CAM = (540, 1600)  # la cámara apunta un poco más arriba para que el teléfono quede más centrado
 ENVIAR = (991, 1795)
 CENTRO = (540, 960)
 
@@ -89,7 +90,7 @@ M60 = {
     "conoces": 17.94, "fotos": 20.50, "incluye": 21.47, "donde": 22.45,
     "aire": 23.98, "wifi": 26.08, "tanque": 27.34, "cinco": 29.43, "piscina": 31.53,
     "tocas": 35.66, "mensaje": 37.36, "fechas2": 39.2, "gratis": 40.72, "no_se_cobra": 41.5,
-    "confirmas": 43.21, "rapido": 45.36, "noche": 47.92, "churuata": 50.34, "parrilla": 50.9,
+    "confirmas": 43.21, "rapido": 45.36, "confianza": 46.12, "noche": 47.92, "churuata": 50.34, "parrilla": 50.9,
 }
 
 
@@ -109,7 +110,7 @@ def guion_60():
     c_mapa2, c_piscina, c_piscina2 = b(28.95), b(31.62), b(32.69)
     c_reserva = b(33.75)
     tq_boton, t_chat, t_envio = 37.0, 37.35, 39.55
-    c_gratis, c_confirma, c_calle = b(40.70), b(43.37), b(45.5)
+    c_gratis, c_confirma = b(40.70), b(43.37)
     c_noche, c_churuata, c_parrilla, c_cierre = b(47.64), b(50.31), b(51.38), b(52.98)
 
     planos = [
@@ -168,6 +169,7 @@ def guion_60():
             "desde": c_galeria_tel,
             "hasta": c_fotos,
             "entrada": "nada",
+            "continua": True,
             "fondo": {"tipo": "playa"},
             "escenas": [{"t": c_galeria_tel, "tipo": "navegador", "vistas": [{"t": c_galeria_tel, "archivo": "02-apartamento-n30.mp4", "inicio": 12.2}]}],
             "camara": [cam(c_galeria_tel, 1.0, CENTRO, 0), {**cam(c_fotos - 0.35, 1.3, (540, 900), 3), "lento": True}, cam(c_fotos, 2.4, (540, 900), 0)],
@@ -232,17 +234,16 @@ def guion_60():
             "camara": [
                 cam(c_reserva, 1.0),
                 cam(m["tocas"] - 0.2, 1.0),
-                cam(m["tocas"] + 0.3, 1.6, BOTON, -2),
-                cam(t_chat + 0.1, 1.6, BOTON, -2),
-                cam(t_chat + 0.5, 1.7, (520, 1690), 0),
-                cam(t_envio - 0.25, 1.7, (560, 1690), 0),
-                cam(t_envio + 0.35, 1.25, (540, 1450), 2),
+                cam(m["tocas"] + 0.3, 1.6, BOTON_CAM, -2),
+                cam(t_chat + 0.1, 1.6, BOTON_CAM, -2),
+                cam(t_chat + 0.5, 1.7, (520, 1560), 0),
+                cam(t_envio - 0.25, 1.7, (560, 1560), 0),
+                cam(t_envio + 0.35, 1.25, (540, 1300), 2),
                 cam(c_gratis, 1.0, CENTRO, 0),
             ],
         },
-        {"tipo": "video", "desde": c_gratis, "hasta": c_confirma, "archivo": "habitacion-ventana.mp4", "inicio": 0.6, "zoom": [1.0, 1.08], "entrada": "whip"},
-        {"tipo": "foto", "desde": c_confirma, "hasta": c_calle, "encuadre": {"foto": "fotos-nuevas/piscina-casas.jpg", "foco": "60% 40%", "zoom": 1.08, "escala": 1.15, "focoFin": "40% 40%"}, "entrada": "flash"},
-        {"tipo": "video", "desde": c_calle, "hasta": c_noche, "archivo": "recorrido.mp4", "inicio": 46.5, "zoom": [1.0, 1.06]},
+        {"tipo": "sincobro", "desde": c_gratis, "hasta": c_confirma, "sello": m["no_se_cobra"], "entrada": "whip"},
+        {"tipo": "confirma", "desde": c_confirma, "hasta": c_noche, "rapido": m["rapido"], "confianza": m["confianza"], "entrada": "nada"},
         {
             "tipo": "telefono",
             "desde": c_noche,
@@ -258,14 +259,11 @@ def guion_60():
     ]
 
     textos = [
-        {"desde": 0.1, "hasta": c_aereo, "estilo": "grande", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [m["vienes"], 0.7], "acento": [1], "icono": "sol"},
+        {"desde": 0.0, "hasta": c_aereo, "estilo": "gancho", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [0.12, 0.62]},
         {"desde": 2.2, "hasta": c_tel, "estilo": "grande", "lineas": ["Reservar", "es más fácil"], "ts": [2.25, 3.3], "acento": [1], "icono": "reserva"},
         {"desde": m["fotos"] - 0.1, "hasta": c_incluye, "estilo": "pastilla", "lineas": ["Las fotos"], "y": 250, "acento": [0]},
         {"desde": c_incluye, "hasta": c_mapa, "estilo": "pastilla", "lineas": ["Lo que incluye"], "y": 250, "acento": [0]},
         {"desde": c_mapa + 0.1, "hasta": c_aire, "estilo": "pastilla", "lineas": ["Dónde queda"], "y": 250, "acento": [0]},
-        {"desde": c_piscina, "hasta": c_reserva, "estilo": "pastilla", "lineas": ["Piscina con tobogán"], "y": 300, "acento": [0]},
-        {"desde": c_gratis, "hasta": c_confirma, "estilo": "grande", "lineas": ["En la página", "no se cobra nada"], "ts": [m["gratis"], m["no_se_cobra"]], "acento": [1], "icono": "sincobro"},
-        {"desde": c_confirma, "hasta": c_noche, "estilo": "pastilla", "lineas": ["Confirmas por WhatsApp", "Rápido y en confianza"], "ts": [m["confirmas"], m["rapido"]], "y": 300, "acento": [1]},
         {"desde": c_churuata, "hasta": c_parrilla, "estilo": "grande", "lineas": ["La churuata"], "ts": [m["churuata"]], "acento": [0]},
         {"desde": c_parrilla, "hasta": c_cierre, "estilo": "grande", "lineas": ["Área de", "parrilla"], "ts": [c_parrilla, c_parrilla + 0.2], "acento": [1]},
     ]
@@ -285,13 +283,11 @@ def guion_60():
         w(c_incluye, 0.5),
         w(c_mapa, 0.7),
         {"t": c_mapa + 0.45, "sonido": "clic", "gain": 0.9},
-        {"t": c_mapa, "sonido": "gaviotas", "gain": 0.4, "pan": -0.3},
         w(c_aire, 0.6),
         w(c_wifi, 0.4),
         w(c_tanque, 0.4),
         w(c_mapa2, 0.6),
         {"t": 30.75, "sonido": "lancha", "gain": 0.5, "pan": 0.3},
-        {"t": c_piscina, "sonido": "chapuzon", "gain": 0.8},
         w(c_reserva, 0.7),
         {"t": tq_boton, "sonido": "clic"},
         w(t_chat + 0.2, 0.4),
@@ -404,18 +400,18 @@ def guion_30():
             "camara": [
                 cam(c_reserva, 1.0),
                 cam(tq_boton - 0.7, 1.0),
-                cam(tq_boton - 0.25, 1.6, BOTON, -2),
-                cam(t_chat + 0.1, 1.6, BOTON, -2),
-                cam(t_chat + 0.5, 1.7, (520, 1690), 0),
-                cam(t_envio - 0.25, 1.7, (560, 1690), 0),
-                cam(t_envio + 0.35, 1.25, (540, 1450), 2),
+                cam(tq_boton - 0.25, 1.6, BOTON_CAM, -2),
+                cam(t_chat + 0.1, 1.6, BOTON_CAM, -2),
+                cam(t_chat + 0.5, 1.7, (520, 1560), 0),
+                cam(t_envio - 0.25, 1.7, (560, 1560), 0),
+                cam(t_envio + 0.35, 1.25, (540, 1300), 2),
                 cam(c_cierre, 1.0, CENTRO, 0),
             ],
         },
         {"tipo": "cierre", "desde": c_cierre, "hasta": 30.0, "icono": True, "entrada": "whip"},
     ]
     textos = [
-        {"desde": 0.1, "hasta": c_aereo, "estilo": "grande", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [0.3, b(0.9)], "acento": [1], "icono": "sol"},
+        {"desde": 0.0, "hasta": c_aereo, "estilo": "gancho", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [0.15, 0.7]},
         {"desde": 1.95, "hasta": c_tel, "estilo": "grande", "lineas": ["Reservas en", "un toque"], "ts": [2.0, palabra(0, "un toque")], "acento": [1], "icono": "reserva"},
         {"desde": c_fotos + 0.1, "hasta": c_cuarto, "estilo": "pastilla", "lineas": ["Por dentro"], "y": 250, "acento": [0]},
     ]

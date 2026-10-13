@@ -16,6 +16,7 @@ export const cargarFuentes = () => {
   fuentesCargadas = true;
   loadFont({ family: "Bricolage Grotesque", url: staticFile("tucacas/fuentes/bricolage.woff2"), weight: "200 800" });
   loadFont({ family: "Onest", url: staticFile("tucacas/fuentes/onest.woff2"), weight: "100 900" });
+  loadFont({ family: "Nunito", url: staticFile("tucacas/fuentes/nunito.woff2"), weight: "200 1000" });
 };
 
 // Colores exactos del brief (sección 2).
@@ -38,6 +39,8 @@ export const DEGRADADO_PORTADA = `linear-gradient(160deg, ${C.verde} 0%, ${C.ver
 export const F = {
   titulo: '"Bricolage Grotesque", system-ui, sans-serif',
   texto: "Onest, system-ui, sans-serif",
+  /** Subtítulos del comercial web: redondeada. */
+  subs: "Nunito, Onest, system-ui, sans-serif",
 };
 
 export const clamp01 = (x: number) => Math.min(1, Math.max(0, x));

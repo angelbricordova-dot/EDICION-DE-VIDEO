@@ -29,10 +29,11 @@ ffmpeg -v error -y -ss 7.5 -i "$DESTINO/grabaciones/02-apartamento-n30.mp4" -fra
 
 # Fuentes de la marca (Google Fonts, OFL), desde los paquetes de fontsource.
 FS="$RAIZ/node_modules/@fontsource-variable"
-if [ ! -d "$FS/onest" ]; then
-  (cd "$RAIZ" && npm install --no-save @fontsource-variable/bricolage-grotesque @fontsource-variable/onest >/dev/null)
+if [ ! -d "$FS/nunito" ]; then
+  (cd "$RAIZ" && npm install --no-save @fontsource-variable/bricolage-grotesque @fontsource-variable/onest @fontsource-variable/nunito >/dev/null)
 fi
 cp "$FS/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2" "$DESTINO/fuentes/bricolage.woff2"
 cp "$FS/onest/files/onest-latin-wght-normal.woff2" "$DESTINO/fuentes/onest.woff2"
+cp "$FS/nunito/files/nunito-latin-wght-normal.woff2" "$DESTINO/fuentes/nunito.woff2"
 
 echo "Material listo en $DESTINO"

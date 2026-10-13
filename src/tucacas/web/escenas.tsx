@@ -107,42 +107,118 @@ export const Playa: React.FC<{ t: number; arena?: boolean }> = ({ t, arena = tru
 
 // ------------------------------------------------------------- adornos del texto
 
-/** Sol de línea que se dibuja alrededor del texto del gancho, con rayos que giran y olas debajo. */
-export const SolDibujado: React.FC<{ t: number; desde: number; radio?: number }> = ({ t, desde, radio = 330 }) => {
-  const anillo = prog(t, desde, desde + 0.7);
-  const rayos = sp(t, desde + 0.25, POP);
-  const olas = prog(t, desde + 0.35, desde + 1.0);
-  const giro = (t - desde) * 18;
-  const circ = `M ${-radio} 0 A ${radio} ${radio} 0 1 1 ${radio} 0 A ${radio} ${radio} 0 1 1 ${-radio} 0`;
-  const anilloP = evolvePath(Math.max(0.001, anillo), circ);
+/**
+ * Gancho "¿Vienes a / Tucacas?": la primera línea sube palabra por palabra desde una
+ * máscara; detrás de "Tucacas?" se abre una pastilla sol y las letras caen una a una.
+ * Debajo aparece la etiqueta de ubicación.
+ */
+export const Gancho: React.FC<{ t: number; lineas: string[]; ts: number[]; arriba: number; sale: number }> = ({ t, lineas, ts, arriba, sale }) => {
+  const [l1, l2] = lineas;
+  const palabras = l1.split(" ");
+  const marca = prog(t, ts[1] - 0.05, ts[1] + 0.4, easeOut);
+  const etiqueta = sp(t, ts[1] + 0.55, POP);
+  const vaiven = Math.sin((t - ts[1]) * 2.4) * 1.2;
   return (
-    <svg width={W} height={900} viewBox={`${-W / 2} -450 ${W} 900`} style={{ position: "absolute", left: 0, top: -450 + 0, overflow: "visible" }}>
-      <path d={circ} fill="none" stroke={C.sol} strokeWidth={12} strokeLinecap="round" strokeDasharray={anilloP.strokeDasharray} strokeDashoffset={anilloP.strokeDashoffset} opacity={0.95} />
-      <g transform={`rotate(${giro}) scale(${lerp(0.7, 1, rayos)})`} opacity={clamp01(rayos * 1.4)}>
-        {Array.from({ length: 12 }, (_, i) => (
-          <line
-            key={i}
-            x1={0}
-            y1={-(radio + 40)}
-            x2={0}
-            y2={-(radio + (i % 2 ? 80 : 110))}
-            stroke={C.sol}
-            strokeWidth={12}
-            strokeLinecap="round"
-            transform={`rotate(${i * 30})`}
-          />
-        ))}
-      </g>
-      {[0, 1].map((k) => {
-        let d = "";
-        for (let x = -360; x <= 360; x += 12) {
-          const y = radio + 70 + k * 44 + 16 * Math.sin(x / 50 + t * 4 + k);
-          d += `${x === -360 ? "M" : " L"} ${x} ${y.toFixed(1)}`;
-        }
-        const p = evolvePath(Math.max(0.001, clamp01(olas * 1.2 - k * 0.2)), d);
-        return <path key={k} d={d} fill="none" stroke="white" strokeWidth={10} strokeLinecap="round" strokeDasharray={p.strokeDasharray} strokeDashoffset={p.strokeDashoffset} opacity={0.9} />;
-      })}
-    </svg>
+    <div
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        top: arriba,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 18,
+        opacity: 1 - sale,
+        scale: String(1 - 0.06 * sale),
+      }}
+    >
+      <div style={{ display: "flex", gap: 28, overflow: "hidden", padding: "6px 10px 14px" }}>
+        {palabras.map((w, i) => {
+          const p = prog(t, ts[0] + i * 0.09, ts[0] + i * 0.09 + 0.55, easeOut);
+          return (
+            <span
+              key={i}
+              style={{
+                display: "inline-block",
+                fontFamily: F.titulo,
+                fontWeight: 800,
+                fontSize: 128,
+                lineHeight: 1,
+                letterSpacing: "-0.02em",
+                color: C.blanco,
+                textShadow: "0 6px 30px rgba(0,0,0,0.45)",
+                translate: `0 ${(1 - p) * 150}px`,
+                rotate: `${(1 - p) * 8}deg`,
+              }}
+            >
+              {w}
+            </span>
+          );
+        })}
+      </div>
+      <div style={{ position: "relative", rotate: `${-3 + vaiven}deg` }}>
+        <div
+          style={{
+            position: "absolute",
+            inset: "-6px -34px",
+            borderRadius: 40,
+            background: C.sol,
+            boxShadow: "0 22px 50px rgba(0,0,0,0.35)",
+            transformOrigin: "0% 50%",
+            scale: `${marca} 1`,
+          }}
+        />
+        <div style={{ position: "relative", display: "flex" }}>
+          {Array.from(l2).map((ch, i) => {
+            const p = sp(t, ts[1] + 0.12 + i * 0.035, { damping: 11, stiffness: 220, mass: 0.6 });
+            return (
+              <span
+                key={i}
+                style={{
+                  display: "inline-block",
+                  fontFamily: F.titulo,
+                  fontWeight: 800,
+                  fontSize: 168,
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.02em",
+                  color: C.tinta,
+                  opacity: clamp01(p * 2),
+                  translate: `0 ${(1 - p) * -90}px`,
+                  scale: String(lerp(1.6, 1, p)),
+                }}
+              >
+                {ch}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+      <div
+        style={{
+          marginTop: 26,
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+          background: "rgba(255,255,255,0.95)",
+          borderRadius: 999,
+          padding: "14px 30px 14px 22px",
+          fontFamily: F.texto,
+          fontWeight: 700,
+          fontSize: 40,
+          color: C.tinta,
+          boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
+          scale: String(lerp(0.4, 1, etiqueta)),
+          opacity: clamp01(etiqueta * 2),
+        }}
+      >
+        <svg width={42} height={42} viewBox="0 0 24 24">
+          <path d="M12 22 C 12 22, 4 14.5, 4 9.5 a8 8 0 0 1 16 0 C 20 14.5, 12 22, 12 22 Z" fill={C.verde} />
+          <circle cx={12} cy={9.5} r={3} fill="white" />
+        </svg>
+        Falcón · Venezuela
+      </div>
+    </div>
   );
 };
 
@@ -249,7 +325,11 @@ export const GaleriaFotos: React.FC<{ t: number; desde: number; hasta: number; f
               scale: String(lerp(0.4, 1, p) * grande * latido),
             }}
           >
-            <Img src={staticFile(`tucacas/${f}`)} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 12 }} />
+            {/* La foto completa (sin recortar) con su versión desenfocada detrás si no llena la tarjeta. */}
+            <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 12, overflow: "hidden", background: C.tinta }}>
+              <Img src={staticFile(`tucacas/${f}`)} style={{ position: "absolute", inset: -20, width: "calc(100% + 40px)", height: "calc(100% + 40px)", objectFit: "cover", filter: "blur(14px) brightness(0.8)" }} />
+              <Img src={staticFile(`tucacas/${f}`)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }} />
+            </div>
           </div>
         );
       })}
@@ -533,5 +613,212 @@ export const Insignia: React.FC<{ t: number; desde: number; texto: string; cuent
         </div>
       </div>
     </div>
+  );
+};
+
+// ------------------------------------------------------------- sin cobro y confirmación
+
+/** Panel de vidrio esmerilado que sube con un leve giro en 3D. */
+const Vidrio: React.FC<{ t: number; desde: number; hasta: number; top: number; alto: number; children: React.ReactNode }> = ({ t, desde, hasta, top, alto, children }) => {
+  const p = sp(t, desde, { damping: 16, stiffness: 120 });
+  const sale = prog(t, hasta - 0.3, hasta, easeIn);
+  return (
+    <div style={{ position: "absolute", left: 70, right: 70, top, height: alto, perspective: 1600 }}>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          borderRadius: 56,
+          background: "linear-gradient(160deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.10) 100%)",
+          border: "2px solid rgba(255,255,255,0.45)",
+          boxShadow: "0 40px 90px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.6)",
+          backdropFilter: "blur(18px)",
+          transform: `translateY(${(1 - p) * 500 - sale * 120}px) rotateX(${(1 - p) * 24}deg) scale(${1 - sale * 0.06})`,
+          opacity: clamp01(p * 2) * (1 - sale),
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+/** "En la página no se cobra nada": tarjeta de pago que entra y se tacha con un sello. */
+export const SinCobro: React.FC<{ t: number; desde: number; hasta: number; sello: number }> = ({ t, desde, hasta, sello }) => {
+  const etiqueta = prog(t, desde + 0.15, desde + 0.6, easeOut);
+  const tarjeta = sp(t, desde + 0.25, { damping: 13, stiffness: 150 });
+  const anillo = prog(t, sello, sello + 0.4, easeOut);
+  const golpe = sp(t, sello, { damping: 8, stiffness: 260, mass: 0.6 });
+  const temblor = t > sello && t < sello + 0.3 ? Math.sin((t - sello) * 70) * (1 - (t - sello) / 0.3) * 8 : 0;
+  const circ = "M 0 -150 A 150 150 0 1 1 -0.1 -150";
+  const a = evolvePath(Math.max(0.001, anillo), circ);
+  const raya = evolvePath(Math.max(0.001, clamp01(anillo * 1.6 - 0.6)), "M -106 106 L 106 -106");
+  const titulo = "No se cobra nada".split(" ");
+  return (
+    <Vidrio t={t} desde={desde} hasta={hasta} top={300} alto={980}>
+      <div
+        style={{
+          position: "absolute",
+          top: 60,
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          fontFamily: F.texto,
+          fontWeight: 700,
+          fontSize: 46,
+          letterSpacing: "0.04em",
+          color: "rgba(255,255,255,0.9)",
+          opacity: etiqueta,
+          translate: `0 ${(1 - etiqueta) * 20}px`,
+        }}
+      >
+        En la página
+      </div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 190, height: 420, display: "flex", alignItems: "center", justifyContent: "center", translate: `${temblor}px 0` }}>
+        <div
+          style={{
+            width: 520,
+            height: 320,
+            borderRadius: 34,
+            background: `linear-gradient(135deg, ${C.verde} 0%, ${C.mar} 100%)`,
+            boxShadow: "0 30px 60px rgba(0,0,0,0.3)",
+            position: "relative",
+            translate: `${(1 - tarjeta) * 700}px 0`,
+            rotate: `${(1 - tarjeta) * 25 - 4}deg`,
+            filter: `saturate(${1 - 0.6 * anillo}) brightness(${1 - 0.15 * anillo})`,
+          }}
+        >
+          <div style={{ position: "absolute", left: 44, top: 70, width: 92, height: 70, borderRadius: 14, background: C.sol }} />
+          <div style={{ position: "absolute", left: 44, bottom: 60, fontFamily: F.texto, fontWeight: 700, fontSize: 40, color: "rgba(255,255,255,0.9)", letterSpacing: "0.12em" }}>
+            •••• •••• ••••
+          </div>
+          <div style={{ position: "absolute", right: 40, top: 40, width: 80, height: 80, borderRadius: "50%", border: "8px solid rgba(255,255,255,0.6)" }} />
+        </div>
+        <svg width={360} height={360} viewBox="-180 -180 360 360" style={{ position: "absolute", overflow: "visible", scale: String(lerp(1.4, 1, golpe)) }}>
+          <path d={circ} fill="none" stroke={C.coral} strokeWidth={30} strokeLinecap="round" strokeDasharray={a.strokeDasharray} strokeDashoffset={a.strokeDashoffset} />
+          <path d="M -106 106 L 106 -106" fill="none" stroke={C.coral} strokeWidth={30} strokeLinecap="round" strokeDasharray={raya.strokeDasharray} strokeDashoffset={raya.strokeDashoffset} />
+        </svg>
+      </div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 680, display: "flex", justifyContent: "center", gap: 26, flexWrap: "wrap", padding: "0 40px" }}>
+        {titulo.map((w, i) => {
+          const p = prog(t, sello + 0.1 + i * 0.09, sello + 0.65 + i * 0.09, easeOut);
+          return (
+            <div key={i} style={{ overflow: "hidden", padding: "4px 0 10px" }}>
+              <span
+                style={{
+                  display: "inline-block",
+                  fontFamily: F.titulo,
+                  fontWeight: 800,
+                  fontSize: 104,
+                  lineHeight: 1,
+                  color: i === titulo.length - 1 ? C.sol : C.blanco,
+                  translate: `0 ${(1 - p) * 120}px`,
+                  textShadow: "0 6px 24px rgba(0,0,0,0.25)",
+                }}
+              >
+                {w}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </Vidrio>
+  );
+};
+
+const Burbuja: React.FC<{ t: number; desde: number; mia?: boolean; children: React.ReactNode }> = ({ t, desde, mia, children }) => {
+  const p = sp(t, desde, { damping: 13, stiffness: 190, mass: 0.7 });
+  if (p <= 0) return null;
+  return (
+    <div
+      style={{
+        alignSelf: mia ? "flex-end" : "flex-start",
+        display: "flex",
+        alignItems: "flex-end",
+        gap: 16,
+        flexDirection: mia ? "row-reverse" : "row",
+        transformOrigin: mia ? "100% 100%" : "0% 100%",
+        scale: String(lerp(0.4, 1, p)),
+        opacity: clamp01(p * 2),
+        translate: `0 ${(1 - p) * 60}px`,
+      }}
+    >
+      {!mia ? <Img src={staticFile("tucacas/marca/icono-app.svg")} style={{ width: 84, height: 84, borderRadius: "50%", boxShadow: "0 6px 16px rgba(0,0,0,0.25)" }} /> : null}
+      <div
+        style={{
+          maxWidth: 700,
+          background: mia ? "#d9fdd3" : C.blanco,
+          borderRadius: mia ? "36px 36px 10px 36px" : "36px 36px 36px 10px",
+          padding: "26px 34px",
+          fontFamily: F.texto,
+          fontWeight: 500,
+          fontSize: 44,
+          lineHeight: 1.3,
+          color: "#111b21",
+          boxShadow: "0 16px 36px rgba(0,0,0,0.22)",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const Chip: React.FC<{ t: number; desde: number; icono: string; texto: string; color: string }> = ({ t, desde, icono, texto, color }) => {
+  const p = sp(t, desde, POP);
+  const trazo = prog(t, desde + 0.1, desde + 0.5);
+  const e = evolvePath(Math.max(0.001, trazo), icono);
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 18,
+        background: color,
+        borderRadius: 999,
+        padding: "22px 38px 22px 26px",
+        boxShadow: "0 18px 40px rgba(0,0,0,0.28)",
+        scale: String(lerp(0.3, 1, p)),
+        rotate: `${(1 - p) * -12}deg`,
+        opacity: clamp01(p * 2),
+      }}
+    >
+      <svg width={64} height={64} viewBox="0 0 24 24">
+        <path d={icono} fill="none" stroke={C.tinta} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={e.strokeDasharray} strokeDashoffset={e.strokeDashoffset} />
+      </svg>
+      <span style={{ fontFamily: F.titulo, fontWeight: 800, fontSize: 64, color: C.tinta }}>{texto}</span>
+    </div>
+  );
+};
+
+/** "Todo lo confirmas con nosotros, rápido y en confianza": conversación que se arma sola. */
+export const Confirma: React.FC<{ t: number; desde: number; hasta: number; rapido: number; confianza: number }> = ({ t, desde, hasta, rapido, confianza }) => {
+  const escribe = t >= desde + 0.55 && t < desde + 1.25;
+  const sale = prog(t, hasta - 0.3, hasta, easeIn);
+  return (
+    <AbsoluteFill style={{ opacity: 1 - sale, scale: String(1 - 0.05 * sale) }}>
+      <div style={{ position: "absolute", left: 60, right: 60, top: 300, display: "flex", flexDirection: "column", gap: 26 }}>
+        <Burbuja t={t} desde={desde + 0.05} mia>
+          ¿Está disponible para esas fechas?
+        </Burbuja>
+        {escribe ? (
+          <Burbuja t={t} desde={desde + 0.55}>
+            <div style={{ display: "flex", gap: 12, padding: "10px 4px" }}>
+              {[0, 1, 2].map((k) => (
+                <div key={k} style={{ width: 18, height: 18, borderRadius: "50%", background: "#8696a0", translate: `0 ${Math.sin((t - desde) * 12 - k * 0.9) * 7}px` }} />
+              ))}
+            </div>
+          </Burbuja>
+        ) : (
+          <Burbuja t={t} desde={desde + 1.25}>
+            ¡Hola! Sí, te confirmamos todo por aquí.
+          </Burbuja>
+        )}
+      </div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 960, display: "flex", justifyContent: "center", gap: 30, flexWrap: "wrap" }}>
+        <Chip t={t} desde={rapido} color={C.sol} texto="Rápido" icono="M13 2 L4 14 h7 l-1 8 l9 -12 h-7 z" />
+        <Chip t={t} desde={confianza} color={C.blanco} texto="En confianza" icono="M12 3 L20 6 V12 c0 5 -3.5 8 -8 9 c-4.5 -1 -8 -4 -8 -9 V6 Z M9 12 l2 2 4 -4" />
+      </div>
+    </AbsoluteFill>
   );
 };

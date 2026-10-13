@@ -3,9 +3,10 @@ import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame } f
 import { Audio } from "@remotion/media";
 import { C, cargarFuentes, clamp01, DEGRADADO_PORTADA, easeIn, easeOut, F, FPS, lerp, POP, prog, SEGURA, sp, W } from "../estilo";
 import type { Encuadre, Frase, Icono } from "../guiones";
-import { Cierre, Foto, Subtitulos, TarjetaIcono } from "../piezas";
+import { Cierre, Foto, TarjetaIcono } from "../piezas";
+import { SubtitulosWeb } from "./subtitulos";
 import { Chat, Navegador, Perfil, PH, PW, Vista } from "./pantallas";
-import { Clave, claveEn, desenfoqueCamara, EventosMapa, GaleriaFotos, IconoReserva, IconoSinCobro, Incluye, Insignia, ItemIncluye, Mapa, Playa, SolDibujado } from "./escenas";
+import { Clave, claveEn, desenfoqueCamara, EventosMapa, GaleriaFotos, Confirma, Gancho, IconoReserva, IconoSinCobro, Incluye, Insignia, ItemIncluye, Mapa, Playa, SinCobro } from "./escenas";
 import guion30 from "./guion-web-30s.json";
 import guion60 from "./guion-web-60s.json";
 
@@ -31,18 +32,20 @@ type Base = { desde: number; hasta: number; entrada?: Entrada };
 export type PlanoWeb =
   | (Base & { tipo: "video"; archivo: string; inicio: number; zoom?: [number, number]; foco?: string })
   | (Base & { tipo: "foto"; encuadre: Encuadre })
-  | (Base & { tipo: "telefono"; fondo: FondoTelefono; escenas: EscenaTelefono[]; camara: Camara[] })
+  | (Base & { tipo: "telefono"; fondo: FondoTelefono; escenas: EscenaTelefono[]; camara: Camara[]; continua?: boolean })
   | (Base & { tipo: "iconos"; fondo: FondoTelefono | { tipo: "foto"; encuadre: Encuadre }; iconos: Icono[] })
   | (Base & { tipo: "galeria"; fotos: string[] })
   | (Base & { tipo: "incluye"; items: ItemIncluye[] })
   | (Base & { tipo: "mapa"; camara: Clave[]; eventos: EventosMapa; insignia?: { t: number; texto: string; cuenta?: [number, number] } })
+  | (Base & { tipo: "sincobro"; sello: number })
+  | (Base & { tipo: "confirma"; rapido: number; confianza: number })
   | (Base & { tipo: "cierre"; icono?: boolean });
 
 /** Texto en pantalla: "grande" (líneas cinéticas) o "pastilla" (rótulo). */
 export type TextoWeb = {
   desde: number;
   hasta: number;
-  estilo: "grande" | "pastilla";
+  estilo: "grande" | "pastilla" | "gancho";
   lineas: string[];
   /** Cuándo entra cada línea (si no, escalonadas cada 0.2 s). */
   ts?: number[];
@@ -51,7 +54,7 @@ export type TextoWeb = {
   /** Posición vertical (borde superior), en px del cuadro. Sin ella, el texto grande va centrado. */
   y?: number;
   /** Gráfico animado que acompaña al texto grande. */
-  icono?: "sol" | "reserva" | "sincobro";
+  icono?: "reserva" | "sincobro";
 };
 
 export type GuionWeb = {
@@ -162,7 +165,8 @@ const Fondo: React.FC<{ fondo: FondoTelefono; desde: number; t: number }> = ({ f
   );
 
 const Telefono: React.FC<{ plano: Extract<PlanoWeb, { tipo: "telefono" }>; t: number }> = ({ plano, t }) => {
-  const entra = sp(t, plano.desde, { damping: 15, stiffness: 120 });
+  // Si el plano anterior ya era el teléfono, sigue en pantalla: no vuelve a entrar.
+  const entra = plano.continua ? 1 : sp(t, plano.desde, { damping: 15, stiffness: 120 });
   const cam = claveEn(plano.camara, t);
   const S = S0 * cam.escala;
   const blur = desenfoqueCamara(plano.camara, t, S0);
@@ -213,9 +217,6 @@ const Telefono: React.FC<{ plano: Extract<PlanoWeb, { tipo: "telefono" }>; t: nu
                 <PantallaEscena escena={e} t={t} primera={e === plano.escenas[0]} />
               </AbsoluteFill>
             ))}
-            <div
-              style={{ position: "absolute", left: PW / 2 - 150, top: 26, width: 300, height: 84, borderRadius: 42, background: "#05090a" }}
-            />
           </div>
         </div>
       </div>
@@ -227,6 +228,9 @@ const Telefono: React.FC<{ plano: Extract<PlanoWeb, { tipo: "telefono" }>; t: nu
 
 const Textos: React.FC<{ texto: TextoWeb; t: number }> = ({ texto, t }) => {
   const sale = prog(t, texto.hasta - 0.18, texto.hasta, easeIn);
+  if (texto.estilo === "gancho") {
+    return <Gancho t={t} lineas={texto.lineas} ts={texto.ts ?? [texto.desde, texto.desde + 0.4]} arriba={texto.y ?? 560} sale={sale} />;
+  }
   if (texto.estilo === "grande") {
     const centrado = texto.y === undefined;
     const conTarjeta = texto.icono === "reserva" || texto.icono === "sincobro";
@@ -236,11 +240,6 @@ const Textos: React.FC<{ texto: TextoWeb; t: number }> = ({ texto, t }) => {
     const t0 = texto.ts?.[0] ?? texto.desde;
     return (
       <>
-        {texto.icono === "sol" ? (
-          <div style={{ position: "absolute", left: 0, top: arriba + texto.lineas.length * 75, width: W, height: 0, opacity: 1 - sale }}>
-            <SolDibujado t={t} desde={t0} />
-          </div>
-        ) : null}
         {conTarjeta ? (
           <div style={{ position: "absolute", left: 0, right: 0, top: arriba, display: "flex", justifyContent: "center", opacity: 1 - sale }}>
             {texto.icono === "reserva" ? <IconoReserva t={t} desde={t0} /> : <IconoSinCobro t={t} desde={t0} />}
@@ -356,6 +355,20 @@ const ContenidoPlano: React.FC<{ plano: PlanoWeb; t: number }> = ({ plano, t }) 
       return <Telefono plano={plano} t={t} />;
     case "cierre":
       return <Cierre t={t} desde={plano.desde} icono={plano.icono} />;
+    case "sincobro":
+      return (
+        <AbsoluteFill>
+          <Playa t={t} />
+          <SinCobro t={t} desde={plano.desde} hasta={plano.hasta} sello={plano.sello} />
+        </AbsoluteFill>
+      );
+    case "confirma":
+      return (
+        <AbsoluteFill>
+          <Playa t={t} />
+          <Confirma t={t} desde={plano.desde} hasta={plano.hasta} rapido={plano.rapido} confianza={plano.confianza} />
+        </AbsoluteFill>
+      );
     case "galeria":
       return (
         <AbsoluteFill>
@@ -450,7 +463,7 @@ export const ComercialWeb: React.FC<PropsWeb> = ({ version, audio, subtitulos })
           .map((x, i) => (
             <Textos key={i} texto={x} t={t} />
           ))}
-        {subtitulos && !enCierre ? <Subtitulos frases={guion.frases} t={t} /> : null}
+        {subtitulos && !enCierre ? <SubtitulosWeb frases={guion.frases} t={t} /> : null}
       </AbsoluteFill>
       {audio ? <Audio src={staticFile(audio)} /> : null}
     </AbsoluteFill>

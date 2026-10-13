@@ -7,24 +7,17 @@ import type { Encuadre, Frase, Icono, Rotulo } from "./guiones";
 // "sala.jpg" está en tucacas/fotos; "fotos-nuevas/sala.jpg" se toma tal cual dentro de tucacas/.
 const foto = (archivo: string) => staticFile(archivo.includes("/") ? `tucacas/${archivo}` : `tucacas/fotos/${archivo}`);
 
-/** Interpola dos posiciones "x% y%" (para paneos). */
-const interpolarFoco = (a: string, b: string, p: number) => {
-  const [ax, ay] = a.split(" ").map(parseFloat);
-  const [bx, by] = b.split(" ").map(parseFloat);
-  return `${lerp(ax, bx, p)}% ${lerp(ay, by, p)}%`;
-};
-
 /** Corrección de color suave: un poco más de calidez y saturación (máx. +10). */
 const GRADO = "saturate(1.08) contrast(1.03)";
 
 /**
- * Foto vertical a todo el ancho con su versión desenfocada detrás (las fotos son
- * de 960 px: así no se agranda de más). Ken Burns de 100 % a `zoom` (máx. 108 %).
+ * Foto completa, sin recortar: se encuadra entera en el cuadro y detrás va su versión
+ * desenfocada para llenar lo que sobre. Acercamiento suave de 96 % a 100 % (nunca
+ * pasa del tamaño en que cabe, así no se corta nada).
  */
 export const Foto: React.FC<{ encuadre: Encuadre; p: number }> = ({ encuadre, p }) => {
-  const zoom = lerp(1, Math.min(encuadre.zoom ?? 1.05, 1.08), p) * (encuadre.escala ?? 1);
-  const alto = encuadre.ancha ? 1000 : 1440;
-  const foco = encuadre.focoFin ? interpolarFoco(encuadre.foco ?? "50% 50%", encuadre.focoFin, p) : encuadre.foco ?? "50% 50%";
+  const zoom = lerp(0.96, 1, p);
+  const fondo = lerp(1.0, Math.min(encuadre.zoom ?? 1.05, 1.08), p);
   return (
     <AbsoluteFill style={{ background: C.tinta }}>
       <Img
@@ -35,23 +28,22 @@ export const Foto: React.FC<{ encuadre: Encuadre; p: number }> = ({ encuadre, p 
           width: W + 160,
           height: H + 160,
           objectFit: "cover",
-          filter: `blur(46px) brightness(0.72) ${GRADO}`,
+          scale: String(fondo),
+          filter: `blur(46px) brightness(0.68) ${GRADO}`,
         }}
       />
-      <div style={{ position: "absolute", left: 0, top: (H - alto) / 2, width: W, height: alto, overflow: "hidden" }}>
-        <Img
-          src={foto(encuadre.foto)}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: foco,
-            scale: String(zoom),
-            transformOrigin: foco,
-            filter: GRADO,
-          }}
-        />
-      </div>
+      <Img
+        src={foto(encuadre.foto)}
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: W,
+          height: H,
+          objectFit: "contain",
+          scale: String(zoom),
+          filter: `${GRADO} drop-shadow(0 30px 50px rgba(0,0,0,0.35))`,
+        }}
+      />
       <AbsoluteFill style={{ background: "rgba(255,170,90,0.07)", mixBlendMode: "overlay" }} />
       <AbsoluteFill
         style={{

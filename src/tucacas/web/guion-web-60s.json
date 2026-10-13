@@ -227,6 +227,7 @@
    "desde": 17.735,
    "hasta": 19.872,
    "entrada": "nada",
+   "continua": true,
    "fondo": {
     "tipo": "playa"
    },
@@ -541,35 +542,35 @@
      "t": 35.96,
      "escala": 1.6,
      "x": 540,
-     "y": 1700,
+     "y": 1600,
      "giro": -2
     },
     {
      "t": 37.45,
      "escala": 1.6,
      "x": 540,
-     "y": 1700,
+     "y": 1600,
      "giro": -2
     },
     {
      "t": 37.85,
      "escala": 1.7,
      "x": 520,
-     "y": 1690,
+     "y": 1560,
      "giro": 0
     },
     {
      "t": 39.3,
      "escala": 1.7,
      "x": 560,
-     "y": 1690,
+     "y": 1560,
      "giro": 0
     },
     {
      "t": 39.9,
      "escala": 1.25,
      "x": 540,
-     "y": 1450,
+     "y": 1300,
      "giro": 2
     },
     {
@@ -582,40 +583,19 @@
    ]
   },
   {
-   "tipo": "video",
+   "tipo": "sincobro",
    "desde": 40.702,
    "hasta": 43.372,
-   "archivo": "habitacion-ventana.mp4",
-   "inicio": 0.6,
-   "zoom": [
-    1.0,
-    1.08
-   ],
+   "sello": 41.5,
    "entrada": "whip"
   },
   {
-   "tipo": "foto",
+   "tipo": "confirma",
    "desde": 43.372,
-   "hasta": 45.508,
-   "encuadre": {
-    "foto": "fotos-nuevas/piscina-casas.jpg",
-    "foco": "60% 40%",
-    "zoom": 1.08,
-    "escala": 1.15,
-    "focoFin": "40% 40%"
-   },
-   "entrada": "flash"
-  },
-  {
-   "tipo": "video",
-   "desde": 45.508,
    "hasta": 47.645,
-   "archivo": "recorrido.mp4",
-   "inicio": 46.5,
-   "zoom": [
-    1.0,
-    1.06
-   ]
+   "rapido": 45.36,
+   "confianza": 46.12,
+   "entrada": "nada"
   },
   {
    "tipo": "telefono",
@@ -688,21 +668,17 @@
  ],
  "textos": [
   {
-   "desde": 0.1,
+   "desde": 0.0,
    "hasta": 1.712,
-   "estilo": "grande",
+   "estilo": "gancho",
    "lineas": [
     "¿Vienes a",
     "Tucacas?"
    ],
    "ts": [
-    0.25,
-    0.7
-   ],
-   "acento": [
-    1
-   ],
-   "icono": "sol"
+    0.12,
+    0.62
+   ]
   },
   {
    "desde": 2.2,
@@ -755,52 +731,6 @@
    "y": 250,
    "acento": [
     0
-   ]
-  },
-  {
-   "desde": 31.622,
-   "hasta": 33.758,
-   "estilo": "pastilla",
-   "lineas": [
-    "Piscina con tobogán"
-   ],
-   "y": 300,
-   "acento": [
-    0
-   ]
-  },
-  {
-   "desde": 40.702,
-   "hasta": 43.372,
-   "estilo": "grande",
-   "lineas": [
-    "En la página",
-    "no se cobra nada"
-   ],
-   "ts": [
-    40.72,
-    41.5
-   ],
-   "acento": [
-    1
-   ],
-   "icono": "sincobro"
-  },
-  {
-   "desde": 43.372,
-   "hasta": 47.645,
-   "estilo": "pastilla",
-   "lineas": [
-    "Confirmas por WhatsApp",
-    "Rápido y en confianza"
-   ],
-   "ts": [
-    43.21,
-    45.36
-   ],
-   "y": 300,
-   "acento": [
-    1
    ]
   },
   {
@@ -969,12 +899,6 @@
    "gain": 0.9
   },
   {
-   "t": 22.542,
-   "sonido": "gaviotas",
-   "gain": 0.4,
-   "pan": -0.3
-  },
-  {
    "t": 23.945,
    "sonido": "whoosh",
    "gain": 0.6
@@ -999,11 +923,6 @@
    "sonido": "lancha",
    "gain": 0.5,
    "pan": 0.3
-  },
-  {
-   "t": 31.622,
-   "sonido": "chapuzon",
-   "gain": 0.8
   },
   {
    "t": 33.558,
