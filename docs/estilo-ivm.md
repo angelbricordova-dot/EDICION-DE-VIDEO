@@ -74,8 +74,8 @@ Primera prueba del explicador ilustrado: "Compara el nombre antes de liberar" (2
 `voz.json` (junto al timeline) cuándo empieza y termina cada frase, para sincronizar los visuales.
 
 Requisitos del entorno (configuración del entorno en la nube, no en el código):
-- Variable secreta `ELEVENLABS_API_KEY` con la clave de ElevenLabs. **Nunca** se escribe en el repo.
-- `api.elevenlabs.io` permitido en el acceso a la red.
+- **Secreto de red** para `api.elevenlabs.io` con la cabecera `xi-api-key` (sin prefijo).
+  La clave nunca entra en la sesión ni en el repo. En local sirve la variable `ELEVENLABS_API_KEY`.
 - Opcional: `ELEVENLABS_VOICE_ID` con la voz por defecto.
 
 ```bash

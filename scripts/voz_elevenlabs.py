@@ -5,8 +5,9 @@ ElevenLabs los tiempos de cada carácter. Con eso calcula cuándo empieza y
 termina cada frase y los guarda en `voz.json` junto al timeline, para que los
 visuales se sincronicen con la voz.
 
-La clave NUNCA va en el código: se lee de la variable de entorno
-ELEVENLABS_API_KEY (configurada como secreto del entorno).
+La clave NUNCA va en el código ni en el repo. En la nube la añade el proxy
+(secreto de red del entorno para api.elevenlabs.io, cabecera xi-api-key); en
+una máquina local se puede usar la variable de entorno ELEVENLABS_API_KEY.
 
 Uso:
     python3 scripts/voz_elevenlabs.py --listar-voces
@@ -27,26 +28,30 @@ API = "https://api.elevenlabs.io/v1"
 MODELO = "eleven_multilingual_v2"
 
 
-def clave():
+def cabeceras():
+    """La clave la añade el proxy (secreto de red del entorno). Si además existe la
+    variable ELEVENLABS_API_KEY (uso local), se envía directamente."""
+    h = {"Content-Type": "application/json", "Accept": "application/json"}
     k = os.environ.get("ELEVENLABS_API_KEY", "").strip()
-    if not k:
-        sys.exit("Falta la variable de entorno ELEVENLABS_API_KEY (configúrala como secreto del entorno).")
-    return k
+    if k:
+        h["xi-api-key"] = k
+    return h
 
 
 def pedir(metodo, ruta, cuerpo=None):
     datos = json.dumps(cuerpo).encode() if cuerpo is not None else None
-    req = urllib.request.Request(
-        f"{API}{ruta}",
-        data=datos,
-        method=metodo,
-        headers={"xi-api-key": clave(), "Content-Type": "application/json", "Accept": "application/json"},
-    )
+    req = urllib.request.Request(f"{API}{ruta}", data=datos, method=metodo, headers=cabeceras())
     try:
         with urllib.request.urlopen(req, timeout=180) as r:
             return json.loads(r.read())
     except urllib.error.HTTPError as e:
-        sys.exit(f"ElevenLabs respondió {e.code}: {e.read().decode(errors='replace')[:500]}")
+        detalle = e.read().decode(errors="replace")[:500]
+        if e.code == 401:
+            sys.exit(
+                "ElevenLabs no recibió la clave (401). Configura un secreto de red para api.elevenlabs.io "
+                "con la cabecera xi-api-key, o la variable ELEVENLABS_API_KEY en tu máquina."
+            )
+        sys.exit(f"ElevenLabs respondió {e.code}: {detalle}")
     except urllib.error.URLError as e:
         sys.exit(f"No se pudo conectar con ElevenLabs ({e.reason}). ¿Está api.elevenlabs.io permitido en la red?")
 
