@@ -1,0 +1,384 @@
+{
+  "id": "60s",
+  "duracion": 60,
+  "planos": [
+    {
+      "tipo": "grabacion",
+      "desde": 0,
+      "hasta": 4,
+      "archivo": "01-inicio-recorrido.mp4",
+      "inicio": 0.3
+    },
+    {
+      "tipo": "foto",
+      "desde": 4,
+      "hasta": 8,
+      "whip": true,
+      "encuadre": {
+        "foto": "n30-02-piscina.jpg",
+        "ancha": true,
+        "foco": "45% 60%",
+        "zoom": 1.08
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 8,
+      "hasta": 13,
+      "encuadre": {
+        "foto": "n30-11-entrada.jpg",
+        "foco": "50% 55%"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 13,
+      "hasta": 15,
+      "whip": true,
+      "encuadre": {
+        "foto": "n30-03-sala.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 15,
+      "hasta": 17,
+      "encuadre": {
+        "foto": "n30-07-sala-sofa.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 17,
+      "hasta": 19,
+      "encuadre": {
+        "foto": "n30-08-tv.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 19,
+      "hasta": 22,
+      "encuadre": {
+        "foto": "n30-05-habitacion.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 22,
+      "hasta": 25,
+      "encuadre": {
+        "foto": "n30-06-literas.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 25,
+      "hasta": 27.5,
+      "encuadre": {
+        "foto": "n30-04-cocina.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 27.5,
+      "hasta": 30,
+      "encuadre": {
+        "foto": "n30-10-bano-2.jpg"
+      }
+    },
+    {
+      "tipo": "iconos",
+      "desde": 30,
+      "hasta": 35,
+      "fondo": "verde",
+      "iconos": [
+        {
+          "tipo": "agua",
+          "texto": "Tanque propio",
+          "t": 30.5
+        },
+        {
+          "tipo": "wifi",
+          "texto": "WiFi de fibra",
+          "t": 32.3
+        }
+      ]
+    },
+    {
+      "tipo": "foto",
+      "desde": 35,
+      "hasta": 38.5,
+      "whip": true,
+      "encuadre": {
+        "foto": "n30-02-piscina.jpg",
+        "ancha": true,
+        "foco": "88% 55%",
+        "zoom": 1.06,
+        "escala": 1.35
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 38.5,
+      "hasta": 42,
+      "encuadre": {
+        "foto": "n30-02-piscina.jpg",
+        "ancha": true,
+        "foco": "10% 55%",
+        "zoom": 1.04,
+        "focoFin": "75% 55%"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 42,
+      "hasta": 47,
+      "noche": true,
+      "encuadre": {
+        "foto": "n30-12-piscina-noche.jpg",
+        "foco": "50% 55%"
+      }
+    },
+    {
+      "tipo": "telefono",
+      "desde": 47,
+      "hasta": 54,
+      "diaNoche": [
+        51,
+        3
+      ],
+      "whip": true
+    },
+    {
+      "tipo": "cierre",
+      "desde": 54,
+      "hasta": 60,
+      "icono": true
+    }
+  ],
+  "rotulos": [
+    {
+      "desde": 4.3,
+      "hasta": 7.9,
+      "partes": [
+        "Tucacas, Falcón"
+      ]
+    },
+    {
+      "desde": 8.3,
+      "hasta": 12.9,
+      "partes": [
+        "Llegas y entras"
+      ]
+    },
+    {
+      "desde": 13.3,
+      "hasta": 18.9,
+      "partes": [
+        "Apartamento N°30",
+        "Pescadores I"
+      ]
+    },
+    {
+      "desde": 19.3,
+      "hasta": 24.9,
+      "partes": [
+        "2 habitaciones",
+        "5 camas"
+      ]
+    },
+    {
+      "desde": 25.3,
+      "hasta": 29.9,
+      "partes": [
+        "Cocina equipada",
+        "2 baños"
+      ]
+    },
+    {
+      "desde": 30.2,
+      "hasta": 34.9,
+      "partes": [
+        "Tanque de agua propio",
+        "WiFi de fibra"
+      ]
+    },
+    {
+      "desde": 35.3,
+      "hasta": 41.9,
+      "partes": [
+        "5 min de los muelles",
+        "20 min de Morrocoy"
+      ]
+    },
+    {
+      "desde": 42.3,
+      "hasta": 46.9,
+      "partes": [
+        "Y de noche…"
+      ]
+    },
+    {
+      "desde": 47.3,
+      "hasta": 53.9,
+      "partes": [
+        "tudiaentucacas.netlify.app"
+      ]
+    }
+  ],
+  "frases": [
+    {
+      "desde": 0.4,
+      "hasta": 3.9,
+      "texto": "Hay días que se recuerdan toda la vida…",
+      "clave": "toda la vida"
+    },
+    {
+      "desde": 4.2,
+      "hasta": 7.6,
+      "texto": "…y empiezan en Tucacas.",
+      "clave": "Tucacas"
+    },
+    {
+      "desde": 8.2,
+      "hasta": 12.9,
+      "texto": "Llegas, te recibimos, y nosotros nos encargamos de tu autorización de ingreso al conjunto.",
+      "clave": "autorización de ingreso"
+    },
+    {
+      "desde": 13.2,
+      "hasta": 18.8,
+      "texto": "El apartamento treinta es comodidad real para siete personas, sin romper el presupuesto.",
+      "clave": "comodidad real"
+    },
+    {
+      "desde": 19.2,
+      "hasta": 24.8,
+      "texto": "Dos habitaciones, cinco camas, y aire acondicionado en todos los ambientes, para dormir sabroso después de la playa.",
+      "clave": "dormir sabroso"
+    },
+    {
+      "desde": 25.2,
+      "hasta": 29.6,
+      "texto": "Cocina equipada, dos baños…",
+      "clave": "Cocina equipada"
+    },
+    {
+      "desde": 30.1,
+      "hasta": 34.8,
+      "texto": "…tanque de agua propio para que no te falte, y WiFi de fibra óptica.",
+      "clave": "tanque de agua propio"
+    },
+    {
+      "desde": 35.2,
+      "hasta": 41.8,
+      "texto": "Bajas a la piscina con los chamos, o en cinco minutos estás en el muelle, rumbo a Cayo Sombrero.",
+      "clave": "Cayo Sombrero"
+    },
+    {
+      "desde": 42.3,
+      "hasta": 46.6,
+      "texto": "Y cuando cae la noche, la churuata te espera.",
+      "clave": "la churuata"
+    },
+    {
+      "desde": 47.2,
+      "hasta": 53.6,
+      "texto": "Mira las fechas libres en nuestra página y reserva directo por WhatsApp. Rápido y en confianza.",
+      "clave": "WhatsApp"
+    },
+    {
+      "desde": 54.4,
+      "hasta": 59.4,
+      "texto": "Tu Día en Tucacas… empieza aquí.",
+      "clave": "empieza aquí"
+    }
+  ],
+  "efectos": [
+    {
+      "t": 0,
+      "sonido": "brisa",
+      "gain": 1
+    },
+    {
+      "t": 3.9,
+      "sonido": "whoosh"
+    },
+    {
+      "t": 4.1,
+      "sonido": "olas",
+      "gain": 1
+    },
+    {
+      "t": 4.6,
+      "sonido": "gaviotas",
+      "gain": 0.8,
+      "pan": 0.4
+    },
+    {
+      "t": 8.6,
+      "sonido": "llave"
+    },
+    {
+      "t": 12.9,
+      "sonido": "whoosh"
+    },
+    {
+      "t": 20.6,
+      "sonido": "control"
+    },
+    {
+      "t": 30.5,
+      "sonido": "burbuja",
+      "pan": -0.3
+    },
+    {
+      "t": 32.3,
+      "sonido": "clic",
+      "pan": 0.3
+    },
+    {
+      "t": 34.9,
+      "sonido": "whoosh"
+    },
+    {
+      "t": 35.5,
+      "sonido": "chapuzon"
+    },
+    {
+      "t": 38.6,
+      "sonido": "lancha",
+      "gain": 0.7,
+      "pan": 0.5
+    },
+    {
+      "t": 42,
+      "sonido": "grillos",
+      "gain": 0.9
+    },
+    {
+      "t": 46.9,
+      "sonido": "whoosh"
+    },
+    {
+      "t": 48.4,
+      "sonido": "clic",
+      "pan": 0.3
+    },
+    {
+      "t": 49.1,
+      "sonido": "clic",
+      "pan": -0.3
+    },
+    {
+      "t": 50.2,
+      "sonido": "mensaje"
+    },
+    {
+      "t": 54,
+      "sonido": "olas",
+      "gain": 0.8
+    }
+  ]
+}

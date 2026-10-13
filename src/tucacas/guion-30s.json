@@ -1,0 +1,272 @@
+{
+  "id": "30s",
+  "duracion": 30,
+  "planos": [
+    {
+      "tipo": "foto",
+      "desde": 0,
+      "hasta": 3,
+      "encuadre": {
+        "foto": "n30-02-piscina.jpg",
+        "ancha": true,
+        "foco": "45% 60%",
+        "zoom": 1.08
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 3,
+      "hasta": 5,
+      "whip": true,
+      "encuadre": {
+        "foto": "n30-03-sala.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 5,
+      "hasta": 7,
+      "encuadre": {
+        "foto": "n30-01-sala-comedor.jpg",
+        "foco": "50% 70%"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 7,
+      "hasta": 8.3,
+      "encuadre": {
+        "foto": "n30-05-habitacion.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 8.3,
+      "hasta": 9.6,
+      "encuadre": {
+        "foto": "n30-06-literas.jpg"
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 9.6,
+      "hasta": 11,
+      "encuadre": {
+        "foto": "n30-10-bano-2.jpg"
+      }
+    },
+    {
+      "tipo": "iconos",
+      "desde": 11,
+      "hasta": 16,
+      "fondo": "foto",
+      "encuadre": {
+        "foto": "n30-04-cocina.jpg"
+      },
+      "iconos": [
+        {
+          "tipo": "aire",
+          "texto": "A/A",
+          "t": 11.6
+        },
+        {
+          "tipo": "wifi",
+          "texto": "WiFi fibra",
+          "t": 12.7
+        },
+        {
+          "tipo": "agua",
+          "texto": "Tanque propio",
+          "t": 13.9
+        }
+      ]
+    },
+    {
+      "tipo": "foto",
+      "desde": 16,
+      "hasta": 18.6,
+      "whip": true,
+      "encuadre": {
+        "foto": "n30-02-piscina.jpg",
+        "ancha": true,
+        "foco": "88% 55%",
+        "zoom": 1.06,
+        "escala": 1.35
+      }
+    },
+    {
+      "tipo": "foto",
+      "desde": 18.6,
+      "hasta": 21,
+      "noche": true,
+      "encuadre": {
+        "foto": "n30-12-piscina-noche.jpg",
+        "foco": "50% 55%"
+      }
+    },
+    {
+      "tipo": "telefono",
+      "desde": 21,
+      "hasta": 26,
+      "whip": true
+    },
+    {
+      "tipo": "cierre",
+      "desde": 26,
+      "hasta": 30
+    }
+  ],
+  "rotulos": [
+    {
+      "desde": 0.25,
+      "hasta": 2.9,
+      "partes": [
+        "¿Plan para Morrocoy?"
+      ]
+    },
+    {
+      "desde": 3.2,
+      "hasta": 6.9,
+      "partes": [
+        "Tucacas",
+        "Pescadores I"
+      ]
+    },
+    {
+      "desde": 7.1,
+      "hasta": 10.9,
+      "partes": [
+        "Hasta 7 personas",
+        "2 hab",
+        "2 baños"
+      ]
+    },
+    {
+      "desde": 16.2,
+      "hasta": 18.5,
+      "partes": [
+        "Piscina con tobogán"
+      ]
+    },
+    {
+      "desde": 18.7,
+      "hasta": 20.9,
+      "partes": [
+        "5 min de los muelles"
+      ]
+    },
+    {
+      "desde": 21.3,
+      "hasta": 25.9,
+      "partes": [
+        "Revisa tus fechas"
+      ]
+    }
+  ],
+  "frases": [
+    {
+      "desde": 0.2,
+      "hasta": 2.8,
+      "texto": "¿Planeando tu escapada a Morrocoy?",
+      "clave": "Morrocoy"
+    },
+    {
+      "desde": 3.2,
+      "hasta": 6.6,
+      "texto": "Te esperamos en Tucacas, en Pescadores I.",
+      "clave": "Tucacas"
+    },
+    {
+      "desde": 7,
+      "hasta": 10.8,
+      "texto": "Dos habitaciones, dos baños y espacio para siete.",
+      "clave": "siete"
+    },
+    {
+      "desde": 11.1,
+      "hasta": 15.9,
+      "texto": "Aire en todos los ambientes, WiFi de fibra y tanque de agua propio: cero estrés.",
+      "clave": "cero estrés"
+    },
+    {
+      "desde": 16.1,
+      "hasta": 20.9,
+      "texto": "Piscina con tobogán para los chamos, y a cinco minutos de los muelles para irte a los cayos.",
+      "clave": "los cayos"
+    },
+    {
+      "desde": 21.3,
+      "hasta": 25.4,
+      "texto": "Revisa tus fechas y escríbenos por WhatsApp.",
+      "clave": "WhatsApp"
+    },
+    {
+      "desde": 26.4,
+      "hasta": 29.6,
+      "texto": "Tu Día en Tucacas… empieza aquí.",
+      "clave": "empieza aquí"
+    }
+  ],
+  "efectos": [
+    {
+      "t": 0,
+      "sonido": "olas",
+      "gain": 1
+    },
+    {
+      "t": 0.4,
+      "sonido": "gaviotas",
+      "gain": 0.8,
+      "pan": 0.4
+    },
+    {
+      "t": 2.85,
+      "sonido": "whoosh"
+    },
+    {
+      "t": 11.6,
+      "sonido": "clic",
+      "pan": -0.4
+    },
+    {
+      "t": 12.7,
+      "sonido": "clic"
+    },
+    {
+      "t": 13.9,
+      "sonido": "clic",
+      "pan": 0.4
+    },
+    {
+      "t": 15.85,
+      "sonido": "whoosh"
+    },
+    {
+      "t": 16.3,
+      "sonido": "chapuzon"
+    },
+    {
+      "t": 20.85,
+      "sonido": "whoosh"
+    },
+    {
+      "t": 22.2,
+      "sonido": "clic",
+      "pan": 0.3
+    },
+    {
+      "t": 22.9,
+      "sonido": "clic",
+      "pan": -0.3
+    },
+    {
+      "t": 24.1,
+      "sonido": "mensaje"
+    },
+    {
+      "t": 26,
+      "sonido": "brisa",
+      "gain": 0.8
+    }
+  ]
+}

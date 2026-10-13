@@ -1,10 +1,11 @@
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Cambio, DURACION, FPS, PropsCambio } from "./cambio/Cambio";
 import { Prueba } from "./prueba/Prueba";
 import timelinePrueba from "./prueba/timeline.json";
 import { Explicador, PropsExplicador } from "./ivm/Explicador";
 import timelineIvm from "./ivm/timeline.json";
+import { Comercial, GUIONES, Portada, PropsComercial } from "./tucacas/Comercial";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -36,6 +37,21 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
         defaultProps={{ audio: "audio/ivm-explicador.mp3", subtitulos: true } satisfies PropsExplicador}
       />
+      {(["30s", "60s"] as const).map((version) => (
+        <Composition
+          key={version}
+          id={`Tucacas${version}`}
+          component={Comercial}
+          durationInFrames={GUIONES[version].duracion * 30}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={
+            { version, audio: `tucacas/audio/mezcla-${version}.mp3`, subtitulos: true } satisfies PropsComercial
+          }
+        />
+      ))}
+      <Still id="TucacasPortada" component={Portada} width={1080} height={1920} />
       <Composition
         id="HelloWorld"
         component={HelloWorld}

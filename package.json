@@ -14,7 +14,9 @@
     "draft": "remotion render Prueba out/draft.mp4 --scale=0.5 --crf=28",
     "sheet": "node scripts/sheet.mjs --timeline src/prueba/timeline.json",
     "wave": "node scripts/wave.mjs --timeline src/prueba/timeline.json public/audio/prueba.mp3",
-    "render:ivm": "remotion render IvmExplicador out/ivm-explicador.mp4"
+    "render:ivm": "remotion render IvmExplicador out/ivm-explicador.mp4",
+    "render:tucacas30": "remotion render Tucacas30s out/tudia-30s-vertical.mp4",
+    "render:tucacas60": "remotion render Tucacas60s out/tudia-60s-vertical.mp4"
   },
   "license": "UNLICENSED",
   "dependencies": {

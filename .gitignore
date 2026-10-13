@@ -5,3 +5,6 @@ out
 .env
 __pycache__
 *.pyc
+
+# Material del cliente (Tu Día en Tucacas): se trae con scripts/traer_tucacas.sh
+public/tucacas/
