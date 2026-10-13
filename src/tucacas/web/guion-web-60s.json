@@ -603,7 +603,8 @@
    "hasta": 50.315,
    "entrada": "whip",
    "fondo": {
-    "tipo": "marca"
+    "tipo": "playa",
+    "anochece": 47.82
    },
    "escenas": [
     {
@@ -645,7 +646,7 @@
     1.0,
     1.08
    ],
-   "entrada": "flash"
+   "entrada": "circulo"
   },
   {
    "tipo": "foto",
@@ -663,7 +664,11 @@
    "desde": 52.986,
    "hasta": 60.0,
    "icono": true,
-   "entrada": "whip"
+   "entrada": "whip",
+   "lema": [
+    53.3,
+    54.8
+   ]
   }
  ],
  "textos": [
@@ -917,12 +922,6 @@
    "t": 28.751,
    "sonido": "whoosh",
    "gain": 0.6
-  },
-  {
-   "t": 30.75,
-   "sonido": "lancha",
-   "gain": 0.5,
-   "pan": 0.3
   },
   {
    "t": 33.558,

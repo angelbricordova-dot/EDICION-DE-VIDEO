@@ -63,11 +63,24 @@ const Palma: React.FC<{ t: number; x: number; y: number; escala: number; espejo?
   );
 };
 
-/** Fondo de playa en los colores de la marca: mar, sol, olas en movimiento, arena y palmas. */
-export const Playa: React.FC<{ t: number; arena?: boolean }> = ({ t, arena = true }) => {
+/** Mezcla dos colores hex. */
+const mezcla = (a: string, b: string, k: number) => {
+  const h = (x: string, i: number) => parseInt(x.slice(1 + i * 2, 3 + i * 2), 16);
+  return `rgb(${[0, 1, 2].map((i) => Math.round(lerp(h(a, i), h(b, i), k))).join(",")})`;
+};
+
+/**
+ * Fondo de playa en los colores de la marca: mar, sol, olas en movimiento, arena y palmas.
+ * Con `noche` (0 a 1) anochece: el cielo pasa a azul noche, el sol se vuelve luna y salen estrellas.
+ */
+export const Playa: React.FC<{ t: number; arena?: boolean; noche?: number }> = ({ t, arena = true, noche = 0 }) => {
+  const n = clamp01(noche);
   const sol = 1 + 0.05 * Math.sin(t * 1.4);
+  const arriba = mezcla(C.mar, "#0b1f3a", n);
+  const medio = mezcla(C.verde2, "#0a1830", n);
+  const abajo = mezcla(C.verdeProfundo, "#050d1c", n);
   return (
-    <AbsoluteFill style={{ background: `linear-gradient(175deg, ${C.mar} 0%, ${C.verde2} 48%, ${C.verdeProfundo} 100%)`, overflow: "hidden" }}>
+    <AbsoluteFill style={{ background: `linear-gradient(175deg, ${arriba} 0%, ${medio} 48%, ${abajo} 100%)`, overflow: "hidden" }}>
       <div
         style={{
           position: "absolute",
@@ -77,9 +90,44 @@ export const Playa: React.FC<{ t: number; arena?: boolean }> = ({ t, arena = tru
           height: 900,
           borderRadius: "50%",
           scale: String(sol),
+          opacity: 1 - n,
           background: "radial-gradient(circle, rgba(255,226,154,0.75) 0%, rgba(244,182,63,0.32) 35%, rgba(244,182,63,0) 68%)",
         }}
       />
+      {n > 0 ? (
+        <>
+          {/* Luna con su halo. */}
+          <div
+            style={{
+              position: "absolute",
+              right: 120,
+              top: lerp(420, 170, n),
+              width: 170,
+              height: 170,
+              borderRadius: "50%",
+              background: "radial-gradient(circle at 35% 35%, #fffaf0 0%, #f3ead2 60%, #d9cfb4 100%)",
+              boxShadow: "0 0 80px 30px rgba(255,244,214,0.25)",
+              opacity: n,
+            }}
+          />
+          <svg width={W} height={1920} style={{ position: "absolute", inset: 0 }}>
+            {Array.from({ length: 70 }, (_, i) => {
+              const aparece = clamp01(n * 1.6 - rnd(i + 300) * 0.6);
+              const brillo = 0.55 + 0.45 * Math.sin(t * (2 + rnd(i + 400) * 3) + i);
+              return (
+                <circle
+                  key={i}
+                  cx={rnd(i + 100) * W}
+                  cy={rnd(i + 200) * 1250}
+                  r={1.5 + rnd(i + 500) * 3}
+                  fill="white"
+                  opacity={aparece * brillo}
+                />
+              );
+            })}
+          </svg>
+        </>
+      ) : null}
       <svg width={W} height={1920} style={{ position: "absolute", inset: 0 }}>
         {/* Destellos que suben despacio. */}
         {Array.from({ length: 26 }, (_, i) => {
@@ -87,19 +135,19 @@ export const Playa: React.FC<{ t: number; arena?: boolean }> = ({ t, arena = tru
           const ciclo = 9 + rnd(i + 50) * 6;
           const y = 1920 - (((t + rnd(i + 99) * ciclo) % ciclo) / ciclo) * 2100;
           const r = 3 + rnd(i + 7) * 6;
-          return <circle key={i} cx={x + Math.sin(t + i) * 14} cy={y} r={r} fill="white" opacity={0.08 + rnd(i + 3) * 0.14} />;
+          return <circle key={i} cx={x + Math.sin(t + i) * 14} cy={y} r={r} fill="white" opacity={(0.08 + rnd(i + 3) * 0.14) * (1 - n)} />;
         })}
         <path d={ola(t, 1480, 22, 520, 1.1, 0)} fill="rgba(255,255,255,0.07)" />
-        <path d={ola(t, 1560, 26, 430, -1.4, 1.5)} fill="rgba(23,163,160,0.35)" />
+        <path d={ola(t, 1560, 26, 430, -1.4, 1.5)} fill={n > 0 ? `rgba(40,70,120,${0.35})` : "rgba(23,163,160,0.35)"} />
         <path d={ola(t, 1650, 20, 360, 1.8, 3)} fill="rgba(255,255,255,0.10)" />
         {arena ? (
           <>
-            <path d={ola(t, 1760, 16, 600, 1.2, 0.6)} fill="rgba(255,255,255,0.75)" />
-            <path d={ola(t, 1780, 14, 600, 1.2, 0.9)} fill={C.solSuave} />
+            <path d={ola(t, 1760, 16, 600, 1.2, 0.6)} fill={`rgba(255,255,255,${0.75 * (1 - n * 0.7)})`} />
+            <path d={ola(t, 1780, 14, 600, 1.2, 0.9)} fill={mezcla(C.solSuave, "#2a3550", n)} />
           </>
         ) : null}
-        <Palma t={t} x={-30} y={60} escala={1.6} color="rgba(11,58,54,0.35)" />
-        <Palma t={t + 1} x={W + 30} y={1300} escala={1.3} espejo color="rgba(11,58,54,0.28)" />
+        <Palma t={t} x={-30} y={60} escala={1.6} color={`rgba(${n > 0.5 ? "2,6,14" : "11,58,54"},${0.35 + n * 0.4})`} />
+        <Palma t={t + 1} x={W + 30} y={1300} escala={1.3} espejo color={`rgba(${n > 0.5 ? "2,6,14" : "11,58,54"},${0.28 + n * 0.4})`} />
       </svg>
     </AbsoluteFill>
   );
@@ -313,9 +361,9 @@ export const GaleriaFotos: React.FC<{ t: number; desde: number; hasta: number; f
             style={{
               position: "absolute",
               left: x - 190,
-              top: y - 250,
+              top: y - 264,
               width: 380,
-              height: 500,
+              height: 529,
               padding: 14,
               paddingBottom: 46,
               background: C.blanco,
@@ -797,7 +845,7 @@ export const Confirma: React.FC<{ t: number; desde: number; hasta: number; rapid
   const sale = prog(t, hasta - 0.3, hasta, easeIn);
   return (
     <AbsoluteFill style={{ opacity: 1 - sale, scale: String(1 - 0.05 * sale) }}>
-      <div style={{ position: "absolute", left: 60, right: 60, top: 300, display: "flex", flexDirection: "column", gap: 26 }}>
+      <div style={{ position: "absolute", left: 60, right: 60, top: 470, display: "flex", flexDirection: "column", gap: 26 }}>
         <Burbuja t={t} desde={desde + 0.05} mia>
           ¿Está disponible para esas fechas?
         </Burbuja>
@@ -815,7 +863,7 @@ export const Confirma: React.FC<{ t: number; desde: number; hasta: number; rapid
           </Burbuja>
         )}
       </div>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 960, display: "flex", justifyContent: "center", gap: 30, flexWrap: "wrap" }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 1090, display: "flex", justifyContent: "center", gap: 30, flexWrap: "wrap" }}>
         <Chip t={t} desde={rapido} color={C.sol} texto="Rápido" icono="M13 2 L4 14 h7 l-1 8 l9 -12 h-7 z" />
         <Chip t={t} desde={confianza} color={C.blanco} texto="En confianza" icono="M12 3 L20 6 V12 c0 5 -3.5 8 -8 9 c-4.5 -1 -8 -4 -8 -9 V6 Z M9 12 l2 2 4 -4" />
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
-import { C, cargarFuentes, clamp01, DEGRADADO_PORTADA, easeIn, easeOut, F, FPS, lerp, POP, prog, SEGURA, sp, W } from "../estilo";
+import { C, cargarFuentes, clamp01, DEGRADADO_PORTADA, easeIn, easeInOut, easeOut, F, FPS, lerp, POP, prog, SEGURA, sp, W } from "../estilo";
 import type { Encuadre, Frase, Icono } from "../guiones";
 import { Cierre, Foto, TarjetaIcono } from "../piezas";
 import { SubtitulosWeb } from "./subtitulos";
@@ -15,12 +15,12 @@ import guion60 from "./guion-web-60s.json";
 // Los tiempos (voz de Juana, cortes al pulso de la música) están en guion-web-*.json,
 // que genera scripts/guion_tucacas_web.py y también lee la mezcla de sonido.
 
-type Entrada = "corte" | "whip" | "flash" | "nada";
+type Entrada = "corte" | "whip" | "flash" | "nada" | "circulo";
 
 /** Clave de cámara del teléfono: punto de la pantalla (1080 × 1920) que queda al centro y su zoom. */
 export type Camara = Clave;
 
-export type FondoTelefono = { tipo: "marca" } | { tipo: "playa" } | { tipo: "video"; archivo: string; inicio: number };
+export type FondoTelefono = { tipo: "marca" } | { tipo: "playa"; anochece?: number } | { tipo: "video"; archivo: string; inicio: number };
 
 export type EscenaTelefono =
   | { t: number; tipo: "perfil"; toque: number }
@@ -39,7 +39,7 @@ export type PlanoWeb =
   | (Base & { tipo: "mapa"; camara: Clave[]; eventos: EventosMapa; insignia?: { t: number; texto: string; cuenta?: [number, number] } })
   | (Base & { tipo: "sincobro"; sello: number })
   | (Base & { tipo: "confirma"; rapido: number; confianza: number })
-  | (Base & { tipo: "cierre"; icono?: boolean });
+  | (Base & { tipo: "cierre"; icono?: boolean; lema?: [number, number] });
 
 /** Texto en pantalla: "grande" (líneas cinéticas) o "pastilla" (rótulo). */
 export type TextoWeb = {
@@ -75,6 +75,8 @@ export const GUIONES_WEB: Record<"30s" | "60s", GuionWeb> = {
 export type PropsWeb = { version: "30s" | "60s"; audio: string | null; subtitulos: boolean };
 
 const DUR_WHIP = 0.22;
+/** Transición en círculo: el plano nuevo se abre desde el centro. */
+const DUR_CIRCULO = 0.7;
 
 // ------------------------------------------------------------------ video
 
@@ -137,7 +139,7 @@ const PantallaEscena: React.FC<{ escena: EscenaTelefono; t: number; primera: boo
 
 const Fondo: React.FC<{ fondo: FondoTelefono; desde: number; t: number }> = ({ fondo, desde, t }) =>
   fondo.tipo === "playa" ? (
-    <Playa t={t} />
+    <Playa t={t} noche={fondo.anochece !== undefined ? prog(t, fondo.anochece, fondo.anochece + 1.4, easeInOut) : 0} />
   ) : fondo.tipo === "video" ? (
     <AbsoluteFill style={{ overflow: "hidden", background: C.tinta }}>
       <Clip
@@ -354,7 +356,7 @@ const ContenidoPlano: React.FC<{ plano: PlanoWeb; t: number }> = ({ plano, t }) 
     case "telefono":
       return <Telefono plano={plano} t={t} />;
     case "cierre":
-      return <Cierre t={t} desde={plano.desde} icono={plano.icono} />;
+      return <Cierre t={t} desde={plano.desde} icono={plano.icono} lema={plano.lema} />;
     case "sincobro":
       return (
         <AbsoluteFill>
@@ -436,7 +438,8 @@ export const ComercialWeb: React.FC<PropsWeb> = ({ version, audio, subtitulos })
       {guion.planos.map((plano, i) => {
         const anterior = guion.planos[i - 1];
         const sigue = guion.planos[i + 1];
-        const visibleHasta = sigue?.entrada === "whip" ? plano.hasta + DUR_WHIP : plano.hasta;
+        const visibleHasta =
+          sigue?.entrada === "whip" ? plano.hasta + DUR_WHIP : sigue?.entrada === "circulo" ? plano.hasta + DUR_CIRCULO : plano.hasta;
         if (t < plano.desde || t >= visibleHasta) return null;
         const entrada = plano.entrada ?? "corte";
         let estilo: React.CSSProperties = { zIndex: i };
@@ -444,6 +447,9 @@ export const ComercialWeb: React.FC<PropsWeb> = ({ version, audio, subtitulos })
           const k = prog(t, plano.desde, plano.desde + DUR_WHIP, easeOut);
           const desenfoque = (1 - k) * 40;
           estilo = { ...estilo, translate: `${(1 - k) * W}px 0`, filter: desenfoque > 0.5 ? `blur(${desenfoque.toFixed(1)}px)` : undefined };
+        } else if (entrada === "circulo" && anterior) {
+          const k = prog(t, plano.desde, plano.desde + DUR_CIRCULO, easeInOut);
+          if (k < 1) estilo = { ...estilo, clipPath: `circle(${(k * 1150).toFixed(1)}px at 50% 46%)` };
         } else if ((entrada === "corte" || entrada === "flash") && anterior) {
           // Golpe de zoom en cada corte: entra un poco más cerca y se asienta.
           const k = prog(t, plano.desde, plano.desde + 0.32, easeOut);
@@ -455,6 +461,29 @@ export const ComercialWeb: React.FC<PropsWeb> = ({ version, audio, subtitulos })
             <ContenidoPlano plano={plano} t={t} />
             {flash > 0.01 ? <AbsoluteFill style={{ background: `rgba(255,248,230,${(0.7 * flash).toFixed(3)})` }} /> : null}
           </AbsoluteFill>
+        );
+      })}
+      {/* Aro de luz que acompaña el borde de la transición en círculo. */}
+      {guion.planos.map((plano, i) => {
+        if (plano.entrada !== "circulo") return null;
+        const k = prog(t, plano.desde, plano.desde + DUR_CIRCULO, easeInOut);
+        if (t < plano.desde || k >= 1) return null;
+        const r = k * 1150;
+        return (
+          <div
+            key={`aro${i}`}
+            style={{
+              position: "absolute",
+              left: W / 2 - r,
+              top: 1920 * 0.46 - r,
+              width: 2 * r,
+              height: 2 * r,
+              borderRadius: "50%",
+              border: `6px solid rgba(255,236,190,${(0.8 * (1 - k)).toFixed(3)})`,
+              boxShadow: `0 0 40px rgba(255,214,140,${(0.6 * (1 - k)).toFixed(3)})`,
+              zIndex: 99,
+            }}
+          />
         );
       })}
       <AbsoluteFill style={{ zIndex: 100 }}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AbsoluteFill, continueRender, delayRender, Img, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { evolvePath } from "@remotion/paths";
-import { C, clamp01, DEGRADADO_PORTADA, easeIn, F, FPS, H, lerp, POP, prog, SEGURA, sp, W } from "./estilo";
+import { C, clamp01, DEGRADADO_PORTADA, easeIn, easeInOut, F, FPS, H, lerp, POP, prog, SEGURA, sp, W } from "./estilo";
 import type { Encuadre, Frase, Icono, Rotulo } from "./guiones";
 
 // "sala.jpg" está en tucacas/fotos; "fotos-nuevas/sala.jpg" se toma tal cual dentro de tucacas/.
@@ -11,27 +11,17 @@ const foto = (archivo: string) => staticFile(archivo.includes("/") ? `tucacas/${
 const GRADO = "saturate(1.08) contrast(1.03)";
 
 /**
- * Foto completa, sin recortar: se encuadra entera en el cuadro y detrás va su versión
- * desenfocada para llenar lo que sobre. Acercamiento suave de 96 % a 100 % (nunca
- * pasa del tamaño en que cabe, así no se corta nada).
+ * Foto a pantalla completa (llena todo el cuadro). Como las fotos son más anchas que
+ * 9:16, se recorre de un lado al otro (paneo) para que se vea completa durante el plano,
+ * con un acercamiento suave.
  */
 export const Foto: React.FC<{ encuadre: Encuadre; p: number }> = ({ encuadre, p }) => {
-  const zoom = lerp(0.96, 1, p);
-  const fondo = lerp(1.0, Math.min(encuadre.zoom ?? 1.05, 1.08), p);
+  const [x0, x1] = encuadre.paneo ?? [25, 75];
+  const y = parseFloat((encuadre.foco ?? "50% 50%").split(" ")[1]);
+  const k = easeInOut(p);
+  const zoom = lerp(1, Math.min(encuadre.zoom ?? 1.05, 1.08), p);
   return (
-    <AbsoluteFill style={{ background: C.tinta }}>
-      <Img
-        src={foto(encuadre.foto)}
-        style={{
-          position: "absolute",
-          inset: -80,
-          width: W + 160,
-          height: H + 160,
-          objectFit: "cover",
-          scale: String(fondo),
-          filter: `blur(46px) brightness(0.68) ${GRADO}`,
-        }}
-      />
+    <AbsoluteFill style={{ background: C.tinta, overflow: "hidden" }}>
       <Img
         src={foto(encuadre.foto)}
         style={{
@@ -39,9 +29,10 @@ export const Foto: React.FC<{ encuadre: Encuadre; p: number }> = ({ encuadre, p 
           inset: 0,
           width: W,
           height: H,
-          objectFit: "contain",
+          objectFit: "cover",
+          objectPosition: `${lerp(x0, x1, k)}% ${y}%`,
           scale: String(zoom),
-          filter: `${GRADO} drop-shadow(0 30px 50px rgba(0,0,0,0.35))`,
+          filter: GRADO,
         }}
       />
       <AbsoluteFill style={{ background: "rgba(255,170,90,0.07)", mixBlendMode: "overlay" }} />
@@ -462,10 +453,12 @@ export const LogoDibujado: React.FC<{ t: number; desde: number; ancho: number }>
 };
 
 /** Cierre de marca: degradado de portada, logo, lema y datos de contacto. */
-export const Cierre: React.FC<{ t: number; desde: number; icono?: boolean }> = ({ t, desde, icono }) => {
-  const lema1 = sp(t, desde + 1.4);
-  const lema2 = sp(t, desde + 1.8);
-  const datos = prog(t, desde + 2.3, desde + 2.9);
+export const Cierre: React.FC<{ t: number; desde: number; icono?: boolean; lema?: [number, number] }> = ({ t, desde, icono, lema }) => {
+  // `lema`: cuándo entra cada línea del lema (para que salga justo cuando lo dice la voz).
+  const [t1, t2] = lema ?? [desde + 1.4, desde + 1.8];
+  const lema1 = sp(t, t1);
+  const lema2 = sp(t, t2);
+  const datos = prog(t, Math.max(desde + 2.3, t2 + 0.5), Math.max(desde + 2.9, t2 + 1.1));
   const sol = 1 + 0.04 * Math.sin((t - desde) * 1.2);
   return (
     <AbsoluteFill style={{ background: DEGRADADO_PORTADA }}>

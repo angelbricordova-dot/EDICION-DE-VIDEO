@@ -327,7 +327,11 @@
    "desde": 22.995,
    "hasta": 30.0,
    "icono": true,
-   "entrada": "whip"
+   "entrada": "whip",
+   "lema": [
+    23.45,
+    24.8
+   ]
   }
  ],
  "textos": [

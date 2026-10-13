@@ -90,7 +90,7 @@ M60 = {
     "conoces": 17.94, "fotos": 20.50, "incluye": 21.47, "donde": 22.45,
     "aire": 23.98, "wifi": 26.08, "tanque": 27.34, "cinco": 29.43, "piscina": 31.53,
     "tocas": 35.66, "mensaje": 37.36, "fechas2": 39.2, "gratis": 40.72, "no_se_cobra": 41.5,
-    "confirmas": 43.21, "rapido": 45.36, "confianza": 46.12, "noche": 47.92, "churuata": 50.34, "parrilla": 50.9,
+    "confirmas": 43.21, "rapido": 45.36, "confianza": 46.12, "noche": 47.92, "churuata": 50.34, "parrilla": 50.9, "lema": 53.3, "empieza": 54.8,
 }
 
 
@@ -249,13 +249,14 @@ def guion_60():
             "desde": c_noche,
             "hasta": c_churuata,
             "entrada": "whip",
-            "fondo": {"tipo": "marca"},
+            # Cuando dice "cae la noche", el fondo playero anochece: luna y estrellas.
+            "fondo": {"tipo": "playa", "anochece": round(m["noche"] - 0.1, 3)},
             "escenas": [{"t": c_noche, "tipo": "navegador", "vistas": [{"t": c_noche, "archivo": "03-modo-dia-noche.mp4", "inicio": 3.0}]}],
             "camara": [cam(c_noche, 1.0, CENTRO, -2), cam(48.5, 1.12, CENTRO, 0)],
         },
-        {"tipo": "video", "desde": c_churuata, "hasta": c_parrilla, "archivo": "churuata-noche.mp4", "inicio": 0.4, "zoom": [1.0, 1.08], "entrada": "flash"},
+        {"tipo": "video", "desde": c_churuata, "hasta": c_parrilla, "archivo": "churuata-noche.mp4", "inicio": 0.4, "zoom": [1.0, 1.08], "entrada": "circulo"},
         {"tipo": "foto", "desde": c_parrilla, "hasta": c_cierre, "encuadre": {"foto": "fotos-nuevas/parrilla-noche.jpg", "ancha": True, "foco": "50% 55%", "zoom": 1.08}},
-        {"tipo": "cierre", "desde": c_cierre, "hasta": 60.0, "icono": True, "entrada": "whip"},
+        {"tipo": "cierre", "desde": c_cierre, "hasta": 60.0, "icono": True, "entrada": "whip", "lema": [m["lema"], m["empieza"]]},
     ]
 
     textos = [
@@ -287,7 +288,6 @@ def guion_60():
         w(c_wifi, 0.4),
         w(c_tanque, 0.4),
         w(c_mapa2, 0.6),
-        {"t": 30.75, "sonido": "lancha", "gain": 0.5, "pan": 0.3},
         w(c_reserva, 0.7),
         {"t": tq_boton, "sonido": "clic"},
         w(t_chat + 0.2, 0.4),
@@ -408,7 +408,7 @@ def guion_30():
                 cam(c_cierre, 1.0, CENTRO, 0),
             ],
         },
-        {"tipo": "cierre", "desde": c_cierre, "hasta": 30.0, "icono": True, "entrada": "whip"},
+        {"tipo": "cierre", "desde": c_cierre, "hasta": 30.0, "icono": True, "entrada": "whip", "lema": [23.45, 24.8]},
     ]
     textos = [
         {"desde": 0.0, "hasta": c_aereo, "estilo": "gancho", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [0.15, 0.7]},

@@ -12,13 +12,13 @@ const normal = (s: string) =>
     .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9ñ/]/g, "");
 
-/** Bloques de máximo 2 líneas de 30 caracteres. */
+/** Bloques de una sola línea de máximo 28 caracteres (nunca pasa a una segunda línea). */
 const bloques = (texto: string) => {
   const lineas: string[] = [];
   let actual = "";
   for (const palabra of texto.split(" ")) {
     const prueba = actual ? `${actual} ${palabra}` : palabra;
-    if (prueba.length > 30 && actual) {
+    if (prueba.length > 28 && actual) {
       lineas.push(actual);
       actual = palabra;
     } else {
@@ -26,9 +26,7 @@ const bloques = (texto: string) => {
     }
   }
   if (actual) lineas.push(actual);
-  const res: string[][] = [];
-  for (let i = 0; i < lineas.length; i += 2) res.push(lineas.slice(i, i + 2));
-  return res;
+  return lineas.map((l) => [l]);
 };
 
 export const SubtitulosWeb: React.FC<{ frases: Frase[]; t: number }> = ({ frases, t }) => {
@@ -76,6 +74,7 @@ export const SubtitulosWeb: React.FC<{ frases: Frase[]; t: number }> = ({ frases
         fontWeight: 800,
         fontSize: 58,
         lineHeight: 1.2,
+        whiteSpace: "nowrap",
         color: C.blanco,
         opacity: 1 - sale,
         translate: `0 ${-sale * 14}px`,

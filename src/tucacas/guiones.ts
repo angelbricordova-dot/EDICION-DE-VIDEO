@@ -17,6 +17,8 @@ export type Encuadre = {
   escala?: number;
   /** Paneo: el punto de interés se desplaza hasta aquí durante el plano. */
   focoFin?: string;
+  /** Recorrido horizontal de la foto (posición x inicial y final, en %), para verla completa. */
+  paneo?: [number, number];
 };
 
 export type Plano =
