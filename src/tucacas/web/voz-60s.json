@@ -1,61 +1,62 @@
 {
   "audio": "public/tucacas/voz/juana-60s.mp3",
-  "duracion": 55.6,
+  "duracion": 55.656,
   "lineas": [
     {
       "texto": "¿Vienes a Tucacas? Ahora reservar con nosotros es mucho más fácil.",
-      "t": 0.147,
-      "fin": 4.56
+      "t": 0.249,
+      "fin": 4.9
     },
     {
       "texto": "Entra a nuestro perfil y toca el enlace.",
-      "t": 4.8,
-      "fin": 7.52
+      "t": 4.95,
+      "fin": 7.732
     },
     {
       "texto": "Esta es nuestra página nueva: Tu Día en Tucacas.",
-      "t": 7.696,
-      "fin": 11.28
+      "t": 7.793,
+      "fin": 11.254
     },
     {
       "texto": "Eliges tus fechas, cuántas personas vienen, y ves al momento qué está libre.",
-      "t": 11.493,
-      "fin": 17.28
+      "t": 11.483,
+      "fin": 17.608
     },
     {
-      "texto": "Conoces el apartamento treinta por dentro: las fotos, lo que incluye y dónde queda.",
-      "t": 17.48,
-      "fin": 24.0
+      "texto": "Conoces nuestro apartamento por dentro: las fotos, lo que incluye y dónde queda.",
+      "t": 17.722,
+      "fin": 23.196
     },
     {
       "texto": "Aire en todos los ambientes, WiFi de fibra y tanque de agua propio.",
-      "t": 24.44,
-      "fin": 30.0
+      "t": 23.617,
+      "fin": 28.555
     },
     {
       "texto": "A cinco minutos de los muelles, y con piscina para los chamos.",
-      "t": 30.4,
-      "fin": 34.56
+      "t": 29.014,
+      "fin": 33.225
     },
     {
       "texto": "¿Te gustó? Tocas «Reservar por WhatsApp» y el mensaje sale listo con tus fechas.",
-      "t": 34.92,
-      "fin": 41.8
+      "t": 33.569,
+      "fin": 39.962
     },
     {
       "texto": "En la página no se cobra nada: todo lo confirmas con nosotros, rápido y en confianza.",
-      "t": 41.92,
-      "fin": 48.56
+      "t": 40.242,
+      "fin": 47.005
     },
     {
-      "texto": "Y cuando cae la noche, la churuata te espera.",
-      "t": 48.96,
-      "fin": 52.48
+      "texto": "Y cuando cae la noche, la churuata y el área de parrilla te esperan.",
+      "t": 47.464,
+      "fin": 52.287
     },
     {
       "texto": "Tu Día en Tucacas… empieza aquí.",
-      "t": 52.747,
-      "fin": 55.6
+      "t": 52.67,
+      "fin": 55.656
     }
-  ]
+  ],
+  "tempo": 1.045
 }

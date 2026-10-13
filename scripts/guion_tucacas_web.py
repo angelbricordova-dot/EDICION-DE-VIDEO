@@ -57,46 +57,73 @@ def cam(t, escala=1.0, punto=CENTRO, giro=0):
     return {"t": round(t, 3), "escala": escala, "x": punto[0], "y": punto[1], "giro": giro}
 
 
+# Fotos del apartamento para el collage (las del conjunto van en otros planos).
+FOTOS_APTO = [
+    "fotos/n30-01-sala-comedor.jpg",
+    "fotos-nuevas/habitacion-aire.jpg",
+    "fotos-nuevas/sala-tv.jpg",
+    "fotos/n30-04-cocina.jpg",
+    "fotos/n30-06-literas.jpg",
+    "fotos-nuevas/sala.jpg",
+    "fotos/n30-07-sala-sofa.jpg",
+]
+
+# Lo que incluye (BRIEF.md, sección 1: capacidad y "del conjunto").
+INCLUYE = [
+    {"icono": "personas", "texto": "Hasta 7 personas"},
+    {"icono": "habitaciones", "texto": "2 habitaciones"},
+    {"icono": "camas", "texto": "5 camas"},
+    {"icono": "banos", "texto": "2 baños"},
+    {"icono": "piscina", "texto": "Piscina con tobogán"},
+    {"icono": "churuata", "texto": "Churuata"},
+    {"icono": "estacionamiento", "texto": "Estacionamiento"},
+    {"icono": "seguridad", "texto": "Seguridad"},
+]
+
+PERSONAS = (540, 1470 + NAV)  # fila "Personas" del calendario
+APTO = (1000, 1560)  # Pescadores I en el mapa ilustrado (src/tucacas/web/escenas.tsx)
+
+# Marcas medidas en la voz de 60 s (pausas con silencedetect sobre juana-60s.mp3).
+M60 = {
+    "vienes": 0.25, "enlace": 6.13, "fechas": 11.84, "personas": 13.56, "libre": 15.32,
+    "conoces": 17.94, "fotos": 20.50, "incluye": 21.47, "donde": 22.45,
+    "aire": 23.98, "wifi": 26.08, "tanque": 27.34, "cinco": 29.43, "piscina": 31.53,
+    "tocas": 35.66, "mensaje": 37.36, "fechas2": 39.2, "gratis": 40.72, "no_se_cobra": 41.5,
+    "confirmas": 43.21, "rapido": 45.36, "noche": 47.92, "churuata": 50.34, "parrilla": 50.9,
+}
+
+
 def guion_60():
     frases, pulso = cargar("60s")
-    b, palabra = utilidades(frases, pulso)
-    fr = lambda i: frases[i]  # noqa: E731
+    b, _ = utilidades(frases, pulso)
+    m = M60
 
-    # Cortes (en el pulso).
-    c_aereo, c_ventana, c_tel = b(1.71), b(2.78), b(4.38)
-    tq_enlace = palabra(1, "el enlace") + 0.25
-    t_nav = round(tq_enlace + 0.3, 3)
-    t_cuando = b(10.26)
-    t_cal = b(fr(3)["desde"] - 0.1)
-    t_galeria = b(fr(4)["desde"] - 0.2)
-    c_sala, c_cuarto, c_tv, c_conjunto = b(19.87), b(20.94), b(22.0), b(23.07)
-    c_aire = b(fr(5)["desde"] - 0.3)
-    c_wifi = b(palabra(5, "WiFi") - 0.3)
-    c_tres = b(palabra(5, "tanque") - 0.35)
-    c_muelles = b(fr(6)["desde"] - 0.35)
-    c_piscina = b(palabra(6, "y con piscina"))
-    c_reserva = b(fr(7)["desde"] - 0.1)
-    tq_boton = palabra(7, "WhatsApp") + 0.35
-    t_chat = round(tq_boton + 0.35, 3)
-    t_envio = round(palabra(7, "con tus fechas") + 0.5, 3)
-    c_pagos = b(fr(8)["desde"] - 0.15)
-    c_confirma = b(palabra(8, "todo lo confirmas") - 0.1)
-    c_noche = b(fr(9)["desde"] - 0.25)
-    c_churuata = b(palabra(9, "la churuata") - 0.3)
-    c_cierre = b(fr(10)["desde"] + 0.2)
+    c_aereo, c_foto, c_tel = b(1.71), b(2.78), b(4.38)
+    tq_enlace = 6.75
+    t_nav = 7.05
+    t_cuando, t_cal = b(10.26), b(11.33)
+    t18, t20 = 12.2, 12.75
+    c_galeria_tel = b(17.73)
+    c_fotos, c_incluye, c_mapa = b(19.87), b(21.47), b(22.54)
+    c_aire, c_wifi, c_tanque = b(24.14), b(26.28), b(27.35)
+    c_mapa2, c_piscina, c_piscina2 = b(28.95), b(31.62), b(32.69)
+    c_reserva = b(33.75)
+    tq_boton, t_chat, t_envio = 37.0, 37.35, 39.55
+    c_gratis, c_confirma, c_calle = b(40.70), b(43.37), b(45.5)
+    c_noche, c_churuata, c_parrilla, c_cierre = b(47.64), b(50.31), b(51.38), b(52.98)
 
     planos = [
         {"tipo": "video", "desde": 0, "hasta": c_aereo, "archivo": "recorrido.mp4", "inicio": 0.2, "zoom": [1.18, 1.06], "entrada": "nada"},
-        {"tipo": "video", "desde": c_aereo, "hasta": c_ventana, "archivo": "aereo.mp4", "inicio": 0.6, "zoom": [1.0, 1.08], "entrada": "flash"},
-        {"tipo": "video", "desde": c_ventana, "hasta": c_tel, "archivo": "habitacion-ventana.mp4", "inicio": 1.4, "zoom": [1.1, 1.0]},
+        {"tipo": "video", "desde": c_aereo, "hasta": c_foto, "archivo": "aereo.mp4", "inicio": 0.6, "zoom": [1.0, 1.1], "entrada": "flash"},
+        {"tipo": "foto", "desde": c_foto, "hasta": c_tel, "encuadre": {"foto": "fotos-nuevas/piscina-palmera.jpg", "foco": "40% 55%", "zoom": 1.08}},
         {
             "tipo": "telefono",
             "desde": c_tel,
-            "hasta": t_galeria,
+            "hasta": c_galeria_tel,
             "entrada": "whip",
-            "fondo": {"tipo": "video", "archivo": "aereo.mp4", "inicio": 2.0},
+            "fondo": {"tipo": "playa"},
             "escenas": [
-                {"t": c_tel, "tipo": "perfil", "toque": round(tq_enlace, 3)},
+                {"t": c_tel, "tipo": "perfil", "toque": tq_enlace},
                 {
                     "t": t_nav,
                     "tipo": "navegador",
@@ -107,99 +134,115 @@ def guion_60():
                         {
                             "t": t_cal,
                             "imagen": "calendario.png",
-                            "toques": [
-                                {"t": round(palabra(3, "tus fechas") + 0.15, 3), "x": DIA_18[0], "y": DIA_18[1] - NAV},
-                                {"t": round(palabra(3, "tus fechas") + 0.75, 3), "x": DIA_20[0], "y": DIA_20[1] - NAV},
+                            "toques": [{"t": t18, "x": DIA_18[0], "y": DIA_18[1] - NAV}, {"t": t20, "x": DIA_20[0], "y": DIA_20[1] - NAV}],
+                            "resaltes": [
+                                {"t": m["personas"] + 0.1, "x": 60, "y": 1400, "w": 960, "h": 150},
+                                {"t": m["libre"] + 0.2, "x": 190, "y": 1265, "w": 700, "h": 80},
                             ],
                         },
                     ],
                 },
             ],
             "camara": [
-                cam(c_tel, 1.0, CENTRO, 0),
-                cam(tq_enlace - 0.9, 1.0),
-                cam(tq_enlace - 0.35, 1.7, ENLACE, -2),
-                cam(t_nav + 0.1, 1.7, ENLACE, -2),
-                cam(t_nav + 0.7, 1.05),
-                cam(t_cal, 1.12, (540, 900)),
-                cam(palabra(3, "tus fechas") - 0.1, 1.45, ((DIA_18[0] + DIA_20[0]) // 2, (DIA_18[1] + DIA_20[1]) // 2)),
-                cam(palabra(3, "personas") - 0.3, 1.45, ((DIA_18[0] + DIA_20[0]) // 2, (DIA_18[1] + DIA_20[1]) // 2)),
-                cam(palabra(3, "personas"), 1.3, (640, 1350)),
-                cam(palabra(3, "qué está libre") - 0.4, 1.3, (640, 1350)),
-                cam(palabra(3, "qué está libre"), 1.3, (540, 1100)),
-                cam(t_galeria, 1.2, (540, 1000)),
+                cam(c_tel, 1.0),
+                cam(5.9, 1.0),
+                cam(6.3, 1.75, ENLACE, -2),
+                cam(t_nav + 0.1, 1.75, ENLACE, -2),
+                cam(t_nav + 0.5, 1.0),
+                cam(8.9, 1.3, (540, 640), 2),
+                cam(t_cuando, 1.3, (540, 640), 2),
+                cam(t_cuando + 0.4, 1.05, (540, 1000), 0),
+                cam(t_cal + 0.35, 1.15, (540, 1000)),
+                cam(m["fechas"] + 0.2, 1.9, DIA_18, -3),
+                cam(t20 - 0.1, 1.9, DIA_20, 2),
+                cam(13.1, 1.9, DIA_20, 2),
+                cam(m["personas"], 1.6, PERSONAS, 0),
+                cam(m["libre"] - 0.2, 1.6, PERSONAS, 0),
+                cam(m["libre"] + 0.15, 1.5, LEYENDA, -2),
+                cam(17.2, 1.5, LEYENDA, -2),
+                cam(c_galeria_tel, 1.0, CENTRO, 0),
             ],
         },
         {
             "tipo": "telefono",
-            "desde": t_galeria,
-            "hasta": c_sala,
-            "entrada": "whip",
-            "fondo": {"tipo": "marca"},
-            "escenas": [
-                {"t": t_galeria, "tipo": "navegador", "vistas": [{"t": t_galeria, "archivo": "02-apartamento-n30.mp4", "inicio": 12.2}]},
-            ],
-            "camara": [cam(t_galeria, 1.0, CENTRO, 3), cam(c_sala, 1.25, (540, 900), 0)],
+            "desde": c_galeria_tel,
+            "hasta": c_fotos,
+            "entrada": "nada",
+            "fondo": {"tipo": "playa"},
+            "escenas": [{"t": c_galeria_tel, "tipo": "navegador", "vistas": [{"t": c_galeria_tel, "archivo": "02-apartamento-n30.mp4", "inicio": 12.2}]}],
+            "camara": [cam(c_galeria_tel, 1.0, CENTRO, 0), {**cam(c_fotos - 0.35, 1.3, (540, 900), 3), "lento": True}, cam(c_fotos, 2.4, (540, 900), 0)],
         },
-        {"tipo": "foto", "desde": c_sala, "hasta": c_cuarto, "encuadre": {"foto": "fotos-nuevas/sala.jpg", "foco": "50% 55%", "zoom": 1.08}, "entrada": "flash"},
-        {"tipo": "video", "desde": c_cuarto, "hasta": c_tv, "archivo": "habitacion-ventana.mp4", "inicio": 5.6, "zoom": [1.0, 1.06]},
-        {"tipo": "foto", "desde": c_tv, "hasta": c_conjunto, "encuadre": {"foto": "fotos-nuevas/sala-tv.jpg", "foco": "50% 50%", "zoom": 1.08}},
-        {"tipo": "video", "desde": c_conjunto, "hasta": c_aire, "archivo": "recorrido.mp4", "inicio": 45.0, "zoom": [1.0, 1.05]},
+        {"tipo": "galeria", "desde": c_fotos, "hasta": c_incluye, "fotos": FOTOS_APTO, "entrada": "flash"},
+        {"tipo": "incluye", "desde": c_incluye, "hasta": c_mapa, "items": INCLUYE, "entrada": "nada"},
+        {
+            "tipo": "mapa",
+            "desde": c_mapa,
+            "hasta": c_aire,
+            "entrada": "whip",
+            "camara": [cam(c_mapa, 0.42, (1300, 1500)), cam(c_mapa + 0.5, 1.0, APTO)],
+            "eventos": {"pin": round(c_mapa + 0.35, 3)},
+        },
         {
             "tipo": "iconos",
             "desde": c_aire,
             "hasta": c_wifi,
             "entrada": "whip",
             "fondo": {"tipo": "foto", "encuadre": {"foto": "fotos-nuevas/habitacion-aire.jpg", "foco": "50% 30%", "zoom": 1.08}},
-            "iconos": [{"tipo": "aire", "texto": "Aire en todos los ambientes", "t": round(fr(5)["desde"] + 0.1, 3)}],
+            "iconos": [{"tipo": "aire", "texto": "Aire en todos los ambientes", "t": m["aire"]}],
         },
         {
             "tipo": "iconos",
             "desde": c_wifi,
-            "hasta": c_tres,
+            "hasta": c_tanque,
             "fondo": {"tipo": "foto", "encuadre": {"foto": "fotos-nuevas/sala-tv.jpg", "foco": "50% 40%", "zoom": 1.08, "escala": 1.1}},
-            "iconos": [{"tipo": "wifi", "texto": "WiFi de fibra óptica", "t": round(palabra(5, "WiFi"), 3)}],
+            "iconos": [{"tipo": "wifi", "texto": "WiFi de fibra óptica", "t": m["wifi"] + 0.1}],
         },
         {
             "tipo": "iconos",
-            "desde": c_tres,
-            "hasta": c_muelles,
-            "fondo": {"tipo": "marca"},
+            "desde": c_tanque,
+            "hasta": c_mapa2,
+            "fondo": {"tipo": "playa"},
             "iconos": [
-                {"tipo": "aire", "texto": "Aire", "t": c_tres},
-                {"tipo": "wifi", "texto": "WiFi de fibra", "t": round(c_tres + 0.15, 3)},
-                {"tipo": "agua", "texto": "Tanque de agua propio", "t": round(palabra(5, "tanque"), 3)},
+                {"tipo": "aire", "texto": "Aire", "t": c_tanque},
+                {"tipo": "wifi", "texto": "WiFi de fibra", "t": round(c_tanque + 0.12, 3)},
+                {"tipo": "agua", "texto": "Tanque de agua propio", "t": m["tanque"] + 0.05},
             ],
         },
-        {"tipo": "video", "desde": c_muelles, "hasta": c_piscina, "archivo": "aereo.mp4", "inicio": 2.4, "zoom": [1.0, 1.1], "entrada": "whip"},
-        {"tipo": "video", "desde": c_piscina, "hasta": c_reserva, "archivo": "recorrido.mp4", "inicio": 2.2, "zoom": [1.12, 1.0], "entrada": "flash"},
+        {
+            "tipo": "mapa",
+            "desde": c_mapa2,
+            "hasta": c_piscina,
+            "entrada": "whip",
+            "camara": [cam(c_mapa2, 1.0, APTO), cam(29.55, 0.62, (1170, 1380)), cam(30.55, 0.62, (1170, 1380)), cam(30.95, 0.5, (1560, 1180))],
+            "eventos": {"pin": round(c_mapa2 - 1, 3), "ruta": [29.45, 30.35], "muelle": 30.3, "lancha": [30.75, 31.55]},
+            "insignia": {"t": m["cinco"], "texto": " de los muelles", "cuenta": [1, 5]},
+        },
+        {"tipo": "video", "desde": c_piscina, "hasta": c_piscina2, "archivo": "recorrido.mp4", "inicio": 2.2, "zoom": [1.12, 1.0], "entrada": "flash"},
+        {"tipo": "foto", "desde": c_piscina2, "hasta": c_reserva, "encuadre": {"foto": "fotos-nuevas/piscina-casas.jpg", "foco": "50% 60%", "zoom": 1.08}},
         {
             "tipo": "telefono",
             "desde": c_reserva,
-            "hasta": c_pagos,
+            "hasta": c_gratis,
             "entrada": "whip",
-            "fondo": {"tipo": "marca"},
+            "fondo": {"tipo": "playa"},
             "escenas": [
-                {
-                    "t": c_reserva,
-                    "tipo": "navegador",
-                    "vistas": [{"t": c_reserva, "imagen": "calendario.png", "boton": {"t": round(palabra(7, "Tocas") - 0.1, 3), "toque": round(tq_boton, 3)}}],
-                },
+                {"t": c_reserva, "tipo": "navegador", "vistas": [{"t": c_reserva, "imagen": "calendario.png", "boton": {"t": 34.3, "toque": tq_boton}}]},
                 {"t": t_chat, "tipo": "chat", "envio": t_envio},
             ],
             "camara": [
                 cam(c_reserva, 1.0),
-                cam(tq_boton - 0.8, 1.0),
-                cam(tq_boton - 0.25, 1.45, BOTON),
-                cam(t_chat + 0.05, 1.45, BOTON),
-                cam(t_chat + 0.7, 1.65, (520, 1690)),
-                cam(t_envio - 0.3, 1.65, (560, 1690)),
-                cam(t_envio + 0.5, 1.3, (540, 1450)),
-                cam(c_pagos, 1.0),
+                cam(m["tocas"] - 0.2, 1.0),
+                cam(m["tocas"] + 0.3, 1.6, BOTON, -2),
+                cam(t_chat + 0.1, 1.6, BOTON, -2),
+                cam(t_chat + 0.5, 1.7, (520, 1690), 0),
+                cam(t_envio - 0.25, 1.7, (560, 1690), 0),
+                cam(t_envio + 0.35, 1.25, (540, 1450), 2),
+                cam(c_gratis, 1.0, CENTRO, 0),
             ],
         },
-        {"tipo": "video", "desde": c_pagos, "hasta": c_confirma, "archivo": "habitacion-ventana.mp4", "inicio": 0.6, "zoom": [1.0, 1.08], "entrada": "whip"},
-        {"tipo": "video", "desde": c_confirma, "hasta": c_noche, "archivo": "recorrido.mp4", "inicio": 46.5, "zoom": [1.0, 1.06]},
+        {"tipo": "video", "desde": c_gratis, "hasta": c_confirma, "archivo": "habitacion-ventana.mp4", "inicio": 0.6, "zoom": [1.0, 1.08], "entrada": "whip"},
+        {"tipo": "foto", "desde": c_confirma, "hasta": c_calle, "encuadre": {"foto": "fotos-nuevas/piscina-casas.jpg", "foco": "60% 40%", "zoom": 1.08, "escala": 1.15, "focoFin": "40% 40%"}, "entrada": "flash"},
+        {"tipo": "video", "desde": c_calle, "hasta": c_noche, "archivo": "recorrido.mp4", "inicio": 46.5, "zoom": [1.0, 1.06]},
         {
             "tipo": "telefono",
             "desde": c_noche,
@@ -207,59 +250,57 @@ def guion_60():
             "entrada": "whip",
             "fondo": {"tipo": "marca"},
             "escenas": [{"t": c_noche, "tipo": "navegador", "vistas": [{"t": c_noche, "archivo": "03-modo-dia-noche.mp4", "inicio": 3.0}]}],
-            "camara": [cam(c_noche, 1.0, CENTRO, -2), cam(c_churuata, 1.08, CENTRO, 0)],
+            "camara": [cam(c_noche, 1.0, CENTRO, -2), cam(48.5, 1.12, CENTRO, 0)],
         },
-        {"tipo": "video", "desde": c_churuata, "hasta": c_cierre, "archivo": "churuata-noche.mp4", "inicio": 0.4, "zoom": [1.0, 1.08], "entrada": "flash"},
+        {"tipo": "video", "desde": c_churuata, "hasta": c_parrilla, "archivo": "churuata-noche.mp4", "inicio": 0.4, "zoom": [1.0, 1.08], "entrada": "flash"},
+        {"tipo": "foto", "desde": c_parrilla, "hasta": c_cierre, "encuadre": {"foto": "fotos-nuevas/parrilla-noche.jpg", "ancha": True, "foco": "50% 55%", "zoom": 1.08}},
         {"tipo": "cierre", "desde": c_cierre, "hasta": 60.0, "icono": True, "entrada": "whip"},
     ]
 
     textos = [
-        {"desde": 0.1, "hasta": c_aereo, "estilo": "grande", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [0.12, b(0.64)], "acento": [1]},
-        {"desde": c_ventana, "hasta": c_tel, "estilo": "grande", "lineas": ["Reservar", "es más fácil"], "ts": [c_ventana, palabra(0, "mucho")], "acento": [1]},
-        {"desde": round(fr(1)["desde"], 3), "hasta": round(tq_enlace + 0.2, 3), "estilo": "pastilla", "lineas": ["Toca el enlace"], "y": 170, "acento": [0]},
-        {"desde": round(palabra(2, "nuestra página"), 3), "hasta": t_cuando, "estilo": "pastilla", "lineas": ["Nuestra página nueva", "tudiaentucacas.netlify.app"], "y": 150, "acento": [0]},
-        {"desde": round(palabra(3, "qué está libre"), 3), "hasta": t_galeria, "estilo": "pastilla", "lineas": ["Libre", "Ocupado"], "y": 170, "acento": [0]},
-        {"desde": t_galeria + 0.2, "hasta": c_sala, "estilo": "pastilla", "lineas": ["Apartamento N°30"], "y": 170, "acento": [0]},
-        {"desde": round(palabra(4, "las fotos"), 3), "hasta": c_aire, "estilo": "pastilla", "lineas": ["Las fotos", "Lo que incluye", "Dónde queda"], "ts": [palabra(4, "las fotos"), palabra(4, "lo que incluye"), palabra(4, "dónde queda")], "y": 300},
-        {"desde": c_muelles, "hasta": c_piscina, "estilo": "grande", "lineas": ["5 min", "de los muelles"], "ts": [fr(6)["desde"], palabra(6, "de los muelles")], "acento": [0]},
+        {"desde": 0.1, "hasta": c_aereo, "estilo": "grande", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [m["vienes"], 0.7], "acento": [1], "icono": "sol"},
+        {"desde": 2.2, "hasta": c_tel, "estilo": "grande", "lineas": ["Reservar", "es más fácil"], "ts": [2.25, 3.3], "acento": [1], "icono": "reserva"},
+        {"desde": m["fotos"] - 0.1, "hasta": c_incluye, "estilo": "pastilla", "lineas": ["Las fotos"], "y": 250, "acento": [0]},
+        {"desde": c_incluye, "hasta": c_mapa, "estilo": "pastilla", "lineas": ["Lo que incluye"], "y": 250, "acento": [0]},
+        {"desde": c_mapa + 0.1, "hasta": c_aire, "estilo": "pastilla", "lineas": ["Dónde queda"], "y": 250, "acento": [0]},
         {"desde": c_piscina, "hasta": c_reserva, "estilo": "pastilla", "lineas": ["Piscina con tobogán"], "y": 300, "acento": [0]},
-        {"desde": round(palabra(7, "Tocas") - 0.1, 3), "hasta": round(tq_boton, 3), "estilo": "pastilla", "lineas": ["Reservar por WhatsApp"], "y": 170, "acento": [0]},
-        {"desde": round(palabra(7, "el mensaje"), 3), "hasta": c_pagos, "estilo": "pastilla", "lineas": ["Sale listo con tus fechas"], "y": 170, "acento": [0]},
-        {"desde": c_pagos, "hasta": c_confirma, "estilo": "grande", "lineas": ["En la página", "no se cobra nada"], "ts": [c_pagos, palabra(8, "no se cobra")], "acento": [1]},
-        {"desde": c_confirma, "hasta": c_noche, "estilo": "pastilla", "lineas": ["Confirmas por WhatsApp", "Rápido y en confianza"], "ts": [c_confirma, palabra(8, "rápido")], "y": 300, "acento": [1]},
-        {"desde": c_churuata, "hasta": c_cierre, "estilo": "grande", "lineas": ["La churuata", "te espera"], "ts": [c_churuata, round(c_churuata + 0.5, 3)], "acento": [0]},
+        {"desde": c_gratis, "hasta": c_confirma, "estilo": "grande", "lineas": ["En la página", "no se cobra nada"], "ts": [m["gratis"], m["no_se_cobra"]], "acento": [1], "icono": "sincobro"},
+        {"desde": c_confirma, "hasta": c_noche, "estilo": "pastilla", "lineas": ["Confirmas por WhatsApp", "Rápido y en confianza"], "ts": [m["confirmas"], m["rapido"]], "y": 300, "acento": [1]},
+        {"desde": c_churuata, "hasta": c_parrilla, "estilo": "grande", "lineas": ["La churuata"], "ts": [m["churuata"]], "acento": [0]},
+        {"desde": c_parrilla, "hasta": c_cierre, "estilo": "grande", "lineas": ["Área de", "parrilla"], "ts": [c_parrilla, c_parrilla + 0.2], "acento": [1]},
     ]
 
+    w = lambda t, g=0.7: {"t": round(t - 0.2, 3), "sonido": "whoosh", "gain": g}  # noqa: E731
     efectos = [
         {"t": 0.0, "sonido": "olas", "gain": 0.7},
         {"t": 0.3, "sonido": "chapuzon", "gain": 0.5},
-        {"t": c_aereo - 0.2, "sonido": "whoosh", "gain": 0.7},
+        w(c_aereo),
         {"t": c_aereo, "sonido": "gaviotas", "gain": 0.6, "pan": 0.3},
-        {"t": c_tel - 0.25, "sonido": "whoosh", "gain": 0.9},
+        w(c_tel, 0.9),
         {"t": tq_enlace, "sonido": "clic"},
-        {"t": t_nav, "sonido": "whoosh", "gain": 0.5},
-        *[{"t": tq["t"], "sonido": "clic", "gain": 0.8} for tq in [
-            {"t": round(palabra(3, "tus fechas") + 0.15, 3)},
-            {"t": round(palabra(3, "tus fechas") + 0.75, 3)},
-        ]],
-        {"t": t_galeria - 0.2, "sonido": "whoosh", "gain": 0.7},
-        {"t": c_sala, "sonido": "llave", "gain": 0.6},
-        {"t": c_aire - 0.2, "sonido": "whoosh", "gain": 0.6},
-        {"t": fr(5)["desde"], "sonido": "control", "gain": 0.8},
-        {"t": c_muelles - 0.2, "sonido": "whoosh", "gain": 0.6},
-        {"t": c_muelles, "sonido": "lancha", "gain": 0.5, "pan": -0.3},
+        w(t_nav + 0.2, 0.5),
+        {"t": t18, "sonido": "clic", "gain": 0.8},
+        {"t": t20, "sonido": "clic", "gain": 0.8},
+        w(c_fotos, 0.8),
+        w(c_incluye, 0.5),
+        w(c_mapa, 0.7),
+        {"t": c_mapa + 0.45, "sonido": "clic", "gain": 0.9},
+        {"t": c_mapa, "sonido": "gaviotas", "gain": 0.4, "pan": -0.3},
+        w(c_aire, 0.6),
+        w(c_wifi, 0.4),
+        w(c_tanque, 0.4),
+        w(c_mapa2, 0.6),
+        {"t": 30.75, "sonido": "lancha", "gain": 0.5, "pan": 0.3},
         {"t": c_piscina, "sonido": "chapuzon", "gain": 0.8},
-        {"t": c_reserva - 0.2, "sonido": "whoosh", "gain": 0.7},
+        w(c_reserva, 0.7),
         {"t": tq_boton, "sonido": "clic"},
-        {"t": t_chat, "sonido": "whoosh", "gain": 0.4},
+        w(t_chat + 0.2, 0.4),
         {"t": t_envio, "sonido": "mensaje", "gain": 1.2},
-        {"t": c_pagos - 0.2, "sonido": "whoosh", "gain": 0.6},
-        {"t": c_confirma, "sonido": "brisa", "gain": 0.6},
-        {"t": c_noche - 0.2, "sonido": "whoosh", "gain": 0.6},
-        {"t": c_churuata - 0.4, "sonido": "grillos", "gain": 1.0},
-        {"t": c_cierre - 0.2, "sonido": "whoosh", "gain": 0.7},
+        w(c_gratis, 0.6),
+        w(c_noche, 0.6),
+        w(c_churuata, 0.5),
+        w(c_cierre, 0.7),
         {"t": c_cierre + 0.5, "sonido": "olas", "gain": 0.8},
-        {"t": c_cierre + 1.0, "sonido": "brisa", "gain": 0.5},
     ]
     return {
         "id": "web-60s",
@@ -268,7 +309,7 @@ def guion_60():
         "textos": textos,
         "frases": frases,
         "efectos": efectos,
-        "noche": [round(c_noche + 0.6, 3), c_cierre],
+        "noche": [round(c_noche + 0.8, 3), c_cierre],
     }
 
 
@@ -277,12 +318,15 @@ def guion_30():
     b, palabra = utilidades(frases, pulso)
     fr = lambda i: frases[i]  # noqa: E731
 
-    c_aereo, c_ventana, c_tel = b(1.63), b(2.70), b(3.77)
+    c_aereo, c_foto, c_tel = b(1.63), b(2.70), b(3.77)
     tq_enlace = palabra(1, "el enlace") + 0.2
     t_nav = round(tq_enlace + 0.3, 3)
     t_cal = b(fr(2)["desde"] + 0.9)
-    c_galeria = b(fr(3)["desde"] - 0.15)
-    c_sala, c_cuarto = b(11.78), b(12.85)
+    t18 = round(palabra(2, "tus fechas") + 0.1, 3)
+    t20 = round(t18 + 0.55, 3)
+    t_libre = palabra(2, "qué está libre")
+    c_fotos = b(fr(3)["desde"] - 0.15)
+    c_cuarto = b(12.85)
     c_iconos = b(fr(4)["desde"] + 0.1)
     c_reserva = b(fr(5)["desde"] - 0.25)
     tq_boton = palabra(5, "WhatsApp") + 0.3
@@ -290,18 +334,16 @@ def guion_30():
     t_envio = round(palabra(5, "con tus fechas") + 0.45, 3)
     c_cierre = b(fr(6)["desde"])
 
-    t18 = round(palabra(2, "tus fechas") + 0.1, 3)
-    t20 = round(t18 + 0.55, 3)
     planos = [
         {"tipo": "video", "desde": 0, "hasta": c_aereo, "archivo": "recorrido.mp4", "inicio": 0.2, "zoom": [1.18, 1.06], "entrada": "nada"},
-        {"tipo": "video", "desde": c_aereo, "hasta": c_ventana, "archivo": "aereo.mp4", "inicio": 0.6, "zoom": [1.0, 1.08], "entrada": "flash"},
-        {"tipo": "video", "desde": c_ventana, "hasta": c_tel, "archivo": "habitacion-ventana.mp4", "inicio": 1.4, "zoom": [1.1, 1.0]},
+        {"tipo": "video", "desde": c_aereo, "hasta": c_foto, "archivo": "aereo.mp4", "inicio": 0.6, "zoom": [1.0, 1.1], "entrada": "flash"},
+        {"tipo": "foto", "desde": c_foto, "hasta": c_tel, "encuadre": {"foto": "fotos-nuevas/piscina-palmera.jpg", "foco": "40% 55%", "zoom": 1.08}},
         {
             "tipo": "telefono",
             "desde": c_tel,
-            "hasta": c_galeria,
+            "hasta": c_fotos,
             "entrada": "whip",
-            "fondo": {"tipo": "video", "archivo": "aereo.mp4", "inicio": 2.0},
+            "fondo": {"tipo": "playa"},
             "escenas": [
                 {"t": c_tel, "tipo": "perfil", "toque": round(tq_enlace, 3)},
                 {
@@ -310,40 +352,39 @@ def guion_30():
                     "sube": True,
                     "vistas": [
                         {"t": t_nav, "archivo": "01-inicio-recorrido.mp4", "inicio": 0},
-                        {"t": t_cal, "imagen": "calendario.png", "toques": [{"t": t18, "x": DIA_18[0], "y": DIA_18[1] - NAV}, {"t": t20, "x": DIA_20[0], "y": DIA_20[1] - NAV}]},
+                        {
+                            "t": t_cal,
+                            "imagen": "calendario.png",
+                            "toques": [{"t": t18, "x": DIA_18[0], "y": DIA_18[1] - NAV}, {"t": t20, "x": DIA_20[0], "y": DIA_20[1] - NAV}],
+                            "resaltes": [{"t": round(t_libre + 0.1, 3), "x": 190, "y": 1265, "w": 700, "h": 80}],
+                        },
                     ],
                 },
             ],
             "camara": [
                 cam(c_tel, 1.0),
                 cam(tq_enlace - 0.75, 1.0),
-                cam(tq_enlace - 0.3, 1.7, ENLACE, -2),
-                cam(t_nav + 0.1, 1.7, ENLACE, -2),
-                cam(t_nav + 0.6, 1.05),
-                cam(t_cal, 1.1, (540, 900)),
-                cam(t18 - 0.3, 1.45, ((DIA_18[0] + DIA_20[0]) // 2, (DIA_18[1] + DIA_20[1]) // 2)),
-                cam(t20 + 0.4, 1.45, ((DIA_18[0] + DIA_20[0]) // 2, (DIA_18[1] + DIA_20[1]) // 2)),
-                cam(palabra(2, "qué está libre"), 1.3, LEYENDA),
-                cam(c_galeria, 1.2, LEYENDA),
+                cam(tq_enlace - 0.3, 1.75, ENLACE, -2),
+                cam(t_nav + 0.1, 1.75, ENLACE, -2),
+                cam(t_nav + 0.5, 1.0),
+                cam(t_cal - 0.3, 1.25, (540, 640), 2),
+                cam(t_cal + 0.3, 1.15, (540, 1000), 0),
+                cam(t18 - 0.15, 1.9, DIA_18, -3),
+                cam(t20 - 0.1, 1.9, DIA_20, 2),
+                cam(t20 + 0.5, 1.9, DIA_20, 2),
+                cam(t_libre, 1.5, LEYENDA, -2),
+                cam(c_fotos - 0.1, 1.5, LEYENDA, -2),
+                cam(c_fotos, 2.4, LEYENDA, 0),
             ],
         },
-        {
-            "tipo": "telefono",
-            "desde": c_galeria,
-            "hasta": c_sala,
-            "entrada": "whip",
-            "fondo": {"tipo": "marca"},
-            "escenas": [{"t": c_galeria, "tipo": "navegador", "vistas": [{"t": c_galeria, "archivo": "02-apartamento-n30.mp4", "inicio": 12.2}]}],
-            "camara": [cam(c_galeria, 1.0, CENTRO, 3), cam(c_sala, 1.25, (540, 900), 0)],
-        },
-        {"tipo": "foto", "desde": c_sala, "hasta": c_cuarto, "encuadre": {"foto": "fotos-nuevas/sala.jpg", "foco": "50% 55%", "zoom": 1.08}, "entrada": "flash"},
+        {"tipo": "galeria", "desde": c_fotos, "hasta": c_cuarto, "fotos": FOTOS_APTO, "entrada": "flash"},
         {"tipo": "video", "desde": c_cuarto, "hasta": c_iconos, "archivo": "habitacion-ventana.mp4", "inicio": 5.6, "zoom": [1.0, 1.06]},
         {
             "tipo": "iconos",
             "desde": c_iconos,
             "hasta": c_reserva,
             "entrada": "whip",
-            "fondo": {"tipo": "foto", "encuadre": {"foto": "fotos-nuevas/habitacion-aire.jpg", "foco": "50% 30%", "zoom": 1.08}},
+            "fondo": {"tipo": "playa"},
             "iconos": [
                 {"tipo": "aire", "texto": "Aire", "t": round(fr(4)["desde"] + 0.05, 3)},
                 {"tipo": "wifi", "texto": "WiFi de fibra", "t": round(palabra(4, "WiFi"), 3)},
@@ -355,55 +396,48 @@ def guion_30():
             "desde": c_reserva,
             "hasta": c_cierre,
             "entrada": "whip",
-            "fondo": {"tipo": "marca"},
+            "fondo": {"tipo": "playa"},
             "escenas": [
                 {"t": c_reserva, "tipo": "navegador", "vistas": [{"t": c_reserva, "imagen": "calendario.png", "boton": {"t": round(c_reserva + 0.3, 3), "toque": round(tq_boton, 3)}}]},
                 {"t": t_chat, "tipo": "chat", "envio": t_envio},
             ],
             "camara": [
                 cam(c_reserva, 1.0),
-                cam(tq_boton - 0.8, 1.0),
-                cam(tq_boton - 0.25, 1.45, BOTON),
-                cam(t_chat + 0.05, 1.45, BOTON),
-                cam(t_chat + 0.7, 1.65, (520, 1690)),
-                cam(t_envio - 0.3, 1.65, (560, 1690)),
-                cam(t_envio + 0.5, 1.3, (540, 1450)),
-                cam(c_cierre, 1.0),
+                cam(tq_boton - 0.7, 1.0),
+                cam(tq_boton - 0.25, 1.6, BOTON, -2),
+                cam(t_chat + 0.1, 1.6, BOTON, -2),
+                cam(t_chat + 0.5, 1.7, (520, 1690), 0),
+                cam(t_envio - 0.25, 1.7, (560, 1690), 0),
+                cam(t_envio + 0.35, 1.25, (540, 1450), 2),
+                cam(c_cierre, 1.0, CENTRO, 0),
             ],
         },
         {"tipo": "cierre", "desde": c_cierre, "hasta": 30.0, "icono": True, "entrada": "whip"},
     ]
     textos = [
-        {"desde": 0.1, "hasta": c_aereo, "estilo": "grande", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [0.3, b(0.9)], "acento": [1]},
-        {"desde": c_ventana, "hasta": c_tel, "estilo": "grande", "lineas": ["Reservas en", "un toque"], "ts": [c_ventana, palabra(0, "un toque")], "acento": [1]},
-        {"desde": round(fr(1)["desde"], 3), "hasta": round(tq_enlace + 0.2, 3), "estilo": "pastilla", "lineas": ["Toca el enlace"], "y": 170, "acento": [0]},
-        {"desde": round(t_nav + 0.4, 3), "hasta": t_cal, "estilo": "pastilla", "lineas": ["tudiaentucacas.netlify.app"], "y": 150},
-        {"desde": round(palabra(2, "qué está libre"), 3), "hasta": c_galeria, "estilo": "pastilla", "lineas": ["Libre", "Ocupado"], "y": 170, "acento": [0]},
-        {"desde": c_galeria + 0.2, "hasta": c_sala, "estilo": "pastilla", "lineas": ["Apartamento N°30"], "y": 170, "acento": [0]},
-        {"desde": round(c_reserva + 0.2, 3), "hasta": round(tq_boton, 3), "estilo": "pastilla", "lineas": ["Reservar por WhatsApp"], "y": 170, "acento": [0]},
-        {"desde": round(palabra(5, "el mensaje"), 3), "hasta": c_cierre, "estilo": "pastilla", "lineas": ["Sale listo con tus fechas"], "y": 170, "acento": [0]},
+        {"desde": 0.1, "hasta": c_aereo, "estilo": "grande", "lineas": ["¿Vienes a", "Tucacas?"], "ts": [0.3, b(0.9)], "acento": [1], "icono": "sol"},
+        {"desde": 1.95, "hasta": c_tel, "estilo": "grande", "lineas": ["Reservas en", "un toque"], "ts": [2.0, palabra(0, "un toque")], "acento": [1], "icono": "reserva"},
+        {"desde": c_fotos + 0.1, "hasta": c_cuarto, "estilo": "pastilla", "lineas": ["Por dentro"], "y": 250, "acento": [0]},
     ]
+    w = lambda t, g=0.7: {"t": round(t - 0.2, 3), "sonido": "whoosh", "gain": g}  # noqa: E731
     efectos = [
         {"t": 0.0, "sonido": "olas", "gain": 0.7},
         {"t": 0.3, "sonido": "chapuzon", "gain": 0.5},
-        {"t": c_aereo - 0.2, "sonido": "whoosh", "gain": 0.7},
+        w(c_aereo),
         {"t": c_aereo, "sonido": "gaviotas", "gain": 0.6, "pan": 0.3},
-        {"t": c_tel - 0.25, "sonido": "whoosh", "gain": 0.9},
+        w(c_tel, 0.9),
         {"t": tq_enlace, "sonido": "clic"},
-        {"t": t_nav, "sonido": "whoosh", "gain": 0.5},
+        w(t_nav + 0.2, 0.5),
         {"t": t18, "sonido": "clic", "gain": 0.8},
         {"t": t20, "sonido": "clic", "gain": 0.8},
-        {"t": c_galeria - 0.2, "sonido": "whoosh", "gain": 0.7},
-        {"t": c_sala, "sonido": "llave", "gain": 0.6},
-        {"t": c_iconos - 0.2, "sonido": "whoosh", "gain": 0.6},
-        {"t": fr(4)["desde"], "sonido": "control", "gain": 0.8},
-        {"t": c_reserva - 0.2, "sonido": "whoosh", "gain": 0.7},
+        w(c_fotos, 0.8),
+        w(c_iconos, 0.6),
+        w(c_reserva, 0.7),
         {"t": tq_boton, "sonido": "clic"},
-        {"t": t_chat, "sonido": "whoosh", "gain": 0.4},
+        w(t_chat + 0.2, 0.4),
         {"t": t_envio, "sonido": "mensaje", "gain": 1.2},
-        {"t": c_cierre - 0.2, "sonido": "whoosh", "gain": 0.7},
+        w(c_cierre, 0.7),
         {"t": c_cierre + 0.5, "sonido": "olas", "gain": 0.8},
-        {"t": c_cierre + 1.0, "sonido": "brisa", "gain": 0.5},
     ]
     return {"id": "web-30s", "duracion": 30.0, "planos": planos, "textos": textos, "frases": frases, "efectos": efectos}
 

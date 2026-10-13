@@ -1,10 +1,11 @@
 import React from "react";
 import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
-import { C, cargarFuentes, clamp01, DEGRADADO_PORTADA, easeIn, easeInOut, easeOut, F, FPS, lerp, POP, prog, SEGURA, sp, W } from "../estilo";
+import { C, cargarFuentes, clamp01, DEGRADADO_PORTADA, easeIn, easeOut, F, FPS, lerp, POP, prog, SEGURA, sp, W } from "../estilo";
 import type { Encuadre, Frase, Icono } from "../guiones";
 import { Cierre, Foto, Subtitulos, TarjetaIcono } from "../piezas";
 import { Chat, Navegador, Perfil, PH, PW, Vista } from "./pantallas";
+import { Clave, claveEn, desenfoqueCamara, EventosMapa, GaleriaFotos, IconoReserva, IconoSinCobro, Incluye, Insignia, ItemIncluye, Mapa, Playa, SolDibujado } from "./escenas";
 import guion30 from "./guion-web-30s.json";
 import guion60 from "./guion-web-60s.json";
 
@@ -15,9 +16,10 @@ import guion60 from "./guion-web-60s.json";
 
 type Entrada = "corte" | "whip" | "flash" | "nada";
 
-export type Camara = { t: number; escala: number; x: number; y: number; giro?: number };
+/** Clave de cámara del teléfono: punto de la pantalla (1080 × 1920) que queda al centro y su zoom. */
+export type Camara = Clave;
 
-export type FondoTelefono = { tipo: "marca" } | { tipo: "video"; archivo: string; inicio: number };
+export type FondoTelefono = { tipo: "marca" } | { tipo: "playa" } | { tipo: "video"; archivo: string; inicio: number };
 
 export type EscenaTelefono =
   | { t: number; tipo: "perfil"; toque: number }
@@ -31,6 +33,9 @@ export type PlanoWeb =
   | (Base & { tipo: "foto"; encuadre: Encuadre })
   | (Base & { tipo: "telefono"; fondo: FondoTelefono; escenas: EscenaTelefono[]; camara: Camara[] })
   | (Base & { tipo: "iconos"; fondo: FondoTelefono | { tipo: "foto"; encuadre: Encuadre }; iconos: Icono[] })
+  | (Base & { tipo: "galeria"; fotos: string[] })
+  | (Base & { tipo: "incluye"; items: ItemIncluye[] })
+  | (Base & { tipo: "mapa"; camara: Clave[]; eventos: EventosMapa; insignia?: { t: number; texto: string; cuenta?: [number, number] } })
   | (Base & { tipo: "cierre"; icono?: boolean });
 
 /** Texto en pantalla: "grande" (líneas cinéticas) o "pastilla" (rótulo). */
@@ -43,8 +48,10 @@ export type TextoWeb = {
   ts?: number[];
   /** Índices de las líneas en color sol. */
   acento?: number[];
-  /** Posición vertical (borde superior), en px del cuadro. */
+  /** Posición vertical (borde superior), en px del cuadro. Sin ella, el texto grande va centrado. */
   y?: number;
+  /** Gráfico animado que acompaña al texto grande. */
+  icono?: "sol" | "reserva" | "sincobro";
 };
 
 export type GuionWeb = {
@@ -108,24 +115,11 @@ const Video: React.FC<{ archivo: string; desde: number; inicio: number; zoom: nu
 
 // --------------------------------------------------------------- teléfono
 
-/** Escala base del teléfono: la pantalla de 1080 px queda de 605 px. */
-const S0 = 0.56;
-/** Centro vertical del teléfono en el cuadro (deja libre la zona de subtítulos). */
-const CY = 760;
+/** Escala base del teléfono: la pantalla de 1080 px queda de 540 px. */
+const S0 = 0.5;
+/** Centro vertical del teléfono: centrado entre la zona de arriba y los subtítulos. */
+const CY = 880;
 const BISEL = 44;
-
-const camaraEn = (cams: Camara[], t: number) => {
-  if (t <= cams[0].t) return cams[0];
-  for (let i = 0; i < cams.length - 1; i++) {
-    const a = cams[i];
-    const b = cams[i + 1];
-    if (t < b.t) {
-      const k = easeInOut(clamp01((t - a.t) / (b.t - a.t)));
-      return { t, escala: lerp(a.escala, b.escala, k), x: lerp(a.x, b.x, k), y: lerp(a.y, b.y, k), giro: lerp(a.giro ?? 0, b.giro ?? 0, k) };
-    }
-  }
-  return cams[cams.length - 1];
-};
 
 const PantallaEscena: React.FC<{ escena: EscenaTelefono; t: number; primera: boolean }> = ({ escena, t, primera }) => {
   switch (escena.tipo) {
@@ -138,8 +132,10 @@ const PantallaEscena: React.FC<{ escena: EscenaTelefono; t: number; primera: boo
   }
 };
 
-const Fondo: React.FC<{ fondo: FondoTelefono; desde: number }> = ({ fondo, desde }) =>
-  fondo.tipo === "video" ? (
+const Fondo: React.FC<{ fondo: FondoTelefono; desde: number; t: number }> = ({ fondo, desde, t }) =>
+  fondo.tipo === "playa" ? (
+    <Playa t={t} />
+  ) : fondo.tipo === "video" ? (
     <AbsoluteFill style={{ overflow: "hidden", background: C.tinta }}>
       <Clip
         src={`tucacas/videos/${fondo.archivo}`}
@@ -167,8 +163,9 @@ const Fondo: React.FC<{ fondo: FondoTelefono; desde: number }> = ({ fondo, desde
 
 const Telefono: React.FC<{ plano: Extract<PlanoWeb, { tipo: "telefono" }>; t: number }> = ({ plano, t }) => {
   const entra = sp(t, plano.desde, { damping: 15, stiffness: 120 });
-  const cam = camaraEn(plano.camara, t);
+  const cam = claveEn(plano.camara, t);
   const S = S0 * cam.escala;
+  const blur = desenfoqueCamara(plano.camara, t, S0);
   let idx = 0;
   plano.escenas.forEach((e, i) => {
     if (t >= e.t) idx = i;
@@ -177,7 +174,7 @@ const Telefono: React.FC<{ plano: Extract<PlanoWeb, { tipo: "telefono" }>; t: nu
   const visibles = plano.escenas.slice(Math.max(0, idx - 1), idx + 1).filter((e, i, arr) => i === arr.length - 1 || t < arr[arr.length - 1].t + 0.6);
   return (
     <AbsoluteFill>
-      <Fondo fondo={plano.fondo} desde={plano.desde} />
+      <Fondo fondo={plano.fondo} desde={plano.desde} t={t} />
       <div
         style={{
           position: "absolute",
@@ -187,6 +184,7 @@ const Telefono: React.FC<{ plano: Extract<PlanoWeb, { tipo: "telefono" }>; t: nu
           height: PH,
           transformOrigin: "0 0",
           transform: `translate(${W / 2 - cam.x * S}px, ${CY - cam.y * S + (1 - entra) * 1500}px) scale(${S})`,
+          filter: blur > 0.4 ? `blur(${(blur / S).toFixed(1)}px)` : undefined,
         }}
       >
         <div
@@ -230,13 +228,30 @@ const Telefono: React.FC<{ plano: Extract<PlanoWeb, { tipo: "telefono" }>; t: nu
 const Textos: React.FC<{ texto: TextoWeb; t: number }> = ({ texto, t }) => {
   const sale = prog(t, texto.hasta - 0.18, texto.hasta, easeIn);
   if (texto.estilo === "grande") {
+    const centrado = texto.y === undefined;
+    const conTarjeta = texto.icono === "reserva" || texto.icono === "sincobro";
+    // Centrado entre la zona de arriba (250 px) y los subtítulos (~1330 px).
+    const alto = texto.lineas.length * 150 + (conTarjeta ? 300 : 0);
+    const arriba = centrado ? 790 - alto / 2 : (texto.y as number);
+    const t0 = texto.ts?.[0] ?? texto.desde;
     return (
+      <>
+        {texto.icono === "sol" ? (
+          <div style={{ position: "absolute", left: 0, top: arriba + texto.lineas.length * 75, width: W, height: 0, opacity: 1 - sale }}>
+            <SolDibujado t={t} desde={t0} />
+          </div>
+        ) : null}
+        {conTarjeta ? (
+          <div style={{ position: "absolute", left: 0, right: 0, top: arriba, display: "flex", justifyContent: "center", opacity: 1 - sale }}>
+            {texto.icono === "reserva" ? <IconoReserva t={t} desde={t0} /> : <IconoSinCobro t={t} desde={t0} />}
+          </div>
+        ) : null}
       <div
         style={{
           position: "absolute",
           left: SEGURA.lados,
           right: SEGURA.lados,
-          top: texto.y ?? 520,
+          top: arriba + (conTarjeta ? 300 : 0),
           textAlign: "center",
           fontFamily: F.titulo,
           fontWeight: 800,
@@ -278,6 +293,7 @@ const Textos: React.FC<{ texto: TextoWeb; t: number }> = ({ texto, t }) => {
           );
         })}
       </div>
+      </>
     );
   }
   return (
@@ -340,6 +356,27 @@ const ContenidoPlano: React.FC<{ plano: PlanoWeb; t: number }> = ({ plano, t }) 
       return <Telefono plano={plano} t={t} />;
     case "cierre":
       return <Cierre t={t} desde={plano.desde} icono={plano.icono} />;
+    case "galeria":
+      return (
+        <AbsoluteFill>
+          <Playa t={t} />
+          <GaleriaFotos t={t} desde={plano.desde} hasta={plano.hasta} fotos={plano.fotos} />
+        </AbsoluteFill>
+      );
+    case "incluye":
+      return (
+        <AbsoluteFill>
+          <Playa t={t} />
+          <Incluye t={t} desde={plano.desde} hasta={plano.hasta} items={plano.items} />
+        </AbsoluteFill>
+      );
+    case "mapa":
+      return (
+        <AbsoluteFill>
+          <Mapa t={t} camara={plano.camara} eventos={plano.eventos} />
+          {plano.insignia ? <Insignia t={t} desde={plano.insignia.t} texto={plano.insignia.texto} cuenta={plano.insignia.cuenta} /> : null}
+        </AbsoluteFill>
+      );
     case "iconos": {
       const f = plano.fondo;
       return (
@@ -349,9 +386,9 @@ const ContenidoPlano: React.FC<{ plano: PlanoWeb; t: number }> = ({ plano, t }) 
           ) : f.tipo === "video" ? (
             <Video archivo={f.archivo} desde={plano.desde} inicio={f.inicio} zoom={lerp(1.0, 1.06, p)} />
           ) : (
-            <Fondo fondo={f} desde={plano.desde} />
+            <Fondo fondo={f} desde={plano.desde} t={t} />
           )}
-          {f.tipo !== "marca" ? <AbsoluteFill style={{ background: "rgba(11,58,54,0.38)" }} /> : null}
+          {f.tipo === "foto" || f.tipo === "video" ? <AbsoluteFill style={{ background: "rgba(11,58,54,0.38)" }} /> : null}
           <div
             style={{
               position: "absolute",

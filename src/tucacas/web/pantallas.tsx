@@ -231,6 +231,8 @@ export type Vista = {
   inicio?: number;
   imagen?: string;
   toques?: Toque[];
+  /** Recuadros de color sol que resaltan una zona de la página (coordenadas de la vista). */
+  resaltes?: { t: number; x: number; y: number; w: number; h: number }[];
   /** Hoja inferior con el botón "Reservar por WhatsApp" (y cuándo se toca). */
   boton?: { t: number; toque: number };
 };
@@ -307,6 +309,27 @@ export const Navegador: React.FC<{ t: number; desde: number; vistas: Vista[]; su
         ) : null}
         <AbsoluteFill style={{ translate: `0 ${(1 - desliza) * altoVista}px` }}>
           <ContenidoVista vista={vista} />
+          {(vista.resaltes ?? []).map((r, i) => {
+            const p = sp(t, r.t, POP);
+            if (p <= 0) return null;
+            return (
+              <div
+                key={`r${i}`}
+                style={{
+                  position: "absolute",
+                  left: r.x - 14,
+                  top: r.y - 14,
+                  width: r.w + 28,
+                  height: r.h + 28,
+                  borderRadius: 34,
+                  border: `9px solid ${C.sol}`,
+                  boxShadow: "0 0 0 8px rgba(244,182,63,0.25), 0 10px 30px rgba(0,0,0,0.15)",
+                  scale: String(lerp(1.25, 1, p)),
+                  opacity: clamp01(p * 2),
+                }}
+              />
+            );
+          })}
           {(vista.toques ?? []).map((tq, i) => (
             <Dedo key={i} toque={tq} t={t} />
           ))}
