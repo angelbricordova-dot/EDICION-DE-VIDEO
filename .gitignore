@@ -8,3 +8,4 @@ __pycache__
 
 # Material del cliente (Tu Día en Tucacas): se trae con scripts/traer_tucacas.sh
 public/tucacas/
+public/camis11/
