@@ -1,0 +1,66 @@
+{
+  "audio": "public/camis11/voz/alejandro.mp3",
+  "duracion": 27.167,
+  "lineas": [
+    {
+      "texto": "¿Buscas la camiseta de tu equipo?",
+      "t": 0.0,
+      "fin": 2.113
+    },
+    {
+      "texto": "Para. Esto no es una tienda cualquiera.",
+      "t": 2.287,
+      "fin": 4.284
+    },
+    {
+      "texto": "Más de mil doscientas camisetas de clubes y selecciones.",
+      "t": 4.319,
+      "fin": 6.966
+    },
+    {
+      "texto": "Retro desde el noventa y ocho hasta hoy.",
+      "t": 7.14,
+      "fin": 9.056
+    },
+    {
+      "texto": "Dragon Ball. Oliver y Benji. Real Madrid por Balmain.",
+      "t": 9.102,
+      "fin": 12.388
+    },
+    {
+      "texto": "Y la camiseta de la Roja de las dos estrellas.",
+      "t": 12.504,
+      "fin": 14.849
+    },
+    {
+      "texto": "Envío gratis a todo el mundo.",
+      "t": 14.896,
+      "fin": 16.335
+    },
+    {
+      "texto": "Devoluciones durante treinta días.",
+      "t": 16.382,
+      "fin": 17.926
+    },
+    {
+      "texto": "Y la puedes personalizar con tu nombre y tu número.",
+      "t": 17.949,
+      "fin": 20.109
+    },
+    {
+      "texto": "Con el código Camis Once tienes un diez por ciento extra de descuento.",
+      "t": 20.132,
+      "fin": 23.591
+    },
+    {
+      "texto": "Entra en camis once punto com.",
+      "t": 23.626,
+      "fin": 25.228
+    },
+    {
+      "texto": "En Camis Once vivimos el fútbol como tú.",
+      "t": 25.252,
+      "fin": 27.167
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "frases": [
+    {
+      "texto": "¿Buscas la camiseta de tu equipo?",
+      "clave": "tu equipo"
+    },
+    {
+      "texto": "Para. Esto no es una tienda cualquiera.",
+      "clave": "no es una tienda cualquiera"
+    },
+    {
+      "texto": "Más de mil doscientas camisetas de clubes y selecciones.",
+      "pantalla": "Más de 1.200 camisetas de clubes y selecciones.",
+      "clave": "1.200"
+    },
+    {
+      "texto": "Retro desde el noventa y ocho hasta hoy.",
+      "pantalla": "Retro desde el 98 hasta hoy.",
+      "clave": "Retro"
+    },
+    {
+      "texto": "Dragon Ball. Oliver y Benji. Real Madrid por Balmain.",
+      "pantalla": "Dragon Ball. Oliver y Benji. Real Madrid × Balmain.",
+      "clave": "Dragon Ball"
+    },
+    {
+      "texto": "Y la camiseta de la Roja de las dos estrellas.",
+      "clave": "dos estrellas"
+    },
+    {
+      "texto": "Envío gratis a todo el mundo.",
+      "clave": "gratis"
+    },
+    {
+      "texto": "Devoluciones durante treinta días.",
+      "pantalla": "Devoluciones durante 30 días.",
+      "clave": "30 días"
+    },
+    {
+      "texto": "Y la puedes personalizar con tu nombre y tu número.",
+      "clave": "tu nombre y tu número"
+    },
+    {
+      "texto": "Con el código Camis Once tienes un diez por ciento extra de descuento.",
+      "pantalla": "Con el código CAMIS11 tienes un 10% extra de descuento.",
+      "clave": "CAMIS11"
+    },
+    {
+      "texto": "Entra en camis once punto com.",
+      "pantalla": "Entra en camis11.com",
+      "clave": "camis11.com"
+    },
+    {
+      "texto": "En Camis Once vivimos el fútbol como tú.",
+      "pantalla": "En Camis11 vivimos el fútbol como tú.",
+      "clave": "como tú"
+    }
+  ]
+}
