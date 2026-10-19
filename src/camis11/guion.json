@@ -139,7 +139,7 @@
    "id": "especial",
    "desde": 9.1,
    "hasta": 9.97,
-   "foto": "edicion-especial-camiseta-japon-dbz-goku.png",
+   "foto": "edicion-especial-japon-x-dragon-ball.png",
    "titulo": "DRAGON BALL",
    "color": "#ff7a00"
   },
@@ -302,9 +302,19 @@
    "gain": 0.6
   },
   {
-   "t": 21.75,
-   "sonido": "exito",
+   "t": 21.2,
+   "sonido": "patada",
    "gain": 0.9
+  },
+  {
+   "t": 21.73,
+   "sonido": "balonazo",
+   "gain": 1.0
+  },
+  {
+   "t": 22.0,
+   "sonido": "exito",
+   "gain": 0.7
   },
   {
    "t": 21.8,

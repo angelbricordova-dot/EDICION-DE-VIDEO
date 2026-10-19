@@ -70,15 +70,22 @@ const Grano: React.FC<{ frame: number; opacidad?: number }> = ({ frame, opacidad
   );
 };
 
-/** Franjas diagonales que corren (fondo). */
+/** Franjas diagonales que corren (fondo). Capa más grande que el cuadro y girada: sin costuras. */
 const Franjas: React.FC<{ t: number; color: string; opacidad?: number; vel?: number }> = ({ t, color, opacidad = 0.08, vel = 120 }) => (
-  <AbsoluteFill
-    style={{
-      backgroundImage: `repeating-linear-gradient(-30deg, ${color} 0 40px, transparent 40px 120px)`,
-      backgroundPosition: `${(t * vel) % 240}px 0`,
-      opacity: opacidad,
-    }}
-  />
+  <AbsoluteFill style={{ overflow: "hidden", opacity: opacidad }}>
+    <div
+      style={{
+        position: "absolute",
+        left: -900,
+        top: -900,
+        width: W + 1800,
+        height: H + 1800,
+        rotate: "30deg",
+        backgroundImage: `repeating-linear-gradient(90deg, ${color} 0 40px, transparent 40px 120px)`,
+        backgroundPosition: `${(t * vel) % 120}px 0`,
+      }}
+    />
+  </AbsoluteFill>
 );
 
 const Destello: React.FC<{ t: number; t0: number; color?: string; dur?: number }> = ({ t, t0, color = "#ffffff", dur = 0.16 }) => {
@@ -143,7 +150,8 @@ const Linea: React.FC<{ texto: string; t: number; t0: number; tam: number; color
             lineHeight: 1,
             color,
             textTransform: mayus ? "uppercase" : undefined,
-            translate: `0 ${(1 - p) * tam * 1.1}px`,
+            translate: `0 ${(1 - p) * tam * 1.5}px`,
+            opacity: p > 0 ? 1 : 0,
             WebkitTextStroke: borde ? `${Math.max(3, tam * 0.025)}px ${K.negro}` : undefined,
             textShadow: "0 8px 30px rgba(0,0,0,0.5)",
           }}
@@ -162,7 +170,7 @@ const Pastilla: React.FC<{ texto: string; t: number; t0: number; fondo: string; 
   fondo,
   color,
   tam = 64,
-  giro = -3,
+  giro = 0,
 }) => {
   const p = sp(t, t0, { damping: 10, stiffness: 230, mass: 0.6 });
   return (
@@ -277,7 +285,7 @@ const Catalogo: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
         <Linea texto="camisetas" t={t} t0={e.desde + 0.3} tam={130} />
         <div style={{ display: "flex", justifyContent: "center", gap: 26, marginTop: 30 }}>
           <Pastilla texto="CLUBES" t={t} t0={M.mil + 1.25} fondo={K.rojo} color={K.blanco} tam={76} />
-          <Pastilla texto="SELECCIONES" t={t} t0={M.mil + 1.75} fondo={K.blanco} color={K.negro} tam={76} giro={3} />
+          <Pastilla texto="SELECCIONES" t={t} t0={M.mil + 1.75} fondo={K.blanco} color={K.negro} tam={76} />
         </div>
       </div>
       <Destello t={t} t0={e.desde} color={K.lima} dur={0.12} />
@@ -285,24 +293,66 @@ const Catalogo: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
   );
 };
 
+// Línea de tiempo de las retro: los años se encienden uno a uno mientras avanza el progreso.
+const HITOS = ["’98", "’02", "’08", "’10", "HOY"];
+
 const Retro: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
-  const linea = prog(t, e.desde + 0.6, e.desde + 1.3, easeInOut);
-  const d = "M 200 1560 L 880 1560";
-  const p = evolvePath(Math.max(0.001, linea), d);
+  const x0 = 130;
+  const x1 = 950;
+  const y = 1600;
+  const avance = prog(t, e.desde + 0.35, e.desde + 1.55, easeInOut);
+  const xs = HITOS.map((_, i) => lerp(x0, x1, i / (HITOS.length - 1)));
+  const entra = prog(t, e.desde + 0.2, e.desde + 0.5, easeOut);
   return (
     <AbsoluteFill style={{ background: K.rojo }}>
-      <AbsoluteFill style={{ backgroundImage: "radial-gradient(rgba(0,0,0,0.25) 3px, transparent 3.5px)", backgroundSize: "26px 26px" }} />
+      <AbsoluteFill style={{ backgroundImage: "radial-gradient(rgba(0,0,0,0.22) 3px, transparent 3.5px)", backgroundSize: "26px 26px" }} />
       <AbsoluteFill style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,214,0,0.35) 0%, rgba(227,6,19,0) 60%)" }} />
       <div style={{ position: "absolute", left: 0, right: 0, top: 230, textAlign: "center" }}>
         <Linea texto="Retro" t={t} t0={e.desde} tam={300} borde />
       </div>
-      <Camiseta foto="retro-espana-mundial-sudafrica-2010.png" t={t} t0={e.desde + 0.1} ancho={720} y={1010} giro={4} />
-      <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
-        <path d={d} stroke={K.blanco} strokeWidth={10} strokeLinecap="round" strokeDasharray={p.strokeDasharray} strokeDashoffset={p.strokeDashoffset} />
-        <path d="M 850 1530 L 885 1560 L 850 1590" stroke={K.blanco} strokeWidth={10} fill="none" strokeLinecap="round" opacity={linea > 0.95 ? 1 : 0} />
+      <Camiseta foto="retro-espana-mundial-sudafrica-2010.png" t={t} t0={e.desde + 0.1} ancho={680} y={980} giro={4} />
+      <svg width={W} height={H} style={{ position: "absolute", inset: 0, opacity: entra }}>
+        {/* Riel y progreso. */}
+        <line x1={x0} y1={y} x2={x1} y2={y} stroke="rgba(0,0,0,0.35)" strokeWidth={14} strokeLinecap="round" />
+        <line x1={x0} y1={y} x2={lerp(x0, x1, avance)} y2={y} stroke={K.blanco} strokeWidth={14} strokeLinecap="round" />
+        {xs.map((x, i) => {
+          const llega = avance >= i / (HITOS.length - 1) - 0.001;
+          const k = llega ? sp(t, e.desde + 0.35 + (1.2 * i) / (HITOS.length - 1), { damping: 9, stiffness: 260, mass: 0.5 }) : 0;
+          const ultimo = i === HITOS.length - 1;
+          return (
+            <g key={i} transform={`translate(${x} ${y})`}>
+              <circle r={26} fill={K.rojo} stroke="rgba(0,0,0,0.35)" strokeWidth={8} />
+              <circle r={lerp(0, ultimo ? 30 : 24, k)} fill={ultimo ? K.lima : K.blanco} stroke={K.negro} strokeWidth={ultimo ? 5 : 0} />
+            </g>
+          );
+        })}
       </svg>
-      <div style={{ position: "absolute", left: 60, top: 1470, fontFamily: ANTON, fontSize: 150, color: K.blanco, lineHeight: 1, opacity: prog(t, e.desde + 0.45, e.desde + 0.6) }}>’98</div>
-      <div style={{ position: "absolute", right: 60, top: 1470, fontFamily: ANTON, fontSize: 150, color: K.lima, lineHeight: 1, WebkitTextStroke: `4px ${K.negro}`, opacity: prog(t, e.desde + 1.2, e.desde + 1.35) }}>HOY</div>
+      {xs.map((x, i) => {
+        const k = prog(t, e.desde + 0.35 + (1.2 * i) / (HITOS.length - 1) - 0.05, e.desde + 0.35 + (1.2 * i) / (HITOS.length - 1) + 0.15, easeOut);
+        const ultimo = i === HITOS.length - 1;
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: x - 110,
+              width: 220,
+              top: y - (ultimo ? 175 : 140),
+              textAlign: "center",
+              fontFamily: ANTON,
+              fontSize: ultimo ? 120 : 84,
+              lineHeight: 1,
+              color: ultimo ? K.lima : K.blanco,
+              WebkitTextStroke: ultimo ? `4px ${K.negro}` : undefined,
+              textShadow: "0 6px 20px rgba(0,0,0,0.35)",
+              opacity: k,
+              translate: `0 ${(1 - k) * 30}px`,
+            }}
+          >
+            {HITOS[i]}
+          </div>
+        );
+      })}
       <Destello t={t} t0={e.desde} />
     </AbsoluteFill>
   );
@@ -387,13 +437,13 @@ const Estrellas: React.FC<{ t: number; e: Escena }> = ({ t, e }) => (
 
 const Envio: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
   const arco = prog(t, e.desde + 0.1, e.desde + 1.1, easeInOut);
-  const d = "M 230 1020 C 380 640, 700 640, 850 900";
+  const d = "M 230 870 C 380 490, 700 490, 850 750";
   const giro = (t - e.desde) * 40;
   return (
     <AbsoluteFill style={{ background: K.negro }}>
       <Franjas t={t} color={K.lima} opacidad={0.06} />
       <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
-        <g transform="translate(540 960)">
+        <g transform="translate(540 810)">
           <circle r={330} fill="none" stroke={K.lima} strokeWidth={8} />
           {[-60, -30, 0, 30, 60].map((lat) => (
             <ellipse key={lat} rx={330 * Math.cos((lat * Math.PI) / 180)} ry={22} cy={330 * Math.sin((lat * Math.PI) / 180)} fill="none" stroke={K.lima} strokeWidth={3} opacity={0.5} />
@@ -408,7 +458,7 @@ const Envio: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
         const tt = arco;
         // Avión sobre la curva (punto aproximado por Bézier).
         const bx = (u: number) => (1 - u) ** 3 * 230 + 3 * (1 - u) ** 2 * u * 380 + 3 * (1 - u) * u * u * 700 + u ** 3 * 850;
-        const by = (u: number) => (1 - u) ** 3 * 1020 + 3 * (1 - u) ** 2 * u * 640 + 3 * (1 - u) * u * u * 640 + u ** 3 * 900;
+        const by = (u: number) => (1 - u) ** 3 * 870 + 3 * (1 - u) ** 2 * u * 490 + 3 * (1 - u) * u * u * 490 + u ** 3 * 750;
         const ang = (Math.atan2(by(tt + 0.01) - by(tt), bx(tt + 0.01) - bx(tt)) * 180) / Math.PI;
         return (
           <svg width={110} height={110} viewBox="0 0 24 24" style={{ position: "absolute", left: bx(tt) - 55, top: by(tt) - 55, rotate: `${ang + 45}deg` }}>
@@ -416,7 +466,7 @@ const Envio: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
           </svg>
         );
       })()}
-      <div style={{ position: "absolute", left: 30, right: 30, top: 1340, textAlign: "center" }}>
+      <div style={{ position: "absolute", left: 30, right: 30, top: 1190, textAlign: "center" }}>
         <Linea texto="Envío gratis" t={t} t0={e.desde + 0.05} tam={170} color={K.lima} />
         <Linea texto="a todo el mundo" t={t} t0={e.desde + 0.45} tam={84} />
       </div>
@@ -507,12 +557,91 @@ const Personaliza: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
   );
 };
 
+const PENTAGONO = (r: number) =>
+  Array.from({ length: 5 }, (_, k) => {
+    const a = ((-90 + k * 72) * Math.PI) / 180;
+    return `${(Math.cos(a) * r).toFixed(1)},${(Math.sin(a) * r).toFixed(1)}`;
+  }).join(" ");
+
+/** Balón clásico de parches (blanco y negro). */
+const Balon: React.FC<{ r: number; giro: number }> = ({ r, giro }) => (
+  <svg width={r * 2} height={r * 2} viewBox="-100 -100 200 200" style={{ overflow: "visible" }}>
+    <defs>
+      <clipPath id="balon">
+        <circle r={98} />
+      </clipPath>
+      <radialGradient id="luz" cx="35%" cy="30%" r="75%">
+        <stop offset="0%" stopColor="#ffffff" />
+        <stop offset="70%" stopColor="#e8e8e8" />
+        <stop offset="100%" stopColor="#9a9a9a" />
+      </radialGradient>
+    </defs>
+    <circle r={98} fill="url(#luz)" />
+    <g clipPath="url(#balon)" transform={`rotate(${giro})`}>
+      <polygon points={PENTAGONO(30)} fill="#111" />
+      {[0, 1, 2, 3, 4].map((k) => {
+        const a = ((-90 + k * 72) * Math.PI) / 180;
+        return (
+          <g key={k}>
+            <line x1={Math.cos(a) * 30} y1={Math.sin(a) * 30} x2={Math.cos(a) * 66} y2={Math.sin(a) * 66} stroke="#111" strokeWidth={5} />
+            <polygon points={PENTAGONO(28)} fill="#111" transform={`translate(${Math.cos(a) * 92} ${Math.sin(a) * 92}) rotate(${k * 72 + 36})`} />
+          </g>
+        );
+      })}
+    </g>
+    <circle r={98} fill="none" stroke="#222" strokeWidth={4} />
+  </svg>
+);
+
+/** Grietas que salen del punto del impacto, como si el balón rompiera la pantalla. */
+const Grietas: React.FC<{ t: number; t0: number; x: number; y: number }> = ({ t, t0, x, y }) => {
+  const k = prog(t, t0, t0 + 0.12, easeOut);
+  const se = 1 - 0.5 * prog(t, t0 + 0.6, t0 + 1.6);
+  const rayos = Array.from({ length: 14 }, (_, i) => {
+    const a = (i / 14) * Math.PI * 2 + (i % 2 ? 0.17 : -0.11);
+    const largo = 420 + ((i * 137) % 5) * 130;
+    let d = `M ${x} ${y}`;
+    for (let s = 1; s <= 5; s++) {
+      const r = (largo * s) / 5;
+      const desvio = (s % 2 ? 1 : -1) * (14 + ((i * 31 + s * 17) % 23));
+      d += ` L ${x + Math.cos(a) * r - Math.sin(a) * desvio} ${y + Math.sin(a) * r + Math.cos(a) * desvio}`;
+    }
+    return d;
+  });
+  const aro = Array.from({ length: 14 }, (_, i) => {
+    const a = (i / 14) * Math.PI * 2;
+    const r = 150 + ((i * 53) % 4) * 18;
+    return `${x + Math.cos(a) * r},${y + Math.sin(a) * r}`;
+  }).join(" ");
+  return (
+    <svg width={W} height={H} style={{ position: "absolute", inset: 0, opacity: se }}>
+      {rayos.map((d, i) => {
+        const p = evolvePath(Math.max(0.001, k), d);
+        return (
+          <g key={i}>
+            <path d={d} stroke="rgba(0,0,0,0.55)" strokeWidth={9} fill="none" strokeDasharray={p.strokeDasharray} strokeDashoffset={p.strokeDashoffset} />
+            <path d={d} stroke="rgba(255,255,255,0.95)" strokeWidth={3.5} fill="none" strokeDasharray={p.strokeDasharray} strokeDashoffset={p.strokeDashoffset} />
+          </g>
+        );
+      })}
+      <polygon points={aro} fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.9)" strokeWidth={3} opacity={k} />
+    </svg>
+  );
+};
+
 const Codigo: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
   const codigo = "CAMIS11";
   const letras = Math.floor(clamp01((t - (e.desde + 0.35)) / 0.75) * codigo.length);
   const ticket = sp(t, e.desde + 0.05, { damping: 12, stiffness: 200, mass: 0.7 });
-  const sello = sp(t, M.diez, { damping: 8, stiffness: 260, mass: 0.6 });
-  const sh = temblor(t, M.diez, 0.4, 26);
+  // El balón sale de abajo, viene hacia la cámara y golpea la pantalla en M.diez.
+  const impacto = M.diez;
+  const patada = impacto - 0.5;
+  const vuelo = clamp01((t - patada) / (impacto - patada));
+  const bx = lerp(860, 540, easeOut(vuelo));
+  const by = lerp(1780, 1150, easeOut(vuelo)) - Math.sin(vuelo * Math.PI) * 220;
+  const br = lerp(28, 260, Math.pow(vuelo, 2.2));
+  const golpe = sp(t, impacto, { damping: 8, stiffness: 260, mass: 0.6 });
+  const sh = temblor(t, impacto, 0.45, 34);
   const sh0 = temblor(t, e.desde, 0.3, 30);
   return (
     <AbsoluteFill style={{ background: K.lima, translate: `${sh.x + sh0.x}px ${sh.y + sh0.y}px` }}>
@@ -544,17 +673,9 @@ const Codigo: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
           <span style={{ opacity: letras < codigo.length && Math.floor(t * 4) % 2 === 0 ? 1 : 0, color: K.blanco }}>|</span>
         </span>
       </div>
-      {t >= M.diez ? (
-        <div
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 990,
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+      {t >= impacto ? <Grietas t={t} t0={impacto} x={540} y={1150} /> : null}
+      {t >= impacto ? (
+        <div style={{ position: "absolute", left: 0, right: 0, top: 1060, display: "flex", justifyContent: "center" }}>
           <div
             style={{
               background: K.rojo,
@@ -564,9 +685,8 @@ const Codigo: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
               lineHeight: 1,
               padding: "20px 50px 30px",
               borderRadius: 24,
-              rotate: "-6deg",
-              scale: String(lerp(2.5, 1, sello)),
-              opacity: clamp01(sello * 3),
+              scale: String(lerp(0.15, 1, golpe)),
+              opacity: clamp01(golpe * 4),
               boxShadow: "0 30px 60px rgba(0,0,0,0.35)",
             }}
           >
@@ -574,24 +694,30 @@ const Codigo: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
           </div>
         </div>
       ) : null}
-      {/* Confeti al aplicar el código. */}
-      {t >= M.diez ? (
+      {t >= patada && t < impacto ? (
+        <div style={{ position: "absolute", left: bx - br, top: by - br, filter: `drop-shadow(0 ${br * 0.3}px ${br * 0.3}px rgba(0,0,0,0.4)) blur(${(vuelo * 2).toFixed(1)}px)` }}>
+          <Balon r={br} giro={vuelo * 720} />
+        </div>
+      ) : null}
+      {/* Confeti que sale del impacto. */}
+      {t >= impacto ? (
         <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
           {Array.from({ length: 60 }, (_, i) => {
-            const d = t - M.diez;
+            const d = t - impacto;
             const ang = (i / 60) * Math.PI * 2 + i;
             const v = 900 + (i % 7) * 160;
             const x = 540 + Math.cos(ang) * v * d;
-            const y = 1100 + Math.sin(ang) * v * d + 1400 * d * d;
+            const y = 1150 + Math.sin(ang) * v * d + 1400 * d * d;
             const c = [K.rojo, K.negro, K.blanco][i % 3];
             return <rect key={i} x={x} y={y} width={22} height={12} fill={c} transform={`rotate(${d * 600 + i * 40} ${x} ${y})`} opacity={clamp01(1.6 - d)} />;
           })}
         </svg>
       ) : null}
-      <div style={{ position: "absolute", left: 40, right: 40, top: 1330, textAlign: "center" }}>
-        <Linea texto="Solo para la comunidad" t={t} t0={M.diez + 0.6} tam={70} color={K.negro} />
-        <Linea texto="Futbol Onze" t={t} t0={M.diez + 0.9} tam={110} color={K.negro} />
+      <div style={{ position: "absolute", left: 40, right: 40, top: 1380, textAlign: "center" }}>
+        <Linea texto="Solo para la comunidad" t={t} t0={impacto + 0.6} tam={70} color={K.negro} />
+        <Linea texto="Futbol Onze" t={t} t0={impacto + 0.9} tam={110} color={K.negro} />
       </div>
+      <Destello t={t} t0={impacto} dur={0.14} />
       <Destello t={t} t0={e.desde} dur={0.14} />
     </AbsoluteFill>
   );
@@ -606,8 +732,6 @@ const Web: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
   const alto = 2330 * s;
   const url = "camis11.com";
   const escritas = Math.floor(clamp01((t - M.web) / 0.45) * url.length);
-  const toque = M.web + 0.65;
-  const dt = t - toque;
   return (
     <AbsoluteFill style={{ background: K.negro }}>
       <Franjas t={t} color={K.rojo} opacidad={0.1} />
@@ -642,22 +766,6 @@ const Web: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
             {/* Tapa los precios. */}
             <div style={{ position: "absolute", left: 0, top: 2070 * s, width: ancho, height: 70 * s, background: "#1b1b1b" }} />
           </div>
-          {dt > -0.3 && dt < 0.6 ? (
-            <div
-              style={{
-                position: "absolute",
-                left: 536 * s - 50,
-                top: 555 * s - 50,
-                width: 100,
-                height: 100,
-                borderRadius: "50%",
-                border: `6px solid ${K.lima}`,
-                background: "rgba(212,255,0,0.25)",
-                scale: String(dt < 0 ? 1 : lerp(1, 1.8, clamp01(dt / 0.6))),
-                opacity: dt < 0 ? clamp01((dt + 0.3) / 0.3) : 1 - clamp01(dt / 0.6),
-              }}
-            />
-          ) : null}
         </div>
       </div>
       <Destello t={t} t0={e.desde} dur={0.1} />
@@ -665,14 +773,43 @@ const Web: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
   );
 };
 
+/** Bandera rojigualda que ondea (franjas con borde en onda y pliegues de luz y sombra). */
+const Bandera: React.FC<{ t: number; t0: number }> = ({ t, t0 }) => {
+  const entra = prog(t, t0, t0 + 0.35, easeOut);
+  const borde = (y0: number) => {
+    const pts: string[] = [];
+    for (let x = -40; x <= W + 40; x += 20) pts.push(`${x} ${(y0 + 34 * Math.sin(x / 170 - t * 3.2)).toFixed(1)}`);
+    return pts;
+  };
+  const sup = borde(480);
+  const inf = borde(1440).reverse();
+  const franja = `M ${sup.join(" L ")} L ${inf.join(" L ")} Z`;
+  return (
+    <AbsoluteFill style={{ background: K.rojo, translate: `0 ${(1 - entra) * 200}px`, opacity: entra }}>
+      <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
+        <path d={franja} fill="#FFC400" />
+      </svg>
+      {/* Pliegues: bandas de luz y sombra que corren con la onda. */}
+      <AbsoluteFill
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(90deg, rgba(0,0,0,0.22) 0px, rgba(0,0,0,0) 180px, rgba(255,255,255,0.14) 300px, rgba(0,0,0,0) 420px, rgba(0,0,0,0.22) 534px)",
+          backgroundPosition: `${(t * 170 * 3.2) % 534}px 0`,
+          mixBlendMode: "multiply",
+        }}
+      />
+      <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.45) 100%)" }} />
+    </AbsoluteFill>
+  );
+};
+
 const Lema: React.FC<{ t: number; e: Escena }> = ({ t, e }) => (
   <AbsoluteFill style={{ background: K.negro }}>
-    <AbsoluteFill style={{ background: `linear-gradient(160deg, ${K.rojo} 0%, ${K.rojo} 48%, ${K.negro} 48.2%)`, opacity: prog(t, e.desde, e.desde + 0.25) }} />
-    <Franjas t={t} color={K.lima} opacidad={0.05} />
-    <div style={{ position: "absolute", left: 40, right: 40, top: 560, textAlign: "center" }}>
-      <Linea texto="En Camis11" t={t} t0={e.desde + 0.05} tam={150} borde />
-      <Linea texto="vivimos el fútbol" t={t} t0={e.desde + 0.5} tam={130} />
-      <Linea texto="como tú" t={t} t0={e.desde + 1.1} tam={230} color={K.lima} borde />
+    <Bandera t={t} t0={e.desde} />
+    <div style={{ position: "absolute", left: 40, right: 40, top: 590, textAlign: "center" }}>
+      <Linea texto="En Camis11" t={t} t0={e.desde + 0.1} tam={150} color={K.negro} />
+      <Linea texto="vivimos el fútbol" t={t} t0={e.desde + 0.5} tam={130} color={K.negro} />
+      <Linea texto="como tú" t={t} t0={e.desde + 1.05} tam={240} color={K.rojo} />
     </div>
     <Destello t={t} t0={e.desde} dur={0.1} />
   </AbsoluteFill>
@@ -703,7 +840,7 @@ const Cierre: React.FC<{ t: number; e: Escena }> = ({ t, e }) => {
         style={{ position: "absolute", right: 50, top: 630, width: 440, height: 243, objectFit: "contain", scale: String(lerp(0.2, 1, b)), opacity: clamp01(b * 2) }}
       />
       <div style={{ position: "absolute", left: 40, right: 40, top: 1060, textAlign: "center" }}>
-        <Pastilla texto="CÓDIGO CAMIS11 · -10% EXTRA" t={t} t0={e.desde + 0.45} fondo={K.lima} color={K.negro} tam={80} giro={-2} />
+        <Pastilla texto="CÓDIGO CAMIS11 PARA UN 10%" t={t} t0={e.desde + 0.45} fondo={K.lima} color={K.negro} tam={80} />
         <div style={{ height: 40 }} />
         <Linea texto="camis11.com" t={t} t0={e.desde + 0.7} tam={120} mayus={false} />
       </div>

@@ -74,7 +74,7 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
-        defaultProps={{ audio: "camis11/audio/mezcla.mp3", publi: true } satisfies PropsCamis}
+        defaultProps={{ audio: "camis11/audio/mezcla.mp3", publi: false } satisfies PropsCamis}
       />
       <Still id="Camis11Portada" component={PortadaCamis11} width={1080} height={1920} />
       <Composition
