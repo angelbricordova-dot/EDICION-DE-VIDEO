@@ -7,6 +7,7 @@ import { Explicador, PropsExplicador } from "./ivm/Explicador";
 import timelineIvm from "./ivm/timeline.json";
 import { Comercial, GUIONES, Portada, PropsComercial } from "./tucacas/Comercial";
 import { ComercialWeb, GUIONES_WEB, PortadaWeb, PropsWeb } from "./tucacas/web/ComercialWeb";
+import { GUION_CAMIS, PortadaCamis11, PropsCamis, ReelCamis11 } from "./camis11/Reel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -66,6 +67,16 @@ export const RemotionRoot: React.FC = () => {
         />
       ))}
       <Still id="TucacasWebPortada" component={PortadaWeb} width={1080} height={1920} />
+      <Composition
+        id="Camis11"
+        component={ReelCamis11}
+        durationInFrames={GUION_CAMIS.duracion * 30}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ audio: "camis11/audio/mezcla.mp3", publi: true } satisfies PropsCamis}
+      />
+      <Still id="Camis11Portada" component={PortadaCamis11} width={1080} height={1920} />
       <Composition
         id="HelloWorld"
         component={HelloWorld}

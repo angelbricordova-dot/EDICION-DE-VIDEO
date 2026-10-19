@@ -1,0 +1,335 @@
+{
+ "duracion": 30.0,
+ "pulso": 0.4644,
+ "marcas": {
+  "buscas": 0.28,
+  "para": 2.34,
+  "esto": 2.91,
+  "mil": 4.32,
+  "retro": 7.14,
+  "dragon": 9.1,
+  "oliver": 9.97,
+  "balmain": 11.02,
+  "roja": 12.54,
+  "estrellas": 13.9,
+  "envio": 14.92,
+  "devoluciones": 16.38,
+  "personaliza": 17.95,
+  "nombre": 18.9,
+  "codigo": 20.15,
+  "diez": 21.75,
+  "entra": 23.63,
+  "web": 24.3,
+  "lema": 25.25,
+  "fin_voz": 27.06
+ },
+ "frases": [
+  {
+   "desde": 0.0,
+   "hasta": 2.113,
+   "texto": "¿Buscas la camiseta de tu equipo?",
+   "clave": "tu equipo"
+  },
+  {
+   "desde": 2.287,
+   "hasta": 4.284,
+   "texto": "Para. Esto no es una tienda cualquiera.",
+   "clave": "no es una tienda cualquiera"
+  },
+  {
+   "desde": 4.319,
+   "hasta": 6.966,
+   "texto": "Más de 1.200 camisetas de clubes y selecciones.",
+   "clave": "1.200"
+  },
+  {
+   "desde": 7.14,
+   "hasta": 9.056,
+   "texto": "Retro desde el 98 hasta hoy.",
+   "clave": "Retro"
+  },
+  {
+   "desde": 9.102,
+   "hasta": 12.388,
+   "texto": "Dragon Ball. Oliver y Benji. Real Madrid × Balmain.",
+   "clave": "Dragon Ball"
+  },
+  {
+   "desde": 12.504,
+   "hasta": 14.849,
+   "texto": "Y la camiseta de la Roja de las dos estrellas.",
+   "clave": "dos estrellas"
+  },
+  {
+   "desde": 14.896,
+   "hasta": 16.335,
+   "texto": "Envío gratis a todo el mundo.",
+   "clave": "gratis"
+  },
+  {
+   "desde": 16.382,
+   "hasta": 17.926,
+   "texto": "Devoluciones durante 30 días.",
+   "clave": "30 días"
+  },
+  {
+   "desde": 17.949,
+   "hasta": 20.109,
+   "texto": "Y la puedes personalizar con tu nombre y tu número.",
+   "clave": "tu nombre y tu número"
+  },
+  {
+   "desde": 20.132,
+   "hasta": 23.591,
+   "texto": "Con el código CAMIS11 tienes un 10% extra de descuento.",
+   "clave": "CAMIS11"
+  },
+  {
+   "desde": 23.626,
+   "hasta": 25.228,
+   "texto": "Entra en camis11.com",
+   "clave": "camis11.com"
+  },
+  {
+   "desde": 25.252,
+   "hasta": 27.167,
+   "texto": "En Camis11 vivimos el fútbol como tú.",
+   "clave": "como tú"
+  }
+ ],
+ "musica": [
+  [
+   0.0,
+   4.5600000000000005,
+   2.1999999999999997
+  ],
+  [
+   2.32,
+   6.88,
+   17.61
+  ],
+  [
+   20.13,
+   6.88,
+   7.129999999999999
+  ]
+ ],
+ "escenas": [
+  {
+   "id": "gancho",
+   "desde": 0.0,
+   "hasta": 2.32
+  },
+  {
+   "id": "para",
+   "desde": 2.32,
+   "hasta": 4.32
+  },
+  {
+   "id": "catalogo",
+   "desde": 4.32,
+   "hasta": 7.14
+  },
+  {
+   "id": "retro",
+   "desde": 7.14,
+   "hasta": 9.1
+  },
+  {
+   "id": "especial",
+   "desde": 9.1,
+   "hasta": 9.97,
+   "foto": "edicion-especial-camiseta-japon-dbz-goku.png",
+   "titulo": "DRAGON BALL",
+   "color": "#ff7a00"
+  },
+  {
+   "id": "especial",
+   "desde": 9.97,
+   "hasta": 11.02,
+   "foto": "edicion-especial-camiseta-japon-x-oliver-y-benji.png",
+   "titulo": "OLIVER Y BENJI",
+   "color": "#ffffff"
+  },
+  {
+   "id": "especial",
+   "desde": 11.02,
+   "hasta": 12.54,
+   "foto": "edicion-especial-real-madrid-x-balmain-negra.png",
+   "titulo": "REAL MADRID × BALMAIN",
+   "color": "#D4FF00"
+  },
+  {
+   "id": "estrellas",
+   "desde": 12.54,
+   "hasta": 14.92
+  },
+  {
+   "id": "envio",
+   "desde": 14.92,
+   "hasta": 16.38
+  },
+  {
+   "id": "devoluciones",
+   "desde": 16.38,
+   "hasta": 17.95
+  },
+  {
+   "id": "personaliza",
+   "desde": 17.95,
+   "hasta": 20.13
+  },
+  {
+   "id": "codigo",
+   "desde": 20.13,
+   "hasta": 23.63
+  },
+  {
+   "id": "web",
+   "desde": 23.63,
+   "hasta": 25.25
+  },
+  {
+   "id": "lema",
+   "desde": 25.25,
+   "hasta": 27.209999999999997
+  },
+  {
+   "id": "cierre",
+   "desde": 27.209999999999997,
+   "hasta": 30.0
+  }
+ ],
+ "efectos": [
+  {
+   "t": 0.05,
+   "sonido": "riser",
+   "gain": 0.6
+  },
+  {
+   "t": 2.1999999999999997,
+   "sonido": "stop",
+   "gain": 0.7
+  },
+  {
+   "t": 2.32,
+   "sonido": "impacto",
+   "gain": 1.0
+  },
+  {
+   "t": 2.32,
+   "sonido": "silbato",
+   "gain": 0.5
+  },
+  {
+   "t": 4.14,
+   "sonido": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 4.42,
+   "sonido": "flash",
+   "gain": 0.6
+  },
+  {
+   "t": 6.96,
+   "sonido": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 7.1899999999999995,
+   "sonido": "impacto-corto",
+   "gain": 0.7
+  },
+  {
+   "t": 9.1,
+   "sonido": "impacto-corto",
+   "gain": 0.8
+  },
+  {
+   "t": 9.97,
+   "sonido": "impacto-corto",
+   "gain": 0.8
+  },
+  {
+   "t": 11.02,
+   "sonido": "impacto-corto",
+   "gain": 0.8
+  },
+  {
+   "t": 12.36,
+   "sonido": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 13.9,
+   "sonido": "flash",
+   "gain": 0.7
+  },
+  {
+   "t": 14.92,
+   "sonido": "avion",
+   "gain": 0.6
+  },
+  {
+   "t": 16.2,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 17.77,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 18.799999999999997,
+   "sonido": "teclado",
+   "gain": 0.7
+  },
+  {
+   "t": 19.18,
+   "sonido": "riser",
+   "gain": 0.8
+  },
+  {
+   "t": 20.13,
+   "sonido": "impacto",
+   "gain": 1.0
+  },
+  {
+   "t": 20.48,
+   "sonido": "teclado",
+   "gain": 0.6
+  },
+  {
+   "t": 21.75,
+   "sonido": "exito",
+   "gain": 0.9
+  },
+  {
+   "t": 21.8,
+   "sonido": "estadio",
+   "gain": 0.5
+  },
+  {
+   "t": 23.45,
+   "sonido": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 25.07,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 27.209999999999997,
+   "sonido": "impacto",
+   "gain": 0.9
+  },
+  {
+   "t": 27.259999999999998,
+   "sonido": "estadio",
+   "gain": 0.6
+  }
+ ]
+}
