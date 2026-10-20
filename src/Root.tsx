@@ -10,6 +10,7 @@ import { ComercialWeb, GUIONES_WEB, PortadaWeb, PropsWeb } from "./tucacas/web/C
 import { GUION_CAMIS, PortadaCamis11, PropsCamis, ReelCamis11 } from "./camis11/Reel";
 import { GUION_PULPO, PropsPulpo, ShortPulpo } from "./pulpo/Short";
 import { PropsPulpoReal, ShortPulpoReal } from "./pulpo/ShortReal";
+import { GUION_V1, PortadaV1, PromoV1, PropsV1 } from "./tubodega/V1";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -109,6 +110,16 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{ limpia, audio: limpia ? "pulpo/audio/mezcla-limpia.mp3" : "pulpo/audio/mezcla.mp3" } satisfies PropsPulpoReal}
         />
       ))}
+      <Composition
+        id="TuBodegaV1"
+        component={PromoV1}
+        durationInFrames={Math.round(GUION_V1.duracion * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ audio: "tubodega/audio/mezcla-v1.mp3", whatsapp: "[TU WHATSAPP]" } satisfies PropsV1}
+      />
+      <Still id="TuBodegaV1Portada" component={PortadaV1} width={1080} height={1920} />
       <Composition
         id="HelloWorld"
         component={HelloWorld}

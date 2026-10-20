@@ -1,0 +1,153 @@
+{
+ "duracion": 30.0,
+ "marcas": {
+  "s1": 0.0,
+  "cuaderno": 1.75,
+  "s2": 2.72,
+  "escaneas": 5.89,
+  "listo": 6.84,
+  "s3": 7.76,
+  "vuelto": 9.35,
+  "s4": 10.92,
+  "pagomovil": 10.98,
+  "punto": 12.04,
+  "zelle": 13.13,
+  "efectivo": 13.53,
+  "fiado": 14.44,
+  "s5": 15.75,
+  "vendiste": 17.34,
+  "ganaste": 18.96,
+  "s6": 20.3,
+  "internet": 22.3,
+  "s7": 23.62,
+  "gratis": 24.49,
+  "whatsapp": 26.21,
+  "fin": 30.0
+ },
+ "frases": [
+  {
+   "desde": 0.0,
+   "hasta": 2.311,
+   "texto": "¿Todavía anotas los fiados en un cuaderno?",
+   "clave": "cuaderno"
+  },
+  {
+   "desde": 2.727,
+   "hasta": 7.404,
+   "texto": "Con TuBodega vendes desde tu teléfono: escaneas el producto y listo.",
+   "clave": "y listo"
+  },
+  {
+   "desde": 7.765,
+   "hasta": 10.558,
+   "texto": "Todo en dólares y en bolívares, con el vuelto calculado.",
+   "clave": "vuelto calculado"
+  },
+  {
+   "desde": 10.975,
+   "hasta": 15.17,
+   "texto": "Pago Móvil, punto, Zelle, efectivo… o fiado.",
+   "clave": "fiado"
+  },
+  {
+   "desde": 15.826,
+   "hasta": 20.175,
+   "texto": "Sabes quién te debe, cuánto vendiste y cuánto ganaste hoy.",
+   "clave": "cuánto ganaste hoy"
+  },
+  {
+   "desde": 20.372,
+   "hasta": 23.625,
+   "texto": "Imprime tu ticket, y funciona aunque se vaya el internet.",
+   "clave": "sin internet"
+  },
+  {
+   "desde": 23.702,
+   "hasta": 27.995,
+   "texto": "TuBodega. Prueba 15 días gratis. Escríbenos por WhatsApp.",
+   "clave": "15 días gratis"
+  }
+ ],
+ "efectos": [
+  {
+   "t": 0.05,
+   "sonido": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 2.0,
+   "sonido": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 2.5700000000000003,
+   "sonido": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 3.3200000000000003,
+   "sonido": "beep",
+   "gain": 1.0
+  },
+  {
+   "t": 6.62,
+   "sonido": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 7.609999999999999,
+   "sonido": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 9.35,
+   "sonido": "pop",
+   "gain": 0.8
+  },
+  {
+   "t": 11.280000000000001,
+   "sonido": "tap",
+   "gain": 0.9
+  },
+  {
+   "t": 14.389999999999999,
+   "sonido": "tap",
+   "gain": 0.9
+  },
+  {
+   "t": 15.6,
+   "sonido": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 19.11,
+   "sonido": "chaching",
+   "gain": 1.0
+  },
+  {
+   "t": 20.45,
+   "sonido": "impresora",
+   "gain": 0.9
+  },
+  {
+   "t": 22.3,
+   "sonido": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 23.470000000000002,
+   "sonido": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 24.49,
+   "sonido": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 29.35,
+   "sonido": "golpe",
+   "gain": 1.0
+  }
+ ]
+}
