@@ -4,7 +4,7 @@ import { Audio } from "@remotion/media";
 import { evolvePath } from "@remotion/paths";
 import { clamp01, easeIn, easeOut, FPS, lerp, prog, sp } from "../tucacas/estilo";
 import type { Frase } from "../tucacas/guiones";
-import { B, camara, cargarFuentes, Fondo, H, IconoWhatsApp, JAKARTA, Marca, pantalla, Pastilla, PH, PW, Subtitulos, Telefono, Titular, Toque, W } from "./piezas";
+import { B, camara, cargarFuentes, Fondo, IconoWhatsApp, JAKARTA, Marca, pantalla, Pastilla, PH, PW, Subtitulos, Telefono, Titular, Toque, W } from "./piezas";
 import guionJson from "./guion-v1.json";
 
 // V1 · Promo 30 s "Deja el cuaderno" (marketing/GUIONES.md). Tiempos en guion-v1.json
