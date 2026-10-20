@@ -2,70 +2,71 @@
  "duracion": 30.0,
  "marcas": {
   "s1": 0.0,
-  "cuaderno": 1.75,
-  "s2": 2.72,
-  "escaneas": 5.89,
-  "listo": 6.84,
-  "s3": 7.76,
-  "vuelto": 9.35,
-  "s4": 10.92,
-  "pagomovil": 10.98,
-  "punto": 12.04,
-  "zelle": 13.13,
-  "efectivo": 13.53,
-  "fiado": 14.44,
-  "s5": 15.75,
-  "vendiste": 17.34,
-  "ganaste": 18.96,
-  "s6": 20.3,
-  "internet": 22.3,
-  "s7": 23.62,
-  "gratis": 24.49,
-  "whatsapp": 26.21,
+  "cuaderno": 1.85,
+  "s2": 2.8,
+  "escaneas": 5.19,
+  "listo": 6.42,
+  "s3": 7.35,
+  "vuelto": 9.3,
+  "s4": 10.85,
+  "pagomovil": 11.11,
+  "punto": 11.78,
+  "zelle": 12.51,
+  "efectivo": 12.85,
+  "fiado": 13.4,
+  "s5": 14.95,
+  "vendiste": 16.44,
+  "ganaste": 17.45,
+  "s6": 19.1,
+  "funciona": 20.42,
+  "internet": 21.75,
+  "s7": 22.9,
+  "gratis": 23.93,
+  "whatsapp": 25.34,
   "fin": 30.0
  },
  "frases": [
   {
-   "desde": 0.0,
-   "hasta": 2.311,
+   "desde": 0.21,
+   "hasta": 2.79,
    "texto": "¿Todavía anotas los fiados en un cuaderno?",
    "clave": "cuaderno"
   },
   {
-   "desde": 2.727,
-   "hasta": 7.404,
+   "desde": 2.86,
+   "hasta": 6.9,
    "texto": "Con TuBodega vendes desde tu teléfono: escaneas el producto y listo.",
    "clave": "y listo"
   },
   {
-   "desde": 7.765,
-   "hasta": 10.558,
+   "desde": 7.41,
+   "hasta": 10.274,
    "texto": "Todo en dólares y en bolívares, con el vuelto calculado.",
    "clave": "vuelto calculado"
   },
   {
-   "desde": 10.975,
-   "hasta": 15.17,
+   "desde": 10.91,
+   "hasta": 13.79,
    "texto": "Pago Móvil, punto, Zelle, efectivo… o fiado.",
    "clave": "fiado"
   },
   {
-   "desde": 15.826,
-   "hasta": 20.175,
+   "desde": 15.06,
+   "hasta": 18.3,
    "texto": "Sabes quién te debe, cuánto vendiste y cuánto ganaste hoy.",
    "clave": "cuánto ganaste hoy"
   },
   {
-   "desde": 20.372,
-   "hasta": 23.625,
+   "desde": 19.16,
+   "hasta": 22.227,
    "texto": "Imprime tu ticket, y funciona aunque se vaya el internet.",
    "clave": "sin internet"
   },
   {
-   "desde": 23.702,
-   "hasta": 27.995,
-   "texto": "TuBodega. Prueba 15 días gratis. Escríbenos por WhatsApp.",
-   "clave": "15 días gratis"
+   "desde": 22.96,
+   "hasta": 26.533,
+   "texto": "TuBodega. Prueba 7 días gratis. Escríbenos por WhatsApp.",
+   "clave": "7 días gratis"
   }
  ],
  "efectos": [
@@ -75,72 +76,72 @@
    "gain": 0.8
   },
   {
-   "t": 2.0,
+   "t": 2.1,
    "sonido": "pop",
    "gain": 0.7
   },
   {
-   "t": 2.5700000000000003,
+   "t": 2.65,
    "sonido": "whoosh",
    "gain": 0.6
   },
   {
-   "t": 3.3200000000000003,
+   "t": 3.25,
    "sonido": "beep",
    "gain": 1.0
   },
   {
-   "t": 6.62,
+   "t": 7.6499999999999995,
    "sonido": "pop",
    "gain": 0.6
   },
   {
-   "t": 7.609999999999999,
+   "t": 7.199999999999999,
    "sonido": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 9.35,
+   "t": 9.3,
    "sonido": "pop",
    "gain": 0.8
   },
   {
-   "t": 11.280000000000001,
+   "t": 11.41,
    "sonido": "tap",
    "gain": 0.9
   },
   {
-   "t": 14.389999999999999,
+   "t": 13.35,
    "sonido": "tap",
    "gain": 0.9
   },
   {
-   "t": 15.6,
+   "t": 14.799999999999999,
    "sonido": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 19.11,
+   "t": 17.599999999999998,
    "sonido": "chaching",
    "gain": 1.0
   },
   {
-   "t": 20.45,
+   "t": 19.25,
    "sonido": "impresora",
    "gain": 0.9
   },
   {
-   "t": 22.3,
+   "t": 21.75,
    "sonido": "pop",
    "gain": 0.7
   },
   {
-   "t": 23.470000000000002,
+   "t": 22.75,
    "sonido": "whoosh",
    "gain": 0.7
   },
   {
-   "t": 24.49,
+   "t": 23.93,
    "sonido": "pop",
    "gain": 0.6
   },

@@ -186,7 +186,7 @@ export const PromoV1: React.FC<PropsV1> = ({ audio, whatsapp }) => {
         </div>
       ) : null}
       <Titular t={t} y={240} tam={80} hasta={M.s6} lineas={[{ texto: "Sabes quién te debe", t0: M.s5 + 0.05, verdes: ["debe"] }, { texto: "y cuánto ganaste hoy", t0: M.ganaste - 0.15, verdes: ["ganaste"] }]} />
-      <Titular t={t} y={240} tam={80} hasta={M.s7} lineas={[{ texto: "Imprime tu ticket.", t0: M.s6 + 0.05, verdes: ["ticket"] }, { texto: "Funciona sin internet.", t0: M.internet, verdes: ["internet"] }]} />
+      <Titular t={t} y={240} tam={80} hasta={M.s7} lineas={[{ texto: "Imprime tu ticket.", t0: M.s6 + 0.05, verdes: ["ticket"] }, { texto: "Funciona sin internet.", t0: M.funciona, verdes: ["internet"] }]} />
 
       {t < M.s7 ? <Subtitulos frases={GUION_V1.frases} t={t} y={1440} /> : null}
       {t >= M.fin - 0.12 ? <AbsoluteFill style={{ background: B.fondo }} /> : null}

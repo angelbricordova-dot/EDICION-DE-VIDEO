@@ -81,6 +81,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Tu Día en Tucacas (alquiler vacacional) | `src/tucacas/` (web en `src/tucacas/web/`) | `docs/tucacas.md` | verde/mar/sol, playa animada, demo de la página en teléfono, voz Juana |
 | Futbol Onze × Camis11 (camisetas) | `src/camis11/` | `docs/camis11.md` | negro + rojo #E30613 + lima #D4FF00, Anton/Bebas, cortes al beat, voz Alejandro |
 | Short pulpo (prueba de animación) | `src/pulpo/` | `docs/pulpo.md` | personaje de caricatura en vectores, mar azul, rayos X, subtítulo de una palabra (Luckiest Guy) |
+| TuBodega (app de punto de venta) | `src/tubodega/` | `docs/tubodega.md` | verde #2F9E6E, Plus Jakarta Sans, teléfono con pantallas reales y zooms, voz Richard |
 
 Cada estilo vive en su carpeta: un video nuevo de otro tipo va en su propia carpeta
 `src/<proyecto>/` con su paleta y fuentes, sin mezclar con los anteriores.
@@ -131,6 +132,8 @@ Cada estilo vive en su carpeta: un video nuevo de otro tipo va en su propia carp
   similitud 0.8, estilo 0.2, prefijo `[cálida, sonriendo]`.
 - **Alejandro** (masculina, España, segura): `WWVK6dYMrl0ZHnHT7cRj`, Multilingual v2,
   estabilidad 0.45, similitud 0.8, estilo 0.3.
+- **Richard** (masculina, latino neutro, redes; TuBodega): `Cpm6N9BNC1M75bYS7kO1`, Eleven v3,
+  estabilidad 0.5, similitud 0.8, estilo 0.25, prefijo `[cercano, sonriendo]`.
 
 ## 7. Skills instaladas (`.claude/skills/`)
 

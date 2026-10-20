@@ -14,20 +14,21 @@ RAIZ = Path(__file__).resolve().parent.parent
 DIR = RAIZ / "src/tubodega"
 
 M = {
+    # Voz de Richard (eleven_v3), cada frase colocada al inicio de su escena.
     # Escena 1: ¿Todavía anotas los fiados en un cuaderno?
-    "s1": 0.0, "cuaderno": 1.75,
+    "s1": 0.0, "cuaderno": 1.85,
     # Escena 2: Con Tu Bodega vendes desde tu teléfono: escaneas el producto y listo.
-    "s2": 2.72, "escaneas": 5.89, "listo": 6.84,
+    "s2": 2.8, "escaneas": 5.19, "listo": 6.42,
     # Escena 3: Todo en dólares y en bolívares, con el vuelto calculado.
-    "s3": 7.76, "vuelto": 9.35,
+    "s3": 7.35, "vuelto": 9.3,
     # Escena 4: Pago Móvil, punto, Zelle, efectivo… o fiado.
-    "s4": 10.92, "pagomovil": 10.98, "punto": 12.04, "zelle": 13.13, "efectivo": 13.53, "fiado": 14.44,
+    "s4": 10.85, "pagomovil": 11.11, "punto": 11.78, "zelle": 12.51, "efectivo": 12.85, "fiado": 13.4,
     # Escena 5: Sabes quién te debe, cuánto vendiste y cuánto ganaste hoy.
-    "s5": 15.75, "vendiste": 17.34, "ganaste": 18.96,
+    "s5": 14.95, "vendiste": 16.44, "ganaste": 17.45,
     # Escena 6: Imprime tu ticket, y funciona aunque se vaya el internet.
-    "s6": 20.3, "internet": 22.3,
-    # Escena 7: Tu Bodega. Prueba quince días gratis. Escríbenos por WhatsApp.
-    "s7": 23.62, "gratis": 24.49, "whatsapp": 26.21,
+    "s6": 19.1, "funciona": 20.42, "internet": 21.75,
+    # Escena 7: Tu Bodega. Prueba siete días gratis. Escríbenos por WhatsApp.
+    "s7": 22.9, "gratis": 23.93, "whatsapp": 25.34,
     "fin": 30.0,
 }
 

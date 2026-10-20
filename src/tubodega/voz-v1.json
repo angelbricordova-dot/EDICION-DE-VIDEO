@@ -1,42 +1,42 @@
 {
   "audio": "public/tubodega/voz/v1.mp3",
-  "duracion": 27.995,
+  "voz": "Richard Cpm6N9BNC1M75bYS7kO1 (eleven_v3)",
+  "duracion": 26.533,
   "lineas": [
     {
       "texto": "¿Todavía anotas los fiados en un cuaderno?",
-      "t": 0.0,
-      "fin": 2.311
+      "t": 0.21,
+      "fin": 2.79
     },
     {
       "texto": "Con Tu Bodega vendes desde tu teléfono: escaneas el producto y listo.",
-      "t": 2.727,
-      "fin": 7.404
+      "t": 2.86,
+      "fin": 6.9
     },
     {
       "texto": "Todo en dólares y en bolívares, con el vuelto calculado.",
-      "t": 7.765,
-      "fin": 10.558
+      "t": 7.41,
+      "fin": 10.274
     },
     {
       "texto": "Pago Móvil, punto, Sel, efectivo… o fiado.",
-      "t": 10.975,
-      "fin": 15.17
+      "t": 10.91,
+      "fin": 13.79
     },
     {
       "texto": "Sabes quién te debe, cuánto vendiste y cuánto ganaste hoy.",
-      "t": 15.826,
-      "fin": 20.175
+      "t": 15.06,
+      "fin": 18.3
     },
     {
       "texto": "Imprime tu ticket, y funciona aunque se vaya el internet.",
-      "t": 20.372,
-      "fin": 23.625
+      "t": 19.16,
+      "fin": 22.227
     },
     {
-      "texto": "Tu Bodega. Prueba quince días gratis. Escríbenos por WhatsApp.",
-      "t": 23.702,
-      "fin": 27.995
+      "texto": "Tu Bodega. Prueba siete días gratis. Escríbenos por WhatsApp.",
+      "t": 22.96,
+      "fin": 26.533
     }
-  ],
-  "tempo": 1.06
+  ]
 }

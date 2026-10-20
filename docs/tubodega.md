@@ -22,5 +22,11 @@ npx remotion render TuBodegaV1 out/tubodega-promo-30s.mp4 --props='{"audio":"tub
 npx remotion still TuBodegaV1Portada out/tubodega-promo-30s-portada.jpg --image-format=jpeg
 ```
 
-Voces probadas (Voice Library, venezolanas): David `Aoh8oiCIlPke1wFxeNuK` (usada en la muestra),
-Joseph `SIpDYvpsUzCaJ0WmnSA8`, Valeria `iyvXhCAqzDxKnq3FDjZl`, María `C96EBIpeVkPIxiJ0E16Y`.
+**Voz aprobada: Richard** `Cpm6N9BNC1M75bYS7kO1` (latino neutro, redes), `eleven_v3`, estabilidad 0.5,
+similitud 0.8, estilo 0.25, prefijo `[cercano, sonriendo]`. Habla rápido: cada frase se coloca al inicio de su
+escena. Usar la misma en todos los videos.
+
+Datos confirmados: WhatsApp **+58 426-211-1890**, prueba **7 días gratis**, precios del brief OK,
+tasa BCV del 20/10/2026 **881,07** (pantallas 01–24 y clips regenerados con `TASA=881.07 node marketing/capture.mjs`;
+las originales a 36,50 quedan en `public/tubodega/originales-tasa-36.50/`). Las pantallas 25, 26, 28 y 29
+(prueba de 7 días) vienen del repo de la app y muestran la tasa 36,50.
