@@ -117,7 +117,7 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
-        defaultProps={{ audio: "tubodega/audio/mezcla-v1.mp3", whatsapp: "[TU WHATSAPP]" } satisfies PropsV1}
+        defaultProps={{ audio: "tubodega/audio/mezcla-v1.mp3", whatsapp: "+58 426-211-1890" } satisfies PropsV1}
       />
       <Still id="TuBodegaV1Portada" component={PortadaV1} width={1080} height={1920} />
       <Composition

@@ -103,7 +103,7 @@ const Cierre: React.FC<{ t: number; whatsapp: string }> = ({ t, whatsapp }) => {
         <Marca t={t} t0={M.s7} tam={130} />
       </div>
       <div style={{ position: "absolute", left: 0, right: 0, top: 560, display: "flex", flexDirection: "column", alignItems: "center", gap: 26 }}>
-        <Pastilla t={t} t0={M.gratis} texto="Prueba 15 días gratis" tam={62} />
+        <Pastilla t={t} t0={M.gratis} texto="Prueba 7 días gratis" tam={62} />
         <Pastilla t={t} t0={M.whatsapp} texto={`WhatsApp ${whatsapp}`} fondo={B.texto} tam={50} icono={<IconoWhatsApp tam={56} />} />
       </div>
       <div style={{ position: "absolute", left: W / 2 - 230, top: 920, width: 460, height: 996, translate: `0 ${(1 - tel) * 900}px`, rotate: `${(1 - tel) * 6}deg` }}>
@@ -124,7 +124,7 @@ export const PromoV1: React.FC<PropsV1> = ({ audio, whatsapp }) => {
   const telSale = prog(t, M.s6 - 0.2, M.s6 + 0.25, easeIn);
   const contenidos = [
     { t: 0, img: "12-cuaderno-fiados.png" },
-    { t: M.s2, clip: "01-escanear-y-cobrar.mp4", inicio: 0 },
+    { t: M.s2, clip: "01-escanear-y-cobrar.mp4", inicio: 0.35 },
     { t: M.s3, img: "09-vuelto-efectivo.png" },
     { t: M.s4, img: "08-pago-movil.png" },
     { t: M.fiado - 0.3, img: "11-credito-fiado.png" },
