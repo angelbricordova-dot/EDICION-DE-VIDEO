@@ -209,7 +209,7 @@ const Fondo: React.FC<{ t: number }> = ({ t }) => (
 
 // ------------------------------------------------------------- textos
 
-const Palabra: React.FC<{ t: number }> = ({ t }) => {
+export const Palabra: React.FC<{ t: number }> = ({ t }) => {
   const ps = GUION_PULPO.palabras;
   const i = ps.findIndex((p, j) => t >= p.t - 0.03 && t < (ps[j + 1]?.t ?? p.fin + 0.3) - 0.03);
   if (i < 0) return null;
@@ -240,7 +240,7 @@ const Palabra: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-const Rotulo: React.FC<{ t: number; t0: number; t1: number; texto: string; x: number; y: number; tam?: number; color?: string }> = ({ t, t0, t1, texto, x, y, tam = 120, color = "#ffffff" }) => {
+export const Rotulo: React.FC<{ t: number; t0: number; t1: number; texto: string; x: number; y: number; tam?: number; color?: string }> = ({ t, t0, t1, texto, x, y, tam = 120, color = "#ffffff" }) => {
   if (t < t0 || t > t1) return null;
   const k = sp(t, t0, { damping: 9, stiffness: 260, mass: 0.6 });
   const sale = prog(t, t1 - 0.15, t1, easeIn);
