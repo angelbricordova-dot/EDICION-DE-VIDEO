@@ -80,6 +80,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | IVM explicador | `src/ivm/` | `docs/estilo-ivm.md` | explicador ilustrado 16:9, papel crema, acento amarillo |
 | Tu Día en Tucacas (alquiler vacacional) | `src/tucacas/` (web en `src/tucacas/web/`) | `docs/tucacas.md` | verde/mar/sol, playa animada, demo de la página en teléfono, voz Juana |
 | Futbol Onze × Camis11 (camisetas) | `src/camis11/` | `docs/camis11.md` | negro + rojo #E30613 + lima #D4FF00, Anton/Bebas, cortes al beat, voz Alejandro |
+| Short pulpo (prueba de animación) | `src/pulpo/` | `docs/pulpo.md` | personaje de caricatura en vectores, mar azul, rayos X, subtítulo de una palabra (Luckiest Guy) |
 
 Cada estilo vive en su carpeta: un video nuevo de otro tipo va en su propia carpeta
 `src/<proyecto>/` con su paleta y fuentes, sin mezclar con los anteriores.

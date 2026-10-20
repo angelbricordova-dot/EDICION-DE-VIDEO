@@ -8,6 +8,7 @@ import timelineIvm from "./ivm/timeline.json";
 import { Comercial, GUIONES, Portada, PropsComercial } from "./tucacas/Comercial";
 import { ComercialWeb, GUIONES_WEB, PortadaWeb, PropsWeb } from "./tucacas/web/ComercialWeb";
 import { GUION_CAMIS, PortadaCamis11, PropsCamis, ReelCamis11 } from "./camis11/Reel";
+import { GUION_PULPO, PropsPulpo, ShortPulpo } from "./pulpo/Short";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -77,6 +78,24 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{ audio: "camis11/audio/mezcla.mp3", publi: false } satisfies PropsCamis}
       />
       <Still id="Camis11Portada" component={PortadaCamis11} width={1080} height={1920} />
+      <Composition
+        id="PulpoFinal"
+        component={ShortPulpo}
+        durationInFrames={Math.round(GUION_PULPO.duracion * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ limpia: false, audio: "pulpo/audio/mezcla.mp3" } satisfies PropsPulpo}
+      />
+      <Composition
+        id="PulpoLimpio"
+        component={ShortPulpo}
+        durationInFrames={Math.round(GUION_PULPO.duracion * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ limpia: true, audio: "pulpo/audio/mezcla-limpia.mp3" } satisfies PropsPulpo}
+      />
       <Composition
         id="HelloWorld"
         component={HelloWorld}
