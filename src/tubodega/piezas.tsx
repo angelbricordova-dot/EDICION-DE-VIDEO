@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile } from "remotion";
+import { AbsoluteFill, Freeze, Img, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { clamp01, easeInOut, easeOut, FPS, lerp, prog, sp } from "../tucacas/estilo";
 import { Clave, claveEn, desenfoqueCamara } from "../tucacas/web/escenas";
@@ -21,6 +21,7 @@ export const B = {
   blanco: "#FFFFFF",
 };
 export const JAKARTA = '"Plus Jakarta Sans", system-ui, sans-serif';
+export const NUNITO = '"Nunito", system-ui, sans-serif';
 export const W = 1080;
 export const H = 1920;
 // Zonas seguras de TikTok/Reels (GUIONES.md): 220 px arriba, 420 abajo, 90 a la derecha.
@@ -31,6 +32,7 @@ export const cargarFuentes = () => {
   if (fuentes) return;
   fuentes = true;
   loadFont({ family: "Plus Jakarta Sans", url: staticFile("tubodega/fuentes/jakarta.woff2"), weight: "200 800" });
+  loadFont({ family: "Nunito", url: staticFile("tubodega/fuentes/nunito.woff2"), weight: "200 1000" });
 };
 
 export const pantalla = (n: string) => staticFile(`tubodega/screens/${n}`);
@@ -76,10 +78,16 @@ export const Fondo: React.FC<{ t: number; tono?: "claro" | "verde" }> = ({ t, to
 
 // ------------------------------------------------------------- teléfono con cámara
 
-export type Contenido = { t: number; img?: string; clip?: string; inicio?: number; rate?: number };
+// corte: cambia de pantalla sin deslizar (p. ej. del cuadro congelado al clip del mismo momento).
+// congelar: muestra fijo el cuadro `inicio` del clip.
+export type Contenido = { t: number; img?: string; clip?: string; inicio?: number; rate?: number; corte?: boolean; congelar?: boolean };
 
 const Pantallazo: React.FC<{ c: Contenido }> = ({ c }) =>
-  c.clip ? (
+  c.clip && c.congelar ? (
+    <Freeze frame={0}>
+      <OffthreadVideo src={staticFile(`tubodega/clips/${c.clip}`)} startFrom={Math.round((c.inicio ?? 0) * FPS)} muted style={{ position: "absolute", left: 0, top: 0, width: PW, height: PH }} />
+    </Freeze>
+  ) : c.clip ? (
     <Sequence from={Math.round(c.t * FPS)} layout="none">
       <OffthreadVideo src={staticFile(`tubodega/clips/${c.clip}`)} startFrom={Math.round((c.inicio ?? 0) * FPS)} playbackRate={c.rate ?? 1} muted style={{ position: "absolute", left: 0, top: 0, width: PW, height: PH }} />
     </Sequence>
@@ -113,7 +121,7 @@ export const Telefono: React.FC<{
   });
   const c = contenidos[idx];
   const prev = contenidos[idx - 1];
-  const des = prev ? prog(t, c.t, c.t + 0.35, easeInOut) : 1;
+  const des = prev && !c.corte ? prog(t, c.t, c.t + 0.35, easeInOut) : 1;
   return (
     <div
       style={{
@@ -164,7 +172,10 @@ export const Toque: React.FC<{ t: number; t0: number; x: number; y: number; r?: 
 
 // ------------------------------------------------------------- texto
 
-/** Titular centrado: cada palabra sube desde una máscara. `verdes`: palabras en verde. */
+/**
+ * Titular centrado: cada palabra sube desde una máscara. `verdes`: palabras en verde.
+ * Las líneas que entran después no ocupan espacio hasta su momento: la tarjeta crece con ellas.
+ */
 export const Titular: React.FC<{ t: number; lineas: { texto: string; t0: number; verdes?: string[] }[]; y: number; tam?: number; hasta?: number; color?: string }> = ({
   t,
   lineas,
@@ -181,8 +192,10 @@ export const Titular: React.FC<{ t: number; lineas: { texto: string; t0: number;
     <div style={{ position: "absolute", left: SEG.izq, right: SEG.der, top: y, display: "flex", justifyContent: "center", opacity: 1 - sale, translate: `0 ${-sale * 30}px` }}>
       {/* Tarjeta blanca detrás: el titular se lee aunque el teléfono pase por detrás. */}
       <div style={{ background: "rgba(255,255,255,0.95)", borderRadius: 40, padding: `${tam * 0.22}px ${tam * 0.42}px ${tam * 0.12}px`, boxShadow: "0 20px 50px rgba(23,32,28,0.16)", scale: String(lerp(0.85, 1, carta)), textAlign: "center" }}>
-      {lineas.map((l, li) => (
-        <div key={li} style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", columnGap: tam * 0.26, overflow: "hidden", padding: `${tam * 0.05}px 0 ${tam * 0.12}px` }}>
+      {lineas.map((l, li) => {
+        const crece = l.t0 <= t0 + 0.01 ? 1 : easeOut(prog(t, l.t0 - 0.1, l.t0 + 0.2));
+        return (
+        <div key={li} style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", columnGap: tam * 0.26, overflow: "hidden", padding: `${tam * 0.05 * crece}px 0 ${tam * 0.12 * crece}px`, maxHeight: crece >= 1 ? undefined : tam * 1.04 * crece }}>
           {l.texto.split(" ").map((w, i) => {
             const p = prog(t, l.t0 + i * 0.06, l.t0 + i * 0.06 + 0.4, easeOut);
             const verde = l.verdes?.some((v) => w.replace(/[¿?.,…]/g, "").toLowerCase() === v.toLowerCase());
@@ -193,7 +206,8 @@ export const Titular: React.FC<{ t: number; lineas: { texto: string; t0: number;
             );
           })}
         </div>
-      ))}
+        );
+      })}
       </div>
     </div>
   );
@@ -210,16 +224,19 @@ export const Pastilla: React.FC<{ t: number; t0: number; texto: string; fondo?: 
   );
 };
 
-/** Subtítulos quemados: una línea, palabra por palabra, la palabra clave en caja verde. */
+/**
+ * Subtítulos quemados (estilo 2): una línea de máx. 22 caracteres en Nunito Black blanca con
+ * contorno oscuro. Cada palabra salta al entrar (escala + desenfoque → nítida), la que se está
+ * diciendo se pinta verde menta y la palabra clave lleva un marcador verde recto detrás.
+ */
 export const Subtitulos: React.FC<{ frases: Frase[]; t: number; y?: number }> = ({ frases, t, y = 1500 - 60 }) => {
   const f = frases.find((x) => t >= x.desde - 0.05 && t < x.hasta + 0.12);
   if (!f) return null;
-  // Bloques de una línea (máx. 26 caracteres) repartidos por largo.
   const bloques: string[] = [];
   let actual = "";
   for (const w of f.texto.split(" ")) {
     const p = actual ? `${actual} ${w}` : w;
-    if (p.length > 26 && actual) {
+    if (p.length > 22 && actual) {
       bloques.push(actual);
       actual = w;
     } else actual = p;
@@ -240,33 +257,40 @@ export const Subtitulos: React.FC<{ frases: Frase[]; t: number; y?: number }> = 
   const dBloque = (dur * bloques[idx].length) / total;
   const clave = f.clave.toLowerCase().split(" ");
   const ws = bloques[idx].split(" ");
+  const inicios: number[] = [];
   let car = 0;
+  for (const w of ws) {
+    inicios.push(ini + (car / bloques[idx].length) * dBloque * 0.85 - 0.05);
+    car += w.length + 1;
+  }
+  const TAM = 70;
   return (
-    <div style={{ position: "absolute", left: SEG.izq, right: SEG.der, top: y, display: "flex", justifyContent: "center", gap: 14, whiteSpace: "nowrap" }}>
+    <div style={{ position: "absolute", left: SEG.izq, right: SEG.der, top: y, display: "flex", justifyContent: "center", gap: 30, whiteSpace: "nowrap", filter: "drop-shadow(0 10px 18px rgba(23,32,28,0.28))" }}>
       {ws.map((w, i) => {
-        const t0 = ini + (car / bloques[idx].length) * dBloque * 0.85 - 0.05;
-        car += w.length + 1;
-        const p = prog(t, t0, t0 + 0.2, easeOut);
+        const t0 = inicios[i];
+        const k = sp(t, t0, { damping: 10, stiffness: 260, mass: 0.5 });
+        if (t < t0) return <span key={`${idx}-${i}`} style={{ fontFamily: NUNITO, fontWeight: 900, fontSize: TAM, opacity: 0 }}>{w}</span>;
+        const fin = i + 1 < ws.length ? inicios[i + 1] : ini + dBloque;
+        const activo = t < fin + 0.05;
         const limpio = w.replace(/[¿?.,…:]/g, "").toLowerCase();
         const esClave = clave.includes(limpio);
+        const marcador = easeOut(prog(t, t0 + 0.05, t0 + 0.3));
+        const letra = { fontFamily: NUNITO, fontWeight: 900, fontSize: TAM, lineHeight: 1.1 } as const;
         return (
           <span
             key={`${idx}-${i}`}
             style={{
+              position: "relative",
               display: "inline-block",
-              fontFamily: JAKARTA,
-              fontWeight: 800,
-              fontSize: 54,
-              lineHeight: 1.15,
-              color: B.blanco,
-              background: esClave ? B.verde : "rgba(23,32,28,0.78)",
-              padding: "4px 14px 8px",
-              borderRadius: 14,
-              opacity: clamp01(p * 1.5),
-              translate: `0 ${(1 - p) * 16}px`,
+              opacity: clamp01(k * 2),
+              scale: String(lerp(0.55, 1, k) * (activo ? 1.08 : 1)),
+              translate: `0 ${(1 - k) * 34 - (activo ? 4 : 0)}px`,
+              filter: k < 0.95 ? `blur(${((1 - clamp01(k)) * 8).toFixed(1)}px)` : undefined,
             }}
           >
-            {w}
+            {esClave ? <span style={{ position: "absolute", left: -12, right: -12, top: "14%", bottom: "4%", borderRadius: 16, background: B.verde, transformOrigin: "0 50%", scale: `${marcador} 1` }} /> : null}
+            <span style={{ ...letra, position: "absolute", left: 0, top: 0, color: B.texto, WebkitTextStroke: `14px ${B.texto}` }}>{w}</span>
+            <span style={{ ...letra, position: "relative", color: activo && !esClave ? "#86F3C4" : B.blanco }}>{w}</span>
           </span>
         );
       })}

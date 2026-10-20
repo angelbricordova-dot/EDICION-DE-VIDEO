@@ -19,9 +19,9 @@
       "fin": 10.274
     },
     {
-      "texto": "Pago Móvil, punto, Sel, efectivo… o fiado.",
-      "t": 10.91,
-      "fin": 13.79
+      "texto": "Pago Móvil. Punto. Sel. Efectivo. O fiado.",
+      "t": 10.95,
+      "fin": 14.7
     },
     {
       "texto": "Sabes quién te debe, cuánto vendiste y cuánto ganaste hoy.",
@@ -38,5 +38,6 @@
       "t": 22.96,
       "fin": 26.533
     }
-  ]
+  ],
+  "nota": "Frase 4 regrabada aparte (Pago Móvil. Punto. Sel. Efectivo. O fiado.) con pausas alargadas; el resto es la toma de la ronda 1."
 }

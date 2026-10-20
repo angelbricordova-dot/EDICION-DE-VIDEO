@@ -5,15 +5,18 @@
   "cuaderno": 1.85,
   "s2": 2.8,
   "escaneas": 5.19,
+  "escaneo": 5.15,
   "listo": 6.42,
   "s3": 7.35,
+  "dolares": 7.8,
+  "bolivares": 8.45,
   "vuelto": 9.3,
   "s4": 10.85,
-  "pagomovil": 11.11,
-  "punto": 11.78,
-  "zelle": 12.51,
-  "efectivo": 12.85,
-  "fiado": 13.4,
+  "pagomovil": 10.95,
+  "punto": 11.93,
+  "zelle": 12.62,
+  "efectivo": 13.26,
+  "fiado": 14.25,
   "s5": 14.95,
   "vendiste": 16.44,
   "ganaste": 17.45,
@@ -23,6 +26,7 @@
   "s7": 22.9,
   "gratis": 23.93,
   "whatsapp": 25.34,
+  "golpe": 29.35,
   "fin": 30.0
  },
  "frases": [
@@ -45,9 +49,9 @@
    "clave": "vuelto calculado"
   },
   {
-   "desde": 10.91,
-   "hasta": 13.79,
-   "texto": "Pago Móvil, punto, Zelle, efectivo… o fiado.",
+   "desde": 10.95,
+   "hasta": 14.7,
+   "texto": "Pago Móvil. Punto. Zelle. Efectivo. O fiado.",
    "clave": "fiado"
   },
   {
@@ -86,12 +90,12 @@
    "gain": 0.6
   },
   {
-   "t": 3.25,
+   "t": 5.15,
    "sonido": "beep",
    "gain": 1.0
   },
   {
-   "t": 7.6499999999999995,
+   "t": 6.42,
    "sonido": "pop",
    "gain": 0.6
   },
@@ -101,17 +105,22 @@
    "gain": 0.5
   },
   {
+   "t": 7.8,
+   "sonido": "monedas",
+   "gain": 0.5
+  },
+  {
    "t": 9.3,
    "sonido": "pop",
    "gain": 0.8
   },
   {
-   "t": 11.41,
+   "t": 11.25,
    "sonido": "tap",
    "gain": 0.9
   },
   {
-   "t": 13.35,
+   "t": 14.2,
    "sonido": "tap",
    "gain": 0.9
   },
