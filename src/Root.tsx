@@ -11,6 +11,7 @@ import { GUION_CAMIS, PortadaCamis11, PropsCamis, ReelCamis11 } from "./camis11/
 import { GUION_PULPO, PropsPulpo, ShortPulpo } from "./pulpo/Short";
 import { PropsPulpoReal, ShortPulpoReal } from "./pulpo/ShortReal";
 import { GUION_V1, PortadaV1, PromoV1, PropsV1 } from "./tubodega/V1";
+import { G6_PRUEBA, PropsReel6, Reel6 } from "./inmobiliaria/Reel6";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -128,6 +129,15 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
         defaultProps={{ titulo: "Edición de video con Remotion" }}
+      />
+      <Composition
+        id="Inmo6Prueba"
+        component={Reel6}
+        durationInFrames={Math.ceil((G6_PRUEBA.duracion + 0.2) * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ audio: "tiktok/g6/mezcla-prueba.wav" } satisfies PropsReel6}
       />
     </>
   );
