@@ -54,10 +54,42 @@ del CTA (ref1 0:57).
 
 **CTA final:** caja de comentario / barra de mensaje que se escribe sola ("Guía", "invertir").
 
+## Estilo aprobado (reel 6, ronda 2)
+
+Angel pidió algo **más sencillo, siguiendo las referencias 1 y 2** (no la 3ª), con un poco de
+libertad creativa, sin fondos rojos repetidos y **sin tapar los ojos** con las animaciones.
+
+- La persona siempre en pantalla (recorte 9:16 del bruto horizontal, cara del bruto en
+  x 930 / y 450 → pantalla 540 / 800). Punch-ins de 4 cuadros al empezar cada frase
+  (1.0 ↔ 1.1) y más cerrados en los golpes (1.2–1.24).
+- Título fijo arriba = el hook (blanco + amarillo #FFE14D) y lista 1-2-3 debajo que se llena
+  al decir cada punto; en la conclusión los tres puntos se marcan con ✓.
+- Subtítulos Inter 800 blancos con sombra suave, 1–3 palabras, palabras clave en amarillo.
+- Detalles **solo fuera de la cara** (zona prohibida y 520–980): píldoras blancas con objeto
+  sobre el pecho (y 1060), pegatinas junto al hombro derecho (x ~770), texto grande 3D sobre
+  el pecho (y 1130, rojo para lo negativo) que oculta el subtítulo mientras está.
+- Destello de luz cálida tenue para tapar los cortes entre partes y antes del CTA.
+- "Por la noche": la imagen se oscurece y enfría un segundo.
+- CTA: caja de comentario que escribe la palabra (GUÍA) y se envía.
+
+**Cortes naturales:** las tomas que él dijo seguidas no se parten. Solo se quitan tomas
+falsas y repeticiones, y las pausas > 0,32 s se acortan dejando ~0,2 s
+(`scripts/corte_inmo.py`). Tiempos por palabra: Whisper (`scripts/transcribir.py`) +
+alineación forzada (`scripts/alinear.py`), porque Whisper solo se desvía hasta 0,4 s.
+
+## Comandos (reel 6)
+
+```bash
+/home/user/tts/venv-asr/bin/python scripts/transcribir.py public/tiktok/g6/audio16k.wav public/tiktok/g6/transcripcion.json --guion public/tiktok/g6/guion.txt
+/home/user/tts/venv/bin/python scripts/alinear.py public/tiktok/g6/audio16k.wav public/tiktok/g6/palabras.json public/tiktok/g6/palabras-alineadas.json
+python3 scripts/corte_inmo.py g6 hook1 && python3 scripts/sonido_inmo.py g6 hook1
+npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
+```
+
 ## Pendiente con Angel
 
 - Video en bruto a editar y cuál guion es.
-- Música: parece haber una base suave bajo la voz (confirmar y conseguir pista con licencia).
+- Música: Pixabay bloquea las descargas automáticas (verificación anti-robots); Angel elige la pista y la manda.
 - Objetos 3D (calculadora, casa, sala isométrica, billetes): pack libre con licencia
   comercial (p. ej. 3dicons, CC0) o los del cliente.
 - Transcripción con tiempos por palabra: instalar Whisper local o guiarse por el guion.

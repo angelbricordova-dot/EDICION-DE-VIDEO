@@ -36,27 +36,54 @@ def main():
     g = json.loads((RAIZ / f"src/inmobiliaria/{reel}-{version}.json").read_text())
     pal = g["palabras"]
 
-    def m(texto, n=1):
-        k = 0
-        for w in pal:
-            if re.sub(r"[¿?¡!.,:;…]", "", w["p"]).lower() == re.sub(r"[¿?¡!.,:;…]", "", texto).lower():
-                k += 1
-                if k == n:
-                    return w["ini"]
-        raise SystemExit(f"No encontré {texto} ({n})")
+    def limpio(w):
+        return re.sub(r"[¿?¡!.,:;…]", "", w).lower()
 
-    efectos = {
-        ("g6", "prueba"): [
-            (m("vas") - 0.02, "pop", -14),
-            (m("Uno,") - 0.26, "whoosh", -14),
-            (m("tour"), "pop", -16),
-            (m("electricidad,") - 0.05, "pop", -16),
-            (m("fontanería,") - 0.05, "pop", -16),
-            (m("humedades.") - 0.05, "pop", -16),
-            (m("lo", 2) - 0.03, "golpe", -16),
-            (m("bajar") - 0.05, "pop", -15),
-        ],
-    }[(reel, version)]
+    def tras(texto, desde=0.0):
+        for w in pal:
+            if w["ini"] >= desde - 0.01 and limpio(w["p"]) == limpio(texto):
+                return w["ini"]
+        raise SystemExit(f"No encontré {texto} después de {desde}")
+
+    # Los mismos momentos que usa src/inmobiliaria/Reel6.tsx.
+    uno = tras("Uno,")
+    ef = [
+        (uno - 0.26, "whoosh", -14),
+        (tras("tour", uno), "pop", -16),
+        (tras("electricidad,", uno) - 0.05, "pop", -16),
+        (tras("fontanería,", uno) - 0.05, "pop", -16),
+        (tras("humedades.", uno) - 0.05, "pop", -16),
+        (tras("lo", tras("firmar,", uno)) - 0.03, "golpe", -16),
+        (tras("bajar", uno) - 0.05, "pop", -15),
+    ]
+    if version == "hook1":
+        ef += [(tras("sin") - 0.02, "pop", -14), (tras("99"), "golpe", -15), (tras("12"), "pop", -15), (tras("200"), "pop", -15)]
+    else:
+        ef += [(tras("vas") - 0.02, "pop", -14)]
+    if version != "prueba":
+        dos = tras("2.", uno)
+        tres = tras("tres", tras("hunde.", dos))
+        detalle = tras("detalle", tras("tuyo", tres))
+        ef += [
+            (dos - 0.22, "whoosh", -15),
+            (tras("único", dos), "pop", -16),
+            (tras("media", dos), "pop", -16),
+            (tras("mañana", dos) - 0.05, "pop", -16),
+            (tras("noche.", dos) - 0.05, "pop", -16),
+            (tras("ayuntamiento", dos) - 0.05, "pop", -16),
+            (tras("centro", dos) - 0.05, "pop", -16),
+            (tras("carretera", dos) - 0.05, "pop", -16),
+            (tres - 0.22, "whoosh", -15),
+            (tras("actas", tres), "pop", -16),
+            (tras("aprobó", tres) + 0.12, "golpe", -14),
+            (tras("últimos", tres) - 0.15, "pop", -17),
+            (tras("derrama", tres), "golpe", -15),
+            *[(detalle - 0.3 + i * 0.18, "tap", -17) for i in range(3)],
+            (tras("Si", detalle) - 0.3, "whoosh", -15),
+            (tras("comenta", detalle) - 0.1, "pop", -15),
+            (tras("guía", detalle), "teclas", -14),
+        ]
+    efectos = ef
 
     mz = Mezcla(g["duracion"] + 0.25)
     voz = leer(RAIZ / f"public/tiktok/{reel}/voz-{version}.wav")

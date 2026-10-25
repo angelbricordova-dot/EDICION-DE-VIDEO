@@ -31,10 +31,28 @@ ENTRADA = 0.08
 SALIDA = 0.14  # aire tras cada frase, para que respire antes de la siguiente
 FUNDIDO = 0.02
 
+# Cuerpo común del reel 6 (las repeticiones "y tres y tres", "y estamos acabando" y la primera
+# toma de la conclusión se quedan fuera).
+_CUERPO_G6 = [
+    (50.66, 63.40),  # Uno, el estado del piso … es dinero que le puedes bajar al precio.
+    (69.30, 86.00),  # Dos. La zona … una carretera … te lo hunde.
+    (93.85, 108.55),  # Y tres, la que más dinero cuesta: las actas … el piso ya será tuyo.
+    (119.25, 130.25),  # Y es que … para no perder dinero. Si vas a comprar … comenta la palabra guía y te mando…
+]
+
 TOMAS = {
     ("g6", "prueba"): [
         (41.22, 45.30),  # HOOK 2: Si no revisas estas tres cosas al comprar tu casa, vas a perder dinero.
         (50.66, 63.40),  # Uno, el estado del piso … es dinero que le puedes bajar al precio. (toma seguida)
+    ],
+    ("g6", "hook1"): [
+        (7.30, 15.10),  # HOOK 1: Nunca compres un piso sin saber estas tres cosas … nunca te las van a contar.
+        (21.95, 33.95),  # Y atento a la tercera … y sé lo que pasa detrás de lo que no se ve.
+        *_CUERPO_G6,
+    ],
+    ("g6", "hook2"): [
+        (41.22, 45.30),  # HOOK 2: Si no revisas estas tres cosas al comprar tu casa, vas a perder dinero.
+        *_CUERPO_G6,
     ],
 }
 
@@ -73,11 +91,23 @@ def sin_pausas(x, ini, fin):
     return [(ini + s, ini + e) for s, e in tramos if e - s > 0.12]
 
 
+def ordenar(palabras):
+    """Corrige las pocas palabras que la alineación deja fuera de orden (usa el tiempo de Whisper)."""
+    p = [dict(w) for w in palabras]
+    for i in range(1, len(p)):
+        if p[i]["ini"] < p[i - 1]["ini"]:
+            p[i]["ini"] = max(p[i - 1]["ini"] + 0.08, p[i].get("whisper", [p[i]["ini"]])[0])
+        elif i + 1 < len(p) and p[i]["ini"] > p[i + 1]["ini"] >= p[i - 1]["ini"]:
+            p[i]["ini"] = max(p[i - 1]["ini"] + 0.08, min(p[i].get("whisper", [p[i]["ini"]])[0], p[i + 1]["ini"] - 0.08))
+        p[i]["fin"] = max(p[i]["fin"], p[i]["ini"] + 0.06)
+    return p
+
+
 def main():
     reel, version = sys.argv[1], sys.argv[2]
     dir_ = RAIZ / "public/tiktok" / reel
     x = leer(dir_ / "audio48k.wav")
-    palabras = json.loads((dir_ / "palabras-alineadas.json").read_text())["palabras"]
+    palabras = ordenar(json.loads((dir_ / "palabras-alineadas.json").read_text())["palabras"])
     cortes, out = [], 0.0
     for ini, fin in TOMAS[(reel, version)]:
         for s, e in sin_pausas(x, ini, fin):
