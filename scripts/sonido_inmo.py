@@ -47,18 +47,14 @@ def main():
 
     efectos = {
         ("g6", "prueba"): [
-            (m("vas") - 0.02, "pop", -8),
-            (m("Uno,") - 0.2, "whoosh", -10),
-            (m("estado") - 0.05, "pop", -12),
-            (m("La") - 0.05, "whoosh", -13),
-            (m("Hay") - 0.28, "whoosh", -12),
-            (m("electricidad,") - 0.05, "pop", -11),
-            (m("fontanería,") - 0.05, "pop", -11),
-            (m("humedades.") - 0.05, "pop", -11),
-            (m("Si", 2) - 0.05, "whoosh", -13),
-            (m("lo", 2) - 0.03, "golpe", -12),
-            (m("Si", 3) - 0.2, "whoosh", -10),
-            (m("bajar") - 0.05, "pop", -10),
+            (m("vas") - 0.02, "pop", -14),
+            (m("Uno,") - 0.26, "whoosh", -14),
+            (m("tour"), "pop", -16),
+            (m("electricidad,") - 0.05, "pop", -16),
+            (m("fontanería,") - 0.05, "pop", -16),
+            (m("humedades.") - 0.05, "pop", -16),
+            (m("lo", 2) - 0.03, "golpe", -16),
+            (m("bajar") - 0.05, "pop", -15),
         ],
     }[(reel, version)]
 

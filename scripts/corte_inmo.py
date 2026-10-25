@@ -2,8 +2,9 @@
 
 Cada toma es un rango [ini, fin] del bruto (segundos), elegido a mano sobre la transcripción
 (`public/tiktok/<reel>/palabras-alineadas.json`, ver scripts/alinear.py). Dentro de cada toma
-se quitan las pausas: cualquier tramo por debajo de UMBRAL dB más largo que PAUSA_MAX se
-recorta dejando MARGEN a cada lado, y también el silencio al principio y al final de la toma.
+se acortan las pausas largas: cualquier tramo por debajo de UMBRAL dB más largo que PAUSA_MAX
+se recorta dejando MARGEN a cada lado (queda una pausa natural de ~0,2 s, no un corte seco), y
+el silencio al principio y al final de la toma se deja en ENTRADA / SALIDA.
 Las palabras se trasladan al tiempo de salida para los subtítulos.
 
 Salida:
@@ -23,19 +24,17 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parent.parent
 SR = 48000
-UMBRAL = -42.0  # dBFS (el ruido de fondo del bruto está en −55 dB)
-PAUSA_MAX = 0.16
-MARGEN = 0.05
-FUNDIDO = 0.008
+UMBRAL = -45.0  # dBFS (el ruido de fondo del bruto está en −55 dB)
+PAUSA_MAX = 0.32  # pausas más cortas se dejan como están: así suena natural
+MARGEN = 0.10
+ENTRADA = 0.08
+SALIDA = 0.14  # aire tras cada frase, para que respire antes de la siguiente
+FUNDIDO = 0.02
 
 TOMAS = {
     ("g6", "prueba"): [
-        (41.22, 45.30),  # Si no revisas estas tres cosas al comprar tu casa, vas a perder dinero.
-        (50.66, 52.30),  # Uno, el estado del piso.
-        (52.42, 54.62),  # La visita no es un tour de vacaciones.
-        (54.84, 57.48),  # Hay que mirar electricidad, fontanería, humedades.
-        (57.54, 60.10),  # Si lo descubres después de firmar, lo pagas tú.
-        (60.18, 63.40),  # Si lo descubres antes, es dinero que le puedes bajar al precio.
+        (41.22, 45.30),  # HOOK 2: Si no revisas estas tres cosas al comprar tu casa, vas a perder dinero.
+        (50.66, 63.40),  # Uno, el estado del piso … es dinero que le puedes bajar al precio. (toma seguida)
     ],
 }
 
@@ -57,7 +56,7 @@ def sin_pausas(x, ini, fin):
     if len(voz) == 0:
         return []
     primero, ultimo = voz[0], voz[-1] + 1
-    tramos, i, inicio = [], primero, max(0.0, primero * 0.01 - MARGEN)
+    tramos, i, inicio = [], primero, max(0.0, primero * 0.01 - ENTRADA)
     while i < ultimo:
         if bajo[i]:
             j = i
@@ -69,7 +68,7 @@ def sin_pausas(x, ini, fin):
             i = j
         else:
             i += 1
-    tramos.append((inicio, min((b - a) / SR, ultimo * 0.01 + MARGEN)))
+    tramos.append((inicio, min((b - a) / SR, ultimo * 0.01 + SALIDA)))
     # Los trocitos sueltos (clics, respiraciones cortas) no son voz.
     return [(ini + s, ini + e) for s, e in tramos if e - s > 0.12]
 

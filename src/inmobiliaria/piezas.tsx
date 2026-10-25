@@ -99,18 +99,44 @@ export const bloques = (palabras: Palabra[]) => {
   return out;
 };
 
-/** Subtítulo blanco en negrita con contorno y sombra; cambia de golpe, pegado a la voz. */
-export const Subtitulo: React.FC<{ t: number; lista: ReturnType<typeof bloques>; y?: number; ocultar?: (t: number) => boolean }> = ({ t, lista, y = 1300, ocultar }) => {
+/**
+ * Subtítulo blanco en negrita con sombra negra suave (como en las referencias); cambia de
+ * golpe, pegado a la voz. Las palabras de `amarillas` van en amarillo.
+ */
+export const Subtitulo: React.FC<{ t: number; lista: ReturnType<typeof bloques>; y?: number; ocultar?: (t: number) => boolean; amarillas?: string[] }> = ({ t, lista, y = 1250, ocultar, amarillas = [] }) => {
   const b = lista.find((x) => t >= x.ini - 0.03 && t < x.fin);
   if (!b || ocultar?.(t)) return null;
-  const estilo: React.CSSProperties = { fontFamily: INTER, fontWeight: 800, fontSize: 64, lineHeight: 1.1, letterSpacing: "-0.01em", whiteSpace: "nowrap" };
+  const limpio = (w: string) => w.toLowerCase().replace(/[¿?¡!.,:;…]/g, "");
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: y, display: "flex", justifyContent: "center" }}>
-      <div style={{ position: "relative", filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.55))" }}>
-        <span style={{ ...estilo, position: "absolute", inset: 0, color: "#000", WebkitTextStroke: "10px #000" }}>{b.texto}</span>
-        <span style={{ ...estilo, position: "relative", color: "#fff" }}>{b.texto}</span>
-      </div>
+    <div style={{ position: "absolute", left: 40, right: 40, top: y, display: "flex", justifyContent: "center", gap: 18, whiteSpace: "nowrap" }}>
+      {b.texto.split(" ").map((w, i) => (
+        <span key={i} style={{ fontFamily: INTER, fontWeight: 800, fontSize: 66, lineHeight: 1.1, letterSpacing: "-0.01em", color: amarillas.includes(limpio(w)) ? AMARILLO : "#fff", textShadow: "0 0 14px rgba(0,0,0,0.85), 0 3px 6px rgba(0,0,0,0.7), 0 0 3px rgba(0,0,0,0.9)" }}>
+          {w}
+        </span>
+      ))}
     </div>
+  );
+};
+
+export const AMARILLO = "#FFE14D";
+
+/** Texto con sombra suave (título del hook y de la lista, como en la referencia 2). */
+export const TextoSombra: React.FC<{ texto: string; tam: number; color?: string; peso?: number; mayus?: boolean }> = ({ texto, tam, color = "#fff", peso = 800, mayus }) => (
+  <span style={{ fontFamily: INTER, fontWeight: peso, fontSize: tam, lineHeight: 1.08, letterSpacing: "-0.015em", color, whiteSpace: "nowrap", textTransform: mayus ? "uppercase" : "none", textShadow: "0 0 16px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.65), 0 0 3px rgba(0,0,0,0.9)" }}>{texto}</span>
+);
+
+/** Destello de luz cálida que barre la pantalla (tapa un corte, como el de la referencia 1). */
+export const Destello: React.FC<{ t: number; t0: number; dur?: number }> = ({ t, t0, dur = 0.42 }) => {
+  const k = (t - t0) / dur;
+  if (k < 0 || k > 1) return null;
+  const a = Math.sin(k * Math.PI);
+  const x = lerp(-20, 120, k);
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none", mixBlendMode: "screen" }}>
+      {/* Luz que entra por un costado y cruza sin llegar a blanquear la cara. */}
+      <AbsoluteFill style={{ background: `radial-gradient(ellipse 55% 70% at ${x}% 50%, rgba(255,205,140,${0.6 * a}) 0%, rgba(255,140,50,${0.35 * a}) 40%, rgba(255,90,20,0) 75%)` }} />
+      <AbsoluteFill style={{ background: `rgba(255,236,210,${0.18 * a})` }} />
+    </AbsoluteFill>
   );
 };
 

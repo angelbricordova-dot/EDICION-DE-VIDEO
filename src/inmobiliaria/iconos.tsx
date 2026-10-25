@@ -97,3 +97,25 @@ export const EtiquetaRebaja: React.FC<{ k: number; tam?: number }> = ({ k, tam =
     </g>
   </svg>
 );
+
+/** Maleta de viaje tachada ("no es un tour de vacaciones"). */
+export const MaletaNo: React.FC<{ tam?: number; k?: number }> = ({ tam = 220, k = 1 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 220 220" style={{ filter: "drop-shadow(8px 14px 10px rgba(0,0,0,0.45))", overflow: "visible" }}>
+    <defs>
+      <linearGradient id="maleta" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#5EC8FF" />
+        <stop offset="1" stopColor="#1676D2" />
+      </linearGradient>
+    </defs>
+    <rect x={78} y={22} width={64} height={34} rx={12} fill="none" stroke="#1B2B3A" strokeWidth={10} />
+    <rect x={34} y={50} width={152} height={140} rx={24} fill="url(#maleta)" stroke="#0E3A66" strokeWidth={7} />
+    <rect x={34} y={96} width={152} height={18} fill="#0E3A66" opacity={0.55} />
+    <rect x={56} y={66} width={20} height={110} rx={8} fill="rgba(255,255,255,0.35)" />
+    <circle cx={70} cy={196} r={9} fill="#1B2B3A" />
+    <circle cx={150} cy={196} r={9} fill="#1B2B3A" />
+    <g opacity={k} transform={`translate(110 110) scale(${0.6 + 0.4 * k}) translate(-110 -110)`}>
+      <path d="M24 24 L196 196 M196 24 L24 196" stroke="#fff" strokeWidth={30} strokeLinecap="round" />
+      <path d="M24 24 L196 196 M196 24 L24 196" stroke="#E3141F" strokeWidth={18} strokeLinecap="round" />
+    </g>
+  </svg>
+);
