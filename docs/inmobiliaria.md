@@ -75,7 +75,7 @@ libertad creativa, sin fondos rojos repetidos y **sin tapar los ojos** con las a
 **Cortes naturales:** las tomas que él dijo seguidas no se parten. Solo se quitan tomas
 falsas y repeticiones, y las pausas > 0,32 s se acortan dejando ~0,2 s
 (`scripts/corte_inmo.py`). Tiempos por palabra: Whisper (`scripts/transcribir.py`) +
-alineación forzada (`scripts/alinear.py`), porque Whisper solo se desvía hasta 0,4 s.
+alineación forzada (`scripts/alinear.py`), porque los tiempos de Whisper se desvían hasta 0,4 s.
 
 ## Comandos (reel 6)
 
@@ -88,8 +88,6 @@ npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
 
 ## Pendiente con Angel
 
-- Video en bruto a editar y cuál guion es.
-- Música: Pixabay bloquea las descargas automáticas (verificación anti-robots); Angel elige la pista y la manda.
-- Objetos 3D (calculadora, casa, sala isométrica, billetes): pack libre con licencia
-  comercial (p. ej. 3dicons, CC0) o los del cliente.
-- Transcripción con tiempos por palabra: instalar Whisper local o guiarse por el guion.
+- Música: Pixabay bloquea las descargas automáticas (verificación anti-robots); Angel elige la
+  pista y la manda.
+- Objetos 3D (si se quieren más realistas): pack libre con licencia comercial o los del cliente.
