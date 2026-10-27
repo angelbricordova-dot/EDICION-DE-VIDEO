@@ -45,44 +45,80 @@ def main():
                 return w["ini"]
         raise SystemExit(f"No encontré {texto} después de {desde}")
 
-    # Los mismos momentos que usa src/inmobiliaria/Reel6.tsx.
-    uno = tras("Uno,")
-    ef = [
-        (uno - 0.26, "whoosh", -14),
-        (tras("tour", uno), "pop", -16),
-        (tras("electricidad,", uno) - 0.05, "pop", -16),
-        (tras("fontanería,", uno) - 0.05, "pop", -16),
-        (tras("humedades.", uno) - 0.05, "pop", -16),
-        (tras("lo", tras("firmar,", uno)) - 0.03, "golpe", -16),
-        (tras("bajar", uno) - 0.05, "pop", -15),
-    ]
-    if version == "hook1":
-        ef += [(tras("sin") - 0.02, "pop", -14), (tras("99"), "golpe", -15), (tras("12"), "pop", -15), (tras("200"), "pop", -15)]
-    else:
-        ef += [(tras("vas") - 0.02, "pop", -14)]
-    if version != "prueba":
-        dos = tras("2.", uno)
-        tres = tras("tres", tras("hunde.", dos))
-        detalle = tras("detalle", tras("tuyo", tres))
-        ef += [
-            (dos - 0.22, "whoosh", -15),
-            (tras("único", dos), "pop", -16),
-            (tras("media", dos), "pop", -16),
-            (tras("mañana", dos) - 0.05, "pop", -16),
-            (tras("noche.", dos) - 0.05, "pop", -16),
-            (tras("ayuntamiento", dos) - 0.05, "pop", -16),
-            (tras("centro", dos) - 0.05, "pop", -16),
-            (tras("carretera", dos) - 0.05, "pop", -16),
-            (tres - 0.22, "whoosh", -15),
-            (tras("actas", tres), "pop", -16),
-            (tras("aprobó", tres) + 0.12, "golpe", -14),
-            (tras("últimos", tres) - 0.15, "pop", -17),
-            (tras("derrama", tres), "golpe", -15),
-            *[(detalle - 0.3 + i * 0.18, "tap", -17) for i in range(3)],
-            (tras("Si", detalle) - 0.3, "whoosh", -15),
-            (tras("comenta", detalle) - 0.1, "pop", -15),
-            (tras("guía", detalle), "teclas", -14),
+    if reel == "g6":
+        # Los mismos momentos que usa src/inmobiliaria/Reel6.tsx.
+        uno = tras("Uno,")
+        ef = [
+            (uno - 0.26, "whoosh", -14),
+            (tras("tour", uno), "pop", -16),
+            (tras("electricidad,", uno) - 0.05, "pop", -16),
+            (tras("fontanería,", uno) - 0.05, "pop", -16),
+            (tras("humedades.", uno) - 0.05, "pop", -16),
+            (tras("lo", tras("firmar,", uno)) - 0.03, "golpe", -16),
+            (tras("bajar", uno) - 0.05, "pop", -15),
         ]
+        if version == "hook1":
+            ef += [(tras("sin") - 0.02, "pop", -14), (tras("99"), "golpe", -15), (tras("12"), "pop", -15), (tras("200"), "pop", -15)]
+        else:
+            ef += [(tras("vas") - 0.02, "pop", -14)]
+        if version != "prueba":
+            dos = tras("2.", uno)
+            tres = tras("tres", tras("hunde.", dos))
+            detalle = tras("detalle", tras("tuyo", tres))
+            ef += [
+                (dos - 0.22, "whoosh", -15),
+                (tras("único", dos), "pop", -16),
+                (tras("media", dos), "pop", -16),
+                (tras("mañana", dos) - 0.05, "pop", -16),
+                (tras("noche.", dos) - 0.05, "pop", -16),
+                (tras("ayuntamiento", dos) - 0.05, "pop", -16),
+                (tras("centro", dos) - 0.05, "pop", -16),
+                (tras("carretera", dos) - 0.05, "pop", -16),
+                (tres - 0.22, "whoosh", -15),
+                (tras("actas", tres), "pop", -16),
+                (tras("aprobó", tres) + 0.12, "golpe", -14),
+                (tras("últimos", tres) - 0.15, "pop", -17),
+                (tras("derrama", tres), "golpe", -15),
+                *[(detalle - 0.3 + i * 0.18, "tap", -17) for i in range(3)],
+                (tras("Si", detalle) - 0.3, "whoosh", -15),
+                (tras("comenta", detalle) - 0.1, "pop", -15),
+                (tras("guía", detalle), "teclas", -14),
+            ]
+
+    elif reel == "g3":
+        # Los mismos momentos que usa src/inmobiliaria/Reel3.tsx.
+        uno = tras("Primero,")
+        dos, tres = tras("Segundo,", uno), tras("Tercero,", uno)
+        cuatro, cinco = tras("Cuarto,", tres), tras("quinto,", tres)
+        mucho = tras("muchísimo", cinco)
+        cta = tras("Si", tras("dinero", mucho))
+        ef = [
+            (tras("5") - 0.05, "pop", -15),
+            (uno - 0.26, "whoosh", -14),
+            (tras("nota", uno), "pop", -16),
+            (tras("cargas,", uno) - 0.05, "pop", -16),
+            (tras("embargos", uno) - 0.05, "pop", -16),
+            (tras("hipotecas.", uno) - 0.05, "pop", -16),
+            (tras("referencia", dos), "pop", -16),
+            (tras("recibo", dos) - 0.05, "pop", -17),
+            (tres - 0.22, "whoosh", -15),
+            (tras("cédula", tres), "pop", -16),
+            (tras("certificado", tres) - 0.05, "pop", -17),
+            (tras("certificado", cuatro), "pop", -16),
+            (tras("deudas", cuatro) + 0.2, "golpe", -16),
+            (tras("quinto,", cuatro) - 0.3, "whoosh", -15),
+            (tras("inspección", cinco), "pop", -16),
+            (tras("resultado,", cinco) + 0.1, "golpe", -15),
+            (tras("basta", cinco), "golpe", -16),
+            *[(tras("condiciones.", cinco) - 0.4 + i * 0.18, "tap", -17) for i in range(5)],
+            (tras("demanda", cinco) - 0.05, "pop", -16),
+            (tras("inquilinos", cinco) - 0.05, "pop", -16),
+            (mucho, "golpe", -15),
+            (cta - 0.3, "whoosh", -15),
+            (tras("comenta", mucho) - 0.1, "pop", -15),
+            (tras("guía", mucho), "teclas", -14),
+        ]
+        ef += [(tras("pedir") - 0.02, "pop", -14)] if version == "hook1" else [(tras("sin") - 0.02, "pop", -14)]
     efectos = ef
 
     mz = Mezcla(g["duracion"] + 0.25)

@@ -40,7 +40,25 @@ _CUERPO_G6 = [
     (119.25, 130.25),  # Y es que … para no perder dinero. Si vas a comprar … comenta la palabra guía y te mando…
 ]
 
+# Reel 3 "5 documentos" (guion 3). Se quedan fuera "Reel número 3 / Hook 1 / Hook 2", la
+# primera toma del CTA (se corta en "te mando") y "Dale al botón… ¡Gracias!".
+_CUERPO_G3 = [
+    (19.15, 33.60),  # Primero, una nota simple … Segundo, la referencia catastral … del inmueble.
+    (39.20, 52.80),  # Tercero, la cédula … Cuarto, un certificado de la comunidad … derramas aprobadas.
+    (58.80, 75.40),  # Y quinto … la inspección técnica de edificios … demanda de alquiler en esa zona.
+    (81.60, 86.85),  # Si un piso no tiene problemas pero no hay inquilinos … muchísimo dinero.
+    (96.30, 102.40),  # Si vas a comprar tu primer piso de inversión, comenta la palabra guía … invertir.
+]
+
 TOMAS = {
+    ("g3", "hook1"): [
+        (4.75, 8.40),  # HOOK 1: ¿Vas a comprar una casa? Asegúrate de pedir siempre estas 5 cosas.
+        *_CUERPO_G3,
+    ],
+    ("g3", "hook2"): [
+        (10.90, 13.90),  # HOOK 2: Nunca compres una casa sin pedir estas 5 cosas.
+        *_CUERPO_G3,
+    ],
     ("g6", "prueba"): [
         (41.22, 45.30),  # HOOK 2: Si no revisas estas tres cosas al comprar tu casa, vas a perder dinero.
         (50.66, 63.40),  # Uno, el estado del piso … es dinero que le puedes bajar al precio. (toma seguida)

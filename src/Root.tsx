@@ -12,6 +12,7 @@ import { GUION_PULPO, PropsPulpo, ShortPulpo } from "./pulpo/Short";
 import { PropsPulpoReal, ShortPulpoReal } from "./pulpo/ShortReal";
 import { GUION_V1, PortadaV1, PromoV1, PropsV1 } from "./tubodega/V1";
 import { G6, PropsReel6, Reel6 } from "./inmobiliaria/Reel6";
+import { G3, PropsReel3, Reel3 } from "./inmobiliaria/Reel3";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -140,6 +141,18 @@ export const RemotionRoot: React.FC = () => {
           width={1080}
           height={1920}
           defaultProps={{ audio: `tiktok/g6/mezcla-${v}.wav`, version: v } satisfies PropsReel6}
+        />
+      ))}
+      {(["hook1", "hook2"] as const).map((v) => (
+        <Composition
+          key={v}
+          id={`Inmo3${v[0].toUpperCase()}${v.slice(1)}`}
+          component={Reel3}
+          durationInFrames={Math.ceil((G3[v].duracion + 0.2) * 30)}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{ audio: `tiktok/g3/mezcla-${v}.wav`, version: v } satisfies PropsReel3}
         />
       ))}
     </>

@@ -259,3 +259,116 @@ export const Calendario: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
     <text x={50} y={80} textAnchor="middle" fontFamily="Inter, Arial" fontWeight={900} fontSize={38} fill="#2A3340">2</text>
   </svg>
 );
+
+// ------------------------------------------------------------- reel 3 (5 documentos)
+
+/** Documento con título y, opcionalmente, un sello que cae encima (sello: 0 → 1). */
+export const Documento: React.FC<{ tam?: number; titulo: string; color?: string; sello?: number; textoSello?: string; colorSello?: string }> = ({ tam = 230, titulo, color = "#2A3340", sello = 0, textoSello = "", colorSello = "#22A447" }) => {
+  const largo = titulo.length;
+  // El id del degradado no puede llevar espacios ni tildes (si no, la hoja sale negra).
+  const id = `doc-${titulo.normalize("NFD").replace(/[^A-Za-z0-9]/g, "")}`;
+  return (
+    <svg width={tam} height={tam} viewBox="0 0 230 230" style={{ filter: "drop-shadow(8px 14px 10px rgba(0,0,0,0.45))", overflow: "visible" }}>
+      <defs>
+        <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#FFFFFF" />
+          <stop offset="1" stopColor="#E9EDF2" />
+        </linearGradient>
+      </defs>
+      <path d="M40 10 H150 L190 50 V220 H40 Z" fill={`url(#${id})`} stroke="#2A3340" strokeWidth={6} strokeLinejoin="round" />
+      <path d="M150 10 V50 H190" fill="#D3DAE3" stroke="#2A3340" strokeWidth={5} strokeLinejoin="round" />
+      <rect x={54} y={22} width={largo > 6 ? 92 : 80} height={34} rx={6} fill={color} />
+      <text x={largo > 6 ? 100 : 94} y={46} textAnchor="middle" fontFamily="Inter, Arial" fontWeight={900} fontSize={largo > 8 ? 14 : largo > 6 ? 17 : 22} fill="#fff">{titulo}</text>
+      {[76, 100, 124, 148, 172, 196].map((y, i) => (
+        <rect key={y} x={60} y={y} width={i % 2 ? 90 : 110} height={9} rx={4} fill="#9AA6B5" />
+      ))}
+      {sello > 0 && textoSello ? (
+        <g transform={`translate(115 150) rotate(-14) scale(${1 + (1 - sello) * 1.4})`} opacity={Math.min(1, sello * 2)}>
+          <rect x={-80} y={-26} width={160} height={52} rx={10} fill="rgba(255,255,255,0.6)" stroke={colorSello} strokeWidth={6} />
+          <text x={0} y={11} textAnchor="middle" fontFamily="Inter, Arial" fontWeight={900} fontSize={textoSello.length > 9 ? 22 : 28} fill={colorSello} letterSpacing="1">{textoSello}</text>
+        </g>
+      ) : null}
+    </svg>
+  );
+};
+
+export const Cadena: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <g fill="none" strokeLinecap="round">
+      <rect x={8} y={36} width={44} height={28} rx={14} stroke="#5E6873" strokeWidth={12} transform="rotate(-30 30 50)" />
+      <rect x={48} y={36} width={44} height={28} rx={14} stroke="#8995A1" strokeWidth={12} transform="rotate(-30 70 50)" />
+    </g>
+  </svg>
+);
+
+export const Mazo: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <g transform="rotate(-35 50 50)">
+      <rect x={22} y={18} width={56} height={26} rx={6} fill="#8B5A2B" stroke="#4A2C10" strokeWidth={4} />
+      <rect x={18} y={20} width={10} height={22} rx={3} fill="#C98E4E" stroke="#4A2C10" strokeWidth={3} />
+      <rect x={72} y={20} width={10} height={22} rx={3} fill="#C98E4E" stroke="#4A2C10" strokeWidth={3} />
+      <rect x={45} y={42} width={10} height={50} rx={4} fill="#A86C35" stroke="#4A2C10" strokeWidth={3} />
+    </g>
+    <rect x={56} y={80} width={36} height={12} rx={4} fill="#6B4320" />
+  </svg>
+);
+
+export const Banco: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <path d="M50 8 L92 30 H8 Z" fill="#4F7BD8" stroke="#1E3A7A" strokeWidth={3} strokeLinejoin="round" />
+    {[20, 38, 56, 74].map((x) => (
+      <rect key={x} x={x - 4} y={36} width={10} height={40} fill="#DCE6FA" stroke="#1E3A7A" strokeWidth={2.5} />
+    ))}
+    <rect x={8} y={78} width={84} height={12} fill="#4F7BD8" stroke="#1E3A7A" strokeWidth={3} />
+    <text x={50} y={28} textAnchor="middle" fontFamily="Inter, Arial" fontWeight={900} fontSize={16} fill="#fff">€</text>
+  </svg>
+);
+
+export const Recibo: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <path d="M22 6 H78 V94 L70 88 L62 94 L54 88 L46 94 L38 88 L30 94 L22 88 Z" fill="#fff" stroke="#2A3340" strokeWidth={4} strokeLinejoin="round" />
+    <text x={50} y={34} textAnchor="middle" fontFamily="Inter, Arial" fontWeight={900} fontSize={20} fill="#E3141F">IBI</text>
+    {[46, 58, 70].map((y) => (
+      <rect key={y} x={32} y={y} width={36} height={6} rx={3} fill="#9AA6B5" />
+    ))}
+  </svg>
+);
+
+/** Etiqueta de eficiencia energética (barras A–G). */
+export const Energia: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <rect x={6} y={4} width={88} height={92} rx={8} fill="#fff" stroke="#2A3340" strokeWidth={4} />
+    {["#159B3C", "#5DBB2F", "#C6D82B", "#FFE01B", "#F7A51C", "#EE5A1E", "#E3141F"].map((c, i) => (
+      <path key={c} d={`M14 ${12 + i * 11} H${40 + i * 6} L${46 + i * 6} ${16.5 + i * 11} L${40 + i * 6} ${21 + i * 11} H14 Z`} fill={c} />
+    ))}
+  </svg>
+);
+
+export const Edificio: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <rect x={22} y={8} width={56} height={86} rx={4} fill="#C9CFD8" stroke="#2A3340" strokeWidth={4} />
+    {[0, 1, 2, 3, 4].map((f) =>
+      [0, 1, 2].map((c) => <rect key={`${f}${c}`} x={30 + c * 15} y={16 + f * 14} width={10} height={9} rx={2} fill={(f + c) % 3 ? "#5EA8E8" : "#FFD54A"} />),
+    )}
+    <rect x={43} y={80} width={14} height={14} fill="#2A3340" />
+  </svg>
+);
+
+/** Gráfico de barras que sube ("demanda de alquiler"). */
+export const Demanda: React.FC<{ tam?: number; k?: number }> = ({ tam = 70, k = 1 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <path d="M10 90 H92" stroke="#2A3340" strokeWidth={5} strokeLinecap="round" />
+    {[30, 50, 72].map((h, i) => (
+      <rect key={i} x={16 + i * 26} y={88 - h * Math.min(1, Math.max(0, k * 3 - i))} width={18} height={h * Math.min(1, Math.max(0, k * 3 - i))} rx={3} fill={["#7FD68A", "#38B44A", "#15892B"][i]} />
+    ))}
+  </svg>
+);
+
+/** Casa vacía con un "?" (sin inquilinos). */
+export const CasaVacia: React.FC<{ tam?: number }> = ({ tam = 70 }) => (
+  <svg width={tam} height={tam} viewBox="0 0 100 100">
+    <path d="M50 10 L90 44 H80 V90 H20 V44 H10 Z" fill="#F3E2BF" stroke="#6B4E22" strokeWidth={4} strokeLinejoin="round" />
+    <path d="M50 10 L90 44 H10 Z" fill="#E3141F" stroke="#6B1010" strokeWidth={4} strokeLinejoin="round" />
+    <text x={50} y={80} textAnchor="middle" fontFamily="Inter, Arial" fontWeight={900} fontSize={38} fill="#6B4E22">?</text>
+  </svg>
+);
