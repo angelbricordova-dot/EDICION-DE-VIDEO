@@ -186,33 +186,40 @@ export const Reel9: React.FC<PropsReel9> = ({ audio, version }) => {
     { desde: M.descartar, hasta: M.tiempo + 0.6, texto: "descartar rápido", color: "verde", tam: 96 },
   ];
 
-  // Punch-ins suaves (4 cuadros) al empezar cada frase y en los golpes.
+  // Zooms progresivos y suaves (lo pidió Angel en el reel 9): cada frase empieza un acercamiento
+  // lento de ~0,9 s con ease-in-out que parte de donde iba el anterior (sin saltos), y dentro de
+  // la frase la cámara sigue avanzando muy poco a poco.
   const inicios: number[] = [];
   palabras.forEach((w, i) => {
     if (i === 0 || /[.?!]$/.test(palabras[i - 1].p) || cortes.some((c) => Math.abs(c.out - w.ini) < 0.3)) inicios.push(w.ini);
   });
   const golpes: [number, number][] = [
-    [M.n98, 1.16],
-    [M.h24, 1.16],
-    [M.interesa, 1.18],
-    [M.seis, 1.2],
-    [M.exclusiva, 1.16],
-    [M.descartar, 1.2],
+    [M.n98, 1.12],
+    [M.h24, 1.12],
+    [M.interesa, 1.12],
+    [M.seis, 1.14],
+    [M.exclusiva, 1.12],
+    [M.descartar, 1.14],
   ];
-  const tramos: [number, number][] = inicios.map((t0, i) => [t0 - 0.02, i % 2 ? 1.08 : 1.0]);
-  for (const [g, z] of golpes) tramos.push([g - 0.02, z]);
+  const tramos: [number, number][] = inicios.map((t0, i) => [t0 - 0.3, i % 2 ? 1.06 : 1.0]);
+  for (const [g, z] of golpes) tramos.push([g - 0.45, z]);
   tramos.sort((a, b) => a[0] - b[0]);
+  const DUR = 0.9;
+  const suave = (x: number) => (x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x));
   const zoom = (tt: number) => {
-    let z = 1;
-    let previo = 1;
+    let v = 1;
     let desde = 0;
-    for (const [t0, v] of tramos)
-      if (tt >= t0) {
-        previo = z;
-        z = v;
-        desde = t0;
-      }
-    return lerp(previo, z, prog(tt, desde, desde + 0.13));
+    for (let k = 0; k < tramos.length; k++) {
+      const [t0, z] = tramos[k];
+      if (tt < t0) break;
+      // Valor en el instante t0 (donde iba la cámara) → hacia el nuevo objetivo.
+      const inicio = v;
+      const fin = k + 1 < tramos.length ? Math.min(tt, tramos[k + 1][0]) : tt;
+      v = lerp(inicio, z, suave((fin - t0) / DUR));
+      desde = t0;
+    }
+    // Avance lento dentro de la frase (máx. +3 %).
+    return v * (1 + Math.min(0.03, (tt - desde) * 0.008));
   };
 
   const subs = tramosSub(palabras);

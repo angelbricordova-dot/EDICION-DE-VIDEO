@@ -177,8 +177,8 @@ def ordenar(palabras):
     return p
 
 
-def efecto_telefono(ruta, tono=1.18):
-    """Voz "al teléfono" y algo más aguda, para que se entienda pero no se reconozca (reel 9)."""
+def efecto_telefono(ruta, tono=0.84):
+    """Voz "al teléfono" y más grave (pedido de Angel), para que se entienda pero no se reconozca (reel 9)."""
     filtro = f"asetrate={SR}*{tono},aresample={SR},atempo={1 / tono:.6f},highpass=f=330,lowpass=f=3300,acompressor=threshold=-24dB:ratio=3:attack=5:release=80,volume=1.6"
     crudo = subprocess.run(["ffmpeg", "-v", "error", "-i", str(ruta), "-af", filtro, "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"], capture_output=True, check=True).stdout
     return np.frombuffer(crudo, dtype=np.float32)
@@ -187,7 +187,8 @@ def efecto_telefono(ruta, tono=1.18):
 def pitido(dur, f=1000.0):
     t = np.arange(int(dur * SR)) / SR
     env = np.minimum(1, np.minimum(t, dur - t) / 0.01)
-    return (0.25 * np.sin(2 * np.pi * f * t) * env).astype(np.float32)
+    # Bajito (≈ −22 dBFS): se nota la censura sin molestar.
+    return (0.08 * np.sin(2 * np.pi * f * t) * env).astype(np.float32)
 
 
 def main():
