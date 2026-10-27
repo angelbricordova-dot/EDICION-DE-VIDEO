@@ -108,14 +108,14 @@ export const bloques = (palabras: Palabra[]) => {
  * Subtítulo blanco en negrita con sombra negra suave (como en las referencias); cambia de
  * golpe, pegado a la voz. Las palabras de `amarillas` van en amarillo.
  */
-export const Subtitulo: React.FC<{ t: number; lista: ReturnType<typeof bloques>; y?: number; ocultar?: (t: number) => boolean; amarillas?: string[] }> = ({ t, lista, y = 1250, ocultar, amarillas = [] }) => {
+export const Subtitulo: React.FC<{ t: number; lista: ReturnType<typeof bloques>; y?: number; ocultar?: (t: number) => boolean; amarillas?: string[]; color?: string }> = ({ t, lista, y = 1250, ocultar, amarillas = [], color = "#fff" }) => {
   const b = lista.find((x) => t >= x.ini - 0.03 && t < x.fin);
   if (!b || ocultar?.(t)) return null;
   const limpio = (w: string) => w.toLowerCase().replace(/[¿?¡!.,:;…]/g, "");
   return (
     <div style={{ position: "absolute", left: 40, right: 40, top: y, display: "flex", justifyContent: "center", gap: 18, whiteSpace: "nowrap" }}>
       {b.texto.split(" ").map((w, i) => (
-        <span key={i} style={{ fontFamily: INTER, fontWeight: 800, fontSize: 66, lineHeight: 1.1, letterSpacing: "-0.01em", color: amarillas.includes(limpio(w)) ? AMARILLO : "#fff", textShadow: "0 0 14px rgba(0,0,0,0.85), 0 3px 6px rgba(0,0,0,0.7), 0 0 3px rgba(0,0,0,0.9)" }}>
+        <span key={i} style={{ fontFamily: INTER, fontWeight: 800, fontSize: 66, lineHeight: 1.1, letterSpacing: "-0.01em", color: amarillas.includes(limpio(w)) ? AMARILLO : color, textShadow: "0 0 14px rgba(0,0,0,0.85), 0 3px 6px rgba(0,0,0,0.7), 0 0 3px rgba(0,0,0,0.9)" }}>
           {w}
         </span>
       ))}

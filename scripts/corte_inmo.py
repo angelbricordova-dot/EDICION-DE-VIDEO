@@ -66,7 +66,44 @@ _CUERPO_G8 = [
     (121.45, 129.20),  # Y es que en inversión inmobiliaria … Déjame la palabra filtro … lista de espera.
 ]
 
+# Reel 9 "llamada de la agencia" (guion 9). Instrucciones del cliente dentro del video: la voz
+# de Darío (la agencia) distorsionada para que se entienda pero no se reconozca, pitido sobre la
+# calle, el barrio y el nombre "Paco", y fuera el "coño" (se usa la toma repetida).
+_AG = {"quien": "agencia"}
+_LLAMADA_G9 = [
+    (24.10, 32.70, _AG),  # Buenos días, Julio. Mira, te llamo porque me ha entrado un piso interesante …
+    (38.50, 44.85),  # ¿Qué tal, señor? ¿Cómo estás? … ¿En qué calle estás exactamente?
+    (59.85, 67.50, _AG),  # En calle ***, en el barrio de ***. Y no es la mejor zona, pero el piso no está mal.
+    (78.30, 85.95),  # Vale, vale, conozco más o menos esa zona … ¿sabéis el motivo de venta?
+    (87.15, 98.40, _AG),  # Es una herencia … precio de salida de unos 98.000 euros.
+    (107.40, 115.80),  # Vale, más o menos puede cuadrar. Y ahora, tú que sabes más que yo … en esa zona?
+    (116.55, 127.75, _AG),  # Pues en Idealista ahora mismo hay un par de pisos a 550 euros …
+    (136.90, 143.40),  # Y entiendo que el tema de las cargas está todo controlado … ¿la nota simple ya?
+    (144.25, 147.70, _AG),  # Sí, no te preocupes, te la mando en un rato que voy a otra visita.
+    (165.45, 168.45),  # Vale, vale, señor, pues gracias por pensar en mí. (toma sin el "coño")
+    (171.45, 179.20, _AG),  # Nada, Julio, a ti siempre, pero tienes que decirme algo rápido en 24 horas …
+    (188.60, 193.30),  # Tranquilo, ***, como siempre, te contesto cuanto antes, ¿vale? No tardo, un abrazo.
+]
+_CIERRE_G9 = [
+    (204.90, 211.40),  # ¿Veis? Esto no me interesa … la rentabilidad no supera el 6 % neto.
+    (218.50, 225.10),  # Pero fijaos en lo importante … no está todavía en ningún portal.
+    (228.90, 233.20),  # Pero claro, que sea una exclusiva no significa que sea una buena oportunidad.
+    (238.95, 246.20),  # Y es que, para mí, invertir no es encontrar … es descartar … para no perder tiempo.
+    (260.40, 268.90),  # Y bueno, sobre todo, lo más importante, saber crear este tipo de relaciones … (2.ª toma)
+    (276.90, 286.40),  # Tengo una clase privada de 45 minutos … si me dejas la palabra guía.
+]
+PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
+
 TOMAS = {
+    ("g9", "llamada"): [*_LLAMADA_G9, *_CIERRE_G9],
+    # Versión 2: mini intro en blanco y negro con las mejores frases y "EN LA LLAMADA…".
+    ("g9", "intro"): [
+        (26.30, 29.40, {"quien": "agencia", "intro": True}),  # me ha entrado un piso interesante y no lo hemos publicado
+        (84.05, 85.95, {"intro": True}),  # ¿sabéis el motivo de venta?
+        (173.35, 175.95, {"quien": "agencia", "intro": True}),  # tienes que decirme algo rápido en 24 horas
+        *_LLAMADA_G9,
+        *_CIERRE_G9,
+    ],
     ("g8", "hook1"): [(8.85, 11.00), *_CUERPO_G8],  # HOOK 1: Mejores sitios para encontrar una casa
     ("g8", "hook2"): [(13.60, 15.95), *_CUERPO_G8],  # HOOK 2: Mejores webs para buscar una casa
     ("g8", "cuerpo"): list(_CUERPO_G8),  # versión 3: empieza directo en el cuerpo
@@ -140,41 +177,75 @@ def ordenar(palabras):
     return p
 
 
+def efecto_telefono(ruta, tono=1.18):
+    """Voz "al teléfono" y algo más aguda, para que se entienda pero no se reconozca (reel 9)."""
+    filtro = f"asetrate={SR}*{tono},aresample={SR},atempo={1 / tono:.6f},highpass=f=330,lowpass=f=3300,acompressor=threshold=-24dB:ratio=3:attack=5:release=80,volume=1.6"
+    crudo = subprocess.run(["ffmpeg", "-v", "error", "-i", str(ruta), "-af", filtro, "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"], capture_output=True, check=True).stdout
+    return np.frombuffer(crudo, dtype=np.float32)
+
+
+def pitido(dur, f=1000.0):
+    t = np.arange(int(dur * SR)) / SR
+    env = np.minimum(1, np.minimum(t, dur - t) / 0.01)
+    return (0.25 * np.sin(2 * np.pi * f * t) * env).astype(np.float32)
+
+
 def main():
     reel, version = sys.argv[1], sys.argv[2]
     dir_ = RAIZ / "public/tiktok" / reel
     x = leer(dir_ / "audio48k.wav")
+    tel = None
     palabras = ordenar(json.loads((dir_ / "palabras-alineadas.json").read_text())["palabras"])
-    cortes, out = [], 0.0
-    for ini, fin in TOMAS[(reel, version)]:
-        for s, e in sin_pausas(x, ini, fin):
-            cortes.append({"src": round(s, 3), "dur": round(e - s, 3), "out": round(out, 3)})
-            out += e - s
-    # Voz montada con fundidos cortos para que no haya clics en los cortes.
+    # Cada toma es (ini, fin) o (ini, fin, {"quien": "agencia", "intro": True}).
+    tomas = [(t[0], t[1], t[2] if len(t) > 2 else {}) for t in TOMAS[(reel, version)]]
+    cortes, salida, out = [], [], 0.0
     piezas = []
     f = int(FUNDIDO * SR)
-    for c in cortes:
-        p = x[int(c["src"] * SR) : int((c["src"] + c["dur"]) * SR)].copy()
-        p[:f] *= np.linspace(0, 1, f)
-        p[-f:] *= np.linspace(1, 0, f)
-        piezas.append(p)
+    for ti, (ini, fin, op) in enumerate(tomas):
+        mios = []
+        for s_, e in sin_pausas(x, ini, fin):
+            c = {"src": round(s_, 3), "dur": round(e - s_, 3), "out": round(out, 3), "toma": ti}
+            c.update({k: v for k, v in op.items()})
+            cortes.append(c)
+            mios.append(c)
+            out += e - s_
+            fuente = x
+            if op.get("quien") == "agencia":
+                if tel is None:
+                    tel = efecto_telefono(dir_ / "audio48k.wav")
+                fuente = tel
+            pz = fuente[int(s_ * SR) : int(e * SR)].copy()
+            # Pitidos sobre lo que no debe oírse (calles, nombres).
+            for pa, pb in PITIDOS.get(reel, []):
+                a0, b0 = max(pa, s_), min(pb, e)
+                if b0 > a0:
+                    i0, i1 = int((a0 - s_) * SR), int((b0 - s_) * SR)
+                    pz[i0:i1] = pitido((i1 - i0) / SR)[: i1 - i0]
+            pz[:f] *= np.linspace(0, 1, f)
+            pz[-f:] *= np.linspace(1, 0, f)
+            piezas.append(pz)
+        # Palabras de esta toma al tiempo de salida (si una cae en una pausa recortada se pega al
+        # corte siguiente). Las tapadas con pitido salen como "***".
+        for w in palabras:
+            m = (w["ini"] + w["fin"]) / 2
+            if not (ini <= m <= fin) or not mios:
+                continue
+            c = next((c for c in mios if m <= c["src"] + c["dur"] + 0.02), mios[-1])
+            d = c["out"] - c["src"]
+            texto = w["p"]
+            if any(pa - 0.05 <= m <= pb + 0.05 for pa, pb in PITIDOS.get(reel, [])):
+                texto = "***" + ("," if texto.endswith(",") else "")
+            pal = {"p": texto, "ini": round(max(c["out"], w["ini"] + d), 3), "fin": round(min(c["out"] + c["dur"], max(w["fin"] + d, c["out"] + 0.1)), 3)}
+            for k in ("quien", "intro"):
+                if k in op:
+                    pal[k] = op[k]
+            salida.append(pal)
     voz = np.concatenate(piezas)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-", "-c:a", "pcm_s16le", str(dir_ / f"voz-{version}.wav")], input=voz.astype(np.float32).tobytes(), check=True)
-    # Palabras al tiempo de salida: solo las que están dentro de una toma elegida; si una cae en
-    # una pausa recortada se pega al corte siguiente.
-    salida = []
-    tomas = TOMAS[(reel, version)]
-    for w in palabras:
-        m = (w["ini"] + w["fin"]) / 2
-        if not any(i <= m <= f for i, f in tomas):
-            continue
-        c = next((c for c in cortes if m <= c["src"] + c["dur"] + 0.02), cortes[-1])
-        d = c["out"] - c["src"]
-        salida.append({"p": w["p"], "ini": round(max(c["out"], w["ini"] + d), 3), "fin": round(min(c["out"] + c["dur"], max(w["fin"] + d, c["out"] + 0.1)), 3)})
     destino = RAIZ / "src/inmobiliaria" / f"{reel}-{version}.json"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(json.dumps({"duracion": round(out, 3), "cortes": cortes, "palabras": salida}, ensure_ascii=False, indent=1) + "\n")
-    print(f"{len(cortes)} cortes, {out:.2f} s (de {sum(f - i for i, f in TOMAS[(reel, version)]):.2f} s en tomas) → {destino}")
+    print(f"{len(cortes)} cortes, {out:.2f} s (de {sum(b - a for a, b, _ in tomas):.2f} s en tomas) → {destino}")
     print(" ".join(f"{w['p']}[{w['ini']:.2f}]" for w in salida))
 
 

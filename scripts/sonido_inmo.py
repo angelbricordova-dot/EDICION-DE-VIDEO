@@ -119,6 +119,26 @@ def main():
             (tras("guía", mucho), "teclas", -14),
         ]
         ef += [(tras("pedir") - 0.02, "pop", -14)] if version == "hook1" else [(tras("sin") - 0.02, "pop", -14)]
+    elif reel == "g9":
+        # Los mismos momentos que usa src/inmobiliaria/Reel9.tsx (pocos efectos: es una llamada).
+        buenos = tras("Buenos")
+        abrazo = tras("abrazo", buenos)
+        veis = tras("¿veis?", abrazo)
+        ef = [
+            (max(0.0, buenos - 0.45), "tap", -16),
+            (abrazo + 0.7, "beep", -18),
+            (abrazo + 0.95, "beep", -18),
+            (tras("98", buenos), "pop", -16),
+            (tras("550", buenos), "pop", -16),
+            (tras("24", buenos), "pop", -16),
+            (veis - 0.3, "whoosh", -15),
+            (tras("6", veis), "golpe", -16),
+            (tras("descartar", veis), "pop", -15),
+            (tras("palabra", tras("Tengo", veis)) - 0.4, "pop", -15),
+            (tras("guía.", tras("Tengo", veis)), "teclas", -14),
+        ]
+        if version == "intro":
+            ef += [(0.2, "teclas", -16), (buenos - 0.65, "whoosh", -14)]
     elif reel == "g8":
         # Los mismos momentos que usa src/inmobiliaria/Reel8.tsx.
         i_id = tras("Idealista")

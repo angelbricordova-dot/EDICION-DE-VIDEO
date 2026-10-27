@@ -14,6 +14,7 @@ import { GUION_V1, PortadaV1, PromoV1, PropsV1 } from "./tubodega/V1";
 import { G6, PropsReel6, Reel6 } from "./inmobiliaria/Reel6";
 import { G3, PropsReel3, Reel3 } from "./inmobiliaria/Reel3";
 import { G8, PropsReel8, Reel8 } from "./inmobiliaria/Reel8";
+import { G9, PropsReel9, Reel9 } from "./inmobiliaria/Reel9";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -166,6 +167,18 @@ export const RemotionRoot: React.FC = () => {
           width={1080}
           height={1920}
           defaultProps={{ audio: `tiktok/g8/mezcla-${v}.wav`, version: v } satisfies PropsReel8}
+        />
+      ))}
+      {(["llamada", "intro"] as const).map((v) => (
+        <Composition
+          key={v}
+          id={`Inmo9${v[0].toUpperCase()}${v.slice(1)}`}
+          component={Reel9}
+          durationInFrames={Math.ceil((G9[v].duracion + 0.2) * 30)}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{ audio: `tiktok/g9/mezcla-${v}.wav`, version: v } satisfies PropsReel9}
         />
       ))}
     </>

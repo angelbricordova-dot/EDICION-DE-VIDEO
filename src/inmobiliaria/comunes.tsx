@@ -78,9 +78,9 @@ export const Pegatina: React.FC<{ t: number; desde: number; hasta: number; x?: n
 };
 
 /** Texto grande sobre el pecho (los subtítulos se ocultan mientras está). */
-export const Grande: React.FC<{ t: number; desde: number; hasta: number; texto: string; color?: "verde" | "rojo"; tam?: number }> = ({ t, desde, hasta, texto, color = "verde", tam = 118 }) =>
+export const Grande: React.FC<{ t: number; desde: number; hasta: number; texto: string; color?: "verde" | "rojo"; tam?: number; y?: number }> = ({ t, desde, hasta, texto, color = "verde", tam = 118, y = 1130 }) =>
   t >= desde && t < hasta ? (
-    <div style={{ position: "absolute", left: 0, right: 0, top: 1130, display: "flex", justifyContent: "center" }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top: y, display: "flex", justifyContent: "center" }}>
       <Pop t={t} t0={desde}>
         <Texto3D texto={texto} tam={tam} color={color} />
       </Pop>

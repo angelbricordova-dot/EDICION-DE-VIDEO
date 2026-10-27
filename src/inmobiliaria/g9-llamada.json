@@ -1,0 +1,2498 @@
+{
+ "duracion": 120.59,
+ "cortes": [
+  {
+   "src": 24.24,
+   "dur": 5.36,
+   "out": 0.0,
+   "toma": 0,
+   "quien": "agencia"
+  },
+  {
+   "src": 29.74,
+   "dur": 2.96,
+   "out": 5.36,
+   "toma": 0,
+   "quien": "agencia"
+  },
+  {
+   "src": 38.64,
+   "dur": 1.51,
+   "out": 8.32,
+   "toma": 1
+  },
+  {
+   "src": 40.39,
+   "dur": 2.84,
+   "out": 9.83,
+   "toma": 1
+  },
+  {
+   "src": 43.6,
+   "dur": 1.25,
+   "out": 12.67,
+   "toma": 1
+  },
+  {
+   "src": 59.85,
+   "dur": 1.5,
+   "out": 13.92,
+   "toma": 2,
+   "quien": "agencia"
+  },
+  {
+   "src": 61.86,
+   "dur": 2.23,
+   "out": 15.42,
+   "toma": 2,
+   "quien": "agencia"
+  },
+  {
+   "src": 64.95,
+   "dur": 2.5,
+   "out": 17.65,
+   "toma": 2,
+   "quien": "agencia"
+  },
+  {
+   "src": 78.34,
+   "dur": 0.36,
+   "out": 20.15,
+   "toma": 3
+  },
+  {
+   "src": 79.5,
+   "dur": 3.9,
+   "out": 20.51,
+   "toma": 3
+  },
+  {
+   "src": 84.09,
+   "dur": 1.86,
+   "out": 24.41,
+   "toma": 3
+  },
+  {
+   "src": 87.24,
+   "dur": 3.69,
+   "out": 26.27,
+   "toma": 4,
+   "quien": "agencia"
+  },
+  {
+   "src": 91.17,
+   "dur": 3.12,
+   "out": 29.96,
+   "toma": 4,
+   "quien": "agencia"
+  },
+  {
+   "src": 94.73,
+   "dur": 3.5,
+   "out": 33.08,
+   "toma": 4,
+   "quien": "agencia"
+  },
+  {
+   "src": 107.44,
+   "dur": 5.33,
+   "out": 36.58,
+   "toma": 5
+  },
+  {
+   "src": 113.28,
+   "dur": 2.52,
+   "out": 41.91,
+   "toma": 5
+  },
+  {
+   "src": 116.71,
+   "dur": 6.58,
+   "out": 44.43,
+   "toma": 6,
+   "quien": "agencia"
+  },
+  {
+   "src": 123.45,
+   "dur": 4.13,
+   "out": 51.01,
+   "toma": 6,
+   "quien": "agencia"
+  },
+  {
+   "src": 136.9,
+   "dur": 3.29,
+   "out": 55.14,
+   "toma": 7
+  },
+  {
+   "src": 140.66,
+   "dur": 2.74,
+   "out": 58.43,
+   "toma": 7
+  },
+  {
+   "src": 144.3,
+   "dur": 3.4,
+   "out": 61.17,
+   "toma": 8,
+   "quien": "agencia"
+  },
+  {
+   "src": 165.5,
+   "dur": 1.57,
+   "out": 64.57,
+   "toma": 9
+  },
+  {
+   "src": 167.4,
+   "dur": 1.05,
+   "out": 66.14,
+   "toma": 9
+  },
+  {
+   "src": 171.57,
+   "dur": 7.6,
+   "out": 67.19,
+   "toma": 10,
+   "quien": "agencia"
+  },
+  {
+   "src": 188.7,
+   "dur": 4.6,
+   "out": 74.79,
+   "toma": 11
+  },
+  {
+   "src": 204.98,
+   "dur": 6.34,
+   "out": 79.39,
+   "toma": 12
+  },
+  {
+   "src": 218.65,
+   "dur": 6.45,
+   "out": 85.73,
+   "toma": 13
+  },
+  {
+   "src": 229.03,
+   "dur": 4.17,
+   "out": 92.18,
+   "toma": 14
+  },
+  {
+   "src": 239.05,
+   "dur": 6.94,
+   "out": 96.35,
+   "toma": 15
+  },
+  {
+   "src": 260.45,
+   "dur": 8.18,
+   "out": 103.29,
+   "toma": 16
+  },
+  {
+   "src": 277.07,
+   "dur": 9.12,
+   "out": 111.47,
+   "toma": 17
+  }
+ ],
+ "palabras": [
+  {
+   "p": "Buenos",
+   "ini": 0.062,
+   "fin": 0.262,
+   "quien": "agencia"
+  },
+  {
+   "p": "días,",
+   "ini": 0.302,
+   "fin": 0.443,
+   "quien": "agencia"
+  },
+  {
+   "p": "Julio.",
+   "ini": 0.483,
+   "fin": 0.743,
+   "quien": "agencia"
+  },
+  {
+   "p": "Mira,",
+   "ini": 1.124,
+   "fin": 1.324,
+   "quien": "agencia"
+  },
+  {
+   "p": "te",
+   "ini": 1.725,
+   "fin": 1.785,
+   "quien": "agencia"
+  },
+  {
+   "p": "llamo",
+   "ini": 1.886,
+   "fin": 2.066,
+   "quien": "agencia"
+  },
+  {
+   "p": "porque",
+   "ini": 2.146,
+   "fin": 2.367,
+   "quien": "agencia"
+  },
+  {
+   "p": "me",
+   "ini": 2.407,
+   "fin": 2.467,
+   "quien": "agencia"
+  },
+  {
+   "p": "ha",
+   "ini": 2.487,
+   "fin": 2.547,
+   "quien": "agencia"
+  },
+  {
+   "p": "entrado",
+   "ini": 2.567,
+   "fin": 2.868,
+   "quien": "agencia"
+  },
+  {
+   "p": "a",
+   "ini": 2.888,
+   "fin": 2.948,
+   "quien": "agencia"
+  },
+  {
+   "p": "un",
+   "ini": 2.948,
+   "fin": 3.008,
+   "quien": "agencia"
+  },
+  {
+   "p": "piso",
+   "ini": 3.108,
+   "fin": 3.329,
+   "quien": "agencia"
+  },
+  {
+   "p": "interesante",
+   "ini": 3.389,
+   "fin": 4.05,
+   "quien": "agencia"
+  },
+  {
+   "p": "y",
+   "ini": 4.391,
+   "fin": 4.451,
+   "quien": "agencia"
+  },
+  {
+   "p": "no",
+   "ini": 4.471,
+   "fin": 4.531,
+   "quien": "agencia"
+  },
+  {
+   "p": "lo",
+   "ini": 4.571,
+   "fin": 4.631,
+   "quien": "agencia"
+  },
+  {
+   "p": "hemos",
+   "ini": 4.651,
+   "fin": 4.792,
+   "quien": "agencia"
+  },
+  {
+   "p": "publicado.",
+   "ini": 4.852,
+   "fin": 5.253,
+   "quien": "agencia"
+  },
+  {
+   "p": "Yo",
+   "ini": 5.574,
+   "fin": 5.674,
+   "quien": "agencia"
+  },
+  {
+   "p": "creo",
+   "ini": 5.754,
+   "fin": 5.894,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 5.954,
+   "fin": 6.035,
+   "quien": "agencia"
+  },
+  {
+   "p": "es",
+   "ini": 6.055,
+   "fin": 6.115,
+   "quien": "agencia"
+  },
+  {
+   "p": "una",
+   "ini": 6.135,
+   "fin": 6.215,
+   "quien": "agencia"
+  },
+  {
+   "p": "oportunidad",
+   "ini": 6.255,
+   "fin": 6.856,
+   "quien": "agencia"
+  },
+  {
+   "p": "Pero",
+   "ini": 7.097,
+   "fin": 7.217,
+   "quien": "agencia"
+  },
+  {
+   "p": "hay",
+   "ini": 7.237,
+   "fin": 7.297,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 7.317,
+   "fin": 7.377,
+   "quien": "agencia"
+  },
+  {
+   "p": "moverse",
+   "ini": 7.417,
+   "fin": 7.718,
+   "quien": "agencia"
+  },
+  {
+   "p": "rápido",
+   "ini": 7.858,
+   "fin": 8.199,
+   "quien": "agencia"
+  },
+  {
+   "p": "¿Qué",
+   "ini": 8.367,
+   "fin": 8.448
+  },
+  {
+   "p": "tal,",
+   "ini": 8.488,
+   "fin": 8.629
+  },
+  {
+   "p": "señor?",
+   "ini": 8.71,
+   "fin": 9.012
+  },
+  {
+   "p": "¿Cómo",
+   "ini": 9.194,
+   "fin": 9.315
+  },
+  {
+   "p": "estás?",
+   "ini": 9.355,
+   "fin": 9.637
+  },
+  {
+   "p": "A",
+   "ini": 10.002,
+   "fin": 10.062
+  },
+  {
+   "p": "ver,",
+   "ini": 10.083,
+   "fin": 10.203
+  },
+  {
+   "p": "déjame",
+   "ini": 10.504,
+   "fin": 10.725
+  },
+  {
+   "p": "que",
+   "ini": 10.765,
+   "fin": 10.826
+  },
+  {
+   "p": "te",
+   "ini": 10.846,
+   "fin": 10.906
+  },
+  {
+   "p": "haga",
+   "ini": 10.906,
+   "fin": 11.026
+  },
+  {
+   "p": "Un",
+   "ini": 11.107,
+   "fin": 11.167
+  },
+  {
+   "p": "par",
+   "ini": 11.267,
+   "fin": 11.368
+  },
+  {
+   "p": "de",
+   "ini": 11.408,
+   "fin": 11.468
+  },
+  {
+   "p": "preguntillas",
+   "ini": 11.488,
+   "fin": 11.89
+  },
+  {
+   "p": "antes,",
+   "ini": 11.95,
+   "fin": 12.151
+  },
+  {
+   "p": "porfa",
+   "ini": 12.251,
+   "fin": 12.452
+  },
+  {
+   "p": "¿En",
+   "ini": 12.805,
+   "fin": 12.865
+  },
+  {
+   "p": "qué",
+   "ini": 12.905,
+   "fin": 12.985
+  },
+  {
+   "p": "calle",
+   "ini": 13.045,
+   "fin": 13.206
+  },
+  {
+   "p": "estás",
+   "ini": 13.246,
+   "fin": 13.407
+  },
+  {
+   "p": "exactamente?",
+   "ini": 13.447,
+   "fin": 13.909
+  },
+  {
+   "p": "En",
+   "ini": 14.096,
+   "fin": 14.258,
+   "quien": "agencia"
+  },
+  {
+   "p": "calle",
+   "ini": 14.379,
+   "fin": 14.601,
+   "quien": "agencia"
+  },
+  {
+   "p": "***",
+   "ini": 14.661,
+   "fin": 15.226,
+   "quien": "agencia"
+  },
+  {
+   "p": "En",
+   "ini": 15.625,
+   "fin": 15.826,
+   "quien": "agencia"
+  },
+  {
+   "p": "el",
+   "ini": 15.967,
+   "fin": 16.128,
+   "quien": "agencia"
+  },
+  {
+   "p": "barrio",
+   "ini": 16.289,
+   "fin": 16.732,
+   "quien": "agencia"
+  },
+  {
+   "p": "de",
+   "ini": 16.793,
+   "fin": 16.853,
+   "quien": "agencia"
+  },
+  {
+   "p": "***",
+   "ini": 16.934,
+   "fin": 16.994,
+   "quien": "agencia"
+  },
+  {
+   "p": "***",
+   "ini": 17.034,
+   "fin": 17.437,
+   "quien": "agencia"
+  },
+  {
+   "p": "Y",
+   "ini": 17.805,
+   "fin": 17.865,
+   "quien": "agencia"
+  },
+  {
+   "p": "no",
+   "ini": 17.966,
+   "fin": 18.026,
+   "quien": "agencia"
+  },
+  {
+   "p": "es",
+   "ini": 18.066,
+   "fin": 18.126,
+   "quien": "agencia"
+  },
+  {
+   "p": "la",
+   "ini": 18.127,
+   "fin": 18.187,
+   "quien": "agencia"
+  },
+  {
+   "p": "mejor",
+   "ini": 18.227,
+   "fin": 18.469,
+   "quien": "agencia"
+  },
+  {
+   "p": "zona",
+   "ini": 18.549,
+   "fin": 18.75,
+   "quien": "agencia"
+  },
+  {
+   "p": "Pero",
+   "ini": 19.012,
+   "fin": 19.173,
+   "quien": "agencia"
+  },
+  {
+   "p": "el",
+   "ini": 19.233,
+   "fin": 19.293,
+   "quien": "agencia"
+  },
+  {
+   "p": "piso",
+   "ini": 19.354,
+   "fin": 19.535,
+   "quien": "agencia"
+  },
+  {
+   "p": "no",
+   "ini": 19.595,
+   "fin": 19.655,
+   "quien": "agencia"
+  },
+  {
+   "p": "está",
+   "ini": 19.675,
+   "fin": 19.796,
+   "quien": "agencia"
+  },
+  {
+   "p": "mal",
+   "ini": 19.856,
+   "fin": 19.977,
+   "quien": "agencia"
+  },
+  {
+   "p": "Vale,",
+   "ini": 20.51,
+   "fin": 20.61
+  },
+  {
+   "p": "vale,",
+   "ini": 20.912,
+   "fin": 21.093
+  },
+  {
+   "p": "conozco",
+   "ini": 21.395,
+   "fin": 21.696
+  },
+  {
+   "p": "más",
+   "ini": 21.796,
+   "fin": 21.877
+  },
+  {
+   "p": "o",
+   "ini": 21.917,
+   "fin": 21.977
+  },
+  {
+   "p": "menos",
+   "ini": 21.977,
+   "fin": 22.238
+  },
+  {
+   "p": "esa",
+   "ini": 22.419,
+   "fin": 22.52
+  },
+  {
+   "p": "zona",
+   "ini": 22.58,
+   "fin": 22.741
+  },
+  {
+   "p": "Es",
+   "ini": 22.781,
+   "fin": 22.841
+  },
+  {
+   "p": "por",
+   "ini": 22.901,
+   "fin": 22.982
+  },
+  {
+   "p": "donde",
+   "ini": 23.022,
+   "fin": 23.203
+  },
+  {
+   "p": "el",
+   "ini": 23.323,
+   "fin": 23.404
+  },
+  {
+   "p": "instituto,",
+   "ini": 23.625,
+   "fin": 24.027
+  },
+  {
+   "p": "creo",
+   "ini": 24.107,
+   "fin": 24.308
+  },
+  {
+   "p": "Ahora,",
+   "ini": 24.525,
+   "fin": 24.726
+  },
+  {
+   "p": "¿sabéis",
+   "ini": 25.19,
+   "fin": 25.431
+  },
+  {
+   "p": "el",
+   "ini": 25.472,
+   "fin": 25.532
+  },
+  {
+   "p": "motivo",
+   "ini": 25.552,
+   "fin": 25.794
+  },
+  {
+   "p": "de",
+   "ini": 25.834,
+   "fin": 25.894
+  },
+  {
+   "p": "venta?",
+   "ini": 25.915,
+   "fin": 26.136
+  },
+  {
+   "p": "Es",
+   "ini": 26.372,
+   "fin": 26.452,
+   "quien": "agencia"
+  },
+  {
+   "p": "una",
+   "ini": 26.532,
+   "fin": 26.633,
+   "quien": "agencia"
+  },
+  {
+   "p": "herencia",
+   "ini": 26.673,
+   "fin": 27.174,
+   "quien": "agencia"
+  },
+  {
+   "p": "y",
+   "ini": 27.515,
+   "fin": 27.575,
+   "quien": "agencia"
+  },
+  {
+   "p": "ninguno",
+   "ini": 27.655,
+   "fin": 28.076,
+   "quien": "agencia"
+  },
+  {
+   "p": "de",
+   "ini": 28.136,
+   "fin": 28.196,
+   "quien": "agencia"
+  },
+  {
+   "p": "los",
+   "ini": 28.237,
+   "fin": 28.317,
+   "quien": "agencia"
+  },
+  {
+   "p": "hermanos",
+   "ini": 28.377,
+   "fin": 28.678,
+   "quien": "agencia"
+  },
+  {
+   "p": "quiere",
+   "ini": 28.918,
+   "fin": 29.099,
+   "quien": "agencia"
+  },
+  {
+   "p": "hacerse",
+   "ini": 29.139,
+   "fin": 29.5,
+   "quien": "agencia"
+  },
+  {
+   "p": "cargo.",
+   "ini": 29.56,
+   "fin": 29.861,
+   "quien": "agencia"
+  },
+  {
+   "p": "Aún",
+   "ini": 30.102,
+   "fin": 30.262,
+   "quien": "agencia"
+  },
+  {
+   "p": "no",
+   "ini": 30.302,
+   "fin": 30.362,
+   "quien": "agencia"
+  },
+  {
+   "p": "se",
+   "ini": 30.443,
+   "fin": 30.503,
+   "quien": "agencia"
+  },
+  {
+   "p": "ha",
+   "ini": 30.503,
+   "fin": 30.563,
+   "quien": "agencia"
+  },
+  {
+   "p": "publicado",
+   "ini": 30.623,
+   "fin": 31.064,
+   "quien": "agencia"
+  },
+  {
+   "p": "porque",
+   "ini": 31.265,
+   "fin": 31.505,
+   "quien": "agencia"
+  },
+  {
+   "p": "quiere",
+   "ini": 31.545,
+   "fin": 31.706,
+   "quien": "agencia"
+  },
+  {
+   "p": "moverlo",
+   "ini": 31.746,
+   "fin": 32.087,
+   "quien": "agencia"
+  },
+  {
+   "p": "en",
+   "ini": 32.127,
+   "fin": 32.187,
+   "quien": "agencia"
+  },
+  {
+   "p": "privado",
+   "ini": 32.267,
+   "fin": 32.568,
+   "quien": "agencia"
+  },
+  {
+   "p": "por",
+   "ini": 32.628,
+   "fin": 32.728,
+   "quien": "agencia"
+  },
+  {
+   "p": "ahora.",
+   "ini": 32.768,
+   "fin": 32.989,
+   "quien": "agencia"
+  },
+  {
+   "p": "Hemos",
+   "ini": 33.193,
+   "fin": 33.374,
+   "quien": "agencia"
+  },
+  {
+   "p": "hablado",
+   "ini": 33.414,
+   "fin": 33.675,
+   "quien": "agencia"
+  },
+  {
+   "p": "de",
+   "ini": 33.735,
+   "fin": 33.795,
+   "quien": "agencia"
+  },
+  {
+   "p": "un",
+   "ini": 33.816,
+   "fin": 33.876,
+   "quien": "agencia"
+  },
+  {
+   "p": "precio",
+   "ini": 33.956,
+   "fin": 34.278,
+   "quien": "agencia"
+  },
+  {
+   "p": "de",
+   "ini": 34.318,
+   "fin": 34.378,
+   "quien": "agencia"
+  },
+  {
+   "p": "salida",
+   "ini": 34.438,
+   "fin": 34.76,
+   "quien": "agencia"
+  },
+  {
+   "p": "de",
+   "ini": 34.901,
+   "fin": 34.981,
+   "quien": "agencia"
+  },
+  {
+   "p": "unos",
+   "ini": 35.101,
+   "fin": 35.262,
+   "quien": "agencia"
+  },
+  {
+   "p": "98",
+   "ini": 35.343,
+   "fin": 36.066,
+   "quien": "agencia"
+  },
+  {
+   "p": ".000",
+   "ini": 36.126,
+   "fin": 36.307,
+   "quien": "agencia"
+  },
+  {
+   "p": "euros.",
+   "ini": 36.367,
+   "fin": 36.548,
+   "quien": "agencia"
+  },
+  {
+   "p": "Vale,",
+   "ini": 36.702,
+   "fin": 36.982
+  },
+  {
+   "p": "más",
+   "ini": 37.383,
+   "fin": 37.483
+  },
+  {
+   "p": "o",
+   "ini": 37.543,
+   "fin": 37.603
+  },
+  {
+   "p": "menos",
+   "ini": 37.604,
+   "fin": 37.844
+  },
+  {
+   "p": "puede",
+   "ini": 38.044,
+   "fin": 38.265
+  },
+  {
+   "p": "cuadrar.",
+   "ini": 38.345,
+   "fin": 38.626
+  },
+  {
+   "p": "Y",
+   "ini": 39.187,
+   "fin": 39.247
+  },
+  {
+   "p": "ahora,",
+   "ini": 39.548,
+   "fin": 39.728
+  },
+  {
+   "p": "tú",
+   "ini": 39.989,
+   "fin": 40.049
+  },
+  {
+   "p": "que",
+   "ini": 40.089,
+   "fin": 40.149
+  },
+  {
+   "p": "sabes",
+   "ini": 40.169,
+   "fin": 40.369
+  },
+  {
+   "p": "más",
+   "ini": 40.45,
+   "fin": 40.53
+  },
+  {
+   "p": "que",
+   "ini": 40.57,
+   "fin": 40.63
+  },
+  {
+   "p": "yo,",
+   "ini": 40.67,
+   "fin": 40.77
+  },
+  {
+   "p": "obviamente,",
+   "ini": 40.931,
+   "fin": 41.271
+  },
+  {
+   "p": "que",
+   "ini": 41.312,
+   "fin": 41.372
+  },
+  {
+   "p": "te",
+   "ini": 41.392,
+   "fin": 41.452
+  },
+  {
+   "p": "digas",
+   "ini": 41.472,
+   "fin": 41.652
+  },
+  {
+   "p": "a",
+   "ini": 41.692,
+   "fin": 41.752
+  },
+  {
+   "p": "esto.",
+   "ini": 41.773,
+   "fin": 41.91
+  },
+  {
+   "p": "¿En",
+   "ini": 42.044,
+   "fin": 42.104
+  },
+  {
+   "p": "cuánto",
+   "ini": 42.164,
+   "fin": 42.345
+  },
+  {
+   "p": "se",
+   "ini": 42.405,
+   "fin": 42.465
+  },
+  {
+   "p": "puede",
+   "ini": 42.505,
+   "fin": 42.625
+  },
+  {
+   "p": "alquilar,",
+   "ini": 42.645,
+   "fin": 42.986
+  },
+  {
+   "p": "de",
+   "ini": 43.106,
+   "fin": 43.166
+  },
+  {
+   "p": "verdad,",
+   "ini": 43.187,
+   "fin": 43.407
+  },
+  {
+   "p": "más",
+   "ini": 43.467,
+   "fin": 43.527
+  },
+  {
+   "p": "o",
+   "ini": 43.588,
+   "fin": 43.648
+  },
+  {
+   "p": "menos,",
+   "ini": 43.648,
+   "fin": 43.828
+  },
+  {
+   "p": "en",
+   "ini": 43.868,
+   "fin": 43.928
+  },
+  {
+   "p": "esa",
+   "ini": 43.968,
+   "fin": 44.049
+  },
+  {
+   "p": "zona?",
+   "ini": 44.129,
+   "fin": 44.289
+  },
+  {
+   "p": "Pues",
+   "ini": 44.482,
+   "fin": 44.742,
+   "quien": "agencia"
+  },
+  {
+   "p": "en",
+   "ini": 44.842,
+   "fin": 44.922,
+   "quien": "agencia"
+  },
+  {
+   "p": "Idealista",
+   "ini": 45.042,
+   "fin": 45.523,
+   "quien": "agencia"
+  },
+  {
+   "p": "ahora",
+   "ini": 45.563,
+   "fin": 45.704,
+   "quien": "agencia"
+  },
+  {
+   "p": "mismo",
+   "ini": 45.744,
+   "fin": 46.044,
+   "quien": "agencia"
+  },
+  {
+   "p": "hay",
+   "ini": 46.124,
+   "fin": 46.224,
+   "quien": "agencia"
+  },
+  {
+   "p": "un",
+   "ini": 46.284,
+   "fin": 46.345,
+   "quien": "agencia"
+  },
+  {
+   "p": "par",
+   "ini": 46.565,
+   "fin": 46.705,
+   "quien": "agencia"
+  },
+  {
+   "p": "de",
+   "ini": 46.745,
+   "fin": 46.825,
+   "quien": "agencia"
+  },
+  {
+   "p": "pisos",
+   "ini": 46.905,
+   "fin": 47.266,
+   "quien": "agencia"
+  },
+  {
+   "p": "a",
+   "ini": 47.346,
+   "fin": 47.406,
+   "quien": "agencia"
+  },
+  {
+   "p": "550",
+   "ini": 47.486,
+   "fin": 48.388,
+   "quien": "agencia"
+  },
+  {
+   "p": "euros",
+   "ini": 48.468,
+   "fin": 48.708,
+   "quien": "agencia"
+  },
+  {
+   "p": "Y",
+   "ini": 48.989,
+   "fin": 49.049,
+   "quien": "agencia"
+  },
+  {
+   "p": "creo",
+   "ini": 49.169,
+   "fin": 49.329,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 49.37,
+   "fin": 49.45,
+   "quien": "agencia"
+  },
+  {
+   "p": "por",
+   "ini": 49.53,
+   "fin": 49.65,
+   "quien": "agencia"
+  },
+  {
+   "p": "ahí",
+   "ini": 49.71,
+   "fin": 49.87,
+   "quien": "agencia"
+  },
+  {
+   "p": "rondará",
+   "ini": 50.071,
+   "fin": 50.411,
+   "quien": "agencia"
+  },
+  {
+   "p": "la",
+   "ini": 50.491,
+   "fin": 50.551,
+   "quien": "agencia"
+  },
+  {
+   "p": "cosa",
+   "ini": 50.612,
+   "fin": 50.872,
+   "quien": "agencia"
+  },
+  {
+   "p": "Los",
+   "ini": 51.173,
+   "fin": 51.253,
+   "quien": "agencia"
+  },
+  {
+   "p": "últimos",
+   "ini": 51.313,
+   "fin": 51.674,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 51.774,
+   "fin": 51.874,
+   "quien": "agencia"
+  },
+  {
+   "p": "hemos",
+   "ini": 51.934,
+   "fin": 52.114,
+   "quien": "agencia"
+  },
+  {
+   "p": "alquilado",
+   "ini": 52.194,
+   "fin": 52.635,
+   "quien": "agencia"
+  },
+  {
+   "p": "ahí",
+   "ini": 52.715,
+   "fin": 52.835,
+   "quien": "agencia"
+  },
+  {
+   "p": "fueron",
+   "ini": 52.976,
+   "fin": 53.276,
+   "quien": "agencia"
+  },
+  {
+   "p": "entre",
+   "ini": 53.376,
+   "fin": 53.657,
+   "quien": "agencia"
+  },
+  {
+   "p": "500",
+   "ini": 53.737,
+   "fin": 54.218,
+   "quien": "agencia"
+  },
+  {
+   "p": "y",
+   "ini": 54.258,
+   "fin": 54.318,
+   "quien": "agencia"
+  },
+  {
+   "p": "600",
+   "ini": 54.338,
+   "fin": 54.839,
+   "quien": "agencia"
+  },
+  {
+   "p": "euros",
+   "ini": 54.899,
+   "fin": 55.14,
+   "quien": "agencia"
+  },
+  {
+   "p": "Y",
+   "ini": 55.303,
+   "fin": 55.363
+  },
+  {
+   "p": "entiendo",
+   "ini": 55.764,
+   "fin": 56.065
+  },
+  {
+   "p": "que",
+   "ini": 56.085,
+   "fin": 56.165
+  },
+  {
+   "p": "el",
+   "ini": 56.185,
+   "fin": 56.245
+  },
+  {
+   "p": "tema",
+   "ini": 56.245,
+   "fin": 56.405
+  },
+  {
+   "p": "de",
+   "ini": 56.446,
+   "fin": 56.506
+  },
+  {
+   "p": "las",
+   "ini": 56.526,
+   "fin": 56.606
+  },
+  {
+   "p": "cargas",
+   "ini": 56.666,
+   "fin": 57.007
+  },
+  {
+   "p": "está",
+   "ini": 57.087,
+   "fin": 57.248
+  },
+  {
+   "p": "todo",
+   "ini": 57.508,
+   "fin": 57.769
+  },
+  {
+   "p": "controlado",
+   "ini": 57.849,
+   "fin": 58.29
+  },
+  {
+   "p": "Entonces,",
+   "ini": 58.582,
+   "fin": 59.124
+  },
+  {
+   "p": "¿habéis",
+   "ini": 59.445,
+   "fin": 59.605
+  },
+  {
+   "p": "pedido",
+   "ini": 59.665,
+   "fin": 59.986
+  },
+  {
+   "p": "la",
+   "ini": 60.407,
+   "fin": 60.467
+  },
+  {
+   "p": "nota",
+   "ini": 60.488,
+   "fin": 60.608
+  },
+  {
+   "p": "simple",
+   "ini": 60.648,
+   "fin": 60.848
+  },
+  {
+   "p": "ya?",
+   "ini": 60.889,
+   "fin": 60.949
+  },
+  {
+   "p": "Sí,",
+   "ini": 61.294,
+   "fin": 61.414,
+   "quien": "agencia"
+  },
+  {
+   "p": "no",
+   "ini": 61.595,
+   "fin": 61.655,
+   "quien": "agencia"
+  },
+  {
+   "p": "te",
+   "ini": 61.695,
+   "fin": 61.756,
+   "quien": "agencia"
+  },
+  {
+   "p": "preocupes",
+   "ini": 61.816,
+   "fin": 62.198,
+   "quien": "agencia"
+  },
+  {
+   "p": "Te",
+   "ini": 62.399,
+   "fin": 62.459,
+   "quien": "agencia"
+  },
+  {
+   "p": "la",
+   "ini": 62.499,
+   "fin": 62.559,
+   "quien": "agencia"
+  },
+  {
+   "p": "mando",
+   "ini": 62.599,
+   "fin": 62.78,
+   "quien": "agencia"
+  },
+  {
+   "p": "en",
+   "ini": 62.8,
+   "fin": 62.861,
+   "quien": "agencia"
+  },
+  {
+   "p": "un",
+   "ini": 62.921,
+   "fin": 62.981,
+   "quien": "agencia"
+  },
+  {
+   "p": "rato",
+   "ini": 63.041,
+   "fin": 63.303,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 63.544,
+   "fin": 63.644,
+   "quien": "agencia"
+  },
+  {
+   "p": "voy",
+   "ini": 63.704,
+   "fin": 63.825,
+   "quien": "agencia"
+  },
+  {
+   "p": "a",
+   "ini": 63.885,
+   "fin": 63.945,
+   "quien": "agencia"
+  },
+  {
+   "p": "otra",
+   "ini": 63.945,
+   "fin": 64.086,
+   "quien": "agencia"
+  },
+  {
+   "p": "visita",
+   "ini": 64.126,
+   "fin": 64.468,
+   "quien": "agencia"
+  },
+  {
+   "p": "Vale,",
+   "ini": 64.712,
+   "fin": 65.094
+  },
+  {
+   "p": "vale,",
+   "ini": 65.134,
+   "fin": 65.274
+  },
+  {
+   "p": "señor,",
+   "ini": 65.334,
+   "fin": 65.575
+  },
+  {
+   "p": "pues",
+   "ini": 65.675,
+   "fin": 65.936
+  },
+  {
+   "p": "Gracias",
+   "ini": 66.228,
+   "fin": 66.489
+  },
+  {
+   "p": "por",
+   "ini": 66.549,
+   "fin": 66.63
+  },
+  {
+   "p": "pensar",
+   "ini": 66.67,
+   "fin": 66.87
+  },
+  {
+   "p": "en",
+   "ini": 66.91,
+   "fin": 66.97
+  },
+  {
+   "p": "mí",
+   "ini": 66.971,
+   "fin": 67.031
+  },
+  {
+   "p": "Nada,",
+   "ini": 67.282,
+   "fin": 67.582,
+   "quien": "agencia"
+  },
+  {
+   "p": "Julio",
+   "ini": 67.643,
+   "fin": 67.923,
+   "quien": "agencia"
+  },
+  {
+   "p": "a",
+   "ini": 68.144,
+   "fin": 68.204,
+   "quien": "agencia"
+  },
+  {
+   "p": "ti",
+   "ini": 68.344,
+   "fin": 68.404,
+   "quien": "agencia"
+  },
+  {
+   "p": "siempre,",
+   "ini": 68.505,
+   "fin": 68.845,
+   "quien": "agencia"
+  },
+  {
+   "p": "pero",
+   "ini": 69.086,
+   "fin": 69.226,
+   "quien": "agencia"
+  },
+  {
+   "p": "tienes",
+   "ini": 69.286,
+   "fin": 69.467,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 69.507,
+   "fin": 69.567,
+   "quien": "agencia"
+  },
+  {
+   "p": "decirme",
+   "ini": 69.627,
+   "fin": 69.908,
+   "quien": "agencia"
+  },
+  {
+   "p": "algo",
+   "ini": 69.968,
+   "fin": 70.148,
+   "quien": "agencia"
+  },
+  {
+   "p": "rápido",
+   "ini": 70.269,
+   "fin": 70.589,
+   "quien": "agencia"
+  },
+  {
+   "p": "en",
+   "ini": 70.65,
+   "fin": 70.71,
+   "quien": "agencia"
+  },
+  {
+   "p": "24",
+   "ini": 70.77,
+   "fin": 71.311,
+   "quien": "agencia"
+  },
+  {
+   "p": "horas,",
+   "ini": 71.391,
+   "fin": 71.532,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 71.672,
+   "fin": 71.752,
+   "quien": "agencia"
+  },
+  {
+   "p": "lo",
+   "ini": 71.812,
+   "fin": 71.872,
+   "quien": "agencia"
+  },
+  {
+   "p": "estoy",
+   "ini": 71.933,
+   "fin": 72.093,
+   "quien": "agencia"
+  },
+  {
+   "p": "moviendo",
+   "ini": 72.133,
+   "fin": 72.454,
+   "quien": "agencia"
+  },
+  {
+   "p": "con",
+   "ini": 72.514,
+   "fin": 72.614,
+   "quien": "agencia"
+  },
+  {
+   "p": "más",
+   "ini": 72.674,
+   "fin": 72.754,
+   "quien": "agencia"
+  },
+  {
+   "p": "gente",
+   "ini": 72.775,
+   "fin": 73.115,
+   "quien": "agencia"
+  },
+  {
+   "p": "y",
+   "ini": 73.376,
+   "fin": 73.436,
+   "quien": "agencia"
+  },
+  {
+   "p": "creo",
+   "ini": 73.516,
+   "fin": 73.677,
+   "quien": "agencia"
+  },
+  {
+   "p": "que",
+   "ini": 73.697,
+   "fin": 73.777,
+   "quien": "agencia"
+  },
+  {
+   "p": "va",
+   "ini": 73.817,
+   "fin": 73.877,
+   "quien": "agencia"
+  },
+  {
+   "p": "a",
+   "ini": 73.877,
+   "fin": 73.937,
+   "quien": "agencia"
+  },
+  {
+   "p": "durar",
+   "ini": 73.917,
+   "fin": 74.138,
+   "quien": "agencia"
+  },
+  {
+   "p": "muy",
+   "ini": 74.258,
+   "fin": 74.378,
+   "quien": "agencia"
+  },
+  {
+   "p": "poco",
+   "ini": 74.438,
+   "fin": 74.659,
+   "quien": "agencia"
+  },
+  {
+   "p": "tranquilo,",
+   "ini": 74.872,
+   "fin": 75.334
+  },
+  {
+   "p": "***,",
+   "ini": 75.414,
+   "fin": 75.695
+  },
+  {
+   "p": "como",
+   "ini": 75.956,
+   "fin": 76.056
+  },
+  {
+   "p": "siempre",
+   "ini": 76.117,
+   "fin": 76.398
+  },
+  {
+   "p": "te",
+   "ini": 76.618,
+   "fin": 76.679
+  },
+  {
+   "p": "contesto",
+   "ini": 76.719,
+   "fin": 77.16
+  },
+  {
+   "p": "cuanto",
+   "ini": 77.361,
+   "fin": 77.562
+  },
+  {
+   "p": "antes,",
+   "ini": 77.622,
+   "fin": 77.783
+  },
+  {
+   "p": "¿vale?",
+   "ini": 77.843,
+   "fin": 78.004
+  },
+  {
+   "p": "no",
+   "ini": 78.285,
+   "fin": 78.345
+  },
+  {
+   "p": "tardo,",
+   "ini": 78.385,
+   "fin": 78.586
+  },
+  {
+   "p": "un",
+   "ini": 78.907,
+   "fin": 78.967
+  },
+  {
+   "p": "abrazo",
+   "ini": 78.987,
+   "fin": 79.268
+  },
+  {
+   "p": "¿veis?",
+   "ini": 79.512,
+   "fin": 79.733
+  },
+  {
+   "p": "esto",
+   "ini": 79.934,
+   "fin": 80.194
+  },
+  {
+   "p": "no",
+   "ini": 80.655,
+   "fin": 80.715
+  },
+  {
+   "p": "me",
+   "ini": 80.716,
+   "fin": 80.776
+  },
+  {
+   "p": "interesa",
+   "ini": 80.796,
+   "fin": 81.157
+  },
+  {
+   "p": "porque",
+   "ini": 81.357,
+   "fin": 81.498
+  },
+  {
+   "p": "al",
+   "ini": 81.518,
+   "fin": 81.578
+  },
+  {
+   "p": "final",
+   "ini": 81.578,
+   "fin": 81.778
+  },
+  {
+   "p": "el",
+   "ini": 81.979,
+   "fin": 82.039
+  },
+  {
+   "p": "barrio",
+   "ini": 82.079,
+   "fin": 82.36
+  },
+  {
+   "p": "no",
+   "ini": 82.42,
+   "fin": 82.48
+  },
+  {
+   "p": "es",
+   "ini": 82.52,
+   "fin": 82.601
+  },
+  {
+   "p": "del",
+   "ini": 82.661,
+   "fin": 82.801
+  },
+  {
+   "p": "todo",
+   "ini": 82.841,
+   "fin": 82.982
+  },
+  {
+   "p": "bueno",
+   "ini": 83.022,
+   "fin": 83.282
+  },
+  {
+   "p": "y",
+   "ini": 83.483,
+   "fin": 83.543
+  },
+  {
+   "p": "la",
+   "ini": 83.583,
+   "fin": 83.643
+  },
+  {
+   "p": "rentabilidad",
+   "ini": 83.683,
+   "fin": 84.125
+  },
+  {
+   "p": "no",
+   "ini": 84.305,
+   "fin": 84.365
+  },
+  {
+   "p": "supera",
+   "ini": 84.445,
+   "fin": 84.746
+  },
+  {
+   "p": "el",
+   "ini": 84.786,
+   "fin": 84.846
+  },
+  {
+   "p": "6",
+   "ini": 84.867,
+   "fin": 85.007
+  },
+  {
+   "p": "%",
+   "ini": 85.047,
+   "fin": 85.348
+  },
+  {
+   "p": "neto.",
+   "ini": 85.408,
+   "fin": 85.588
+  },
+  {
+   "p": "Pero",
+   "ini": 85.782,
+   "fin": 85.983
+  },
+  {
+   "p": "fijaos",
+   "ini": 86.123,
+   "fin": 86.484
+  },
+  {
+   "p": "en",
+   "ini": 86.524,
+   "fin": 86.584
+  },
+  {
+   "p": "lo",
+   "ini": 86.604,
+   "fin": 86.664
+  },
+  {
+   "p": "importante,",
+   "ini": 86.664,
+   "fin": 87.166
+  },
+  {
+   "p": "esta",
+   "ini": 87.427,
+   "fin": 87.707
+  },
+  {
+   "p": "oportunidad",
+   "ini": 87.747,
+   "fin": 88.329
+  },
+  {
+   "p": "me",
+   "ini": 88.509,
+   "fin": 88.59
+  },
+  {
+   "p": "ha",
+   "ini": 88.65,
+   "fin": 88.71
+  },
+  {
+   "p": "llegado",
+   "ini": 88.77,
+   "fin": 89.011
+  },
+  {
+   "p": "a",
+   "ini": 89.051,
+   "fin": 89.111
+  },
+  {
+   "p": "mí",
+   "ini": 89.111,
+   "fin": 89.171
+  },
+  {
+   "p": "antes",
+   "ini": 89.311,
+   "fin": 89.512
+  },
+  {
+   "p": "que",
+   "ini": 89.552,
+   "fin": 89.632
+  },
+  {
+   "p": "a",
+   "ini": 89.652,
+   "fin": 89.712
+  },
+  {
+   "p": "nadie",
+   "ini": 89.713,
+   "fin": 89.973
+  },
+  {
+   "p": "y",
+   "ini": 90.294,
+   "fin": 90.354
+  },
+  {
+   "p": "no",
+   "ini": 90.595,
+   "fin": 90.655
+  },
+  {
+   "p": "está",
+   "ini": 90.735,
+   "fin": 90.916
+  },
+  {
+   "p": "todavía",
+   "ini": 90.976,
+   "fin": 91.297
+  },
+  {
+   "p": "en",
+   "ini": 91.357,
+   "fin": 91.417
+  },
+  {
+   "p": "ningún",
+   "ini": 91.457,
+   "fin": 91.738
+  },
+  {
+   "p": "portal.",
+   "ini": 91.798,
+   "fin": 92.099
+  },
+  {
+   "p": "Pero",
+   "ini": 92.253,
+   "fin": 92.394
+  },
+  {
+   "p": "claro,",
+   "ini": 92.454,
+   "fin": 92.675
+  },
+  {
+   "p": "que",
+   "ini": 93.077,
+   "fin": 93.177
+  },
+  {
+   "p": "sea",
+   "ini": 93.277,
+   "fin": 93.478
+  },
+  {
+   "p": "una",
+   "ini": 93.518,
+   "fin": 93.578
+  },
+  {
+   "p": "exclusiva",
+   "ini": 93.619,
+   "fin": 94.04
+  },
+  {
+   "p": "no",
+   "ini": 94.422,
+   "fin": 94.522
+  },
+  {
+   "p": "significa",
+   "ini": 94.663,
+   "fin": 95.144
+  },
+  {
+   "p": "que",
+   "ini": 95.205,
+   "fin": 95.285
+  },
+  {
+   "p": "sea",
+   "ini": 95.345,
+   "fin": 95.466
+  },
+  {
+   "p": "una",
+   "ini": 95.526,
+   "fin": 95.606
+  },
+  {
+   "p": "buena",
+   "ini": 95.646,
+   "fin": 95.787
+  },
+  {
+   "p": "oportunidad.",
+   "ini": 95.827,
+   "fin": 96.228
+  },
+  {
+   "p": "Y",
+   "ini": 96.442,
+   "fin": 96.502
+  },
+  {
+   "p": "es",
+   "ini": 96.502,
+   "fin": 96.583
+  },
+  {
+   "p": "que,",
+   "ini": 96.643,
+   "fin": 96.743
+  },
+  {
+   "p": "para",
+   "ini": 96.883,
+   "fin": 97.004
+  },
+  {
+   "p": "mí,",
+   "ini": 97.064,
+   "fin": 97.124
+  },
+  {
+   "p": "invertir",
+   "ini": 97.364,
+   "fin": 97.705
+  },
+  {
+   "p": "no",
+   "ini": 97.846,
+   "fin": 97.906
+  },
+  {
+   "p": "es",
+   "ini": 97.966,
+   "fin": 98.066
+  },
+  {
+   "p": "encontrar",
+   "ini": 98.166,
+   "fin": 98.688
+  },
+  {
+   "p": "esas",
+   "ini": 98.748,
+   "fin": 98.888
+  },
+  {
+   "p": "mejores",
+   "ini": 98.928,
+   "fin": 99.149
+  },
+  {
+   "p": "oportunidades,",
+   "ini": 99.189,
+   "fin": 99.69
+  },
+  {
+   "p": "es",
+   "ini": 99.85,
+   "fin": 99.931
+  },
+  {
+   "p": "descartar",
+   "ini": 100.031,
+   "fin": 100.552
+  },
+  {
+   "p": "todo",
+   "ini": 100.813,
+   "fin": 101.033
+  },
+  {
+   "p": "lo",
+   "ini": 101.093,
+   "fin": 101.153
+  },
+  {
+   "p": "que",
+   "ini": 101.174,
+   "fin": 101.234
+  },
+  {
+   "p": "te",
+   "ini": 101.274,
+   "fin": 101.334
+  },
+  {
+   "p": "llega",
+   "ini": 101.374,
+   "fin": 101.615
+  },
+  {
+   "p": "de",
+   "ini": 101.715,
+   "fin": 101.775
+  },
+  {
+   "p": "manera",
+   "ini": 101.835,
+   "fin": 102.036
+  },
+  {
+   "p": "rápida",
+   "ini": 102.096,
+   "fin": 102.356
+  },
+  {
+   "p": "para",
+   "ini": 102.577,
+   "fin": 102.717
+  },
+  {
+   "p": "no",
+   "ini": 102.777,
+   "fin": 102.837
+  },
+  {
+   "p": "perder",
+   "ini": 102.878,
+   "fin": 103.058
+  },
+  {
+   "p": "tiempo.",
+   "ini": 103.118,
+   "fin": 103.29
+  },
+  {
+   "p": "Y",
+   "ini": 103.402,
+   "fin": 103.462
+  },
+  {
+   "p": "bueno,",
+   "ini": 103.482,
+   "fin": 103.683
+  },
+  {
+   "p": "sobre",
+   "ini": 103.763,
+   "fin": 103.943
+  },
+  {
+   "p": "todo,",
+   "ini": 103.983,
+   "fin": 104.144
+  },
+  {
+   "p": "lo",
+   "ini": 104.324,
+   "fin": 104.404
+  },
+  {
+   "p": "más",
+   "ini": 104.545,
+   "fin": 104.705
+  },
+  {
+   "p": "importante,",
+   "ini": 104.765,
+   "fin": 105.286
+  },
+  {
+   "p": "saber",
+   "ini": 105.406,
+   "fin": 105.607
+  },
+  {
+   "p": "crear",
+   "ini": 105.687,
+   "fin": 105.887
+  },
+  {
+   "p": "este",
+   "ini": 105.947,
+   "fin": 106.088
+  },
+  {
+   "p": "tipo",
+   "ini": 106.168,
+   "fin": 106.388
+  },
+  {
+   "p": "de",
+   "ini": 106.449,
+   "fin": 106.509
+  },
+  {
+   "p": "relaciones",
+   "ini": 106.569,
+   "fin": 106.95
+  },
+  {
+   "p": "con",
+   "ini": 107.05,
+   "fin": 107.13
+  },
+  {
+   "p": "las",
+   "ini": 107.15,
+   "fin": 107.23
+  },
+  {
+   "p": "inmobiliarias",
+   "ini": 107.27,
+   "fin": 107.791
+  },
+  {
+   "p": "para",
+   "ini": 108.012,
+   "fin": 108.252
+  },
+  {
+   "p": "que",
+   "ini": 108.312,
+   "fin": 108.373
+  },
+  {
+   "p": "te",
+   "ini": 108.413,
+   "fin": 108.473
+  },
+  {
+   "p": "lleguen",
+   "ini": 108.513,
+   "fin": 108.753
+  },
+  {
+   "p": "este",
+   "ini": 108.814,
+   "fin": 108.954
+  },
+  {
+   "p": "piso",
+   "ini": 109.054,
+   "fin": 109.335
+  },
+  {
+   "p": "de",
+   "ini": 109.535,
+   "fin": 109.615
+  },
+  {
+   "p": "fuera",
+   "ini": 109.735,
+   "fin": 109.976
+  },
+  {
+   "p": "de",
+   "ini": 109.996,
+   "fin": 110.056
+  },
+  {
+   "p": "portales",
+   "ini": 110.096,
+   "fin": 110.477
+  },
+  {
+   "p": "antes",
+   "ini": 110.697,
+   "fin": 111.018
+  },
+  {
+   "p": "que",
+   "ini": 111.098,
+   "fin": 111.158
+  },
+  {
+   "p": "nadie.",
+   "ini": 111.239,
+   "fin": 111.459
+  },
+  {
+   "p": "Tengo",
+   "ini": 111.522,
+   "fin": 111.682
+  },
+  {
+   "p": "una",
+   "ini": 111.702,
+   "fin": 111.762
+  },
+  {
+   "p": "clase",
+   "ini": 111.802,
+   "fin": 111.983
+  },
+  {
+   "p": "privada",
+   "ini": 112.023,
+   "fin": 112.263
+  },
+  {
+   "p": "de",
+   "ini": 112.303,
+   "fin": 112.363
+  },
+  {
+   "p": "45",
+   "ini": 112.443,
+   "fin": 113.085
+  },
+  {
+   "p": "minutos",
+   "ini": 113.145,
+   "fin": 113.485
+  },
+  {
+   "p": "para",
+   "ini": 113.566,
+   "fin": 113.686
+  },
+  {
+   "p": "todas",
+   "ini": 113.826,
+   "fin": 114.047
+  },
+  {
+   "p": "las",
+   "ini": 114.087,
+   "fin": 114.167
+  },
+  {
+   "p": "personas",
+   "ini": 114.227,
+   "fin": 114.507
+  },
+  {
+   "p": "que",
+   "ini": 114.588,
+   "fin": 114.668
+  },
+  {
+   "p": "queréis",
+   "ini": 114.728,
+   "fin": 114.988
+  },
+  {
+   "p": "empezar",
+   "ini": 115.028,
+   "fin": 115.309
+  },
+  {
+   "p": "a",
+   "ini": 115.349,
+   "fin": 115.409
+  },
+  {
+   "p": "invertir",
+   "ini": 115.409,
+   "fin": 115.79
+  },
+  {
+   "p": "y",
+   "ini": 116.07,
+   "fin": 116.13
+  },
+  {
+   "p": "saber",
+   "ini": 116.231,
+   "fin": 116.411
+  },
+  {
+   "p": "crear",
+   "ini": 116.491,
+   "fin": 116.692
+  },
+  {
+   "p": "estas",
+   "ini": 116.772,
+   "fin": 116.952
+  },
+  {
+   "p": "relaciones",
+   "ini": 116.992,
+   "fin": 117.373
+  },
+  {
+   "p": "con",
+   "ini": 117.593,
+   "fin": 117.714
+  },
+  {
+   "p": "las",
+   "ini": 117.774,
+   "fin": 117.914
+  },
+  {
+   "p": "agencias",
+   "ini": 117.974,
+   "fin": 118.435
+  },
+  {
+   "p": "que",
+   "ini": 118.575,
+   "fin": 118.655
+  },
+  {
+   "p": "te",
+   "ini": 118.696,
+   "fin": 118.756
+  },
+  {
+   "p": "envío",
+   "ini": 118.776,
+   "fin": 119.056
+  },
+  {
+   "p": "si",
+   "ini": 119.156,
+   "fin": 119.217
+  },
+  {
+   "p": "me",
+   "ini": 119.257,
+   "fin": 119.317
+  },
+  {
+   "p": "dejas",
+   "ini": 119.357,
+   "fin": 119.597
+  },
+  {
+   "p": "la",
+   "ini": 119.657,
+   "fin": 119.717
+  },
+  {
+   "p": "palabra",
+   "ini": 119.758,
+   "fin": 120.038
+  },
+  {
+   "p": "guía.",
+   "ini": 120.319,
+   "fin": 120.499
+  }
+ ]
+}
