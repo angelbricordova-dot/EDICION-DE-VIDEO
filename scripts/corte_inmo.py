@@ -179,7 +179,7 @@ def ordenar(palabras):
 
 def efecto_telefono(ruta, tono=0.84):
     """Voz "al teléfono" y más grave (pedido de Angel), para que se entienda pero no se reconozca (reel 9)."""
-    filtro = f"asetrate={SR}*{tono},aresample={SR},atempo={1 / tono:.6f},highpass=f=330,lowpass=f=3300,acompressor=threshold=-24dB:ratio=3:attack=5:release=80,volume=1.6"
+    filtro = f"asetrate={SR}*{tono},aresample={SR},atempo={1 / tono:.6f},highpass=f=330,lowpass=f=3300,acompressor=threshold=-24dB:ratio=3:attack=5:release=80,volume=2.2"
     crudo = subprocess.run(["ffmpeg", "-v", "error", "-i", str(ruta), "-af", filtro, "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"], capture_output=True, check=True).stdout
     return np.frombuffer(crudo, dtype=np.float32)
 
