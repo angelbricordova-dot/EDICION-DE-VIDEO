@@ -30,7 +30,10 @@ export const marca = (palabras: Palabra[], texto: string, n = 1) => {
 
 // ------------------------------------------------------------- persona
 
-/** Recorte 9:16 del bruto horizontal. La cara (cx, cy en el bruto) queda en (540, 800). */
+/**
+ * Recorte 9:16 del bruto. La cara (cx, cy en el bruto) queda en `destino` (por defecto 540, 800).
+ * Sirve para brutos horizontales (1920 × 1080) y verticales (anchoBruto × altoBruto).
+ */
 export const Persona: React.FC<{
   t: number;
   video: string;
@@ -38,7 +41,9 @@ export const Persona: React.FC<{
   zoom: (t: number, indiceCorte: number) => number;
   cara: { x: number; y: number };
   altoBruto?: number;
-}> = ({ t, video, cortes, zoom, cara, altoBruto = 1080 }) => {
+  anchoBruto?: number;
+  destino?: { x: number; y: number };
+}> = ({ t, video, cortes, zoom, cara, altoBruto = 1080, anchoBruto = 1920, destino = { x: 540, y: 800 } }) => {
   const base = H / altoBruto;
   return (
     <AbsoluteFill style={{ background: "#000", overflow: "hidden" }}>
@@ -53,7 +58,7 @@ export const Persona: React.FC<{
               src={staticFile(video)}
               startFrom={Math.round(c.src * FPS)}
               muted
-              style={{ position: "absolute", left: 540 - cara.x * S, top: 800 - cara.y * S, width: 1920 * S, height: altoBruto * S, maxWidth: "none" }}
+              style={{ position: "absolute", left: destino.x - cara.x * S, top: destino.y - cara.y * S, width: anchoBruto * S, height: altoBruto * S, maxWidth: "none" }}
             />
           </Sequence>
         );

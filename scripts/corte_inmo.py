@@ -50,7 +50,26 @@ _CUERPO_G3 = [
     (96.30, 102.40),  # Si vas a comprar tu primer piso de inversión, comenta la palabra guía … invertir.
 ]
 
+# Reel 8 "ranking de portales" (guion 8, cámara lateral, bruto vertical 4K). Fuera: "Reel
+# número 8 / Hook 1 / Hook 2 / Vale, déjame ver / Empezamos", el primer "Mil anuncio", "Vale",
+# "Ahora, dale", "Espérate", "Un segundito", el primer "¿Y el número uno?" y las dos primeras
+# tomas del cierre.
+_CUERPO_G8 = [
+    (21.70, 32.25),  # Idealista, número 4 … pero nunca para comprarlo.
+    (37.65, 42.95),  # Milanuncios, número 6 … muy poca oportunidad.
+    (44.60, 50.80),  # Pisos.com, número 7 … Yo no lo usaría.
+    (54.50, 64.15),  # Fotocasa, número 5 … para comprar barato, no.
+    (65.20, 71.95),  # Altamira, número 3 … descuentos de verdad.
+    (78.30, 85.35),  # Sareb, número 2 … donde más descuentos he visto.
+    (90.45, 98.60),  # y el número uno no es un portal … inversor de confianza.
+    (103.95, 111.85),  # Y eso es lo que enseño en El Filtro Inmobiliario … te lleguen a ti el primero.
+    (121.45, 129.20),  # Y es que en inversión inmobiliaria … Déjame la palabra filtro … lista de espera.
+]
+
 TOMAS = {
+    ("g8", "hook1"): [(8.85, 11.00), *_CUERPO_G8],  # HOOK 1: Mejores sitios para encontrar una casa
+    ("g8", "hook2"): [(13.60, 15.95), *_CUERPO_G8],  # HOOK 2: Mejores webs para buscar una casa
+    ("g8", "cuerpo"): list(_CUERPO_G8),  # versión 3: empieza directo en el cuerpo
     ("g3", "hook1"): [
         (4.75, 8.40),  # HOOK 1: ¿Vas a comprar una casa? Asegúrate de pedir siempre estas 5 cosas.
         *_CUERPO_G3,

@@ -88,7 +88,7 @@ export const Grande: React.FC<{ t: number; desde: number; hasta: number; texto: 
   ) : null;
 
 /** Caja de comentario que se escribe sola con la palabra del CTA. */
-export const Comentario: React.FC<{ t: number; desde: number; escribe: number; palabra: string }> = ({ t, desde, escribe, palabra }) => {
+export const Comentario: React.FC<{ t: number; desde: number; escribe: number; palabra: string; y?: number }> = ({ t, desde, escribe, palabra, y = 1040 }) => {
   if (t < desde) return null;
   const dEscribir = 0.09 * palabra.length;
   const letras = Math.floor(clamp01((t - escribe) / dEscribir) * palabra.length);
@@ -96,7 +96,7 @@ export const Comentario: React.FC<{ t: number; desde: number; escribe: number; p
   const enviado = t > tEnvio;
   const cursor = Math.floor(t * 2.5) % 2 === 0;
   return (
-    <div style={{ position: "absolute", left: 90, right: 90, top: 1040 }}>
+    <div style={{ position: "absolute", left: 90, right: 90, top: y }}>
       <Pop t={t} t0={desde} desde={0.6}>
         <div style={{ display: "flex", alignItems: "center", gap: 18, height: 112, borderRadius: 56, background: "rgba(22,24,28,0.92)", border: "2px solid rgba(255,255,255,0.18)", padding: "0 16px 0 18px", boxShadow: "0 18px 40px rgba(0,0,0,0.45)" }}>
           <div style={{ width: 76, height: 76, borderRadius: "50%", background: "linear-gradient(135deg, #FEDA75, #D62976 55%, #4F5BD5)", padding: 4 }}>

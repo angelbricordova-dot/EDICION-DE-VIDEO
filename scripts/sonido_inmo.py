@@ -119,6 +119,31 @@ def main():
             (tras("guía", mucho), "teclas", -14),
         ]
         ef += [(tras("pedir") - 0.02, "pop", -14)] if version == "hook1" else [(tras("sin") - 0.02, "pop", -14)]
+    elif reel == "g8":
+        # Los mismos momentos que usa src/inmobiliaria/Reel8.tsx.
+        i_id = tras("Idealista")
+        marcas = [i_id]
+        for n in ["Milanuncios.", "Pisos.com", "Fotocasa.", "Altamira.", "Sareb."]:
+            marcas.append(tras(n, marcas[-1]))
+        uno = tras("uno", marcas[-1])
+        portal = tras("portal,", uno)
+        confianza = tras("confianza.", uno)
+        filtro = tras("filtro", confianza)
+        primero = tras("primero.", filtro)
+        dejame = tras("Déjame", primero)
+        ef = [(0.15 + i * 0.07, "tap", -19) for i in range(7)]
+        for m_ in marcas:
+            ef += [(m_ - 0.05, "pop", -15), (tras("Número", m_) + 0.02, "whoosh", -17), (tras("Número", m_) + 0.35, "tap", -16)]
+        ef += [
+            (portal - 0.05, "pop", -14),
+            (confianza + 0.45, "whoosh", -17),
+            (confianza + 0.8, "golpe", -16),
+            (filtro - 0.05, "pop", -15),
+            (tras("Idealista.", primero) + 0.12, "golpe", -16),
+            (tras("Y", primero) - 0.3, "whoosh", -15),
+            (dejame - 0.1, "pop", -15),
+            (tras("filtro", dejame), "teclas", -14),
+        ]
     efectos = ef
 
     mz = Mezcla(g["duracion"] + 0.25)
