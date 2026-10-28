@@ -13,3 +13,5 @@ public/pulpo/
 public/tubodega/
 public/referencias-tiktok/
 public/tiktok/
+# Local secrets written by `elevenlabs onboard`
+/.env.local
