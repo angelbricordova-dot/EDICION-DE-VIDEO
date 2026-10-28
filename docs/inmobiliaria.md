@@ -86,8 +86,21 @@ python3 scripts/corte_inmo.py g6 hook1 && python3 scripts/sonido_inmo.py g6 hook
 npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
 ```
 
+## Reels hechos después (8, 9, 10)
+
+- **Zoom suave y progresivo** (pedido en el reel 9, se usa desde entonces): cada frase arranca
+  un acercamiento de ~0,9 s con ease-in-out desde donde iba el anterior, y dentro de la frase
+  sigue avanzando muy poco; nada de punch-ins de 4 cuadros.
+- **Reel 8** (ranking): logos reales de cada portal en `public/tiktok/logos/` (los manda el
+  cliente) que aparecen al nombrarlos y vuelan a su puesto; El Filtro Inmobiliario es la
+  comunidad del cliente (logo propio).
+- **Reel 10** (pizarra, bruto vertical): con zoom 1 se ve el cuadro entero; el foco del zoom
+  va cerca de él para que no se salga. Lo escrito en la pizarra se marca con círculos de
+  rotulador pegados al video (las mismas coordenadas que usa `Persona`).
+- **Música:** Angel prefiere ponerla él en CapCut; las mezclas van solo con voz y efectos
+  (`MUSICA` vacío en `scripts/sonido_inmo.py`).
+
 ## Pendiente con Angel
 
-- Música: Pixabay bloquea las descargas automáticas (verificación anti-robots); Angel elige la
-  pista y la manda.
+- Música: la pone él en CapCut.
 - Objetos 3D (si se quieren más realistas): pack libre con licencia comercial o los del cliente.
