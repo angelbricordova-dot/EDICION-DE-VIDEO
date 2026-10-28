@@ -201,6 +201,52 @@ def main():
             (dejame - 0.1, "pop", -15),
             (tras("filtro", dejame), "teclas", -14),
         ]
+    elif reel == "g10":
+        # Los mismos momentos que usa src/inmobiliaria/Reel10.tsx.
+        e25 = tras("Con")
+        e30 = tras("Con", e25 + 0.5)
+        e35 = tras("Con", e30 + 0.5)
+        e40 = tras("Con", e35 + 0.5)
+        e50 = tras("Y", tras("nombre.", e40))
+        valores = [tras("primer", e25), tras("3.", e30), tras("edificio", e35), tras("15", e40), tras("barrio", e50)]
+        broma = tras("broma,", e50)
+        pero = tras("Pero,", broma)
+        meta = tras("meta", pero)
+        yo_no = tras("Yo", meta)
+        un_piso = tras("Un", yo_no)
+        jose = tras("José", un_piso)
+        cifra = tras("1.950", jose)
+        y_es_que = tras("Y", cifra)
+        asi = tras("Así", y_es_que)
+        clase = tras("clase", asi)
+        ef = [(e25 - 0.1, "whoosh", -18)]
+        for e in [e25, e30, e35, e40, e50]:
+            ef.append((e - 0.05, "tap", -17))
+        for v in valores:
+            ef.append((v - 0.05, "pop", -15))
+        ef += [
+            (broma - 0.05, "golpe", -15),
+            (tras("redes,", pero) - 0.05, "pop", -16),
+            (tras("9", pero) - 0.05, "pop", -16),
+            (tras("final", pero) - 0.05, "pop", -16),
+            (tras("tarde", pero) - 0.05, "pop", -16),
+            (tras("tranquilo.", pero) - 0.05, "pop", -16),
+            (meta + 0.05, "whoosh", -16),
+            (meta + 0.3, "golpe", -16),
+            (tras("15", yo_no) - 0.05, "pop", -16),
+            (tras("trabajar", yo_no) - 0.05, "pop", -16),
+            (un_piso - 0.05, "pop", -16),
+            (tras("dinero", un_piso) - 0.05, "pop", -16),
+            (tras("patrimonio", un_piso) - 0.05, "pop", -16),
+            (jose - 0.1, "pop", -15),
+            (cifra - 0.05, "chaching", -17),
+            (tras("no", y_es_que) - 0.05, "pop", -16),
+            (tras("gana", tras("acumula,", y_es_que)) - 0.05, "golpe", -16),
+            (asi - 0.3, "whoosh", -15),
+            (clase - 0.05, "pop", -16),
+            (tras("si", clase) - 0.1, "pop", -15),
+            (tras("guía.", asi) - 0.1, "teclas", -14),
+        ]
     efectos = ef
 
     mz = Mezcla(g["duracion"] + 0.25)

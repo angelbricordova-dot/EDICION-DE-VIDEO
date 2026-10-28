@@ -92,6 +92,28 @@ _CIERRE_G9 = [
     (260.40, 268.90),  # Y bueno, sobre todo, lo más importante, saber crear este tipo de relaciones … (2.ª toma)
     (276.90, 286.40),  # Tengo una clase privada de 45 minutos … si me dejas la palabra guía.
 ]
+# Reel 10 "lo que deberías tener a cada edad" (guion 10, pizarra, bruto vertical 4K). Fuera: "Eso
+# ha sido el hook / Estamos en el reel número 10", las dos primeras tomas de "9 a 5" ("te hace
+# sentir mal", "no te preocupes"), la charla con el socio, el "ya deberías" repetido y el
+# "dinero" repetido.
+_CUERPO_G10 = [
+    (64.25, 67.90),  # Con 25 años ya deberías de tener tu primer piso de inversión.
+    (74.45, 75.50),  # Con 30 años
+    (76.70, 79.15),  # ya deberías de tener 3. (sin el primer "ya deberías")
+    (84.35, 86.70),  # Con 35, un edificio entero.
+    (92.35, 95.55),  # Con 40, 15 pisos y una SL a tu nombre.
+    (107.85, 112.25),  # Y con 50 años, si no tienes un barrio entero a tu nombre, algo estás haciendo mal.
+    (115.90, 118.45),  # A ver, a ver, espérate, que esto es broma, obviamente.
+    (123.95, 129.35),  # Pero, por desgracia, esto es lo que te venden cada día por redes, ¿vale?
+    (162.95, 171.70),  # Y si eres de esas personas que trabaja de 9 a 5 … vas tarde a todo. Pero no vas tarde, estate tranquilo.
+    (180.50, 183.85),  # El problema de todo esto es que te están enseñando la meta equivocada.
+    (190.45, 196.22),  # Yo no te voy a enseñar a que consigas 15 pisos … el dinero que tanto
+    (196.57, 197.50),  # te ha costado ahorrar.
+    (238.50, 244.65),  # Un piso bien comprado … patrimonio poco a poco.
+    (253.25, 259.85),  # Como José Manuel, un alumno con 50 años … 1.950 euros al mes.
+    (265.90, 274.90),  # Y es que … no gana el que más pisos acumula, gana el que … puede seguir escalando.
+    (296.80, 303.10),  # Así que si quieres empezar por ese primero … si me dejas la palabra guía.
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -104,6 +126,9 @@ TOMAS = {
         *_LLAMADA_G9,
         *_CIERRE_G9,
     ],
+    ("g10", "hook1"): [(28.55, 31.45), *_CUERPO_G10],  # HOOK 1: ¿Cuántos pisos deberías de tener según tu edad?
+    ("g10", "hook2"): [(48.60, 51.25), *_CUERPO_G10],  # Si no tienes estos pisos según tu edad, vas tarde.
+    ("g10", "cuerpo"): list(_CUERPO_G10),  # versión 3: solo el cuerpo
     ("g8", "hook1"): [(8.85, 11.00), *_CUERPO_G8],  # HOOK 1: Mejores sitios para encontrar una casa
     ("g8", "hook2"): [(13.60, 15.95), *_CUERPO_G8],  # HOOK 2: Mejores webs para buscar una casa
     ("g8", "cuerpo"): list(_CUERPO_G8),  # versión 3: empieza directo en el cuerpo
