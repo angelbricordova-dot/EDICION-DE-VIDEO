@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { FPS } from "../tucacas/estilo";
 import { AMARILLO, bloques, cargarFuentes, clamp01, Corte, Destello, easeInOut, INTER, lerp, Palabra, Persona, Pop, prog, sp, Subtitulo, TextoSombra } from "./piezas";
@@ -27,23 +27,38 @@ const DESTINO = { x: 680, y: 990 };
 const COL = { x: 40, y0: 470, paso: 124 };
 const REVELA = { x: 650, y: 520 };
 
-type Marca = { nombre: string; fondo: string; texto: string };
+// logo: archivo en public/tiktok/logos/ (los manda el cliente). cuadrado: icono de app; si no,
+// es un logotipo horizontal que va sobre una tarjeta blanca. Sin logo se usa la etiqueta.
+type Marca = { nombre: string; fondo: string; texto: string; logo?: string; cuadrado?: boolean; ratio?: number };
 const MARCAS: Record<string, Marca> = {
-  idealista: { nombre: "idealista", fondo: "#1E1E1E", texto: "#D9F55A" },
-  milanuncios: { nombre: "milanuncios", fondo: "#0FA958", texto: "#FFFFFF" },
-  pisos: { nombre: "pisos.com", fondo: "#FF6A13", texto: "#FFFFFF" },
-  fotocasa: { nombre: "fotocasa", fondo: "#1E5EFF", texto: "#FFFFFF" },
-  altamira: { nombre: "altamira", fondo: "#0F2D69", texto: "#FFFFFF" },
+  idealista: { nombre: "idealista", fondo: "#1E1E1E", texto: "#D9F55A", logo: "idealista.png", cuadrado: true },
+  milanuncios: { nombre: "milanuncios", fondo: "#0FA958", texto: "#FFFFFF", logo: "milanuncios.png", cuadrado: true },
+  pisos: { nombre: "pisos.com", fondo: "#FF6A13", texto: "#FFFFFF", logo: "pisos.png", ratio: 387 / 184 },
+  fotocasa: { nombre: "fotocasa", fondo: "#1E5EFF", texto: "#FFFFFF", logo: "fotocasa.png", cuadrado: true },
+  altamira: { nombre: "altamira", fondo: "#0F2D69", texto: "#FFFFFF", logo: "altamira.png", ratio: 538 / 195 },
   sareb: { nombre: "sareb", fondo: "#00857C", texto: "#FFFFFF" },
   uno: { nombre: "Fuera de mercado", fondo: "linear-gradient(135deg, #FFE27A, #E0A21B)", texto: "#2A1A00" },
 };
 
-/** Etiqueta con el nombre del portal (no es el logo oficial). */
-const Chip: React.FC<{ m: Marca; tam: number }> = ({ m, tam }) => (
+/** Logo del portal (o etiqueta con su nombre si aún no hay logo). Alto ≈ 2,2 × tam. */
+const Chip: React.FC<{ m: Marca; tam: number }> = ({ m, tam }) => {
+  if (m.logo) {
+    const alto = tam * 2.2;
+    const sombra = `0 ${tam * 0.18}px ${tam * 0.4}px rgba(0,0,0,0.45)`;
+    return m.cuadrado ? (
+      <Img src={staticFile(`tiktok/logos/${m.logo}`)} style={{ width: alto, height: alto, borderRadius: alto * 0.22, boxShadow: sombra, display: "block" }} />
+    ) : (
+      <div style={{ display: "inline-flex", alignItems: "center", height: alto, padding: `0 ${alto * 0.22}px`, borderRadius: alto * 0.22, background: "#fff", boxShadow: sombra }}>
+        <Img src={staticFile(`tiktok/logos/${m.logo}`)} style={{ height: alto * 0.62, display: "block" }} />
+      </div>
+    );
+  }
+  return (
   <div style={{ display: "inline-flex", alignItems: "center", height: tam * 1.5, padding: `0 ${tam * 0.5}px`, borderRadius: tam * 0.4, background: m.fondo, boxShadow: `0 ${tam * 0.18}px ${tam * 0.4}px rgba(0,0,0,0.45), inset 0 0 0 ${Math.max(2, tam * 0.05)}px rgba(255,255,255,0.18)`, fontFamily: INTER, fontWeight: 900, fontSize: tam, letterSpacing: "-0.03em", color: m.texto, whiteSpace: "nowrap" }}>
     {m.nombre}
   </div>
-);
+  );
+};
 
 const Check: React.FC<{ ok: boolean }> = ({ ok }) => (
   <svg width={60} height={60} viewBox="0 0 24 24">
@@ -125,35 +140,39 @@ export const Reel8: React.FC<PropsReel8> = ({ audio, version }) => {
   // Una píldora no se queda encima de un portal nuevo.
   const cortesPildora = ranking.map((r) => r.aparece);
 
-  // Punch-ins (4 cuadros): alternancia en cada frase y golpes en los veredictos.
+  // Zooms progresivos y suaves (pedido de Angel): cada frase empieza un acercamiento lento de
+  // ~0,9 s con ease-in-out que parte de donde iba el anterior, y dentro de la frase la cámara
+  // sigue avanzando muy poco a poco.
   const inicios: number[] = [];
   palabras.forEach((w, i) => {
     if (i === 0 || /[.?!]$/.test(palabras[i - 1].p) || cortes.some((c) => Math.abs(c.out - w.ini) < 0.3)) inicios.push(w.ini);
   });
   const golpes: [number, number][] = [
-    [tras("nunca", iId), 1.18],
-    [tras("poca", iMil), 1.16],
-    [tras("Yo", iPis), 1.18],
-    [tras("barato,", iFot), 1.18],
-    [tras("descuentos", iAlt), 1.16],
-    [tras("descuentos", iSar), 1.18],
-    [portal, 1.16],
-    [tras("nunca", primero), 1.2],
+    [tras("nunca", iId), 1.12],
+    [tras("poca", iMil), 1.1],
+    [tras("Yo", iPis), 1.12],
+    [tras("barato,", iFot), 1.12],
+    [tras("descuentos", iAlt), 1.1],
+    [tras("descuentos", iSar), 1.12],
+    [portal, 1.1],
+    [tras("nunca", primero), 1.14],
   ];
-  const tramos: [number, number][] = inicios.map((t0, i) => [t0 - 0.02, i % 2 ? 1.08 : 1.0]);
-  for (const [g, z] of golpes) tramos.push([g - 0.02, z]);
+  const tramos: [number, number][] = inicios.map((t0, i) => [t0 - 0.3, i % 2 ? 1.06 : 1.0]);
+  for (const [g, z] of golpes) tramos.push([g - 0.45, z]);
   tramos.sort((a, b) => a[0] - b[0]);
+  const DUR = 0.9;
+  const suave = (x: number) => (x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x));
   const zoom = (tt: number) => {
-    let z = 1;
-    let previo = 1;
+    let v = 1;
     let desde = 0;
-    for (const [t0, v] of tramos)
-      if (tt >= t0) {
-        previo = z;
-        z = v;
-        desde = t0;
-      }
-    return lerp(previo, z, prog(tt, desde, desde + 0.13));
+    for (let k = 0; k < tramos.length; k++) {
+      const [t0, z] = tramos[k];
+      if (tt < t0) break;
+      const fin = k + 1 < tramos.length ? Math.min(tt, tramos[k + 1][0]) : tt;
+      v = lerp(v, z, suave((fin - t0) / DUR));
+      desde = t0;
+    }
+    return v * (1 + Math.min(0.03, (tt - desde) * 0.008));
   };
 
   const subs = bloques(palabras);
@@ -195,7 +214,7 @@ export const Reel8: React.FC<PropsReel8> = ({ audio, version }) => {
                 <div style={{ scale: String(1 + destello * 0.15), filter: destello > 0 ? `drop-shadow(0 0 ${18 * destello}px ${AMARILLO})` : undefined }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <div style={{ width: 62, height: 62, borderRadius: "50%", background: AMARILLO, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: INTER, fontWeight: 900, fontSize: 38, color: "#1a1a1a", boxShadow: "0 6px 14px rgba(0,0,0,0.4)" }}>{puesto}</div>
-                    <Chip m={MARCAS[r.k]} tam={r.k === "uno" ? 26 : 32} />
+                    <Chip m={MARCAS[r.k]} tam={MARCAS[r.k].logo ? 36 : r.k === "uno" ? 26 : 32} />
                   </div>
                 </div>
               ) : (
@@ -211,12 +230,16 @@ export const Reel8: React.FC<PropsReel8> = ({ audio, version }) => {
         if (t < r.aparece - 0.05 || t >= r.vuela + 0.35) return null;
         const vuelo = easeInOut(prog(t, r.vuela, r.vuela + 0.35));
         const yPuesto = COL.y0 + (r.puesto - 1) * COL.paso + 48;
-        const x = lerp(REVELA.x, COL.x + 72 + 120, vuelo);
+        // Centro del logo ya colocado en su puesto (número de 62 px + 10 de hueco + logo).
+        const m = MARCAS[r.k];
+        const alto = 36 * 2.2;
+        const ancho = m.logo ? (m.cuadrado ? alto : alto * 0.62 * (m.ratio ?? 2) + alto * 0.44) : 240;
+        const x = lerp(REVELA.x, COL.x + 72 + ancho / 2, vuelo);
         const y = lerp(REVELA.y, yPuesto, vuelo);
         return (
           <div key={r.k} style={{ position: "absolute", left: x, top: y, translate: "-50% -50%", scale: String(lerp(1, 0.42, vuelo)) }}>
             <Pop t={t} t0={r.aparece - 0.05} desde={0.4}>
-              <Chip m={MARCAS[r.k]} tam={r.k === "uno" ? 62 : 78} />
+              <Chip m={MARCAS[r.k]} tam={MARCAS[r.k].logo ? 95 : r.k === "uno" ? 62 : 78} />
             </Pop>
           </div>
         );

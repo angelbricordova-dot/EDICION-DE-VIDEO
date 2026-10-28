@@ -1,7 +1,8 @@
 """Mezcla de los reels inmobiliarios: voz montada + efectos en las transiciones y apariciones.
 
 Los momentos salen de las palabras del corte (src/inmobiliaria/<reel>-<version>.json), igual que
-en Remotion. Sin música hasta que el cliente pase una pista con licencia. Total −14 LUFS.
+en Remotion. Música de fondo (si el reel tiene pista en MUSICA) limpiada, nivelada y bajada
+debajo de la voz (ducking según las palabras). Total −14 LUFS.
 
 Uso:
     python3 scripts/sonido_inmo.py g6 prueba
@@ -29,6 +30,41 @@ def leer(ruta):
 
 def db(x):
     return 10 ** (x / 20)
+
+
+# Pista de fondo por reel: (archivo en public/tiktok/musica, segundo de inicio).
+MUSICA = {"g8": ("thank-you-loop.mp3", 0.0)}
+
+
+def leer_musica(ruta, desde, dur):
+    """Estéreo, sin graves de rumble ni agudos ásperos, picos domados (la pista viene saturada)."""
+    filtro = "highpass=f=35,lowpass=f=14000,volume=-6dB,alimiter=limit=0.6:attack=5:release=80:level=false"
+    crudo = subprocess.run(
+        ["ffmpeg", "-v", "error", "-ss", str(desde), "-stream_loop", "-1", "-i", str(ruta), "-t", str(dur),
+         "-af", filtro, "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"],
+        capture_output=True, check=True,
+    ).stdout
+    return np.frombuffer(crudo, dtype=np.float32).astype(float).reshape(-1, 2).T
+
+
+def rms(x):
+    return float(np.sqrt(np.mean(x**2))) if x.size else 0.0
+
+
+def poner_musica(mz, voz, pal, archivo, desde):
+    """Música debajo de la voz: unos −18 dB bajo la voz mientras habla, −9 dB en los huecos."""
+    m = leer_musica(RAIZ / "public/tiktok/musica" / archivo, desde, mz.dur)
+    m = m[:, : mz.n]
+    habla = np.zeros(mz.n)
+    for w in pal:
+        habla[int(max(0, w["ini"] - 0.06) * SR) : int((w["fin"] + 0.12) * SR)] = 1
+    nivel_voz = rms(voz[habla[: len(voz)] > 0])
+    objetivo = np.where(habla > 0, db(-13), db(-8)) * nivel_voz / max(rms(m), 1e-9)
+    k = int(0.15 * SR)
+    objetivo = np.convolve(objetivo, np.ones(k) / k, mode="same")[: m.shape[1]]
+    t = np.arange(m.shape[1]) / SR
+    objetivo *= np.clip(t / 0.6, 0, 1) * np.clip((mz.dur - t) / 1.2, 0, 1)
+    mz.bus[:, : m.shape[1]] += m * objetivo
 
 
 def main():
@@ -170,6 +206,8 @@ def main():
     voz = leer(RAIZ / f"public/tiktok/{reel}/voz-{version}.wav")
     voz = voz / np.max(np.abs(voz))
     mz.bus[:, : len(voz)] += voz[: mz.n]
+    if reel in MUSICA:
+        poner_musica(mz, voz, pal, *MUSICA[reel])
     for t, nombre, gain in efectos:
         x = leer(SFX / f"{nombre}.mp3")
         mz.poner(max(0, t), x / np.max(np.abs(x)), db(gain))
