@@ -28,15 +28,15 @@ const COL = { x: 40, y0: 470, paso: 124 };
 const REVELA = { x: 650, y: 520 };
 
 // logo: archivo en public/tiktok/logos/ (los manda el cliente). cuadrado: icono de app; si no,
-// es un logotipo horizontal que va sobre una tarjeta blanca. Sin logo se usa la etiqueta.
-type Marca = { nombre: string; fondo: string; texto: string; logo?: string; cuadrado?: boolean; ratio?: number };
+// es un logotipo horizontal que va sobre una tarjeta (blanca o del color de la marca). Sin logo se usa la etiqueta.
+type Marca = { nombre: string; fondo: string; texto: string; logo?: string; cuadrado?: boolean; ratio?: number; tarjeta?: string };
 const MARCAS: Record<string, Marca> = {
   idealista: { nombre: "idealista", fondo: "#1E1E1E", texto: "#D9F55A", logo: "idealista.png", cuadrado: true },
   milanuncios: { nombre: "milanuncios", fondo: "#0FA958", texto: "#FFFFFF", logo: "milanuncios.png", cuadrado: true },
   pisos: { nombre: "pisos.com", fondo: "#FF6A13", texto: "#FFFFFF", logo: "pisos.png", ratio: 387 / 184 },
   fotocasa: { nombre: "fotocasa", fondo: "#1E5EFF", texto: "#FFFFFF", logo: "fotocasa.png", cuadrado: true },
   altamira: { nombre: "altamira", fondo: "#0F2D69", texto: "#FFFFFF", logo: "altamira.png", ratio: 538 / 195 },
-  sareb: { nombre: "sareb", fondo: "#00857C", texto: "#FFFFFF" },
+  sareb: { nombre: "sareb", fondo: "#00857C", texto: "#FFFFFF", logo: "sareb-marca.png", ratio: 305 / 84, tarjeta: "#1C938D" },
   uno: { nombre: "Fuera de mercado", fondo: "linear-gradient(135deg, #FFE27A, #E0A21B)", texto: "#2A1A00" },
 };
 
@@ -48,7 +48,7 @@ const Chip: React.FC<{ m: Marca; tam: number }> = ({ m, tam }) => {
     return m.cuadrado ? (
       <Img src={staticFile(`tiktok/logos/${m.logo}`)} style={{ width: alto, height: alto, borderRadius: alto * 0.22, boxShadow: sombra, display: "block" }} />
     ) : (
-      <div style={{ display: "inline-flex", alignItems: "center", height: alto, padding: `0 ${alto * 0.22}px`, borderRadius: alto * 0.22, background: "#fff", boxShadow: sombra }}>
+      <div style={{ display: "inline-flex", alignItems: "center", height: alto, padding: `0 ${alto * 0.22}px`, borderRadius: alto * 0.22, background: m.tarjeta ?? "#fff", boxShadow: sombra }}>
         <Img src={staticFile(`tiktok/logos/${m.logo}`)} style={{ height: alto * 0.62, display: "block" }} />
       </div>
     );
@@ -137,8 +137,8 @@ export const Reel8: React.FC<PropsReel8> = ({ audio, version }) => {
     { desde: tras("relaciones", filtro), icono: <Manos />, texto: "Relaciones con inmobiliarias" },
   ];
   const finPildoras = [...pildoras.map((p) => p.desde).slice(1), primero + 0.6];
-  // Una píldora no se queda encima de un portal nuevo.
-  const cortesPildora = ranking.map((r) => r.aparece);
+  // Una píldora no se queda encima de un portal nuevo ni del logo de El Filtro.
+  const cortesPildora = [...ranking.map((r) => r.aparece), filtro - 0.05];
 
   // Zooms progresivos y suaves (pedido de Angel): cada frase empieza un acercamiento lento de
   // ~0,9 s con ease-in-out que parte de donde iba el anterior, y dentro de la frase la cámara
@@ -256,13 +256,13 @@ export const Reel8: React.FC<PropsReel8> = ({ audio, version }) => {
         );
       })}
 
-      {/* El Filtro Inmobiliario: insignia dorada. */}
+      {/* El Filtro Inmobiliario: el logo de la comunidad del cliente. */}
       {t >= filtro - 0.05 && t < tras("relaciones", filtro) - 0.1 ? (
-        <div style={{ position: "absolute", left: 250, right: 30, top: 560, display: "flex", justifyContent: "center" }}>
+        <div style={{ position: "absolute", left: 250, right: 30, top: 520, display: "flex", justifyContent: "center" }}>
           <Pop t={t} t0={filtro - 0.05}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "18px 34px", borderRadius: 30, background: "linear-gradient(135deg, #FFE27A, #E0A21B)", boxShadow: "0 18px 40px rgba(0,0,0,0.45), inset 0 0 0 3px rgba(255,255,255,0.35)" }}>
-              <span style={{ fontFamily: INTER, fontWeight: 900, fontSize: 52, color: "#2A1A00", whiteSpace: "nowrap" }}>El Filtro Inmobiliario</span>
-              <span style={{ fontFamily: INTER, fontWeight: 700, fontSize: 30, color: "#5A3A00" }}>mi comunidad</span>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+              <Img src={staticFile("tiktok/logos/filtro.png")} style={{ width: 500, height: 500 * 274 / 518, borderRadius: 30, boxShadow: "0 18px 40px rgba(0,0,0,0.45)", display: "block" }} />
+              <span style={{ fontFamily: INTER, fontWeight: 800, fontSize: 30, color: "#fff", padding: "6px 22px", borderRadius: 999, background: "#1F5A36", boxShadow: "0 8px 20px rgba(0,0,0,0.35)" }}>mi comunidad</span>
             </div>
           </Pop>
         </div>

@@ -33,7 +33,8 @@ def db(x):
 
 
 # Pista de fondo por reel: (archivo en public/tiktok/musica, segundo de inicio).
-MUSICA = {"g8": ("thank-you-loop.mp3", 0.0)}
+# g8 sin música: el cliente la pone en CapCut (antes: {"g8": ("thank-you-loop.mp3", 0.0)}).
+MUSICA = {}
 
 
 def leer_musica(ruta, desde, dur):
