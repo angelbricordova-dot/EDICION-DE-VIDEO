@@ -192,7 +192,7 @@ _G14 = [
     (264.60, 270.90, _IZ),  # Así que si quieres empezar a invertir con cabeza, déjame la palabra guía …
 ]
 # Tramos donde cada uno está callado y en su sitio (para la mitad que escucha).
-SOFA = {"g14": {"izq": (84.0, 272.0), "der": (455.0, 548.0)}}
+SOFA = {"g14": {"izq": (84.0, 272.0), "der": (455.0, 548.0)}, "g16": {"izq": (14.0, 118.0), "der": (124.0, 215.0)}}
 # Reel 15 "pisos baratos en subasta en 60 segundos" (dos archivos: el cuerpo y, al final, el hook
 # grabado de pie). Fuera: la búsqueda en el portátil, "¿Sigo?", "Ahora, por ejemplo…", "Así,
 # así…" y las dos primeras tomas del CTA.
@@ -214,6 +214,39 @@ _CUERPO_G15 = [
     (206.35, 208.05),  # Aquí gana al que se los manda.
     (250.35, 258.30),  # Así que, ya lo sabes … déjame la palabra guía y te mando una clase privada de 45 minutos.
 ]
+# Reel 16 "rico vs pobre" (formato sofá como el 14): a la izquierda el rico (camiseta blanca, primer
+# archivo), a la derecha el pobre (camiseta negra, segundo archivo, que dice también las cifras).
+_G16 = [
+    (129.60, 130.30, _DE),  # Un euro.
+    (131.20, 132.20, _DE),  # ¿Me compro un Monster?
+    (16.30, 17.70, _IZ),  # Me compro una botella de agua.
+    (133.40, 134.80, _DE),  # 20 euros.
+    (137.50, 138.30, _DE),  # Unas copas.
+    (22.40, 23.45, _IZ),  # Me compro un libro.
+    (139.85, 141.40, _DE),  # 500 euros.
+    (142.30, 143.30, _DE),  # Un finde de fiesta.
+    (28.70, 30.30, _IZ),  # ¿Me pago una formación?
+    (151.50, 153.20, _DE),  # Tío, eso es tirar el dinero.
+    (160.70, 161.65, _DE),  # 3.000 euros.
+    (162.20, 164.45, _DE),  # Un fin de semana en Ibiza de puta madre.
+    (34.05, 35.15, _IZ),  # ¿Reservo un piso?
+    (169.85, 171.75, _DE),  # ¿Un piso? ¿Con 3.000 euros?
+    (45.95, 51.00, _IZ),  # Pues sí, el que me han pasado antes de que salga en Idealista.
+    (175.60, 176.75, _DE),  # 10.000 euros.
+    (177.25, 179.40, _DE),  # La entrada para un coche, todo guapo.
+    (54.85, 55.80, _IZ),  # Doy las arras.
+    (183.60, 184.30, _DE),  # ¿Las qué?
+    (59.75, 62.35, _IZ),  # Eso es lo que pagas para que el piso no se lo quede otro.
+    (187.50, 188.70, _DE),  # 30.000 euros.
+    (189.00, 190.80, _DE),  # El coche de mis sueños.
+    (65.35, 67.25, _IZ),  # Compro mi primer piso para alquilar.
+    (194.90, 197.40, _DE),  # Venga ya, anda. ¿Un piso con 30.000 euros?
+    (72.65, 78.80, _IZ),  # El banco pone el 80 %, yo pongo la entrada y los gastos … el inquilino.
+    (201.65, 206.50, _DE),  # O sea, ¿me estás diciendo que con lo que yo me compro un coche …?
+    (87.35, 93.80, _IZ),  # Un alumno mío compró en Madrid con menos de 40.000 euros … 1.200 euros al mes.
+    (211.10, 212.50, _DE),  # ¿Y yo puedo aprender a hacer eso?
+    (107.20, 115.85, _IZ),  # Pues sí, tengo una clase de 45 minutos … deja la palabra guía y te la mando.
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -230,6 +263,7 @@ TOMAS = {
     ("g15", "hook1"): [(268.35, 272.00), *_CUERPO_G15],  # Los pisos más baratos de España que están en subasta en menos de 60 segundos
     ("g15", "cuerpo"): list(_CUERPO_G15),
     ("g14", "sofa"): list(_G14),
+    ("g16", "sofa"): list(_G16),
     ("g12", "hook1"): [(7.60, 9.85), *_CUERPO_G12],  # HOOK 1: Mejores bancos para sacar una hipoteca
     ("g12", "hook2"): [(11.65, 14.05), *_CUERPO_G12],  # HOOK 2: Ranking de los mejores bancos para hipoteca
     ("g12", "cuerpo"): list(_CUERPO_G12),
