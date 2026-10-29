@@ -82,7 +82,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Futbol Onze × Camis11 (camisetas) | `src/camis11/` | `docs/camis11.md` | negro + rojo #E30613 + lima #D4FF00, Anton/Bebas, cortes al beat, voz Alejandro |
 | Short pulpo (prueba de animación) | `src/pulpo/` | `docs/pulpo.md` | personaje de caricatura en vectores, mar azul, rayos X, subtítulo de una palabra (Luckiest Guy) |
 | TuBodega (app de punto de venta) | `src/tubodega/` | `docs/tubodega.md` | verde #2F9E6E, Plus Jakarta Sans, teléfono con pantallas reales y zooms, voz Richard |
-| Reels inmobiliarios (inversor, España) | `src/inmobiliaria/` | `docs/inmobiliaria.md` | persona a cámara, título fijo + lista 1-2-3, subtítulos Inter blancos, cortes naturales, voz real del cliente |
+| Reels inmobiliarios (inversor, España) | `src/inmobiliaria/` | `docs/inmobiliaria.md` | persona a cámara, título fijo + lista 1-2-3, subtítulos Inter blancos, cortes naturales, voz real del cliente; plantilla de eventos (`Plantilla.tsx`) y formato sofá de dos mitades (`Sofa.tsx`) |
 
 Cada estilo vive en su carpeta: un video nuevo de otro tipo va en su propia carpeta
 `src/<proyecto>/` con su paleta y fuentes, sin mezclar con los anteriores.

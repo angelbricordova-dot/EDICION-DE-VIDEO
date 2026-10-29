@@ -100,6 +100,28 @@ npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
 - **Música:** Angel prefiere ponerla él en CapCut; las mezclas van solo con voz y efectos
   (`MUSICA` vacío en `scripts/sonido_inmo.py`).
 
+## Reels 12–19 (lote del 29/10)
+
+- **Bajada en lote**: un script por reel baja el bruto de Drive, saca el audio y la copia de
+  trabajo (1440 × 2560, crf 18) y **borra el bruto** (son de 1–2 GB y el disco es justo). Si un
+  reel trae dos archivos, se unen en uno (audio y copia).
+- **Ranking (12)**: como el 8, con 8 puestos. Logos de bancos de Wikimedia Commons y de la web del
+  banco (ING); `public/tiktok/logos/banco-*.png`.
+- **Plantilla** (`src/inmobiliaria/Plantilla.tsx`, reels 13, 15, 17, 18, 19): título = hook, lista
+  numerada, y eventos anclados a palabras: píldora, texto grande, web en un móvil, web a pantalla
+  completa (voz en off), etiqueta de precio (compacta, en una fila, para no tapar la cara), pasos,
+  imagen (logo) y cuenta atrás. Los efectos de sonido de estos reels están en `SECUENCIAS`
+  (`scripts/sonido_inmo.py`).
+- **Sofá** (`src/inmobiliaria/Sofa.tsx`, reels 14 y 16): las dos mitades se grabaron por separado
+  con la cámara quieta (camiseta blanca a la izquierda, negra a la derecha). Se unen en un plano con
+  una costura suave en el centro; mientras uno habla, la otra mitad pone un tramo de esa persona en
+  silencio (`rellenos_sofa` en `scripts/corte_inmo.py`). El zoom va despacio hacia el que habla.
+- **Capturas de webs** (`scripts/capturas_webs_inmo.mjs` y búsquedas ordenadas por precio):
+  Solvia, Servihabitat (Murcia, "Precio Menor"), Aliseda (Jaén), resultados del portal de subastas
+  del BOE (Madrid), Seguridad Social, Escrapalia, Oportunalia, Anticipa → `public/tiktok/webs/`.
+  No se saltan protecciones anti-robots (Eurocaja Rural la tiene: su logo salió de Commons).
+- Compresión para enviar: `-crf 22 -maxrate 2.7M` (con 3M los reels de más de 75 s pasaban de 29 MB).
+
 ## Pendiente con Angel
 
 - Música: la pone él en CapCut.
