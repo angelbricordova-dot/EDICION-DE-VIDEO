@@ -37,6 +37,22 @@ def db(x):
 MUSICA = {}
 
 
+# Efectos de los reels de la plantilla: (palabra, efecto, ganancia dB, desfase s), en orden.
+SECUENCIAS = {
+    "g13": [
+        ("como", "whoosh", -16, -0.15), ("Uno,", "pop", -15, -0.05), ("portal", "whoosh", -17, -0.1),
+        ("Dos.", "pop", -15, -0.05), ("Seguridad", "whoosh", -17, -0.1), ("Tres,", "pop", -15, -0.05),
+        ("Escrapalia.", "whoosh", -17, -0.1), ("conoce", "pop", -16, -0.05), ("cuatro,", "pop", -15, -0.05),
+        ("bancos.", "whoosh", -17, -0.1), ("basura.", "golpe", -15, -0.05), ("descarto", "pop", -16, -0.05),
+        ("tres", "pop", -16, -0.05), ("ocupado,", "pop", -16, -0.05), ("visitar.", "pop", -16, -0.05),
+        ("deudas", "pop", -16, -0.05), ("cuadra,", "pop", -16, -0.05), ("descarto", "tap", -15, -0.05),
+        ("valido", "tap", -15, -0.05), ("pujo.", "golpe", -16, -0.05), ("problemas", "pop", -16, -0.05),
+        ("miles", "pop", -16, -0.05), ("inmobiliarias", "pop", -16, -0.05), ("antes", "pop", -16, -0.05),
+        ("rápido", "golpe", -16, -0.05), ("Así", "whoosh", -15, -0.3), ("guía", "teclas", -14, 0.0),
+    ],
+}
+
+
 def leer_musica(ruta, desde, dur):
     """Estéreo, sin graves de rumble ni agudos ásperos, picos domados (la pista viene saturada)."""
     filtro = "highpass=f=35,lowpass=f=14000,volume=-6dB,alimiter=limit=0.6:attack=5:release=80:level=false"
@@ -271,6 +287,16 @@ def main():
             (comenta - 0.1, "pop", -15),
             (tras("calculadora", comenta), "teclas", -14),
         ]
+    elif reel in SECUENCIAS:
+        # Reels hechos con la plantilla (src/inmobiliaria/Plantilla.tsx): las mismas palabras que
+        # sus eventos, buscadas en orden.
+        ef, cursor = [], 0.0
+        for palabra, nombre, gain, desfase in SECUENCIAS[reel]:
+            try:
+                cursor = tras(palabra, cursor)
+            except SystemExit:
+                continue  # palabra del hook que no está en esta versión
+            ef.append((cursor + desfase, nombre, gain))
     efectos = ef
 
     mz = Mezcla(g["duracion"] + 0.25)

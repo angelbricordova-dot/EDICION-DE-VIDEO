@@ -132,6 +132,34 @@ _CUERPO_G12 = [
     (115.25, 121.65),  # Y es que en inversión inmobiliaria … firmar la segunda hipoteca.
     (127.35, 135.65),  # Para saber cuál te conviene a ti … Comenta la palabra calculadora y te la regalo.
 ]
+# Reel 13 "4 webs de pisos baratos" (guion 13, informal con iPad). Fuera: "¿Vale?", la charla de
+# los pedidos, las tomas falsas de "Y cuatro, comercial…", "Es que son palabras", "Y hablo así" y
+# la charla del dibujito.
+_G13 = [
+    (8.05, 11.25),  # HOOK: Cuatro webs para encontrar pisos en España baratos, como estos.
+    (18.50, 24.15),  # Uno, el portal de subastas del BOE. Embargos, pisos ocupados, derramas y todo.
+    (35.80, 37.75),  # Dos. El de la Seguridad Social.
+    (46.75, 51.55),  # Pisos embargados por deudas de cotizaciones … muy bajo.
+    (59.60, 69.30),  # Tres, Escrapalia … ya lo conoce todo el mundo.
+    (101.10, 105.65),  # Y cuatro, las webs de los bancos. Ahí aparecen todos los pisos que se quedaron ellos.
+    (119.55, 120.25),  # Pero claro,
+    (121.75, 125.00),  # la mayoría de pisos que vas a ver ahí son totalmente basura.
+    (130.30, 132.20),  # Y yo los descarto en menos de un minuto.
+    (139.00, 145.25),  # Siempre abro la ficha del piso y miro tres cosas antes del precio.
+    (147.75, 150.80),  # Si está ocupado, si se puede visitar.
+    (158.40, 160.05),  # ¿Y qué deudas tiene?
+    (163.45, 167.20),  # Si una de las tres no me cuadra, cierro la pestaña y paso a la siguiente.
+    (173.10, 175.95),  # Por eso yo siempre uso el mismo método de trabajo,
+    (187.10, 188.70),  # descarto toda la basura,
+    (191.85, 194.30),  # luego valido lo que realmente sea interesante
+    (198.50, 199.95),  # solamente al final pujo.
+    (202.50, 206.85),  # Porque el precio que te ponen nunca te va a contar todos los problemas que tiene detrás.
+    (212.30, 216.40),  # Y aún así, en estas cuatro webs vas a competir con miles de personas.
+    (220.95, 227.30),  # Por eso, yo además trabajo con inmobiliarias locales … antes que a nadie.
+    (233.85, 236.75),  # Y es que en inversión inmobiliaria no gana el que más pisos ve,
+    (242.90, 248.85),  # gana el que más rápido puede descartar toda la basura … antes que a nadie.
+    (319.85, 325.75),  # Así que, si quieres aprender a invertir desde cero, déjame la palabra guía …
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -144,6 +172,7 @@ TOMAS = {
         *_LLAMADA_G9,
         *_CIERRE_G9,
     ],
+    ("g13", "hook"): list(_G13),
     ("g12", "hook1"): [(7.60, 9.85), *_CUERPO_G12],  # HOOK 1: Mejores bancos para sacar una hipoteca
     ("g12", "hook2"): [(11.65, 14.05), *_CUERPO_G12],  # HOOK 2: Ranking de los mejores bancos para hipoteca
     ("g12", "cuerpo"): list(_CUERPO_G12),
