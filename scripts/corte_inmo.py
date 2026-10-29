@@ -114,6 +114,24 @@ _CUERPO_G10 = [
     (265.90, 274.90),  # Y es que … no gana el que más pisos acumula, gana el que … puede seguir escalando.
     (296.80, 303.10),  # Así que si quieres empezar por ese primero … si me dejas la palabra guía.
 ]
+# Reel 12 "ranking de bancos para hipotecas" (guion 12, cámara lateral como el 8, con Darío detrás
+# de cámara). Fuera: "Listo / Reel número 12 / Hook…", "Vale, un segundito", el primer "BBVA"
+# ("te perdés…"), la charla con Darío del "rural", la primera toma de "Número dos, buenos tipos y
+# oficina en cual…", los "Espérate / Otros dos / Aquí / Un segundito / Ahora / Y ya sigo yo".
+_CUERPO_G12 = [
+    (20.60, 26.40),  # Santander, número 4 … no te van a hacer mucho más.
+    (27.80, 34.40),  # Trade Republic, número 8 … mejor que cualquier banco normal.
+    (41.75, 47.15),  # BBVA, número 7, como Santander pero todavía más difícil sacar la hipoteca.
+    (60.55, 61.75),  # Eurocaja Rural,
+    (65.90, 71.95),  # número dos. Buenos tipos y oficina en casi cualquier pueblo … te la vas a encontrar.
+    (77.50, 83.50),  # ING, número 6 … cuidado con lo que dices.
+    (84.90, 90.80),  # Ibercaja, número 3 … tengas mucho dinero o no.
+    (95.75, 100.90),  # CaixaBank, número 5 … le cuesta estudiarte.
+    (105.50, 106.60),  # ¿Y el número uno?
+    (106.85, 112.80),  # Unicaja … puedes tener varias hipotecas a la vez.
+    (115.25, 121.65),  # Y es que en inversión inmobiliaria … firmar la segunda hipoteca.
+    (127.35, 135.65),  # Para saber cuál te conviene a ti … Comenta la palabra calculadora y te la regalo.
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -126,6 +144,9 @@ TOMAS = {
         *_LLAMADA_G9,
         *_CIERRE_G9,
     ],
+    ("g12", "hook1"): [(7.60, 9.85), *_CUERPO_G12],  # HOOK 1: Mejores bancos para sacar una hipoteca
+    ("g12", "hook2"): [(11.65, 14.05), *_CUERPO_G12],  # HOOK 2: Ranking de los mejores bancos para hipoteca
+    ("g12", "cuerpo"): list(_CUERPO_G12),
     ("g10", "hook1"): [(28.55, 31.45), *_CUERPO_G10],  # HOOK 1: ¿Cuántos pisos deberías de tener según tu edad?
     ("g10", "hook2"): [(48.60, 51.25), *_CUERPO_G10],  # Si no tienes estos pisos según tu edad, vas tarde.
     ("g10", "cuerpo"): list(_CUERPO_G10),  # versión 3: solo el cuerpo

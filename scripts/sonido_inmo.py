@@ -247,6 +247,30 @@ def main():
             (tras("si", clase) - 0.1, "pop", -15),
             (tras("guía.", asi) - 0.1, "teclas", -14),
         ]
+    elif reel == "g12":
+        # Los mismos momentos que usa src/inmobiliaria/Reel12.tsx.
+        bancos = [tras("Santander")]
+        for n in ["Trade", "BBVA,", "Eurocaja", "ING.", "Ibercaja.", "CaixaBank."]:
+            bancos.append(tras(n, bancos[-1]))
+        uno = tras("¿y", bancos[-1])
+        uni = tras("Unicaja,", uno)
+        y_es_que = tras("Y", tras("vez.", uni))
+        para = tras("Para", y_es_que)
+        comenta = tras("Comenta", para)
+        ef = [(0.15 + i * 0.06, "tap", -19) for i in range(8)]
+        for b in bancos:
+            n = tras("número", b)
+            ef += [(b - 0.05, "pop", -15), (n + 0.02, "whoosh", -17), (n + 0.35, "tap", -16)]
+        ef += [
+            (uni - 0.05, "pop", -14),
+            (tras("competitivo", uni) + 0.3, "whoosh", -17),
+            (tras("competitivo", uni) + 0.65, "golpe", -16),
+            (tras("segunda", y_es_que) - 0.05, "golpe", -16),
+            (y_es_que - 0.3, "whoosh", -15),
+            (tras("calculadora", para) - 0.05, "pop", -15),
+            (comenta - 0.1, "pop", -15),
+            (tras("calculadora", comenta), "teclas", -14),
+        ]
     efectos = ef
 
     mz = Mezcla(g["duracion"] + 0.25)
