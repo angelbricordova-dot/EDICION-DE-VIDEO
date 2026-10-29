@@ -265,6 +265,26 @@ _G17 = [
     (302.40, 307.20),  # Y si quieres aprender a crear esa red … mi comunidad, el Filtro Inmobiliario.
     (319.10, 322.85),  # Si te quieres apuntar a la lista de espera, deja la palabra filtro y te la envío.
 ]
+# Reel 18 "3 páginas para comprar pisos a mitad de precio" (guion 18, frontal informal). Fuera: "Este
+# es el hook…", "sigo con el hook", la indicación del Word y la primera toma del CTA.
+_CUERPO_G18 = [
+    (41.05, 43.30),  # Número uno, portal de subastas del BOE.
+    (53.85, 58.30),  # Aquí vas a poder encontrar los pisos de embargos y de subastas súper baratos.
+    (71.45, 75.30),  # Pero ojo, que quien subasta no está obligado a decirte si el piso está ocupado o no.
+    (79.05, 81.95),  # Un piso barato con alguien dentro no es un chollo.
+    (84.45, 86.30),  # Número dos, Oportunalia.
+    (90.15, 95.20),  # Pisos de fondos, de bancos, pero con una web súper intuitiva, mucho más que la del BOE.
+    (106.75, 110.40),  # Pero cuando todos ven la misma web, el piso se lo queda el que puja más alto.
+    (116.30, 121.95),  # Y además, el precio bajo siempre tiene un motivo. O deudas, o okupas, o … destrozado.
+    (125.85, 128.45),  # Y la número tres, que es la mejor, no es una página.
+    (132.25, 137.45),  # Es conseguir que las inmobiliarias de tu zona te llamen a ti antes de publicar el piso …
+    (141.40, 145.35),  # El último piso que compré por 98.000 euros no estaba publicado en ninguna web.
+    (150.00, 154.35),  # Me llegó una mañana a través del teléfono y ya está alquilado en 750 euros.
+    (159.65, 164.90),  # ¿Cómo? Muy sencillo, creando relaciones con ellos … soy un inversor serio.
+    (169.50, 173.35),  # Cuando una agencia sabe que tú puedes decidir rápido, te llama a ti primero.
+    (178.30, 185.25),  # Y es que en inversión inmobiliaria un verdadero chollo no se encuentra en ninguna web …
+    (225.40, 229.65),  # Todo esto está explicado en una clase privada que te envío si me dejas la palabra guía.
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -278,6 +298,8 @@ TOMAS = {
         *_CIERRE_G9,
     ],
     ("g13", "hook"): list(_G13),
+    ("g18", "hook1"): [(5.40, 9.15), (13.20, 18.50), *_CUERPO_G18],  # Tres páginas … a mitad de precio, y si te quedas hasta el final, la última es la mejor.
+    ("g18", "hook2"): [(27.05, 29.55), (33.25, 36.95), *_CUERPO_G18],  # Tres sitios … y si te quedas hasta el final, el último es el que he usado para comprar mi último piso.
     ("g17", "hook"): list(_G17),
     ("g15", "hook1"): [(268.35, 272.00), *_CUERPO_G15],  # Los pisos más baratos de España que están en subasta en menos de 60 segundos
     ("g15", "cuerpo"): list(_CUERPO_G15),

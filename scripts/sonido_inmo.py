@@ -93,6 +93,16 @@ SECUENCIAS["g17"] = [
     ("Filtro", "pop", -15, -0.05), ("Si", "whoosh", -15, -0.3), ("filtro", "teclas", -14, 0.0),
 ]
 
+SECUENCIAS["g18"] = [
+    ("uno", "pop", -15, -0.05), ("aquí", "whoosh", -16, -0.15), ("ocupado", "pop", -16, -0.05),
+    ("chollo.", "golpe", -15, -0.05), ("dos,", "pop", -15, -0.05), ("Oportunalia.", "whoosh", -16, -0.15),
+    ("todos", "pop", -16, -0.05), ("puja", "pop", -16, -0.05), ("deudas,", "pop", -16, -0.05),
+    ("ocupas,", "pop", -16, -0.05), ("destrozado.", "pop", -16, -0.05), ("tres,", "pop", -15, -0.05),
+    ("llamen", "pop", -16, -0.05), ("98.000", "chaching", -18, 0.0), ("750", "monedas", -18, 0.0),
+    ("relaciones", "pop", -16, -0.05), ("rápido,", "pop", -16, -0.05), ("lleguen", "golpe", -16, -0.05),
+    ("Todo", "whoosh", -15, -0.3), ("guía.", "teclas", -14, 0.0),
+]
+
 
 def leer_musica(ruta, desde, dur):
     """Estéreo, sin graves de rumble ni agudos ásperos, picos domados (la pista viene saturada)."""
