@@ -63,6 +63,16 @@ SECUENCIAS = {
     ],
 }
 
+SECUENCIAS["g15"] = [
+    ("segundos", "tap", -15, 0.0), ("Cuenca,", "pop", -15, -0.05), ("15.000", "chaching", -19, 0.0),
+    ("Alicante", "pop", -15, -0.05), ("7.000", "chaching", -19, 0.0), ("Madrid,", "pop", -15, -0.05),
+    ("53.000", "chaching", -19, 0.0), ("gato", "golpe", -15, -0.05), ("visitar", "pop", -16, -0.05),
+    ("ocupados", "pop", -16, -0.05), ("deudas", "pop", -16, -0.05), ("miles", "pop", -16, -0.05),
+    ("agencias", "pop", -16, -0.05), ("24", "pop", -16, -0.05), ("financiación", "pop", -16, -0.05),
+    ("nunca", "pop", -16, -0.05), ("comisión", "pop", -16, -0.05), ("manda.", "golpe", -16, -0.05),
+    ("Así", "whoosh", -15, -0.3), ("guía", "teclas", -14, 0.0),
+]
+
 
 def leer_musica(ruta, desde, dur):
     """Estéreo, sin graves de rumble ni agudos ásperos, picos domados (la pista viene saturada)."""

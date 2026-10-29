@@ -193,6 +193,27 @@ _G14 = [
 ]
 # Tramos donde cada uno está callado y en su sitio (para la mitad que escucha).
 SOFA = {"g14": {"izq": (84.0, 272.0), "der": (455.0, 548.0)}}
+# Reel 15 "pisos baratos en subasta en 60 segundos" (dos archivos: el cuerpo y, al final, el hook
+# grabado de pie). Fuera: la búsqueda en el portátil, "¿Sigo?", "Ahora, por ejemplo…", "Así,
+# así…" y las dos primeras tomas del CTA.
+_CUERPO_G15 = [
+    (9.85, 12.95),  # Cuenca, esta casa que veis aquí, por menos de 15.000 euros.
+    (13.30, 15.60),  # Y seguro que me dices, oye, Cuenca es demasiado fácil.
+    (36.25, 42.60),  # Y ahora nos vamos a Alicante … menos de 7.000 euros, pero claro … interesante
+    (63.00, 67.90),  # Y en Madrid, ojo, 53.000 euros. Ahora la cosa sí que se pone realmente interesante.
+    (74.30, 76.95),  # Todo pinta increíble, pero aquí hay gato encerrado.
+    (84.80, 87.75),  # Y es que casi ninguno lo puedes visitar antes de pujar.
+    (96.95, 100.75),  # Muchos están ocupados, incluso tienen deudas que si lo compras te llegan a ti.
+    (116.60, 122.40),  # Pero el problema es otro … miles de personas en España que lo han podido hacer igual.
+    (130.05, 132.25),  # Por eso yo hago justo lo contrario.
+    (140.45, 144.70),  # Tengo agencias inmobiliarias que me mandan los pisos antes de que los publiquen …
+    (153.25, 154.60),  # ¿Y por qué a mí y no a otro?
+    (163.70, 169.95),  # Porque yo soy el inversor que responde en 24 horas … perder el tiempo.
+    (175.40, 178.90),  # Los agentes quieren su comisión y saben que conmigo eso es algo seguro.
+    (191.20, 194.80),  # Y es que en inversión inmobiliaria no gana el que más rápido busca los chollos.
+    (206.35, 208.05),  # Aquí gana al que se los manda.
+    (250.35, 258.30),  # Así que, ya lo sabes … déjame la palabra guía y te mando una clase privada de 45 minutos.
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -206,6 +227,8 @@ TOMAS = {
         *_CIERRE_G9,
     ],
     ("g13", "hook"): list(_G13),
+    ("g15", "hook1"): [(268.35, 272.00), *_CUERPO_G15],  # Los pisos más baratos de España que están en subasta en menos de 60 segundos
+    ("g15", "cuerpo"): list(_CUERPO_G15),
     ("g14", "sofa"): list(_G14),
     ("g12", "hook1"): [(7.60, 9.85), *_CUERPO_G12],  # HOOK 1: Mejores bancos para sacar una hipoteca
     ("g12", "hook2"): [(11.65, 14.05), *_CUERPO_G12],  # HOOK 2: Ranking de los mejores bancos para hipoteca

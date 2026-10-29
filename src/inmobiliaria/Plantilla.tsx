@@ -180,6 +180,10 @@ export type ConfigPlantilla = {
   yPildora?: number;
   ySub?: number;
   web?: { x: number; y: number };
+  yPrecio?: number;
+  // Cuenta atrás arriba a la derecha (p. ej. "en menos de 60 segundos"): empieza en la primera
+  // palabra de "en" que exista en la versión y se va en "hasta".
+  cronometro?: { en: string[]; hasta: string; segundos: number };
 };
 
 export type PropsPlantilla = { audio: string | null; version: string };
@@ -207,20 +211,32 @@ const Web: React.FC<{ t: number; t0: number; t1: number; img: string; dominio: s
   );
 };
 
-/** Etiqueta de precio: sitio arriba, precio grande (y foto si la hay). */
-const Precio: React.FC<{ t: number; t0: number; lugar: string; precio: string; detalle?: string; img?: string }> = ({ t, t0, lugar, precio, detalle, img }) => (
-  <Pop t={t} t0={t0} desde={0.5}>
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", background: "#fff", borderRadius: 34, padding: img ? 14 : "18px 34px", boxShadow: "0 18px 40px rgba(0,0,0,0.45)" }}>
-      {img ? <Img src={staticFile(img)} style={{ width: 520, height: 320, objectFit: "cover", borderRadius: 24, display: "block", marginBottom: 10 }} /> : null}
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        {ICONOS.mapa}
-        <span style={{ fontFamily: INTER, fontWeight: 800, fontSize: 42, color: "#151515", whiteSpace: "nowrap" }}>{lugar}</span>
+/** Etiqueta de precio: con foto, en columna; sin foto, compacta en una fila (no tapa la cara). */
+const Precio: React.FC<{ t: number; t0: number; lugar: string; precio: string; detalle?: string; img?: string }> = ({ t, t0, lugar, precio, detalle, img }) =>
+  img ? (
+    <Pop t={t} t0={t0} desde={0.5}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", background: "#fff", borderRadius: 34, padding: 14, boxShadow: "0 18px 40px rgba(0,0,0,0.45)" }}>
+        <Img src={staticFile(img)} style={{ width: 520, height: 320, objectFit: "cover", borderRadius: 24, display: "block", marginBottom: 10 }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          {ICONOS.mapa}
+          <span style={{ fontFamily: INTER, fontWeight: 800, fontSize: 42, color: "#151515", whiteSpace: "nowrap" }}>{lugar}</span>
+        </div>
+        <span style={{ fontFamily: INTER, fontWeight: 900, fontSize: 96, color: VERDE, letterSpacing: "-0.03em", lineHeight: 1.05, whiteSpace: "nowrap" }}>{precio}</span>
+        {detalle ? <span style={{ fontFamily: INTER, fontWeight: 700, fontSize: 32, color: "#666" }}>{detalle}</span> : null}
       </div>
-      <span style={{ fontFamily: INTER, fontWeight: 900, fontSize: 96, color: VERDE, letterSpacing: "-0.03em", lineHeight: 1.05, whiteSpace: "nowrap" }}>{precio}</span>
-      {detalle ? <span style={{ fontFamily: INTER, fontWeight: 700, fontSize: 32, color: "#666" }}>{detalle}</span> : null}
-    </div>
-  </Pop>
-);
+    </Pop>
+  ) : (
+    <Pop t={t} t0={t0} desde={0.5}>
+      <div style={{ display: "flex", alignItems: "center", gap: 16, background: "#fff", borderRadius: 30, padding: "10px 26px 10px 14px", boxShadow: "0 18px 40px rgba(0,0,0,0.45)" }}>
+        {ICONOS.mapa}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <span style={{ fontFamily: INTER, fontWeight: 800, fontSize: 38, color: "#151515", whiteSpace: "nowrap", lineHeight: 1.05 }}>{lugar}</span>
+          {detalle ? <span style={{ fontFamily: INTER, fontWeight: 700, fontSize: 24, color: "#666", whiteSpace: "nowrap" }}>{detalle}</span> : null}
+        </div>
+        <span style={{ fontFamily: INTER, fontWeight: 900, fontSize: 72, color: VERDE, letterSpacing: "-0.03em", lineHeight: 1, whiteSpace: "nowrap" }}>{precio}</span>
+      </div>
+    </Pop>
+  );
 
 export const crearReel = (C: ConfigPlantilla) => {
   const Reel: React.FC<PropsPlantilla> = ({ audio, version }) => {
@@ -345,7 +361,7 @@ export const crearReel = (C: ConfigPlantilla) => {
           if (e.tipo === "precio") {
             if (t < r.t0 - 0.05 || t > r.t1!) return null;
             return (
-              <div key={i} style={{ position: "absolute", left: 0, right: 0, top: C.yPildora ?? 470, display: "flex", justifyContent: "center", opacity: 1 - prog(t, r.t1! - 0.15, r.t1!) }}>
+              <div key={i} style={{ position: "absolute", left: 0, right: 0, top: C.yPrecio ?? C.yPildora ?? 470, display: "flex", justifyContent: "center", opacity: 1 - prog(t, r.t1! - 0.15, r.t1!) }}>
                 <Precio t={t} t0={r.t0 - 0.05} lugar={e.lugar} precio={e.precio} detalle={e.detalle} img={e.img} />
               </div>
             );
@@ -376,6 +392,38 @@ export const crearReel = (C: ConfigPlantilla) => {
           }
           return null;
         })}
+
+        {C.cronometro
+          ? (() => {
+              const cr = C.cronometro;
+              let t0 = -1;
+              for (const p of cr.en) {
+                try {
+                  t0 = tras(p);
+                  break;
+                } catch {
+                  // no está en esta versión
+                }
+              }
+              const t1 = tras(cr.hasta, t0);
+              if (t0 < 0 || t < t0 - 0.1 || t > t1) return null;
+              const resto = Math.max(0, cr.segundos - (t - t0));
+              const k = easeOut(prog(t, t0 - 0.1, t0 + 0.25));
+              const urgente = resto < 15;
+              return (
+                <div style={{ position: "absolute", right: 34, top: 60, opacity: k * (1 - prog(t, t1 - 0.2, t1)), scale: String(0.6 + 0.4 * k) }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, background: "rgba(16,18,22,0.82)", borderRadius: 999, padding: "8px 20px 8px 10px", border: `3px solid ${urgente ? ROJO : AMARILLO}` }}>
+                    <svg width={44} height={44} viewBox="0 0 24 24">
+                      <circle cx={12} cy={13} r={9} fill="#fff" />
+                      <path d={`M12 13 L${12 + 7 * Math.sin(((cr.segundos - resto) / cr.segundos) * Math.PI * 2)} ${13 - 7 * Math.cos(((cr.segundos - resto) / cr.segundos) * Math.PI * 2)}`} stroke={ROJO} strokeWidth={2.4} strokeLinecap="round" />
+                      <rect x={10} y={1.5} width={4} height={2.5} rx={1} fill="#fff" />
+                    </svg>
+                    <span style={{ fontFamily: INTER, fontWeight: 900, fontSize: 46, color: urgente ? "#FF6B6B" : "#fff", fontVariantNumeric: "tabular-nums" }}>0:{String(Math.ceil(resto)).padStart(2, "0")}</span>
+                  </div>
+                </div>
+              );
+            })()
+          : null}
 
         <Comentario t={t} desde={tEscribe - 0.9} escribe={tEscribe} palabra={C.cta.palabra} y={C.yPildora ?? 470} />
 
