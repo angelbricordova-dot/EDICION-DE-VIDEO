@@ -50,6 +50,17 @@ SECUENCIAS = {
         ("miles", "pop", -16, -0.05), ("inmobiliarias", "pop", -16, -0.05), ("antes", "pop", -16, -0.05),
         ("rápido", "golpe", -16, -0.05), ("Así", "whoosh", -15, -0.3), ("guía", "teclas", -14, 0.0),
     ],
+    "g14": [
+        ("alquilar", "whoosh", -17, -0.1),
+        ("suelo", "tap", -15, -0.1), ("vivir", "pop", -16, 0.2), ("alquilar", "pop", -16, -0.05), ("aguanta", "pop", -17, -0.05),
+        ("paredes", "tap", -15, -0.1), ("vivir", "pop", -16, 0.2), ("alquilar", "pop", -16, -0.05), ("retocas", "pop", -17, -0.05),
+        ("grifos", "tap", -15, -0.1), ("vivir", "pop", -16, 0.2), ("alquilar", "pop", -16, -0.05), ("negros", "pop", -17, -0.05),
+        ("ferretería", "pop", -17, -0.05),
+        ("electrodomésticos", "tap", -15, -0.1), ("vivir", "pop", -16, 0.2), ("alquilar", "pop", -16, -0.05), ("lavadora", "pop", -17, -0.05),
+        ("azulejos", "tap", -15, -0.1), ("vivir", "pop", -16, 0.2), ("alquilar", "pop", -16, -0.05),
+        ("pomos", "tap", -15, -0.1), ("razón", "golpe", -16, -0.05), ("euros", "monedas", -19, 0.0),
+        ("habitable", "pop", -16, -0.05), ("loco", "pop", -16, -0.05), ("Así", "whoosh", -15, -0.3), ("guía", "teclas", -14, 0.0),
+    ],
 }
 
 

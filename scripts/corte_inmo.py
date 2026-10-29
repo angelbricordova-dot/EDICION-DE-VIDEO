@@ -160,6 +160,39 @@ _G13 = [
     (242.90, 248.85),  # gana el que más rápido puede descartar toda la basura … antes que a nadie.
     (319.85, 325.75),  # Así que, si quieres aprender a invertir desde cero, déjame la palabra guía …
 ]
+# Reel 14 "casa para vivir vs casa para alquilar" (formato sofá). El cliente grabó las dos mitades
+# por separado con la cámara quieta: primero el de camiseta blanca (izquierda, "para alquilar") y
+# luego, cambiado, el de camiseta negra (derecha, "para vivir"). En Remotion cada mitad muestra su
+# toma; mientras habla uno, la otra mitad pone un tramo en silencio de esa persona escuchando
+# (ver rellenos_sofa). Fuera: las indicaciones a Darío, las tomas falsas y la charla del cambio.
+_IZ = {"lado": "izq"}
+_DE = {"lado": "der"}
+_G14 = [
+    (451.40, 453.60, _DE),  # Diferencia entre una casa para vivir…
+    (80.20, 82.10, _IZ),  # …y una casa para alquilar.
+    (461.10, 463.80, _DE),  # En suelo, para vivir, parqué de madera.
+    (98.80, 102.20, _IZ),  # Para alquilar, vinílico imitación a madera.
+    (105.80, 109.80, _IZ),  # Esto aguanta arañazos, agua y hasta cinco mudanzas.
+    (496.70, 499.90, _DE),  # En las paredes, para vivir el color que más te guste.
+    (118.00, 122.10, _IZ),  # Para alquilar, blanco roto y la misma referencia en todo el piso.
+    (127.50, 131.50, _IZ),  # Porque entre un inquilino y otro retocas, pero no te toca pintarlo entero.
+    (506.80, 509.60, _DE),  # En grifos, para vivir el de diseño.
+    (138.10, 141.20, _IZ),  # Para alquilar, un monomando de marca normal.
+    (144.50, 148.10, _IZ),  # Los toques negros quedan espectaculares y cuestan lo mismo.
+    (153.80, 158.00, _IZ),  # Y si falla, lo puedes solucionar súper rápido con algún recambio de ferretería.
+    (516.20, 519.40, _DE),  # En electrodomésticos, para vivir, integrados.
+    (164.60, 167.00, _IZ),  # Para alquilar, de libre instalación.
+    (171.20, 174.80, _IZ),  # Porque si se rompe solo la lavadora, no desmontas la cocina entera.
+    (528.20, 533.30, _DE),  # En azulejos para la cocina, obviamente, quitas lo que haya y alicatas entero.
+    (180.60, 184.10, _IZ),  # Para alquilar, pintura de azulejo especial y se acabó.
+    (541.80, 544.90, _DE),  # Los pomos de las puertas, obviamente en negro.
+    (195.90, 201.90, _IZ),  # Pues aquí sí te doy toda la razón … unos 10 euros por puerta y queda espectacular.
+    (206.50, 212.00, _IZ),  # Porque cada euro que metes en una reforma tiene que ser para aumentar el valor máximo.
+    (250.80, 261.30, _IZ),  # Y es que cuando compras un piso para alquilar … como si fuese para ti.
+    (264.60, 270.90, _IZ),  # Así que si quieres empezar a invertir con cabeza, déjame la palabra guía …
+]
+# Tramos donde cada uno está callado y en su sitio (para la mitad que escucha).
+SOFA = {"g14": {"izq": (84.0, 272.0), "der": (455.0, 548.0)}}
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -173,6 +206,7 @@ TOMAS = {
         *_CIERRE_G9,
     ],
     ("g13", "hook"): list(_G13),
+    ("g14", "sofa"): list(_G14),
     ("g12", "hook1"): [(7.60, 9.85), *_CUERPO_G12],  # HOOK 1: Mejores bancos para sacar una hipoteca
     ("g12", "hook2"): [(11.65, 14.05), *_CUERPO_G12],  # HOOK 2: Ranking de los mejores bancos para hipoteca
     ("g12", "cuerpo"): list(_CUERPO_G12),
@@ -266,6 +300,44 @@ def pitido(dur, f=1000.0):
     return (0.08 * np.sin(2 * np.pi * f * t) * env).astype(np.float32)
 
 
+def rellenos_sofa(reel, tomas, cortes, palabras):
+    """Para cada toma de un lado, un tramo en silencio del otro lado (escuchando), sin repetir."""
+    zonas = SOFA[reel]
+    usados = {lado: [] for lado in zonas}
+    huecos = {}
+    for lado, (a, b) in zonas.items():
+        ws = sorted((w for w in palabras if a <= w["ini"] <= b), key=lambda w: w["ini"])
+        h, prev = [], a
+        for w in ws:
+            if w["ini"] - prev > 1.0:
+                h.append([prev + 0.15, w["ini"] - 0.15])
+            prev = max(prev, w["fin"])
+        if b - prev > 1.0:
+            h.append([prev + 0.15, b])
+        huecos[lado] = h
+    originales = {lado: [tuple(x) for x in h] for lado, h in huecos.items()}
+    out = []
+    for ti, (_, _, op) in enumerate(tomas):
+        mios = [c for c in cortes if c["toma"] == ti]
+        if not mios:
+            continue
+        otro = "der" if op.get("lado") == "izq" else "izq"
+        t_out, falta = mios[0]["out"], sum(c["dur"] for c in mios)
+        # El hueco más largo libre; si no alcanza, se encadenan.
+        while falta > 0.01:
+            h = max(huecos[otro], key=lambda x: x[1] - x[0])
+            if h[1] - h[0] < 0.5:  # sin huecos libres: se reutilizan desde el principio
+                for x, (a, b) in zip(huecos[otro], originales[otro]):
+                    x[0], x[1] = a, b
+                h = max(huecos[otro], key=lambda x: x[1] - x[0])
+            dur = min(falta, h[1] - h[0])
+            out.append({"lado": otro, "src": round(h[0], 3), "dur": round(dur, 3), "out": round(t_out, 3)})
+            h[0] += dur + 0.5
+            t_out += dur
+            falta -= dur
+    return out
+
+
 def main():
     reel, version = sys.argv[1], sys.argv[2]
     dir_ = RAIZ / "public/tiktok" / reel
@@ -320,7 +392,10 @@ def main():
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-", "-c:a", "pcm_s16le", str(dir_ / f"voz-{version}.wav")], input=voz.astype(np.float32).tobytes(), check=True)
     destino = RAIZ / "src/inmobiliaria" / f"{reel}-{version}.json"
     destino.parent.mkdir(parents=True, exist_ok=True)
-    destino.write_text(json.dumps({"duracion": round(out, 3), "cortes": cortes, "palabras": salida}, ensure_ascii=False, indent=1) + "\n")
+    datos = {"duracion": round(out, 3), "cortes": cortes, "palabras": salida}
+    if reel in SOFA:
+        datos["relleno"] = rellenos_sofa(reel, tomas, cortes, palabras)
+    destino.write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n")
     print(f"{len(cortes)} cortes, {out:.2f} s (de {sum(b - a for a, b, _ in tomas):.2f} s en tomas) → {destino}")
     print(" ".join(f"{w['p']}[{w['ini']:.2f}]" for w in salida))
 

@@ -17,6 +17,7 @@ import { G8, PropsReel8, Reel8 } from "./inmobiliaria/Reel8";
 import { G10, PropsReel10, Reel10 } from "./inmobiliaria/Reel10";
 import { G12, PropsReel12, Reel12 } from "./inmobiliaria/Reel12";
 import { G13, Reel13 } from "./inmobiliaria/Reel13";
+import { G14, Reel14 } from "./inmobiliaria/Reel14";
 import { G9, PropsReel9, Reel9 } from "./inmobiliaria/Reel9";
 
 export const RemotionRoot: React.FC = () => {
@@ -216,6 +217,15 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{ audio: "tiktok/g13/mezcla-hook.wav", version: "hook" }}
+      />
+      <Composition
+        id="Inmo14Sofa"
+        component={Reel14}
+        durationInFrames={Math.ceil((G14.sofa.duracion + 0.2) * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ audio: "tiktok/g14/mezcla-sofa.wav", version: "sofa" }}
       />
     </>
   );
