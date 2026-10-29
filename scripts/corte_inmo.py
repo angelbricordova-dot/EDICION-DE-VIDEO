@@ -285,6 +285,25 @@ _CUERPO_G18 = [
     (178.30, 185.25),  # Y es que en inversión inmobiliaria un verdadero chollo no se encuentra en ninguna web …
     (225.40, 229.65),  # Todo esto está explicado en una clase privada que te envío si me dejas la palabra guía.
 ]
+# Reel 19 "pueblos cerca de Madrid por menos de 50.000 €" (guion 19; grabó 3 pueblos, no 4). Fuera:
+# las indicaciones, la primera toma de Galapagar (13.000 €), la de El Escorial a 33.000 €, la primera
+# toma de "Yo hago otra cosa" y el primer "y es que".
+_CUERPO_G19 = [
+    (86.40, 94.30),  # Número 1, Galapagar … un piso por menos de 15.000 euros, a menos de 45 minutos de Madrid.
+    (133.65, 138.50),  # Número 2, Alpedrete, a 40 minutos de Madrid, con casas a 33.000 euros.
+    (173.00, 177.55),  # Y número 3, El Escorial, a 45 minutos, con esta casa a 30.000 euros.
+    (185.10, 189.10),  # Estas casas las he sacado de portales de subastas y de pisos ocupados
+    (195.90, 202.90),  # y la inmensa mayoría de personas no compra ahí porque … destrozado.
+    (231.40, 237.40),  # Pero yo hago otra cosa. Consigo que me lleguen estas casas antes gracias a las agencias …
+    (240.25, 241.60),  # Y aquí tienes cómo lo hago.
+    (247.65, 253.95),  # Número 1. Le digo exactamente qué estoy buscando. Zona y precio. Nunca … avísame si sale algo.
+    (258.15, 259.80),  # Número 2.
+    (262.10, 265.85),  # Le demuestro que puedo comprar teniendo la financiación preaprobada.
+    (271.05, 275.25),  # Y número tres, y más importante: le contesto a todo, aunque sea para decirle que no.
+    (281.40, 285.65),  # Con esto consigo que cada piso que me manden se parezca más a lo que quiero.
+    (295.70, 300.85),  # Y es que en inversión inmobiliaria los mejores pisos no hay que buscarlos …
+    (324.05, 330.65),  # Así que si quieres empezar a invertir en pisos … deja la palabra guía …
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -298,6 +317,8 @@ TOMAS = {
         *_CIERRE_G9,
     ],
     ("g13", "hook"): list(_G13),
+    ("g19", "hook1"): [(3.30, 7.25), *_CUERPO_G19],  # Tres pueblos cerca de Madrid donde puedes comprar una casa por menos de 50.000 euros.
+    ("g19", "hook2"): [(14.75, 20.80), *_CUERPO_G19],  # Hay casas a 45 minutos de Madrid por menos de 45.000 euros. Pero lo importante …
     ("g18", "hook1"): [(5.40, 9.15), (13.20, 18.50), *_CUERPO_G18],  # Tres páginas … a mitad de precio, y si te quedas hasta el final, la última es la mejor.
     ("g18", "hook2"): [(27.05, 29.55), (33.25, 36.95), *_CUERPO_G18],  # Tres sitios … y si te quedas hasta el final, el último es el que he usado para comprar mi último piso.
     ("g17", "hook"): list(_G17),
