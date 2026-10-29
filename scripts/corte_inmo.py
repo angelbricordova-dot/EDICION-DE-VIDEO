@@ -247,6 +247,24 @@ _G16 = [
     (211.10, 212.50, _DE),  # ¿Y yo puedo aprender a hacer eso?
     (107.20, 115.85, _IZ),  # Pues sí, tengo una clase de 45 minutos … deja la palabra guía y te la mando.
 ]
+# Reel 17 "3 formas de comprar pisos por debajo de 100k" (guion 17). Las webs van a pantalla completa
+# (lo pidió en la grabación); "la segunda, las subastas online" es el plano andando por el pasillo y
+# la frase de las subastas va en off sobre la web. Fuera: todas las indicaciones a Darío.
+_G17 = [
+    (4.40, 7.55),  # HOOK: Tres formas de comprar pisos por debajo de 100.000 euros en España.
+    (27.65, 29.40),  # La primera, los pisos de banco.
+    (30.35, 37.40),  # Mis tres páginas favoritas son Solvia … Servihabitat, con estos otros, y Aliseda, con estos.
+    (108.30, 110.15),  # La segunda, las subastas online. (andando por el pasillo)
+    (142.00, 148.25),  # No tienes que ir a ningún sitio … Oportunidades que jamás verás en Idealista. (en off)
+    (167.55, 170.50),  # Pero si es tu primera inversión, no te recomiendo ninguna de las dos.
+    (177.60, 182.65),  # Pisos ocupados, cargas, pisos destrozados, te la pueden colar en menos de un segundo.
+    (189.95, 192.90),  # Y ahora viene la tercera y la que para mí es la mejor.
+    (213.90, 218.70),  # Crear tu propia red de contactos … antes de que lleguen a los portales.
+    (222.60, 227.45),  # Pisos que puedes visitar, revisar y negociar sin tener que pelearte con media España.
+    (233.80, 239.90),  # Y es que en inversión inmobiliaria el piso más barato … te llega a ti antes que a nadie.
+    (302.40, 307.20),  # Y si quieres aprender a crear esa red … mi comunidad, el Filtro Inmobiliario.
+    (319.10, 322.85),  # Si te quieres apuntar a la lista de espera, deja la palabra filtro y te la envío.
+]
 PITIDOS = {"g9": [(60.55, 61.25), (63.33, 63.95), (189.28, 189.72)]}
 
 TOMAS = {
@@ -260,6 +278,7 @@ TOMAS = {
         *_CIERRE_G9,
     ],
     ("g13", "hook"): list(_G13),
+    ("g17", "hook"): list(_G17),
     ("g15", "hook1"): [(268.35, 272.00), *_CUERPO_G15],  # Los pisos más baratos de España que están en subasta en menos de 60 segundos
     ("g15", "cuerpo"): list(_CUERPO_G15),
     ("g14", "sofa"): list(_G14),

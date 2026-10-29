@@ -162,7 +162,11 @@ export type Evento =
   | { tipo: "web"; en: string; img: string; dominio: string; hasta: string; baja?: number }
   | { tipo: "precio"; en: string; lugar: string; precio: string; detalle?: string; hasta: string; img?: string }
   | { tipo: "pasos"; en: string[]; textos: string[]; hasta: string }
-  | { tipo: "lista"; en: string; indice: number };
+  | { tipo: "lista"; en: string; indice: number }
+  // La web a pantalla completa (voz en off o "precios como los que estás viendo").
+  | { tipo: "pantalla"; en: string; img: string; dominio: string; hasta: string; baja?: number }
+  // Una imagen (logo) en la zona de arriba.
+  | { tipo: "imagen"; en: string; img: string; hasta: string; ancho: number; etiqueta?: string };
 
 export type ConfigPlantilla = {
   video: string;
@@ -355,6 +359,42 @@ export const crearReel = (C: ConfigPlantilla) => {
             return (
               <div key={i} style={{ position: "absolute", left: web.x, top: web.y }}>
                 <Web t={t} t0={r.t0} t1={r.t1!} img={e.img} dominio={e.dominio} baja={e.baja ?? 900} />
+              </div>
+            );
+          }
+          if (e.tipo === "pantalla") {
+            if (t < r.t0 - 0.15 || t > r.t1!) return null;
+            const k = easeOut(prog(t, r.t0 - 0.15, r.t0 + 0.2));
+            const sale = prog(t, r.t1! - 0.2, r.t1!);
+            const baja = easeInOut(prog(t, r.t0 + 0.4, r.t1! - 0.1)) * (e.baja ?? 900);
+            return (
+              <AbsoluteFill key={i} style={{ background: "#fff", opacity: 1 - sale, clipPath: `inset(${(1 - k) * 50}% 0 ${(1 - k) * 50}% 0 round ${(1 - k) * 60}px)` }}>
+                <div style={{ height: 150, background: "#F2F3F5", display: "flex", alignItems: "flex-end", justifyContent: "center", paddingBottom: 18, borderBottom: "1px solid #ddd", position: "relative", zIndex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, background: "#fff", borderRadius: 18, padding: "10px 26px", fontFamily: INTER, fontWeight: 700, fontSize: 34, color: "#333", boxShadow: "0 2px 6px rgba(0,0,0,0.08)" }}>
+                    <svg width={24} height={24} viewBox="0 0 24 24">
+                      <rect x={5} y={10} width={14} height={11} rx={2} fill="#555" />
+                      <path d="M8 10 V7 a4 4 0 0 1 8 0 V10" fill="none" stroke="#555" strokeWidth={2.4} />
+                    </svg>
+                    {e.dominio}
+                  </div>
+                </div>
+                <div style={{ position: "absolute", top: 150, left: 0, right: 0, bottom: 0, overflow: "hidden" }}>
+                  <Img src={staticFile(`tiktok/webs/${e.img}`)} style={{ width: 1080, display: "block", translate: `0 ${-baja}px` }} />
+                </div>
+                <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%)" }} />
+              </AbsoluteFill>
+            );
+          }
+          if (e.tipo === "imagen") {
+            if (t < r.t0 - 0.05 || t > r.t1!) return null;
+            return (
+              <div key={i} style={{ position: "absolute", left: 0, right: 0, top: C.yPildora ?? 470, display: "flex", justifyContent: "center", opacity: 1 - prog(t, r.t1! - 0.15, r.t1!) }}>
+                <Pop t={t} t0={r.t0 - 0.05} desde={0.6}>
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+                    <Img src={staticFile(e.img)} style={{ width: e.ancho, borderRadius: 28, boxShadow: "0 18px 40px rgba(0,0,0,0.45)", display: "block" }} />
+                    {e.etiqueta ? <span style={{ fontFamily: INTER, fontWeight: 800, fontSize: 30, color: "#fff", padding: "6px 22px", borderRadius: 999, background: "#1F5A36" }}>{e.etiqueta}</span> : null}
+                  </div>
+                </Pop>
               </div>
             );
           }
