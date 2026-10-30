@@ -83,6 +83,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Short pulpo (prueba de animación) | `src/pulpo/` | `docs/pulpo.md` | personaje de caricatura en vectores, mar azul, rayos X, subtítulo de una palabra (Luckiest Guy) |
 | TuBodega (app de punto de venta) | `src/tubodega/` | `docs/tubodega.md` | verde #2F9E6E, Plus Jakarta Sans, teléfono con pantallas reales y zooms, voz Richard |
 | Reels inmobiliarios (inversor, España) | `src/inmobiliaria/` | `docs/inmobiliaria.md` | persona a cámara, título fijo + lista 1-2-3, subtítulos Inter blancos, cortes naturales, voz real del cliente; plantilla de eventos (`Plantilla.tsx`) y formato sofá de dos mitades (`Sofa.tsx`) |
+| Pronósticos de fútbol (cliente nuevo) | `src/pronosticos/` | `docs/pronosticos.md` | selfie a cámara de una toma, gráficos planos arriba (escudos, marcadores, fotos en círculo, etiquetas rojas), Bebas Neue, palabras clave amarillas |
 
 ### Separación por cliente (obligatoria)
 
