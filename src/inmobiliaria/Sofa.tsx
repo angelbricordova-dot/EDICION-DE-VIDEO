@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { FPS } from "../comun/animacion";
 import { AMARILLO, bloques, cargarFuentes, Corte, Destello, easeOut, INTER, lerp, Palabra, Pop, prog, Subtitulo, TextoSombra } from "./piezas";
@@ -9,15 +9,16 @@ import { Comentario, limpio, Pildora } from "./comunes";
 // a la izquierda el de camiseta blanca y a la derecha el de camiseta negra. Cada mitad pone su
 // toma cuando habla y, cuando escucha, un tramo suyo en silencio (scripts/inmobiliaria/corte_inmo.py →
 // "relleno"). La costura del centro es un degradado suave. Arriba: el título, la etiqueta de
-// cada lado, la categoría y la tarjeta con lo que dice cada uno. El zoom se acerca despacio hacia
-// el que habla.
+// cada lado, la categoría y la tarjeta con lo que dice cada uno (con foto de referencia si la tiene:
+// corrección de Julio, "que no sea solo texto"). Al llegar el primer item el título se encoge y
+// todo sube para que la foto quepa sin tapar las caras. El zoom se acerca despacio hacia el que habla.
 
 export type Lado = "izq" | "der";
 type CorteSofa = Corte & { lado?: Lado; toma?: number };
 type Relleno = { lado: Lado; src: number; dur: number; out: number };
 export type CorteSofaReel = { duracion: number; cortes: CorteSofa[]; palabras: Palabra[]; relleno: Relleno[] };
 
-type Tarjeta = { texto: string; en?: string; extras?: [string, string][] };
+type Tarjeta = { texto: string; en?: string; extras?: [string, string][]; img?: string };
 export type ItemSofa = { cat: string; en: string; izq?: Tarjeta; der?: Tarjeta };
 export type ConfigSofa = {
   video: string;
@@ -63,11 +64,18 @@ const Mitad: React.FC<{ video: string; tramos: { src: number; dur: number; out: 
   </AbsoluteFill>
 );
 
-/** Tarjeta de lo que dice cada uno (con líneas extra que aparecen con la voz). */
-const Eleccion: React.FC<{ t: number; t0: number; color: string; texto: string; extras: { t0: number; texto: string }[] }> = ({ t, t0, color, texto, extras }) => (
+/** Tarjeta de lo que dice cada uno: foto de referencia (si hay), texto y líneas extra con la voz. */
+const Eleccion: React.FC<{ t: number; t0: number; color: string; texto: string; img?: string; extras: { t0: number; texto: string }[] }> = ({ t, t0, color, texto, img, extras }) => (
   <Pop t={t} t0={t0} desde={0.6}>
     <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "stretch", width: 440 }}>
-      <div style={{ background: "#fff", borderRadius: 24, padding: "12px 18px", boxShadow: `0 12px 28px rgba(0,0,0,0.35), inset 0 -6px 0 ${color}`, fontFamily: INTER, fontWeight: 900, fontSize: 38, lineHeight: 1.1, color: "#151515", textAlign: "center" }}>{texto}</div>
+      <div style={{ background: "#fff", borderRadius: 24, padding: img ? "8px 8px 12px" : "12px 18px", boxShadow: `0 12px 28px rgba(0,0,0,0.35), inset 0 -6px 0 ${color}`, fontFamily: INTER, fontWeight: 900, fontSize: 38, lineHeight: 1.1, color: "#151515", textAlign: "center" }}>
+        {img ? (
+          <div style={{ height: 210, borderRadius: 18, overflow: "hidden", marginBottom: 10 }}>
+            <Img src={staticFile(img)} style={{ width: "100%", height: "100%", objectFit: "cover", scale: String(lerp(1.12, 1, easeOut(prog(t, t0, t0 + 2.5)))) }} />
+          </div>
+        ) : null}
+        <div style={{ padding: img ? "0 10px" : 0 }}>{texto}</div>
+      </div>
       {extras.map((x, i) =>
         t >= x.t0 - 0.05 ? (
           <Pop key={i} t={t} t0={x.t0 - 0.05} desde={0.6}>
@@ -130,6 +138,10 @@ export const crearSofa = (C: ConfigSofa) => {
     const cta = tras(C.cta.en, cierre);
     const subs = bloques(palabras);
     const itemActual = cats.reduce((acc, c, i) => (t >= c - 0.1 ? i : acc), -1);
+    // Con fotos, al entrar el primer item el título se encoge y todo sube (sube = px hacia arriba).
+    const conFotos = C.items.some((it) => it.izq?.img || it.der?.img);
+    const kSube = conFotos ? easeOut(prog(t, cats[0] - 0.45, cats[0] - 0.05)) : 0;
+    const sube = 120 * kSube;
 
     return (
       <AbsoluteFill style={{ background: "#000" }}>
@@ -140,7 +152,7 @@ export const crearSofa = (C: ConfigSofa) => {
         <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.12) 32%, rgba(0,0,0,0) 45%, rgba(0,0,0,0) 72%, rgba(0,0,0,0.4) 100%)" }} />
 
         {/* Título (el hook). */}
-        <div style={{ position: "absolute", left: 0, right: 0, top: 130, display: "flex", flexDirection: "column", alignItems: "center", gap: 6, opacity: 1 - prog(t, cta - 0.2, cta + 0.1) }}>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 130 - 0.62 * sube, display: "flex", flexDirection: "column", alignItems: "center", gap: 6, opacity: 1 - prog(t, cta - 0.2, cta + 0.1), scale: String(1 - 0.28 * kSube), transformOrigin: "50% 0%" }}>
           <Pop t={t} t0={0} desde={1.08}>
             <TextoSombra texto={C.titulo.linea1} tam={64} peso={900} color="#fff" />
           </Pop>
@@ -158,7 +170,7 @@ export const crearSofa = (C: ConfigSofa) => {
           const k = easeOut(prog(t, t0, t0 + 0.35));
           const activo = hablando(t) === lado;
           return (
-            <div key={lado} style={{ position: "absolute", left: CENTRO[lado] - 200, width: 400, top: 392, display: "flex", justifyContent: "center", opacity: k * (1 - prog(t, cierre - 0.2, cierre + 0.1)), translate: `0 ${(1 - k) * -20}px` }}>
+            <div key={lado} style={{ position: "absolute", left: CENTRO[lado] - 200, width: 400, top: 392 - sube, display: "flex", justifyContent: "center", opacity: k * (1 - prog(t, cierre - 0.2, cierre + 0.1)), translate: `0 ${(1 - k) * -20}px` }}>
               <div style={{ fontFamily: INTER, fontWeight: 900, fontSize: 34, letterSpacing: "0.04em", color: "#fff", background: e.color, borderRadius: 999, padding: "8px 22px", boxShadow: activo ? `0 0 0 4px ${AMARILLO}, 0 10px 24px rgba(0,0,0,0.4)` : "0 10px 24px rgba(0,0,0,0.4)", scale: String(activo ? 1.06 : 1) }}>{e.texto}</div>
             </div>
           );
@@ -167,7 +179,7 @@ export const crearSofa = (C: ConfigSofa) => {
         {/* Categoría y tarjetas. */}
         {itemActual >= 0 && t < cierre ? (
           <>
-            <div key={`cat${itemActual}`} style={{ position: "absolute", left: 0, right: 0, top: 318, display: "flex", justifyContent: "center", opacity: 1 - prog(t, cierre - 0.2, cierre) }}>
+            <div key={`cat${itemActual}`} style={{ position: "absolute", left: 0, right: 0, top: 318 - sube, display: "flex", justifyContent: "center", opacity: 1 - prog(t, cierre - 0.2, cierre) }}>
               <Pop t={t} t0={cats[itemActual] - 0.1}>
                 <div style={{ fontFamily: INTER, fontWeight: 900, fontSize: 40, color: "#151515", background: AMARILLO, borderRadius: 16, padding: "4px 20px", letterSpacing: "0.03em" }}>{C.items[itemActual].cat}</div>
               </Pop>
@@ -183,8 +195,8 @@ export const crearSofa = (C: ConfigSofa) => {
                 const extras = (tj.extras ?? []).map(([p, texto]) => ({ t0: quizas(p, t0, sig, sig + 99), texto }));
                 if (t < t0 - 0.05) return null;
                 return (
-                  <div key={lado} style={{ position: "absolute", left: Math.max(20, CENTRO[lado] - 220), top: 470 }}>
-                    <Eleccion t={t} t0={t0 - 0.05} color={C.etiquetas[lado].color} texto={tj.texto} extras={extras} />
+                  <div key={lado} style={{ position: "absolute", left: Math.max(20, CENTRO[lado] - 220), top: 470 - sube }}>
+                    <Eleccion t={t} t0={t0 - 0.05} color={C.etiquetas[lado].color} texto={tj.texto} img={tj.img} extras={extras} />
                   </div>
                 );
               })}

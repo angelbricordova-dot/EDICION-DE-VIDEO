@@ -116,6 +116,18 @@ npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
   con la cámara quieta (camiseta blanca a la izquierda, negra a la derecha). Se unen en un plano con
   una costura suave en el centro; mientras uno habla, la otra mitad pone un tramo de esa persona en
   silencio (`rellenos_sofa` en `scripts/inmobiliaria/corte_inmo.py`). El zoom va despacio hacia el que habla.
+  - Corrección de Julio: el que escucha "hacía cosas raras". Los rellenos se eligen solo donde esa
+    persona está callada (±0,35 s de cualquier palabra), con poco movimiento y sin mirar a cámara
+    (`scripts/inmobiliaria/movimiento_sofa.py` mide movimiento y cara de frente con OpenCV →
+    `public/inmobiliaria/<reel>/movimiento.json`). OpenCV 5 ya no trae `CascadeClassifier`: se usa
+    `opencv-python-headless==4.10` instalado aparte (`pip install --target <carpeta>` + `PYTHONPATH`).
+  - Corrección de Julio: "que no sea solo texto". Cada tarjeta lleva una foto de referencia (`img`);
+    con fotos, al entrar el primer item el título se encoge y todo sube para no tapar las caras.
+- **Fotos de referencia**: `scripts/comun/buscar_imagenes.py ... --fuentes stocksnap,rawpixel` (Openverse,
+  CC0 / dominio público, sin atribución; las de StockSnap y rawpixel son fotos actuales, sin ese filtro
+  salen fotos de archivo). Wikimedia Commons (`buscar_commons.py`) da poco y limita con 429; Pexels,
+  Unsplash, Pixabay y Freepik están bloqueados. Canva genera imágenes pero solo deja bajar miniaturas.
+  Elegidas en `public/inmobiliaria/imagenes/reel14/` y `reel16/`.
 - **Capturas de webs** (`scripts/inmobiliaria/capturas_webs_inmo.mjs` y búsquedas ordenadas por precio):
   Solvia, Servihabitat (Murcia, "Precio Menor"), Aliseda (Jaén), resultados del portal de subastas
   del BOE (Madrid), Seguridad Social, Escrapalia, Oportunalia, Anticipa → `public/inmobiliaria/webs/`.

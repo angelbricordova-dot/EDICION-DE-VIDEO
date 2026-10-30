@@ -420,21 +420,45 @@ def pitido(dur, f=1000.0):
 
 
 def rellenos_sofa(reel, tomas, cortes, palabras):
-    """Para cada toma de un lado, un tramo en silencio del otro lado (escuchando), sin repetir."""
-    zonas = SOFA[reel]
-    usados = {lado: [] for lado in zonas}
-    huecos = {}
-    for lado, (a, b) in zonas.items():
-        ws = sorted((w for w in palabras if a <= w["ini"] <= b), key=lambda w: w["ini"])
-        h, prev = [], a
-        for w in ws:
-            if w["ini"] - prev > 1.0:
-                h.append([prev + 0.15, w["ini"] - 0.15])
-            prev = max(prev, w["fin"])
-        if b - prev > 1.0:
-            h.append([prev + 0.15, b])
-        huecos[lado] = h
-    originales = {lado: [tuple(x) for x in h] for lado, h in huecos.items()}
+    """Para cada toma de un lado, un tramo del otro lado escuchando: en silencio y lo más quieto posible.
+
+    El movimiento sale de scripts/inmobiliaria/movimiento_sofa.py (public/inmobiliaria/<reel>/
+    movimiento.json, cada 0,1 s). Se elige la ventana sin palabras (de nadie) con menos movimiento
+    medio y menos picos; se evita repetir tramos ya usados y, si hace falta mucho tiempo, se encadenan
+    tramos de hasta 3 s (corrección de Julio en el reel 14: el de negro hacía cosas raras al escuchar).
+    Los momentos en que mira a cámara (cara de frente) se penalizan.
+    """
+    mov = json.loads((RAIZ / f"public/inmobiliaria/{reel}/movimiento.json").read_text())
+    datos = {}
+    for lado, (a, b) in SOFA[reel].items():
+        t = np.array([v[0] for v in mov[lado]])
+        m = np.array([v[1] for v in mov[lado]])
+        callado = np.ones(len(t), bool)
+        for w in palabras:
+            if w["fin"] < a - 1 or w["ini"] > b + 1:
+                continue
+            callado &= ~((t > w["ini"] - 0.35) & (t < w["fin"] + 0.35))
+        # Mirando a cámara (cara de frente) no parece que escuche: cuenta como mucho movimiento.
+        fr = mov.get(lado + "_frente")
+        if fr:
+            tf = np.array([v[0] for v in fr])
+            vf = np.array([v[1] for v in fr], float)
+            m = m + 3.0 * np.interp(t, tf, vf)
+        datos[lado] = (t, m, callado, np.zeros(len(t)))  # el último: veces usado
+
+    def mejor(lado, dur):
+        t, m, callado, usado = datos[lado]
+        n = max(2, int(round(dur * 10)))
+        mejor_i, mejor_p = None, 1e9
+        for i in range(0, len(t) - n):
+            if not callado[i : i + n].all():
+                continue
+            v = m[i : i + n]
+            p = v.mean() + 0.4 * np.percentile(v, 90) + 0.8 * usado[i : i + n].mean()
+            if p < mejor_p:
+                mejor_i, mejor_p = i, p
+        return mejor_i, n
+
     out = []
     for ti, (_, _, op) in enumerate(tomas):
         mios = [c for c in cortes if c["toma"] == ti]
@@ -442,18 +466,17 @@ def rellenos_sofa(reel, tomas, cortes, palabras):
             continue
         otro = "der" if op.get("lado") == "izq" else "izq"
         t_out, falta = mios[0]["out"], sum(c["dur"] for c in mios)
-        # El hueco más largo libre; si no alcanza, se encadenan.
         while falta > 0.01:
-            h = max(huecos[otro], key=lambda x: x[1] - x[0])
-            if h[1] - h[0] < 0.5:  # sin huecos libres: se reutilizan desde el principio
-                for x, (a, b) in zip(huecos[otro], originales[otro]):
-                    x[0], x[1] = a, b
-                h = max(huecos[otro], key=lambda x: x[1] - x[0])
-            dur = min(falta, h[1] - h[0])
-            out.append({"lado": otro, "src": round(h[0], 3), "dur": round(dur, 3), "out": round(t_out, 3)})
-            h[0] += dur + 0.5
-            t_out += dur
-            falta -= dur
+            trozo = min(falta, 3.0) if falta > 3.4 else falta
+            i, n = mejor(otro, trozo)
+            if i is None:  # no hay silencio tan largo: trozos más cortos
+                trozo = min(trozo, 1.5)
+                i, n = mejor(otro, trozo)
+            t, _, _, usado = datos[otro]
+            usado[i : i + n] += 1
+            out.append({"lado": otro, "src": round(float(t[i]), 3), "dur": round(trozo, 3), "out": round(t_out, 3)})
+            t_out += trozo
+            falta -= trozo
     return out
 
 
