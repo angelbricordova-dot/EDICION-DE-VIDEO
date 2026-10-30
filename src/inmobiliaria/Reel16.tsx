@@ -16,7 +16,7 @@ export const Reel16 = crearSofa({
   titulo: { linea1: "Rico vs pobre", linea2: "¿Qué haces con tu dinero?", en2: "euro." },
   etiquetas: { izq: { texto: "RICO", color: "#22B53A", en: "botella" }, der: { texto: "POBRE", color: "#E3141F" } },
   items: [
-    { cat: "1 €", en: "euro.", der: { texto: "Un Monster", en: "Monster", img: F("latas") }, izq: { texto: "Botella de agua", en: "botella", img: F("agua") } },
+    { cat: "1 €", en: "euro.", der: { texto: "Un Monster", en: "Monster", img: F("monster") }, izq: { texto: "Botella de agua", en: "botella", img: F("agua") } },
     { cat: "20 €", en: "20", der: { texto: "Unas copas", en: "copas", img: F("copas") }, izq: { texto: "Un libro", en: "libro", img: F("libro") } },
     { cat: "500 €", en: "500", der: { texto: "Finde de fiesta", en: "finde", img: F("fiesta"), extras: [["tirar", "«Eso es tirar el dinero»"]] }, izq: { texto: "Una formación", en: "formación", img: F("formacion") } },
     { cat: "3.000 €", en: "3000", der: { texto: "Finde en Ibiza", en: "Ibiza", img: F("ibiza") }, izq: { texto: "Reservo un piso", en: "Reservo", img: F("piso"), extras: [["Idealista", "El que me pasan antes de Idealista"]] } },
