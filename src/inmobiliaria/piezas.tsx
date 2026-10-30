@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { loadFont } from "@remotion/fonts";
-import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../tucacas/estilo";
+import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../comun/animacion";
 
 // Piezas de los reels inmobiliarios (docs/inmobiliaria.md): persona recortada a 9:16 con
 // cortes y punch-ins, subtítulos de 1–3 palabras, escenas roja y crema, textos 3D y transiciones.

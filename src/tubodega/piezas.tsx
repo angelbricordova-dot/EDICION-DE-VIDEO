@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Freeze, Img, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { loadFont } from "@remotion/fonts";
-import { clamp01, easeInOut, easeOut, FPS, lerp, prog, sp } from "../tucacas/estilo";
+import { clamp01, easeInOut, easeOut, FPS, lerp, prog, sp } from "../comun/animacion";
 import { Clave, claveEn, desenfoqueCamara } from "../tucacas/web/escenas";
 import type { Frase } from "../tucacas/guiones";
 

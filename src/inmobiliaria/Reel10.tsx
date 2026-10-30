@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
-import { FPS } from "../tucacas/estilo";
+import { FPS } from "../comun/animacion";
 import { AMARILLO, bloques, cargarFuentes, clamp01, Corte, Destello, easeOut, INTER, lerp, Palabra, Persona, Pop, prog, sp, Subtitulo, TextoSombra } from "./piezas";
 import { Comentario, Grande, limpio, Pildora } from "./comunes";
 import { Edificio } from "./iconos";

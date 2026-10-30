@@ -3,7 +3,7 @@ import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { loadFont } from "@remotion/fonts";
 import { evolvePath } from "@remotion/paths";
-import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../tucacas/estilo";
+import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../comun/animacion";
 import guionJson from "./guion.json";
 
 // Reel Futbol Onze × Camis11 (brief-video-camis11.md): 30 s, 9:16, negro + rojo España + lima.

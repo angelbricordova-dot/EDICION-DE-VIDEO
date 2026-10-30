@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { loadFont } from "@remotion/fonts";
-import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../tucacas/estilo";
+import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../comun/animacion";
 import { CorazonDibujo, Gesto, Interior, Pose, Pulpo } from "./Personaje";
 import guionJson from "./guion.json";
 

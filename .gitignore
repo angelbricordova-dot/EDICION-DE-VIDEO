@@ -13,5 +13,6 @@ public/pulpo/
 public/tubodega/
 public/inmobiliaria/
 public/comun/
+public/pronosticos/
 # Local secrets written by `elevenlabs onboard`
 /.env.local
