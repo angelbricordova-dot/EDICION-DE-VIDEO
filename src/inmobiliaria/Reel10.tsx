@@ -362,7 +362,7 @@ export const Reel10: React.FC<PropsReel10> = ({ audio, version }) => {
       <Subtitulo t={t} lista={subs} y={1420} amarillas={["pisos", "edificio", "barrio", "broma", "redes", "tarde", "equivocada", "trabajar", "patrimonio", "1950", "primero", "guía", "sl"]} />
 
       <Destello t={t} t0={asi - 0.3} />
-      <AbsoluteFill style={{ background: "#000", opacity: prog(t, duracion - 0.05, duracion + 0.2) }} />
+      <AbsoluteFill style={{ background: "#000", opacity: prog(t, duracion - 0.45, duracion + 0.1) }} />
       {audio ? <Audio src={staticFile(audio)} /> : null}
     </AbsoluteFill>
   );

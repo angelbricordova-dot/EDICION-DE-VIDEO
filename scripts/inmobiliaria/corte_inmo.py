@@ -95,16 +95,16 @@ _CIERRE_G9 = [
 # Reel 10 "lo que deberías tener a cada edad" (guion 10, pizarra, bruto vertical 4K). Fuera: "Eso
 # ha sido el hook / Estamos en el reel número 10", las dos primeras tomas de "9 a 5" ("te hace
 # sentir mal", "no te preocupes"), la charla con el socio, el "ya deberías" repetido y el
-# "dinero" repetido.
+# "dinero" repetido. Correcciones de Julio: sin el "con 30 años" repetido ni el "¿vale?" mirando a
+# cámara, y el final se queda 1,8 s más en "la palabra guía".
 _CUERPO_G10 = [
     (64.25, 67.90),  # Con 25 años ya deberías de tener tu primer piso de inversión.
-    (74.45, 75.50),  # Con 30 años
-    (76.70, 79.15),  # ya deberías de tener 3. (sin el primer "ya deberías")
+    (76.70, 79.15),  # Con 30 años ya deberías de tener 3. (2.ª toma: en la 1.ª se corta y repite "con 30 años")
     (84.35, 86.70),  # Con 35, un edificio entero.
     (92.35, 95.55),  # Con 40, 15 pisos y una SL a tu nombre.
     (107.85, 112.25),  # Y con 50 años, si no tienes un barrio entero a tu nombre, algo estás haciendo mal.
     (115.90, 118.45),  # A ver, a ver, espérate, que esto es broma, obviamente.
-    (123.95, 129.35),  # Pero, por desgracia, esto es lo que te venden cada día por redes, ¿vale?
+    (123.95, 127.25),  # Pero, por desgracia, esto es lo que te venden cada día por redes. (sin el "¿vale?" mirando a cámara)
     (162.95, 171.70),  # Y si eres de esas personas que trabaja de 9 a 5 … vas tarde a todo. Pero no vas tarde, estate tranquilo.
     (180.50, 183.85),  # El problema de todo esto es que te están enseñando la meta equivocada.
     (190.45, 196.22),  # Yo no te voy a enseñar a que consigas 15 pisos … el dinero que tanto
@@ -112,7 +112,7 @@ _CUERPO_G10 = [
     (238.50, 244.65),  # Un piso bien comprado … patrimonio poco a poco.
     (253.25, 259.85),  # Como José Manuel, un alumno con 50 años … 1.950 euros al mes.
     (265.90, 274.90),  # Y es que … no gana el que más pisos acumula, gana el que … puede seguir escalando.
-    (296.80, 303.10),  # Así que si quieres empezar por ese primero … si me dejas la palabra guía.
+    (296.80, 305.40, {"cola": 1.8}),  # Así que si quieres empezar por ese primero … si me dejas la palabra guía. (+1,8 s al final)
 ]
 # Reel 12 "ranking de bancos para hipotecas" (guion 12, cámara lateral como el 8, con Darío detrás
 # de cámara). Fuera: "Listo / Reel número 12 / Hook…", "Vale, un segundito", el primer "BBVA"
@@ -364,7 +364,7 @@ def leer(ruta):
     return np.frombuffer(crudo, dtype=np.float32)
 
 
-def sin_pausas(x, ini, fin):
+def sin_pausas(x, ini, fin, salida=SALIDA):
     """Parte [ini, fin] en tramos con voz, quitando pausas largas."""
     w = int(0.01 * SR)
     a, b = int(ini * SR), int(fin * SR)
@@ -388,7 +388,7 @@ def sin_pausas(x, ini, fin):
             i = j
         else:
             i += 1
-    tramos.append((inicio, min((b - a) / SR, ultimo * 0.01 + SALIDA)))
+    tramos.append((inicio, min((b - a) / SR, ultimo * 0.01 + salida)))
     # Los trocitos sueltos (clics, respiraciones cortas) no son voz.
     return [(ini + s, ini + e) for s, e in tramos if e - s > 0.12]
 
@@ -470,9 +470,9 @@ def main():
     f = int(FUNDIDO * SR)
     for ti, (ini, fin, op) in enumerate(tomas):
         mios = []
-        for s_, e in sin_pausas(x, ini, fin):
+        for s_, e in sin_pausas(x, ini, fin, op.get("cola", SALIDA)):
             c = {"src": round(s_, 3), "dur": round(e - s_, 3), "out": round(out, 3), "toma": ti}
-            c.update({k: v for k, v in op.items()})
+            c.update({k: v for k, v in op.items() if k != "cola"})
             cortes.append(c)
             mios.append(c)
             out += e - s_
