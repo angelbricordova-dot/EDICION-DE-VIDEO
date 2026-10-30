@@ -25,6 +25,19 @@ referencias que mandó el cliente (`public/pronosticos/referencias/`, de la cuen
 - Fotos de jugadores → `public/pronosticos/jugadores/` (Commons limita los tamaños grandes; si el
   cliente manda fotos mejores, se cambian).
 
+## Sonido
+
+- Sin música (el cliente la pone después).
+- Efectos de **Mixkit** (`public/comun/sfx/mixkit/`, licencia libre de Mixkit: uso comercial sin
+  atribución). Pixabay y Freesound bloquean las descargas automáticas; de YouTube no se bajan por
+  derechos. Angel pidió efectos menos "robóticos" y no repetitivos: barridos de aire, pops y clics
+  distintos que se turnan, golpes solo en lo importante, silbato en el penalti fallado y grada
+  cuando dice el pronóstico. Se colocan por su pico (`sonido_pronosticos.py`).
+
+## Correcciones de Angel
+
+- v2: la etiqueta "BAJA" de la foto del jugador va debajo del círculo (se tapaba); efectos nuevos.
+
 ## Comandos
 
 ```bash
@@ -39,4 +52,4 @@ npx remotion render PronoMilanInter out/pronosticos/milan-inter.mp4 --browser-ex
 
 | Video | Composición | Estado |
 |---|---|---|
-| Milan – Inter (derbi) | `PronoMilanInter` | primera versión enviada |
+| Milan – Inter (derbi) | `PronoMilanInter` | v2 enviada (correcciones de BAJA y efectos) |

@@ -1,4 +1,4 @@
-"""Mezcla de un video de pronósticos: la voz de la toma + efectos suaves en cada escena.
+"""Mezcla de un video de pronósticos: la voz de la toma + efectos variados en cada escena.
 
 Sin música (el cliente la pone en CapCut si quiere). Total −14 LUFS.
 
@@ -18,20 +18,40 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import SR, Mezcla  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parents[2]
-SFX = RAIZ / "public/comun/sfx"
+SFX = RAIZ / "public/comun/sfx/mixkit"
 
-# Efectos de cada video: (palabra, efecto, ganancia dB, desfase s), buscadas en orden.
+# Efectos de cada video: (palabra, efecto, ganancia dB, desfase s[, duración máx. s]), buscadas en
+# orden. Los efectos son de Mixkit (public/comun/sfx/mixkit/, licencia libre): barridos de aire,
+# pops y clics distintos que se van turnando para que no suene repetitivo, golpes solo en lo
+# importante, el silbato en el penalti fallado y la grada en "el Inter no pierde". El desfase se
+# mide desde el pico del efecto (el barrido culmina cuando entra el gráfico).
 EFECTOS = {
     "milan-inter": [
-        ("7", "pop", -17, -0.05), ("ganó", "tap", -17, 0.1), ("5", "pop", -16, -0.05), ("4", "pop", -17, -0.05),
-        ("Milan,", "whoosh", -17, -0.1), ("Inter.", "golpe", -17, -0.05),
-        ("El", "whoosh", -18, -0.1), ("1-0,", "pop", -16, -0.05), ("remató", "pop", -17, -0.05),
-        ("Çalhanoğlu", "pop", -16, -0.05), ("Milan", "whoosh", -18, -0.1), ("2-4", "golpe", -17, -0.05),
-        ("Aparte", "whoosh", -18, -0.1), ("5", "tap", -17, -0.05), ("3", "tap", -17, -0.05),
-        ("Inter", "whoosh", -18, -0.1), ("invicto", "pop", -16, -0.05), ("ganó", "pop", -17, -0.05),
-        ("titulares", "pop", -17, -0.05), ("Lautaro,", "pop", -16, -0.05), ("remontaron", "pop", -17, -0.05),
-        ("lectura", "whoosh", -17, -0.1), ("pierde.", "golpe", -15, -0.05), ("¿Tú", "whoosh", -17, -0.1),
-        ("leo", "pop", -17, -0.05), ("Si", "whoosh", -16, -0.1),
+        ("7", "pop-3", -20, -0.03),
+        ("ganó", "clic-4", -19, 0.12), ("ganó", "clic-4", -19, 0.24), ("ganó", "clic-4", -19, 0.36),
+        ("5", "pop-4", -19, -0.03),
+        ("4", "pop-1", -21, -0.03),
+        ("Milan,", "golpe-1", -19, 0.12),
+        ("Inter.", "barrido-2", -20, -0.02),
+        ("El", "barrido-1", -21, -0.05),
+        ("1-0,", "pop-2", -20, -0.08),
+        ("remató", "clic-2", -21, -0.03),
+        ("falló", "silbato", -21, 0.05, 0.6),
+        ("Milan", "barrido-4", -21, -0.05),
+        ("2-4", "golpe-2", -17, -0.06),
+        ("Aparte", "barrido-5", -20, -0.05),
+        ("5", "clic-3", -20, -0.03), ("3", "clic-5", -20, -0.03),
+        ("Inter", "barrido-3", -18, -0.05),
+        ("invicto", "pop-4", -20, -0.03),
+        ("ganó", "pop-3", -21, -0.03),
+        ("titulares", "pop-1", -21, -0.03),
+        ("Lautaro,", "pop-2", -20, -0.03),
+        ("remontaron", "clic-1", -21, -0.03),
+        ("lectura", "aire-1", -21, -0.05),
+        ("pierde.", "estadio-3", -23, 0.0, 2.4),
+        ("¿Tú", "barrido-1", -21, -0.05),
+        ("leo", "pop-4", -21, -0.03),
+        ("Si", "aire-2", -19, -0.05),
     ],
 }
 
@@ -54,13 +74,20 @@ def main():
     voz = voz / np.max(np.abs(voz))
     mz.bus[:, : len(voz)] += voz[: mz.n]
     cursor = 0.0
-    for palabra, nombre, gain, desfase in EFECTOS[video]:
+    for e in EFECTOS[video]:
+        palabra, nombre, gain, desfase = e[:4]
         t = next((w["ini"] for w in pal if w["ini"] >= cursor - 0.01 and limpio(w["p"]) == limpio(palabra)), None)
         if t is None:
             raise SystemExit(f"No encontré {palabra} después de {cursor}")
         cursor = t
         x = leer(SFX / f"{nombre}.mp3")
-        mz.poner(max(0, t + desfase), x / np.max(np.abs(x)), 10 ** (gain / 20))
+        if len(e) > 4:  # recorte con fundido (la grada y el silbato no se alargan)
+            n = int(e[4] * SR)
+            x = x[:n].copy()
+            f = min(len(x), int(0.4 * SR))
+            x[-f:] *= np.linspace(1, 0, f)
+        pico = int(np.argmax(np.abs(x)))
+        mz.poner(max(0, t + desfase - pico / SR), x / np.max(np.abs(x)), 10 ** (gain / 20))
     mz.masterizar(str(RAIZ / f"public/pronosticos/mezcla-{video}.wav"), -14.0, fundido=0.15)
 
 

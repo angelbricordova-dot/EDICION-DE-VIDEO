@@ -101,8 +101,8 @@ export const Jugador: React.FC<{ foto?: string; nombre?: string; etiqueta?: stri
       )}
     </div>
     {etiqueta ? (
-      <div style={{ marginTop: -tam * 0.16 }}>
-        <Etiqueta tam={tam * 0.17}>{etiqueta}</Etiqueta>
+      <div style={{ position: "relative", zIndex: 2, marginTop: 2 }}>
+        <Etiqueta tam={tam * 0.2}>{etiqueta}</Etiqueta>
       </div>
     ) : null}
     {nombre ? <Texto tam={tam * 0.2}>{nombre}</Texto> : null}
