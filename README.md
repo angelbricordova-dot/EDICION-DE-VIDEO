@@ -44,13 +44,13 @@ Recreación en español de un edit de tipografía cinética con objetos en pixel
 ### Música y sonido
 
 La banda sonora (`public/audio/banda-sonora.mp3`) es original: está sintetizada desde
-cero por `scripts/generar_banda_sonora.py`. Es música lo-fi a 120 BPM con arpegios
+cero por `scripts/comun/generar_banda_sonora.py`. Es música lo-fi a 120 BPM con arpegios
 chiptune, más efectos sincronizados con cada escena: teclas, *pops* de los objetos,
 whooshes, el destello, el rasguño de vinilo, latidos y lápiz. Para regenerarla después
 de cambiar tiempos o sonidos (requiere Python 3 con numpy y ffmpeg):
 
 ```bash
-python3 scripts/generar_banda_sonora.py banda-sonora.wav
+python3 scripts/comun/generar_banda_sonora.py banda-sonora.wav
 ffmpeg -y -i banda-sonora.wav -b:a 192k public/audio/banda-sonora.mp3
 ```
 
@@ -68,7 +68,7 @@ y sonido en Do mayor sincronizado con el mismo timeline.
 
 ```bash
 npm run render:prueba                                  # out/prueba.mp4
-python3 scripts/sonido_prueba.py prueba.wav            # regenerar el sonido
+python3 scripts/prueba/sonido_prueba.py prueba.wav            # regenerar el sonido
 ffmpeg -y -i prueba.wav -b:a 192k public/audio/prueba.mp3
 ```
 

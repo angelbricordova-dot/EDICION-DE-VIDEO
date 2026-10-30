@@ -2,7 +2,7 @@
 // portada → edición especial (Japón × Goku) → talla, nombre y número → carrito con el código CAMIS11.
 // Los precios y el texto "+1.000 clientes satisfechos" se ocultan (el brief pide no usarlos).
 //
-// Uso: G=$(npm root -g) node scripts/grabar_camis11.mjs <carpeta-salida>
+// Uso: G=$(npm root -g) node scripts/camis11/grabar_camis11.mjs <carpeta-salida>
 // (usa el Playwright global y el Chromium de /opt/pw-browsers)
 import { createRequire } from "module";
 

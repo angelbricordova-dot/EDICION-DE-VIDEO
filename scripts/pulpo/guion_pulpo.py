@@ -5,13 +5,13 @@ reparten por caracteres dentro de cada tramo de voz, con los tramos marcados por
 pausas medidas (silencedetect / envolvente sobre public/pulpo/audio/voz.mp3).
 
 Uso:
-    python3 scripts/guion_pulpo.py
+    python3 scripts/pulpo/guion_pulpo.py
 """
 
 import json
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 DURACION = 10.6
 
 # Tramos de voz (inicio, fin, texto), separados por pausas reales.

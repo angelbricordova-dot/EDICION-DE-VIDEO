@@ -13,7 +13,7 @@ import guion60 from "./guion-web-60s.json";
 // Comercial "Tu Día en Tucacas" enfocado en presentar la página de reservas:
 // perfil → toque al enlace → la página → fechas → apartamento → WhatsApp.
 // Los tiempos (voz de Juana, cortes al pulso de la música) están en guion-web-*.json,
-// que genera scripts/guion_tucacas_web.py y también lee la mezcla de sonido.
+// que genera scripts/tucacas/guion_tucacas_web.py y también lee la mezcla de sonido.
 
 type Entrada = "corte" | "whip" | "flash" | "nada" | "circulo";
 

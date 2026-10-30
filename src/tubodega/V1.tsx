@@ -8,7 +8,7 @@ import { B, camara, cargarFuentes, Fondo, IconoWhatsApp, JAKARTA, Marca, pantall
 import guionJson from "./guion-v1.json";
 
 // V1 · Promo 30 s "Deja el cuaderno" (marketing/GUIONES.md). Tiempos en guion-v1.json
-// (scripts/guion_tubodega.py), anclados a la voz.
+// (scripts/tubodega/guion_tubodega.py), anclados a la voz.
 
 type Guion = { duracion: number; marcas: Record<string, number>; frases: Frase[] };
 export const GUION_V1 = guionJson as unknown as Guion;

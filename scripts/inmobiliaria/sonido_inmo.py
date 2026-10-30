@@ -5,7 +5,7 @@ en Remotion. Música de fondo (si el reel tiene pista en MUSICA) limpiada, nivel
 debajo de la voz (ducking según las palabras). Total −14 LUFS.
 
 Uso:
-    python3 scripts/sonido_inmo.py g6 prueba
+    python3 scripts/inmobiliaria/sonido_inmo.py g6 prueba
 """
 
 import json
@@ -16,11 +16,11 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import SR, Mezcla  # noqa: E402
 
-RAIZ = Path(__file__).resolve().parent.parent
-SFX = RAIZ / "public/tubodega/audio/sfx"
+RAIZ = Path(__file__).resolve().parents[2]
+SFX = RAIZ / "public/comun/sfx"
 
 
 def leer(ruta):
@@ -32,7 +32,7 @@ def db(x):
     return 10 ** (x / 20)
 
 
-# Pista de fondo por reel: (archivo en public/tiktok/musica, segundo de inicio).
+# Pista de fondo por reel: (archivo en public/inmobiliaria/musica, segundo de inicio).
 # g8 sin música: el cliente la pone en CapCut (antes: {"g8": ("thank-you-loop.mp3", 0.0)}).
 MUSICA = {}
 
@@ -131,7 +131,7 @@ def rms(x):
 
 def poner_musica(mz, voz, pal, archivo, desde):
     """Música debajo de la voz: unos −18 dB bajo la voz mientras habla, −9 dB en los huecos."""
-    m = leer_musica(RAIZ / "public/tiktok/musica" / archivo, desde, mz.dur)
+    m = leer_musica(RAIZ / "public/inmobiliaria/musica" / archivo, desde, mz.dur)
     m = m[:, : mz.n]
     habla = np.zeros(mz.n)
     for w in pal:
@@ -361,7 +361,7 @@ def main():
     efectos = ef
 
     mz = Mezcla(g["duracion"] + 0.25)
-    voz = leer(RAIZ / f"public/tiktok/{reel}/voz-{version}.wav")
+    voz = leer(RAIZ / f"public/inmobiliaria/{reel}/voz-{version}.wav")
     voz = voz / np.max(np.abs(voz))
     mz.bus[:, : len(voz)] += voz[: mz.n]
     if reel in MUSICA:
@@ -369,7 +369,7 @@ def main():
     for t, nombre, gain in efectos:
         x = leer(SFX / f"{nombre}.mp3")
         mz.poner(max(0, t), x / np.max(np.abs(x)), db(gain))
-    mz.masterizar(str(RAIZ / f"public/tiktok/{reel}/mezcla-{version}.wav"), -14.0, fundido=0.05)
+    mz.masterizar(str(RAIZ / f"public/inmobiliaria/{reel}/mezcla-{version}.wav"), -14.0, fundido=0.05)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 // Cierra o esconde los avisos de cookies. No se salta protecciones anti-robots: si una web
 // responde con un desafío, se anota y se piden las capturas al cliente.
 //
-// Uso: G=$(npm root -g) node scripts/capturas_webs_inmo.mjs <carpeta-salida> [nombre=url ...]
+// Uso: G=$(npm root -g) node scripts/inmobiliaria/capturas_webs_inmo.mjs <carpeta-salida> [nombre=url ...]
 import { createRequire } from "module";
 
 const require = createRequire(process.env.G + "/");

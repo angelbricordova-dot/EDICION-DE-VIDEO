@@ -27,7 +27,7 @@ const DESTINO = { x: 680, y: 990 };
 const COL = { x: 40, y0: 470, paso: 124 };
 const REVELA = { x: 650, y: 520 };
 
-// logo: archivo en public/tiktok/logos/ (los manda el cliente). cuadrado: icono de app; si no,
+// logo: archivo en public/inmobiliaria/logos/ (los manda el cliente). cuadrado: icono de app; si no,
 // es un logotipo horizontal que va sobre una tarjeta (blanca o del color de la marca). Sin logo se usa la etiqueta.
 type Marca = { nombre: string; fondo: string; texto: string; logo?: string; cuadrado?: boolean; ratio?: number; tarjeta?: string };
 const MARCAS: Record<string, Marca> = {
@@ -46,10 +46,10 @@ const Chip: React.FC<{ m: Marca; tam: number }> = ({ m, tam }) => {
     const alto = tam * 2.2;
     const sombra = `0 ${tam * 0.18}px ${tam * 0.4}px rgba(0,0,0,0.45)`;
     return m.cuadrado ? (
-      <Img src={staticFile(`tiktok/logos/${m.logo}`)} style={{ width: alto, height: alto, borderRadius: alto * 0.22, boxShadow: sombra, display: "block" }} />
+      <Img src={staticFile(`inmobiliaria/logos/${m.logo}`)} style={{ width: alto, height: alto, borderRadius: alto * 0.22, boxShadow: sombra, display: "block" }} />
     ) : (
       <div style={{ display: "inline-flex", alignItems: "center", height: alto, padding: `0 ${alto * 0.22}px`, borderRadius: alto * 0.22, background: m.tarjeta ?? "#fff", boxShadow: sombra }}>
-        <Img src={staticFile(`tiktok/logos/${m.logo}`)} style={{ height: alto * 0.62, display: "block" }} />
+        <Img src={staticFile(`inmobiliaria/logos/${m.logo}`)} style={{ height: alto * 0.62, display: "block" }} />
       </div>
     );
   }
@@ -182,7 +182,7 @@ export const Reel8: React.FC<PropsReel8> = ({ audio, version }) => {
 
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <Persona t={t} video="tiktok/g8/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
+      <Persona t={t} video="inmobiliaria/g8/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.35) 100%)" }} />
 
       {/* Título fijo (el hook); se va en el cierre. */}
@@ -261,7 +261,7 @@ export const Reel8: React.FC<PropsReel8> = ({ audio, version }) => {
         <div style={{ position: "absolute", left: 250, right: 30, top: 520, display: "flex", justifyContent: "center" }}>
           <Pop t={t} t0={filtro - 0.05}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
-              <Img src={staticFile("tiktok/logos/filtro.png")} style={{ width: 500, height: 500 * 274 / 518, borderRadius: 30, boxShadow: "0 18px 40px rgba(0,0,0,0.45)", display: "block" }} />
+              <Img src={staticFile("inmobiliaria/logos/filtro.png")} style={{ width: 500, height: 500 * 274 / 518, borderRadius: 30, boxShadow: "0 18px 40px rgba(0,0,0,0.45)", display: "block" }} />
               <span style={{ fontFamily: INTER, fontWeight: 800, fontSize: 30, color: "#fff", padding: "6px 22px", borderRadius: 999, background: "#1F5A36", boxShadow: "0 8px 20px rgba(0,0,0,0.35)" }}>mi comunidad</span>
             </div>
           </Pop>

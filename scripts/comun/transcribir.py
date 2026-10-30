@@ -4,7 +4,7 @@ Entorno: /home/user/tts/venv-asr (pip install faster-whisper) y el modelo
 large-v3-turbo en /home/user/tts/modelos/whisper-turbo (CTranslate2, MIT).
 
 Uso:
-    /home/user/tts/venv-asr/bin/python scripts/transcribir.py audio16k.wav salida.json \
+    /home/user/tts/venv-asr/bin/python scripts/comun/transcribir.py audio16k.wav salida.json \
         [--guion guion.txt]
 
 `--guion` pasa el texto esperado como pista de vocabulario (nombres, cifras). Se desactiva

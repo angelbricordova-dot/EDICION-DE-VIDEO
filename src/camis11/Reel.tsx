@@ -7,7 +7,7 @@ import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../tuc
 import guionJson from "./guion.json";
 
 // Reel Futbol Onze × Camis11 (brief-video-camis11.md): 30 s, 9:16, negro + rojo España + lima.
-// Escenas, montaje de la música y efectos en guion.json (scripts/guion_camis11.py).
+// Escenas, montaje de la música y efectos en guion.json (scripts/camis11/guion_camis11.py).
 
 type Escena = { id: string; desde: number; hasta: number; foto?: string; titulo?: string; color?: string };
 type Guion = { duracion: number; pulso: number; marcas: Record<string, number>; escenas: Escena[] };

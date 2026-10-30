@@ -6,8 +6,8 @@ Brief: `marketing/video/BRIEF.md` del repo `angelbricordova-dot/AUTORIZADORA-DE-
 ## Pasos
 
 ```bash
-scripts/traer_tucacas.sh                 # copia fotos, logo y grabaciones a public/tucacas (ignorado por git)
-python3 scripts/sonido_tucacas.py 30s public/tucacas/audio/mezcla-30s.wav
+scripts/tucacas/traer_tucacas.sh                 # copia fotos, logo y grabaciones a public/tucacas (ignorado por git)
+python3 scripts/tucacas/sonido_tucacas.py 30s public/tucacas/audio/mezcla-30s.wav
 ffmpeg -y -i public/tucacas/audio/mezcla-30s.wav -b:a 192k public/tucacas/audio/mezcla-30s.mp3
 npx remotion render Tucacas30s out/tudia-30s-vertical.mp4
 npx remotion still TucacasPortada out/tudia-portada.png
@@ -24,7 +24,7 @@ Igual para `60s`. Los tiempos de cada plano, rótulo, frase y efecto están en
 - **TikTok:** no aparece (pendiente en el brief).
 - **Audio:** música (ElevenLabs Music con un plan de secciones) y los 11 efectos del brief,
   generados en `public/tucacas/audio/el/` (ignorado por git). Mezcla:
-  `python3 scripts/sonido_tucacas.py 30s salida.wav --musica public/tucacas/audio/el/musica-plan-30s.mp3 --efectos public/tucacas/audio/el --voz voz-30s.mp3`
+  `python3 scripts/tucacas/sonido_tucacas.py 30s salida.wav --musica public/tucacas/audio/el/musica-plan-30s.mp3 --efectos public/tucacas/audio/el --voz voz-30s.mp3`
   agacha la música a −18 dB debajo de la voz (−10 dB donde no hay voz), efectos a −14 dB,
   total −14 LUFS. Sin `--musica`/`--efectos` usa los sintetizados.
 - **Voces candidatas** (Voice Library, acento venezolano, Eleven v3): Andrea
@@ -41,7 +41,7 @@ enlace de la bio → la página se abre → fechas en el calendario → el apart
   `src/tucacas/web/locucion-*.json`; tiempos por frase en `voz-*.json`.
 - **Música:** `public/tucacas/audio/el/musica-web-*.mp3` (tropical house, 112 BPM). El pulso
   (`web/pulso.json`) se usa para que los cortes caigan en el tiempo.
-- **Guion:** `python3 scripts/guion_tucacas_web.py` genera `web/guion-web-*.json` (planos,
+- **Guion:** `python3 scripts/tucacas/guion_tucacas_web.py` genera `web/guion-web-*.json` (planos,
   cámara del teléfono, toques, textos y efectos) anclado a la voz y al pulso.
 - **Pantallas del teléfono** (`web/pantallas.tsx`): perfil social genérico, navegador con las
   grabaciones de la página y chat de WhatsApp dibujado. El mensaje usa el mismo formato que
@@ -52,7 +52,7 @@ enlace de la bio → la página se abre → fechas en el calendario → el apart
   (el recorrido de 464×848 lleva además `unsharp=5:5:0.8`).
 
 ```bash
-python3 scripts/guion_tucacas_web.py
+python3 scripts/tucacas/guion_tucacas_web.py
 cd scripts && python3 sonido_tucacas.py 60s ../public/tucacas/audio/mezcla-web-60s.wav \
   --guion ../src/tucacas/web/guion-web-60s.json --voz ../public/tucacas/voz/juana-60s.mp3 \
   --musica ../public/tucacas/audio/el/musica-web-60s.mp3 --efectos ../public/tucacas/audio/el

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Sound check: waveform with every timeline beat drawn on top, plus loudness.
 //
-//   node scripts/wave.mjs                 public/sfx.wav → out/wave.png
-//   node scripts/wave.mjs out/effort.mp4  measure the final mux instead
+//   node scripts/comun/wave.mjs                 public/sfx.wav → out/wave.png
+//   node scripts/comun/wave.mjs out/effort.mp4  measure the final mux instead
 //   --timeline other.json                 beats from another timeline (default timeline.json)
 //
 // Every hit in the waveform should sit on (or a hair after) a beat line.
@@ -11,7 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const argv = process.argv.slice(2);
 const ti = argv.indexOf('--timeline');
 const timelinePath = path.resolve(ti === -1 ? path.join(ROOT, 'timeline.json') : argv.splice(ti, 2)[1]);

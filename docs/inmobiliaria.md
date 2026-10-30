@@ -3,7 +3,7 @@
 Videos verticales de un inversor inmobiliario en España que habla a cámara (teleprompter,
 pizarra, sofá, "lateral"). Guiones en el Google Doc del cliente (19 guiones con HOOK 1 /
 HOOK 2 / CUERPO / CTA "comenta GUÍA / INVERTIR / FILTRO / BANCO / PRECIO / CALCULADORA").
-Material en `public/referencias-tiktok/` (ignorado por git).
+Material en `public/inmobiliaria/referencias/` (ignorado por git).
 
 ## Referencias analizadas
 
@@ -74,15 +74,15 @@ libertad creativa, sin fondos rojos repetidos y **sin tapar los ojos** con las a
 
 **Cortes naturales:** las tomas que él dijo seguidas no se parten. Solo se quitan tomas
 falsas y repeticiones, y las pausas > 0,32 s se acortan dejando ~0,2 s
-(`scripts/corte_inmo.py`). Tiempos por palabra: Whisper (`scripts/transcribir.py`) +
-alineación forzada (`scripts/alinear.py`), porque los tiempos de Whisper se desvían hasta 0,4 s.
+(`scripts/inmobiliaria/corte_inmo.py`). Tiempos por palabra: Whisper (`scripts/comun/transcribir.py`) +
+alineación forzada (`scripts/comun/alinear.py`), porque los tiempos de Whisper se desvían hasta 0,4 s.
 
 ## Comandos (reel 6)
 
 ```bash
-/home/user/tts/venv-asr/bin/python scripts/transcribir.py public/tiktok/g6/audio16k.wav public/tiktok/g6/transcripcion.json --guion public/tiktok/g6/guion.txt
-/home/user/tts/venv/bin/python scripts/alinear.py public/tiktok/g6/audio16k.wav public/tiktok/g6/palabras.json public/tiktok/g6/palabras-alineadas.json
-python3 scripts/corte_inmo.py g6 hook1 && python3 scripts/sonido_inmo.py g6 hook1
+/home/user/tts/venv-asr/bin/python scripts/comun/transcribir.py public/inmobiliaria/g6/audio16k.wav public/inmobiliaria/g6/transcripcion.json --guion public/inmobiliaria/g6/guion.txt
+/home/user/tts/venv/bin/python scripts/comun/alinear.py public/inmobiliaria/g6/audio16k.wav public/inmobiliaria/g6/palabras.json public/inmobiliaria/g6/palabras-alineadas.json
+python3 scripts/inmobiliaria/corte_inmo.py g6 hook1 && python3 scripts/inmobiliaria/sonido_inmo.py g6 hook1
 npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
 ```
 
@@ -91,14 +91,14 @@ npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
 - **Zoom suave y progresivo** (pedido en el reel 9, se usa desde entonces): cada frase arranca
   un acercamiento de ~0,9 s con ease-in-out desde donde iba el anterior, y dentro de la frase
   sigue avanzando muy poco; nada de punch-ins de 4 cuadros.
-- **Reel 8** (ranking): logos reales de cada portal en `public/tiktok/logos/` (los manda el
+- **Reel 8** (ranking): logos reales de cada portal en `public/inmobiliaria/logos/` (los manda el
   cliente) que aparecen al nombrarlos y vuelan a su puesto; El Filtro Inmobiliario es la
   comunidad del cliente (logo propio).
 - **Reel 10** (pizarra, bruto vertical): con zoom 1 se ve el cuadro entero; el foco del zoom
   va cerca de él para que no se salga. Lo escrito en la pizarra se marca con círculos de
   rotulador pegados al video (las mismas coordenadas que usa `Persona`).
 - **Música:** Angel prefiere ponerla él en CapCut; las mezclas van solo con voz y efectos
-  (`MUSICA` vacío en `scripts/sonido_inmo.py`).
+  (`MUSICA` vacío en `scripts/inmobiliaria/sonido_inmo.py`).
 
 ## Reels 12–19 (lote del 29/10)
 
@@ -106,19 +106,19 @@ npx remotion render Inmo6Hook1 out/inmo6-hook1.mp4 --browser-executable=...
   trabajo (1440 × 2560, crf 18) y **borra el bruto** (son de 1–2 GB y el disco es justo). Si un
   reel trae dos archivos, se unen en uno (audio y copia).
 - **Ranking (12)**: como el 8, con 8 puestos. Logos de bancos de Wikimedia Commons y de la web del
-  banco (ING); `public/tiktok/logos/banco-*.png`.
+  banco (ING); `public/inmobiliaria/logos/banco-*.png`.
 - **Plantilla** (`src/inmobiliaria/Plantilla.tsx`, reels 13, 15, 17, 18, 19): título = hook, lista
   numerada, y eventos anclados a palabras: píldora, texto grande, web en un móvil, web a pantalla
   completa (voz en off), etiqueta de precio (compacta, en una fila, para no tapar la cara), pasos,
   imagen (logo) y cuenta atrás. Los efectos de sonido de estos reels están en `SECUENCIAS`
-  (`scripts/sonido_inmo.py`).
+  (`scripts/inmobiliaria/sonido_inmo.py`).
 - **Sofá** (`src/inmobiliaria/Sofa.tsx`, reels 14 y 16): las dos mitades se grabaron por separado
   con la cámara quieta (camiseta blanca a la izquierda, negra a la derecha). Se unen en un plano con
   una costura suave en el centro; mientras uno habla, la otra mitad pone un tramo de esa persona en
-  silencio (`rellenos_sofa` en `scripts/corte_inmo.py`). El zoom va despacio hacia el que habla.
-- **Capturas de webs** (`scripts/capturas_webs_inmo.mjs` y búsquedas ordenadas por precio):
+  silencio (`rellenos_sofa` en `scripts/inmobiliaria/corte_inmo.py`). El zoom va despacio hacia el que habla.
+- **Capturas de webs** (`scripts/inmobiliaria/capturas_webs_inmo.mjs` y búsquedas ordenadas por precio):
   Solvia, Servihabitat (Murcia, "Precio Menor"), Aliseda (Jaén), resultados del portal de subastas
-  del BOE (Madrid), Seguridad Social, Escrapalia, Oportunalia, Anticipa → `public/tiktok/webs/`.
+  del BOE (Madrid), Seguridad Social, Escrapalia, Oportunalia, Anticipa → `public/inmobiliaria/webs/`.
   No se saltan protecciones anti-robots (Eurocaja Rural la tiene: su logo salió de Commons).
 - Compresión para enviar: `-crf 22 -maxrate 2.7M` (con 3M los reels de más de 75 s pasaban de 29 MB).
 

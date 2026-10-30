@@ -2,7 +2,7 @@
 // portada completa, ficha de producto con talla/nombre/número y carrito con el código.
 // Oculta precios, insignias de oferta y "+1.000 clientes satisfechos" (el brief pide no usarlos).
 //
-// Uso: G=$(npm root -g) node scripts/capturas_camis11.mjs <carpeta-salida>
+// Uso: G=$(npm root -g) node scripts/camis11/capturas_camis11.mjs <carpeta-salida>
 import { createRequire } from "module";
 
 const require = createRequire(process.env.G + "/");

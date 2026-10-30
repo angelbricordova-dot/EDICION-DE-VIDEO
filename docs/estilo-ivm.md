@@ -64,13 +64,13 @@ Primera prueba del explicador ilustrado: "Compara el nombre antes de liberar" (2
 - `piezas.tsx`: tarjetas, cabeceras (banco / orden), chat, avatar, casillas de letras, botones.
 - `Explicador.tsx`: las 6 escenas sobre una "mesa" y la cámara que viaja entre ellas con
   desenfoque de movimiento.
-- Sonido: `python3 scripts/sonido_ivm.py ivm.wav` y luego
+- Sonido: `python3 scripts/ivm/sonido_ivm.py ivm.wav` y luego
   `ffmpeg -y -i ivm.wav -b:a 192k public/audio/ivm-explicador.mp3`.
 - Render: `npm run render:ivm`. Los subtítulos se quitan con `--props='{"subtitulos":false}'`.
 
 ## Voz en off con ElevenLabs
 
-`scripts/voz_elevenlabs.py` convierte el `guion` de un `timeline.json` en voz y guarda en
+`scripts/comun/voz_elevenlabs.py` convierte el `guion` de un `timeline.json` en voz y guarda en
 `voz.json` (junto al timeline) cuándo empieza y termina cada frase, para sincronizar los visuales.
 
 Requisitos del entorno (configuración del entorno en la nube, no en el código):
@@ -79,6 +79,6 @@ Requisitos del entorno (configuración del entorno en la nube, no en el código)
 - Opcional: `ELEVENLABS_VOICE_ID` con la voz por defecto.
 
 ```bash
-python3 scripts/voz_elevenlabs.py --listar-voces
-python3 scripts/voz_elevenlabs.py src/ivm/timeline.json --voz <voice_id> --salida public/audio/ivm-voz.mp3
+python3 scripts/comun/voz_elevenlabs.py --listar-voces
+python3 scripts/comun/voz_elevenlabs.py src/ivm/timeline.json --voz <voice_id> --salida public/audio/ivm-voz.mp3
 ```

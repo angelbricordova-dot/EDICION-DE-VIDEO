@@ -9,8 +9,8 @@ Mezcla del brief: música a −10 dB donde no hay voz y −18 dB debajo de la vo
 efectos a −14 dB y loudness final −14 LUFS.
 
 Uso:
-    python3 scripts/sonido_tucacas.py 30s public/tucacas/audio/mezcla-30s.wav
-    python3 scripts/sonido_tucacas.py 60s salida.wav --voz voz-60s.mp3
+    python3 scripts/tucacas/sonido_tucacas.py 30s public/tucacas/audio/mezcla-30s.wav
+    python3 scripts/tucacas/sonido_tucacas.py 60s salida.wav --voz voz-60s.mp3
 """
 
 import argparse
@@ -21,9 +21,11 @@ from pathlib import Path
 
 import numpy as np
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import SR, Mezcla, chime, click, filtro_banda, rng, t_, whoosh
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 
 
 def hz(nota):

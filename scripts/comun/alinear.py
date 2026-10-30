@@ -8,7 +8,7 @@ y `torchaudio.functional.forced_align`, por bloques separados por pausas.
 Entorno: /home/user/tts/venv (torch + torchaudio 2.7 + transformers).
 
 Uso:
-    /home/user/tts/venv/bin/python scripts/alinear.py audio16k.wav palabras.json salida.json
+    /home/user/tts/venv/bin/python scripts/comun/alinear.py audio16k.wav palabras.json salida.json
 """
 
 import json

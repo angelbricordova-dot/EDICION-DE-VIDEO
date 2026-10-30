@@ -133,7 +133,7 @@ export const Reel3: React.FC<PropsReel3> = ({ audio, version }) => {
 
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <Persona t={t} video="tiktok/g3/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} />
+      <Persona t={t} video="inmobiliaria/g3/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.35) 100%)" }} />
 
       {/* Título fijo (el hook) y la lista 1-5; se van en el cierre. */}

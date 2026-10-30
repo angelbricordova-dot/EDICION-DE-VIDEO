@@ -81,7 +81,7 @@ Write a function in `sfx/synth.py` that returns a list of floats at `SR`. Put wh
 npm run sfx                              # or python3 -m sfx sfx/cues/<video>.py
 npm run wave                             # out/wave.png + loudness of the WAV
 npm run build
-node scripts/wave.mjs out/effort.mp4     # loudness of what you'll actually post
+node scripts/comun/wave.mjs out/effort.mp4     # loudness of what you'll actually post
 ```
 
 In `out/wave.png` every coral line is a timeline beat. Each transient should sit on a line or a hair after it. A hit between lines means a hardcoded time or a stale WAV. Pass `--timeline` for a video with its own timeline file.

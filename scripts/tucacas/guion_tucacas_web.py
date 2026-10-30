@@ -2,16 +2,16 @@
 
 Todo se ancla a la voz (voz-<v>.json, tiempos por frase de ElevenLabs) y los cortes
 caen en el pulso de la música (pulso.json). Los mismos JSON los leen Remotion
-(visuales) y scripts/sonido_tucacas.py (mezcla).
+(visuales) y scripts/tucacas/sonido_tucacas.py (mezcla).
 
 Uso:
-    python3 scripts/guion_tucacas_web.py
+    python3 scripts/tucacas/guion_tucacas_web.py
 """
 
 import json
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 WEB = RAIZ / "src/tucacas/web"
 
 # Puntos de la pantalla del teléfono (coordenadas de 1080 × 1920).

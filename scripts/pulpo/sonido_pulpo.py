@@ -4,8 +4,8 @@ Música a −16 dB bajo la voz y −9 dB donde no hay voz (en la limpia, −9 dB
 con una bajada en la pausa dramática. Efectos a −12 dB. Total −14 LUFS.
 
 Uso:
-    python3 scripts/sonido_pulpo.py public/pulpo/audio/mezcla.wav
-    python3 scripts/sonido_pulpo.py public/pulpo/audio/mezcla-limpia.wav --limpia
+    python3 scripts/pulpo/sonido_pulpo.py public/pulpo/audio/mezcla.wav
+    python3 scripts/pulpo/sonido_pulpo.py public/pulpo/audio/mezcla-limpia.wav --limpia
 """
 
 import argparse
@@ -16,10 +16,10 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import SR, Mezcla  # noqa: E402
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 A = RAIZ / "public/pulpo/audio"
 
 

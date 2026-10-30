@@ -14,7 +14,7 @@ let fuentes = false;
 export const cargarFuentes = () => {
   if (fuentes) return;
   fuentes = true;
-  for (const w of [700, 800, 900]) loadFont({ family: "Inter", url: staticFile(`tiktok/fuentes/inter-${w}.woff2`), weight: String(w) });
+  for (const w of [700, 800, 900]) loadFont({ family: "Inter", url: staticFile(`inmobiliaria/fuentes/inter-${w}.woff2`), weight: String(w) });
 };
 
 export type Corte = { src: number; dur: number; out: number };

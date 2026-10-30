@@ -255,7 +255,7 @@ export const Reel10: React.FC<PropsReel10> = ({ audio, version }) => {
 
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <Persona t={t} video="tiktok/g10/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={FOCO} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
+      <Persona t={t} video="inmobiliaria/g10/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={FOCO} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 28%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.3) 100%)" }} />
 
       {/* Círculos de rotulador sobre lo escrito en la pizarra, cuando lo dice. */}

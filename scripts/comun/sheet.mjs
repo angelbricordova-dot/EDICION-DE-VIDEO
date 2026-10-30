@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // Contact sheets for the visual review loop.
 //
-//   node scripts/sheet.mjs                     every beat in timeline.json, settled (+0.3s)
-//   node scripts/sheet.mjs 2.3 4.5 6.9         exact timestamps
-//   node scripts/sheet.mjs --every 1           one frame per second
-//   node scripts/sheet.mjs --from 3 --to 5 --every 0.2   scrub a transition
+//   node scripts/comun/sheet.mjs                     every beat in timeline.json, settled (+0.3s)
+//   node scripts/comun/sheet.mjs 2.3 4.5 6.9         exact timestamps
+//   node scripts/comun/sheet.mjs --every 1           one frame per second
+//   node scripts/comun/sheet.mjs --from 3 --to 5 --every 0.2   scrub a transition
 //
 // Options: --video out/draft.mp4 (default: newest of out/draft.mp4, out/effort.mp4)
 //          --timeline timeline.json  --offset 0.3  --cols 4  --rows 2  --size 540  --name beats
@@ -13,7 +13,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const argv = process.argv.slice(2);
 const opt = (name, fallback) => {
   const i = argv.indexOf(`--${name}`);

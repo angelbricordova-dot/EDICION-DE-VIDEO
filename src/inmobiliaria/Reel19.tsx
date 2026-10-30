@@ -9,7 +9,7 @@ import hook2 from "./g19-hook2.json";
 export const G19: Record<"hook1" | "hook2", CorteReel> = { hook1: hook1 as CorteReel, hook2: hook2 as CorteReel };
 
 export const Reel19 = crearReel({
-  video: "tiktok/g19/proxy.mp4",
+  video: "inmobiliaria/g19/proxy.mp4",
   cara: { x: 760, y: 1150 },
   versiones: G19,
   titulos: {

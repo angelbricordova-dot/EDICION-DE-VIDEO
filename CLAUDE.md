@@ -38,7 +38,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 - Las fotos **llenan toda la pantalla** (sin franjas desenfocadas arriba/abajo). Si la
   foto es más ancha que 9:16, se recorre con un paneo lento para verla completa.
 - En collages/tarjetas, la foto va completa (sin recortar), con el marco en su proporción.
-- Las fotos de producto con fondo liso se recortan (`scripts/recortar_camisetas.py`) para
+- Las fotos de producto con fondo liso se recortan (`scripts/camis11/recortar_camisetas.py`) para
   que floten con sombra.
 - Usar las imágenes en alta resolución (si una se ve pixelada, buscar otra).
 
@@ -84,21 +84,41 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | TuBodega (app de punto de venta) | `src/tubodega/` | `docs/tubodega.md` | verde #2F9E6E, Plus Jakarta Sans, teléfono con pantallas reales y zooms, voz Richard |
 | Reels inmobiliarios (inversor, España) | `src/inmobiliaria/` | `docs/inmobiliaria.md` | persona a cámara, título fijo + lista 1-2-3, subtítulos Inter blancos, cortes naturales, voz real del cliente; plantilla de eventos (`Plantilla.tsx`) y formato sofá de dos mitades (`Sofa.tsx`) |
 
-Cada estilo vive en su carpeta: un video nuevo de otro tipo va en su propia carpeta
-`src/<proyecto>/` con su paleta y fuentes, sin mezclar con los anteriores.
+### Separación por cliente (obligatoria)
+
+Cada cliente o proyecto vive aislado en las mismas cinco carpetas, con el mismo nombre corto
+(`<proyecto>` en minúsculas, sin tildes):
+
+| Qué | Dónde |
+|---|---|
+| Código Remotion (escenas, paleta, fuentes, JSON de tiempos) | `src/<proyecto>/` |
+| Registro de sus composiciones (sale en su carpeta de Remotion Studio) | `src/<proyecto>/Composiciones.tsx` → una línea en `src/Root.tsx` |
+| Scripts propios (guion, corte, sonido, capturas) | `scripts/<proyecto>/` |
+| Material del cliente y medios generados (ignorado por git) | `public/<proyecto>/` |
+| Renders y copias para enviar (ignorado por git) | `out/<proyecto>/` (`out/<proyecto>/enviar/` lo que se manda) |
+| Guía de estilo, decisiones y pendientes | `docs/<proyecto>.md` + su fila en la tabla de arriba |
+
+- Lo compartido va en `scripts/comun/` (`sintesis.py` mezcla y masterizado, `transcribir.py`,
+  `alinear.py`, `voz_elevenlabs.py`, `sheet.mjs`, `wave.mjs`) y `public/comun/` (efectos de
+  sonido `sfx/`). Un script de proyecto importa lo común con
+  `sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))` y calcula la raíz
+  del repo con `Path(__file__).resolve().parents[2]`.
+- Un proyecto **no importa** código ni material de otro proyecto. Si una pieza sirve a varios,
+  se copia o se mueve a lo común; nunca se toma de la carpeta de otro cliente.
+- Paleta, fuentes, voces y reglas de un cliente no se aplican a otro salvo que Angel lo pida.
 
 ## 4. Flujo de trabajo (el que funcionó)
 
 1. Leer el brief; listar lo que falta y preguntar. Decidir gancho/estructura.
 2. **Voz** con ElevenLabs (§5): 3–4 muestras → Angel elige → locución completa con tiempos.
-3. **Guion de tiempos** en JSON generado por un script Python (`scripts/guion_*.py`):
+3. **Guion de tiempos** en JSON generado por un script Python (`scripts/<proyecto>/guion_*.py`):
    escenas ancladas a las marcas de la voz y cortes al pulso de la música. Remotion y la
    mezcla leen el mismo JSON.
 4. **Música** (ElevenLabs Music con `composition_plan`) → medir BPM/fase y energía; si los
    drops no caen donde deben, montar la pista por tramos en la mezcla.
 5. Construir escenas en Remotion; renderizar borrador a escala 0.5 y revisar **hojas de
    contacto** (ffmpeg `tile`) y cuadros sueltos antes de entregar (skill `review-loop`).
-6. **Mezcla** con numpy (`scripts/sintesis.py` → `Mezcla`, `masterizar` a −14 LUFS).
+6. **Mezcla** con numpy (`scripts/comun/sintesis.py` → `Mezcla`, `masterizar` a −14 LUFS).
 7. Render final, copia comprimida < 30 MB, enviar, commit del código (no de los medios).
 
 ## 5. Notas técnicas del entorno
@@ -112,7 +132,7 @@ Cada estilo vive en su carpeta: un video nuevo de otro tipo va en su propia carp
   `public/<proyecto>/fuentes/`; cargarlas con `@remotion/fonts` solo en esa composición.
 - **ElevenLabs**: la clave va como *secreto de red* del entorno (cabecera `xi-api-key`
   para `api.elevenlabs.io`), nunca en el código. Endpoints usados:
-  - TTS con tiempos: `scripts/voz_elevenlabs.py` (`--voz`, `--modelo eleven_v3|eleven_multilingual_v2`,
+  - TTS con tiempos: `scripts/comun/voz_elevenlabs.py` (`--voz`, `--modelo eleven_v3|eleven_multilingual_v2`,
     `--prefijo "[cálida, sonriendo]"` para v3, `--tiempos`). Campo `pantalla` en la
     locución para escribir distinto de lo que se pronuncia (p. ej. "Camis Once" → CAMIS11).
   - Voces compartidas: `/v1/shared-voices?gender=…&language=es&accent=…` (sirven directo en TTS).
@@ -121,7 +141,7 @@ Cada estilo vive en su carpeta: un video nuevo de otro tipo va en su propia carp
 - Ajustar duración de la voz: `ffmpeg -af atempo=1.045` y dividir los tiempos entre 1.045.
 - Marcas de palabras: `ffmpeg -af silencedetect=noise=-36dB:d=0.07` sobre la voz.
 - Pulso de la música: flujo espectral + autocorrelación (ver `scripts/` / guía del proyecto).
-- Capturas web: Playwright global (`G=$(npm root -g) node scripts/capturas_camis11.mjs`),
+- Capturas web: Playwright global (`G=$(npm root -g) node scripts/camis11/capturas_camis11.mjs`),
   vista de celular 432×936 ×2.5; ocultar precios con CSS. La grabación de video vía proxy
   sale en blanco: mejor capturas y animarlas en Remotion.
 - Enviar archivos: límite 30 MB →

@@ -230,7 +230,7 @@ export const Reel9: React.FC<PropsReel9> = ({ audio, version }) => {
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <AbsoluteFill style={{ filter: enIntro ? "grayscale(1) contrast(1.15) brightness(0.92)" : undefined }}>
-        <Persona t={t} video="tiktok/g9/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
+        <Persona t={t} video="inmobiliaria/g9/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
       </AbsoluteFill>
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.35) 100%)" }} />
 

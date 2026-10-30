@@ -149,7 +149,7 @@ export const Reel6: React.FC<PropsReel6> = ({ audio, version }) => {
 
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <Persona t={t} video="tiktok/g6/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} />
+      <Persona t={t} video="inmobiliaria/g6/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} />
       {/* Viñeta suave arriba y abajo para que el título y los subtítulos se lean. */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.35) 100%)" }} />
       {/* "Por la noche": la imagen se oscurece y se enfría un momento. */}

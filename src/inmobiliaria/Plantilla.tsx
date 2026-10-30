@@ -13,7 +13,7 @@ import { Banco, Calendario, Edificio, Mazo } from "./iconos";
 //   - píldoras con objeto (una a la vez),
 //   - texto grande 3D,
 //   - tarjeta de web: un móvil con la captura de la página que se desliza (las capturas están en
-//     public/tiktok/webs/, hechas con scripts/capturas_webs_inmo.mjs),
+//     public/inmobiliaria/webs/, hechas con scripts/inmobiliaria/capturas_webs_inmo.mjs),
 //   - etiqueta de precio (sitio + precio),
 //   - pasos 1 → 2 → 3,
 //   - CTA con la caja de comentario.
@@ -209,7 +209,7 @@ const Web: React.FC<{ t: number; t0: number; t1: number; img: string; dominio: s
             {dominio}
           </div>
         </div>
-        <Img src={staticFile(`tiktok/webs/${img}`)} style={{ width: "100%", display: "block", translate: `0 ${-scroll}px` }} />
+        <Img src={staticFile(`inmobiliaria/webs/${img}`)} style={{ width: "100%", display: "block", translate: `0 ${-scroll}px` }} />
       </div>
     </div>
   );
@@ -379,7 +379,7 @@ export const crearReel = (C: ConfigPlantilla) => {
                   </div>
                 </div>
                 <div style={{ position: "absolute", top: 150, left: 0, right: 0, bottom: 0, overflow: "hidden" }}>
-                  <Img src={staticFile(`tiktok/webs/${e.img}`)} style={{ width: 1080, display: "block", translate: `0 ${-baja}px` }} />
+                  <Img src={staticFile(`inmobiliaria/webs/${e.img}`)} style={{ width: 1080, display: "block", translate: `0 ${-baja}px` }} />
                 </div>
                 <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%)" }} />
               </AbsoluteFill>

@@ -26,7 +26,7 @@ const COL = { x: 34, y0: 450, paso: 112 };
 const REVELA = { x: 650, y: 520 };
 const MAX_ANCHO = 330; // en la columna, para no acercarse a la cara
 
-// Logos en public/tiktok/logos/ (Wikimedia Commons y web de ING): logotipos horizontales sobre
+// Logos en public/inmobiliaria/logos/ (Wikimedia Commons y web de ING): logotipos horizontales sobre
 // una tarjeta (blanca o del color del banco).
 type Marca = { logo: string; ratio: number; tarjeta?: string; escala?: number };
 const MARCAS: Record<string, Marca> = {
@@ -52,7 +52,7 @@ const Chip: React.FC<{ m: Marca; tam: number; maxAncho?: number }> = ({ m, tam, 
   const { alto, h } = medidas(m, tam, maxAncho);
   return (
     <div style={{ display: "inline-flex", alignItems: "center", height: alto, padding: `0 ${alto * 0.22}px`, borderRadius: alto * 0.22, background: m.tarjeta ?? "#fff", boxShadow: `0 ${tam * 0.18}px ${tam * 0.4}px rgba(0,0,0,0.45)` }}>
-      <Img src={staticFile(`tiktok/logos/${m.logo}`)} style={{ height: h, display: "block" }} />
+      <Img src={staticFile(`inmobiliaria/logos/${m.logo}`)} style={{ height: h, display: "block" }} />
     </div>
   );
 };
@@ -196,7 +196,7 @@ export const Reel12: React.FC<PropsReel12> = ({ audio, version }) => {
 
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <Persona t={t} video="tiktok/g12/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
+      <Persona t={t} video="inmobiliaria/g12/proxy.mp4" cortes={cortes} zoom={(tt) => zoom(tt)} cara={CARA} destino={DESTINO} altoBruto={2560} anchoBruto={1440} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.35) 100%)" }} />
 
       {/* Título fijo (el hook); se va en el cierre. */}

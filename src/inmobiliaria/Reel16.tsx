@@ -7,7 +7,7 @@ import sofa from "./g16-sofa.json";
 export const G16: Record<"sofa", CorteSofaReel> = { sofa: sofa as unknown as CorteSofaReel };
 
 export const Reel16 = crearSofa({
-  video: "tiktok/g16/proxy.mp4",
+  video: "inmobiliaria/g16/proxy.mp4",
   versiones: G16,
   titulo: { linea1: "Rico vs pobre", linea2: "¿Qué haces con tu dinero?", en2: "euro." },
   etiquetas: { izq: { texto: "RICO", color: "#22B53A", en: "botella" }, der: { texto: "POBRE", color: "#E3141F" } },

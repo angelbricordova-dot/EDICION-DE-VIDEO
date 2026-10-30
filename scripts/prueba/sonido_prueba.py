@@ -6,16 +6,17 @@ la posición en pantalla, una sola subida que termina en el golpe, un solo
 impacto y masterizado a -14 LUFS.
 
 Uso:
-    python3 scripts/sonido_prueba.py public/audio/prueba.wav
+    python3 scripts/prueba/sonido_prueba.py public/audio/prueba.wav
 """
 
 import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import Mezcla, blip, chime, click, impacto, pop, riser, whoosh
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 TL = json.loads((RAIZ / "src/prueba/timeline.json").read_text())
 
 # Do mayor (Hz)

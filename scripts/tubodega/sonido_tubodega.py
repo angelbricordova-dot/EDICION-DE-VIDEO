@@ -4,7 +4,7 @@ La música sube en el cierre (desde la marca s7) y termina en seco. Efectos de �
 por debajo de la voz. Total −14 LUFS.
 
 Uso:
-    python3 scripts/sonido_tubodega.py v1 public/tubodega/audio/mezcla-v1.wav
+    python3 scripts/tubodega/sonido_tubodega.py v1 public/tubodega/audio/mezcla-v1.wav
 """
 
 import json
@@ -14,10 +14,10 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import SR, Mezcla  # noqa: E402
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 A = RAIZ / "public/tubodega/audio"
 MUSICA = {"v1": "musica-promo.mp3"}
 

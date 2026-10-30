@@ -4,7 +4,7 @@ Lee src/camis11/guion.json. Música a −13 dB debajo de la voz y −7 dB donde 
 efectos a −12 dB, total −14 LUFS (Instagram).
 
 Uso:
-    python3 scripts/sonido_camis11.py public/camis11/audio/mezcla.wav
+    python3 scripts/camis11/sonido_camis11.py public/camis11/audio/mezcla.wav
 """
 
 import json
@@ -14,10 +14,10 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import SR, Mezcla  # noqa: E402
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 A = RAIZ / "public/camis11/audio"
 
 

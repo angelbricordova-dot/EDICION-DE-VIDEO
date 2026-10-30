@@ -2,16 +2,16 @@
 
 Todo se ancla a la voz de Alejandro (src/camis11/voz.json + pausas medidas) y al pulso
 de la música (129,2 BPM). La misma lista la leen Remotion (visuales) y
-scripts/sonido_camis11.py (mezcla).
+scripts/camis11/sonido_camis11.py (mezcla).
 
 Uso:
-    python3 scripts/guion_camis11.py
+    python3 scripts/camis11/guion_camis11.py
 """
 
 import json
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 DIR = RAIZ / "src/camis11"
 DURACION = 30.0
 

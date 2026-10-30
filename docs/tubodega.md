@@ -13,11 +13,11 @@ reales de la app. Copiados a `public/tubodega/` (ignorado por git). Código en `
 ## V1 · Promo 30 s
 
 ```bash
-python3 scripts/voz_elevenlabs.py src/tubodega/locucion-v1.json --voz <id> --modelo eleven_multilingual_v2 \
+python3 scripts/comun/voz_elevenlabs.py src/tubodega/locucion-v1.json --voz <id> --modelo eleven_multilingual_v2 \
   --estabilidad 0.4 --similitud 0.8 --estilo 0.25 --salida public/tubodega/voz/v1-<voz>.mp3 --tiempos src/tubodega/voz-v1.json
 ffmpeg -y -i public/tubodega/voz/v1-<voz>.mp3 -af atempo=1.06 public/tubodega/voz/v1.mp3   # y dividir tiempos /1.06
-python3 scripts/guion_tubodega.py            # marcas de la voz → src/tubodega/guion-v1.json
-python3 scripts/sonido_tubodega.py v1 public/tubodega/audio/mezcla-v1.wav
+python3 scripts/tubodega/guion_tubodega.py            # marcas de la voz → src/tubodega/guion-v1.json
+python3 scripts/tubodega/sonido_tubodega.py v1 public/tubodega/audio/mezcla-v1.wav
 npx remotion render TuBodegaV1 out/tubodega-promo-30s.mp4 --props='{"audio":"tubodega/audio/mezcla-v1.mp3","whatsapp":"0414-…"}'
 npx remotion still TuBodegaV1Portada out/tubodega-promo-30s-portada.jpg --image-format=jpeg
 ```

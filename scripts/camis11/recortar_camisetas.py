@@ -6,7 +6,7 @@ recortado a la camiseta. Las perchas y etiquetas que no son del color del fondo
 se quedan; para esas fotos conviene revisar el resultado.
 
 Uso:
-    python3 scripts/recortar_camisetas.py public/camis11/productos public/camis11/recortes
+    python3 scripts/camis11/recortar_camisetas.py public/camis11/productos public/camis11/recortes
 """
 
 import sys

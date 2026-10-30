@@ -4,7 +4,7 @@ Todo se sintetiza desde cero (sin samples): música lo-fi con toques chiptune
 y efectos de sonido sincronizados con las escenas de src/cambio/Cambio.tsx.
 
 Uso:
-    python3 scripts/generar_banda_sonora.py public/audio/banda-sonora.wav
+    python3 scripts/comun/generar_banda_sonora.py public/audio/banda-sonora.wav
 """
 
 import sys

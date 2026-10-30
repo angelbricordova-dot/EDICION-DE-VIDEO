@@ -10,8 +10,8 @@ La clave NUNCA va en el código ni en el repo. En la nube la añade el proxy
 una máquina local se puede usar la variable de entorno ELEVENLABS_API_KEY.
 
 Uso:
-    python3 scripts/voz_elevenlabs.py --listar-voces
-    python3 scripts/voz_elevenlabs.py src/ivm/timeline.json --voz <voice_id> \\
+    python3 scripts/comun/voz_elevenlabs.py --listar-voces
+    python3 scripts/comun/voz_elevenlabs.py src/ivm/timeline.json --voz <voice_id> \\
         --salida public/audio/ivm-voz.mp3
 """
 

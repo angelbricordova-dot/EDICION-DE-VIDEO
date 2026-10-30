@@ -10,7 +10,7 @@ const AZUL = "#4FA8FF";
 const VERDE = "#22B53A";
 
 export const Reel14 = crearSofa({
-  video: "tiktok/g14/proxy.mp4",
+  video: "inmobiliaria/g14/proxy.mp4",
   versiones: G14,
   titulo: { linea1: "Casa para vivir", linea2: "vs casa para alquilar", en2: "alquilar" },
   etiquetas: { izq: { texto: "PARA ALQUILAR", color: VERDE, en: "alquilar" }, der: { texto: "PARA VIVIR", color: AZUL } },

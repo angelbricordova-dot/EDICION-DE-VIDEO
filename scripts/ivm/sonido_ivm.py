@@ -4,13 +4,14 @@ Música de fondo suave en Fa mayor (acordes + pulso tipo kalimba a 96 BPM) y
 efectos de interfaz en cada evento. Va bajo para dejar sitio a la voz en off.
 
 Uso:
-    python3 scripts/sonido_ivm.py public/audio/ivm-explicador.wav
+    python3 scripts/ivm/sonido_ivm.py public/audio/ivm-explicador.wav
 """
 
 import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
 from sintesis import (
     Mezcla,
     blip,
@@ -25,7 +26,7 @@ from sintesis import (
     zumbido_error,
 )
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 TL = json.loads((RAIZ / "src/ivm/timeline.json").read_text())
 
 

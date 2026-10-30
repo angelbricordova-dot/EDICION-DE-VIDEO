@@ -21,5 +21,5 @@ Esas skills hablan de archivos de su propio repo. Aquí equivalen a:
 | `timeline.json` | `src/prueba/timeline.json` (un timeline por video) |
 | `src/lib.ts` | `src/prueba/lib.ts` |
 | `npm run draft` / `sheet` / `wave` | mismos nombres en `package.json`, apuntando a la prueba |
-| motor `sfx/` (`python3 -m sfx …`) | copiado en `sfx/` (MIT); la prueba usa `scripts/sonido_prueba.py` |
-| `scripts/sheet.mjs`, `scripts/wave.mjs` | copiados en `scripts/` (MIT) |
+| motor `sfx/` (`python3 -m sfx …`) | copiado en `sfx/` (MIT); la prueba usa `scripts/prueba/sonido_prueba.py` |
+| `scripts/comun/sheet.mjs`, `scripts/comun/wave.mjs` | copiados en `scripts/comun/` (MIT) |

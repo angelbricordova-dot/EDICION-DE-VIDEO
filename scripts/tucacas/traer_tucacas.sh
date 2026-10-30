@@ -3,11 +3,11 @@
 # angelbricordova-dot/AUTORIZADORA-DE-INGRESO- (rama claude/sweet-darwin-vs9ng7)
 # a public/tucacas/, que git ignora: el material es del cliente y pesa mucho.
 #
-# Uso: scripts/traer_tucacas.sh [ruta-del-repo-del-cliente]
+# Uso: scripts/tucacas/traer_tucacas.sh [ruta-del-repo-del-cliente]
 set -euo pipefail
 
 ORIGEN="${1:-/home/user/angelbricordova-dot/autorizadora-de-ingreso-}"
-RAIZ="$(cd "$(dirname "$0")/.." && pwd)"
+RAIZ="$(cd "$(dirname "$0")/../.." && pwd)"
 DESTINO="$RAIZ/public/tucacas"
 
 if [ ! -d "$ORIGEN/marketing/video" ]; then

@@ -1,7 +1,7 @@
 """Corte sin aire de los reels inmobiliarios: tomas elegidas → lista de cortes + voz montada.
 
 Cada toma es un rango [ini, fin] del bruto (segundos), elegido a mano sobre la transcripción
-(`public/tiktok/<reel>/palabras-alineadas.json`, ver scripts/alinear.py). Dentro de cada toma
+(`public/inmobiliaria/<reel>/palabras-alineadas.json`, ver scripts/comun/alinear.py). Dentro de cada toma
 se acortan las pausas largas: cualquier tramo por debajo de UMBRAL dB más largo que PAUSA_MAX
 se recorta dejando MARGEN a cada lado (queda una pausa natural de ~0,2 s, no un corte seco), y
 el silencio al principio y al final de la toma se deja en ENTRADA / SALIDA.
@@ -9,10 +9,10 @@ Las palabras se trasladan al tiempo de salida para los subtítulos.
 
 Salida:
     src/inmobiliaria/<reel>-<version>.json   {cortes: [{src, dur, out}], palabras, duracion}
-    public/tiktok/<reel>/voz-<version>.wav    voz montada (fundidos de 8 ms en cada corte)
+    public/inmobiliaria/<reel>/voz-<version>.wav    voz montada (fundidos de 8 ms en cada corte)
 
 Uso:
-    python3 scripts/corte_inmo.py g6 prueba
+    python3 scripts/inmobiliaria/corte_inmo.py g6 prueba
 """
 
 import json
@@ -22,7 +22,7 @@ from pathlib import Path
 
 import numpy as np
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 SR = 48000
 UMBRAL = -45.0  # dBFS (el ruido de fondo del bruto está en −55 dB)
 PAUSA_MAX = 0.32  # pausas más cortas se dejan como están: así suena natural
@@ -459,7 +459,7 @@ def rellenos_sofa(reel, tomas, cortes, palabras):
 
 def main():
     reel, version = sys.argv[1], sys.argv[2]
-    dir_ = RAIZ / "public/tiktok" / reel
+    dir_ = RAIZ / "public/inmobiliaria" / reel
     x = leer(dir_ / "audio48k.wav")
     tel = None
     palabras = ordenar(json.loads((dir_ / "palabras-alineadas.json").read_text())["palabras"])

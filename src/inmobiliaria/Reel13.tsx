@@ -2,13 +2,13 @@ import { crearReel, CorteReel } from "./Plantilla";
 import hook from "./g13-hook.json";
 
 // Reel 13 "4 webs de pisos baratos" (guion 13, formato informal con el iPad en la mano). Lista
-// 1-4 bajo el título y, al nombrar cada web, un móvil con su captura real (public/tiktok/webs/)
+// 1-4 bajo el título y, al nombrar cada web, un móvil con su captura real (public/inmobiliaria/webs/)
 // que se desliza; luego las tres comprobaciones, el método en tres pasos y el CTA (GUÍA).
 
 export const G13: Record<"hook", CorteReel> = { hook: hook as CorteReel };
 
 export const Reel13 = crearReel({
-  video: "tiktok/g13/proxy.mp4",
+  video: "inmobiliaria/g13/proxy.mp4",
   cara: { x: 930, y: 1140 },
   versiones: G13,
   titulos: { hook: { blanco: "4 webs para encontrar", amarillo: "PISOS BARATOS", en: "baratos," } },

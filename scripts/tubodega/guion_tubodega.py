@@ -4,13 +4,13 @@ Las marcas salen de las pausas medidas en public/tubodega/voz/v1.mp3
 (ffmpeg silencedetect, -36 dB, 0,07 s) sobre cada frase de Richard colocada al inicio de su escena (la 4 se regrabó con pausas).
 
 Uso:
-    python3 scripts/guion_tubodega.py
+    python3 scripts/tubodega/guion_tubodega.py
 """
 
 import json
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 DIR = RAIZ / "src/tubodega"
 
 M = {

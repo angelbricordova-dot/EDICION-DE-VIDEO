@@ -9,7 +9,7 @@ import cuerpo from "./g15-cuerpo.json";
 export const G15: Record<"hook1" | "cuerpo", CorteReel> = { hook1: hook1 as CorteReel, cuerpo: cuerpo as CorteReel };
 
 export const Reel15 = crearReel({
-  video: "tiktok/g15/proxy.mp4",
+  video: "inmobiliaria/g15/proxy.mp4",
   cara: { x: 720, y: 1150 },
   versiones: G15,
   titulos: {

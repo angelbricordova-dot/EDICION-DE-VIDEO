@@ -7,7 +7,7 @@ import { Comentario, limpio, Pildora } from "./comunes";
 
 // Formato sofá (reels 14 y 16). Las dos mitades se grabaron por separado con la cámara quieta:
 // a la izquierda el de camiseta blanca y a la derecha el de camiseta negra. Cada mitad pone su
-// toma cuando habla y, cuando escucha, un tramo suyo en silencio (scripts/corte_inmo.py →
+// toma cuando habla y, cuando escucha, un tramo suyo en silencio (scripts/inmobiliaria/corte_inmo.py →
 // "relleno"). La costura del centro es un degradado suave. Arriba: el título, la etiqueta de
 // cada lado, la categoría y la tarjeta con lo que dice cada uno. El zoom se acerca despacio hacia
 // el que habla.
