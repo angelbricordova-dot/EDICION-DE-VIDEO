@@ -1,9 +1,9 @@
 """Mezcla de un video de pronósticos: la voz de la toma + efectos variados en cada escena.
 
-Sin música (el cliente la pone en CapCut si quiere). Total −14 LUFS.
+Música opcional de public/comun/musica/ debajo de la voz (ducking). Total −14 LUFS.
 
 Uso:
-    python3 scripts/pronosticos/sonido_pronosticos.py milan-inter
+    python3 scripts/pronosticos/sonido_pronosticos.py milan-inter [pista.mp3 [segundo de inicio]] [--salida x.wav]
 """
 
 import json
@@ -15,6 +15,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
+from musica import poner_musica  # noqa: E402
 from sintesis import SR, Mezcla  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parents[2]
@@ -62,7 +63,14 @@ def leer(ruta, canales=1):
 
 
 def main():
-    video = sys.argv[1]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    salida = next((sys.argv[i + 1] for i, a in enumerate(sys.argv) if a == "--salida"), None)
+    salida = salida or str(RAIZ / f"public/pronosticos/mezcla-{args[0]}.wav")
+    if salida in args:
+        args.remove(salida)
+    video = args[0]
+    pista = args[1] if len(args) > 1 else None
+    desde = float(args[2]) if len(args) > 2 else 0.0
     g = json.loads((RAIZ / f"src/pronosticos/{video}.json").read_text())
     pal = g["palabras"]
 
@@ -73,6 +81,8 @@ def main():
     voz = leer(RAIZ / "public/pronosticos/audio48k.wav")
     voz = voz / np.max(np.abs(voz))
     mz.bus[:, : len(voz)] += voz[: mz.n]
+    if pista:
+        poner_musica(mz, voz, pal, RAIZ / "public/comun/musica" / pista, desde, bajo_voz=-19, huecos=-11)
     cursor = 0.0
     for e in EFECTOS[video]:
         palabra, nombre, gain, desfase = e[:4]
@@ -88,7 +98,7 @@ def main():
             x[-f:] *= np.linspace(1, 0, f)
         pico = int(np.argmax(np.abs(x)))
         mz.poner(max(0, t + desfase - pico / SR), x / np.max(np.abs(x)), 10 ** (gain / 20))
-    mz.masterizar(str(RAIZ / f"public/pronosticos/mezcla-{video}.wav"), -14.0, fundido=0.15)
+    mz.masterizar(salida, -14.0, fundido=0.15)
 
 
 if __name__ == "__main__":

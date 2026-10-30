@@ -17,6 +17,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))
+from musica import poner_musica  # noqa: E402
 from sintesis import SR, Mezcla  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parents[2]
@@ -114,35 +115,9 @@ SECUENCIAS["g19"] = [
 ]
 
 
-def leer_musica(ruta, desde, dur):
-    """Estéreo, sin graves de rumble ni agudos ásperos, picos domados (la pista viene saturada)."""
-    filtro = "highpass=f=35,lowpass=f=14000,volume=-6dB,alimiter=limit=0.6:attack=5:release=80:level=false"
-    crudo = subprocess.run(
-        ["ffmpeg", "-v", "error", "-ss", str(desde), "-stream_loop", "-1", "-i", str(ruta), "-t", str(dur),
-         "-af", filtro, "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"],
-        capture_output=True, check=True,
-    ).stdout
-    return np.frombuffer(crudo, dtype=np.float32).astype(float).reshape(-1, 2).T
-
-
-def rms(x):
-    return float(np.sqrt(np.mean(x**2))) if x.size else 0.0
-
-
-def poner_musica(mz, voz, pal, archivo, desde):
+def poner_musica_inmo(mz, voz, pal, archivo, desde):
     """Música debajo de la voz: unos −18 dB bajo la voz mientras habla, −9 dB en los huecos."""
-    m = leer_musica(RAIZ / "public/inmobiliaria/musica" / archivo, desde, mz.dur)
-    m = m[:, : mz.n]
-    habla = np.zeros(mz.n)
-    for w in pal:
-        habla[int(max(0, w["ini"] - 0.06) * SR) : int((w["fin"] + 0.12) * SR)] = 1
-    nivel_voz = rms(voz[habla[: len(voz)] > 0])
-    objetivo = np.where(habla > 0, db(-13), db(-8)) * nivel_voz / max(rms(m), 1e-9)
-    k = int(0.15 * SR)
-    objetivo = np.convolve(objetivo, np.ones(k) / k, mode="same")[: m.shape[1]]
-    t = np.arange(m.shape[1]) / SR
-    objetivo *= np.clip(t / 0.6, 0, 1) * np.clip((mz.dur - t) / 1.2, 0, 1)
-    mz.bus[:, : m.shape[1]] += m * objetivo
+    poner_musica(mz, voz, pal, RAIZ / "public/inmobiliaria/musica" / archivo, desde, bajo_voz=-18, huecos=-9)
 
 
 def main():
@@ -365,7 +340,7 @@ def main():
     voz = voz / np.max(np.abs(voz))
     mz.bus[:, : len(voz)] += voz[: mz.n]
     if reel in MUSICA:
-        poner_musica(mz, voz, pal, *MUSICA[reel])
+        poner_musica_inmo(mz, voz, pal, *MUSICA[reel])
     for t, nombre, gain in efectos:
         x = leer(SFX / f"{nombre}.mp3")
         mz.poner(max(0, t), x / np.max(np.abs(x)), db(gain))
