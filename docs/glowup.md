@@ -43,6 +43,22 @@ Concepto recomendado (pendiente de que Angel elija):
 
 Mercado: latino neutro ("ustedes deciden") para llegar a más países (Rober va a España).
 
+## IDEA GANADORA DE ANGEL (la que vamos a hacer): glow-up de finanzas antes de GTA VI
+
+- GTA VI sale el **19-nov-2026** (15 días desde el 4-nov). El protagonista, un gamer **sin un peso**,
+  tiene 15 días para juntar el dinero del juego **y** un colchón para jugarlo tranquilo sin
+  preocuparse por trabajar. La audiencia decide cada movimiento de dinero.
+- HUD: "DÍAS PARA GTA VI: 15 → 0" y la **billetera** "$0 / $META" (en vez del % de glow-up).
+- Cada día una decisión con lección real de finanzas (vender lo que no usa, presupuesto, cortar
+  suscripciones, trabajitos, no pedir préstamos, no apostar). Si la audiencia elige la opción
+  mala, se ve la consecuencia (pierde dinero) → gracioso y educativo.
+- El Día 15 (19-nov) es el gran final: ¿llega o no? Después: temporada 2 con otra meta para no
+  perder a los seguidores (la cuenta no puede depender solo de GTA).
+- **Marca registrada**: se puede nombrar "GTA VI", pero **no** usar el logo, la portada, capturas,
+  música ni la tipografía de Rockstar, ni nada que parezca oficial. Nuestro diseño propio.
+- **Finanzas honestas**: nada de "hazte rico rápido", apuestas, cripto ni inversiones concretas
+  presentadas como consejo. Montos realistas.
+
 ## Producción (cómo lo hacemos)
 
 1. **Personaje**: Gemini hace la hoja de referencia (estilo plano, colores) → yo lo redibujo en
