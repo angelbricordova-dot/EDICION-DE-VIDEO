@@ -1,0 +1,71 @@
+{
+  "audio": "public/glowup/dia0/voz.mp3",
+  "duracion": 14.72,
+  "lineas": [
+    {
+      "texto": "Este es Toño.",
+      "t": 0.0,
+      "fin": 0.84,
+      "t2": 0.0,
+      "fin2": 0.84
+    },
+    {
+      "texto": "Veinticinco años. Cero pesos.",
+      "t": 0.88,
+      "fin": 2.88,
+      "t2": 1.43,
+      "fin2": 3.43
+    },
+    {
+      "texto": "Vive de lo que le da su mamá.",
+      "t": 2.912,
+      "fin": 4.16,
+      "t2": 3.862,
+      "fin2": 5.11
+    },
+    {
+      "texto": "Pero GTA seis sale en quince días…",
+      "t": 4.208,
+      "fin": 6.24,
+      "t2": 5.708,
+      "fin2": 7.74
+    },
+    {
+      "texto": "y no tiene ni para el juego.",
+      "t": 6.28,
+      "fin": 7.68,
+      "t2": 8.23,
+      "fin2": 9.63
+    },
+    {
+      "texto": "Tiene quince días para juntar mil dólares.",
+      "t": 7.707,
+      "fin": 9.76,
+      "t2": 10.307,
+      "fin2": 12.36
+    },
+    {
+      "texto": "¿Qué hace primero?",
+      "t": 9.8,
+      "fin": 10.64,
+      "t2": 12.9,
+      "fin2": 13.74
+    },
+    {
+      "texto": "Comenta: vender sus cosas… o buscar trabajo.",
+      "t": 10.68,
+      "fin": 13.44,
+      "t2": 14.08,
+      "fin2": 16.84
+    },
+    {
+      "texto": "Sígueme para el día uno.",
+      "t": 13.48,
+      "fin": 14.72,
+      "t2": 17.43,
+      "fin2": 18.67
+    }
+  ],
+  "audio_pausas": "public/glowup/dia0/voz-pausas.wav",
+  "duracion2": 18.67
+}

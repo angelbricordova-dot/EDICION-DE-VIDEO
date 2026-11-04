@@ -62,14 +62,14 @@ def listar_voces():
         print(f"{v['voice_id']}  {v['name']}  ({etiquetas})")
 
 
-def generar(timeline, voz, salida, estabilidad, similitud, estilo, modelo, prefijo, destino=None):
+def generar(timeline, voz, salida, estabilidad, similitud, estilo, modelo, prefijo, destino=None, formato="mp3_44100_192"):
     tl = json.loads(Path(timeline).read_text())
     # Acepta el formato de los timelines ("guion") y el de los guiones de comerciales ("frases").
     lineas = [g["texto"] for g in (tl.get("guion") or tl.get("frases"))]
     texto = (f"{prefijo} " if prefijo else "") + " ".join(lineas)
     r = pedir(
         "POST",
-        f"/text-to-speech/{voz}/with-timestamps?output_format=mp3_44100_192",
+        f"/text-to-speech/{voz}/with-timestamps?output_format={formato}",
         {
             "text": texto,
             "model_id": modelo,
@@ -119,6 +119,7 @@ def main():
     ap.add_argument("--estilo", type=float, default=0.25)
     ap.add_argument("--modelo", default=MODELO, help="eleven_multilingual_v2 (por defecto) o eleven_v3")
     ap.add_argument("--prefijo", default="", help="etiquetas de Eleven v3 al inicio, p. ej. '[cálida, sonriendo]'")
+    ap.add_argument("--formato", default="mp3_44100_192", help="mp3_44100_192 (plan Creator o más) o mp3_44100_128 (Starter)")
     ap.add_argument("--tiempos", help="dónde guardar los tiempos por frase (por defecto voz.json junto al timeline)")
     a = ap.parse_args()
     if a.listar_voces:
@@ -126,7 +127,7 @@ def main():
     voz = a.voz or os.environ.get("ELEVENLABS_VOICE_ID")
     if not (a.timeline and voz and a.salida):
         ap.error("hacen falta timeline, --voz (o ELEVENLABS_VOICE_ID) y --salida")
-    generar(a.timeline, voz, a.salida, a.estabilidad, a.similitud, a.estilo, a.modelo, a.prefijo, a.tiempos)
+    generar(a.timeline, voz, a.salida, a.estabilidad, a.similitud, a.estilo, a.modelo, a.prefijo, a.tiempos, a.formato)
 
 
 if __name__ == "__main__":

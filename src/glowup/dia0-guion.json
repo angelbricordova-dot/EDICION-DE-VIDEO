@@ -1,0 +1,14 @@
+{
+  "episodio": 0,
+  "frases": [
+    { "id": "este", "texto": "Este es Toño." },
+    { "id": "edad", "texto": "Veinticinco años. Cero pesos." },
+    { "id": "mama", "texto": "Vive de lo que le da su mamá." },
+    { "id": "gta", "texto": "Pero GTA seis sale en quince días…" },
+    { "id": "juego", "texto": "y no tiene ni para el juego." },
+    { "id": "meta", "texto": "Tiene quince días para juntar mil dólares." },
+    { "id": "pregunta", "texto": "¿Qué hace primero?" },
+    { "id": "opciones", "texto": "Comenta: vender sus cosas… o buscar trabajo." },
+    { "id": "sigueme", "texto": "Sígueme para el día uno." }
+  ]
+}
