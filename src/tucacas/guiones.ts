@@ -34,7 +34,8 @@ export type Icono = { tipo: "aire" | "wifi" | "agua"; texto: string; t: number }
 export type Rotulo = { desde: number; hasta: number; partes: string[] };
 
 /** Frase de la locución: también es el subtítulo. `clave` va en color sol. */
-export type Frase = { desde: number; hasta: number; texto: string; clave: string };
+export type { Frase } from "../comun/tipos";
+import type { Frase } from "../comun/tipos";
 
 export type Efecto = { t: number; sonido: string; gain?: number; pan?: number };
 

@@ -3,7 +3,7 @@ import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { evolvePath } from "@remotion/paths";
 import { clamp01, easeIn, easeInOut, easeOut, FPS, lerp, prog, sp } from "../comun/animacion";
-import type { Frase } from "../tucacas/guiones";
+import type { Frase } from "../comun/tipos";
 import { B, camara, cargarFuentes, Fondo, IconoWhatsApp, JAKARTA, Marca, pantalla, Pastilla, PH, PW, Subtitulos, Telefono, Titular, Toque, W } from "./piezas";
 import guionJson from "./guion-v1.json";
 

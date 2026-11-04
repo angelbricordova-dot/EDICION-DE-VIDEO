@@ -100,7 +100,8 @@ Cada cliente o proyecto vive aislado en las mismas cinco carpetas, con el mismo 
 | Renders y copias para enviar (ignorado por git) | `out/<proyecto>/` (`out/<proyecto>/enviar/` lo que se manda) |
 | Guía de estilo, decisiones y pendientes | `docs/<proyecto>.md` + su fila en la tabla de arriba |
 
-- Lo compartido va en `scripts/comun/` (`sintesis.py` mezcla y masterizado, `transcribir.py`,
+- Lo compartido va en `src/comun/` (`animacion.ts` curvas y muelles, `camara.ts` cámara por
+  fotogramas clave, `tipos.ts`), `scripts/comun/` (`sintesis.py` mezcla y masterizado, `transcribir.py`,
   `alinear.py`, `voz_elevenlabs.py`, `sheet.mjs`, `wave.mjs`) y `public/comun/` (efectos de
   sonido `sfx/`). Un script de proyecto importa lo común con
   `sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "comun"))` y calcula la raíz
