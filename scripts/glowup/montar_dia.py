@@ -26,7 +26,7 @@ SFX = RAIZ / "public/comun/sfx/mixkit"
 MUSICA = RAIZ / "public/comun/musica/mixkit"
 
 # Por episodio: palabras clave (amarillo), palabras de dinero (verde), cola tras la última
-# frase, música y efectos (frase, segundos desde su inicio, sonido, dB).
+# frase, música y efectos (frase o "@palabra", segundos desde su inicio, sonido, dB).
 EPISODIOS = {
     0: {
         "claves": ["toño", "mamá", "gta", "vi", "juego", "primero", "vender", "trabajo", "sígueme", "uno"],
@@ -41,8 +41,12 @@ EPISODIOS = {
             ("gta", 0.35, "boing.mp3", -14),
             ("juego", -0.05, "barrido-3.mp3", -14),
             ("juego", 0.35, "trombon-triste.mp3", -12),
-            ("meta", 0.0, "pop-1.mp3", -10),
-            ("meta", 1.2, "acierto.mp3", -14),
+            ("@cero", -0.05, "fracaso-grave.mp3", -10),
+            ("meta", -0.08, "barrido-1.mp3", -12),
+            ("meta", 0.0, "golpe-2.mp3", -8),
+            ("@15", -0.03, "golpe-1.mp3", -12),
+            ("@mil", -0.03, "golpe-3.mp3", -8),
+            ("@mil", 0.05, "../chaching.mp3", -8),
             ("pregunta", 0.0, "pop-2.mp3", -10),
             ("opciones", 0.55, "pop-3.mp3", -10),
             ("opciones", 2.1, "pop-4.mp3", -10),
@@ -91,8 +95,13 @@ def main():
     pista, desde = cfg["musica"]
     poner_musica(mz, voz, palabras, MUSICA / pista, desde=desde, bajo_voz=-17, huecos=-10, entrada=0.2, salida=0.8)
     inicio = {f["id"]: f["t"] for f in frases}
+    def ancla(fid):
+        if fid.startswith("@"):  # una palabra (la primera que coincida)
+            return next(w["ini"] for w in palabras if limpio(w["p"]) == fid[1:])
+        return inicio[fid]
+
     for fid, dt, sonido, gdb in cfg["efectos"]:
-        mz.poner(max(0.0, inicio[fid] + dt), leer(SFX / sonido), 10 ** (gdb / 20))
+        mz.poner(max(0.0, ancla(fid) + dt), leer(SFX / sonido), 10 ** (gdb / 20))
     mz.masterizar(RAIZ / f"public/glowup/dia{n}/mezcla.wav")
 
     (RAIZ / f"src/glowup/dia{n}.json").write_text(json.dumps({"duracion": dur, "frases": frases, "palabras": palabras}, ensure_ascii=False, indent=1))

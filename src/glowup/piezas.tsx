@@ -1,5 +1,5 @@
 import React from "react";
-import { staticFile } from "remotion";
+import { AbsoluteFill, Img, staticFile } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { clamp01, easeOut, lerp, POP, prog, sp } from "../comun/animacion";
 
@@ -9,6 +9,8 @@ import { clamp01, easeOut, lerp, POP, prog, sp } from "../comun/animacion";
 // azulado, sudadera roja, verde dinero y amarillo para las claves, letra Lilita One.
 
 export const FUENTE = '"Lilita One", "Arial Black", sans-serif';
+export const GTA = '"Pricedown", "Lilita One", Impact, sans-serif';
+export const SUBS = '"Montserrat", "Arial Black", sans-serif';
 export const COL = {
   pared: "#3E6E73",
   paredRaya: "#44787D",
@@ -30,6 +32,9 @@ export const cargarFuentes = () => {
   fuentes = true;
   loadFont({ family: "Lilita One", url: staticFile("glowup/fuentes/lilita-one-latin-400-normal.woff2") });
   loadFont({ family: "Lilita One", url: staticFile("glowup/fuentes/lilita-one-latin-ext-400-normal.woff2") });
+  loadFont({ family: "Pricedown", url: staticFile("glowup/fuentes/pricedown.otf") });
+  loadFont({ family: "Montserrat", url: staticFile("glowup/fuentes/montserrat-latin-900-normal.woff2"), weight: "900" });
+  loadFont({ family: "Montserrat", url: staticFile("glowup/fuentes/montserrat-latin-ext-900-normal.woff2"), weight: "900" });
 };
 
 export type Palabra = { p: string; ini: number; fin: number; clave: boolean; dinero: boolean };
@@ -44,64 +49,104 @@ export const rnd = (i: number) => {
   return x - Math.floor(x);
 };
 
-/** Cuarto de Toño en casa de su mamá (1080 × 1920). */
-export const Cuarto: React.FC<{ t: number }> = ({ t }) => (
-  <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
-    <rect width={1080} height={1270} fill={COL.pared} />
-    {Array.from({ length: 14 }, (_, i) => (
-      <rect key={i} x={i * 80 + 20} y={0} width={34} height={1270} fill={COL.paredRaya} />
-    ))}
-    {/* ventana con atardecer */}
-    <rect x={80} y={250} width={320} height={380} rx={8} fill="#E9DDC6" {...L} />
-    <defs>
-      <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="#F6B15E" />
-        <stop offset="1" stopColor="#EE6F67" />
-      </linearGradient>
-    </defs>
-    <rect x={102} y={272} width={276} height={336} fill="url(#cielo)" />
-    <circle cx={300} cy={520} r={46} fill="#FFE29A" opacity={0.9} />
-    <path d="M 102 560 L 160 520 L 220 548 L 280 500 L 378 560 L 378 608 L 102 608 Z" fill="#B75A6A" opacity={0.7} />
-    <path d="M 240 272 L 240 608 M 102 440 L 378 440" stroke="#E9DDC6" strokeWidth={14} />
-    <path d="M 60 230 L 160 230 Q 150 450 120 660 L 60 660 Z" fill="#B84A3F" {...L} />
-    {/* póster de un juego inventado */}
-    <g transform="rotate(3 830 440)">
-      <rect x={700} y={280} width={260} height={340} fill="#2B2350" {...L} />
-      <path d="M 830 330 L 850 470 L 830 500 L 810 470 Z" fill="#9FB4C7" {...L} strokeWidth={4} />
-      <rect x={800} y={490} width={60} height={14} fill="#C9A34A" {...L} strokeWidth={3} />
-      <text x={830} y={575} textAnchor="middle" fontFamily={FUENTE} fontSize={44} fill={COL.amarillo}>PIXEL</text>
-      <text x={830} y={608} textAnchor="middle" fontFamily={FUENTE} fontSize={30} fill="#FFFFFF">QUEST</text>
-    </g>
-    {/* suelo */}
-    <rect y={1250} width={1080} height={670} fill={COL.suelo} />
-    {Array.from({ length: 7 }, (_, i) => (
-      <line key={i} x1={0} y1={1330 + i * 95} x2={1080} y2={1330 + i * 95} stroke={COL.sueloLinea} strokeWidth={5} />
-    ))}
-    <rect y={1240} width={1080} height={26} fill={COL.zocalo} />
-    {/* colchón en el suelo con cobija */}
-    <rect x={20} y={1300} width={360} height={110} rx={26} fill="#D9D2C3" {...L} />
-    <path d="M 60 1300 Q 160 1270 300 1310 L 340 1404 Q 200 1420 70 1404 Z" fill="#5A7BB5" {...L} />
-    {/* mesita con tele vieja y consola */}
-    <rect x={720} y={1080} width={300} height={190} fill="#6B4A33" {...L} />
-    <rect x={740} y={890} width={260} height={200} rx={22} fill="#3A3A40" {...L} />
-    <rect x={765} y={912} width={180} height={150} rx={14} fill={`hsl(${200 + Math.sin(t * 3) * 20} 50% ${22 + Math.sin(t * 7) * 4}%)`} />
-    <circle cx={972} cy={950} r={10} fill="#8C8C93" />
-    <circle cx={972} cy={990} r={10} fill="#8C8C93" />
-    <rect x={760} y={1180} width={150} height={44} rx={10} fill="#D8D8DD" {...L} strokeWidth={4} />
-    {/* basura en el suelo */}
-    <g>
-      <rect x={560} y={1690} width={220} height={36} rx={4} fill="#D9A55B" {...L} />
-      <text x={670} y={1717} textAnchor="middle" fontFamily={FUENTE} fontSize={26} fill="#B3412F">PIZZA</text>
-      {[[150, 1600, -20], [880, 1520, 70], [960, 1760, 10], [420, 1800, 95]].map(([x, y, g], i) => (
-        <g key={i} transform={`rotate(${g} ${x} ${y})`}>
-          <rect x={x - 18} y={y - 34} width={36} height={68} rx={6} fill={i % 2 ? "#3DA35D" : "#D94848"} {...L} strokeWidth={4} />
+/** Garaje de la casa de la mamá, donde vive Toño (1080 × 1920): portón de metal, bombillo
+ * colgando, sofá viejo de cama, lavadora, estantes con cajas, llanta, aceite y el póster de GTA VI. */
+export const Cuarto: React.FC<{ t: number }> = ({ t }) => {
+  const balanceo = Math.sin(t * 1.6) * 3;
+  return (
+    <AbsoluteFill>
+      <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
+        <defs>
+          <radialGradient id="luzBombillo" cx="0.62" cy="0.16" r="0.75">
+            <stop offset="0" stopColor="#FFE9B0" stopOpacity="0.55" />
+            <stop offset="0.45" stopColor="#FFD27A" stopOpacity="0.12" />
+            <stop offset="1" stopColor="#000" stopOpacity="0.35" />
+          </radialGradient>
+          <linearGradient id="rendija" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#FFB36B" />
+            <stop offset="1" stopColor="#F2735F" />
+          </linearGradient>
+        </defs>
+        {/* pared de bloques */}
+        <rect width={1080} height={1280} fill="#BBA98F" />
+        {Array.from({ length: 16 }, (_, f) =>
+          Array.from({ length: 6 }, (_, c) => (
+            <rect key={`${f}-${c}`} x={c * 200 - (f % 2 ? 100 : 0)} y={f * 80} width={196} height={76} fill={(f + c) % 3 ? "#B5A388" : "#C0AF95"} stroke="#9F8E74" strokeWidth={4} />
+          )),
+        )}
+        {/* portón de metal enrollable (cerrado, con la luz de la tarde por debajo) */}
+        <rect x={20} y={300} width={470} height={980} fill="#5F6B75" {...L} />
+        {Array.from({ length: 15 }, (_, i) => (
+          <g key={i}>
+            <rect x={34} y={316 + i * 62} width={442} height={54} fill={i % 2 ? "#8C99A4" : "#95A2AD"} />
+            <line x1={34} y1={368 + i * 62} x2={476} y2={368 + i * 62} stroke="#6E7A84" strokeWidth={5} />
+          </g>
+        ))}
+        <rect x={34} y={1250} width={442} height={22} fill="url(#rendija)" />
+        <rect x={200} y={1150} width={110} height={30} rx={8} fill="#55606A" {...L} strokeWidth={4} />
+        {/* estantes con cajas, pintura y herramientas */}
+        <rect x={810} y={140} width={250} height={16} fill="#7A5A3E" {...L} strokeWidth={4} />
+        <rect x={830} y={60} width={110} height={80} fill="#C99A5B" {...L} strokeWidth={4} />
+        <text x={885} y={110} textAnchor="middle" fontFamily={FUENTE} fontSize={24} fill="#8A3B2E">NAVIDAD</text>
+        <rect x={955} y={84} width={56} height={56} rx={6} fill="#4D7BB3" {...L} strokeWidth={4} />
+        <rect x={810} y={860} width={250} height={16} fill="#7A5A3E" {...L} strokeWidth={4} />
+        <rect x={826} y={786} width={60} height={74} rx={8} fill="#D9D3C4" {...L} strokeWidth={4} />
+        <rect x={826} y={806} width={60} height={22} fill="#3E8E5A" />
+        <rect x={900} y={770} width={130} height={90} fill="#C99A5B" {...L} strokeWidth={4} />
+        <text x={965} y={826} textAnchor="middle" fontFamily={FUENTE} fontSize={24} fill="#5C3B22">FRÁGIL</text>
+        {/* lavadora de la mamá con cesto de ropa */}
+        <rect x={800} y={1010} width={250} height={270} rx={18} fill="#F2F0EA" {...L} />
+        <rect x={800} y={1010} width={250} height={56} rx={14} fill="#E1DED5" {...L} strokeWidth={4} />
+        <circle cx={925} cy={1170} r={78} fill="#C9D3DA" {...L} />
+        <circle cx={925} cy={1170} r={56} fill={`hsl(200 30% ${55 + Math.sin(t * 5) * 5}%)`} stroke="#8E9AA3" strokeWidth={6} />
+        <circle cx={1000} cy={1038} r={12} fill="#9AA3AA" {...L} strokeWidth={3} />
+        {/* bombillo colgando del techo */}
+        <g transform={`rotate(${balanceo} 640 0)`}>
+          <line x1={640} y1={0} x2={640} y2={190} stroke={C2.cable} strokeWidth={5} />
+          <rect x={626} y={184} width={28} height={26} rx={4} fill="#5A5A5A" {...L} strokeWidth={3} />
+          <circle cx={640} cy={232} r={30} fill="#FFF3C4" {...L} strokeWidth={4} />
         </g>
-      ))}
-      <path d="M 250 1730 Q 300 1700 350 1735 Q 330 1770 270 1765 Z" fill="#E7E2D6" {...L} strokeWidth={4} />
-      <path d="M 830 1640 L 900 1620 L 930 1660 L 860 1690 Z" fill="#F2C744" {...L} strokeWidth={4} />
-    </g>
-  </svg>
-);
+        {/* suelo de cemento con grietas, mancha de aceite, llanta y basura */}
+        <rect y={1270} width={1080} height={650} fill="#8C8781" />
+        <rect y={1262} width={1080} height={20} fill="#6E6A65" />
+        <path d="M 120 1420 L 210 1470 L 260 1460 M 760 1520 L 840 1560 L 900 1550 L 950 1600" fill="none" stroke="#6F6B66" strokeWidth={5} strokeLinecap="round" />
+        <ellipse cx={720} cy={1820} rx={190} ry={44} fill="#3C3A39" opacity={0.55} />
+        <g transform="translate(110 1640)">
+          <ellipse cx={0} cy={60} rx={110} ry={34} fill="#2A2A2A" {...L} />
+          <rect x={-110} y={0} width={220} height={60} fill="#2F2F2F" />
+          <ellipse cx={0} cy={0} rx={110} ry={34} fill="#3A3A3A" {...L} />
+          <ellipse cx={0} cy={0} rx={50} ry={15} fill="#8C8781" {...L} strokeWidth={4} />
+        </g>
+        <rect x={560} y={1700} width={220} height={36} rx={4} fill="#D9A55B" {...L} />
+        <text x={670} y={1727} textAnchor="middle" fontFamily={FUENTE} fontSize={26} fill="#B3412F">PIZZA</text>
+        {[[880, 1560, 70], [960, 1770, 10], [420, 1800, 95], [300, 1560, -20]].map(([x, y, g], i) => (
+          <g key={i} transform={`rotate(${g} ${x} ${y})`}>
+            <rect x={x - 18} y={y - 34} width={36} height={68} rx={6} fill={i % 2 ? "#3DA35D" : "#D94848"} {...L} strokeWidth={4} />
+          </g>
+        ))}
+        <path d="M 860 1660 q 40 -30 80 0 q -20 30 -80 0 Z" fill="#2B2B30" {...L} strokeWidth={4} />
+        {/* sofá viejo que hace de cama, con cobija y almohada */}
+        <rect x={10} y={1110} width={500} height={150} rx={30} fill="#7B5B46" {...L} />
+        <rect x={10} y={1220} width={500} height={110} rx={20} fill="#6A4C3A" {...L} />
+        <rect x={0} y={1150} width={70} height={190} rx={24} fill="#7B5B46" {...L} />
+        <rect x={450} y={1150} width={70} height={190} rx={24} fill="#7B5B46" {...L} />
+        <path d="M 90 1200 Q 200 1170 330 1210 L 380 1300 Q 220 1320 100 1296 Z" fill="#5A7BB5" {...L} />
+        <path d="M 120 1240 Q 200 1226 300 1250" fill="none" stroke="#45679F" strokeWidth={5} />
+        <rect x={84} y={1160} width={120} height={60} rx={24} fill="#EDE7DA" {...L} strokeWidth={5} transform="rotate(-8 144 1190)" />
+        {/* luz del bombillo sobre todo */}
+        <rect width={1080} height={1920} fill="url(#luzBombillo)" />
+      </svg>
+      {/* póster oficial de GTA VI pegado con cinta */}
+      <div style={{ position: "absolute", left: 726, top: 330, width: 300, height: 424, rotate: "2.5deg", border: `6px solid ${COL.linea}`, boxShadow: "0 10px 20px rgba(0,0,0,0.35)", background: "#222" }}>
+        <Img src={staticFile("glowup/gta/poster.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <div style={{ position: "absolute", left: -18, top: -14, width: 70, height: 26, background: "rgba(240,230,190,0.85)", rotate: "-30deg" }} />
+        <div style={{ position: "absolute", right: -18, top: -14, width: 70, height: 26, background: "rgba(240,230,190,0.85)", rotate: "28deg" }} />
+        <div style={{ position: "absolute", left: -18, bottom: -12, width: 70, height: 26, background: "rgba(240,230,190,0.85)", rotate: "25deg" }} />
+      </div>
+    </AbsoluteFill>
+  );
+};
+const C2 = { cable: "#2E2B2A" };
 
 /** Moscas que dan vueltas alrededor de un punto. */
 export const Moscas: React.FC<{ t: number; cx: number; cy: number; radio: number; n?: number }> = ({ t, cx, cy, radio, n = 4 }) => (
@@ -146,38 +191,88 @@ export const Olor: React.FC<{ t: number; x: number; y: number; escala?: number }
 /** $1.000 (punto de miles, como se escribe en Latinoamérica). */
 export const plata = (n: number) => "$" + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-/** Marcador fijo de arriba: días para GTA VI, billetera con barra y nivel. */
+const contorno = (px: number) => ({ WebkitTextStroke: `${px}px #000`, paintOrder: "stroke fill" as const });
+
+/** Estrella de "nivel" como las de búsqueda de GTA (rellena si está ganada). */
+const Estrella: React.FC<{ llena: boolean }> = ({ llena }) => (
+  <svg width={52} height={52} viewBox="0 0 24 24">
+    <path d="M12 2.5 L14.9 8.6 L21.5 9.3 L16.6 13.8 L18 20.4 L12 17 L6 20.4 L7.4 13.8 L2.5 9.3 L9.1 8.6 Z" fill={llena ? "#F5F5F5" : "rgba(0,0,0,0.35)"} stroke={llena ? "#000" : "#F5F5F5"} strokeWidth={1.6} strokeLinejoin="round" />
+  </svg>
+);
+
+/** HUD estilo GTA: arriba a la derecha el dinero en verde (Pricedown) con la meta y las
+ * estrellas de nivel; arriba a la izquierda la barra de días para GTA VI. */
 export const Marcador: React.FC<{ t: number; t0: number; dias: number; dinero: number; meta: number; nivel: number }> = ({ t, t0, dias, dinero, meta, nivel }) => {
   if (t < t0) return null;
   const k = sp(t, t0, POP);
-  const k2 = sp(t, t0 + 0.15, POP);
-  const frac = clamp01(dinero / meta);
+  const k2 = sp(t, t0 + 0.12, POP);
+  const k3 = sp(t, t0 + 0.24, POP);
   return (
-    <div style={{ position: "absolute", left: 40, right: 40, top: 70, display: "flex", gap: 18, alignItems: "stretch" }}>
-      <div style={{ translate: `0 ${(1 - k) * -160}px`, background: COL.blanco, borderRadius: 26, padding: "12px 20px", display: "flex", alignItems: "center", gap: 14, boxShadow: "0 10px 24px rgba(0,0,0,0.35)", border: `5px solid ${COL.linea}` }}>
-        <svg width={58} height={58} viewBox="0 0 24 24">
-          <rect x={2} y={4} width={20} height={18} rx={3} fill={COL.blanco} stroke={COL.linea} strokeWidth={2} />
-          <rect x={2} y={4} width={20} height={6} rx={2} fill={COL.rojo} stroke={COL.linea} strokeWidth={2} />
-          <path d="M7 2 V6 M17 2 V6" stroke={COL.linea} strokeWidth={2.4} strokeLinecap="round" />
-        </svg>
-        <div style={{ fontFamily: FUENTE, lineHeight: 0.9 }}>
-          <div style={{ fontSize: 26, color: "#6B6B6B" }}>DÍAS PARA GTA VI</div>
-          <div style={{ fontSize: 64, color: COL.linea }}>{dias}</div>
+    <>
+      <div style={{ position: "absolute", right: 40, top: 60, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2 }}>
+        <div style={{ translate: `${(1 - k) * 500}px 0`, fontFamily: GTA, fontSize: 132, lineHeight: 0.9, color: dinero > 0 ? "#72D15E" : "#E8473F", ...contorno(14), textShadow: "0 6px 0 rgba(0,0,0,0.35)" }}>{plata(dinero)}</div>
+        <div style={{ translate: `${(1 - k2) * 500}px 0`, fontFamily: GTA, fontSize: 58, lineHeight: 1, color: "#FFFFFF", ...contorno(9) }}>
+          META <span style={{ color: "#72D15E" }}>{plata(meta)}</span>
+        </div>
+        <div style={{ translate: `${(1 - k3) * 500}px 0`, display: "flex", gap: 4, alignItems: "center", marginTop: 6 }}>
+          <span style={{ fontFamily: GTA, fontSize: 40, color: "#fff", ...contorno(7), marginRight: 8 }}>NIVEL</span>
+          {[0, 1, 2, 3, 4].map((i) => (
+            <Estrella key={i} llena={i < nivel} />
+          ))}
         </div>
       </div>
-      <div style={{ flex: 1, translate: `0 ${(1 - k2) * -160}px`, background: COL.blanco, borderRadius: 26, padding: "12px 20px", boxShadow: "0 10px 24px rgba(0,0,0,0.35)", border: `5px solid ${COL.linea}`, display: "flex", flexDirection: "column", justifyContent: "center", gap: 8 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontFamily: FUENTE }}>
-          <span style={{ fontSize: 28, color: "#6B6B6B" }}>BILLETERA</span>
-          <span style={{ fontSize: 40, color: COL.linea }}>
-            <span style={{ color: dinero > 0 ? COL.verdeOscuro : COL.rojo }}>{plata(dinero)}</span> / {plata(meta)}
-          </span>
+      <div style={{ position: "absolute", left: 0, top: 80, translate: `${(1 - k) * -520}px 0`, width: 460, height: 120, background: "linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0) 100%)", display: "flex", alignItems: "center", gap: 18, paddingLeft: 36 }}>
+        <div style={{ fontFamily: SUBS, fontWeight: 900, fontSize: 26, lineHeight: 1.05, color: "#E9E9E9", letterSpacing: "0.04em" }}>
+          GTA VI
+          <br />
+          SALE EN
         </div>
-        <div style={{ height: 30, borderRadius: 15, background: "#E3DED3", border: `4px solid ${COL.linea}`, overflow: "hidden" }}>
-          <div style={{ width: `${Math.max(frac, 0.015) * 100}%`, height: "100%", background: COL.verde }} />
-        </div>
+        <div style={{ fontFamily: GTA, fontSize: 104, lineHeight: 0.85, color: "#F7C948", ...contorno(10) }}>{dias}</div>
+        <div style={{ fontFamily: GTA, fontSize: 48, lineHeight: 1, color: "#fff", ...contorno(7) }}>DÍAS</div>
       </div>
-      <div style={{ position: "absolute", right: 0, top: 150, translate: `0 ${(1 - k2) * -260}px`, background: "#7B4DD6", color: "#fff", fontFamily: FUENTE, fontSize: 34, padding: "6px 22px", borderRadius: 999, border: `5px solid ${COL.linea}` }}>NIVEL {nivel}</div>
-    </div>
+    </>
+  );
+};
+
+/** "NUEVA MISIÓN" al estilo GTA: franjas de cine, texto Pricedown que golpea y billetes. */
+export const Mision: React.FC<{ t: number; t0: number; tDias: number; tMonto: number; t1: number; dias: number; monto: number }> = ({ t, t0, tDias, tMonto, t1, dias, monto }) => {
+  if (t < t0 - 0.05 || t > t1 + 0.35) return null;
+  const barras = easeOut(prog(t, t0 - 0.05, t0 + 0.25)) * (1 - easeOut(prog(t, t1, t1 + 0.3)));
+  const sale = 1 - prog(t, t1, t1 + 0.25);
+  const golpe = (t1x: number) => {
+    const k = clamp01((t - t1x) / 0.16);
+    return { scale: String(lerp(2.6, 1, easeOut(k))), opacity: k * sale };
+  };
+  const temblor = t > tMonto && t < tMonto + 0.35 ? Math.sin(t * 90) * 10 * (1 - (t - tMonto) / 0.35) : 0;
+  const cuenta = Math.round(monto * easeOut(clamp01((t - tMonto) / 0.5)));
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <AbsoluteFill style={{ background: "rgba(0,0,0,0.45)", opacity: barras }} />
+      <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 230 * barras, background: "#000" }} />
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 230 * barras, background: "#000" }} />
+      {/* billetes que salen volando */}
+      <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
+        {Array.from({ length: 14 }, (_, i) => {
+          const v = clamp01((t - tMonto - rnd(i) * 0.15) / 1.3);
+          if (v <= 0 || v >= 1) return null;
+          const ang = rnd(i + 2) * Math.PI * 2;
+          const x = 540 + Math.cos(ang) * v * (500 + rnd(i) * 300);
+          const y = 900 + Math.sin(ang) * v * 700 + v * v * 500;
+          return (
+            <g key={i} transform={`translate(${x} ${y}) rotate(${(rnd(i + 5) - 0.5) * 720 * v})`} opacity={(1 - v) * sale}>
+              <rect x={-60} y={-30} width={120} height={60} rx={6} fill="#85C46B" stroke="#1E5A2B" strokeWidth={4} />
+              <circle r={16} fill="#B9E3A4" stroke="#1E5A2B" strokeWidth={3} />
+              <text y={8} textAnchor="middle" fontFamily="Arial Black" fontSize={22} fill="#1E5A2B">$</text>
+            </g>
+          );
+        })}
+      </svg>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 560, display: "flex", flexDirection: "column", alignItems: "center", translate: `${temblor}px 0` }}>
+        <div style={{ fontFamily: GTA, fontSize: 140, color: "#F7C948", ...contorno(14), textShadow: "0 8px 0 rgba(0,0,0,0.4)", ...golpe(t0) }}>NUEVA MISIÓN</div>
+        <div style={{ fontFamily: GTA, fontSize: 92, color: "#fff", ...contorno(12), marginTop: 10, ...golpe(tDias) }}>EN {dias} DÍAS</div>
+        <div style={{ fontFamily: GTA, fontSize: 230, color: "#72D15E", ...contorno(20), textShadow: "0 10px 0 rgba(0,0,0,0.45)", lineHeight: 1, marginTop: 6, ...golpe(tMonto) }}>{plata(cuenta)}</div>
+      </div>
+    </AbsoluteFill>
   );
 };
 
@@ -187,17 +282,12 @@ export const Notificacion: React.FC<{ t: number; t0: number; t1: number; titulo:
   const k = sp(t, t0, POP) * (1 - prog(t, t1, t1 + 0.3));
   return (
     <div style={{ position: "absolute", left: 50, right: 50, top: 250, translate: `0 ${(1 - k) * -300}px`, opacity: clamp01(k * 2), background: "rgba(255,253,247,0.97)", borderRadius: 34, padding: "22px 26px", display: "flex", gap: 22, alignItems: "center", boxShadow: "0 18px 40px rgba(0,0,0,0.4)" }}>
-      <div style={{ width: 96, height: 96, borderRadius: 24, background: "linear-gradient(135deg, #FF5DA2, #7B4DD6)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
-        <svg width={64} height={64} viewBox="0 0 24 24">
-          <path d="M6 8 H18 A4 4 0 0 1 22 12 V15 A3 3 0 0 1 16.6 16.6 L15 15 H9 L7.4 16.6 A3 3 0 0 1 2 15 V12 A4 4 0 0 1 6 8 Z" fill="#fff" />
-          <path d="M7 10.5 V13.5 M5.5 12 H8.5" stroke="#7B4DD6" strokeWidth={1.6} strokeLinecap="round" />
-          <circle cx={16} cy={11} r={1} fill="#7B4DD6" />
-          <circle cx={18} cy={13} r={1} fill="#7B4DD6" />
-        </svg>
+      <div style={{ width: 112, height: 112, borderRadius: 26, background: "linear-gradient(160deg, #3A2A6B, #E0569B 70%, #F7A35C)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none", overflow: "hidden" }}>
+        <Img src={staticFile("glowup/gta/logo.png")} style={{ width: 100, height: "auto" }} />
       </div>
       <div style={{ fontFamily: '"Helvetica Neue", Arial, sans-serif' }}>
-        <div style={{ fontSize: 36, fontWeight: 700, color: "#222" }}>{titulo} <span style={{ fontWeight: 400, color: "#888", fontSize: 30 }}>· ahora</span></div>
-        <div style={{ fontSize: 46, fontWeight: 600, color: "#222", marginTop: 6 }}>{texto}</div>
+        <div style={{ fontSize: 40, fontWeight: 700, color: "#222" }}>{titulo} <span style={{ fontWeight: 400, color: "#888", fontSize: 32 }}>· ahora</span></div>
+        <div style={{ fontSize: 54, fontWeight: 700, color: "#222", marginTop: 6 }}>{texto}</div>
       </div>
     </div>
   );
@@ -349,7 +439,8 @@ const bloques = (ps: Palabra[]) => {
   return out;
 };
 
-/** Subtítulos grandes en mayúsculas, palabra por palabra; claves en amarillo y dinero en verde. */
+/** Subtítulos (Montserrat Black, como los escribe la voz), palabra por palabra: suben y se
+ * enfocan; claves en amarillo y dinero en verde. Una sola línea. */
 export const Subtitulos: React.FC<{ t: number; palabras: Palabra[]; y?: number }> = ({ t, palabras, y = 1440 }) => {
   const bs = bloques(palabras);
   const i = bs.findIndex((b, j) => t >= b[0].ini - 0.05 && (j + 1 >= bs.length || t < bs[j + 1][0].ini - 0.05));
@@ -357,18 +448,18 @@ export const Subtitulos: React.FC<{ t: number; palabras: Palabra[]; y?: number }
   const b = bs[i];
   if (t > b[b.length - 1].fin + 0.7) return null;
   return (
-    <div style={{ position: "absolute", left: 30, right: 30, top: y, display: "flex", justifyContent: "center", gap: 20 }}>
+    <div style={{ position: "absolute", left: 30, right: 30, top: y, display: "flex", justifyContent: "center", gap: 22 }}>
       {b.map((w, j) => {
-        const k = clamp01((t - (w.ini - 0.04)) / 0.12);
-        if (k <= 0) return <span key={j} style={{ opacity: 0, fontFamily: FUENTE, fontSize: 108 }}>{w.p}</span>;
+        const k = clamp01((t - (w.ini - 0.05)) / 0.16);
         return (
           <span
             key={j}
             style={{
-              fontFamily: FUENTE, fontSize: 108, lineHeight: 1, textTransform: "uppercase",
+              fontFamily: SUBS, fontWeight: 900, fontSize: 96, lineHeight: 1, letterSpacing: "-0.01em",
               color: w.dinero ? COL.verde : w.clave ? COL.amarillo : "#fff",
-              WebkitTextStroke: `16px ${COL.linea}`, paintOrder: "stroke fill", textShadow: "0 8px 0 rgba(0,0,0,0.35)",
-              display: "inline-block", scale: String(lerp(1.35, 1, easeOut(k))), opacity: k, whiteSpace: "nowrap",
+              WebkitTextStroke: "12px #11131C", paintOrder: "stroke fill", textShadow: "0 6px 14px rgba(0,0,0,0.45)",
+              display: "inline-block", opacity: k, translate: `0 ${(1 - easeOut(k)) * 28}px`,
+              filter: k < 1 ? `blur(${(1 - k) * 8}px)` : undefined, whiteSpace: "nowrap",
             }}
           >
             {w.p.replace(/[,:]/g, "")}

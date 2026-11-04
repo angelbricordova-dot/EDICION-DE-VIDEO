@@ -6,6 +6,7 @@ import { Tono } from "./Tono";
 export const Ficha: React.FC = () => (
   <AbsoluteFill style={{ background: "#F4F1EA", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 40 }}>
     <Tono ancho={520} />
+    <Tono ancho={520} pose="bolsillos" expresion="shock" t={0.2} />
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
       <Tono soloCabeza ancho={260} expresion="aburrido" />
       <Tono soloCabeza ancho={260} expresion="shock" />

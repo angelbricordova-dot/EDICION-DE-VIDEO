@@ -119,6 +119,19 @@ Seguidores → comunidad → embudo → infoproducto digital. Fases:
   caracteres (≈ 0,37 por carácter) → un episodio ≈ 150–250 créditos.
   Ojo: en la muestra dijo "¿Lo lograrás?" en vez de "¿Lo logrará?": revisar cada toma.
 
+## Día 0 (hecho, v2 con correcciones de Angel)
+- `src/glowup/Dia0.tsx` + `src/glowup/piezas.tsx` + `src/glowup/Tono.tsx`; tiempos y mezcla con
+  `scripts/glowup/montar_dia.py 0` (efectos anclados a frases o a "@palabra"). Voz sin regenerar.
+- Correcciones de Angel: subtítulos en Montserrat Black (minúsculas, como su foto de ejemplo);
+  barba dentro de la cara y personaje con más detalle; cuarto muy distinto al de Rober → **garaje
+  de la casa de la mamá**; póster oficial de GTA VI en la pared y logo de GTA VI en la notificación
+  (material que mandó Angel, `public/glowup/gta/`); "cero pesos" → se saca los bolsillos vacíos;
+  "15 días para juntar mil dólares" → pantalla de **NUEVA MISIÓN** estilo GTA (franjas de cine,
+  Pricedown, $1.000 que cuenta, billetes y golpes); HUD estilo GTA (dinero verde/rojo, META,
+  estrellas de NIVEL, barra "GTA VI sale en 15 días").
+- Letra **Pricedown** (Typodermic, gratis; su licencia permite usarla en videos comerciales como
+  arte fijo): `public/glowup/fuentes/pricedown.otf`.
+
 ## Pendiente
 - Angel: elegir concepto, mercado (latino o España) y nombre de la cuenta.
 - Muestras de voz (con permiso), personaje en Gemini, Día 0.

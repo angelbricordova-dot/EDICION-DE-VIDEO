@@ -14,6 +14,6 @@ export const ComposicionesGlowup: React.FC = () => (
       height={1920}
       defaultProps={{ audio: "glowup/dia0/mezcla.wav" } satisfies PropsDia}
     />
-    <Still id="GlowupFicha" component={Ficha} width={1300} height={1200} />
+    <Still id="GlowupFicha" component={Ficha} width={1800} height={1200} />
   </Folder>
 );

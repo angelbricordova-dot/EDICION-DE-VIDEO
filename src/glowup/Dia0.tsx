@@ -2,8 +2,8 @@ import React from "react";
 import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { clamp01, easeInOut, easeOut, FPS, lerp, prog } from "../comun/animacion";
-import { BilleteraVacia, cargarFuentes, Cuarto, Episodio, Mama, Marcador, Moscas, Notificacion, Olor, Seguir, Subtitulos, Votacion } from "./piezas";
-import { Expresion, Tono } from "./Tono";
+import { BilleteraVacia, cargarFuentes, Cuarto, Episodio, Mama, Marcador, Mision, Moscas, Notificacion, Olor, rnd, Seguir, Subtitulos, Votacion } from "./piezas";
+import { Expresion, Pose, Tono } from "./Tono";
 import datos from "./dia0.json";
 
 // Día 0 (tráiler) de la serie de Toño: presentación, GTA VI en 15 días, billetera vacía, meta de
@@ -38,12 +38,19 @@ export const Dia0: React.FC<PropsDia> = ({ audio }) => {
   const tA = w("vender", pregunta) - 0.1;
   const tB = w("buscar", pregunta) - 0.1;
   const tMil = w("mil", meta.t);
+  const tQuince = w("15", meta.t);
+  const tCero = w("cero", edad);
+  const finMision = meta.fin + 0.35;
+  // "cero pesos": se saca los bolsillos vacíos
+  const pose: Pose = t >= tCero - 0.08 && t < mama.t - 0.05 ? "bolsillos" : "normal";
+  const saltoPose = pose === "bolsillos" ? 1 + 0.04 * Math.exp(-(t - tCero) * 10) : 1;
 
   // Expresión según el momento
   let expresion: Expresion = "aburrido";
   if (t >= mama.t + 0.6 && t < gta.t) expresion = "feliz";
   if (t >= gta.t && t < juego) expresion = "shock";
   if (t >= tMil && t < pregunta) expresion = "shock";
+  if (pose === "bolsillos") expresion = "shock";
   if (t >= sigue) expresion = "feliz";
   const mirada = t >= tA && t < tB ? -1 : t >= tB && t < sigue ? 1 : 0;
 
@@ -71,9 +78,20 @@ export const Dia0: React.FC<PropsDia> = ({ audio }) => {
       {enCuarto ? (
         <AbsoluteFill style={{ scale: String(empuje), transformOrigin: "50% 45%" }}>
           <Cuarto t={t} />
-          <div style={{ position: "absolute", left: 180, top: 292 + baja, transformOrigin: "50% 100%", scale: `1 ${respira}` }}>
-            <Tono ancho={720} expresion={expresion} parpadeo={expresion === "aburrido" ? parpadeo(t) : 0} mirada={mirada} t={t} />
+          <div style={{ position: "absolute", left: 180, top: 292 + baja, transformOrigin: "50% 100%", scale: `${saltoPose} ${respira * saltoPose}` }}>
+            <Tono ancho={720} expresion={expresion} pose={pose} parpadeo={expresion === "aburrido" ? parpadeo(t) : 0} mirada={mirada} t={t} />
           </div>
+          {/* polvito que sale de los bolsillos vacíos */}
+          {pose === "bolsillos" ? (
+            <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
+              {Array.from({ length: 16 }, (_, i) => {
+                const v = clamp01((t - tCero - rnd(i) * 0.4) / 0.9);
+                if (v <= 0 || v >= 1) return null;
+                const x0 = i % 2 ? 180 + 116 * 1.2 : 180 + 484 * 1.2;
+                return <circle key={i} cx={x0 + (rnd(i + 3) - 0.5) * 160 * v} cy={292 + 900 * 1.2 + v * 120} r={(6 + rnd(i) * 10) * (1 - v * 0.5)} fill="#D8D0C0" opacity={(1 - v) * 0.85} />;
+              })}
+            </svg>
+          ) : null}
           <Olor t={t} x={540} y={470 + baja} escala={1.2} />
           <Moscas t={t} cx={540} cy={600 + baja} radio={280} n={4} />
           <Mama t={t} t0={mama.t - 0.05} t1={gta.t - 0.15} />
@@ -93,10 +111,11 @@ export const Dia0: React.FC<PropsDia> = ({ audio }) => {
       ) : null}
 
       <Notificacion t={t} t0={gta.t - 0.05} t1={juego - 0.1} titulo="Recordatorio" texto="GTA VI sale en 15 días" />
-      <Marcador t={t} t0={meta.t} dias={15} dinero={0} meta={1000} nivel={0} />
+      <Mision t={t} t0={meta.t} tDias={tQuince} tMonto={tMil} t1={meta.fin + 0.1} dias={15} monto={1000} />
+      <Marcador t={t} t0={finMision} dias={15} dinero={0} meta={1000} nivel={0} />
       <Votacion t={t} tA={tA} tB={tB} t1={sigue - 0.15} a="VENDER SUS COSAS" b="BUSCAR TRABAJO" />
       <Seguir t={t} t0={sigue} dia={1} />
-      <Subtitulos t={t} palabras={DIA0.palabras} y={t >= juego && t < meta.t ? 1120 : 1440} />
+      {t < meta.t - 0.05 || t > finMision ? <Subtitulos t={t} palabras={DIA0.palabras} y={t >= juego && t < meta.t ? 1120 : 1440} /> : null}
       <AbsoluteFill style={{ background: "#000", opacity: prog(t, DIA0.duracion - 0.25, DIA0.duracion) }} />
       {audio ? <Audio src={staticFile(audio)} /> : null}
     </AbsoluteFill>
