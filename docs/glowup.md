@@ -109,6 +109,16 @@ Seguidores → comunidad → embudo → infoproducto digital. Fases:
 - Etiqueta "Contenido generado con IA" activada.
 - Responder y fijar comentarios; el más votado sale con su @ en el siguiente episodio.
 
+## Decisiones tomadas
+- Personaje: **Toño**, latino neutro. Referencia de Gemini: `public/glowup/personaje/referencia-nivel0.jpg`
+  (sudadera roja manchada, pantalón gris, pantuflas rotas, audífonos viejos al cuello, ojeras, barba
+  sin arreglar). Se redibuja en SVG por partes para animarlo.
+- Niveles visuales según la billetera: 0 ($0) → 1 (~$250) → 2 (~$600) → 3 ($1.000) → temporada 2.
+- **Voz: Fernando Martínez** (`dlGxemPxFMTY7iXagmOj`, biblioteca de ElevenLabs, latino, rápido),
+  Eleven v3, estabilidad 0.5, similitud 0.8, estilo 0.3. Costo medido: 42 créditos por 113
+  caracteres (≈ 0,37 por carácter) → un episodio ≈ 150–250 créditos.
+  Ojo: en la muestra dijo "¿Lo lograrás?" en vez de "¿Lo logrará?": revisar cada toma.
+
 ## Pendiente
 - Angel: elegir concepto, mercado (latino o España) y nombre de la cuenta.
 - Muestras de voz (con permiso), personaje en Gemini, Día 0.

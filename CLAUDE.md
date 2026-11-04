@@ -164,6 +164,8 @@ Cada cliente o proyecto vive aislado en las mismas cinco carpetas, con el mismo 
   estabilidad 0.45, similitud 0.8, estilo 0.3.
 - **Richard** (masculina, latino neutro, redes; TuBodega): `Cpm6N9BNC1M75bYS7kO1`, Eleven v3,
   estabilidad 0.5, similitud 0.8, estilo 0.25, prefijo `[cercano, sonriendo]`.
+- **Fernando Martínez** (masculina, latino, rápido, redes; canal glow-up de Toño): `dlGxemPxFMTY7iXagmOj`,
+  Eleven v3, estabilidad 0.5, similitud 0.8, estilo 0.3.
 
 ## 7. Skills instaladas (`.claude/skills/`)
 
