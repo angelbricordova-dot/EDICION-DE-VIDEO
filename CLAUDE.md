@@ -133,7 +133,12 @@ Cada cliente o proyecto vive aislado en las mismas cinco carpetas, con el mismo 
 - Fuentes: `npm install --no-save @fontsource/...` y copiar el `.woff2` a
   `public/<proyecto>/fuentes/`; cargarlas con `@remotion/fonts` solo en esa composición.
 - **ElevenLabs**: la clave va como *secreto de red* del entorno (cabecera `xi-api-key`
-  para `api.elevenlabs.io`), nunca en el código. Endpoints usados:
+  para `api.elevenlabs.io`), nunca en el código.
+  **PERMISO OBLIGATORIO (pedido por Angel, nov 2026):** antes de generar *cualquier cosa* con esa
+  cuenta (voz, cambiador de voz, música, efectos, doblaje…) pedirle permiso a Angel en el chat,
+  diciendo qué se va a generar y cuántos créditos gasta más o menos. Sin su "sí" no se genera nada,
+  aunque ya haya aprobado algo parecido antes. Solo se puede sin permiso lo que no gasta créditos
+  (ver saldo, listar voces). Endpoints usados:
   - TTS con tiempos: `scripts/comun/voz_elevenlabs.py` (`--voz`, `--modelo eleven_v3|eleven_multilingual_v2`,
     `--prefijo "[cálida, sonriendo]"` para v3, `--tiempos`). Campo `pantalla` en la
     locución para escribir distinto de lo que se pronuncia (p. ej. "Camis Once" → CAMIS11).
