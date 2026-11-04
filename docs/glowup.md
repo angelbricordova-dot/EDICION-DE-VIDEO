@@ -59,6 +59,27 @@ Mercado: latino neutro ("ustedes deciden") para llegar a más países (Rober va 
 - **Finanzas honestas**: nada de "hazte rico rápido", apuestas, cripto ni inversiones concretas
   presentadas como consejo. Montos realistas.
 
+## Monetización (objetivo de Angel a largo plazo)
+
+Seguidores → comunidad → embudo → infoproducto digital. Fases:
+1. **Crecer (temporada 1, días 0–15)**: no vender nada; solo serie diaria y comentarios.
+2. **Captar (desde ~día 5, cuando haya tracción)**: imán gratis por palabra clave con respuesta
+   automática por DM (ManyChat): "Comenta PLANTILLA y te mando la plantilla de ahorro de Toño"
+   → la persona deja su correo o entra al canal de WhatsApp/Telegram.
+3. **Comunidad (después del 19-nov)**: canal gratis (WhatsApp/Telegram) con el reto, votaciones
+   y tips; ahí se calienta la venta.
+4. **Vender**: infoproducto de entrada (≈ $7–27: guía + plantillas "Reto: de $0 a tus primeros
+   $1.000"), luego comunidad de pago mensual o curso. Más adelante, marcas y afiliados (apps de
+   ahorro, bancos digitales), siempre avisando que es publicidad.
+- **Sin promesas de ganancias** ("hazte millonario seguro"): la historia de Toño es ficción y
+  comedia; el producto enseña ahorro, presupuesto e ingresos extra, sin garantizar resultados.
+
+## Arco largo de Toño
+- Temporada 1 (15 días): meta **$1.000** (juego + mes tranquilo). Final abierto el 19-nov.
+- Temporada 2 en adelante: "de $X al millón": la billetera sigue, las decisiones de la gente lo
+  pueden llevar a la **bancarrota o a millonario**. Eventos sorpresa (multas, regalos, estafas)
+  para mantener el drama. Cada episodio deja una lección de dinero real.
+
 ## Producción (cómo lo hacemos)
 
 1. **Personaje**: Gemini hace la hoja de referencia (estilo plano, colores) → yo lo redibujo en
