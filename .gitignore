@@ -15,5 +15,6 @@ public/inmobiliaria/
 public/comun/
 public/pronosticos/
 public/paul/
+public/glowup/
 # Local secrets written by `elevenlabs onboard`
 /.env.local
