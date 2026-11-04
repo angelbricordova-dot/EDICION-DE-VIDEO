@@ -58,6 +58,19 @@ The elderly man holds the warm mug with both hands, then explains to the camera 
 **Clip 5 (Flow, imagen 1):**
 The elderly man leans slightly toward the camera, raises his index finger and smiles, saying in Spanish, with a warm, deep, calm Latin American voice: "Comenta JENGIBRE y te paso mis otras dos recetas para después de comer. Y sígueme para no perderlas." Static smartphone camera, medium shot. No music, no subtitles, no text on screen.
 
+## Reel de prueba (hecho)
+
+- `scripts/paul/montar_paul.py` → `src/paul/prueba.json` + `public/paul/mezcla-prueba.wav`;
+  composición `PaulPrueba` (`src/paul/Prueba.tsx`), 35,5 s. Enviado: `out/paul/enviar/paul-prueba-jengibre.mp4`.
+- Clip 2: desde 5,25 s la IA hace una nube de vapor rara → cuadro congelado con acercamiento a la taza
+  y pastilla "5 MIN". Cierre: comentario "JENGIBRE" que se escribe + botón "SEGUIR".
+- Subtítulos: Oswald 700 en mayúsculas, contorno negro, clave en celeste #22C8F5 (como la referencia),
+  una línea de hasta 3 palabras. Música: Mixkit "Valley Sunset" (guitarra suave) debajo.
+- Voces: el cambiador de voz de ElevenLabs no se pudo usar (cuenta gratis sin créditos hasta el
+  22-nov-2026 y sin voces de la biblioteca por API); se igualaron con ecualización. Con plan de pago,
+  pasar cada clip por speech-to-speech con una sola voz (candidatas: "El Abuelo Charlie"
+  `Yb8JGzcZyW5YYzenhRCm`, "Salvatore" `wfTWLJ20rcMqvU8gIiAB`, "Aurelio" `PHNjiQZ95SnMQ7rDQsXz`).
+
 ## Pendiente
 - Paul: tema y nicho fijos, idioma/país, si tiene producto o enlace de afiliado, redes.
 - Medir el costo real por reel antes de cerrar los $250/mes.

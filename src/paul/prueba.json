@@ -1,0 +1,528 @@
+{
+ "duracion": 35.5,
+ "tramos": [
+  {
+   "clip": 1,
+   "src": 0.0,
+   "dur": 6.95,
+   "out": 0.0,
+   "congelar": null
+  },
+  {
+   "clip": 2,
+   "src": 0.0,
+   "dur": 6.75,
+   "out": 6.95,
+   "congelar": 5.25
+  },
+  {
+   "clip": 3,
+   "src": 0.0,
+   "dur": 6.55,
+   "out": 13.7,
+   "congelar": null
+  },
+  {
+   "clip": 4,
+   "src": 0.0,
+   "dur": 7.8,
+   "out": 20.25,
+   "congelar": null
+  },
+  {
+   "clip": 5,
+   "src": 0.0,
+   "dur": 7.45,
+   "out": 28.05,
+   "congelar": null
+  }
+ ],
+ "palabras": [
+  {
+   "p": "Si",
+   "ini": 0.0,
+   "fin": 0.6,
+   "clave": false
+  },
+  {
+   "p": "después",
+   "ini": 0.6,
+   "fin": 0.98,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 0.98,
+   "fin": 1.16,
+   "clave": false
+  },
+  {
+   "p": "comer",
+   "ini": 1.16,
+   "fin": 1.54,
+   "clave": false
+  },
+  {
+   "p": "sientes",
+   "ini": 1.54,
+   "fin": 2.12,
+   "clave": false
+  },
+  {
+   "p": "la",
+   "ini": 2.12,
+   "fin": 2.3,
+   "clave": false
+  },
+  {
+   "p": "barriga",
+   "ini": 2.3,
+   "fin": 2.74,
+   "clave": true
+  },
+  {
+   "p": "hinchada,",
+   "ini": 2.74,
+   "fin": 3.28,
+   "clave": true
+  },
+  {
+   "p": "no",
+   "ini": 3.54,
+   "fin": 4.12,
+   "clave": false
+  },
+  {
+   "p": "te",
+   "ini": 4.12,
+   "fin": 4.32,
+   "clave": false
+  },
+  {
+   "p": "tomes",
+   "ini": 4.32,
+   "fin": 4.74,
+   "clave": false
+  },
+  {
+   "p": "nada",
+   "ini": 4.74,
+   "fin": 5.14,
+   "clave": false
+  },
+  {
+   "p": "todavía.",
+   "ini": 5.14,
+   "fin": 5.68,
+   "clave": false
+  },
+  {
+   "p": "Mira",
+   "ini": 6.02,
+   "fin": 6.44,
+   "clave": false
+  },
+  {
+   "p": "esto.",
+   "ini": 6.44,
+   "fin": 6.8,
+   "clave": false
+  },
+  {
+   "p": "Tres",
+   "ini": 6.95,
+   "fin": 7.31,
+   "clave": false
+  },
+  {
+   "p": "rodajas",
+   "ini": 7.31,
+   "fin": 7.87,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 7.87,
+   "fin": 7.95,
+   "clave": false
+  },
+  {
+   "p": "jengibre",
+   "ini": 7.95,
+   "fin": 8.51,
+   "clave": true
+  },
+  {
+   "p": "fresco",
+   "ini": 8.51,
+   "fin": 9.01,
+   "clave": false
+  },
+  {
+   "p": "en",
+   "ini": 9.01,
+   "fin": 9.41,
+   "clave": false
+  },
+  {
+   "p": "una",
+   "ini": 9.41,
+   "fin": 9.59,
+   "clave": false
+  },
+  {
+   "p": "taza",
+   "ini": 9.59,
+   "fin": 9.95,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 9.95,
+   "fin": 10.09,
+   "clave": false
+  },
+  {
+   "p": "agua",
+   "ini": 10.09,
+   "fin": 10.39,
+   "clave": false
+  },
+  {
+   "p": "caliente.",
+   "ini": 10.39,
+   "fin": 11.01,
+   "clave": true
+  },
+  {
+   "p": "Déjalo",
+   "ini": 11.49,
+   "fin": 12.21,
+   "clave": false
+  },
+  {
+   "p": "reposar",
+   "ini": 12.21,
+   "fin": 12.71,
+   "clave": false
+  },
+  {
+   "p": "cinco",
+   "ini": 12.71,
+   "fin": 13.07,
+   "clave": true
+  },
+  {
+   "p": "minutos.",
+   "ini": 13.07,
+   "fin": 13.51,
+   "clave": true
+  },
+  {
+   "p": "Medio",
+   "ini": 13.7,
+   "fin": 14.32,
+   "clave": false
+  },
+  {
+   "p": "limón",
+   "ini": 14.32,
+   "fin": 14.66,
+   "clave": true
+  },
+  {
+   "p": "exprimido",
+   "ini": 14.66,
+   "fin": 15.22,
+   "clave": false
+  },
+  {
+   "p": "y",
+   "ini": 15.22,
+   "fin": 15.44,
+   "clave": false
+  },
+  {
+   "p": "una",
+   "ini": 15.44,
+   "fin": 15.62,
+   "clave": false
+  },
+  {
+   "p": "cucharadita",
+   "ini": 15.62,
+   "fin": 16.24,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 16.24,
+   "fin": 16.36,
+   "clave": false
+  },
+  {
+   "p": "miel.",
+   "ini": 16.36,
+   "fin": 16.64,
+   "clave": true
+  },
+  {
+   "p": "Se",
+   "ini": 16.84,
+   "fin": 17.18,
+   "clave": false
+  },
+  {
+   "p": "toma",
+   "ini": 17.18,
+   "fin": 17.46,
+   "clave": false
+  },
+  {
+   "p": "tibio,",
+   "ini": 17.46,
+   "fin": 18.08,
+   "clave": true
+  },
+  {
+   "p": "despacio,",
+   "ini": 18.34,
+   "fin": 19.12,
+   "clave": false
+  },
+  {
+   "p": "después",
+   "ini": 19.4,
+   "fin": 19.64,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 19.64,
+   "fin": 19.82,
+   "clave": false
+  },
+  {
+   "p": "comer.",
+   "ini": 19.82,
+   "fin": 20.06,
+   "clave": false
+  },
+  {
+   "p": "El",
+   "ini": 20.25,
+   "fin": 20.51,
+   "clave": false
+  },
+  {
+   "p": "jengibre",
+   "ini": 20.51,
+   "fin": 21.05,
+   "clave": true
+  },
+  {
+   "p": "se",
+   "ini": 21.05,
+   "fin": 21.23,
+   "clave": false
+  },
+  {
+   "p": "usa",
+   "ini": 21.23,
+   "fin": 21.53,
+   "clave": false
+  },
+  {
+   "p": "desde",
+   "ini": 21.53,
+   "fin": 21.85,
+   "clave": false
+  },
+  {
+   "p": "hace",
+   "ini": 21.85,
+   "fin": 22.21,
+   "clave": false
+  },
+  {
+   "p": "siglos",
+   "ini": 22.21,
+   "fin": 22.79,
+   "clave": true
+  },
+  {
+   "p": "para",
+   "ini": 22.79,
+   "fin": 23.07,
+   "clave": false
+  },
+  {
+   "p": "la",
+   "ini": 23.07,
+   "fin": 23.25,
+   "clave": false
+  },
+  {
+   "p": "digestión",
+   "ini": 23.25,
+   "fin": 23.95,
+   "clave": true
+  },
+  {
+   "p": "y",
+   "ini": 24.71,
+   "fin": 25.35,
+   "clave": false
+  },
+  {
+   "p": "lo",
+   "ini": 25.35,
+   "fin": 25.55,
+   "clave": false
+  },
+  {
+   "p": "tibio",
+   "ini": 25.55,
+   "fin": 25.99,
+   "clave": true
+  },
+  {
+   "p": "ayuda",
+   "ini": 25.99,
+   "fin": 26.59,
+   "clave": false
+  },
+  {
+   "p": "a",
+   "ini": 26.59,
+   "fin": 26.69,
+   "clave": false
+  },
+  {
+   "p": "relajar",
+   "ini": 26.69,
+   "fin": 27.13,
+   "clave": false
+  },
+  {
+   "p": "el",
+   "ini": 27.13,
+   "fin": 27.31,
+   "clave": false
+  },
+  {
+   "p": "estómago.",
+   "ini": 27.31,
+   "fin": 27.87,
+   "clave": true
+  },
+  {
+   "p": "Comenta",
+   "ini": 28.05,
+   "fin": 28.81,
+   "clave": true
+  },
+  {
+   "p": "jengibre",
+   "ini": 28.81,
+   "fin": 29.47,
+   "clave": true
+  },
+  {
+   "p": "y",
+   "ini": 29.47,
+   "fin": 29.73,
+   "clave": false
+  },
+  {
+   "p": "te",
+   "ini": 29.73,
+   "fin": 29.89,
+   "clave": false
+  },
+  {
+   "p": "paso",
+   "ini": 29.89,
+   "fin": 30.25,
+   "clave": false
+  },
+  {
+   "p": "mis",
+   "ini": 30.25,
+   "fin": 30.51,
+   "clave": false
+  },
+  {
+   "p": "otras",
+   "ini": 30.51,
+   "fin": 30.85,
+   "clave": false
+  },
+  {
+   "p": "dos",
+   "ini": 30.85,
+   "fin": 31.15,
+   "clave": false
+  },
+  {
+   "p": "recetas",
+   "ini": 31.15,
+   "fin": 31.77,
+   "clave": false
+  },
+  {
+   "p": "para",
+   "ini": 31.77,
+   "fin": 32.09,
+   "clave": false
+  },
+  {
+   "p": "después",
+   "ini": 32.09,
+   "fin": 32.41,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 32.41,
+   "fin": 32.61,
+   "clave": false
+  },
+  {
+   "p": "comer.",
+   "ini": 32.61,
+   "fin": 32.93,
+   "clave": false
+  },
+  {
+   "p": "Y",
+   "ini": 33.19,
+   "fin": 33.71,
+   "clave": false
+  },
+  {
+   "p": "sígueme",
+   "ini": 33.71,
+   "fin": 34.17,
+   "clave": true
+  },
+  {
+   "p": "para",
+   "ini": 34.17,
+   "fin": 34.45,
+   "clave": false
+  },
+  {
+   "p": "no",
+   "ini": 34.45,
+   "fin": 34.63,
+   "clave": false
+  },
+  {
+   "p": "perderlas.",
+   "ini": 34.63,
+   "fin": 35.25,
+   "clave": false
+  }
+ ]
+}
