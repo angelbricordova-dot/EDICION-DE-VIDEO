@@ -1,0 +1,418 @@
+{
+ "duracion": 19.87,
+ "frases": [
+  {
+   "id": "este",
+   "texto": "Este es Toño.",
+   "t": 0.0,
+   "fin": 0.84
+  },
+  {
+   "id": "edad",
+   "texto": "Veinticinco años. Cero pesos.",
+   "t": 1.43,
+   "fin": 3.43
+  },
+  {
+   "id": "mama",
+   "texto": "Vive de lo que le da su mamá.",
+   "t": 3.862,
+   "fin": 5.11
+  },
+  {
+   "id": "gta",
+   "texto": "Pero GTA seis sale en quince días…",
+   "t": 5.708,
+   "fin": 7.74
+  },
+  {
+   "id": "juego",
+   "texto": "y no tiene ni para el juego.",
+   "t": 8.23,
+   "fin": 9.63
+  },
+  {
+   "id": "meta",
+   "texto": "Tiene quince días para juntar mil dólares.",
+   "t": 10.307,
+   "fin": 12.36
+  },
+  {
+   "id": "pregunta",
+   "texto": "¿Qué hace primero?",
+   "t": 12.9,
+   "fin": 13.74
+  },
+  {
+   "id": "opciones",
+   "texto": "Comenta: vender sus cosas… o buscar trabajo.",
+   "t": 14.08,
+   "fin": 16.84
+  },
+  {
+   "id": "sigueme",
+   "texto": "Sígueme para el día uno.",
+   "t": 17.43,
+   "fin": 18.67
+  }
+ ],
+ "palabras": [
+  {
+   "p": "Este",
+   "ini": 0.0,
+   "fin": 0.24,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "es",
+   "ini": 0.24,
+   "fin": 0.5,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Toño,",
+   "ini": 0.5,
+   "fin": 0.72,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "25",
+   "ini": 1.49,
+   "fin": 1.73,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "años,",
+   "ini": 1.73,
+   "fin": 2.33,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "cero",
+   "ini": 2.57,
+   "fin": 2.89,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "pesos,",
+   "ini": 2.89,
+   "fin": 3.15,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "vive",
+   "ini": 3.87,
+   "fin": 4.07,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 4.07,
+   "fin": 4.21,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "lo",
+   "ini": 4.21,
+   "fin": 4.33,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "que",
+   "ini": 4.33,
+   "fin": 4.43,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "le",
+   "ini": 4.43,
+   "fin": 4.53,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "da",
+   "ini": 4.53,
+   "fin": 4.65,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "su",
+   "ini": 4.65,
+   "fin": 4.81,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "mamá,",
+   "ini": 4.81,
+   "fin": 5.11,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "pero",
+   "ini": 5.76,
+   "fin": 5.94,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "GTA",
+   "ini": 5.94,
+   "fin": 6.24,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "VI",
+   "ini": 6.24,
+   "fin": 6.56,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "sale",
+   "ini": 6.56,
+   "fin": 6.88,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "en",
+   "ini": 6.88,
+   "fin": 7.0,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "15",
+   "ini": 7.0,
+   "fin": 7.28,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "días",
+   "ini": 7.28,
+   "fin": 7.6,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "y",
+   "ini": 8.05,
+   "fin": 8.37,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "no",
+   "ini": 8.37,
+   "fin": 8.51,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "tiene",
+   "ini": 8.51,
+   "fin": 8.77,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "ni",
+   "ini": 8.77,
+   "fin": 8.93,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "para",
+   "ini": 8.93,
+   "fin": 9.11,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 9.11,
+   "fin": 9.25,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "juego.",
+   "ini": 9.25,
+   "fin": 9.51,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Tiene",
+   "ini": 10.36,
+   "fin": 10.58,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "15",
+   "ini": 10.58,
+   "fin": 10.84,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "días",
+   "ini": 10.84,
+   "fin": 11.1,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "para",
+   "ini": 11.1,
+   "fin": 11.32,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "juntar",
+   "ini": 11.32,
+   "fin": 11.68,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "mil",
+   "ini": 11.68,
+   "fin": 11.86,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "dólares.",
+   "ini": 11.86,
+   "fin": 12.2,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "Qué",
+   "ini": 13.0,
+   "fin": 13.08,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "hace",
+   "ini": 13.08,
+   "fin": 13.28,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "primero",
+   "ini": 13.28,
+   "fin": 13.64,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Comenta,",
+   "ini": 14.1,
+   "fin": 14.5,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "vender",
+   "ini": 14.68,
+   "fin": 14.98,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "sus",
+   "ini": 14.98,
+   "fin": 15.16,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "cosas",
+   "ini": 15.16,
+   "fin": 15.48,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "o",
+   "ini": 15.48,
+   "fin": 15.82,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "buscar",
+   "ini": 15.82,
+   "fin": 16.16,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "trabajo",
+   "ini": 16.16,
+   "fin": 16.6,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Sígueme",
+   "ini": 17.33,
+   "fin": 17.81,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "para",
+   "ini": 17.81,
+   "fin": 18.03,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 18.03,
+   "fin": 18.17,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "día",
+   "ini": 18.17,
+   "fin": 18.31,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "uno.",
+   "ini": 18.31,
+   "fin": 18.57,
+   "clave": true,
+   "dinero": false
+  }
+ ]
+}
