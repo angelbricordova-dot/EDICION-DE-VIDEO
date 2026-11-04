@@ -85,6 +85,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Reels inmobiliarios (inversor, España) | `src/inmobiliaria/` | `docs/inmobiliaria.md` | persona a cámara, título fijo + lista 1-2-3, subtítulos Inter blancos, cortes naturales, voz real del cliente; plantilla de eventos (`Plantilla.tsx`) y formato sofá de dos mitades (`Sofa.tsx`) |
 | Pronósticos de fútbol (cliente nuevo) | `src/pronosticos/` | `docs/pronosticos.md` | selfie a cámara de una toma, gráficos planos arriba (escudos, marcadores, fotos en círculo, etiquetas rojas), Bebas Neue, palabras clave amarillas |
 | Paul: reels con IA (personaje que da remedios caseros) | `src/paul/` (por crear) | `docs/paul.md` | personaje 100 % IA (Gemini + Google Flow/Veo), voz unificada con ElevenLabs, subtítulos 2-3 palabras con palabra clave en color |
+| Canal propio de Angel: serie animada interactiva "glow-up" (Instagram) | `src/glowup/` (por crear) | `docs/glowup.md` | animación 2D plana en SVG, HUD de días y % de cambio, la audiencia vota en comentarios, voz en off ElevenLabs |
 
 ### Separación por cliente (obligatoria)
 

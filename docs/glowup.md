@@ -1,0 +1,77 @@
+# Canal propio de Angel: serie animada interactiva de "glow-up" (Instagram)
+
+Proyecto de Angel (no de un cliente): una cuenta nueva de Instagram con una serie diaria de reels
+animados donde **la audiencia decide en comentarios** cada cambio del protagonista. Inspiración:
+`@rober.glowup` (51 mil seguidores con 3 reels). Nombre corto del proyecto en el repo: `glowup`
+(cambiarlo cuando Angel elija nombre de la cuenta).
+
+## Cómo está hecho el de referencia (análisis de sus 3 reels)
+
+- **Animación 2D plana tipo vector** (no es video de IA): personaje con estados (sucio, mojado,
+  limpio, enamorado, con mal aliento), fondos planos (cuarto, ducha, tienda, calle, baño),
+  partículas (moscas, olor verde, brillos, corazones). Se puede hacer en Remotion con SVG, como
+  el short del pulpo.
+- **Voz en off** de IA (español de España, "vosotros"), frases cortas con pausas, tono de narrador
+  de documental gracioso. Música y efectos debajo.
+- **Subtítulos** grandes en mayúsculas, condensados, contorno negro, palabra clave en amarillo o rojo.
+- **HUD fijo arriba**: contador "DÍAS 30 → 29 → 28" y barra "GLOW-UP 0 % → 6 % → 14 %".
+- **Tarjetas de UI**: notificación del grupo de WhatsApp, "COMENTARIO MÁS VOTADO @usuario",
+  tarjetas "DUCHA vs HABITACIÓN", "ANTES / DESPUÉS", "A Lucía le ha gustado tu foto".
+- **Duración**: 23 s (día 0), 46 s y 55 s. Unos 460 caracteres de voz por episodio.
+
+### Estructura de cada episodio (la fórmula)
+1. **Resumen-gancho (0–6 s)**: primer plano asqueroso + "Rober, cero duchas. Quiere conquistar a
+   Lucía. Y tú eliges cada cambio." (para los que llegan nuevos).
+2. **El comentario más votado (6–8 s)**: tarjeta con el @ del seguidor + "¿Dientes? Día 2."
+   → el seguidor se siente parte de la serie y comenta más.
+3. **Mini historia con obstáculo y gag absurdo (8–40 s)**: no tiene pasta → lo echan de la tienda
+   por el aliento → se come un chicle del suelo → lo consigue.
+4. **Resultado**: antes/después, "GLOW-UP +3 %", el contador baja un día.
+5. **Giro social (cliffhanger)**: el rival se ríe / la chica le da like.
+6. **Votación**: "¿Qué toca mañana? Comenta ROPA o GRANOS. Sígueme para el día 3."
+
+## Nuestra versión (original, misma fórmula)
+
+No copiar personaje, nombres, premisa ni diseño de Rober: misma mecánica, historia propia.
+
+Concepto recomendado (pendiente de que Angel elija):
+- **Toño**, 34 años, vive con su mamá, no sale del sofá. Su **ex se casa en 30 días… y lo invitó**.
+  Meta: llegar a la boda irreconocible. Rival: el novio, "Brayan el del gym". Personaje cómico
+  fijo: la mamá (chancletazos, "¡Antonio!"). Barra "NIVEL DE CAMBIO".
+- Alternativas: **Paqui** (chica desastre, la boda de su hermana perfecta) o **Don Ramón**
+  (abuelo que quiere ganar el concurso de baile del barrio).
+
+Mercado: latino neutro ("ustedes deciden") para llegar a más países (Rober va a España).
+
+## Producción (cómo lo hacemos)
+
+1. **Personaje**: Gemini hace la hoja de referencia (estilo plano, colores) → yo lo redibujo en
+   SVG por partes (boca para sincronizar con la voz, ojos, sudor, moscas, estados) para animarlo.
+2. **Fondos**: Gemini (estilo plano, 9:16, sin personajes) o SVG propios.
+3. **Voz**: ElevenLabs. **Pedir permiso a Angel antes de generar** (regla del CLAUDE.md).
+4. **Música y efectos**: Mixkit (gratis, uso comercial) para no gastar créditos.
+5. **Montaje**: Remotion, con HUD, tarjetas y subtítulos reutilizables; cada episodio es un guion
+   JSON nuevo. El primero cuesta más (construir todo); los siguientes, mucho menos.
+
+## Créditos de ElevenLabs (plan Starter, 40.000 al mes)
+
+- Un episodio ≈ 450–650 caracteres de voz ≈ 450–650 créditos (Eleven v3 / Multilingual: 1 crédito
+  por carácter; Flash: 0,5).
+- Con repeticiones y muestras: ≈ 800 por episodio → **unos 45–50 episodios al mes**.
+  Solo la toma buena: hasta ~80. Con voz Flash: el doble.
+- Música y efectos de ElevenLabs gastan mucho más: usar Mixkit.
+
+## Lanzamiento de la cuenta
+
+- Antes de abrir: logo/foto de perfil, bio, 3 reels listos (Día 0 tráiler, Día 1, Día 2).
+- Fijar 3 publicaciones: Día 0, el último episodio y uno de los más vistos.
+- Publicar **todos los días a la misma hora** (de noche en LatAm, 19–21 h). La serie depende de
+  la constancia.
+- Descripción de cada reel: "DÍA N + emoji, resumen en 2 líneas, pregunta, comenta X o Y",
+  más la **encuesta** de Instagram con las dos opciones.
+- Etiqueta "Contenido generado con IA" activada.
+- Responder y fijar comentarios; el más votado sale con su @ en el siguiente episodio.
+
+## Pendiente
+- Angel: elegir concepto, mercado (latino o España) y nombre de la cuenta.
+- Muestras de voz (con permiso), personaje en Gemini, Día 0.
