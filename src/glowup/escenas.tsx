@@ -338,3 +338,32 @@ export const CapturaEncuesta: React.FC<{ t: number; t0: number; t1: number; src:
     </div>
   );
 };
+
+/** Íconos para la votación "APOSTAR CON BRAYAN vs MÁS TURNOS". */
+export const IconoApuesta: React.FC = () => (
+  <svg width={190} height={190} viewBox="0 0 100 100">
+    <g transform="rotate(-12 36 52)">
+      <rect x={14} y={30} width={44} height={44} rx={8} fill="#FFFFFF" stroke={COL.linea} strokeWidth={4} />
+      {[[26, 42], [46, 62], [36, 52], [26, 62], [46, 42]].map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r={4} fill={COL.rojo} />
+      ))}
+    </g>
+    <g transform="rotate(14 72 40)">
+      <rect x={54} y={18} width={36} height={36} rx={7} fill="#FFFFFF" stroke={COL.linea} strokeWidth={4} />
+      <circle cx={64} cy={28} r={3.5} fill={COL.linea} />
+      <circle cx={80} cy={44} r={3.5} fill={COL.linea} />
+    </g>
+    {[0, 1, 2].map((i) => (
+      <ellipse key={i} cx={72} cy={84 - i * 7} rx={16} ry={6} fill="#F2C744" stroke={COL.linea} strokeWidth={3} />
+    ))}
+  </svg>
+);
+export const IconoTurnos: React.FC = () => (
+  <svg width={190} height={190} viewBox="0 0 100 100">
+    <circle cx={44} cy={46} r={32} fill="#FBF8F1" stroke={COL.linea} strokeWidth={4} />
+    <path d="M 44 46 L 44 24 M 44 46 L 60 54" stroke={COL.linea} strokeWidth={5} strokeLinecap="round" />
+    <text x={44} y={86} textAnchor="middle" fontFamily="Arial Black" fontSize={14} fill={COL.rojo}>+8h</text>
+    <path d="M 70 54 L 90 54 L 92 80 Q 88 94 80 94 Q 70 92 70 80 Z" fill="#F2CF2E" stroke={COL.linea} strokeWidth={3.5} />
+    <path d="M 70 62 Q 62 62 62 70 Q 64 76 70 74" fill="#F2CF2E" stroke={COL.linea} strokeWidth={3} />
+  </svg>
+);

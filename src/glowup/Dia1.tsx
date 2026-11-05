@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { clamp01, easeInOut, easeOut, FPS, lerp, prog } from "../comun/animacion";
-import { BilleteVuela, CapturaEncuesta, ChatPrimo, Cocina, ComentarioVotado, Curriculums, IconoAlcancia, IconoReventa, Leccion, PlatoLavando, RelojHoras, SelloGTA, TituloDia } from "./escenas";
+import { BilleteVuela, CapturaEncuesta, ChatPrimo, Cocina, ComentarioVotado, Curriculums, IconoApuesta, IconoTurnos, Leccion, PlatoLavando, RelojHoras, SelloGTA, TituloDia } from "./escenas";
 import { cargarFuentes, Cuarto, Episodio, Mama, Marcador, Moscas, Olor, Seguir, Subtitulos, Votacion } from "./piezas";
 import { Expresion, Pose, Tono } from "./Tono";
 import datos from "./dia1.json";
@@ -10,7 +10,7 @@ import datos from "./dia1.json";
 // Día 1 de Toño: ganó "buscar trabajo" (73 % en la encuesta). Empieza con el conflicto en el primer
 // segundo (en el Día 0 el 39 % pasaba de largo al principio): "¡Ustedes votaron… a trabajar!" con el
 // comentario más votado, DÍA 1, currículum rechazado, la mamá le consigue lavar platos, 8 horas → $20,
-// lección del día, el primo Brayan ya reservó GTA VI y votación AHORRAR vs INVERTIR.
+// lección del día, el primo Brayan ya reservó GTA VI y votación APOSTAR CON BRAYAN vs MÁS TURNOS.
 
 export const DIA1 = datos as Episodio;
 export type PropsDia1 = { audio: string | null };
@@ -46,8 +46,9 @@ export const Dia1: React.FC<PropsDia1> = ({ audio }) => {
   const sellos = ws("rechazado");
   const tFoto = w("foto", primo.t);
   const tReservo = w("reservó", primo.t);
-  const tA = w("ahorrar", pregunta.t) - 0.1;
-  const tB = w("invertir", pregunta.t) - 0.1;
+  // opciones: "apostarlos con Brayan" / "pedir más turnos" (las de la versión anterior como respaldo)
+  const tA = (ws("apostarlos")[0] ?? w("ahorrar", pregunta.t)) - 0.1;
+  const tB = (ws("pedir")[0] ?? w("invertir", pregunta.t)) - 0.1;
   const tSoñado = w("es", leccion.t + 1.5);
 
   // Dinero: $0 hasta que cobra; cuenta hasta $20 cuando el billete llega al marcador.
@@ -141,7 +142,7 @@ export const Dia1: React.FC<PropsDia1> = ({ audio }) => {
       <BilleteVuela t={t} t0={paga.t - 0.05} monto={20} />
       <Leccion t={t} t0={leccion.t} t1={leccion.fin + 0.15} lineas={["El primer trabajo no es el soñado…", "…es el que te arranca."]} t2={tSoñado} />
       <ChatPrimo t={t} t0={tFoto - 0.3} t1={pregunta.t - 0.15} tSello={tReservo} />
-      <Votacion t={t} tA={tA} tB={tB} t1={sigue - 0.15} a="AHORRAR" b="INVERTIR" iconoA={<IconoAlcancia />} iconoB={<IconoReventa />} sub="¿QUÉ HACE?" />
+      <Votacion t={t} tA={tA} tB={tB} t1={sigue - 0.15} a="APOSTAR CON BRAYAN" b="MÁS TURNOS" iconoA={<IconoApuesta />} iconoB={<IconoTurnos />} sub="¿QUÉ HACE?" />
       <Seguir t={t} t0={sigue} dia={2} />
       {!enCv && !(t >= dia.t && t < cv.t) ? <Subtitulos t={t} palabras={DIA1.palabras} y={1440} /> : null}
       {enCv ? <Subtitulos t={t} palabras={DIA1.palabras} y={1560} /> : null}

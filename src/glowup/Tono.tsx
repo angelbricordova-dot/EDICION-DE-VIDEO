@@ -86,7 +86,7 @@ const Ojo: React.FC<{ id: string; cx: number; cy: number; abierto: number; mira:
   );
 };
 
-export const Cabeza: React.FC<PropsTono & { uid: string }> = ({ uid, expresion = "aburrido", boca = 0, parpadeo = 0, mirada = 0, t = 0 }) => {
+export const Cabeza: React.FC<PropsTono & { uid: string; gorro?: boolean }> = ({ uid, gorro = false, expresion = "aburrido", boca = 0, parpadeo = 0, mirada = 0, t = 0 }) => {
   const shock = expresion === "shock";
   const feliz = expresion === "feliz";
   const llora = expresion === "llora";
@@ -185,15 +185,25 @@ export const Cabeza: React.FC<PropsTono & { uid: string }> = ({ uid, expresion =
             </g>
           ))
         : null}
+      {gorro ? (
+        <>
+          {/* con el gorro de cocina el pelo queda tapado: solo asoman las patillas */}
+          <path d="M 206 236 Q 200 270 210 300 L 222 296 Q 216 266 222 240 Z M 394 236 Q 400 270 390 300 L 378 296 Q 384 266 378 240 Z" fill={C.pelo} {...L} strokeWidth={3} />
+          <Gorro />
+        </>
+      ) : (
+        <>
       {/* pelo: masa, brillos y mechones sueltos */}
-      <path
-        d="M 196 318 C 188 290 186 262 192 240 L 168 226 L 190 210 C 176 186 186 160 208 150 L 196 120 L 232 132 C 240 110 262 96 282 104 L 296 74 L 312 106 C 334 92 362 100 372 118 L 404 104 L 394 140 C 414 150 424 172 418 196 L 442 214 L 414 226 C 418 254 414 284 404 312 L 392 268 C 390 232 382 210 366 196 L 362 226 L 344 192 L 330 216 L 318 186 L 300 222 L 290 186 L 268 208 L 262 182 C 238 192 222 214 216 250 L 210 292 Z"
-        fill={C.pelo}
-        {...L}
-        strokeWidth={4}
-      />
-      <path d="M 236 140 Q 262 122 290 126 M 318 118 Q 346 116 366 132 M 214 178 Q 226 160 246 152 M 384 166 Q 398 178 402 196" fill="none" stroke={C.peloLuz} strokeWidth={7} strokeLinecap="round" />
-      <path d="M 200 280 Q 196 300 204 318 M 404 286 Q 410 300 402 318 M 296 74 Q 292 60 300 52 M 404 104 Q 416 96 424 98" fill="none" stroke={C.pelo} strokeWidth={4} strokeLinecap="round" />
+          <path
+            d="M 196 318 C 188 290 186 262 192 240 L 168 226 L 190 210 C 176 186 186 160 208 150 L 196 120 L 232 132 C 240 110 262 96 282 104 L 296 74 L 312 106 C 334 92 362 100 372 118 L 404 104 L 394 140 C 414 150 424 172 418 196 L 442 214 L 414 226 C 418 254 414 284 404 312 L 392 268 C 390 232 382 210 366 196 L 362 226 L 344 192 L 330 216 L 318 186 L 300 222 L 290 186 L 268 208 L 262 182 C 238 192 222 214 216 250 L 210 292 Z"
+            fill={C.pelo}
+            {...L}
+            strokeWidth={4}
+          />
+          <path d="M 236 140 Q 262 122 290 126 M 318 118 Q 346 116 366 132 M 214 178 Q 226 160 246 152 M 384 166 Q 398 178 402 196" fill="none" stroke={C.peloLuz} strokeWidth={7} strokeLinecap="round" />
+          <path d="M 200 280 Q 196 300 204 318 M 404 286 Q 410 300 402 318 M 296 74 Q 292 60 300 52 M 404 104 Q 416 96 424 98" fill="none" stroke={C.pelo} strokeWidth={4} strokeLinecap="round" />
+        </>
+      )}
     </g>
   );
 };
@@ -245,9 +255,9 @@ const Uniforme: React.FC = () => (
 /** Gorro de papel de cocina (va encima del pelo). */
 const Gorro: React.FC = () => (
   <g>
-    <path d="M 214 210 Q 210 120 300 112 Q 390 120 386 210 Z" fill="#FBFBF8" {...L} />
-    <path d="M 206 200 L 394 200 L 392 232 L 208 232 Z" fill="#ECEBE5" {...L} strokeWidth={5} />
-    <path d="M 250 150 Q 262 136 276 146 M 320 140 Q 334 128 348 142" fill="none" stroke="#D5D3CB" strokeWidth={4} strokeLinecap="round" />
+    <path d="M 206 222 Q 196 104 300 92 Q 404 104 394 222 Z" fill="#FBFBF8" {...L} />
+    <path d="M 198 206 L 402 206 L 400 246 L 200 246 Z" fill="#ECEBE5" {...L} strokeWidth={5} />
+    <path d="M 246 140 Q 260 122 278 136 M 318 128 Q 334 112 352 130" fill="none" stroke="#D5D3CB" strokeWidth={4} strokeLinecap="round" />
   </g>
 );
 
@@ -380,8 +390,7 @@ export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "nor
   ) : (
     <svg width={ancho} height={ancho * (1300 / 600)} viewBox="0 0 600 1300">
       <Cuerpo pose={pose} t={p.t ?? 0} ropa={ropa} />
-      <Cabeza uid={uid} {...p} />
-      {ropa === "lavaplatos" ? <Gorro /> : null}
+      <Cabeza uid={uid} gorro={ropa === "lavaplatos"} {...p} />
     </svg>
   );
 };
