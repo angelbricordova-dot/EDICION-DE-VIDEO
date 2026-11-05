@@ -36,5 +36,16 @@ es remunerado. Chat de WhatsApp exportado (5-nov-2026) con las condiciones.
   donde se escribe RESET, se publica y aparece arriba con su ♥.
 - Destellos tipo lens flare hechos en código (no hacen falta archivos) en cada cambio de sección.
 
+## Correcciones de la prueba (v3, hecha)
+- Sin lens flare (las transiciones las pone Angel en CapCut), sin "PESOS DE PARTIDA" ni "LA REGLA
+  QUE CASI NADIE SABE".
+- Pesos: cuando nombra un músculo **se resalta en rojo sobre su cuerpo** siguiéndola cuadro a cuadro
+  (`scripts/katia/postura.py` con MediaPipe Pose → `src/katia/postura/IMG_*.json`; mediapipe y su
+  modelo `pose_landmarker_full.task` van aparte, fuera del repo; necesita `apt-get install libegl1
+  libgles2`). Piernas: cadera→rodilla; espalda: dorsales a los lados y trapecio a cada lado del
+  cuello; hombro: deltoides; brazo: hombro→codo. Etiqueta oscura con nombre, kg y ejercicios.
+- Compartir y comentar: tarjetas **oscuras** y simples (no la interfaz de Instagram): avión de papel
+  que sale volando → "tu amiga ✓"; caja donde se escribe RESET, se envía y aparece con un ♥ rosa.
+
 ## Pendiente
 - Que Katia vea la prueba.

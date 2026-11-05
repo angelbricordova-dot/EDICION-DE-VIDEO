@@ -141,15 +141,13 @@ def main():
     def sfx(nombre, t0, db):
         mz.poner(max(0.0, t0), leer(SFX / nombre, None), 10 ** (db / 20))
 
-    for i, s in enumerate(secciones):  # destello en cada sección nueva
-        sfx(f"mixkit/barrido-{1 + i % 5}.mp3", s - 0.15, -19)
     for k in ("piernas", "espalda", "hombro"):
         sfx("mixkit/pop-1.mp3", anclas[k] - 0.05, -17)
     for k in ("kgPiernas", "kgEspalda", "kgBrazo"):
         sfx("mixkit/clic-2.mp3", anclas[k], -18)
     sfx("mixkit/pop-2.mp3", anclas["hacer"] - 0.1, -18)
     sfx("mixkit/acierto.mp3", anclas["subas"] - 0.05, -18)
-    sfx("tap.mp3", anclas["amiga"], -16)
+    sfx("mixkit/barrido-2.mp3", anclas["amiga"] - 0.05, -20)
     sfx("teclas.mp3", anclas["reset"] - 0.25, -16)
     sfx("mixkit/pop-3.mp3", anclas["reset"] + 0.75, -15)
     mz.masterizar(K / "mezcla-prueba.wav")
