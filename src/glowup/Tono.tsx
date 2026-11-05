@@ -8,9 +8,11 @@ import React, { useId } from "react";
 
 export type Expresion = "aburrido" | "shock" | "llora" | "feliz";
 export type Pose = "normal" | "bolsillos";
+export type Ropa = "sudadera" | "lavaplatos";
 export type PropsTono = {
   expresion?: Expresion;
   pose?: Pose;
+  ropa?: Ropa; // "lavaplatos": uniforme del restaurante (camisa blanca, delantal, gorro y guantes)
   boca?: number; // 0 cerrada … 1 muy abierta
   parpadeo?: number; // 0 abierto … 1 cerrado
   mirada?: number; // −1 izquierda … 1 derecha
@@ -205,9 +207,63 @@ const Mano: React.FC<{ x: number; y: number; giro?: number; espejo?: boolean }> 
   </g>
 );
 
-const Cuerpo: React.FC<{ pose: Pose; t: number }> = ({ pose, t }) => {
+/** Uniforme de lavaplatos: camisa blanca de manga corta, delantal azul con su nombre y guantes
+ * amarillos de goma (sin sudadera ni audífonos). Las piernas y pantuflas son las mismas. */
+const Uniforme: React.FC = () => (
+  <g>
+    {/* brazos: antebrazo con piel y guante amarillo */}
+    {[
+      [150, 1],
+      [450, -1],
+    ].map(([x, d], i) => (
+      <g key={i}>
+        <path d={`M ${x + d * 34} 540 L ${x - d * 4} 560 L ${x - d * 10} 720 L ${x + d * 40} 724 L ${x + d * 44} 560 Z`} fill={C.piel} {...L} />
+        <path d={`M ${x - d * 14} 700 L ${x + d * 44} 700 L ${x + d * 48} 760 Q ${x + d * 40} 812 ${x + d * 14} 812 Q ${x - d * 18} 808 ${x - d * 18} 770 Z`} fill="#F2CF2E" {...L} />
+        <path d={`M ${x - d * 14} 704 L ${x + d * 44} 704`} stroke="#C9A615" strokeWidth={8} />
+      </g>
+    ))}
+    {/* camisa blanca */}
+    <path d="M 176 470 Q 190 440 250 432 L 350 432 Q 410 440 424 470 L 440 760 Q 442 798 408 800 L 192 800 Q 158 798 160 760 Z" fill="#F6F5F0" {...L} />
+    <path d="M 380 450 Q 420 460 424 480 L 440 760 Q 442 798 408 800 L 384 800 Q 402 640 380 450 Z" fill="#DCDAD2" />
+    <path d="M 176 470 Q 140 482 128 560 L 186 572 Z M 424 470 Q 460 482 472 560 L 414 572 Z" fill="#F6F5F0" {...L} />
+    <path d="M 268 434 L 300 476 L 332 434" fill="none" {...L} strokeWidth={5} />
+    {/* delantal azul con su nombre */}
+    <path d="M 236 470 L 364 470 L 380 560 L 410 800 L 190 800 L 220 560 Z" fill="#6FB2E0" {...L} />
+    <path d="M 236 470 Q 300 430 364 470" fill="none" stroke="#6FB2E0" strokeWidth={14} />
+    <path d="M 220 560 Q 160 560 150 580 M 380 560 Q 440 560 450 580" fill="none" stroke="#6FB2E0" strokeWidth={10} strokeLinecap="round" />
+    <rect x={254} y={640} width={92} height={70} rx={10} fill="none" stroke="#4A8EBF" strokeWidth={6} />
+    <rect x={250} y={500} width={100} height={40} rx={8} fill="#fff" {...L} strokeWidth={4} />
+    <text x={300} y={531} textAnchor="middle" fontFamily={`"Lilita One", "Arial Black", sans-serif`} fontSize={30} fill={C.linea}>TOÑO</text>
+    {[[240, 700, 12], [360, 740, 9], [300, 770, 7]].map(([x, y, r], i) => (
+      <circle key={i} cx={x} cy={y} r={r} fill="#fff" opacity={0.8} stroke="#9CC9E8" strokeWidth={2} />
+    ))}
+    {/* cuello */}
+    <rect x={272} y={384} width={56} height={56} fill={C.pielSombra} {...L} />
+  </g>
+);
+
+/** Gorro de papel de cocina (va encima del pelo). */
+const Gorro: React.FC = () => (
+  <g>
+    <path d="M 214 210 Q 210 120 300 112 Q 390 120 386 210 Z" fill="#FBFBF8" {...L} />
+    <path d="M 206 200 L 394 200 L 392 232 L 208 232 Z" fill="#ECEBE5" {...L} strokeWidth={5} />
+    <path d="M 250 150 Q 262 136 276 146 M 320 140 Q 334 128 348 142" fill="none" stroke="#D5D3CB" strokeWidth={4} strokeLinecap="round" />
+  </g>
+);
+
+const Cuerpo: React.FC<{ pose: Pose; t: number; ropa: Ropa }> = ({ pose, t, ropa }) => {
   const bolsillos = pose === "bolsillos";
   const mece = Math.sin(t * 9) * 6;
+  if (ropa === "lavaplatos") {
+    return (
+      <g>
+        <path d="M 192 780 L 408 780 L 420 1182 L 316 1182 L 304 900 L 296 900 L 284 1182 L 178 1182 Z" fill={C.gris} {...L} />
+        <path d="M 160 1238 Q 160 1200 230 1202 Q 290 1204 292 1238 Z" fill={C.pantuflaGris} {...L} />
+        <path d="M 308 1238 Q 310 1204 372 1202 Q 442 1200 440 1238 Z" fill={C.pantuflaCafe} {...L} />
+        <Uniforme />
+      </g>
+    );
+  }
   return (
     <g>
       {/* pantalón con pliegues y sombra entre las piernas */}
@@ -315,7 +371,7 @@ const Cuerpo: React.FC<{ pose: Pose; t: number }> = ({ pose, t }) => {
 };
 
 /** Toño completo (o solo la cabeza). `ancho` en píxeles; la caja es 600 × 1300. */
-export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "normal", ...p }) => {
+export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "normal", ropa = "sudadera", ...p }) => {
   const uid = useId().replace(/[^a-zA-Z0-9]/g, "");
   return soloCabeza ? (
     <svg width={ancho} height={ancho * (330 / 300)} viewBox="150 80 300 330">
@@ -323,8 +379,9 @@ export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "nor
     </svg>
   ) : (
     <svg width={ancho} height={ancho * (1300 / 600)} viewBox="0 0 600 1300">
-      <Cuerpo pose={pose} t={p.t ?? 0} />
+      <Cuerpo pose={pose} t={p.t ?? 0} ropa={ropa} />
       <Cabeza uid={uid} {...p} />
+      {ropa === "lavaplatos" ? <Gorro /> : null}
     </svg>
   );
 };

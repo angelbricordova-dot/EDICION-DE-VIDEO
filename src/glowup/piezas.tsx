@@ -338,7 +338,7 @@ export const BilleteraVacia: React.FC<{ t: number; t0: number }> = ({ t, t0 }) =
 };
 
 /** Brazo de la mamá que entra por la derecha con una moneda, y su grito. */
-export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string }> = ({ t, t0, t1, texto = "¡TOMA, MIJO!" }) => {
+export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string; objeto?: "moneda" | "guantes" }> = ({ t, t0, t1, texto = "¡TOMA, MIJO!", objeto = "moneda" }) => {
   if (t < t0 || t > t1 + 0.4) return null;
   const k = easeOut(prog(t, t0, t0 + 0.35)) * (1 - easeOut(prog(t, t1, t1 + 0.35)));
   const g = sp(t, t0 + 0.2, POP) * (1 - prog(t, t1, t1 + 0.2));
@@ -351,8 +351,21 @@ export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string 
             <circle key={i} cx={x} cy={y} r={9} fill="#FFE07A" />
           ))}
           <path d="M 735 1004 Q 690 996 676 1016 Q 668 1044 690 1056 Q 716 1066 736 1054 Z" fill="#D9A27A" {...L} />
-          <circle cx={660} cy={1030} r={34} fill="#F2C744" {...L} />
-          <text x={660} y={1043} textAnchor="middle" fontFamily={FUENTE} fontSize={38} fill="#9C7A16">$</text>
+          {objeto === "moneda" ? (
+            <>
+              <circle cx={660} cy={1030} r={34} fill="#F2C744" {...L} />
+              <text x={660} y={1043} textAnchor="middle" fontFamily={FUENTE} fontSize={38} fill="#9C7A16">$</text>
+            </>
+          ) : (
+            <g>
+              {/* guantes amarillos de goma y una esponja */}
+              <path d="M 560 960 L 640 960 L 650 1060 Q 640 1110 600 1110 Q 556 1106 552 1060 Z" fill="#F2CF2E" {...L} />
+              <path d="M 552 990 Q 530 990 528 1020 Q 532 1040 554 1036" fill="#F2CF2E" {...L} strokeWidth={5} />
+              <path d="M 610 990 L 690 990 L 700 1090 Q 690 1140 650 1140 Q 606 1136 602 1090 Z" fill="#F7D946" {...L} />
+              <rect x={540} y={1100} width={130} height={60} rx={14} fill="#7BC96F" {...L} />
+              <rect x={540} y={1100} width={130} height={24} rx={10} fill="#F5E27A" {...L} strokeWidth={4} />
+            </g>
+          )}
         </g>
       </svg>
       <div style={{ position: "absolute", right: 40, top: 330, scale: String(lerp(0.3, 1, g)), opacity: clamp01(g * 2), background: COL.blanco, border: `6px solid ${COL.linea}`, borderRadius: 40, padding: "18px 34px", fontFamily: FUENTE, fontSize: 64, color: COL.linea, rotate: "0deg" }}>

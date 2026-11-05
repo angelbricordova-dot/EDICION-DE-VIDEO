@@ -65,54 +65,60 @@ export const TituloDia: React.FC<{ t: number; t0: number; t1: number; dia: numbe
   );
 };
 
-/** Currículum de Toño: hoja recta, foto, secciones vacías, "Nivel 100 en Fortnite" resaltado
- * y sellos de RECHAZADO que caen uno a uno. */
-export const Curriculum: React.FC<{ t: number; t0: number; tResalta: number; sellos: number[] }> = ({ t, t0, tResalta, sellos }) => {
-  const k = sp(t, t0, POP);
-  const marca = clamp01((t - tResalta) / 0.35);
+/** Un currículum de Toño dirigido a un sitio ("PARA: …"), con "Nivel 100 en Fortnite" resaltado. */
+const HojaCV: React.FC<{ para: string; color: string; resalta: number; sello: number }> = ({ para, color, resalta, sello }) => (
+  <div style={{ width: 760, height: 1000, background: "#FBF8F1", borderRadius: 12, boxShadow: "0 26px 50px rgba(0,0,0,0.45)", padding: "40px 52px", fontFamily: SUBS, position: "relative", overflow: "hidden" }}>
+    <div style={{ background: color, color: "#fff", fontWeight: 900, fontSize: 40, padding: "10px 20px", borderRadius: 10, display: "inline-block" }}>PARA: {para}</div>
+    <div style={{ fontWeight: 900, fontSize: 66, color: COL.linea, marginTop: 20 }}>CURRÍCULUM</div>
+    <div style={{ height: 8, background: COL.linea, margin: "10px 0 26px" }} />
+    <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
+      <div style={{ width: 190, height: 210, border: `6px solid ${COL.linea}`, background: "#D9E6E8", overflow: "hidden", display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
+        <Tono soloCabeza ancho={190} expresion="aburrido" />
+      </div>
+      <div>
+        <div style={{ fontWeight: 900, fontSize: 60, color: COL.linea }}>TOÑO</div>
+        <div style={{ fontWeight: 900, fontSize: 38, color: "#666" }}>25 años</div>
+      </div>
+    </div>
+    <div style={{ fontWeight: 900, fontSize: 42, color: COL.linea, marginTop: 36 }}>EXPERIENCIA</div>
+    <div style={{ fontWeight: 900, fontSize: 36, color: "#9A958B", marginTop: 8 }}>Ninguna</div>
+    <div style={{ fontWeight: 900, fontSize: 42, color: COL.linea, marginTop: 30 }}>HABILIDADES</div>
+    <div style={{ position: "relative", marginTop: 14, display: "inline-block" }}>
+      <div style={{ position: "absolute", left: -10, top: 6, height: 64, width: `${resalta * 104}%`, background: COL.amarillo, opacity: 0.85, borderRadius: 8 }} />
+      <div style={{ position: "relative", fontWeight: 900, fontSize: 56, color: COL.linea }}>Nivel 100 en Fortnite</div>
+    </div>
+    {sello > 0 ? (
+      <div style={{ position: "absolute", left: 60, top: 420, scale: String(lerp(2.6, 1, easeOut(sello))), opacity: sello * 0.92, border: `14px solid ${COL.rojo}`, borderRadius: 20, padding: "6px 34px", fontFamily: GTA, fontSize: 140, color: COL.rojo, background: "rgba(255,255,255,0.2)" }}>RECHAZADO</div>
+    ) : null}
+  </div>
+);
+
+/** Toño manda currículums a varios sitios y todos vuelven RECHAZADOS: cada hoja nueva entra
+ * encima (las anteriores se apilan detrás) y recibe su sello con cada "rechazado". */
+export const Curriculums: React.FC<{ t: number; t0: number; tResalta: number; sellos: number[]; destinos: { para: string; color: string }[] }> = ({ t, t0, tResalta, sellos, destinos }) => {
+  // cuándo entra cada hoja: la primera al empezar, las siguientes un poco antes de su sello
+  const entra = destinos.map((_, i) => (i === 0 ? t0 : sellos[i] - 0.28));
+  const resalta = clamp01((t - tResalta) / 0.35);
   return (
     <AbsoluteFill style={{ background: "radial-gradient(circle at 50% 40%, #4A7A80 0%, #1F3A3E 80%)" }}>
-      <div style={{ position: "absolute", left: 140, top: 330, width: 800, height: 1060, background: "#FBF8F1", borderRadius: 12, boxShadow: "0 26px 50px rgba(0,0,0,0.45)", translate: `0 ${(1 - k) * 900}px`, padding: "50px 56px", fontFamily: SUBS }}>
-        <div style={{ fontWeight: 900, fontSize: 72, color: COL.linea, letterSpacing: "0.02em" }}>CURRÍCULUM</div>
-        <div style={{ height: 8, background: COL.linea, margin: "14px 0 30px" }} />
-        <div style={{ display: "flex", gap: 30, alignItems: "center" }}>
-          <div style={{ width: 210, height: 230, border: `6px solid ${COL.linea}`, background: "#D9E6E8", overflow: "hidden", display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-            <Tono soloCabeza ancho={210} expresion="aburrido" />
+      {destinos.map((d, i) => {
+        if (t < entra[i]) return null;
+        const k = sp(t, entra[i], POP);
+        const encima = destinos.filter((_, j) => j > i && t >= entra[j]).length;
+        const desde = i % 2 ? 900 : -900;
+        return (
+          <div key={i} style={{ position: "absolute", left: 160, top: 360, translate: `${(1 - k) * desde + encima * -40}px ${encima * -36}px`, scale: String(1 - encima * 0.05), rotate: "0deg", filter: encima ? "brightness(0.85)" : undefined }}>
+            <HojaCV para={d.para} color={d.color} resalta={i === 0 ? resalta : 1} sello={clamp01((t - sellos[i]) / 0.12)} />
           </div>
-          <div>
-            <div style={{ fontWeight: 900, fontSize: 64, color: COL.linea }}>TOÑO</div>
-            <div style={{ fontWeight: 900, fontSize: 40, color: "#666" }}>25 años</div>
-          </div>
-        </div>
-        <div style={{ fontWeight: 900, fontSize: 44, color: COL.linea, marginTop: 44 }}>EXPERIENCIA</div>
-        {[0, 1].map((i) => (
-          <div key={i} style={{ height: 22, width: `${70 - i * 20}%`, background: "#E3DED3", borderRadius: 11, marginTop: 18 }} />
-        ))}
-        <div style={{ fontWeight: 900, fontSize: 44, color: COL.linea, marginTop: 44 }}>HABILIDADES</div>
-        <div style={{ position: "relative", marginTop: 18, display: "inline-block" }}>
-          <div style={{ position: "absolute", left: -10, top: 6, height: 66, width: `${marca * 104}%`, background: COL.amarillo, opacity: 0.85, borderRadius: 8 }} />
-          <div style={{ position: "relative", fontWeight: 900, fontSize: 58, color: COL.linea }}>Nivel 100 en Fortnite</div>
-        </div>
-        {sellos.map((ts, i) => {
-          if (t < ts) return null;
-          const g = clamp01((t - ts) / 0.12);
-          const pos = [
-            { left: 60, top: 240 },
-            { left: 300, top: 520 },
-            { left: 110, top: 780 },
-          ][i % 3];
-          return (
-            <div key={i} style={{ position: "absolute", ...pos, scale: String(lerp(2.6, 1, easeOut(g))), opacity: g * 0.92, border: `12px solid ${COL.rojo}`, borderRadius: 18, padding: "6px 30px", fontFamily: GTA, fontSize: 120, color: COL.rojo, background: "rgba(255,255,255,0.15)" }}>RECHAZADO</div>
-          );
-        })}
-      </div>
+        );
+      })}
     </AbsoluteFill>
   );
 };
 
 /** Cocina del restaurante: azulejos, estantes, ollas colgando, ventana de pedidos y un fregadero
  * delante (tapa a Toño de la cintura para abajo) con platos y espuma. `oscuro` para el paso del tiempo. */
-export const Cocina: React.FC<{ t: number; platos?: number; oscuro?: number; children?: React.ReactNode }> = ({ t, platos = 6, oscuro = 0, children }) => (
+export const Cocina: React.FC<{ t: number; platos?: number; limpios?: number; oscuro?: number; children?: React.ReactNode }> = ({ t, platos = 6, limpios = 0, oscuro = 0, children }) => (
   <AbsoluteFill>
     <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
       <rect width={1080} height={1920} fill="#E8EEF0" />
@@ -148,6 +154,28 @@ export const Cocina: React.FC<{ t: number; platos?: number; oscuro?: number; chi
       <path d="M 560 1130 L 560 1040 Q 560 1000 610 1000 L 640 1000" fill="none" stroke="#9AA3AA" strokeWidth={22} strokeLinecap="round" />
     </svg>
     {children}
+    {/* encima de todo: espuma desbordando del fregadero, burbujas que suben y platos limpios que brillan */}
+    <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
+      {Array.from({ length: 22 }, (_, i) => (
+        <circle key={`e${i}`} cx={250 + (i / 21) * 580 + Math.sin(t * 2 + i) * 6} cy={1118 + Math.sin(i * 1.7) * 14} r={26 + rnd(i + 30) * 22} fill="#FFFFFF" stroke="#CFE3EE" strokeWidth={3} />
+      ))}
+      {Array.from({ length: 36 }, (_, i) => {
+        const v = (t * (0.35 + rnd(i) * 0.3) + rnd(i + 7)) % 1;
+        const r = 8 + rnd(i + 2) * 22;
+        return (
+          <g key={`b${i}`} opacity={1 - v}>
+            <circle cx={200 + rnd(i + 11) * 700 + Math.sin(t * 3 + i) * 20} cy={1100 - v * 900} r={r} fill="rgba(255,255,255,0.35)" stroke="#9FD3F0" strokeWidth={3} />
+            <circle cx={200 + rnd(i + 11) * 700 + Math.sin(t * 3 + i) * 20 - r * 0.35} cy={1100 - v * 900 - r * 0.35} r={r * 0.22} fill="#fff" />
+          </g>
+        );
+      })}
+      {Array.from({ length: limpios }, (_, i) => (
+        <g key={`l${i}`}>
+          <ellipse cx={110} cy={1110 - i * 22} rx={95} ry={20} fill="#FFFFFF" stroke={COL.linea} strokeWidth={4} />
+          {i % 3 === 0 ? <path d={`M ${70 + (i * 13) % 60} ${1100 - i * 22} l 6 -14 l 6 14 l 14 6 l -14 6 l -6 14 l -6 -14 l -14 -6 Z`} fill="#FFF7B0" opacity={0.6 + 0.4 * Math.sin(t * 8 + i)} /> : null}
+        </g>
+      ))}
+    </svg>
     {oscuro > 0 ? <AbsoluteFill style={{ background: `rgba(15,20,40,${oscuro})` }} /> : null}
   </AbsoluteFill>
 );
@@ -211,26 +239,33 @@ export const BilleteVuela: React.FC<{ t: number; t0: number; monto: number }> = 
   );
 };
 
-/** Tarjeta "LECCIÓN DEL DÍA" con el texto que se escribe solo. */
+/** "LECCIÓN DEL DÍA": el fondo se atenúa y la tarjeta entra al centro; la bombilla se enciende,
+ * la primera línea se escribe sola y la segunda golpea en verde justo cuando la voz la dice. */
 export const Leccion: React.FC<{ t: number; t0: number; t1: number; lineas: [string, string]; t2: number }> = ({ t, t0, t1, lineas, t2 }) => {
-  if (t < t0 || t > t1 + 0.3) return null;
+  if (t < t0 - 0.05 || t > t1 + 0.3) return null;
   const k = sp(t, t0, POP) * (1 - prog(t, t1, t1 + 0.3));
-  const escribe = (txt: string, a: number, dur: number) => txt.slice(0, Math.floor(clamp01((t - a) / dur) * txt.length));
+  const brillo = 0.5 + 0.5 * Math.sin((t - t0) * 6);
+  const escribe = (txt: string, a: number, dur: number) => txt.slice(0, Math.ceil(clamp01((t - a) / dur) * txt.length));
+  const g = clamp01((t - t2) / 0.14);
   return (
-    <div style={{ position: "absolute", left: 50, right: 50, top: 300, scale: String(lerp(0.6, 1, k)), opacity: clamp01(k * 2), background: "rgba(18,20,28,0.94)", borderRadius: 34, border: `7px solid ${COL.amarillo}`, padding: "30px 40px", boxShadow: "0 20px 40px rgba(0,0,0,0.45)" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 18, fontFamily: GTA, fontSize: 70, color: COL.amarillo }}>
-        <svg width={70} height={70} viewBox="0 0 24 24">
-          <path d="M12 2 A 7 7 0 0 1 16 14.5 V 17 H 8 V 14.5 A 7 7 0 0 1 12 2 Z" fill={COL.amarillo} stroke="#000" strokeWidth={1.4} />
-          <rect x={8.5} y={18} width={7} height={3} rx={1} fill="#ddd" stroke="#000" strokeWidth={1.2} />
-        </svg>
-        LECCIÓN DEL DÍA
+    <AbsoluteFill>
+      <AbsoluteFill style={{ background: `rgba(8,10,16,${0.6 * clamp01(k)})` }} />
+      <div style={{ position: "absolute", left: 50, right: 50, top: 560, scale: String(lerp(0.5, 1, k)), opacity: clamp01(k * 2), background: "rgba(18,20,28,0.96)", borderRadius: 40, border: `8px solid ${COL.amarillo}`, padding: "36px 44px 44px", boxShadow: `0 0 ${60 * brillo}px rgba(255,212,59,0.45), 0 24px 50px rgba(0,0,0,0.5)`, textAlign: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 18, fontFamily: GTA, fontSize: 84, color: COL.amarillo }}>
+          <svg width={90} height={90} viewBox="0 0 24 24" style={{ filter: `drop-shadow(0 0 ${12 * brillo}px #FFD43B)` }}>
+            <path d="M12 2 A 7 7 0 0 1 16 14.5 V 17 H 8 V 14.5 A 7 7 0 0 1 12 2 Z" fill={COL.amarillo} stroke="#000" strokeWidth={1.4} />
+            <rect x={8.5} y={18} width={7} height={3} rx={1} fill="#ddd" stroke="#000" strokeWidth={1.2} />
+          </svg>
+          LECCIÓN DEL DÍA
+        </div>
+        <div style={{ fontFamily: SUBS, fontWeight: 900, fontSize: 68, color: "#fff", lineHeight: 1.12, marginTop: 20, minHeight: 160 }}>{escribe(lineas[0], t0 + 0.15, 1.1)}</div>
+        {t >= t2 ? (
+          <div style={{ fontFamily: SUBS, fontWeight: 900, fontSize: 84, color: COL.verde, lineHeight: 1.05, marginTop: 10, scale: String(lerp(1.6, 1, easeOut(g))), opacity: g, WebkitTextStroke: "3px #0B3D1F", paintOrder: "stroke fill" }}>{lineas[1]}</div>
+        ) : (
+          <div style={{ height: 88, marginTop: 10 }} />
+        )}
       </div>
-      <div style={{ fontFamily: SUBS, fontWeight: 900, fontSize: 60, color: "#fff", lineHeight: 1.15, marginTop: 14, minHeight: 140 }}>
-        {escribe(lineas[0], t0 + 0.1, 1.0)}
-        <br />
-        <span style={{ color: COL.verde }}>{escribe(lineas[1], t2, 0.8)}</span>
-      </div>
-    </div>
+    </AbsoluteFill>
   );
 };
 
@@ -244,7 +279,7 @@ export const ChatPrimo: React.FC<{ t: number; t0: number; t1: number; tSello: nu
     <div style={{ position: "absolute", left: 230, top: 300, width: 620, height: 1100, translate: `0 ${(1 - k) * 1200}px`, borderRadius: 70, background: "#16171B", border: `8px solid ${COL.linea}`, padding: 22, boxShadow: "0 30px 60px rgba(0,0,0,0.5)" }}>
       <div style={{ width: "100%", height: "100%", borderRadius: 50, background: "#ECE5DD", overflow: "hidden", fontFamily: '"Helvetica Neue", Arial, sans-serif' }}>
         <div style={{ background: "#1F8F6B", color: "#fff", padding: "40px 26px 22px", display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ width: 70, height: 70, borderRadius: 35, background: "#F2B544", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 36, color: "#5A3A00" }}>B</div>
+          <Img src={staticFile("glowup/dia1/brayan.png")} style={{ width: 80, height: 80, borderRadius: 40, objectFit: "cover", border: "3px solid #fff", background: "#fff" }} />
           <div>
             <div style={{ fontWeight: 800, fontSize: 38 }}>Primo Brayan</div>
             <div style={{ fontSize: 24, opacity: 0.85 }}>en línea</div>
@@ -252,11 +287,11 @@ export const ChatPrimo: React.FC<{ t: number; t0: number; t1: number; tSello: nu
         </div>
         <div style={{ padding: 22 }}>
           <div style={{ background: "#fff", borderRadius: 22, padding: 12, width: 470, boxShadow: "0 2px 4px rgba(0,0,0,0.12)", position: "relative" }}>
-            <Img src={staticFile("glowup/gta/poster.jpg")} style={{ width: "100%", height: 540, objectFit: "cover", borderRadius: 14 }} />
+            <Img src={staticFile("glowup/dia1/reserva.png")} style={{ width: "100%", height: 400, objectFit: "cover", borderRadius: 14 }} />
             {t >= tSello ? (
-              <div style={{ position: "absolute", left: 50, top: 230, scale: String(lerp(2.4, 1, easeOut(g))), opacity: g, border: "10px solid #23B356", borderRadius: 16, padding: "4px 22px", fontFamily: GTA, fontSize: 84, color: "#23B356", background: "rgba(255,255,255,0.85)" }}>RESERVADO</div>
+              <div style={{ position: "absolute", left: 40, top: 150, scale: String(lerp(2.4, 1, easeOut(g))), opacity: g, border: "10px solid #23B356", borderRadius: 16, padding: "4px 22px", fontFamily: GTA, fontSize: 84, color: "#23B356", background: "rgba(255,255,255,0.85)" }}>RESERVADO</div>
             ) : null}
-            <div style={{ fontSize: 38, fontWeight: 700, color: "#222", padding: "12px 6px 0" }}>Ya lo reservé jajaja</div>
+            <div style={{ fontSize: 38, fontWeight: 700, color: "#222", padding: "12px 6px 0" }}>Ya lo reservé, primito jajaja</div>
           </div>
         </div>
       </div>
@@ -287,3 +322,19 @@ export const IconoReventa: React.FC = () => (
     <text x={71} y={71} textAnchor="middle" fontFamily="Arial Black" fontSize={13} fill={COL.linea}>$$</text>
   </svg>
 );
+
+/** Captura real de la encuesta del episodio anterior, con la opción ganadora resaltada. */
+export const CapturaEncuesta: React.FC<{ t: number; t0: number; t1: number; src: string }> = ({ t, t0, t1, src }) => {
+  if (t < t0 || t > t1 + 0.3) return null;
+  const k = sp(t, t0, POP) * (1 - prog(t, t1, t1 + 0.3));
+  const brillo = 0.5 + 0.5 * Math.sin((t - t0) * 8);
+  return (
+    <div style={{ position: "absolute", left: 50, right: 50, top: 300, scale: String(lerp(0.6, 1, k)), opacity: clamp01(k * 2) }}>
+      <div style={{ fontFamily: GTA, fontSize: 70, color: "#fff", textAlign: "center", WebkitTextStroke: "8px #000", paintOrder: "stroke fill", marginBottom: 10 }}>USTEDES VOTARON:</div>
+      <div style={{ position: "relative", borderRadius: 28, overflow: "hidden", border: `7px solid ${COL.linea}`, boxShadow: "0 18px 36px rgba(0,0,0,0.45)" }}>
+        <Img src={staticFile(src)} style={{ width: "100%", display: "block" }} />
+        <div style={{ position: "absolute", left: "9%", right: "5%", top: "72%", height: "22%", borderRadius: 20, border: `8px solid ${COL.verde}`, boxShadow: `0 0 ${30 * brillo}px ${COL.verde}` }} />
+      </div>
+    </div>
+  );
+};
