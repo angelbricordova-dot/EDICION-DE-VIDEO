@@ -132,6 +132,21 @@ Seguidores → comunidad → embudo → infoproducto digital. Fases:
 - Letra **Pricedown** (Typodermic, gratis; su licencia permite usarla en videos comerciales como
   arte fijo): `public/glowup/fuentes/pricedown.otf`.
 
+## Resultados del Día 0 (7 h después)
+- Instagram: 3.613 reproducciones, 2.623 cuentas, 99,4 % no seguidores (86 % desde Reels), 82 me
+  gusta, 10 comentarios, 33 compartidos, 5 guardados. Tiempo medio 10,5 s de 20 y 39 % de omisión
+  al principio → los episodios arrancan con el conflicto en el primer segundo.
+- TikTok (`@lamont.creativo`, cambiar a `@mision.tono`): 1.548 vistas, 80 me gusta, 21 seguidores.
+- Encuesta: 101 votos, BUSCAR TRABAJO 73 %.
+
+## Día 1 (hecho): "Toño busca trabajo" (DÍAS 14, $0 → $20)
+- Voz 190 créditos. `src/glowup/Dia1.tsx` + `src/glowup/escenas.tsx` (comentario más votado
+  "trabajajoooo" de "A ¿?" en TikTok, DÍA 1, currículum con sellos RECHAZADO, cocina del
+  restaurante con delantal, 8 HORAS DESPUÉS, billete al HUD, LECCIÓN DEL DÍA, chat del primo
+  Brayan con el póster y RESERVADO, votación AHORRAR vs INVERTIR).
+- `montar_dia.py`: efectos en la n-ésima palabra ("@rechazado#2") y reemplazos de nombres que
+  whisper escribe mal ("Brian" → "Brayan").
+
 ## Pendiente
 - Angel: elegir concepto, mercado (latino o España) y nombre de la cuenta.
 - Muestras de voz (con permiso), personaje en Gemini, Día 0.

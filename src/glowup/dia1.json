@@ -1,0 +1,653 @@
+{
+ "duracion": 31.88,
+ "frases": [
+  {
+   "id": "votaron",
+   "texto": "¡Ustedes votaron… y Toño tiene que trabajar!",
+   "t": 0.0,
+   "fin": 2.72
+  },
+  {
+   "id": "dia",
+   "texto": "Día uno.",
+   "t": 3.19,
+   "fin": 4.07
+  },
+  {
+   "id": "cv",
+   "texto": "Manda su currículum… que solo dice: nivel cien en Fortnite.",
+   "t": 4.23,
+   "fin": 7.59
+  },
+  {
+   "id": "rechazo",
+   "texto": "Rechazado. Rechazado. Rechazado.",
+   "t": 8.05,
+   "fin": 10.69
+  },
+  {
+   "id": "mama",
+   "texto": "Hasta que su mamá le consigue algo: lavar platos en el restaurante de la esquina.",
+   "t": 11.01,
+   "fin": 14.57
+  },
+  {
+   "id": "horas",
+   "texto": "Ocho horas después…",
+   "t": 15.02,
+   "fin": 16.26
+  },
+  {
+   "id": "paga",
+   "texto": "veinte dólares.",
+   "t": 16.663,
+   "fin": 17.57
+  },
+  {
+   "id": "leccion",
+   "texto": "El primer trabajo no es el soñado… es el que te arranca.",
+   "t": 18.05,
+   "fin": 20.93
+  },
+  {
+   "id": "primo",
+   "texto": "Pero su primo Brayan le manda una foto: ya reservó GTA seis.",
+   "t": 21.278,
+   "fin": 24.75
+  },
+  {
+   "id": "pregunta",
+   "texto": "¿Qué hace Toño con sus veinte dólares?",
+   "t": 25.08,
+   "fin": 26.76
+  },
+  {
+   "id": "opciones",
+   "texto": "Comenta: ahorrar… o invertir.",
+   "t": 26.94,
+   "fin": 28.94
+  },
+  {
+   "id": "sigueme",
+   "texto": "Sígueme para el día dos.",
+   "t": 29.36,
+   "fin": 30.68
+  }
+ ],
+ "palabras": [
+  {
+   "p": "Ustedes",
+   "ini": 0.0,
+   "fin": 0.52,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "votaron",
+   "ini": 0.52,
+   "fin": 1.04,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "y",
+   "ini": 1.04,
+   "fin": 1.36,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Toño",
+   "ini": 1.36,
+   "fin": 1.72,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "tiene",
+   "ini": 1.72,
+   "fin": 2.06,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "que",
+   "ini": 2.06,
+   "fin": 2.22,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "trabajar.",
+   "ini": 2.22,
+   "fin": 2.7,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Día",
+   "ini": 3.31,
+   "fin": 3.79,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "1.",
+   "ini": 3.79,
+   "fin": 4.01,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Manda",
+   "ini": 4.23,
+   "fin": 4.65,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "su",
+   "ini": 4.65,
+   "fin": 4.83,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "currículum,",
+   "ini": 4.83,
+   "fin": 5.41,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "que",
+   "ini": 5.49,
+   "fin": 5.63,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "solo",
+   "ini": 5.63,
+   "fin": 5.83,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "dice",
+   "ini": 5.83,
+   "fin": 6.17,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "nivel",
+   "ini": 6.17,
+   "fin": 6.67,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "100",
+   "ini": 6.67,
+   "fin": 6.93,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "en",
+   "ini": 6.93,
+   "fin": 7.13,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Fortnite.",
+   "ini": 7.13,
+   "fin": 7.53,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Rechazado,",
+   "ini": 8.81,
+   "fin": 9.29,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "rechazado,",
+   "ini": 9.29,
+   "fin": 9.77,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "rechazado.",
+   "ini": 10.03,
+   "fin": 10.73,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Hasta",
+   "ini": 11.07,
+   "fin": 11.29,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "que",
+   "ini": 11.29,
+   "fin": 11.43,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "su",
+   "ini": 11.43,
+   "fin": 11.55,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "mamá",
+   "ini": 11.55,
+   "fin": 11.77,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "le",
+   "ini": 11.77,
+   "fin": 11.87,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "consigue",
+   "ini": 11.87,
+   "fin": 12.23,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "algo.",
+   "ini": 12.23,
+   "fin": 12.49,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Lavar",
+   "ini": 12.65,
+   "fin": 13.03,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "platos",
+   "ini": 13.03,
+   "fin": 13.35,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "en",
+   "ini": 13.35,
+   "fin": 13.47,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 13.47,
+   "fin": 13.57,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "restaurante",
+   "ini": 13.57,
+   "fin": 14.05,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 14.05,
+   "fin": 14.17,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "la",
+   "ini": 14.17,
+   "fin": 14.25,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "esquina.",
+   "ini": 14.25,
+   "fin": 14.57,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "8",
+   "ini": 15.1,
+   "fin": 15.32,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "horas",
+   "ini": 15.32,
+   "fin": 15.58,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "después,",
+   "ini": 15.58,
+   "fin": 15.94,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "20",
+   "ini": 16.57,
+   "fin": 16.97,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "dólares.",
+   "ini": 16.97,
+   "fin": 17.29,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "El",
+   "ini": 18.07,
+   "fin": 18.31,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "primer",
+   "ini": 18.31,
+   "fin": 18.55,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "trabajo",
+   "ini": 18.55,
+   "fin": 18.93,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "no",
+   "ini": 18.93,
+   "fin": 19.11,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "es",
+   "ini": 19.11,
+   "fin": 19.25,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 19.25,
+   "fin": 19.37,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "soñado,",
+   "ini": 19.37,
+   "fin": 19.77,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "es",
+   "ini": 19.91,
+   "fin": 20.21,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 20.21,
+   "fin": 20.31,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "que",
+   "ini": 20.31,
+   "fin": 20.43,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "te",
+   "ini": 20.43,
+   "fin": 20.55,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "arranca.",
+   "ini": 20.55,
+   "fin": 20.93,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Pero",
+   "ini": 21.35,
+   "fin": 21.55,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "su",
+   "ini": 21.55,
+   "fin": 21.75,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "primo",
+   "ini": 21.75,
+   "fin": 21.95,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Brayan",
+   "ini": 21.95,
+   "fin": 22.23,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "le",
+   "ini": 22.23,
+   "fin": 22.45,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "manda",
+   "ini": 22.45,
+   "fin": 22.69,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "una",
+   "ini": 22.69,
+   "fin": 22.83,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "foto.",
+   "ini": 22.83,
+   "fin": 23.13,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Ya",
+   "ini": 23.35,
+   "fin": 23.51,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "reservó",
+   "ini": 23.51,
+   "fin": 24.01,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "GTA",
+   "ini": 24.01,
+   "fin": 24.27,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "VI.",
+   "ini": 24.27,
+   "fin": 24.69,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Qué",
+   "ini": 25.14,
+   "fin": 25.32,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "hace",
+   "ini": 25.32,
+   "fin": 25.54,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Toño",
+   "ini": 25.54,
+   "fin": 25.8,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "con",
+   "ini": 25.8,
+   "fin": 25.94,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "sus",
+   "ini": 25.94,
+   "fin": 26.1,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "20",
+   "ini": 26.1,
+   "fin": 26.32,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "dólares",
+   "ini": 26.32,
+   "fin": 26.66,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "Comenta.",
+   "ini": 27.04,
+   "fin": 27.52,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Ahorrar",
+   "ini": 27.72,
+   "fin": 28.2,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "o",
+   "ini": 28.2,
+   "fin": 28.46,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "invertir",
+   "ini": 28.46,
+   "fin": 28.94,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Sígueme",
+   "ini": 29.34,
+   "fin": 29.8,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "para",
+   "ini": 29.8,
+   "fin": 29.98,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 29.98,
+   "fin": 30.1,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "día",
+   "ini": 30.1,
+   "fin": 30.26,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "2.",
+   "ini": 30.26,
+   "fin": 30.48,
+   "clave": false,
+   "dinero": false
+  }
+ ]
+}

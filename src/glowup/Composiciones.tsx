@@ -1,5 +1,6 @@
 import { Composition, Folder, Still } from "remotion";
 import { Dia0, DIA0, PropsDia } from "./Dia0";
+import { Dia1, DIA1, PropsDia1 } from "./Dia1";
 import { Ficha } from "./Ficha";
 
 // Canal glow-up de Angel: Toño y GTA VI (docs/glowup.md).
@@ -13,6 +14,15 @@ export const ComposicionesGlowup: React.FC = () => (
       width={1080}
       height={1920}
       defaultProps={{ audio: "glowup/dia0/mezcla.wav" } satisfies PropsDia}
+    />
+    <Composition
+      id="GlowupDia1"
+      component={Dia1}
+      durationInFrames={Math.round(DIA1.duracion * 30)}
+      fps={30}
+      width={1080}
+      height={1920}
+      defaultProps={{ audio: "glowup/dia1/mezcla.wav" } satisfies PropsDia1}
     />
     <Still id="GlowupFicha" component={Ficha} width={1800} height={1200} />
   </Folder>

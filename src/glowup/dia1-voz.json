@@ -1,0 +1,92 @@
+{
+  "audio": "public/glowup/dia1/voz.mp3",
+  "duracion": 28.08,
+  "lineas": [
+    {
+      "texto": "¡Ustedes votaron… y Toño tiene que trabajar!",
+      "t": 0.0,
+      "fin": 2.72,
+      "t2": 0.0,
+      "fin2": 2.72
+    },
+    {
+      "texto": "Día uno.",
+      "t": 3.04,
+      "fin": 3.92,
+      "t2": 3.19,
+      "fin2": 4.07
+    },
+    {
+      "texto": "Manda su currículum… que solo dice: nivel cien en Fortnite.",
+      "t": 4.08,
+      "fin": 7.44,
+      "t2": 4.23,
+      "fin2": 7.59
+    },
+    {
+      "texto": "Rechazado. Rechazado. Rechazado.",
+      "t": 7.6,
+      "fin": 10.24,
+      "t2": 8.05,
+      "fin2": 10.69
+    },
+    {
+      "texto": "Hasta que su mamá le consigue algo: lavar platos en el restaurante de la esquina.",
+      "t": 10.36,
+      "fin": 13.92,
+      "t2": 11.01,
+      "fin2": 14.57
+    },
+    {
+      "texto": "Ocho horas después…",
+      "t": 14.12,
+      "fin": 15.36,
+      "t2": 15.02,
+      "fin2": 16.26
+    },
+    {
+      "texto": "veinte dólares.",
+      "t": 15.413,
+      "fin": 16.32,
+      "t2": 16.663,
+      "fin2": 17.57
+    },
+    {
+      "texto": "El primer trabajo no es el soñado… es el que te arranca.",
+      "t": 16.4,
+      "fin": 19.28,
+      "t2": 18.05,
+      "fin2": 20.93
+    },
+    {
+      "texto": "Pero su primo Brayan le manda una foto: ya reservó GTA seis.",
+      "t": 19.328,
+      "fin": 22.8,
+      "t2": 21.278,
+      "fin2": 24.75
+    },
+    {
+      "texto": "¿Qué hace Toño con sus veinte dólares?",
+      "t": 22.88,
+      "fin": 24.56,
+      "t2": 25.08,
+      "fin2": 26.76
+    },
+    {
+      "texto": "Comenta: ahorrar… o invertir.",
+      "t": 24.64,
+      "fin": 26.64,
+      "t2": 26.94,
+      "fin2": 28.94
+    },
+    {
+      "texto": "Sígueme para el día dos.",
+      "t": 26.76,
+      "fin": 28.08,
+      "t2": 29.36,
+      "fin2": 30.68
+    }
+  ],
+  "audio_pausas": "public/glowup/dia1/voz-pausas.wav",
+  "duracion2": 30.68
+}

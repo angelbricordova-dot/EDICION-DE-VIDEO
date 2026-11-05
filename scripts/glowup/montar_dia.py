@@ -53,6 +53,35 @@ EPISODIOS = {
             ("sigueme", 0.1, "clic-2.mp3", -8),
         ],
     },
+    1: {
+        "claves": ["votaron", "trabajar", "uno", "currículum", "fortnite", "rechazado", "mamá", "platos", "brayan", "gta", "vi", "ahorrar", "invertir", "sígueme", "dos", "primer", "trabajo", "arranca"],
+        "dinero": ["20", "dólares"],
+        "cola": 1.2,
+        "musica": ("kidding-around.mp3", 0.0),
+        "reemplazos": {"brian": "Brayan"},
+        "efectos": [
+            ("votaron", -0.05, "golpe-2.mp3", -8),
+            ("@trabajar", -0.03, "acierto.mp3", -14),
+            ("dia", -0.05, "barrido-1.mp3", -12),
+            ("cv", -0.05, "barrido-2.mp3", -14),
+            ("@rechazado", -0.02, "golpe-1.mp3", -9),
+            ("@rechazado#2", -0.02, "golpe-3.mp3", -9),
+            ("@rechazado#3", -0.02, "golpe-1.mp3", -8),
+            ("@rechazado#3", 0.3, "fracaso-grave.mp3", -12),
+            ("mama", 0.1, "pop-duro.mp3", -12),
+            ("@lavar", -0.08, "barrido-3.mp3", -13),
+            ("horas", -0.05, "barrido-4.mp3", -13),
+            ("paga", -0.02, "../chaching.mp3", -8),
+            ("paga", 0.15, "../monedas.mp3", -14),
+            ("leccion", 0.0, "pop-1.mp3", -12),
+            ("primo", 0.9, "notificacion.mp3", -8),
+            ("@reservó", 0.2, "trombon-triste.mp3", -14),
+            ("pregunta", 0.0, "pop-2.mp3", -10),
+            ("@ahorrar", -0.03, "pop-3.mp3", -10),
+            ("@invertir", -0.03, "pop-4.mp3", -10),
+            ("sigueme", 0.1, "clic-2.mp3", -8),
+        ],
+    },
 }
 
 
@@ -82,6 +111,9 @@ def main():
         l = max((l for l in lineas if l["t"] - 0.2 <= w["ini"]), key=lambda l: l["t"], default=lineas[0])
         d = l["t2"] - l["t"]
         p = w["p"].replace("¿", "").replace("¡", "").replace("?", "").replace("!", "")
+        rep = cfg.get("reemplazos", {}).get(limpio(p))
+        if rep:  # whisper escribe distinto un nombre propio
+            p = p.lower().replace(limpio(p), rep)
         if limpio(p) == "6" and anterior == "gta":
             p = "VI" + p[1:]
         palabras.append({"p": p, "ini": round(w["ini"] + d, 3), "fin": round(w["fin"] + d, 3),
@@ -96,8 +128,9 @@ def main():
     poner_musica(mz, voz, palabras, MUSICA / pista, desde=desde, bajo_voz=-17, huecos=-10, entrada=0.2, salida=0.8)
     inicio = {f["id"]: f["t"] for f in frases}
     def ancla(fid):
-        if fid.startswith("@"):  # una palabra (la primera que coincida)
-            return next(w["ini"] for w in palabras if limpio(w["p"]) == fid[1:])
+        if fid.startswith("@"):  # una palabra ("@palabra" la primera, "@palabra#2" la segunda…)
+            p, _, n = fid[1:].partition("#")
+            return [w["ini"] for w in palabras if limpio(w["p"]) == p][int(n or 1) - 1]
         return inicio[fid]
 
     for fid, dt, sonido, gdb in cfg["efectos"]:

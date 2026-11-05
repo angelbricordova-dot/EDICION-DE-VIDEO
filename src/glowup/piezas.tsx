@@ -338,7 +338,7 @@ export const BilleteraVacia: React.FC<{ t: number; t0: number }> = ({ t, t0 }) =
 };
 
 /** Brazo de la mamá que entra por la derecha con una moneda, y su grito. */
-export const Mama: React.FC<{ t: number; t0: number; t1: number }> = ({ t, t0, t1 }) => {
+export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string }> = ({ t, t0, t1, texto = "¡TOMA, MIJO!" }) => {
   if (t < t0 || t > t1 + 0.4) return null;
   const k = easeOut(prog(t, t0, t0 + 0.35)) * (1 - easeOut(prog(t, t1, t1 + 0.35)));
   const g = sp(t, t0 + 0.2, POP) * (1 - prog(t, t1, t1 + 0.2));
@@ -356,7 +356,7 @@ export const Mama: React.FC<{ t: number; t0: number; t1: number }> = ({ t, t0, t
         </g>
       </svg>
       <div style={{ position: "absolute", right: 40, top: 330, scale: String(lerp(0.3, 1, g)), opacity: clamp01(g * 2), background: COL.blanco, border: `6px solid ${COL.linea}`, borderRadius: 40, padding: "18px 34px", fontFamily: FUENTE, fontSize: 64, color: COL.linea, rotate: "0deg" }}>
-        ¡TOMA, MIJO!
+        {texto}
         <div style={{ position: "absolute", left: 60, bottom: -34, width: 0, height: 0, borderLeft: "22px solid transparent", borderRight: "22px solid transparent", borderTop: `34px solid ${COL.linea}` }} />
       </div>
     </>
@@ -383,7 +383,7 @@ const IconoMaletin: React.FC = () => (
 );
 
 /** Tarjetas de votación "A vs B" con íconos dibujados. */
-export const Votacion: React.FC<{ t: number; tA: number; tB: number; t1: number; a: string; b: string }> = ({ t, tA, tB, t1, a, b }) => {
+export const Votacion: React.FC<{ t: number; tA: number; tB: number; t1: number; a: string; b: string; iconoA?: React.ReactNode; iconoB?: React.ReactNode; sub?: string }> = ({ t, tA, tB, t1, a, b, iconoA, iconoB, sub = "¿PRIMERO?" }) => {
   if (t < tA - 0.05) return null;
   const sale = 1 - prog(t, t1, t1 + 0.25);
   const ka = sp(t, tA, POP);
@@ -393,14 +393,14 @@ export const Votacion: React.FC<{ t: number; tA: number; tB: number; t1: number;
     <div style={{ width: 400, scale: String(lerp(0.4, 1, k)), opacity: clamp01(k * 2), background: COL.blanco, borderRadius: 36, border: `7px solid ${COL.linea}`, boxShadow: "0 16px 30px rgba(0,0,0,0.35)", overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center" }}>
       <div style={{ width: "100%", background: color, display: "flex", justifyContent: "center", padding: "18px 0", borderBottom: `7px solid ${COL.linea}` }}>{icono}</div>
       <div style={{ fontFamily: FUENTE, fontSize: 50, lineHeight: 1, color: COL.linea, textAlign: "center", padding: "20px 16px 8px" }}>{texto}</div>
-      <div style={{ fontFamily: FUENTE, fontSize: 30, color: color, paddingBottom: 18 }}>¿PRIMERO?</div>
+      <div style={{ fontFamily: FUENTE, fontSize: 30, color: color, paddingBottom: 18 }}>{sub}</div>
     </div>
   );
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top: 330, display: "flex", justifyContent: "center", alignItems: "center", gap: 20, opacity: sale }}>
-      <Tarjeta k={ka} color={COL.amarillo} texto={a} icono={<IconoCaja />} />
+      <Tarjeta k={ka} color={COL.amarillo} texto={a} icono={iconoA ?? <IconoCaja />} />
       <div style={{ position: "absolute", scale: String(lerp(0, 1, kv)), width: 130, height: 130, borderRadius: 65, background: COL.rojo, border: `7px solid ${COL.linea}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FUENTE, fontSize: 60, color: "#fff", zIndex: 2 }}>VS</div>
-      <Tarjeta k={kb} color={COL.azul} texto={b} icono={<IconoMaletin />} />
+      <Tarjeta k={kb} color={COL.azul} texto={b} icono={iconoB ?? <IconoMaletin />} />
     </div>
   );
 };
