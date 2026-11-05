@@ -7,9 +7,9 @@ import { cargarFuentes, Cuarto, Episodio, Mama, Marcador, Moscas, Olor, Seguir, 
 import { Expresion, Pose, Tono } from "./Tono";
 import datos from "./dia1.json";
 
-// Día 1 de Toño: ganó "buscar trabajo" (73 % en la encuesta). Empieza con el conflicto en el primer
-// segundo (en el Día 0 el 39 % pasaba de largo al principio): "¡Ustedes votaron… a trabajar!" con el
-// comentario más votado, DÍA 1, currículum rechazado, la mamá le consigue lavar platos, 8 horas → $20,
+// Día 1 de Toño: ganó "buscar trabajo" (74 % en la encuesta). Empieza con un resumen rápido para
+// quien no lo conoce (bolsillos vacíos, $0, 14 DÍAS, $1.000) y enseguida "¡Ustedes votaron… a
+// trabajar!" con la captura real de la encuesta y el comentario más votado, DÍA 1, currículum rechazado, la mamá le consigue lavar platos, 8 horas → $20,
 // lección del día, el primo Brayan ya reservó GTA VI y votación APOSTAR CON BRAYAN vs MÁS TURNOS.
 
 export const DIA1 = datos as Episodio;
@@ -53,7 +53,7 @@ export const Dia1: React.FC<PropsDia1> = ({ audio }) => {
 
   // Dinero: $0 hasta que cobra; cuenta hasta $20 cuando el billete llega al marcador.
   const dinero = Math.round(20 * easeOut(clamp01((t - paga.t - 0.55) / 0.35)));
-  const dias = t < dia.t + 0.25 ? 15 : 14;
+  const dias = 14; // el resumen ya dice "catorce días": el marcador lo muestra desde el principio
 
   const enCocina = t >= tLavar && t < leccion.fin + 0.2;
   const enCv = t >= cv.t - 0.05 && t < mama.t;
@@ -129,7 +129,7 @@ export const Dia1: React.FC<PropsDia1> = ({ audio }) => {
       <Marcador t={t} t0={-1} dias={dias} dinero={dinero} meta={1000} nivel={0} />
       {resumen ? (
         <>
-          <SelloGTA t={t} t0={w("cero", resumen.t) - 0.03} t1={w("14", resumen.t) - 0.05} texto="$0" color="#E8473F" top={330} tam={260} />
+          <SelloGTA t={t} t0={(ws("cero")[0] ?? ws("0")[0] ?? resumen.t) - 0.03} t1={w("14", resumen.t) - 0.05} texto="$0" color="#E8473F" top={330} tam={260} />
           <SelloGTA t={t} t0={w("14", resumen.t) - 0.03} t1={w("mil", resumen.t) - 0.05} texto="14 DÍAS" color="#FFFFFF" top={330} tam={220} />
           <SelloGTA t={t} t0={w("mil", resumen.t) - 0.03} t1={resumen.fin + 0.1} texto="$1.000" color="#72D15E" top={330} tam={260} />
         </>

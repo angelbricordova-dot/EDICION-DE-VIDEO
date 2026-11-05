@@ -1,17 +1,57 @@
 {
   "episodio": 1,
   "frases": [
-    { "id": "votaron", "texto": "¡Ustedes votaron… y Toño tiene que trabajar!" },
-    { "id": "dia", "texto": "Día uno." },
-    { "id": "cv", "texto": "Manda su currículum… que solo dice: nivel cien en Fortnite." },
-    { "id": "rechazo", "texto": "Rechazado. Rechazado. Rechazado." },
-    { "id": "mama", "texto": "Hasta que su mamá le consigue algo: lavar platos en el restaurante de la esquina." },
-    { "id": "horas", "texto": "Ocho horas después…" },
-    { "id": "paga", "texto": "veinte dólares." },
-    { "id": "leccion", "texto": "El primer trabajo no es el soñado… es el que te arranca." },
-    { "id": "primo", "texto": "Pero su primo Brayan le manda una foto: ya reservó GTA seis." },
-    { "id": "pregunta", "texto": "¿Qué hace Toño con sus veinte dólares?" },
-    { "id": "opciones", "texto": "Comenta: ahorrar… o invertir." },
-    { "id": "sigueme", "texto": "Sígueme para el día dos." }
+    {
+      "id": "resumen",
+      "texto": "Toño: veinticinco años, cero pesos… y catorce días para juntar mil dólares antes de GTA seis."
+    },
+    {
+      "id": "votaron",
+      "texto": "¡Ustedes votaron… y Toño tiene que trabajar!"
+    },
+    {
+      "id": "dia",
+      "texto": "Día uno."
+    },
+    {
+      "id": "cv",
+      "texto": "Manda su currículum… que solo dice: nivel cien en Fortnite."
+    },
+    {
+      "id": "rechazo",
+      "texto": "Rechazado. Rechazado. Rechazado."
+    },
+    {
+      "id": "mama",
+      "texto": "Hasta que su mamá le consigue algo: lavar platos en el restaurante de la esquina."
+    },
+    {
+      "id": "horas",
+      "texto": "Ocho horas después…"
+    },
+    {
+      "id": "paga",
+      "texto": "veinte dólares."
+    },
+    {
+      "id": "leccion",
+      "texto": "El primer trabajo no es el soñado… es el que te arranca."
+    },
+    {
+      "id": "primo",
+      "texto": "Pero su primo Brayan le manda una foto: ya reservó GTA seis."
+    },
+    {
+      "id": "pregunta",
+      "texto": "¿Qué hace Toño con sus veinte dólares?"
+    },
+    {
+      "id": "opciones",
+      "texto": "Comenta: apostarlos con Brayan… o pedir más turnos."
+    },
+    {
+      "id": "sigueme",
+      "texto": "Sígueme para el día dos."
+    }
   ]
 }
