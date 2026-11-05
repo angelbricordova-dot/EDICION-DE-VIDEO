@@ -44,6 +44,15 @@ capítulos y que Bills ahora es más serio (antes cómico, torpe, holgazán); é
 - **Facebook sí se puede bajar desde aquí** (yt-dlp sin sesión); YouTube no (pide iniciar sesión).
 - Letra de rótulos: Bangers (`public/shimon/fuentes/`).
 
+## Correcciones de Angel a la prueba (v2)
+- Los emotes están cortados por abajo y "señalando" también por la derecha: el borde cortado
+  siempre pegado al borde de la pantalla (señalando a la derecha **sin espejo**, apunta al centro).
+  Se usan recortados a lo visible (`*_r.png`) y grandes.
+- "Todo el mundo sabe…": su cámara, no el meme de la Roca.
+- Nada de fondo de cuadros rojo y negro: fondos de ondas, líneas y red de su carpeta de stock.
+- Variar los clips (no repetir), más cortes dentro de cada frase, sin espacios vacíos, salto de
+  zoom en cada rótulo.
+
 ## Pendiente
 - Referencia bajada: `public/shimon/referencia/referencia.mp4`.
 - Escenas del anime (Bills clásico vs remake): YouTube y webs de streaming no se pueden bajar desde
