@@ -1,0 +1,131 @@
+{
+ "duracion": 36.03,
+ "escenas": [
+  {
+   "id": "titulo",
+   "t": 0.0
+  },
+  {
+   "id": "roca",
+   "t": 1.5
+  },
+  {
+   "id": "razones",
+   "t": 3.88
+  },
+  {
+   "id": "fans",
+   "t": 4.74
+  },
+  {
+   "id": "contenido",
+   "t": 6.98
+  },
+  {
+   "id": "reanimar",
+   "t": 8.07
+  },
+  {
+   "id": "feo",
+   "t": 10.02
+  },
+  {
+   "id": "camara1",
+   "t": 13.78
+  },
+  {
+   "id": "distinto",
+   "t": 15.26
+  },
+  {
+   "id": "esencia",
+   "t": 16.27
+  },
+  {
+   "id": "bills",
+   "t": 18.8
+  },
+  {
+   "id": "comico",
+   "t": 20.77
+  },
+  {
+   "id": "serio",
+   "t": 25.16
+  },
+  {
+   "id": "banco",
+   "t": 27.88
+  },
+  {
+   "id": "arco",
+   "t": 29.95
+  },
+  {
+   "id": "personalidad",
+   "t": 31.48
+  }
+ ],
+ "rotulos": [
+  {
+   "t": 4.05,
+   "texto": "2 RAZONES",
+   "color": "amarillo"
+  },
+  {
+   "t": 7.23,
+   "texto": "¡CONTENIDO NUEVO!",
+   "color": "amarillo"
+  },
+  {
+   "t": 8.75,
+   "texto": "REANIMAR",
+   "color": "blanco"
+  },
+  {
+   "t": 13.19,
+   "texto": "DEJARON QUE DESEAR...",
+   "color": "rojo"
+  },
+  {
+   "t": 17.69,
+   "texto": "MÁS ESENCIA",
+   "color": "amarillo"
+  },
+  {
+   "t": 23.11,
+   "texto": "CÓMICO",
+   "color": "amarillo"
+  },
+  {
+   "t": 23.85,
+   "texto": "TORPE",
+   "color": "amarillo"
+  },
+  {
+   "t": 24.55,
+   "texto": "HOLGAZÁN",
+   "color": "amarillo"
+  },
+  {
+   "t": 27.39,
+   "texto": "SERIO",
+   "color": "rojo"
+  },
+  {
+   "t": 29.01,
+   "texto": "YO BANCO ESTE CAMBIO",
+   "color": "verde"
+  },
+  {
+   "t": 30.97,
+   "texto": "(EN ESTE ARCO)",
+   "color": "blanco"
+  },
+  {
+   "t": 34.01,
+   "texto": "¿OTRO PERSONAJE?",
+   "color": "rojo"
+  }
+ ]
+}

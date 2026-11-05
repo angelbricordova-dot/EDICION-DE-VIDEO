@@ -33,6 +33,17 @@ capítulos y que Bills ahora es más serio (antes cómico, torpe, holgazán); é
 - Gancho directo a cámara, intro corta ("preparen el like y vamos al video"), chistes y desvíos
   cortados con memes; cierre con meme (gato bailando).
 
+## Prueba de 30 s (hecha)
+- `scripts/shimon/guion_prueba.py` → `src/shimon/prueba.json` (16 escenas y 12 rótulos anclados a
+  sus palabras) + `public/shimon/prueba/mezcla.wav` (su voz limpia, música "dbsuper instrumental"
+  debajo, barridos en los cortes y golpes en los rótulos). Composición `ShimonPrueba` (1920×1080).
+- Clips cortados en `public/shimon/prueba/` desde: remake ep. 1 (Facebook, 720p, con subtítulos
+  quemados → se recorta la franja de abajo), DBS original ep. 1 y cap. 5 (Facebook, ~400 px → van
+  dentro de un televisor viejo con etiqueta "2015") y la crítica de animación del cap. 5.
+- Misma cena de Bills en las dos versiones: original 5:39–6:12 / remake 10:34–10:48.
+- **Facebook sí se puede bajar desde aquí** (yt-dlp sin sesión); YouTube no (pide iniciar sesión).
+- Letra de rótulos: Bangers (`public/shimon/fuentes/`).
+
 ## Pendiente
 - Referencia bajada: `public/shimon/referencia/referencia.mp4`.
 - Escenas del anime (Bills clásico vs remake): YouTube y webs de streaming no se pueden bajar desde
