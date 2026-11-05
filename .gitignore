@@ -17,5 +17,6 @@ public/pronosticos/
 public/paul/
 public/glowup/
 public/shimon/
+public/katia/
 # Local secrets written by `elevenlabs onboard`
 /.env.local

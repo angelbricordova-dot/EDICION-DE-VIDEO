@@ -1,0 +1,27 @@
+# Katia (agencia en España): reels de coach de fuerza
+
+Katia busca editores que cobren desde España (Bizum o factura; Angel prefiere Wise/Revolut/Kraken).
+Ritmo de trabajo: **12 videos cada 15 días**. Primero una **prueba gratuita**; si gusta, el resto
+es remunerado. Chat de WhatsApp exportado (5-nov-2026) con las condiciones.
+
+## Marca y referencia
+- Colores: **rosa #AD3158** y **azul #8AD2D1**. Tipografía: **Montserrat**.
+- Referencia: cuenta de Instagram **@claudiabruna.coach** (13 reels en `public/katia/referencias/`,
+  carpeta de Drive del cliente). Es la misma coach que graba la prueba.
+- Estilo de la referencia: reels de 30–60 s, la coach a cámara en varios sitios (gimnasio, casa,
+  jardín), un corte por frase (~15 en 35 s), subtítulo de **una palabra** fina y blanca al centro,
+  claves y números en rosa, títulos rosas fijos para cada punto de la lista ("1. Entrena fuerza 2-3
+  veces por semana"), gancho fuerte, cierre "comparte con esa amiga… comenta RESET".
+  Sonido: voz delante, sin música fuerte ni efectos llamativos.
+
+## Prueba (hecha): "¿Cuánto peso coger en tus entrenos?"
+- 15 tomas en 4K vertical (iPhone, `rotate=-90`) en `public/katia/prueba/`; giradas y a 1080×1920
+  en `public/katia/cortes/`; palabras en `public/katia/palabras/`.
+- `scripts/katia/guion_prueba.py` → `src/katia/prueba.json` + `public/katia/mezcla-prueba.wav`
+  (orden del guion, títulos 1-2-3 y la regla, música Mixkit "Feeling Happy" muy baja, barrido suave
+  en 1 de cada 3 cortes, pop en cada título). Composición `KatiaPrueba`.
+- La toma IMG_5338 es la cámara mirando al suelo: solo su voz; encima, gráfico de barras de fuerza
+  (piernas y espalda > brazos) sobre la toma de las mancuernas desenfocada.
+
+## Pendiente
+- Que Katia vea la prueba.

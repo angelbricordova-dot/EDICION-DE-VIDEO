@@ -1,0 +1,1308 @@
+{
+ "duracion": 55.64,
+ "tramos": [
+  {
+   "clip": "5313",
+   "src": 2.88,
+   "dur": 4.76,
+   "out": 0.0,
+   "soloVoz": false
+  },
+  {
+   "clip": "5316",
+   "src": 0.0,
+   "dur": 3.68,
+   "out": 4.76,
+   "soloVoz": false
+  },
+  {
+   "clip": "5317",
+   "src": 0.0,
+   "dur": 4.22,
+   "out": 8.44,
+   "soloVoz": false
+  },
+  {
+   "clip": "5320",
+   "src": 0.0,
+   "dur": 3.38,
+   "out": 12.66,
+   "soloVoz": false
+  },
+  {
+   "clip": "5323",
+   "src": 0.0,
+   "dur": 2.2,
+   "out": 16.04,
+   "soloVoz": false
+  },
+  {
+   "clip": "5325",
+   "src": 0.0,
+   "dur": 3.6,
+   "out": 18.24,
+   "soloVoz": false
+  },
+  {
+   "clip": "5326",
+   "src": 0.0,
+   "dur": 2.52,
+   "out": 21.84,
+   "soloVoz": false
+  },
+  {
+   "clip": "5327",
+   "src": 0.0,
+   "dur": 3.7,
+   "out": 24.36,
+   "soloVoz": false
+  },
+  {
+   "clip": "5338",
+   "src": 0.0,
+   "dur": 6.04,
+   "out": 28.06,
+   "soloVoz": true
+  },
+  {
+   "clip": "5330",
+   "src": 0.0,
+   "dur": 2.64,
+   "out": 34.1,
+   "soloVoz": false
+  },
+  {
+   "clip": "5321",
+   "src": 0.0,
+   "dur": 2.12,
+   "out": 36.74,
+   "soloVoz": false
+  },
+  {
+   "clip": "5331",
+   "src": 0.0,
+   "dur": 4.5,
+   "out": 38.86,
+   "soloVoz": false
+  },
+  {
+   "clip": "5334",
+   "src": 0.0,
+   "dur": 4.24,
+   "out": 43.36,
+   "soloVoz": false
+  },
+  {
+   "clip": "5336",
+   "src": 0.0,
+   "dur": 4.08,
+   "out": 47.6,
+   "soloVoz": false
+  },
+  {
+   "clip": "5337",
+   "src": 0.0,
+   "dur": 3.66,
+   "out": 51.68,
+   "soloVoz": false
+  }
+ ],
+ "palabras": [
+  {
+   "p": "Si",
+   "ini": 0.12,
+   "fin": 0.66,
+   "clave": false
+  },
+  {
+   "p": "no",
+   "ini": 0.66,
+   "fin": 0.82,
+   "clave": false
+  },
+  {
+   "p": "sabes",
+   "ini": 0.82,
+   "fin": 1.14,
+   "clave": false
+  },
+  {
+   "p": "cuánto",
+   "ini": 1.14,
+   "fin": 1.62,
+   "clave": false
+  },
+  {
+   "p": "peso",
+   "ini": 1.62,
+   "fin": 1.84,
+   "clave": true
+  },
+  {
+   "p": "coger",
+   "ini": 1.84,
+   "fin": 2.2,
+   "clave": false
+  },
+  {
+   "p": "exactamente",
+   "ini": 2.2,
+   "fin": 2.68,
+   "clave": false
+  },
+  {
+   "p": "en",
+   "ini": 2.68,
+   "fin": 2.98,
+   "clave": false
+  },
+  {
+   "p": "tus",
+   "ini": 2.98,
+   "fin": 3.12,
+   "clave": false
+  },
+  {
+   "p": "entrenos,",
+   "ini": 3.12,
+   "fin": 3.7,
+   "clave": false
+  },
+  {
+   "p": "esto",
+   "ini": 3.84,
+   "fin": 4.1,
+   "clave": false
+  },
+  {
+   "p": "es",
+   "ini": 4.1,
+   "fin": 4.2,
+   "clave": false
+  },
+  {
+   "p": "para",
+   "ini": 4.2,
+   "fin": 4.4,
+   "clave": false
+  },
+  {
+   "p": "ti.",
+   "ini": 4.4,
+   "fin": 4.58,
+   "clave": false
+  },
+  {
+   "p": "La",
+   "ini": 4.76,
+   "fin": 5.32,
+   "clave": false
+  },
+  {
+   "p": "mayoría",
+   "ini": 5.32,
+   "fin": 5.7,
+   "clave": false
+  },
+  {
+   "p": "cogen",
+   "ini": 5.7,
+   "fin": 6.12,
+   "clave": false
+  },
+  {
+   "p": "las",
+   "ini": 6.12,
+   "fin": 6.26,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 6.26,
+   "fin": 6.38,
+   "clave": false
+  },
+  {
+   "p": "un",
+   "ini": 6.38,
+   "fin": 6.48,
+   "clave": false
+  },
+  {
+   "p": "kilo",
+   "ini": 6.48,
+   "fin": 6.7,
+   "clave": true
+  },
+  {
+   "p": "y",
+   "ini": 6.7,
+   "fin": 6.92,
+   "clave": false
+  },
+  {
+   "p": "por",
+   "ini": 6.92,
+   "fin": 7.08,
+   "clave": false
+  },
+  {
+   "p": "eso",
+   "ini": 7.08,
+   "fin": 7.36,
+   "clave": false
+  },
+  {
+   "p": "no",
+   "ini": 7.36,
+   "fin": 7.66,
+   "clave": false
+  },
+  {
+   "p": "ven",
+   "ini": 7.66,
+   "fin": 7.78,
+   "clave": false
+  },
+  {
+   "p": "cambios.",
+   "ini": 7.78,
+   "fin": 8.26,
+   "clave": true
+  },
+  {
+   "p": "El",
+   "ini": 8.44,
+   "fin": 9.04,
+   "clave": false
+  },
+  {
+   "p": "peso",
+   "ini": 9.04,
+   "fin": 9.26,
+   "clave": true
+  },
+  {
+   "p": "correcto",
+   "ini": 9.26,
+   "fin": 9.74,
+   "clave": false
+  },
+  {
+   "p": "es",
+   "ini": 9.74,
+   "fin": 9.92,
+   "clave": false
+  },
+  {
+   "p": "el",
+   "ini": 9.92,
+   "fin": 10.04,
+   "clave": false
+  },
+  {
+   "p": "que",
+   "ini": 10.04,
+   "fin": 10.22,
+   "clave": false
+  },
+  {
+   "p": "te",
+   "ini": 10.22,
+   "fin": 10.36,
+   "clave": false
+  },
+  {
+   "p": "cuesta",
+   "ini": 10.36,
+   "fin": 10.84,
+   "clave": true
+  },
+  {
+   "p": "y",
+   "ini": 10.84,
+   "fin": 11.2,
+   "clave": false
+  },
+  {
+   "p": "no",
+   "ini": 11.2,
+   "fin": 11.34,
+   "clave": false
+  },
+  {
+   "p": "el",
+   "ini": 11.34,
+   "fin": 11.62,
+   "clave": false
+  },
+  {
+   "p": "que",
+   "ini": 11.62,
+   "fin": 11.72,
+   "clave": false
+  },
+  {
+   "p": "te",
+   "ini": 11.72,
+   "fin": 11.84,
+   "clave": false
+  },
+  {
+   "p": "da",
+   "ini": 11.84,
+   "fin": 11.92,
+   "clave": false
+  },
+  {
+   "p": "tranquilidad.",
+   "ini": 11.92,
+   "fin": 12.48,
+   "clave": true
+  },
+  {
+   "p": "Y",
+   "ini": 12.66,
+   "fin": 12.98,
+   "clave": false
+  },
+  {
+   "p": "para",
+   "ini": 12.98,
+   "fin": 13.16,
+   "clave": false
+  },
+  {
+   "p": "que",
+   "ini": 13.16,
+   "fin": 13.3,
+   "clave": false
+  },
+  {
+   "p": "empieces",
+   "ini": 13.3,
+   "fin": 13.68,
+   "clave": false
+  },
+  {
+   "p": "hoy",
+   "ini": 13.68,
+   "fin": 13.92,
+   "clave": false
+  },
+  {
+   "p": "mismo,",
+   "ini": 13.92,
+   "fin": 14.26,
+   "clave": false
+  },
+  {
+   "p": "aquí",
+   "ini": 14.42,
+   "fin": 14.56,
+   "clave": false
+  },
+  {
+   "p": "te",
+   "ini": 14.56,
+   "fin": 14.68,
+   "clave": false
+  },
+  {
+   "p": "dejo",
+   "ini": 14.68,
+   "fin": 14.86,
+   "clave": false
+  },
+  {
+   "p": "los",
+   "ini": 14.86,
+   "fin": 15.04,
+   "clave": false
+  },
+  {
+   "p": "pesos",
+   "ini": 15.04,
+   "fin": 15.3,
+   "clave": true
+  },
+  {
+   "p": "de",
+   "ini": 15.3,
+   "fin": 15.44,
+   "clave": false
+  },
+  {
+   "p": "partida.",
+   "ini": 15.44,
+   "fin": 15.86,
+   "clave": false
+  },
+  {
+   "p": "Si",
+   "ini": 16.04,
+   "fin": 16.3,
+   "clave": false
+  },
+  {
+   "p": "estás",
+   "ini": 16.3,
+   "fin": 16.46,
+   "clave": false
+  },
+  {
+   "p": "empezando,",
+   "ini": 16.46,
+   "fin": 16.98,
+   "clave": false
+  },
+  {
+   "p": "prueba",
+   "ini": 17.18,
+   "fin": 17.32,
+   "clave": false
+  },
+  {
+   "p": "con",
+   "ini": 17.32,
+   "fin": 17.52,
+   "clave": false
+  },
+  {
+   "p": "estos",
+   "ini": 17.52,
+   "fin": 17.72,
+   "clave": false
+  },
+  {
+   "p": "pesos.",
+   "ini": 17.72,
+   "fin": 18.06,
+   "clave": true
+  },
+  {
+   "p": "En",
+   "ini": 18.24,
+   "fin": 18.86,
+   "clave": false
+  },
+  {
+   "p": "piernas,",
+   "ini": 18.86,
+   "fin": 19.34,
+   "clave": true
+  },
+  {
+   "p": "en",
+   "ini": 19.48,
+   "fin": 19.56,
+   "clave": false
+  },
+  {
+   "p": "sentadillas",
+   "ini": 19.56,
+   "fin": 20.08,
+   "clave": false
+  },
+  {
+   "p": "o",
+   "ini": 20.08,
+   "fin": 20.3,
+   "clave": false
+  },
+  {
+   "p": "puesto",
+   "ini": 20.3,
+   "fin": 20.44,
+   "clave": false
+  },
+  {
+   "p": "muerto",
+   "ini": 20.44,
+   "fin": 20.86,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 20.86,
+   "fin": 21.1,
+   "clave": false
+  },
+  {
+   "p": "5",
+   "ini": 21.1,
+   "fin": 21.34,
+   "clave": true
+  },
+  {
+   "p": "a",
+   "ini": 21.34,
+   "fin": 21.44,
+   "clave": false
+  },
+  {
+   "p": "8.",
+   "ini": 21.44,
+   "fin": 21.66,
+   "clave": true
+  },
+  {
+   "p": "En",
+   "ini": 21.84,
+   "fin": 22.18,
+   "clave": false
+  },
+  {
+   "p": "espalda",
+   "ini": 22.18,
+   "fin": 22.6,
+   "clave": true
+  },
+  {
+   "p": "como",
+   "ini": 22.6,
+   "fin": 22.84,
+   "clave": false
+  },
+  {
+   "p": "el",
+   "ini": 22.84,
+   "fin": 23.02,
+   "clave": false
+  },
+  {
+   "p": "remo",
+   "ini": 23.02,
+   "fin": 23.26,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 23.26,
+   "fin": 23.62,
+   "clave": false
+  },
+  {
+   "p": "4",
+   "ini": 23.62,
+   "fin": 23.86,
+   "clave": true
+  },
+  {
+   "p": "a",
+   "ini": 23.86,
+   "fin": 23.96,
+   "clave": false
+  },
+  {
+   "p": "8.",
+   "ini": 23.96,
+   "fin": 24.18,
+   "clave": true
+  },
+  {
+   "p": "Y",
+   "ini": 24.36,
+   "fin": 24.78,
+   "clave": false
+  },
+  {
+   "p": "en",
+   "ini": 24.78,
+   "fin": 24.88,
+   "clave": false
+  },
+  {
+   "p": "hombro",
+   "ini": 24.88,
+   "fin": 25.18,
+   "clave": true
+  },
+  {
+   "p": "o",
+   "ini": 25.18,
+   "fin": 25.36,
+   "clave": false
+  },
+  {
+   "p": "brazo,",
+   "ini": 25.36,
+   "fin": 25.72,
+   "clave": true
+  },
+  {
+   "p": "que",
+   "ini": 25.74,
+   "fin": 25.84,
+   "clave": false
+  },
+  {
+   "p": "aguantamos",
+   "ini": 25.84,
+   "fin": 26.32,
+   "clave": false
+  },
+  {
+   "p": "menos,",
+   "ini": 26.32,
+   "fin": 26.62,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 26.82,
+   "fin": 26.92,
+   "clave": false
+  },
+  {
+   "p": "2",
+   "ini": 26.92,
+   "fin": 27.18,
+   "clave": true
+  },
+  {
+   "p": "a",
+   "ini": 27.18,
+   "fin": 27.34,
+   "clave": false
+  },
+  {
+   "p": "4",
+   "ini": 27.34,
+   "fin": 27.6,
+   "clave": true
+  },
+  {
+   "p": "kilos.",
+   "ini": 27.6,
+   "fin": 27.88,
+   "clave": false
+  },
+  {
+   "p": "El",
+   "ini": 28.06,
+   "fin": 28.64,
+   "clave": false
+  },
+  {
+   "p": "tren",
+   "ini": 28.64,
+   "fin": 28.82,
+   "clave": false
+  },
+  {
+   "p": "inferior",
+   "ini": 28.82,
+   "fin": 29.26,
+   "clave": false
+  },
+  {
+   "p": "y",
+   "ini": 29.26,
+   "fin": 29.5,
+   "clave": false
+  },
+  {
+   "p": "la",
+   "ini": 29.5,
+   "fin": 29.62,
+   "clave": false
+  },
+  {
+   "p": "espalda",
+   "ini": 29.62,
+   "fin": 30.08,
+   "clave": true
+  },
+  {
+   "p": "son",
+   "ini": 30.08,
+   "fin": 30.38,
+   "clave": false
+  },
+  {
+   "p": "mucho",
+   "ini": 30.38,
+   "fin": 30.62,
+   "clave": false
+  },
+  {
+   "p": "más",
+   "ini": 30.62,
+   "fin": 30.8,
+   "clave": false
+  },
+  {
+   "p": "fuertes",
+   "ini": 30.8,
+   "fin": 31.18,
+   "clave": true
+  },
+  {
+   "p": "que",
+   "ini": 31.18,
+   "fin": 31.28,
+   "clave": false
+  },
+  {
+   "p": "tus",
+   "ini": 31.28,
+   "fin": 31.48,
+   "clave": false
+  },
+  {
+   "p": "brazos,",
+   "ini": 31.48,
+   "fin": 31.9,
+   "clave": false
+  },
+  {
+   "p": "así",
+   "ini": 32.06,
+   "fin": 32.2,
+   "clave": false
+  },
+  {
+   "p": "que",
+   "ini": 32.2,
+   "fin": 32.42,
+   "clave": false
+  },
+  {
+   "p": "no",
+   "ini": 32.42,
+   "fin": 32.64,
+   "clave": false
+  },
+  {
+   "p": "uses",
+   "ini": 32.64,
+   "fin": 32.84,
+   "clave": false
+  },
+  {
+   "p": "el",
+   "ini": 32.84,
+   "fin": 33.0,
+   "clave": false
+  },
+  {
+   "p": "mismo",
+   "ini": 33.0,
+   "fin": 33.2,
+   "clave": false
+  },
+  {
+   "p": "peso",
+   "ini": 33.2,
+   "fin": 33.48,
+   "clave": true
+  },
+  {
+   "p": "para",
+   "ini": 33.48,
+   "fin": 33.7,
+   "clave": false
+  },
+  {
+   "p": "todo.",
+   "ini": 33.7,
+   "fin": 33.92,
+   "clave": false
+  },
+  {
+   "p": "Pero",
+   "ini": 34.1,
+   "fin": 34.68,
+   "clave": false
+  },
+  {
+   "p": "esto",
+   "ini": 34.68,
+   "fin": 34.9,
+   "clave": false
+  },
+  {
+   "p": "solo",
+   "ini": 34.9,
+   "fin": 35.18,
+   "clave": false
+  },
+  {
+   "p": "es",
+   "ini": 35.18,
+   "fin": 35.5,
+   "clave": false
+  },
+  {
+   "p": "el",
+   "ini": 35.5,
+   "fin": 35.78,
+   "clave": false
+  },
+  {
+   "p": "punto",
+   "ini": 35.78,
+   "fin": 36.06,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 36.06,
+   "fin": 36.18,
+   "clave": false
+  },
+  {
+   "p": "partida.",
+   "ini": 36.18,
+   "fin": 36.56,
+   "clave": false
+  },
+  {
+   "p": "Una",
+   "ini": 36.74,
+   "fin": 37.46,
+   "clave": false
+  },
+  {
+   "p": "regla",
+   "ini": 37.46,
+   "fin": 37.76,
+   "clave": true
+  },
+  {
+   "p": "que",
+   "ini": 37.76,
+   "fin": 37.92,
+   "clave": false
+  },
+  {
+   "p": "casi",
+   "ini": 37.92,
+   "fin": 38.16,
+   "clave": false
+  },
+  {
+   "p": "nadie",
+   "ini": 38.16,
+   "fin": 38.36,
+   "clave": false
+  },
+  {
+   "p": "sabe.",
+   "ini": 38.36,
+   "fin": 38.68,
+   "clave": false
+  },
+  {
+   "p": "Pero",
+   "ini": 38.86,
+   "fin": 39.46,
+   "clave": false
+  },
+  {
+   "p": "la",
+   "ini": 39.46,
+   "fin": 39.62,
+   "clave": false
+  },
+  {
+   "p": "regla",
+   "ini": 39.62,
+   "fin": 39.94,
+   "clave": true
+  },
+  {
+   "p": "real",
+   "ini": 39.94,
+   "fin": 40.26,
+   "clave": false
+  },
+  {
+   "p": "es",
+   "ini": 40.26,
+   "fin": 40.5,
+   "clave": false
+  },
+  {
+   "p": "que",
+   "ini": 40.5,
+   "fin": 40.6,
+   "clave": false
+  },
+  {
+   "p": "si",
+   "ini": 40.6,
+   "fin": 40.74,
+   "clave": false
+  },
+  {
+   "p": "puedes",
+   "ini": 40.74,
+   "fin": 40.98,
+   "clave": false
+  },
+  {
+   "p": "hacer",
+   "ini": 40.98,
+   "fin": 41.3,
+   "clave": false
+  },
+  {
+   "p": "más",
+   "ini": 41.3,
+   "fin": 41.6,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 41.6,
+   "fin": 41.74,
+   "clave": false
+  },
+  {
+   "p": "10,",
+   "ini": 41.74,
+   "fin": 42.0,
+   "clave": true
+  },
+  {
+   "p": "subas",
+   "ini": 42.22,
+   "fin": 42.84,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 42.84,
+   "fin": 42.92,
+   "clave": false
+  },
+  {
+   "p": "peso.",
+   "ini": 42.92,
+   "fin": 43.18,
+   "clave": true
+  },
+  {
+   "p": "El",
+   "ini": 43.36,
+   "fin": 43.98,
+   "clave": false
+  },
+  {
+   "p": "bueno",
+   "ini": 43.98,
+   "fin": 44.28,
+   "clave": false
+  },
+  {
+   "p": "es",
+   "ini": 44.28,
+   "fin": 44.54,
+   "clave": false
+  },
+  {
+   "p": "el",
+   "ini": 44.54,
+   "fin": 44.66,
+   "clave": false
+  },
+  {
+   "p": "que",
+   "ini": 44.66,
+   "fin": 44.76,
+   "clave": false
+  },
+  {
+   "p": "te",
+   "ini": 44.76,
+   "fin": 44.88,
+   "clave": false
+  },
+  {
+   "p": "hace",
+   "ini": 44.88,
+   "fin": 45.04,
+   "clave": false
+  },
+  {
+   "p": "sudar",
+   "ini": 45.04,
+   "fin": 45.42,
+   "clave": true
+  },
+  {
+   "p": "con",
+   "ini": 45.42,
+   "fin": 45.62,
+   "clave": false
+  },
+  {
+   "p": "las",
+   "ini": 45.62,
+   "fin": 45.78,
+   "clave": false
+  },
+  {
+   "p": "últimas",
+   "ini": 45.78,
+   "fin": 46.24,
+   "clave": false
+  },
+  {
+   "p": "dos",
+   "ini": 46.24,
+   "fin": 46.44,
+   "clave": false
+  },
+  {
+   "p": "o",
+   "ini": 46.44,
+   "fin": 46.62,
+   "clave": false
+  },
+  {
+   "p": "tres",
+   "ini": 46.62,
+   "fin": 46.74,
+   "clave": false
+  },
+  {
+   "p": "repeticiones.",
+   "ini": 46.74,
+   "fin": 47.42,
+   "clave": false
+  },
+  {
+   "p": "Comparte",
+   "ini": 47.6,
+   "fin": 47.82,
+   "clave": true
+  },
+  {
+   "p": "este",
+   "ini": 47.82,
+   "fin": 48.0,
+   "clave": false
+  },
+  {
+   "p": "vídeo",
+   "ini": 48.0,
+   "fin": 48.2,
+   "clave": false
+  },
+  {
+   "p": "con",
+   "ini": 48.2,
+   "fin": 48.4,
+   "clave": false
+  },
+  {
+   "p": "esa",
+   "ini": 48.4,
+   "fin": 48.58,
+   "clave": false
+  },
+  {
+   "p": "amiga",
+   "ini": 48.58,
+   "fin": 48.82,
+   "clave": true
+  },
+  {
+   "p": "que",
+   "ini": 48.82,
+   "fin": 48.98,
+   "clave": false
+  },
+  {
+   "p": "lleva",
+   "ini": 48.98,
+   "fin": 49.2,
+   "clave": false
+  },
+  {
+   "p": "más",
+   "ini": 49.2,
+   "fin": 49.46,
+   "clave": false
+  },
+  {
+   "p": "de",
+   "ini": 49.46,
+   "fin": 49.58,
+   "clave": false
+  },
+  {
+   "p": "un",
+   "ini": 49.58,
+   "fin": 49.68,
+   "clave": false
+  },
+  {
+   "p": "año",
+   "ini": 49.68,
+   "fin": 49.86,
+   "clave": false
+  },
+  {
+   "p": "con",
+   "ini": 49.86,
+   "fin": 50.08,
+   "clave": false
+  },
+  {
+   "p": "pesos",
+   "ini": 50.08,
+   "fin": 50.3,
+   "clave": true
+  },
+  {
+   "p": "de",
+   "ini": 50.3,
+   "fin": 50.46,
+   "clave": false
+  },
+  {
+   "p": "un",
+   "ini": 50.46,
+   "fin": 50.56,
+   "clave": false
+  },
+  {
+   "p": "kilo",
+   "ini": 50.56,
+   "fin": 50.76,
+   "clave": true
+  },
+  {
+   "p": "y",
+   "ini": 50.76,
+   "fin": 50.96,
+   "clave": false
+  },
+  {
+   "p": "no",
+   "ini": 50.96,
+   "fin": 51.1,
+   "clave": false
+  },
+  {
+   "p": "ve",
+   "ini": 51.1,
+   "fin": 51.18,
+   "clave": false
+  },
+  {
+   "p": "resultados.",
+   "ini": 51.18,
+   "fin": 51.5,
+   "clave": false
+  },
+  {
+   "p": "Y",
+   "ini": 51.68,
+   "fin": 52.1,
+   "clave": false
+  },
+  {
+   "p": "comenta",
+   "ini": 52.1,
+   "fin": 52.46,
+   "clave": true
+  },
+  {
+   "p": "la",
+   "ini": 52.46,
+   "fin": 52.62,
+   "clave": false
+  },
+  {
+   "p": "palabra",
+   "ini": 52.62,
+   "fin": 52.98,
+   "clave": false
+  },
+  {
+   "p": "RESET",
+   "ini": 52.98,
+   "fin": 53.4,
+   "clave": true
+  },
+  {
+   "p": "si",
+   "ini": 53.4,
+   "fin": 53.62,
+   "clave": false
+  },
+  {
+   "p": "quieres",
+   "ini": 53.62,
+   "fin": 53.84,
+   "clave": false
+  },
+  {
+   "p": "que",
+   "ini": 53.84,
+   "fin": 53.96,
+   "clave": false
+  },
+  {
+   "p": "te",
+   "ini": 53.96,
+   "fin": 54.08,
+   "clave": false
+  },
+  {
+   "p": "envíe",
+   "ini": 54.08,
+   "fin": 54.32,
+   "clave": false
+  },
+  {
+   "p": "mi",
+   "ini": 54.32,
+   "fin": 54.5,
+   "clave": false
+  },
+  {
+   "p": "plan",
+   "ini": 54.5,
+   "fin": 54.72,
+   "clave": false
+  },
+  {
+   "p": "personal.",
+   "ini": 54.72,
+   "fin": 55.16,
+   "clave": false
+  }
+ ],
+ "titulos": [
+  {
+   "t": 18.81,
+   "fin": 22.08,
+   "texto": "1. Piernas: 5 – 8 kg",
+   "sub": "sentadilla · peso muerto"
+  },
+  {
+   "t": 22.13,
+   "fin": 24.78,
+   "texto": "2. Espalda: 4 – 8 kg",
+   "sub": "remo"
+  },
+  {
+   "t": 24.83,
+   "fin": 28.54,
+   "texto": "3. Brazo: 2 – 4 kg",
+   "sub": "hombro · bíceps"
+  },
+  {
+   "t": 39.57,
+   "fin": 47.5,
+   "texto": "La regla real:",
+   "sub": "si haces +10 → sube de peso"
+  }
+ ]
+}
