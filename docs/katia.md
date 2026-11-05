@@ -23,5 +23,18 @@ es remunerado. Chat de WhatsApp exportado (5-nov-2026) con las condiciones.
 - La toma IMG_5338 es la cámara mirando al suelo: solo su voz; encima, gráfico de barras de fuerza
   (piernas y espalda > brazos) sobre la toma de las mancuernas desenfocada.
 
+## Correcciones de la prueba (v2, hecha)
+- Subtítulo blanco plano (sin rosa), una palabra. Sin música. Ruido del gimnasio quitado con
+  `noisereduce` (no estacionario, `prop_decrease=0.8`: −12 dB de fondo sin sonar robótico).
+- Sin espacios muertos: se quitan las pausas de dentro de cada toma (jump cuts que alternan plano y
+  acercamiento): 55,6 s → 48,9 s.
+- Pesos con tarjetas blancas "clean": pastilla "PESOS DE PARTIDA", tarjeta por zona con silueta que
+  marca piernas/espalda/brazos, kg que cuentan al decirlos, ejercicios en pastillas azules y PASO 1/3.
+- Regla: contador de repeticiones (se llena hasta 10 con la voz → "+10 reps → SUBE DE PESO"; luego
+  las 2–3 últimas laten en rosa).
+- Cierre: hoja de "Compartir" de Instagram (se marca "Tu amiga" y Enviar) y hoja de "Comentarios"
+  donde se escribe RESET, se publica y aparece arriba con su ♥.
+- Destellos tipo lens flare hechos en código (no hacen falta archivos) en cada cambio de sección.
+
 ## Pendiente
 - Que Katia vea la prueba.

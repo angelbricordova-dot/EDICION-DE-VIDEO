@@ -1,1308 +1,1416 @@
 {
- "duracion": 55.64,
+ "duracion": 48.86,
  "tramos": [
   {
    "clip": "5313",
-   "src": 2.88,
-   "dur": 4.76,
+   "src": 3.42,
+   "dur": 3.14,
    "out": 0.0,
-   "soloVoz": false
+   "seccion": "gancho",
+   "soloVoz": false,
+   "nuevaToma": true
+  },
+  {
+   "clip": "5313",
+   "src": 6.7,
+   "dur": 0.9,
+   "out": 3.14,
+   "seccion": "gancho",
+   "soloVoz": false,
+   "nuevaToma": false
   },
   {
    "clip": "5316",
-   "src": 0.0,
-   "dur": 3.68,
-   "out": 4.76,
-   "soloVoz": false
+   "src": 0.38,
+   "dur": 3.26,
+   "out": 4.04,
+   "seccion": "problema",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5317",
-   "src": 0.0,
-   "dur": 4.22,
-   "out": 8.44,
-   "soloVoz": false
+   "src": 0.4,
+   "dur": 1.94,
+   "out": 7.3,
+   "seccion": "problema",
+   "soloVoz": false,
+   "nuevaToma": true
+  },
+  {
+   "clip": "5317",
+   "src": 2.64,
+   "dur": 1.54,
+   "out": 9.24,
+   "seccion": "problema",
+   "soloVoz": false,
+   "nuevaToma": false
   },
   {
    "clip": "5320",
-   "src": 0.0,
-   "dur": 3.38,
-   "out": 12.66,
-   "soloVoz": false
+   "src": 0.16,
+   "dur": 3.18,
+   "out": 10.78,
+   "seccion": "pesos",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5323",
-   "src": 0.0,
-   "dur": 2.2,
-   "out": 16.04,
-   "soloVoz": false
+   "src": 0.14,
+   "dur": 2.02,
+   "out": 13.96,
+   "seccion": "pesos",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5325",
-   "src": 0.0,
-   "dur": 3.6,
-   "out": 18.24,
-   "soloVoz": false
+   "src": 0.42,
+   "dur": 1.46,
+   "out": 15.98,
+   "seccion": "pesos",
+   "soloVoz": false,
+   "nuevaToma": true
+  },
+  {
+   "clip": "5325",
+   "src": 2.02,
+   "dur": 1.54,
+   "out": 17.44,
+   "seccion": "pesos",
+   "soloVoz": false,
+   "nuevaToma": false
   },
   {
    "clip": "5326",
-   "src": 0.0,
-   "dur": 2.52,
-   "out": 21.84,
-   "soloVoz": false
+   "src": 0.16,
+   "dur": 2.32,
+   "out": 18.98,
+   "seccion": "pesos",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5327",
-   "src": 0.0,
-   "dur": 3.7,
-   "out": 24.36,
-   "soloVoz": false
+   "src": 0.28,
+   "dur": 3.38,
+   "out": 21.3,
+   "seccion": "pesos",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5338",
-   "src": 0.0,
-   "dur": 6.04,
-   "out": 28.06,
-   "soloVoz": true
+   "src": 0.4,
+   "dur": 2.9,
+   "out": 24.68,
+   "seccion": "fuerza",
+   "soloVoz": true,
+   "nuevaToma": true
+  },
+  {
+   "clip": "5338",
+   "src": 3.44,
+   "dur": 0.24,
+   "out": 27.58,
+   "seccion": "fuerza",
+   "soloVoz": true,
+   "nuevaToma": false
+  },
+  {
+   "clip": "5338",
+   "src": 3.9,
+   "dur": 2.1,
+   "out": 27.82,
+   "seccion": "fuerza",
+   "soloVoz": true,
+   "nuevaToma": false
   },
   {
    "clip": "5330",
-   "src": 0.0,
-   "dur": 2.64,
-   "out": 34.1,
-   "soloVoz": false
+   "src": 0.4,
+   "dur": 0.96,
+   "out": 29.92,
+   "seccion": "regla",
+   "soloVoz": false,
+   "nuevaToma": true
+  },
+  {
+   "clip": "5330",
+   "src": 1.52,
+   "dur": 1.08,
+   "out": 30.88,
+   "seccion": "regla",
+   "soloVoz": false,
+   "nuevaToma": false
   },
   {
    "clip": "5321",
-   "src": 0.0,
-   "dur": 2.12,
-   "out": 36.74,
-   "soloVoz": false
+   "src": 0.46,
+   "dur": 1.62,
+   "out": 31.96,
+   "seccion": "regla",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5331",
-   "src": 0.0,
-   "dur": 4.5,
-   "out": 38.86,
-   "soloVoz": false
+   "src": 0.4,
+   "dur": 2.82,
+   "out": 33.58,
+   "seccion": "regla",
+   "soloVoz": false,
+   "nuevaToma": true
+  },
+  {
+   "clip": "5331",
+   "src": 3.7,
+   "dur": 0.76,
+   "out": 36.4,
+   "seccion": "regla",
+   "soloVoz": false,
+   "nuevaToma": false
   },
   {
    "clip": "5334",
-   "src": 0.0,
-   "dur": 4.24,
-   "out": 43.36,
-   "soloVoz": false
+   "src": 0.42,
+   "dur": 3.78,
+   "out": 37.16,
+   "seccion": "regla",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5336",
    "src": 0.0,
-   "dur": 4.08,
-   "out": 47.6,
-   "soloVoz": false
+   "dur": 4.04,
+   "out": 40.94,
+   "seccion": "compartir",
+   "soloVoz": false,
+   "nuevaToma": true
   },
   {
    "clip": "5337",
-   "src": 0.0,
-   "dur": 3.66,
-   "out": 51.68,
-   "soloVoz": false
+   "src": 0.26,
+   "dur": 1.5,
+   "out": 44.98,
+   "seccion": "comentar",
+   "soloVoz": false,
+   "nuevaToma": true
+  },
+  {
+   "clip": "5337",
+   "src": 1.84,
+   "dur": 1.78,
+   "out": 46.48,
+   "seccion": "comentar",
+   "soloVoz": false,
+   "nuevaToma": false
   }
  ],
  "palabras": [
   {
    "p": "Si",
-   "ini": 0.12,
-   "fin": 0.66,
-   "clave": false
+   "ini": 0.0,
+   "fin": 0.12,
+   "clip": "5313"
   },
   {
    "p": "no",
-   "ini": 0.66,
-   "fin": 0.82,
-   "clave": false
+   "ini": 0.12,
+   "fin": 0.28,
+   "clip": "5313"
   },
   {
    "p": "sabes",
-   "ini": 0.82,
-   "fin": 1.14,
-   "clave": false
+   "ini": 0.28,
+   "fin": 0.6,
+   "clip": "5313"
   },
   {
    "p": "cuánto",
-   "ini": 1.14,
-   "fin": 1.62,
-   "clave": false
+   "ini": 0.6,
+   "fin": 1.08,
+   "clip": "5313"
   },
   {
    "p": "peso",
-   "ini": 1.62,
-   "fin": 1.84,
-   "clave": true
+   "ini": 1.08,
+   "fin": 1.3,
+   "clip": "5313"
   },
   {
    "p": "coger",
-   "ini": 1.84,
-   "fin": 2.2,
-   "clave": false
+   "ini": 1.3,
+   "fin": 1.66,
+   "clip": "5313"
   },
   {
    "p": "exactamente",
-   "ini": 2.2,
-   "fin": 2.68,
-   "clave": false
+   "ini": 1.66,
+   "fin": 2.14,
+   "clip": "5313"
   },
   {
    "p": "en",
-   "ini": 2.68,
-   "fin": 2.98,
-   "clave": false
+   "ini": 2.14,
+   "fin": 2.44,
+   "clip": "5313"
   },
   {
    "p": "tus",
-   "ini": 2.98,
-   "fin": 3.12,
-   "clave": false
+   "ini": 2.44,
+   "fin": 2.58,
+   "clip": "5313"
   },
   {
    "p": "entrenos,",
-   "ini": 3.12,
-   "fin": 3.7,
-   "clave": false
+   "ini": 2.58,
+   "fin": 3.14,
+   "clip": "5313"
   },
   {
    "p": "esto",
-   "ini": 3.84,
-   "fin": 4.1,
-   "clave": false
+   "ini": 3.16,
+   "fin": 3.42,
+   "clip": "5313"
   },
   {
    "p": "es",
-   "ini": 4.1,
-   "fin": 4.2,
-   "clave": false
+   "ini": 3.42,
+   "fin": 3.52,
+   "clip": "5313"
   },
   {
    "p": "para",
-   "ini": 4.2,
-   "fin": 4.4,
-   "clave": false
+   "ini": 3.52,
+   "fin": 3.72,
+   "clip": "5313"
   },
   {
    "p": "ti.",
-   "ini": 4.4,
-   "fin": 4.58,
-   "clave": false
+   "ini": 3.72,
+   "fin": 3.9,
+   "clip": "5313"
   },
   {
    "p": "La",
-   "ini": 4.76,
-   "fin": 5.32,
-   "clave": false
+   "ini": 4.04,
+   "fin": 4.22,
+   "clip": "5316"
   },
   {
    "p": "mayoría",
-   "ini": 5.32,
-   "fin": 5.7,
-   "clave": false
+   "ini": 4.22,
+   "fin": 4.6,
+   "clip": "5316"
   },
   {
    "p": "cogen",
-   "ini": 5.7,
-   "fin": 6.12,
-   "clave": false
+   "ini": 4.6,
+   "fin": 5.02,
+   "clip": "5316"
   },
   {
    "p": "las",
-   "ini": 6.12,
-   "fin": 6.26,
-   "clave": false
+   "ini": 5.02,
+   "fin": 5.16,
+   "clip": "5316"
   },
   {
    "p": "de",
-   "ini": 6.26,
-   "fin": 6.38,
-   "clave": false
+   "ini": 5.16,
+   "fin": 5.28,
+   "clip": "5316"
   },
   {
    "p": "un",
-   "ini": 6.38,
-   "fin": 6.48,
-   "clave": false
+   "ini": 5.28,
+   "fin": 5.38,
+   "clip": "5316"
   },
   {
    "p": "kilo",
-   "ini": 6.48,
-   "fin": 6.7,
-   "clave": true
+   "ini": 5.38,
+   "fin": 5.6,
+   "clip": "5316"
   },
   {
    "p": "y",
-   "ini": 6.7,
-   "fin": 6.92,
-   "clave": false
+   "ini": 5.6,
+   "fin": 5.82,
+   "clip": "5316"
   },
   {
    "p": "por",
-   "ini": 6.92,
-   "fin": 7.08,
-   "clave": false
+   "ini": 5.82,
+   "fin": 5.98,
+   "clip": "5316"
   },
   {
    "p": "eso",
-   "ini": 7.08,
-   "fin": 7.36,
-   "clave": false
+   "ini": 5.98,
+   "fin": 6.26,
+   "clip": "5316"
   },
   {
    "p": "no",
-   "ini": 7.36,
-   "fin": 7.66,
-   "clave": false
+   "ini": 6.26,
+   "fin": 6.56,
+   "clip": "5316"
   },
   {
    "p": "ven",
-   "ini": 7.66,
-   "fin": 7.78,
-   "clave": false
+   "ini": 6.56,
+   "fin": 6.68,
+   "clip": "5316"
   },
   {
    "p": "cambios.",
-   "ini": 7.78,
-   "fin": 8.26,
-   "clave": true
+   "ini": 6.68,
+   "fin": 7.16,
+   "clip": "5316"
   },
   {
    "p": "El",
-   "ini": 8.44,
-   "fin": 9.04,
-   "clave": false
+   "ini": 7.3,
+   "fin": 7.5,
+   "clip": "5317"
   },
   {
    "p": "peso",
-   "ini": 9.04,
-   "fin": 9.26,
-   "clave": true
+   "ini": 7.5,
+   "fin": 7.72,
+   "clip": "5317"
   },
   {
    "p": "correcto",
-   "ini": 9.26,
-   "fin": 9.74,
-   "clave": false
+   "ini": 7.72,
+   "fin": 8.2,
+   "clip": "5317"
   },
   {
    "p": "es",
-   "ini": 9.74,
-   "fin": 9.92,
-   "clave": false
+   "ini": 8.2,
+   "fin": 8.38,
+   "clip": "5317"
   },
   {
    "p": "el",
-   "ini": 9.92,
-   "fin": 10.04,
-   "clave": false
+   "ini": 8.38,
+   "fin": 8.5,
+   "clip": "5317"
   },
   {
    "p": "que",
-   "ini": 10.04,
-   "fin": 10.22,
-   "clave": false
+   "ini": 8.5,
+   "fin": 8.68,
+   "clip": "5317"
   },
   {
    "p": "te",
-   "ini": 10.22,
-   "fin": 10.36,
-   "clave": false
+   "ini": 8.68,
+   "fin": 8.82,
+   "clip": "5317"
   },
   {
    "p": "cuesta",
-   "ini": 10.36,
-   "fin": 10.84,
-   "clave": true
+   "ini": 8.82,
+   "fin": 9.24,
+   "clip": "5317"
   },
   {
    "p": "y",
-   "ini": 10.84,
-   "fin": 11.2,
-   "clave": false
+   "ini": 9.24,
+   "fin": 9.36,
+   "clip": "5317"
   },
   {
    "p": "no",
-   "ini": 11.2,
-   "fin": 11.34,
-   "clave": false
+   "ini": 9.36,
+   "fin": 9.5,
+   "clip": "5317"
   },
   {
    "p": "el",
-   "ini": 11.34,
-   "fin": 11.62,
-   "clave": false
+   "ini": 9.5,
+   "fin": 9.78,
+   "clip": "5317"
   },
   {
    "p": "que",
-   "ini": 11.62,
-   "fin": 11.72,
-   "clave": false
+   "ini": 9.78,
+   "fin": 9.88,
+   "clip": "5317"
   },
   {
    "p": "te",
-   "ini": 11.72,
-   "fin": 11.84,
-   "clave": false
+   "ini": 9.88,
+   "fin": 10.0,
+   "clip": "5317"
   },
   {
    "p": "da",
-   "ini": 11.84,
-   "fin": 11.92,
-   "clave": false
+   "ini": 10.0,
+   "fin": 10.08,
+   "clip": "5317"
   },
   {
    "p": "tranquilidad.",
-   "ini": 11.92,
-   "fin": 12.48,
-   "clave": true
+   "ini": 10.08,
+   "fin": 10.64,
+   "clip": "5317"
   },
   {
    "p": "Y",
-   "ini": 12.66,
-   "fin": 12.98,
-   "clave": false
+   "ini": 10.78,
+   "fin": 10.94,
+   "clip": "5320"
   },
   {
    "p": "para",
-   "ini": 12.98,
-   "fin": 13.16,
-   "clave": false
+   "ini": 10.94,
+   "fin": 11.12,
+   "clip": "5320"
   },
   {
    "p": "que",
-   "ini": 13.16,
-   "fin": 13.3,
-   "clave": false
+   "ini": 11.12,
+   "fin": 11.26,
+   "clip": "5320"
   },
   {
    "p": "empieces",
-   "ini": 13.3,
-   "fin": 13.68,
-   "clave": false
+   "ini": 11.26,
+   "fin": 11.64,
+   "clip": "5320"
   },
   {
    "p": "hoy",
-   "ini": 13.68,
-   "fin": 13.92,
-   "clave": false
+   "ini": 11.64,
+   "fin": 11.88,
+   "clip": "5320"
   },
   {
    "p": "mismo,",
-   "ini": 13.92,
-   "fin": 14.26,
-   "clave": false
+   "ini": 11.88,
+   "fin": 12.22,
+   "clip": "5320"
   },
   {
    "p": "aquí",
-   "ini": 14.42,
-   "fin": 14.56,
-   "clave": false
+   "ini": 12.38,
+   "fin": 12.52,
+   "clip": "5320"
   },
   {
    "p": "te",
-   "ini": 14.56,
-   "fin": 14.68,
-   "clave": false
+   "ini": 12.52,
+   "fin": 12.64,
+   "clip": "5320"
   },
   {
    "p": "dejo",
-   "ini": 14.68,
-   "fin": 14.86,
-   "clave": false
+   "ini": 12.64,
+   "fin": 12.82,
+   "clip": "5320"
   },
   {
    "p": "los",
-   "ini": 14.86,
-   "fin": 15.04,
-   "clave": false
+   "ini": 12.82,
+   "fin": 13.0,
+   "clip": "5320"
   },
   {
    "p": "pesos",
-   "ini": 15.04,
-   "fin": 15.3,
-   "clave": true
+   "ini": 13.0,
+   "fin": 13.26,
+   "clip": "5320"
   },
   {
    "p": "de",
-   "ini": 15.3,
-   "fin": 15.44,
-   "clave": false
+   "ini": 13.26,
+   "fin": 13.4,
+   "clip": "5320"
   },
   {
    "p": "partida.",
-   "ini": 15.44,
-   "fin": 15.86,
-   "clave": false
+   "ini": 13.4,
+   "fin": 13.82,
+   "clip": "5320"
   },
   {
    "p": "Si",
-   "ini": 16.04,
-   "fin": 16.3,
-   "clave": false
+   "ini": 13.96,
+   "fin": 14.08,
+   "clip": "5323"
   },
   {
    "p": "estás",
-   "ini": 16.3,
-   "fin": 16.46,
-   "clave": false
+   "ini": 14.08,
+   "fin": 14.24,
+   "clip": "5323"
   },
   {
    "p": "empezando,",
-   "ini": 16.46,
-   "fin": 16.98,
-   "clave": false
+   "ini": 14.24,
+   "fin": 14.76,
+   "clip": "5323"
   },
   {
    "p": "prueba",
-   "ini": 17.18,
-   "fin": 17.32,
-   "clave": false
+   "ini": 14.96,
+   "fin": 15.1,
+   "clip": "5323"
   },
   {
    "p": "con",
-   "ini": 17.32,
-   "fin": 17.52,
-   "clave": false
+   "ini": 15.1,
+   "fin": 15.3,
+   "clip": "5323"
   },
   {
    "p": "estos",
-   "ini": 17.52,
-   "fin": 17.72,
-   "clave": false
+   "ini": 15.3,
+   "fin": 15.5,
+   "clip": "5323"
   },
   {
    "p": "pesos.",
-   "ini": 17.72,
-   "fin": 18.06,
-   "clave": true
+   "ini": 15.5,
+   "fin": 15.84,
+   "clip": "5323"
   },
   {
    "p": "En",
-   "ini": 18.24,
-   "fin": 18.86,
-   "clave": false
+   "ini": 15.98,
+   "fin": 16.18,
+   "clip": "5325"
   },
   {
    "p": "piernas,",
-   "ini": 18.86,
-   "fin": 19.34,
-   "clave": true
+   "ini": 16.18,
+   "fin": 16.66,
+   "clip": "5325"
   },
   {
    "p": "en",
-   "ini": 19.48,
-   "fin": 19.56,
-   "clave": false
+   "ini": 16.8,
+   "fin": 16.88,
+   "clip": "5325"
   },
   {
    "p": "sentadillas",
-   "ini": 19.56,
-   "fin": 20.08,
-   "clave": false
+   "ini": 16.88,
+   "fin": 17.4,
+   "clip": "5325"
   },
   {
    "p": "o",
-   "ini": 20.08,
-   "fin": 20.3,
-   "clave": false
+   "ini": 17.4,
+   "fin": 17.48,
+   "clip": "5325"
   },
   {
    "p": "puesto",
-   "ini": 20.3,
-   "fin": 20.44,
-   "clave": false
+   "ini": 17.48,
+   "fin": 17.62,
+   "clip": "5325"
   },
   {
    "p": "muerto",
-   "ini": 20.44,
-   "fin": 20.86,
-   "clave": false
+   "ini": 17.62,
+   "fin": 18.04,
+   "clip": "5325"
   },
   {
    "p": "de",
-   "ini": 20.86,
-   "fin": 21.1,
-   "clave": false
+   "ini": 18.04,
+   "fin": 18.28,
+   "clip": "5325"
   },
   {
    "p": "5",
-   "ini": 21.1,
-   "fin": 21.34,
-   "clave": true
+   "ini": 18.28,
+   "fin": 18.52,
+   "clip": "5325"
   },
   {
    "p": "a",
-   "ini": 21.34,
-   "fin": 21.44,
-   "clave": false
+   "ini": 18.52,
+   "fin": 18.62,
+   "clip": "5325"
   },
   {
    "p": "8.",
-   "ini": 21.44,
-   "fin": 21.66,
-   "clave": true
+   "ini": 18.62,
+   "fin": 18.84,
+   "clip": "5325"
   },
   {
    "p": "En",
-   "ini": 21.84,
-   "fin": 22.18,
-   "clave": false
+   "ini": 18.98,
+   "fin": 19.16,
+   "clip": "5326"
   },
   {
    "p": "espalda",
-   "ini": 22.18,
-   "fin": 22.6,
-   "clave": true
+   "ini": 19.16,
+   "fin": 19.58,
+   "clip": "5326"
   },
   {
    "p": "como",
-   "ini": 22.6,
-   "fin": 22.84,
-   "clave": false
+   "ini": 19.58,
+   "fin": 19.82,
+   "clip": "5326"
   },
   {
    "p": "el",
-   "ini": 22.84,
-   "fin": 23.02,
-   "clave": false
+   "ini": 19.82,
+   "fin": 20.0,
+   "clip": "5326"
   },
   {
    "p": "remo",
-   "ini": 23.02,
-   "fin": 23.26,
-   "clave": false
+   "ini": 20.0,
+   "fin": 20.24,
+   "clip": "5326"
   },
   {
    "p": "de",
-   "ini": 23.26,
-   "fin": 23.62,
-   "clave": false
+   "ini": 20.24,
+   "fin": 20.6,
+   "clip": "5326"
   },
   {
    "p": "4",
-   "ini": 23.62,
-   "fin": 23.86,
-   "clave": true
+   "ini": 20.6,
+   "fin": 20.84,
+   "clip": "5326"
   },
   {
    "p": "a",
-   "ini": 23.86,
-   "fin": 23.96,
-   "clave": false
+   "ini": 20.84,
+   "fin": 20.94,
+   "clip": "5326"
   },
   {
    "p": "8.",
-   "ini": 23.96,
-   "fin": 24.18,
-   "clave": true
+   "ini": 20.94,
+   "fin": 21.16,
+   "clip": "5326"
   },
   {
    "p": "Y",
-   "ini": 24.36,
-   "fin": 24.78,
-   "clave": false
+   "ini": 21.3,
+   "fin": 21.44,
+   "clip": "5327"
   },
   {
    "p": "en",
-   "ini": 24.78,
-   "fin": 24.88,
-   "clave": false
+   "ini": 21.44,
+   "fin": 21.54,
+   "clip": "5327"
   },
   {
    "p": "hombro",
-   "ini": 24.88,
-   "fin": 25.18,
-   "clave": true
+   "ini": 21.54,
+   "fin": 21.84,
+   "clip": "5327"
   },
   {
    "p": "o",
-   "ini": 25.18,
-   "fin": 25.36,
-   "clave": false
+   "ini": 21.84,
+   "fin": 22.02,
+   "clip": "5327"
   },
   {
    "p": "brazo,",
-   "ini": 25.36,
-   "fin": 25.72,
-   "clave": true
+   "ini": 22.02,
+   "fin": 22.38,
+   "clip": "5327"
   },
   {
    "p": "que",
-   "ini": 25.74,
-   "fin": 25.84,
-   "clave": false
+   "ini": 22.4,
+   "fin": 22.5,
+   "clip": "5327"
   },
   {
    "p": "aguantamos",
-   "ini": 25.84,
-   "fin": 26.32,
-   "clave": false
+   "ini": 22.5,
+   "fin": 22.98,
+   "clip": "5327"
   },
   {
    "p": "menos,",
-   "ini": 26.32,
-   "fin": 26.62,
-   "clave": false
+   "ini": 22.98,
+   "fin": 23.28,
+   "clip": "5327"
   },
   {
    "p": "de",
-   "ini": 26.82,
-   "fin": 26.92,
-   "clave": false
+   "ini": 23.48,
+   "fin": 23.58,
+   "clip": "5327"
   },
   {
    "p": "2",
-   "ini": 26.92,
-   "fin": 27.18,
-   "clave": true
+   "ini": 23.58,
+   "fin": 23.84,
+   "clip": "5327"
   },
   {
    "p": "a",
-   "ini": 27.18,
-   "fin": 27.34,
-   "clave": false
+   "ini": 23.84,
+   "fin": 24.0,
+   "clip": "5327"
   },
   {
    "p": "4",
-   "ini": 27.34,
-   "fin": 27.6,
-   "clave": true
+   "ini": 24.0,
+   "fin": 24.26,
+   "clip": "5327"
   },
   {
    "p": "kilos.",
-   "ini": 27.6,
-   "fin": 27.88,
-   "clave": false
+   "ini": 24.26,
+   "fin": 24.54,
+   "clip": "5327"
   },
   {
    "p": "El",
-   "ini": 28.06,
-   "fin": 28.64,
-   "clave": false
+   "ini": 24.68,
+   "fin": 24.86,
+   "clip": "5338"
   },
   {
    "p": "tren",
-   "ini": 28.64,
-   "fin": 28.82,
-   "clave": false
+   "ini": 24.86,
+   "fin": 25.04,
+   "clip": "5338"
   },
   {
    "p": "inferior",
-   "ini": 28.82,
-   "fin": 29.26,
-   "clave": false
+   "ini": 25.04,
+   "fin": 25.48,
+   "clip": "5338"
   },
   {
    "p": "y",
-   "ini": 29.26,
-   "fin": 29.5,
-   "clave": false
+   "ini": 25.48,
+   "fin": 25.72,
+   "clip": "5338"
   },
   {
    "p": "la",
-   "ini": 29.5,
-   "fin": 29.62,
-   "clave": false
+   "ini": 25.72,
+   "fin": 25.84,
+   "clip": "5338"
   },
   {
    "p": "espalda",
-   "ini": 29.62,
-   "fin": 30.08,
-   "clave": true
+   "ini": 25.84,
+   "fin": 26.3,
+   "clip": "5338"
   },
   {
    "p": "son",
-   "ini": 30.08,
-   "fin": 30.38,
-   "clave": false
+   "ini": 26.3,
+   "fin": 26.6,
+   "clip": "5338"
   },
   {
    "p": "mucho",
-   "ini": 30.38,
-   "fin": 30.62,
-   "clave": false
+   "ini": 26.6,
+   "fin": 26.84,
+   "clip": "5338"
   },
   {
    "p": "más",
-   "ini": 30.62,
-   "fin": 30.8,
-   "clave": false
+   "ini": 26.84,
+   "fin": 27.02,
+   "clip": "5338"
   },
   {
    "p": "fuertes",
-   "ini": 30.8,
-   "fin": 31.18,
-   "clave": true
+   "ini": 27.02,
+   "fin": 27.4,
+   "clip": "5338"
   },
   {
    "p": "que",
-   "ini": 31.18,
-   "fin": 31.28,
-   "clave": false
+   "ini": 27.4,
+   "fin": 27.5,
+   "clip": "5338"
   },
   {
    "p": "tus",
-   "ini": 31.28,
-   "fin": 31.48,
-   "clave": false
+   "ini": 27.5,
+   "fin": 27.58,
+   "clip": "5338"
   },
   {
    "p": "brazos,",
-   "ini": 31.48,
-   "fin": 31.9,
-   "clave": false
+   "ini": 27.58,
+   "fin": 27.82,
+   "clip": "5338"
   },
   {
    "p": "así",
-   "ini": 32.06,
-   "fin": 32.2,
-   "clave": false
+   "ini": 27.92,
+   "fin": 28.06,
+   "clip": "5338"
   },
   {
    "p": "que",
-   "ini": 32.2,
-   "fin": 32.42,
-   "clave": false
+   "ini": 28.06,
+   "fin": 28.28,
+   "clip": "5338"
   },
   {
    "p": "no",
-   "ini": 32.42,
-   "fin": 32.64,
-   "clave": false
+   "ini": 28.28,
+   "fin": 28.5,
+   "clip": "5338"
   },
   {
    "p": "uses",
-   "ini": 32.64,
-   "fin": 32.84,
-   "clave": false
+   "ini": 28.5,
+   "fin": 28.7,
+   "clip": "5338"
   },
   {
    "p": "el",
-   "ini": 32.84,
-   "fin": 33.0,
-   "clave": false
+   "ini": 28.7,
+   "fin": 28.86,
+   "clip": "5338"
   },
   {
    "p": "mismo",
-   "ini": 33.0,
-   "fin": 33.2,
-   "clave": false
+   "ini": 28.86,
+   "fin": 29.06,
+   "clip": "5338"
   },
   {
    "p": "peso",
-   "ini": 33.2,
-   "fin": 33.48,
-   "clave": true
+   "ini": 29.06,
+   "fin": 29.34,
+   "clip": "5338"
   },
   {
    "p": "para",
-   "ini": 33.48,
-   "fin": 33.7,
-   "clave": false
+   "ini": 29.34,
+   "fin": 29.56,
+   "clip": "5338"
   },
   {
    "p": "todo.",
-   "ini": 33.7,
-   "fin": 33.92,
-   "clave": false
+   "ini": 29.56,
+   "fin": 29.78,
+   "clip": "5338"
   },
   {
    "p": "Pero",
-   "ini": 34.1,
-   "fin": 34.68,
-   "clave": false
+   "ini": 29.92,
+   "fin": 30.1,
+   "clip": "5330"
   },
   {
    "p": "esto",
-   "ini": 34.68,
-   "fin": 34.9,
-   "clave": false
+   "ini": 30.1,
+   "fin": 30.32,
+   "clip": "5330"
   },
   {
    "p": "solo",
-   "ini": 34.9,
-   "fin": 35.18,
-   "clave": false
+   "ini": 30.32,
+   "fin": 30.6,
+   "clip": "5330"
   },
   {
    "p": "es",
-   "ini": 35.18,
-   "fin": 35.5,
-   "clave": false
+   "ini": 30.6,
+   "fin": 30.88,
+   "clip": "5330"
   },
   {
    "p": "el",
-   "ini": 35.5,
-   "fin": 35.78,
-   "clave": false
+   "ini": 30.88,
+   "fin": 31.04,
+   "clip": "5330"
   },
   {
    "p": "punto",
-   "ini": 35.78,
-   "fin": 36.06,
-   "clave": false
+   "ini": 31.04,
+   "fin": 31.32,
+   "clip": "5330"
   },
   {
    "p": "de",
-   "ini": 36.06,
-   "fin": 36.18,
-   "clave": false
+   "ini": 31.32,
+   "fin": 31.44,
+   "clip": "5330"
   },
   {
    "p": "partida.",
-   "ini": 36.18,
-   "fin": 36.56,
-   "clave": false
+   "ini": 31.44,
+   "fin": 31.82,
+   "clip": "5330"
   },
   {
    "p": "Una",
-   "ini": 36.74,
-   "fin": 37.46,
-   "clave": false
+   "ini": 31.96,
+   "fin": 32.22,
+   "clip": "5321"
   },
   {
    "p": "regla",
-   "ini": 37.46,
-   "fin": 37.76,
-   "clave": true
+   "ini": 32.22,
+   "fin": 32.52,
+   "clip": "5321"
   },
   {
    "p": "que",
-   "ini": 37.76,
-   "fin": 37.92,
-   "clave": false
+   "ini": 32.52,
+   "fin": 32.68,
+   "clip": "5321"
   },
   {
    "p": "casi",
-   "ini": 37.92,
-   "fin": 38.16,
-   "clave": false
+   "ini": 32.68,
+   "fin": 32.92,
+   "clip": "5321"
   },
   {
    "p": "nadie",
-   "ini": 38.16,
-   "fin": 38.36,
-   "clave": false
+   "ini": 32.92,
+   "fin": 33.12,
+   "clip": "5321"
   },
   {
    "p": "sabe.",
-   "ini": 38.36,
-   "fin": 38.68,
-   "clave": false
+   "ini": 33.12,
+   "fin": 33.44,
+   "clip": "5321"
   },
   {
    "p": "Pero",
-   "ini": 38.86,
-   "fin": 39.46,
-   "clave": false
+   "ini": 33.58,
+   "fin": 33.78,
+   "clip": "5331"
   },
   {
    "p": "la",
-   "ini": 39.46,
-   "fin": 39.62,
-   "clave": false
+   "ini": 33.78,
+   "fin": 33.94,
+   "clip": "5331"
   },
   {
    "p": "regla",
-   "ini": 39.62,
-   "fin": 39.94,
-   "clave": true
+   "ini": 33.94,
+   "fin": 34.26,
+   "clip": "5331"
   },
   {
    "p": "real",
-   "ini": 39.94,
-   "fin": 40.26,
-   "clave": false
+   "ini": 34.26,
+   "fin": 34.58,
+   "clip": "5331"
   },
   {
    "p": "es",
-   "ini": 40.26,
-   "fin": 40.5,
-   "clave": false
+   "ini": 34.58,
+   "fin": 34.82,
+   "clip": "5331"
   },
   {
    "p": "que",
-   "ini": 40.5,
-   "fin": 40.6,
-   "clave": false
+   "ini": 34.82,
+   "fin": 34.92,
+   "clip": "5331"
   },
   {
    "p": "si",
-   "ini": 40.6,
-   "fin": 40.74,
-   "clave": false
+   "ini": 34.92,
+   "fin": 35.06,
+   "clip": "5331"
   },
   {
    "p": "puedes",
-   "ini": 40.74,
-   "fin": 40.98,
-   "clave": false
+   "ini": 35.06,
+   "fin": 35.3,
+   "clip": "5331"
   },
   {
    "p": "hacer",
-   "ini": 40.98,
-   "fin": 41.3,
-   "clave": false
+   "ini": 35.3,
+   "fin": 35.62,
+   "clip": "5331"
   },
   {
    "p": "más",
-   "ini": 41.3,
-   "fin": 41.6,
-   "clave": false
+   "ini": 35.62,
+   "fin": 35.92,
+   "clip": "5331"
   },
   {
    "p": "de",
-   "ini": 41.6,
-   "fin": 41.74,
-   "clave": false
+   "ini": 35.92,
+   "fin": 36.06,
+   "clip": "5331"
   },
   {
    "p": "10,",
-   "ini": 41.74,
-   "fin": 42.0,
-   "clave": true
+   "ini": 36.06,
+   "fin": 36.32,
+   "clip": "5331"
   },
   {
    "p": "subas",
-   "ini": 42.22,
-   "fin": 42.84,
-   "clave": false
+   "ini": 36.4,
+   "fin": 36.68,
+   "clip": "5331"
   },
   {
    "p": "de",
-   "ini": 42.84,
-   "fin": 42.92,
-   "clave": false
+   "ini": 36.68,
+   "fin": 36.76,
+   "clip": "5331"
   },
   {
    "p": "peso.",
-   "ini": 42.92,
-   "fin": 43.18,
-   "clave": true
+   "ini": 36.76,
+   "fin": 37.02,
+   "clip": "5331"
   },
   {
    "p": "El",
-   "ini": 43.36,
-   "fin": 43.98,
-   "clave": false
+   "ini": 37.16,
+   "fin": 37.36,
+   "clip": "5334"
   },
   {
    "p": "bueno",
-   "ini": 43.98,
-   "fin": 44.28,
-   "clave": false
+   "ini": 37.36,
+   "fin": 37.66,
+   "clip": "5334"
   },
   {
    "p": "es",
-   "ini": 44.28,
-   "fin": 44.54,
-   "clave": false
+   "ini": 37.66,
+   "fin": 37.92,
+   "clip": "5334"
   },
   {
    "p": "el",
-   "ini": 44.54,
-   "fin": 44.66,
-   "clave": false
+   "ini": 37.92,
+   "fin": 38.04,
+   "clip": "5334"
   },
   {
    "p": "que",
-   "ini": 44.66,
-   "fin": 44.76,
-   "clave": false
+   "ini": 38.04,
+   "fin": 38.14,
+   "clip": "5334"
   },
   {
    "p": "te",
-   "ini": 44.76,
-   "fin": 44.88,
-   "clave": false
+   "ini": 38.14,
+   "fin": 38.26,
+   "clip": "5334"
   },
   {
    "p": "hace",
-   "ini": 44.88,
-   "fin": 45.04,
-   "clave": false
+   "ini": 38.26,
+   "fin": 38.42,
+   "clip": "5334"
   },
   {
    "p": "sudar",
-   "ini": 45.04,
-   "fin": 45.42,
-   "clave": true
+   "ini": 38.42,
+   "fin": 38.8,
+   "clip": "5334"
   },
   {
    "p": "con",
-   "ini": 45.42,
-   "fin": 45.62,
-   "clave": false
+   "ini": 38.8,
+   "fin": 39.0,
+   "clip": "5334"
   },
   {
    "p": "las",
-   "ini": 45.62,
-   "fin": 45.78,
-   "clave": false
+   "ini": 39.0,
+   "fin": 39.16,
+   "clip": "5334"
   },
   {
    "p": "últimas",
-   "ini": 45.78,
-   "fin": 46.24,
-   "clave": false
+   "ini": 39.16,
+   "fin": 39.62,
+   "clip": "5334"
   },
   {
    "p": "dos",
-   "ini": 46.24,
-   "fin": 46.44,
-   "clave": false
+   "ini": 39.62,
+   "fin": 39.82,
+   "clip": "5334"
   },
   {
    "p": "o",
-   "ini": 46.44,
-   "fin": 46.62,
-   "clave": false
+   "ini": 39.82,
+   "fin": 40.0,
+   "clip": "5334"
   },
   {
    "p": "tres",
-   "ini": 46.62,
-   "fin": 46.74,
-   "clave": false
+   "ini": 40.0,
+   "fin": 40.12,
+   "clip": "5334"
   },
   {
    "p": "repeticiones.",
-   "ini": 46.74,
-   "fin": 47.42,
-   "clave": false
+   "ini": 40.12,
+   "fin": 40.8,
+   "clip": "5334"
   },
   {
    "p": "Comparte",
-   "ini": 47.6,
-   "fin": 47.82,
-   "clave": true
+   "ini": 40.94,
+   "fin": 41.16,
+   "clip": "5336"
   },
   {
    "p": "este",
-   "ini": 47.82,
-   "fin": 48.0,
-   "clave": false
+   "ini": 41.16,
+   "fin": 41.34,
+   "clip": "5336"
   },
   {
    "p": "vídeo",
-   "ini": 48.0,
-   "fin": 48.2,
-   "clave": false
+   "ini": 41.34,
+   "fin": 41.54,
+   "clip": "5336"
   },
   {
    "p": "con",
-   "ini": 48.2,
-   "fin": 48.4,
-   "clave": false
+   "ini": 41.54,
+   "fin": 41.74,
+   "clip": "5336"
   },
   {
    "p": "esa",
-   "ini": 48.4,
-   "fin": 48.58,
-   "clave": false
+   "ini": 41.74,
+   "fin": 41.92,
+   "clip": "5336"
   },
   {
    "p": "amiga",
-   "ini": 48.58,
-   "fin": 48.82,
-   "clave": true
+   "ini": 41.92,
+   "fin": 42.16,
+   "clip": "5336"
   },
   {
    "p": "que",
-   "ini": 48.82,
-   "fin": 48.98,
-   "clave": false
+   "ini": 42.16,
+   "fin": 42.32,
+   "clip": "5336"
   },
   {
    "p": "lleva",
-   "ini": 48.98,
-   "fin": 49.2,
-   "clave": false
+   "ini": 42.32,
+   "fin": 42.54,
+   "clip": "5336"
   },
   {
    "p": "más",
-   "ini": 49.2,
-   "fin": 49.46,
-   "clave": false
+   "ini": 42.54,
+   "fin": 42.8,
+   "clip": "5336"
   },
   {
    "p": "de",
-   "ini": 49.46,
-   "fin": 49.58,
-   "clave": false
+   "ini": 42.8,
+   "fin": 42.92,
+   "clip": "5336"
   },
   {
    "p": "un",
-   "ini": 49.58,
-   "fin": 49.68,
-   "clave": false
+   "ini": 42.92,
+   "fin": 43.02,
+   "clip": "5336"
   },
   {
    "p": "año",
-   "ini": 49.68,
-   "fin": 49.86,
-   "clave": false
+   "ini": 43.02,
+   "fin": 43.2,
+   "clip": "5336"
   },
   {
    "p": "con",
-   "ini": 49.86,
-   "fin": 50.08,
-   "clave": false
+   "ini": 43.2,
+   "fin": 43.42,
+   "clip": "5336"
   },
   {
    "p": "pesos",
-   "ini": 50.08,
-   "fin": 50.3,
-   "clave": true
+   "ini": 43.42,
+   "fin": 43.64,
+   "clip": "5336"
   },
   {
    "p": "de",
-   "ini": 50.3,
-   "fin": 50.46,
-   "clave": false
+   "ini": 43.64,
+   "fin": 43.8,
+   "clip": "5336"
   },
   {
    "p": "un",
-   "ini": 50.46,
-   "fin": 50.56,
-   "clave": false
+   "ini": 43.8,
+   "fin": 43.9,
+   "clip": "5336"
   },
   {
    "p": "kilo",
-   "ini": 50.56,
-   "fin": 50.76,
-   "clave": true
+   "ini": 43.9,
+   "fin": 44.1,
+   "clip": "5336"
   },
   {
    "p": "y",
-   "ini": 50.76,
-   "fin": 50.96,
-   "clave": false
+   "ini": 44.1,
+   "fin": 44.3,
+   "clip": "5336"
   },
   {
    "p": "no",
-   "ini": 50.96,
-   "fin": 51.1,
-   "clave": false
+   "ini": 44.3,
+   "fin": 44.44,
+   "clip": "5336"
   },
   {
    "p": "ve",
-   "ini": 51.1,
-   "fin": 51.18,
-   "clave": false
+   "ini": 44.44,
+   "fin": 44.52,
+   "clip": "5336"
   },
   {
    "p": "resultados.",
-   "ini": 51.18,
-   "fin": 51.5,
-   "clave": false
+   "ini": 44.52,
+   "fin": 44.84,
+   "clip": "5336"
   },
   {
    "p": "Y",
-   "ini": 51.68,
-   "fin": 52.1,
-   "clave": false
+   "ini": 44.98,
+   "fin": 45.14,
+   "clip": "5337"
   },
   {
    "p": "comenta",
-   "ini": 52.1,
-   "fin": 52.46,
-   "clave": true
+   "ini": 45.14,
+   "fin": 45.5,
+   "clip": "5337"
   },
   {
    "p": "la",
-   "ini": 52.46,
-   "fin": 52.62,
-   "clave": false
+   "ini": 45.5,
+   "fin": 45.66,
+   "clip": "5337"
   },
   {
    "p": "palabra",
-   "ini": 52.62,
-   "fin": 52.98,
-   "clave": false
+   "ini": 45.66,
+   "fin": 46.02,
+   "clip": "5337"
   },
   {
    "p": "RESET",
-   "ini": 52.98,
-   "fin": 53.4,
-   "clave": true
+   "ini": 46.02,
+   "fin": 46.44,
+   "clip": "5337"
   },
   {
    "p": "si",
-   "ini": 53.4,
-   "fin": 53.62,
-   "clave": false
+   "ini": 46.44,
+   "fin": 46.58,
+   "clip": "5337"
   },
   {
    "p": "quieres",
-   "ini": 53.62,
-   "fin": 53.84,
-   "clave": false
+   "ini": 46.58,
+   "fin": 46.8,
+   "clip": "5337"
   },
   {
    "p": "que",
-   "ini": 53.84,
-   "fin": 53.96,
-   "clave": false
+   "ini": 46.8,
+   "fin": 46.92,
+   "clip": "5337"
   },
   {
    "p": "te",
-   "ini": 53.96,
-   "fin": 54.08,
-   "clave": false
+   "ini": 46.92,
+   "fin": 47.04,
+   "clip": "5337"
   },
   {
    "p": "envíe",
-   "ini": 54.08,
-   "fin": 54.32,
-   "clave": false
+   "ini": 47.04,
+   "fin": 47.28,
+   "clip": "5337"
   },
   {
    "p": "mi",
-   "ini": 54.32,
-   "fin": 54.5,
-   "clave": false
+   "ini": 47.28,
+   "fin": 47.46,
+   "clip": "5337"
   },
   {
    "p": "plan",
-   "ini": 54.5,
-   "fin": 54.72,
-   "clave": false
+   "ini": 47.46,
+   "fin": 47.68,
+   "clip": "5337"
   },
   {
    "p": "personal.",
-   "ini": 54.72,
-   "fin": 55.16,
-   "clave": false
+   "ini": 47.68,
+   "fin": 48.12,
+   "clip": "5337"
   }
  ],
- "titulos": [
-  {
-   "t": 18.81,
-   "fin": 22.08,
-   "texto": "1. Piernas: 5 – 8 kg",
-   "sub": "sentadilla · peso muerto"
-  },
-  {
-   "t": 22.13,
-   "fin": 24.78,
-   "texto": "2. Espalda: 4 – 8 kg",
-   "sub": "remo"
-  },
-  {
-   "t": 24.83,
-   "fin": 28.54,
-   "texto": "3. Brazo: 2 – 4 kg",
-   "sub": "hombro · bíceps"
-  },
-  {
-   "t": 39.57,
-   "fin": 47.5,
-   "texto": "La regla real:",
-   "sub": "si haces +10 → sube de peso"
-  }
+ "anclas": {
+  "pesosIntro": 14.96,
+  "piernas": 16.18,
+  "sentadillas": 16.88,
+  "muerto": 17.62,
+  "kgPiernas": 18.28,
+  "espalda": 19.16,
+  "remo": 20.0,
+  "kgEspalda": 20.6,
+  "hombro": 21.54,
+  "brazo": 22.02,
+  "kgBrazo": 23.58,
+  "fuerzaFin": 29.92,
+  "regla": 32.22,
+  "hacer": 35.3,
+  "diez": 36.06,
+  "subas": 36.4,
+  "sudar": 38.42,
+  "ultimas": 39.16,
+  "comparte": 40.94,
+  "amiga": 41.92,
+  "comenta": 45.14,
+  "reset": 46.02
+ },
+ "secciones": [
+  4.04,
+  10.78,
+  24.68,
+  29.92,
+  40.94,
+  44.98
  ]
 }
