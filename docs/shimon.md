@@ -23,8 +23,18 @@ material. Primero, una **prueba de 30 s** (`public/shimon/material/prueba.mp4`, 
 Habla del remake animado del arco de Bills (Beerus): por qué salió, que reanima los primeros
 capítulos y que Bills ahora es más serio (antes cómico, torpe, holgazán); él "banca" el cambio.
 
+## Su estilo (referencia: su video de Black Clover "Magna vs Dante", 8 min, 640×360)
+- **Muy rápido: ~395 cortes en 8 min (un corte cada ~1,2 s).**
+- Cámara a cara solo ~30 %; el resto, **escenas del anime a pantalla completa** (a veces con los
+  subtítulos originales), **memes** (La Roca, Ibai, Breaking Bad, rostros de reacción, barras de
+  color de TV), carteles (p. ej. el título de "Invincible").
+- Su **avatar Itadori** aparece encima (esquinas o al lado) señalando, de brazos cruzados o riéndose,
+  y también sobre los fondos (papel arrugado, red de líneas negra) con un clip del anime en recuadro.
+- Gancho directo a cámara, intro corta ("preparen el like y vamos al video"), chistes y desvíos
+  cortados con memes; cierre con meme (gato bailando).
+
 ## Pendiente
-- La referencia de Drive (`14SzJICj6m62tDLW8zAa0MXPKicIjglQO`) no está compartida con enlace público.
+- Referencia bajada: `public/shimon/referencia/referencia.mp4`.
 - Escenas del anime (Bills clásico vs remake): YouTube y webs de streaming no se pueden bajar desde
   aquí; pedirlas al cliente o usar imágenes.
 - No necesita ElevenLabs (habla él). Si alguna vez hace falta, **pedir permiso a Angel**.
