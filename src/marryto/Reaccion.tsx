@@ -15,7 +15,7 @@ export type Video = {
   // y el texto blanco con borde debajo, sin "YO:"); por defecto, el formato de franjas.
   estilo?: "superpuesto"; imagen?: string;
   // superpuesto: caja de la imagen [izquierda, arriba, ancho] (por defecto casi todo el ancho) y sin texto
-  caja?: [number, number, number]; sinTexto?: boolean;
+  caja?: [number, number, number]; sinTexto?: boolean; textoY?: number; textoTam?: number; cajaAlto?: number; // con cajaAlto la imagen va en una tarjeta blanca de ese alto
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
 export type PropsReaccion = { n: string };
@@ -65,7 +65,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
     <AbsoluteFill style={{ background: "#000" }}>
       <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * FPS)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
       {v.imagen ? (
-        <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900 }}>
+        <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto ? "#fff" : undefined, display: "flex", alignItems: "center" }}>
           <Img src={staticFile(v.imagen)} style={{ width: "100%", height: "auto", display: "block" }} />
         </div>
       ) : (
@@ -78,7 +78,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         </div>
       )}
       {v.sinTexto ? null : (
-        <div style={{ position: "absolute", left: 120, right: 120, top: 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance" }}>{v.titulo}</div>
+        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance" }}>{v.titulo}</div>
       )}
     </AbsoluteFill>
   );
