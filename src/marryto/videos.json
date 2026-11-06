@@ -38,7 +38,8 @@
    36,
    683
   ],
-  "sinTexto": true
+  "sinTexto": true,
+  "imagen": "marryto/material/funciono-hd.jpg"
  },
  "3": {
   "inicio": 4.0,
@@ -61,7 +62,8 @@
    36,
    683
   ],
-  "sinTexto": true
+  "sinTexto": true,
+  "imagen": "marryto/material/funciono-hd.jpg"
  },
  "4": {
   "inicio": 10.25,
@@ -76,19 +78,18 @@
    712,
    636
   ],
-  "titulo": "Yo veo 16 arañas... y tú?",
+  "titulo": "Yo veo 16 sandías... y tú?",
   "rojo": "",
   "estilo": "superpuesto",
-  "imagen": "marryto/material/aranas.webp",
+  "imagen": "marryto/material/sandias.jpg",
   "caja": [
-   178,
+   207,
    27,
-   713
+   665
   ],
   "sinTexto": false,
   "textoY": 650,
-  "textoTam": 64,
-  "cajaAlto": 665
+  "textoTam": 64
  },
  "5": {
   "inicio": 3.0,
@@ -103,16 +104,15 @@
    712,
    636
   ],
-  "titulo": "Yo veo 16 arañas... y tú?",
+  "titulo": "Yo veo 16 bananas... y tú?",
   "rojo": "",
   "estilo": "superpuesto",
-  "imagen": "marryto/material/aranas.webp",
+  "imagen": "marryto/material/bananas.jpg",
   "caja": [
-   178,
+   207,
    27,
-   713
+   665
   ],
-  "cajaAlto": 665,
   "sinTexto": false,
   "textoY": 650,
   "textoTam": 64
@@ -133,7 +133,7 @@
   "titulo": "Encuentra las 3 diferencias",
   "rojo": "",
   "estilo": "superpuesto",
-  "imagen": "marryto/material/diferencias-gta.webp",
+  "imagen": "marryto/material/estadio-rojo.jpg",
   "caja": [
    139,
    39,
@@ -159,7 +159,7 @@
   "titulo": "Encuentra las 3 diferencias",
   "rojo": "",
   "estilo": "superpuesto",
-  "imagen": "marryto/material/diferencias-gta.webp",
+  "imagen": "marryto/material/estadio-verde.jpg",
   "caja": [
    139,
    39,
@@ -167,7 +167,9 @@
   ],
   "sinTexto": false,
   "textoY": 612,
-  "textoTam": 66
+  "textoTam": 66,
+  "cajaAlto": 601,
+  "cajaFoto": true
  },
  "8": {
   "inicio": 2.0,
@@ -291,11 +293,11 @@
    1920
   ],
   "estilo": "superpuesto",
-  "imagen": "marryto/material/mosca.png",
+  "imagen": "marryto/material/sopa-balon.jpg",
   "caja": [
-   233,
+   210,
    88,
-   610
+   660
   ],
   "titulo": "",
   "rojo": "",
@@ -315,11 +317,11 @@
    1920
   ],
   "estilo": "superpuesto",
-  "imagen": "marryto/material/mosca.png",
+  "imagen": "marryto/material/sopa-perro.jpg",
   "caja": [
-   233,
+   210,
    88,
-   610
+   660
   ],
   "titulo": "",
   "rojo": "",

@@ -1,7 +1,7 @@
 import React from "react";
-import { AbsoluteFill, Img, OffthreadVideo, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Img, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/fonts";
-import { clamp01, easeOut, FPS, lerp } from "../comun/animacion";
+import { clamp01, easeOut, lerp } from "../comun/animacion";
 import videos from "./videos.json";
 
 // Shorts de reacción de Marryto (docs/marryto.md), copiando su formato: franja blanca arriba con el
@@ -19,6 +19,17 @@ export type Video = {
   cajaFoto?: boolean; // con cajaAlto: la imagen llena la caja (recortada), sin tarjeta blanca
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
+
+// Reunión con Marryto (6-nov): videos de 6–7 s (máx. 10 en casos puntuales), muy rápidos; si la
+// reacción es más larga, cámara rápida hasta 1,5x; si aun así sobra, se corta el final.
+export const OBJETIVO = 6.5;
+export const MAX_VEL = 1.5;
+export const tiempo = (v: Video) => {
+  const bruto = v.fin - v.inicio;
+  const vel = Math.min(MAX_VEL, Math.max(1, bruto / OBJETIVO));
+  const usado = Math.min(bruto, OBJETIVO * vel);
+  return { vel, usado, dur: usado / vel };
+};
 export type PropsReaccion = { n: string };
 
 const FUENTE = '"Montserrat", "Arial", sans-serif';
@@ -56,6 +67,8 @@ const Titulo: React.FC<{ texto: string; rojo: string }> = ({ texto, rojo }) => {
 
 /** Como el Short original: reacción a pantalla completa, imagen arriba y texto blanco con borde. */
 const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
+  const { fps } = useVideoConfig();
+  const { vel } = tiempo(v);
   // su cara un poco por debajo del texto, como las caras en la referencia
   const s = Math.min(1.25, Math.max(1, 360 / v.caraAncho));
   const vw = 1080 * s;
@@ -64,7 +77,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const y = Math.min(0, Math.max(1920 - vh, 1080 - v.caraY * s));
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * FPS)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+      <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
       {v.imagen ? (
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
           <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
@@ -89,7 +102,9 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
   cargarFuentes();
   const v = VIDEOS[n];
   if (v.estilo === "superpuesto") return <Superpuesto n={n} v={v} />;
-  const t = useCurrentFrame() / FPS;
+  const { fps } = useVideoConfig();
+  const t = useCurrentFrame() / fps;
+  const { vel } = tiempo(v);
   const [rx, ry, rw, rh] = v.recorte;
   const imgH = Math.round((1080 * rh) / rw);
   const arriba = TITULO_H + imgH; // donde empieza la reacción
@@ -106,7 +121,7 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
   return (
     <AbsoluteFill style={{ background: "#fff" }}>
       <div style={{ position: "absolute", left: 0, top: arriba, width: 1080, height: alto, overflow: "hidden", background: "#000" }}>
-        <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * FPS)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+        <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
       </div>
       {/* Imagen del Short original (recortada de la miniatura 1080 × 1920) */}
       <div style={{ position: "absolute", left: 0, top: TITULO_H, width: 1080, height: imgH, overflow: "hidden" }}>

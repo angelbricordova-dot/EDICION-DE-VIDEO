@@ -42,9 +42,35 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   miniatura del Short incluyendo su título. En `videos.json`: `"caja": [x, y, ancho]`, `"sinTexto": true`.
   Cada Short tiene su propio aspecto: copiar las medidas de su referencia.
 
+## Reunión con Fernando (6-nov) — reglas que aplican a TODOS
+- **Exportar en 4K 60 fps** (2160×3840): composición a 60 fps y `--scale=2`; él graba 1080 a 30 fps.
+  Render `--crf=16 --muted --concurrency=2` y compresión h264 `-crf 20 -maxrate 30M` (≈ 20–25 MB).
+  Script: renderizar uno por uno y borrar el intermedio (el disco va justo).
+- **Duración 6–7 s** (estándar); 10 s máximo solo en casos muy puntuales. Si el bruto es largo,
+  **cámara rápida hasta 1,5×**: `tiempo()` en `Reaccion.tsx` (`OBJETIVO = 6.5`, `MAX_VEL = 1.5`)
+  calcula la velocidad y la duración; `Composiciones.tsx` la usa.
+- Ritmo muy dopamínico: que aparezca **ya señalando o mostrando**, sin arranque muerto.
+- **Sin marca de agua.**
+- La imagen de arriba debe ser **distinta a la del Short original y de mayor calidad**: la manda
+  Angel (generadas con Gemini) → `public/marryto/material/`.
+
+## Imágenes y textos por video (lote del 6-nov)
+| Video | Imagen | Texto |
+|---|---|---|
+| 1 | navidad-v1.webp | Toca 2 veces para encontrar el 4º objeto |
+| 2, 3 | funciono-hd.jpg | — |
+| 4 | sandias.jpg | Yo veo 16 sandías... y tú? |
+| 5 | bananas.jpg | Yo veo 16 bananas... y tú? |
+| 6 | estadio-rojo.jpg (Marryto en estadio, diferencias) | Encuentra las 3 diferencias |
+| 7 | estadio-verde.jpg | Encuentra las 3 diferencias |
+| 8, 9 | ojos-80.png | Toca 2 veces y cierra los ojos al 80% |
+| 10, 11 | senal-bateria.png | Cuál eres tú ahora mismo? |
+| 12 | sopa-balon.jpg (sopa de letras "balón") | — |
+| 13 | sopa-perro.jpg ("perro") | — |
+| 14 | gatos.webp | Toca 2 veces y cierra los ojos al 80% |
+
 ## Hechos
-- 6-nov-2026: videos 1–7 (Shorts QBN68drVF-8, aEM2afKl8rs, Vm1K2kO2rjY, H8v8zmf-LFU).
+- 6-nov-2026: videos 1–14 entregados; rehechos el mismo día en 4K 60 fps, 6,5 s, con las imágenes nuevas.
 
 ## Pendiente
-- Videos 8 y 9: falló la descarga (disco lleno); volver a bajarlos.
-- Confirmar con él si el título lo copia del Short o lo escribe distinto, y si quiere audio.
+- Videos 15–40 (la carpeta ya llega al Video 40): Angel pasa las imágenes nuevas.
