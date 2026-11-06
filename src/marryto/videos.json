@@ -354,5 +354,69 @@
   "sinTexto": false,
   "textoY": 575,
   "textoTam": 76
+ },
+ "15": {
+  "inicio": 1.5,
+  "fin": 11.75,
+  "caraX": 545,
+  "caraY": 1037,
+  "caraAncho": 396,
+  "short": "zWOmtVobxw0"
+ },
+ "16": {
+  "inicio": 2.0,
+  "fin": 10.0,
+  "caraX": 524,
+  "caraY": 1044,
+  "caraAncho": 404,
+  "short": "bWjFoE9LHIE"
+ },
+ "17": {
+  "inicio": 2.4,
+  "fin": 11.75,
+  "caraX": 495,
+  "caraY": 1037,
+  "caraAncho": 432,
+  "short": "Grkx9LjpBA0"
+ },
+ "18": {
+  "inicio": 1.5,
+  "fin": 11.5,
+  "caraX": 494,
+  "caraY": 1066,
+  "caraAncho": 384,
+  "short": "tj-TRuKNvWY"
+ },
+ "19": {
+  "inicio": 1.0,
+  "fin": 10.25,
+  "caraX": 518,
+  "caraY": 1060,
+  "caraAncho": 436,
+  "short": "S8Ym5BEGNBE"
+ },
+ "20": {
+  "inicio": 2.0,
+  "fin": 11.25,
+  "caraX": 511,
+  "caraY": 982,
+  "caraAncho": 400,
+  "short": "MoMAIfUMB1g"
+ },
+ "21": {
+  "inicio": 3.5,
+  "fin": 11.75,
+  "caraX": 498,
+  "caraY": 1034,
+  "caraAncho": 448,
+  "short": "9zB4fWcv46U"
+ },
+ "22": {
+  "inicio": 3.0,
+  "fin": 12.5,
+  "caraX": 536,
+  "caraY": 1036,
+  "caraAncho": 504,
+  "short": "9zB4fWcv46U"
  }
 }
