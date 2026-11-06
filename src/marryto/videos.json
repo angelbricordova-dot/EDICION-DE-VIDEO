@@ -144,8 +144,8 @@
   "textoTam": 66
  },
  "7": {
-  "inicio": 0.75,
-  "fin": 24.5,
+  "inicio": 14.5,
+  "fin": 23.9,
   "caraX": 498,
   "caraY": 966,
   "caraAncho": 368,
@@ -157,6 +157,16 @@
    572
   ],
   "titulo": "Encuentra las 3 diferencias",
-  "rojo": "3"
+  "rojo": "",
+  "estilo": "superpuesto",
+  "imagen": "marryto/material/diferencias-gta.webp",
+  "caja": [
+   139,
+   39,
+   805
+  ],
+  "sinTexto": false,
+  "textoY": 612,
+  "textoTam": 66
  }
 }
