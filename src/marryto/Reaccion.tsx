@@ -14,6 +14,8 @@ export type Video = {
   // "superpuesto": como el Short original (su reacción a pantalla completa, la imagen encima arriba
   // y el texto blanco con borde debajo, sin "YO:"); por defecto, el formato de franjas.
   estilo?: "superpuesto"; imagen?: string;
+  // superpuesto: caja de la imagen [izquierda, arriba, ancho] (por defecto casi todo el ancho) y sin texto
+  caja?: [number, number, number]; sinTexto?: boolean;
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
 export type PropsReaccion = { n: string };
@@ -62,10 +64,22 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * FPS)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
-      <div style={{ position: "absolute", left: 90, right: 90, top: 40, display: "flex", justifyContent: "center" }}>
-        <Img src={staticFile(v.imagen ?? "")} style={{ width: "100%", height: "auto", display: "block" }} />
-      </div>
-      <div style={{ position: "absolute", left: 120, right: 120, top: 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance" }}>{v.titulo}</div>
+      {v.imagen ? (
+        <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900 }}>
+          <Img src={staticFile(v.imagen)} style={{ width: "100%", height: "auto", display: "block" }} />
+        </div>
+      ) : (
+        // sin imagen aparte: se recorta de la miniatura del Short
+        <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: ((v.caja?.[2] ?? 900) * v.recorte[3]) / v.recorte[2], overflow: "hidden" }}>
+          <Img
+            src={staticFile(`marryto/shorts/${v.short}-oardefault.jpg`)}
+            style={{ position: "absolute", maxWidth: "none", width: (1080 * (v.caja?.[2] ?? 900)) / v.recorte[2], height: (1920 * (v.caja?.[2] ?? 900)) / v.recorte[2], left: (-v.recorte[0] * (v.caja?.[2] ?? 900)) / v.recorte[2], top: (-v.recorte[1] * (v.caja?.[2] ?? 900)) / v.recorte[2] }}
+          />
+        </div>
+      )}
+      {v.sinTexto ? null : (
+        <div style={{ position: "absolute", left: 120, right: 120, top: 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance" }}>{v.titulo}</div>
+      )}
     </AbsoluteFill>
   );
 };

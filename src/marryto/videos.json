@@ -18,20 +18,27 @@
   "imagen": "marryto/material/navidad-v1.webp"
  },
  "2": {
-  "inicio": 0.25,
-  "fin": 14.5,
+  "inicio": 2.25,
+  "fin": 12.5,
   "caraX": 524,
   "caraY": 984,
   "caraAncho": 248,
   "short": "aEM2afKl8rs",
   "recorte": [
    200,
-   176,
+   24,
    680,
-   548
+   696
   ],
   "titulo": "¿FUNCIONÓ?",
-  "rojo": "FUNCIONÓ"
+  "rojo": "FUNCIONÓ",
+  "estilo": "superpuesto",
+  "caja": [
+   199,
+   36,
+   683
+  ],
+  "sinTexto": true
  },
  "3": {
   "inicio": 0.0,

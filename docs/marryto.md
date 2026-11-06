@@ -37,6 +37,11 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   y el mismo texto del Short en blanco con borde negro debajo (Montserrat 700). **Sin "YO:"**.
   En `videos.json`: `"estilo": "superpuesto", "imagen": "marryto/material/<archivo>"`.
 
+- Video 2 (referencia del Short "¿Funcionó?"): imagen **más pequeña, sin ocupar todo el ancho**
+  (caja ≈ 683 px de ancho centrada, arriba a 36 px) y **sin texto**. La imagen se recorta de la
+  miniatura del Short incluyendo su título. En `videos.json`: `"caja": [x, y, ancho]`, `"sinTexto": true`.
+  Cada Short tiene su propio aspecto: copiar las medidas de su referencia.
+
 ## Hechos
 - 6-nov-2026: videos 1–7 (Shorts QBN68drVF-8, aEM2afKl8rs, Vm1K2kO2rjY, H8v8zmf-LFU).
 
