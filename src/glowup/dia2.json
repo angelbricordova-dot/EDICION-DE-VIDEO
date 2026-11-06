@@ -1,0 +1,1076 @@
+{
+ "duracion": 51.61,
+ "frases": [
+  {
+   "id": "resumen",
+   "texto": "Toño: veinticinco años, veinte dólares… y trece días para juntar mil antes de GTA seis.",
+   "t": 0.0,
+   "fin": 5.76
+  },
+  {
+   "id": "votaron",
+   "texto": "¡Ustedes votaron… y Toño pide más turnos!",
+   "t": 6.05,
+   "fin": 9.05
+  },
+  {
+   "id": "dia",
+   "texto": "Día dos.",
+   "t": 9.44,
+   "fin": 10.4
+  },
+  {
+   "id": "turnos",
+   "texto": "Lava platos de día… y de noche.",
+   "t": 10.48,
+   "fin": 12.6
+  },
+  {
+   "id": "horas",
+   "texto": "Dieciséis horas seguidas… sin comer, sin dormir.",
+   "t": 12.85,
+   "fin": 15.88
+  },
+  {
+   "id": "paga",
+   "texto": "Al final de la semana cobra cuarenta dólares… ¡Ya tiene sesenta!",
+   "t": 16.183,
+   "fin": 19.49
+  },
+  {
+   "id": "lunes",
+   "texto": "Pero el lunes… Toño no se levanta.",
+   "t": 19.872,
+   "fin": 22.0
+  },
+  {
+   "id": "fiebre",
+   "texto": "Fiebre, tos… y estornuda encima de los platos limpios.",
+   "t": 22.53,
+   "fin": 25.65
+  },
+  {
+   "id": "casa",
+   "texto": "Lo mandan a su casa.",
+   "t": 25.953,
+   "fin": 27.06
+  },
+  {
+   "id": "farmacia",
+   "texto": "Y la farmacia le cobra treinta dólares en medicinas.",
+   "t": 27.32,
+   "fin": 29.9
+  },
+  {
+   "id": "baja",
+   "texto": "Mal negocio. Vuelve a treinta.",
+   "t": 30.15,
+   "fin": 31.82
+  },
+  {
+   "id": "disciplina",
+   "texto": "Pero algo sí ganó… disciplina. Por primera vez en su vida, cumplió un horario.",
+   "t": 32.284,
+   "fin": 36.46
+  },
+  {
+   "id": "leccion",
+   "texto": "Lección del día: trabajar duro sirve… pero sin descanso, te pasa factura.",
+   "t": 36.89,
+   "fin": 40.89
+  },
+  {
+   "id": "cambiar",
+   "texto": "Ahora Toño quiere cambiar de verdad. ¿Por dónde empieza?",
+   "t": 41.297,
+   "fin": 44.07
+  },
+  {
+   "id": "opciones",
+   "texto": "Comenta: ordenar el garaje y vender lo que no usa… o hacer ejercicio cada mañana.",
+   "t": 44.26,
+   "fin": 48.7
+  },
+  {
+   "id": "sigueme",
+   "texto": "Sígueme para el día tres.",
+   "t": 49.09,
+   "fin": 50.41
+  }
+ ],
+ "palabras": [
+  {
+   "p": "Toño,",
+   "ini": 0.0,
+   "fin": 0.4,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "25",
+   "ini": 0.7,
+   "fin": 1.0,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "años,",
+   "ini": 1.0,
+   "fin": 1.52,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "20",
+   "ini": 1.76,
+   "fin": 2.02,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "dólares",
+   "ini": 2.02,
+   "fin": 2.38,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "y",
+   "ini": 2.38,
+   "fin": 2.8,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "13",
+   "ini": 2.8,
+   "fin": 3.08,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "días",
+   "ini": 3.08,
+   "fin": 3.36,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "para",
+   "ini": 3.36,
+   "fin": 3.58,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "juntar",
+   "ini": 3.58,
+   "fin": 3.96,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "mil",
+   "ini": 3.96,
+   "fin": 4.18,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "antes",
+   "ini": 4.18,
+   "fin": 4.5,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 4.5,
+   "fin": 4.72,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "GTA",
+   "ini": 4.72,
+   "fin": 5.06,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "VI.",
+   "ini": 5.06,
+   "fin": 5.54,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Ustedes",
+   "ini": 6.03,
+   "fin": 6.61,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "votaron",
+   "ini": 6.61,
+   "fin": 7.09,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "y",
+   "ini": 7.09,
+   "fin": 7.39,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Toño",
+   "ini": 7.39,
+   "fin": 7.71,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "pide",
+   "ini": 7.71,
+   "fin": 8.15,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "más",
+   "ini": 8.15,
+   "fin": 8.47,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "turnos.",
+   "ini": 8.47,
+   "fin": 9.03,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Día",
+   "ini": 9.66,
+   "fin": 9.92,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "2,",
+   "ini": 9.92,
+   "fin": 10.26,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "lava",
+   "ini": 10.58,
+   "fin": 10.8,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "platos",
+   "ini": 10.8,
+   "fin": 11.22,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 11.22,
+   "fin": 11.34,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "día",
+   "ini": 11.34,
+   "fin": 11.6,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "y",
+   "ini": 11.6,
+   "fin": 11.92,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 11.92,
+   "fin": 12.06,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "noche,",
+   "ini": 12.06,
+   "fin": 12.38,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "16",
+   "ini": 12.82,
+   "fin": 13.28,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "horas",
+   "ini": 13.28,
+   "fin": 13.6,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "seguidas,",
+   "ini": 13.6,
+   "fin": 14.1,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "sin",
+   "ini": 14.32,
+   "fin": 14.56,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "comer,",
+   "ini": 14.56,
+   "fin": 14.92,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "sin",
+   "ini": 15.14,
+   "fin": 15.34,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "dormir.",
+   "ini": 15.34,
+   "fin": 15.7,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Al",
+   "ini": 16.19,
+   "fin": 16.33,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "final",
+   "ini": 16.33,
+   "fin": 16.53,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 16.53,
+   "fin": 16.67,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "la",
+   "ini": 16.67,
+   "fin": 16.75,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "semana",
+   "ini": 16.75,
+   "fin": 17.03,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "cobra",
+   "ini": 17.03,
+   "fin": 17.35,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "40",
+   "ini": 17.35,
+   "fin": 17.77,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "dólares,",
+   "ini": 17.77,
+   "fin": 18.13,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "ya",
+   "ini": 18.49,
+   "fin": 18.63,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "tiene",
+   "ini": 18.63,
+   "fin": 18.87,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "60,",
+   "ini": 18.87,
+   "fin": 19.27,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "pero",
+   "ini": 19.86,
+   "fin": 20.08,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 20.08,
+   "fin": 20.18,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "lunes",
+   "ini": 20.18,
+   "fin": 20.56,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Toño",
+   "ini": 20.56,
+   "fin": 21.06,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "no",
+   "ini": 21.06,
+   "fin": 21.26,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "se",
+   "ini": 21.26,
+   "fin": 21.42,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "levanta.",
+   "ini": 21.42,
+   "fin": 21.88,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Fiebre,",
+   "ini": 22.63,
+   "fin": 22.97,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "tos",
+   "ini": 23.19,
+   "fin": 23.45,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "y",
+   "ini": 23.45,
+   "fin": 23.73,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "estornuda",
+   "ini": 23.73,
+   "fin": 24.25,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "encima",
+   "ini": 24.25,
+   "fin": 24.51,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 24.51,
+   "fin": 24.67,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "los",
+   "ini": 24.67,
+   "fin": 24.79,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "platos",
+   "ini": 24.79,
+   "fin": 25.11,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "limpios.",
+   "ini": 25.11,
+   "fin": 25.53,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Lo",
+   "ini": 26.02,
+   "fin": 26.16,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "mandan",
+   "ini": 26.16,
+   "fin": 26.44,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "a",
+   "ini": 26.44,
+   "fin": 26.52,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "su",
+   "ini": 26.52,
+   "fin": 26.64,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "casa",
+   "ini": 26.64,
+   "fin": 26.94,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "y",
+   "ini": 27.14,
+   "fin": 27.44,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "la",
+   "ini": 27.44,
+   "fin": 27.56,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "farmacia",
+   "ini": 27.56,
+   "fin": 27.92,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "le",
+   "ini": 27.92,
+   "fin": 28.04,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "cobra",
+   "ini": 28.04,
+   "fin": 28.3,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "30",
+   "ini": 28.3,
+   "fin": 28.64,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "dólares",
+   "ini": 28.64,
+   "fin": 28.96,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "en",
+   "ini": 28.96,
+   "fin": 29.18,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "medicinas.",
+   "ini": 29.18,
+   "fin": 29.72,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "mal",
+   "ini": 29.72,
+   "fin": 30.18,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "negocio,",
+   "ini": 30.38,
+   "fin": 30.86,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "vuelve",
+   "ini": 31.16,
+   "fin": 31.4,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "a",
+   "ini": 31.4,
+   "fin": 31.46,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "30.",
+   "ini": 31.46,
+   "fin": 31.7,
+   "clave": false,
+   "dinero": true
+  },
+  {
+   "p": "Pero",
+   "ini": 32.34,
+   "fin": 32.58,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "algo",
+   "ini": 32.58,
+   "fin": 32.86,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "sí",
+   "ini": 32.86,
+   "fin": 33.06,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "ganó,",
+   "ini": 33.06,
+   "fin": 33.44,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "disciplina.",
+   "ini": 33.66,
+   "fin": 34.2,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Por",
+   "ini": 34.34,
+   "fin": 34.54,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "primera",
+   "ini": 34.54,
+   "fin": 34.82,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "vez",
+   "ini": 34.82,
+   "fin": 35.02,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "en",
+   "ini": 35.02,
+   "fin": 35.14,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "su",
+   "ini": 35.14,
+   "fin": 35.26,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "vida",
+   "ini": 35.26,
+   "fin": 35.46,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "cumplió",
+   "ini": 35.46,
+   "fin": 35.94,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "un",
+   "ini": 35.94,
+   "fin": 36.08,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "horario,",
+   "ini": 36.08,
+   "fin": 36.44,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "lección",
+   "ini": 37.03,
+   "fin": 37.33,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "del",
+   "ini": 37.33,
+   "fin": 37.51,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "día.",
+   "ini": 37.51,
+   "fin": 37.71,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Trabajar",
+   "ini": 37.99,
+   "fin": 38.37,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "duro",
+   "ini": 38.37,
+   "fin": 38.57,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "sirve,",
+   "ini": 38.57,
+   "fin": 38.93,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "pero",
+   "ini": 39.17,
+   "fin": 39.29,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "sin",
+   "ini": 39.29,
+   "fin": 39.45,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "descanso",
+   "ini": 39.45,
+   "fin": 39.93,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "te",
+   "ini": 39.93,
+   "fin": 40.15,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "pasa",
+   "ini": 40.15,
+   "fin": 40.41,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "factura.",
+   "ini": 40.41,
+   "fin": 40.87,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "Ahora",
+   "ini": 41.41,
+   "fin": 41.67,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Toño",
+   "ini": 41.67,
+   "fin": 41.95,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "quiere",
+   "ini": 41.95,
+   "fin": 42.19,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "cambiar",
+   "ini": 42.19,
+   "fin": 42.53,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "de",
+   "ini": 42.53,
+   "fin": 42.69,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "verdad.",
+   "ini": 42.69,
+   "fin": 42.95,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Por",
+   "ini": 43.15,
+   "fin": 43.29,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "dónde",
+   "ini": 43.29,
+   "fin": 43.53,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "empieza",
+   "ini": 43.53,
+   "fin": 43.87,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Comenta,",
+   "ini": 44.2,
+   "fin": 44.68,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "ordenar",
+   "ini": 44.88,
+   "fin": 45.28,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 45.28,
+   "fin": 45.38,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "garaje",
+   "ini": 45.38,
+   "fin": 45.76,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "y",
+   "ini": 45.76,
+   "fin": 45.94,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "vender",
+   "ini": 45.94,
+   "fin": 46.2,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "lo",
+   "ini": 46.2,
+   "fin": 46.38,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "que",
+   "ini": 46.38,
+   "fin": 46.48,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "no",
+   "ini": 46.48,
+   "fin": 46.6,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "usa",
+   "ini": 46.6,
+   "fin": 46.9,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "o",
+   "ini": 46.9,
+   "fin": 47.18,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "hacer",
+   "ini": 47.18,
+   "fin": 47.4,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "ejercicio",
+   "ini": 47.4,
+   "fin": 47.88,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "cada",
+   "ini": 47.88,
+   "fin": 48.1,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "mañana.",
+   "ini": 48.1,
+   "fin": 48.46,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "Sígueme",
+   "ini": 49.09,
+   "fin": 49.47,
+   "clave": true,
+   "dinero": false
+  },
+  {
+   "p": "para",
+   "ini": 49.47,
+   "fin": 49.65,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "el",
+   "ini": 49.65,
+   "fin": 49.75,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "día",
+   "ini": 49.75,
+   "fin": 49.93,
+   "clave": false,
+   "dinero": false
+  },
+  {
+   "p": "3.",
+   "ini": 49.93,
+   "fin": 50.17,
+   "clave": true,
+   "dinero": false
+  }
+ ]
+}

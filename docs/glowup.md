@@ -147,6 +147,12 @@ Seguidores → comunidad → embudo → infoproducto digital. Fases:
 - `montar_dia.py`: efectos en la n-ésima palabra ("@rechazado#2") y reemplazos de nombres que
   whisper escribe mal ("Brian" → "Brayan").
 
+## Día 2 (hecho): "Más turnos… y Toño se enferma" (13 días, $20 → $60 → $30)
+- Ganó MÁS TURNOS (62 %). Giro pedido por Angel: trabaja 16 h, cobra $40 y se enferma; estornuda
+  sobre los platos, lo mandan a casa, farmacia $30. Gana el logro DISCIPLINA (el trabajo le dio
+  disciplina). Lección: sin descanso te pasa factura. Desde aquí Toño mejora sus hábitos paso a paso.
+- Voz 319 créditos. Votación: ORDENAR EL GARAJE (y vender lo que no usa) vs EJERCICIO CADA MAÑANA.
+
 ## Pendiente
 - Angel: elegir concepto, mercado (latino o España) y nombre de la cuenta.
 - Muestras de voz (con permiso), personaje en Gemini, Día 0.

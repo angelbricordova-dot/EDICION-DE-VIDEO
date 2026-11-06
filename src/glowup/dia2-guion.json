@@ -1,0 +1,21 @@
+{
+  "episodio": 2,
+  "frases": [
+    { "id": "resumen", "texto": "Toño: veinticinco años, veinte dólares… y trece días para juntar mil antes de GTA seis." },
+    { "id": "votaron", "texto": "¡Ustedes votaron… y Toño pide más turnos!" },
+    { "id": "dia", "texto": "Día dos." },
+    { "id": "turnos", "texto": "Lava platos de día… y de noche." },
+    { "id": "horas", "texto": "Dieciséis horas seguidas… sin comer, sin dormir." },
+    { "id": "paga", "texto": "Al final de la semana cobra cuarenta dólares… ¡Ya tiene sesenta!" },
+    { "id": "lunes", "texto": "Pero el lunes… Toño no se levanta." },
+    { "id": "fiebre", "texto": "Fiebre, tos… y estornuda encima de los platos limpios." },
+    { "id": "casa", "texto": "Lo mandan a su casa." },
+    { "id": "farmacia", "texto": "Y la farmacia le cobra treinta dólares en medicinas." },
+    { "id": "baja", "texto": "Mal negocio. Vuelve a treinta." },
+    { "id": "disciplina", "texto": "Pero algo sí ganó… disciplina. Por primera vez en su vida, cumplió un horario." },
+    { "id": "leccion", "texto": "Lección del día: trabajar duro sirve… pero sin descanso, te pasa factura." },
+    { "id": "cambiar", "texto": "Ahora Toño quiere cambiar de verdad. ¿Por dónde empieza?" },
+    { "id": "opciones", "texto": "Comenta: ordenar el garaje y vender lo que no usa… o hacer ejercicio cada mañana." },
+    { "id": "sigueme", "texto": "Sígueme para el día tres." }
+  ]
+}

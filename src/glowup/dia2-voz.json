@@ -1,0 +1,120 @@
+{
+  "audio": "public/glowup/dia2/voz.mp3",
+  "duracion": 46.56,
+  "lineas": [
+    {
+      "texto": "Toño: veinticinco años, veinte dólares… y trece días para juntar mil antes de GTA seis.",
+      "t": 0.0,
+      "fin": 5.76,
+      "t2": 0.0,
+      "fin2": 5.76
+    },
+    {
+      "texto": "¡Ustedes votaron… y Toño pide más turnos!",
+      "t": 5.8,
+      "fin": 8.8,
+      "t2": 6.05,
+      "fin2": 9.05
+    },
+    {
+      "texto": "Día dos.",
+      "t": 9.04,
+      "fin": 10.0,
+      "t2": 9.44,
+      "fin2": 10.4
+    },
+    {
+      "texto": "Lava platos de día… y de noche.",
+      "t": 10.08,
+      "fin": 12.2,
+      "t2": 10.48,
+      "fin2": 12.6
+    },
+    {
+      "texto": "Dieciséis horas seguidas… sin comer, sin dormir.",
+      "t": 12.25,
+      "fin": 15.28,
+      "t2": 12.85,
+      "fin2": 15.88
+    },
+    {
+      "texto": "Al final de la semana cobra cuarenta dólares… ¡Ya tiene sesenta!",
+      "t": 15.333,
+      "fin": 18.64,
+      "t2": 16.183,
+      "fin2": 19.49
+    },
+    {
+      "texto": "Pero el lunes… Toño no se levanta.",
+      "t": 18.672,
+      "fin": 20.8,
+      "t2": 19.872,
+      "fin2": 22.0
+    },
+    {
+      "texto": "Fiebre, tos… y estornuda encima de los platos limpios.",
+      "t": 20.88,
+      "fin": 24.0,
+      "t2": 22.53,
+      "fin2": 25.65
+    },
+    {
+      "texto": "Lo mandan a su casa.",
+      "t": 24.053,
+      "fin": 25.16,
+      "t2": 25.953,
+      "fin2": 27.06
+    },
+    {
+      "texto": "Y la farmacia le cobra treinta dólares en medicinas.",
+      "t": 25.22,
+      "fin": 27.8,
+      "t2": 27.32,
+      "fin2": 29.9
+    },
+    {
+      "texto": "Mal negocio. Vuelve a treinta.",
+      "t": 27.85,
+      "fin": 29.52,
+      "t2": 30.15,
+      "fin2": 31.82
+    },
+    {
+      "texto": "Pero algo sí ganó… disciplina. Por primera vez en su vida, cumplió un horario.",
+      "t": 29.584,
+      "fin": 33.76,
+      "t2": 32.284,
+      "fin2": 36.46
+    },
+    {
+      "texto": "Lección del día: trabajar duro sirve… pero sin descanso, te pasa factura.",
+      "t": 33.84,
+      "fin": 37.84,
+      "t2": 36.89,
+      "fin2": 40.89
+    },
+    {
+      "texto": "Ahora Toño quiere cambiar de verdad. ¿Por dónde empieza?",
+      "t": 37.947,
+      "fin": 40.72,
+      "t2": 41.297,
+      "fin2": 44.07
+    },
+    {
+      "texto": "Comenta: ordenar el garaje y vender lo que no usa… o hacer ejercicio cada mañana.",
+      "t": 40.76,
+      "fin": 45.2,
+      "t2": 44.26,
+      "fin2": 48.7
+    },
+    {
+      "texto": "Sígueme para el día tres.",
+      "t": 45.24,
+      "fin": 46.56,
+      "t2": 49.09,
+      "fin2": 50.41
+    }
+  ],
+  "audio_pausas": "public/glowup/dia2/voz-pausas.wav",
+  "duracion2": 50.41
+}

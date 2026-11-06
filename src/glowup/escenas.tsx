@@ -367,3 +367,111 @@ export const IconoTurnos: React.FC = () => (
     <path d="M 70 62 Q 62 62 62 70 Q 64 76 70 74" fill="#F2CF2E" stroke={COL.linea} strokeWidth={3} />
   </svg>
 );
+
+/** Disco de "día → noche" (sol que se pone y sale la luna) arriba a la izquierda. */
+export const DiaNoche: React.FC<{ t: number; t0: number; t1: number; noche: number }> = ({ t, t0, t1, noche }) => {
+  if (t < t0 || t > t1 + 0.2) return null;
+  const k = sp(t, t0, POP) * (1 - prog(t, t1, t1 + 0.2));
+  const n = easeOut(clamp01(noche));
+  return (
+    <div style={{ position: "absolute", left: 60, top: 330, width: 230, height: 230, borderRadius: 115, overflow: "hidden", border: `7px solid ${COL.linea}`, scale: String(lerp(0.4, 1, k)), opacity: clamp01(k * 2), background: `linear-gradient(180deg, ${n > 0.5 ? "#1C2550" : "#7CC6F2"}, ${n > 0.5 ? "#3A3F7A" : "#F7D9A0"})` }}>
+      <svg width={230} height={230} viewBox="0 0 230 230">
+        <g transform={`rotate(${n * 180} 115 200)`}>
+          <circle cx={115} cy={60} r={36} fill="#FFD43B" stroke={COL.linea} strokeWidth={5} />
+          <g transform="rotate(180 115 200)">
+            <circle cx={115} cy={60} r={34} fill="#F3EBD2" stroke={COL.linea} strokeWidth={5} />
+            <circle cx={130} cy={50} r={30} fill="#3A3F7A" />
+          </g>
+        </g>
+        {n > 0.6 ? [[40, 50], [180, 40], [60, 120], [190, 110]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={4} fill="#fff" opacity={0.9} />) : null}
+      </svg>
+    </div>
+  );
+};
+
+/** Estornudo: gotitas verdes que salen disparadas hacia los platos + "¡ACHÚ!". */
+export const Estornudo: React.FC<{ t: number; t0: number }> = ({ t, t0 }) => {
+  const v = clamp01((t - t0) / 0.7);
+  if (t < t0 || v >= 1) return null;
+  return (
+    <svg width={1080} height={1920} style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
+      {Array.from({ length: 26 }, (_, i) => {
+        const ang = -0.9 + rnd(i) * 1.6;
+        const r = v * (300 + rnd(i + 4) * 500);
+        return <circle key={i} cx={540 + Math.cos(ang) * r} cy={560 + Math.sin(ang) * r * 0.9 + v * v * 300} r={8 + rnd(i + 9) * 12} fill="#A7D86B" stroke={COL.linea} strokeWidth={3} opacity={1 - v * 0.6} />;
+      })}
+      <text x={540} y={430} textAnchor="middle" fontFamily={GTA} fontSize={180} fill="#A7D86B" stroke="#000" strokeWidth={14} paintOrder="stroke fill" transform={`translate(540 430) scale(${lerp(0.5, 1.2, easeOut(clamp01(v * 3)))}) translate(-540 -430)`}>¡ACHÚ!</text>
+    </svg>
+  );
+};
+
+/** Ticket de farmacia larguísimo que se desenrolla, con el TOTAL en rojo. */
+export const TicketFarmacia: React.FC<{ t: number; t0: number; t1: number; total: number }> = ({ t, t0, t1, total }) => {
+  if (t < t0 || t > t1 + 0.25) return null;
+  const sale = 1 - prog(t, t1, t1 + 0.25);
+  const largo = easeOut(clamp01((t - t0) / 1.4));
+  const items = ["Paracetamol", "Jarabe tos", "Pañuelos x3", "Suero", "Vitamina C", "Termómetro", "Caramelos miel", "Pomada"];
+  return (
+    <div style={{ position: "absolute", left: 300, right: 300, top: 300, height: 120 + largo * 1000, background: "#FBFBF7", boxShadow: "0 20px 40px rgba(0,0,0,0.4)", border: `5px solid ${COL.linea}`, opacity: sale, overflow: "hidden", fontFamily: '"Courier New", monospace', padding: "26px 30px", display: "flex", flexDirection: "column" }}>
+      <div style={{ fontWeight: 700, fontSize: 40, textAlign: "center", color: COL.linea }}>FARMACIA</div>
+      <div style={{ borderTop: "4px dashed #999", margin: "14px 0" }} />
+      {items.map((x, i) => (
+        <div key={i} style={{ display: "flex", justifyContent: "space-between", fontSize: 32, color: "#333", lineHeight: 1.6 }}>
+          <span>{x}</span>
+          <span>${(3 + ((i * 7) % 5)).toFixed(2)}</span>
+        </div>
+      ))}
+      <div style={{ borderTop: "4px dashed #999", margin: "14px 0" }} />
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 48, fontWeight: 700, color: COL.rojo }}>
+        <span>TOTAL</span>
+        <span>{plata(total)}</span>
+      </div>
+    </div>
+  );
+};
+
+/** Logro desbloqueado estilo videojuego. */
+export const Logro: React.FC<{ t: number; t0: number; t1: number; titulo: string; texto: string }> = ({ t, t0, t1, titulo, texto }) => {
+  if (t < t0 || t > t1 + 0.3) return null;
+  const k = sp(t, t0, POP) * (1 - prog(t, t1, t1 + 0.3));
+  const brillo = 0.5 + 0.5 * Math.sin((t - t0) * 7);
+  return (
+    <div style={{ position: "absolute", left: 60, right: 60, top: 340, translate: `0 ${(1 - k) * -300}px`, opacity: clamp01(k * 2), background: "rgba(16,18,26,0.95)", borderRadius: 30, border: `6px solid ${COL.amarillo}`, padding: "26px 30px", display: "flex", alignItems: "center", gap: 26, boxShadow: `0 0 ${50 * brillo}px rgba(255,212,59,0.55)` }}>
+      <svg width={140} height={140} viewBox="0 0 24 24" style={{ flex: "none" }}>
+        <path d="M7 3 H17 V9 A5 5 0 0 1 7 9 Z" fill={COL.amarillo} stroke="#000" strokeWidth={1.2} />
+        <path d="M7 5 H4 A3 3 0 0 0 7 10 M17 5 H20 A3 3 0 0 1 17 10" fill="none" stroke={COL.amarillo} strokeWidth={1.4} />
+        <rect x={10.5} y={13} width={3} height={4} fill={COL.amarillo} stroke="#000" strokeWidth={0.8} />
+        <rect x={7} y={17} width={10} height={3} rx={1} fill="#C99A2E" stroke="#000" strokeWidth={1} />
+      </svg>
+      <div>
+        <div style={{ fontFamily: SUBS, fontWeight: 900, fontSize: 34, letterSpacing: "0.1em", color: COL.amarillo }}>{titulo}</div>
+        <div style={{ fontFamily: GTA, fontSize: 96, color: "#fff", lineHeight: 1, WebkitTextStroke: "6px #000", paintOrder: "stroke fill" }}>{texto}</div>
+      </div>
+    </div>
+  );
+};
+
+/** Íconos para "ORDENAR EL GARAJE vs EJERCICIO". */
+export const IconoGaraje: React.FC = () => (
+  <svg width={190} height={190} viewBox="0 0 100 100">
+    <path d="M 14 44 L 46 30 L 78 44 L 78 82 L 46 96 L 14 82 Z" fill="#D9A55B" stroke={COL.linea} strokeWidth={4} strokeLinejoin="round" />
+    <path d="M 14 44 L 46 58 L 78 44 M 46 58 L 46 96" fill="none" stroke={COL.linea} strokeWidth={4} />
+    <rect x={54} y={64} width={20} height={12} rx={3} fill={COL.verde} stroke={COL.linea} strokeWidth={3} />
+    <text x={64} y={74} textAnchor="middle" fontFamily="Arial Black" fontSize={10} fill={COL.linea}>$</text>
+    <path d="M 84 8 L 66 50" stroke="#8A5A3B" strokeWidth={5} strokeLinecap="round" />
+    <path d="M 60 46 L 74 54 L 70 66 L 54 58 Z" fill="#E7C46A" stroke={COL.linea} strokeWidth={3} strokeLinejoin="round" />
+  </svg>
+);
+export const IconoEjercicio: React.FC = () => (
+  <svg width={190} height={190} viewBox="0 0 100 100">
+    <rect x={8} y={40} width={10} height={24} rx={3} fill="#3A3A40" stroke={COL.linea} strokeWidth={3} />
+    <rect x={18} y={34} width={10} height={36} rx={3} fill="#55555D" stroke={COL.linea} strokeWidth={3} />
+    <rect x={28} y={48} width={44} height={8} fill="#9AA3AA" stroke={COL.linea} strokeWidth={3} />
+    <rect x={72} y={34} width={10} height={36} rx={3} fill="#55555D" stroke={COL.linea} strokeWidth={3} />
+    <rect x={82} y={40} width={10} height={24} rx={3} fill="#3A3A40" stroke={COL.linea} strokeWidth={3} />
+    <circle cx={78} cy={18} r={12} fill={COL.amarillo} stroke={COL.linea} strokeWidth={3} />
+    {[0, 1, 2, 3, 4, 5].map((i) => (
+      <line key={i} x1={78} y1={2} x2={78} y2={-2} stroke={COL.amarillo} strokeWidth={3} transform={`rotate(${i * 60} 78 18)`} />
+    ))}
+  </svg>
+);

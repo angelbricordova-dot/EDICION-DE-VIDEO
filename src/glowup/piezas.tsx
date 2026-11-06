@@ -338,7 +338,7 @@ export const BilleteraVacia: React.FC<{ t: number; t0: number }> = ({ t, t0 }) =
 };
 
 /** Brazo de la mamá que entra por la derecha con una moneda, y su grito. */
-export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string; objeto?: "moneda" | "guantes" }> = ({ t, t0, t1, texto = "¡TOMA, MIJO!", objeto = "moneda" }) => {
+export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string; objeto?: "moneda" | "guantes" | "vaporub" }> = ({ t, t0, t1, texto = "¡TOMA, MIJO!", objeto = "moneda" }) => {
   if (t < t0 || t > t1 + 0.4) return null;
   const k = easeOut(prog(t, t0, t0 + 0.35)) * (1 - easeOut(prog(t, t1, t1 + 0.35)));
   const g = sp(t, t0 + 0.2, POP) * (1 - prog(t, t1, t1 + 0.2));
@@ -356,6 +356,13 @@ export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string;
               <circle cx={660} cy={1030} r={34} fill="#F2C744" {...L} />
               <text x={660} y={1043} textAnchor="middle" fontFamily={FUENTE} fontSize={38} fill="#9C7A16">$</text>
             </>
+          ) : objeto === "vaporub" ? (
+            <g>
+              {/* frasco azul de pomada mentolada */}
+              <rect x={600} y={990} width={110} height={90} rx={14} fill="#2B5DB8" {...L} />
+              <rect x={592} y={968} width={126} height={34} rx={10} fill="#1C3F86" {...L} strokeWidth={5} />
+              <rect x={616} y={1018} width={78} height={34} rx={6} fill="#fff" {...L} strokeWidth={3} />
+            </g>
           ) : (
             <g>
               {/* guantes amarillos de goma y una esponja */}
