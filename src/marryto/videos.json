@@ -196,5 +196,33 @@
   "textoY": 630,
   "textoTam": 68,
   "cajaFoto": true
+ },
+ "9": {
+  "inicio": 3.5,
+  "fin": 14.3,
+  "caraX": 516,
+  "caraY": 1036,
+  "caraAncho": 552,
+  "short": "SuIpHER0iMQ",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "estilo": "superpuesto",
+  "imagen": "marryto/material/ojos-80.png",
+  "caja": [
+   100,
+   64,
+   853
+  ],
+  "cajaAlto": 599,
+  "cajaFoto": true,
+  "titulo": "Toca 2 veces y cierra los ojos un 80%",
+  "rojo": "",
+  "sinTexto": false,
+  "textoY": 630,
+  "textoTam": 68
  }
 }
