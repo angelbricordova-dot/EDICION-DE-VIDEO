@@ -250,5 +250,31 @@
   "sinTexto": false,
   "textoY": 572,
   "textoTam": 68
+ },
+ "11": {
+  "inicio": 3.4,
+  "fin": 13.1,
+  "caraX": 498,
+  "caraY": 944,
+  "caraAncho": 360,
+  "short": "WYP9yi1Ze_o",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "estilo": "superpuesto",
+  "imagen": "marryto/material/senal-bateria.png",
+  "caja": [
+   169,
+   142,
+   750
+  ],
+  "titulo": "Cuál eres tú ahora mismo?",
+  "rojo": "",
+  "sinTexto": false,
+  "textoY": 572,
+  "textoTam": 68
  }
 }
