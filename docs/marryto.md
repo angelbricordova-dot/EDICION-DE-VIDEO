@@ -26,6 +26,12 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
    en `videos.json`: `short`, `recorte` [x, y, ancho, alto] en la miniatura, `titulo`, `rojo`.
 4. Render: `npx remotion render Marryto<n> … --muted` → `out/marryto/enviar/marryto-video-<n>.mp4`.
 
+## Formato "superpuesto" (corrección del video 1, 6-nov)
+- Como el Short original (`public/marryto/referencia/ref2.mp4`): su reacción a pantalla completa,
+  la imagen del acertijo arriba (la manda Angel; p. ej. la de Navidad en vez de la de Halloween),
+  y el mismo texto del Short en blanco con borde negro debajo (Montserrat 700). **Sin "YO:"**.
+  En `videos.json`: `"estilo": "superpuesto", "imagen": "marryto/material/<archivo>"`.
+
 ## Hechos
 - 6-nov-2026: videos 1–7 (Shorts QBN68drVF-8, aEM2afKl8rs, Vm1K2kO2rjY, H8v8zmf-LFU).
 

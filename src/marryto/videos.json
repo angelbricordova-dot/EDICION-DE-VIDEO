@@ -13,7 +13,9 @@
    604
   ],
   "titulo": "Toca 2 veces para encontrar el 4° objeto",
-  "rojo": "4° objeto"
+  "rojo": "",
+  "estilo": "superpuesto",
+  "imagen": "marryto/material/navidad-v1.webp"
  },
  "2": {
   "inicio": 0.25,

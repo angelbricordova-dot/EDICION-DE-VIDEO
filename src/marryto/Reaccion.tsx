@@ -9,7 +9,12 @@ import videos from "./videos.json";
 // YouTube, recortada) a todo el ancho, y abajo su reacción con "YO:". Sin sonido (él pone el audio
 // al subirlo). Cada video sale de src/marryto/videos.json (scripts/marryto/analizar.py).
 
-export type Video = { inicio: number; fin: number; caraX: number; caraY: number; caraAncho: number; short: string; recorte: [number, number, number, number]; titulo: string; rojo: string };
+export type Video = {
+  inicio: number; fin: number; caraX: number; caraY: number; caraAncho: number; short: string; recorte: [number, number, number, number]; titulo: string; rojo: string;
+  // "superpuesto": como el Short original (su reacción a pantalla completa, la imagen encima arriba
+  // y el texto blanco con borde debajo, sin "YO:"); por defecto, el formato de franjas.
+  estilo?: "superpuesto"; imagen?: string;
+};
 export const VIDEOS = videos as unknown as Record<string, Video>;
 export type PropsReaccion = { n: string };
 
@@ -21,6 +26,8 @@ const cargarFuentes = () => {
   fuentes = true;
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-800-normal.woff2"), weight: "800" });
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-ext-800-normal.woff2"), weight: "800" });
+  loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-700-normal.woff2"), weight: "700" });
+  loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-ext-700-normal.woff2"), weight: "700" });
 };
 
 const Titulo: React.FC<{ texto: string; rojo: string }> = ({ texto, rojo }) => {
@@ -44,9 +51,29 @@ const Titulo: React.FC<{ texto: string; rojo: string }> = ({ texto, rojo }) => {
   );
 };
 
+/** Como el Short original: reacción a pantalla completa, imagen arriba y texto blanco con borde. */
+const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
+  // su cara un poco por debajo del texto, como las caras en la referencia
+  const s = Math.min(1.25, Math.max(1, 360 / v.caraAncho));
+  const vw = 1080 * s;
+  const vh = 1920 * s;
+  const x = Math.min(0, Math.max(1080 - vw, 540 - v.caraX * s));
+  const y = Math.min(0, Math.max(1920 - vh, 1080 - v.caraY * s));
+  return (
+    <AbsoluteFill style={{ background: "#000" }}>
+      <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * FPS)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+      <div style={{ position: "absolute", left: 90, right: 90, top: 40, display: "flex", justifyContent: "center" }}>
+        <Img src={staticFile(v.imagen ?? "")} style={{ width: "100%", height: "auto", display: "block" }} />
+      </div>
+      <div style={{ position: "absolute", left: 120, right: 120, top: 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance" }}>{v.titulo}</div>
+    </AbsoluteFill>
+  );
+};
+
 export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
   cargarFuentes();
   const v = VIDEOS[n];
+  if (v.estilo === "superpuesto") return <Superpuesto n={n} v={v} />;
   const t = useCurrentFrame() / FPS;
   const [rx, ry, rw, rh] = v.recorte;
   const imgH = Math.round((1080 * rh) / rw);
