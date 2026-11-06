@@ -17,6 +17,10 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
 PASO = 0.25  # segundos entre cuadros analizados
+# Margen extra (corrección de Angel en el video 1): al principio aún se acomoda para "actuar" y al
+# final va a apagar la cámara aunque ya se le vea la cara; se quitan 2 s de cada lado.
+MARGEN_INICIO = 2.0
+MARGEN_FIN = 2.0
 
 
 def caras(video):
@@ -48,7 +52,7 @@ def main():
         fin = max(i for i in range(len(ok)) if all(ok[max(0, i - 3):i + 1]))
         bueno = [c for c, o in zip(cs[ini:fin + 1], ok[ini:fin + 1]) if o]
         e = datos.get(n, {})
-        e.update({"inicio": round(ini * PASO, 2), "fin": round((fin + 1) * PASO, 2),
+        e.update({"inicio": round(ini * PASO + MARGEN_INICIO, 2), "fin": round((fin + 1) * PASO - MARGEN_FIN, 2),
                   "caraX": round(float(np.median([c[0] for c in bueno]))), "caraY": round(float(np.median([c[1] for c in bueno]))),
                   "caraAncho": round(float(np.median([c[2] for c in bueno])))})
         datos[n] = e

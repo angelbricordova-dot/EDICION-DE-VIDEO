@@ -26,6 +26,11 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
    en `videos.json`: `short`, `recorte` [x, y, ancho, alto] en la miniatura, `titulo`, `rojo`.
 4. Render: `npx remotion render Marryto<n> … --muted` → `out/marryto/enviar/marryto-video-<n>.mp4`.
 
+## Recorte del bruto (corrección de Angel, video 1)
+- Quitar **2 s al principio** (se acomoda para "actuar") y **2 s al final** (va a apagar la cámara)
+  además de lo que detecta `analizar.py` (ya lo aplica: `MARGEN_INICIO`, `MARGEN_FIN`). Revisar
+  siempre el primer y el último segundo de cada video antes de entregar.
+
 ## Formato "superpuesto" (corrección del video 1, 6-nov)
 - Como el Short original (`public/marryto/referencia/ref2.mp4`): su reacción a pantalla completa,
   la imagen del acertijo arriba (la manda Angel; p. ej. la de Navidad en vez de la de Halloween),
