@@ -1,0 +1,114 @@
+{
+ "1": {
+  "inicio": 4.25,
+  "fin": 18.25,
+  "caraX": 477,
+  "caraY": 950,
+  "caraAncho": 392,
+  "short": "QBN68drVF-8",
+  "recorte": [
+   164,
+   24,
+   752,
+   604
+  ],
+  "titulo": "Toca 2 veces para encontrar el 4° objeto",
+  "rojo": "4° objeto"
+ },
+ "2": {
+  "inicio": 0.25,
+  "fin": 14.5,
+  "caraX": 524,
+  "caraY": 984,
+  "caraAncho": 248,
+  "short": "aEM2afKl8rs",
+  "recorte": [
+   200,
+   176,
+   680,
+   548
+  ],
+  "titulo": "¿FUNCIONÓ?",
+  "rojo": "FUNCIONÓ"
+ },
+ "3": {
+  "inicio": 0.0,
+  "fin": 18.0,
+  "caraX": 542,
+  "caraY": 995,
+  "caraAncho": 276,
+  "short": "aEM2afKl8rs",
+  "recorte": [
+   200,
+   176,
+   680,
+   548
+  ],
+  "titulo": "¿FUNCIONÓ?",
+  "rojo": "FUNCIONÓ"
+ },
+ "4": {
+  "inicio": 5.25,
+  "fin": 19.5,
+  "caraX": 579,
+  "caraY": 963,
+  "caraAncho": 304,
+  "short": "Vm1K2kO2rjY",
+  "recorte": [
+   184,
+   40,
+   712,
+   636
+  ],
+  "titulo": "Yo veo 16 arañas... ¿y tú?",
+  "rojo": "16"
+ },
+ "5": {
+  "inicio": 0.0,
+  "fin": 13.5,
+  "caraX": 502,
+  "caraY": 918,
+  "caraAncho": 360,
+  "short": "Vm1K2kO2rjY",
+  "recorte": [
+   184,
+   40,
+   712,
+   636
+  ],
+  "titulo": "Yo veo 16 arañas... ¿y tú?",
+  "rojo": "16"
+ },
+ "6": {
+  "inicio": 1.75,
+  "fin": 25.5,
+  "caraX": 502,
+  "caraY": 904,
+  "caraAncho": 280,
+  "short": "H8v8zmf-LFU",
+  "recorte": [
+   134,
+   36,
+   810,
+   572
+  ],
+  "titulo": "Encuentra las 3 diferencias",
+  "rojo": "3"
+ },
+ "7": {
+  "inicio": 0.75,
+  "fin": 24.5,
+  "caraX": 498,
+  "caraY": 966,
+  "caraAncho": 368,
+  "short": "H8v8zmf-LFU",
+  "recorte": [
+   134,
+   36,
+   810,
+   572
+  ],
+  "titulo": "Encuentra las 3 diferencias",
+  "rojo": "3"
+ }
+}

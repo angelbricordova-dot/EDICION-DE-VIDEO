@@ -18,5 +18,6 @@ public/paul/
 public/glowup/
 public/shimon/
 public/katia/
+public/marryto/
 # Local secrets written by `elevenlabs onboard`
 /.env.local

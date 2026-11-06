@@ -88,6 +88,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Canal propio de Angel: serie animada interactiva "glow-up" (Instagram) | `src/glowup/` (por crear) | `docs/glowup.md` | animación 2D plana en SVG, HUD de días y % de cambio, la audiencia vota en comentarios, voz en off ElevenLabs |
 | Shimon Geek (YouTube, anime, cliente nuevo) | `src/shimon/` (por crear) | `docs/shimon.md` | videos largos 16:9 de opinión de anime, poca cámara, escenas/imágenes del anime, memes, fondos de papel y cuadros, su avatar Itadori |
 | Katia (agencia, España): reels de coach de fuerza | `src/katia/` | `docs/katia.md` | coach a cámara, un corte por frase, subtítulo de una palabra Montserrat, rosa #AD3158 y azul #8AD2D1, títulos de lista, cierre RESET |
+| Marryto Show: shorts de reacción en serie (10–15 al día) | `src/marryto/` | `docs/marryto.md` | título blanco arriba, imagen del Short original (miniatura de YouTube), su reacción con "YO:", sin audio |
 
 ### Separación por cliente (obligatoria)
 
