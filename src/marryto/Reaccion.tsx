@@ -79,7 +79,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         </div>
       )}
       {v.sinTexto ? null : (
-        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance" }}>{v.titulo}</div>
+        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{v.titulo}</div>
       )}
     </AbsoluteFill>
   );

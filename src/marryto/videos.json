@@ -324,5 +324,33 @@
   "titulo": "",
   "rojo": "",
   "sinTexto": true
+ },
+ "14": {
+  "inicio": 1.9,
+  "fin": 12.9,
+  "caraX": 500,
+  "caraY": 938,
+  "caraAncho": 436,
+  "short": "XW9QQIOjUfI",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "estilo": "superpuesto",
+  "imagen": "marryto/material/gatos.webp",
+  "caja": [
+   46,
+   61,
+   980
+  ],
+  "cajaAlto": 604,
+  "cajaFoto": true,
+  "titulo": "Toca 2 veces y\ncierra los ojos al 80%",
+  "rojo": "",
+  "sinTexto": false,
+  "textoY": 575,
+  "textoTam": 76
  }
 }
