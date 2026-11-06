@@ -406,13 +406,13 @@ export const Estornudo: React.FC<{ t: number; t0: number }> = ({ t, t0 }) => {
 };
 
 /** Ticket de farmacia larguísimo que se desenrolla, con el TOTAL en rojo. */
-export const TicketFarmacia: React.FC<{ t: number; t0: number; t1: number; total: number }> = ({ t, t0, t1, total }) => {
+export const TicketFarmacia: React.FC<{ t: number; t0: number; t1: number; total: number; caja?: React.CSSProperties; alto?: number }> = ({ t, t0, t1, total, caja, alto = 1000 }) => {
   if (t < t0 || t > t1 + 0.25) return null;
   const sale = 1 - prog(t, t1, t1 + 0.25);
   const largo = easeOut(clamp01((t - t0) / 1.4));
   const items = ["Paracetamol", "Jarabe tos", "Pañuelos x3", "Suero", "Vitamina C", "Termómetro", "Caramelos miel", "Pomada"];
   return (
-    <div style={{ position: "absolute", left: 300, right: 300, top: 300, height: 120 + largo * 1000, background: "#FBFBF7", boxShadow: "0 20px 40px rgba(0,0,0,0.4)", border: `5px solid ${COL.linea}`, opacity: sale, overflow: "hidden", fontFamily: '"Courier New", monospace', padding: "26px 30px", display: "flex", flexDirection: "column" }}>
+    <div style={{ position: "absolute", left: 300, right: 300, top: 300, ...caja, height: 120 + largo * alto, background: "#FBFBF7", boxShadow: "0 20px 40px rgba(0,0,0,0.4)", border: `5px solid ${COL.linea}`, opacity: sale, overflow: "hidden", fontFamily: '"Courier New", monospace', padding: "26px 30px", display: "flex", flexDirection: "column" }}>
       <div style={{ fontWeight: 700, fontSize: 40, textAlign: "center", color: COL.linea }}>FARMACIA</div>
       <div style={{ borderTop: "4px dashed #999", margin: "14px 0" }} />
       {items.map((x, i) => (

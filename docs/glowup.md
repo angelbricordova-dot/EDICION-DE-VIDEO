@@ -156,3 +156,15 @@ Seguidores → comunidad → embudo → infoproducto digital. Fases:
 ## Pendiente
 - Angel: elegir concepto, mercado (latino o España) y nombre de la cuenta.
 - Muestras de voz (con permiso), personaje en Gemini, Día 0.
+
+## Corrección Día 2 (v2): más variedad de escenas
+Angel pidió **más variación de fondos**: que cada momento de la historia tenga su lugar y que no
+se repita el mismo fondo. Escenas nuevas en `src/glowup/escenas2.tsx`:
+- `Vestuario`: taquillas del restaurante y calendario "ESTA SEMANA" que se tacha (para "al final de la semana cobra").
+- `Cama`: Toño **acostado visto desde arriba** (solo asoma la cabeza en la almohada, la cobija lo tapa
+  entero, sin pies), alarma del teléfono, termómetro, 39,8°, tos. Nada de "cobija encima estando de pie".
+- `Calle`: vuelve a casa bajo una nube de lluvia ("lo mandan a su casa").
+- `Farmacia`: letrero de cruz verde, estantes, mostrador que lo tapa de la cintura para abajo, y el
+  ticket largo a un lado mientras él lo mira. **Sin la mamá** en esa parte (no tenía sentido).
+Regla para los próximos días: un fondo distinto por cada momento de la historia, y que el lugar
+cuadre con lo que dice la voz.
