@@ -91,8 +91,8 @@
   "cajaAlto": 665
  },
  "5": {
-  "inicio": 0.0,
-  "fin": 13.5,
+  "inicio": 3.0,
+  "fin": 10.5,
   "caraX": 502,
   "caraY": 918,
   "caraAncho": 360,
@@ -103,8 +103,19 @@
    712,
    636
   ],
-  "titulo": "Yo veo 16 arañas... ¿y tú?",
-  "rojo": "16"
+  "titulo": "Yo veo 16 arañas... y tú?",
+  "rojo": "",
+  "estilo": "superpuesto",
+  "imagen": "marryto/material/aranas.webp",
+  "caja": [
+   178,
+   27,
+   713
+  ],
+  "cajaAlto": 665,
+  "sinTexto": false,
+  "textoY": 650,
+  "textoTam": 64
  },
  "6": {
   "inicio": 1.75,
