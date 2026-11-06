@@ -361,15 +361,49 @@
   "caraX": 545,
   "caraY": 1037,
   "caraAncho": 396,
-  "short": "zWOmtVobxw0"
+  "short": "zWOmtVobxw0",
+  "estilo": "superpuesto",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/senas.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "titulo": "Dale 2 veces en la\n1ra letra de tu nombre",
+  "sinTexto": false,
+  "textoY": 830,
+  "textoTam": 72
  },
  "16": {
-  "inicio": 2.0,
+  "inicio": 2.3,
   "fin": 10.0,
   "caraX": 524,
   "caraY": 1044,
   "caraAncho": 404,
-  "short": "bWjFoE9LHIE"
+  "short": "bWjFoE9LHIE",
+  "estilo": "superpuesto",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/numeros-20.jpg",
+  "caja": [
+   110,
+   40,
+   860
+  ],
+  "sinTexto": true,
+  "titulo": ""
  },
  "17": {
   "inicio": 2.4,
@@ -377,7 +411,25 @@
   "caraX": 495,
   "caraY": 1037,
   "caraAncho": 432,
-  "short": "Grkx9LjpBA0"
+  "short": "Grkx9LjpBA0",
+  "estilo": "superpuesto",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/cuarto-objeto.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "titulo": "Toca 2 veces para\n“ver” el cuarto objeto",
+  "sinTexto": false,
+  "textoY": 830,
+  "textoTam": 72
  },
  "18": {
   "inicio": 1.5,
@@ -385,7 +437,23 @@
   "caraX": 494,
   "caraY": 1066,
   "caraAncho": 384,
-  "short": "tj-TRuKNvWY"
+  "short": "tj-TRuKNvWY",
+  "estilo": "superpuesto",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/error-dias.jpg",
+  "caja": [
+   310,
+   50,
+   460
+  ],
+  "sinTexto": true,
+  "titulo": ""
  },
  "19": {
   "inicio": 1.0,
@@ -393,7 +461,25 @@
   "caraX": 518,
   "caraY": 1060,
   "caraAncho": 436,
-  "short": "S8Ym5BEGNBE"
+  "short": "S8Ym5BEGNBE",
+  "estilo": "superpuesto",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/yate-diferencias.jpg",
+  "caja": [
+   139,
+   39,
+   805
+  ],
+  "titulo": "Encuentra las 3 diferencias",
+  "sinTexto": false,
+  "textoY": 612,
+  "textoTam": 66
  },
  "20": {
   "inicio": 2.0,

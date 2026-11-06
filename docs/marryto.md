@@ -68,9 +68,23 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 | 12 | sopa-balon.jpg (sopa de letras "balón") | — |
 | 13 | sopa-perro.jpg ("perro") | — |
 | 14 | gatos.webp | Toca 2 veces y cierra los ojos al 80% |
+| 15 | senas.jpg (abecedario de señas) | Dale 2 veces en la 1ra letra de tu nombre |
+| 16 | numeros-20.jpg (mueve tres números = 20) | — |
+| 17 | cuarto-objeto.jpg (encuentra el 4º objeto) | Toca 2 veces para "ver" el cuarto objeto |
+| 18 | error-dias.jpg (¿puedes encontrar el error?), pequeña arriba | — |
+| 19 | yate-diferencias.jpg (Marryto con IA en un puerto, 3 diferencias) | Encuentra las 3 diferencias |
 
 ## Hechos
 - 6-nov-2026: videos 1–14 entregados; rehechos el mismo día en 4K 60 fps, 6,5 s, con las imágenes nuevas.
 
+- 7-nov-2026: videos 15–19.
+
+## Notas técnicas
+- Desde el video 15 los brutos llegan en **4K 60 fps HEVC**: proxy a **1080×1920 y 60 fps** (`-r 60 -crf 17`).
+  Un proxy de 1440 px hace que Chrome rechace los cuadros con el disco justo.
+- Disco: si un render falla con "Failed to fetch … disk space", liberar cachés (`npm cache clean --force`,
+  `uv cache clean`) antes de borrar nada de clientes.
+
 ## Pendiente
-- Videos 15–40 (la carpeta ya llega al Video 40): Angel pasa las imágenes nuevas.
+- Videos 20–22 (proxies y cortes listos): faltan las imágenes. 21 y 22 usan el mismo Short (9zB4fWcv46U).
+- Videos 23–40.
