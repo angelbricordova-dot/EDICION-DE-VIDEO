@@ -16,6 +16,7 @@ export type Video = {
   estilo?: "superpuesto"; imagen?: string;
   // superpuesto: caja de la imagen [izquierda, arriba, ancho] (por defecto casi todo el ancho) y sin texto
   caja?: [number, number, number]; sinTexto?: boolean; textoY?: number; textoTam?: number; cajaAlto?: number; // con cajaAlto la imagen va en una tarjeta blanca de ese alto
+  cajaFoto?: boolean; // con cajaAlto: la imagen llena la caja (recortada), sin tarjeta blanca
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
 export type PropsReaccion = { n: string };
@@ -65,8 +66,8 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
     <AbsoluteFill style={{ background: "#000" }}>
       <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * FPS)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
       {v.imagen ? (
-        <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto ? "#fff" : undefined, display: "flex", alignItems: "center" }}>
-          <Img src={staticFile(v.imagen)} style={{ width: "100%", height: "auto", display: "block" }} />
+        <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
+          <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
         </div>
       ) : (
         // sin imagen aparte: se recorta de la miniatura del Short
