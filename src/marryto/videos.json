@@ -300,5 +300,29 @@
   "titulo": "",
   "rojo": "",
   "sinTexto": true
+ },
+ "13": {
+  "inicio": 2.3,
+  "fin": 12.6,
+  "caraX": 486,
+  "caraY": 1024,
+  "caraAncho": 368,
+  "short": "iyJn-oTMpsQ",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "estilo": "superpuesto",
+  "imagen": "marryto/material/mosca.png",
+  "caja": [
+   233,
+   88,
+   610
+  ],
+  "titulo": "",
+  "rojo": "",
+  "sinTexto": true
  }
 }
