@@ -484,25 +484,156 @@
  "20": {
   "inicio": 2.0,
   "fin": 11.25,
-  "caraX": 511,
+  "caraX": 508,
   "caraY": 982,
-  "caraAncho": 400,
-  "short": "MoMAIfUMB1g"
+  "caraAncho": 396,
+  "short": "MoMAIfUMB1g",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "rojo": "",
+  "titulo": ""
  },
  "21": {
   "inicio": 3.5,
   "fin": 11.75,
-  "caraX": 498,
-  "caraY": 1034,
-  "caraAncho": 448,
-  "short": "9zB4fWcv46U"
+  "caraX": 495,
+  "caraY": 1037,
+  "caraAncho": 458,
+  "short": "9zB4fWcv46U",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "rojo": "",
+  "titulo": ""
  },
  "22": {
-  "inicio": 3.0,
+  "inicio": 3.2,
   "fin": 12.5,
-  "caraX": 536,
-  "caraY": 1036,
-  "caraAncho": 504,
-  "short": "9zB4fWcv46U"
+  "caraX": 534,
+  "caraY": 1038,
+  "caraAncho": 500,
+  "short": "9zB4fWcv46U",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "rojo": "",
+  "titulo": ""
+ },
+ "23": {
+  "inicio": 2.0,
+  "fin": 8.5,
+  "caraX": 516,
+  "caraY": 958,
+  "caraAncho": 472,
+  "short": "X692HBzI9p4",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "rojo": "",
+  "titulo": ""
+ },
+ "24": {
+  "inicio": 3.2,
+  "fin": 11.5,
+  "caraX": 520,
+  "caraY": 941,
+  "caraAncho": 422,
+  "short": "X692HBzI9p4",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "rojo": "",
+  "titulo": ""
+ },
+ "25": {
+  "inicio": 2.0,
+  "fin": 13.0,
+  "caraX": 490,
+  "caraY": 836,
+  "caraAncho": 260,
+  "short": "pXcJKiZvI3A",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "rojo": "",
+  "titulo": "",
+  "estilo": "superpuesto",
+  "sinTexto": true,
+  "etiqueta": "El número que te salga después de dar like será tu próximo viaje ✈️",
+  "etiquetaY": 330,
+  "lista": [
+   [
+    "0. México",
+    "1. España",
+    "2. EEUU",
+    "3. Argentina",
+    "4. Maldivas"
+   ],
+   [
+    "5. China",
+    "6. Japón",
+    "7. París",
+    "8. Londres",
+    "9. Egipto"
+   ]
+  ],
+  "listaY": 1150,
+  "rapido": true
+ },
+ "26": {
+  "inicio": 4.6,
+  "fin": 13.3,
+  "caraX": 518,
+  "caraY": 852,
+  "caraAncho": 256,
+  "short": "pXcJKiZvI3A",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "rojo": "",
+  "titulo": "",
+  "estilo": "superpuesto",
+  "sinTexto": true,
+  "etiqueta": "El número que te salga después de dar like será tu próximo viaje ✈️",
+  "etiquetaY": 330,
+  "lista": [
+   [
+    "0. México",
+    "1. España",
+    "2. EEUU",
+    "3. Argentina",
+    "4. Maldivas"
+   ],
+   [
+    "5. China",
+    "6. Japón",
+    "7. París",
+    "8. Londres",
+    "9. Egipto"
+   ]
+  ],
+  "listaY": 1150
  }
 }

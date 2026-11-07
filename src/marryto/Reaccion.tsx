@@ -19,6 +19,9 @@ export type Video = {
   cajaFoto?: boolean; // con cajaAlto: la imagen llena la caja (recortada), sin tarjeta blanca
   imgAspecto?: number; // alto / ancho de la imagen (scripts/marryto/medidas.py): para saber dónde acaba
   rapido?: boolean; // cámara rápida (solo ~20 % de los videos, cuando toque: reunión del 7-nov)
+  // Shorts sin imagen (p. ej. "tu próximo viaje"): etiqueta blanca redondeada arriba y una lista en
+  // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
+  etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number;
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
 
@@ -42,7 +45,8 @@ export const finEncima = (v: Video) => {
   const img = v.imagen ? arriba + (v.cajaAlto ?? (v.imgAspecto ? ancho * v.imgAspecto : 0)) : 0;
   const lineas = v.sinTexto ? 0 : (v.titulo.match(/\n/g)?.length ?? 0) + 1;
   const texto = v.sinTexto ? 0 : (v.textoY ?? 560) + lineas * (v.textoTam ?? 64) * 1.12 + 8;
-  return Math.max(img, texto);
+  const etiqueta = v.etiqueta ? (v.etiquetaY ?? 300) + 2 * 58 * 1.15 + 40 : 0;
+  return Math.max(img, texto, etiqueta);
 };
 export type PropsReaccion = { n: string };
 
@@ -100,7 +104,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
           <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
         </div>
-      ) : (
+      ) : v.etiqueta ? null : (
         // sin imagen aparte: se recorta de la miniatura del Short
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: ((v.caja?.[2] ?? 900) * v.recorte[3]) / v.recorte[2], overflow: "hidden" }}>
           <Img
@@ -109,6 +113,20 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           />
         </div>
       )}
+      {v.etiqueta ? (
+        <div style={{ position: "absolute", left: 0, right: 0, top: v.etiquetaY ?? 300, display: "flex", justifyContent: "center" }}>
+          <div style={{ maxWidth: 880, background: "#fff", borderRadius: 26, padding: "16px 30px", textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 52, lineHeight: 1.15, color: "#111", textWrap: "balance" }}>{v.etiqueta}</div>
+        </div>
+      ) : null}
+      {v.lista
+        ? v.lista.map((col, i) => (
+            <div key={i} style={{ position: "absolute", top: v.listaY ?? 1180, left: i === 0 ? 40 : undefined, right: i === 1 ? 40 : undefined, fontFamily: FUENTE, fontWeight: 700, fontSize: v.listaTam ?? 60, lineHeight: 1.22, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textAlign: "left" }}>
+              {col.map((x) => (
+                <div key={x}>{x}</div>
+              ))}
+            </div>
+          ))
+        : null}
       {v.sinTexto ? null : (
         <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{v.titulo}</div>
       )}

@@ -93,6 +93,15 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 
 - 7-nov-2026: videos 15–19.
 
+- 7-nov-2026: videos 25 y 26 ("tu próximo viaje": etiqueta + lista, sin imagen; el 25 con cámara rápida).
+
+## Drive y descarga
+- Carpeta de Drive de los brutos: `https://drive.google.com/drive/folders/1feFk0foB-ljHA8P64MA0SW4Hb9bkhpM9`
+  (subcarpeta del día, p. ej. "11 NOVIEMBRE" → `Video N/`). Las instrucciones ahora son **documentos
+  de Google**: gdown.download_folder falla con ellos → listar con `_download_and_parse_google_drive_link`
+  y exportarlos con `https://docs.google.com/document/d/<id>/export?format=txt`.
+- Formato "lista" (Shorts sin imagen): `etiqueta`, `etiquetaY`, `lista` [[col1], [col2]], `listaY`.
+
 ## Notas técnicas
 - Desde el video 15 los brutos llegan en **4K 60 fps HEVC**: proxy a **1080×1920 y 60 fps** (`-r 60 -crf 17`).
   Un proxy de 1440 px hace que Chrome rechace los cuadros con el disco justo.
