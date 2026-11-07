@@ -1,0 +1,21 @@
+{
+  "episodio": 3,
+  "frases": [
+    { "id": "resumen", "texto": "Toño: veinticinco años, treinta dólares… y doce días para juntar mil antes de GTA seis." },
+    { "id": "votaron", "texto": "¡Ustedes votaron… y Toño limpia el garaje!" },
+    { "id": "dia", "texto": "Día tres." },
+    { "id": "polvo", "texto": "Tres horas de polvo, arañas… y cajas que no abría desde niño." },
+    { "id": "chaqueta", "texto": "En una chaqueta vieja… ¡encuentra diez dólares! Ya tiene cuarenta." },
+    { "id": "publica", "texto": "Saca fotos y lo publica todo en internet." },
+    { "id": "bici", "texto": "La bici vieja se vende en una hora: treinta y cinco dólares." },
+    { "id": "consola", "texto": "Y su consola vieja… se la vende a su primo Brayan por diez." },
+    { "id": "brayan", "texto": "Al día siguiente, Brayan la publica… en sesenta." },
+    { "id": "lavadora", "texto": "Toño se emociona… y publica la lavadora." },
+    { "id": "mama", "texto": "Error. Era de su mamá." },
+    { "id": "total", "texto": "Al final del día: ochenta y cinco dólares. Su mejor día hasta ahora." },
+    { "id": "leccion", "texto": "Lección del día: lo que no usas vale dinero… pero averigua el precio antes de vender." },
+    { "id": "pregunta", "texto": "Brayan ganó cincuenta sin trabajar… y Toño quiere aprender a hacer lo mismo." },
+    { "id": "opciones", "texto": "Comenta: gastar todo su dinero en el curso de un gurú que promete hacerlo millonario antes de GTA seis… o aprender gratis en YouTube." },
+    { "id": "sigueme", "texto": "Sígueme para el día cuatro." }
+  ]
+}
