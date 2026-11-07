@@ -17,18 +17,32 @@ export type Video = {
   // superpuesto: caja de la imagen [izquierda, arriba, ancho] (por defecto casi todo el ancho) y sin texto
   caja?: [number, number, number]; sinTexto?: boolean; textoY?: number; textoTam?: number; cajaAlto?: number; // con cajaAlto la imagen va en una tarjeta blanca de ese alto
   cajaFoto?: boolean; // con cajaAlto: la imagen llena la caja (recortada), sin tarjeta blanca
+  imgAspecto?: number; // alto / ancho de la imagen (scripts/marryto/medidas.py): para saber dónde acaba
+  rapido?: boolean; // cámara rápida (solo ~20 % de los videos, cuando toque: reunión del 7-nov)
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
 
-// Reunión con Marryto (6-nov): videos de 6–7 s (máx. 10 en casos puntuales), muy rápidos; si la
-// reacción es más larga, cámara rápida hasta 1,5x; si aun así sobra, se corta el final.
+// Reuniones con Marryto: videos de 6–7 s (máx. 10 en casos puntuales) que empiezan ya actuando.
+// Cámara rápida (hasta 1,5x) SOLO en los marcados con "rapido" (~20 % de los videos, 7-nov); los
+// demás a velocidad normal y se corta el final.
 export const OBJETIVO = 6.5;
+export const OBJETIVO_NORMAL = 7;
 export const MAX_VEL = 1.5;
 export const tiempo = (v: Video) => {
   const bruto = v.fin - v.inicio;
-  const vel = Math.min(MAX_VEL, Math.max(1, bruto / OBJETIVO));
-  const usado = Math.min(bruto, OBJETIVO * vel);
+  const vel = v.rapido ? Math.min(MAX_VEL, Math.max(1, bruto / OBJETIVO)) : 1;
+  const usado = Math.min(bruto, (v.rapido ? OBJETIVO : OBJETIVO_NORMAL) * vel);
   return { vel, usado, dur: usado / vel };
+};
+
+/** Dónde acaba lo de arriba (imagen y texto), en píxeles de 1080 × 1920. */
+export const finEncima = (v: Video) => {
+  const ancho = v.caja?.[2] ?? 900;
+  const arriba = v.caja?.[1] ?? 40;
+  const img = v.imagen ? arriba + (v.cajaAlto ?? (v.imgAspecto ? ancho * v.imgAspecto : 0)) : 0;
+  const lineas = v.sinTexto ? 0 : (v.titulo.match(/\n/g)?.length ?? 0) + 1;
+  const texto = v.sinTexto ? 0 : (v.textoY ?? 560) + lineas * (v.textoTam ?? 64) * 1.12 + 8;
+  return Math.max(img, texto);
 };
 export type PropsReaccion = { n: string };
 
@@ -69,12 +83,16 @@ const Titulo: React.FC<{ texto: string; rojo: string }> = ({ texto, rojo }) => {
 const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const { fps } = useVideoConfig();
   const { vel } = tiempo(v);
-  // su cara un poco por debajo del texto, como las caras en la referencia
-  const s = Math.min(1.25, Math.max(1, 360 / v.caraAncho));
+  // su cara un poco por debajo del texto, como las caras en la referencia; y SIEMPRE con los ojos
+  // libres (reunión 7-nov: el texto o la imagen pueden tapar el pelo, nunca los ojos). Los ojos
+  // quedan ~0,12 del ancho de la cara por encima de su centro (detector de caras de analizar.py).
+  let s = Math.min(1.25, Math.max(1, 360 / v.caraAncho));
+  const centro = Math.max(1080, finEncima(v) + 50 + 0.12 * v.caraAncho * s);
+  s = Math.max(s, centro / v.caraY); // si hay que bajarle, se amplía para que no quede hueco arriba
   const vw = 1080 * s;
   const vh = 1920 * s;
   const x = Math.min(0, Math.max(1080 - vw, 540 - v.caraX * s));
-  const y = Math.min(0, Math.max(1920 - vh, 1080 - v.caraY * s));
+  const y = Math.min(0, Math.max(1920 - vh, centro - v.caraY * s));
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />

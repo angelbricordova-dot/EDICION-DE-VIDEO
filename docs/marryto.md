@@ -54,6 +54,20 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - La imagen de arriba debe ser **distinta a la del Short original y de mayor calidad**: la manda
   Angel (generadas con Gemini) → `public/marryto/material/`.
 
+## Reunión con Fernando (7-nov) — aplicar desde el video 20 (los 1–19 los dio por buenos)
+1. **Empezar YA actuando** ("tenlo a fuego en la cabeza"): nada de cuadros en los que todavía se
+   prepara o no ha levantado las manos (le pasó al video 2). Revisar cuadro a cuadro el arranque.
+2. **Nunca taparle los ojos** con el texto o la imagen (le pasó al 15: "Dale 2 veces…" sobre los ojos).
+   El pelo sí se puede tapar. La plantilla ya lo calcula: `finEncima()` + baja/amplía el video
+   (`imgAspecto` con `scripts/marryto/medidas.py <n…>` al añadir la imagen).
+3. **Cámara rápida solo de vez en cuando** (~20 % de los videos, cuando toque): `"rapido": true` en
+   `videos.json`. Los demás a velocidad normal y 6–7 s (se corta el final).
+4. **Imágenes con IA de él** (diferencias): que no sean iguales entre videos: **otra pose, otra
+   camiseta (p. ej. rosa), otro estadio/lugar, otro todo**. Avisar a Angel al pedirlas.
+5. Cambiar siempre la imagen del Short (en el 10 quedó la captura original; lo aceptó esta vez).
+6. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+   carpeta son los únicos pendientes**.
+
 ## Imágenes y textos por video (lote del 6-nov)
 | Video | Imagen | Texto |
 |---|---|---|
