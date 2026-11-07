@@ -51,7 +51,7 @@ export const rnd = (i: number) => {
 
 /** Garaje de la casa de la mamá, donde vive Toño (1080 × 1920): portón de metal, bombillo
  * colgando, sofá viejo de cama, lavadora, estantes con cajas, llanta, aceite y el póster de GTA VI. */
-export const Cuarto: React.FC<{ t: number }> = ({ t }) => {
+export const Cuarto: React.FC<{ t: number; limpio?: boolean }> = ({ t, limpio = false }) => {
   const balanceo = Math.sin(t * 1.6) * 3;
   return (
     <AbsoluteFill>
@@ -109,6 +109,8 @@ export const Cuarto: React.FC<{ t: number }> = ({ t }) => {
         {/* suelo de cemento con grietas, mancha de aceite, llanta y basura */}
         <rect y={1270} width={1080} height={650} fill="#8C8781" />
         <rect y={1262} width={1080} height={20} fill="#6E6A65" />
+        {limpio ? null : (
+          <>
         <path d="M 120 1420 L 210 1470 L 260 1460 M 760 1520 L 840 1560 L 900 1550 L 950 1600" fill="none" stroke="#6F6B66" strokeWidth={5} strokeLinecap="round" />
         <ellipse cx={720} cy={1820} rx={190} ry={44} fill="#3C3A39" opacity={0.55} />
         <g transform="translate(110 1640)">
@@ -125,6 +127,8 @@ export const Cuarto: React.FC<{ t: number }> = ({ t }) => {
           </g>
         ))}
         <path d="M 860 1660 q 40 -30 80 0 q -20 30 -80 0 Z" fill="#2B2B30" {...L} strokeWidth={4} />
+          </>
+        )}
         {/* sofá viejo que hace de cama, con cobija y almohada */}
         <rect x={10} y={1110} width={500} height={150} rx={30} fill="#7B5B46" {...L} />
         <rect x={10} y={1220} width={500} height={110} rx={20} fill="#6A4C3A" {...L} />
@@ -338,7 +342,7 @@ export const BilleteraVacia: React.FC<{ t: number; t0: number }> = ({ t, t0 }) =
 };
 
 /** Brazo de la mamá que entra por la derecha con una moneda, y su grito. */
-export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string; objeto?: "moneda" | "guantes" | "vaporub" }> = ({ t, t0, t1, texto = "¡TOMA, MIJO!", objeto = "moneda" }) => {
+export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string; objeto?: "moneda" | "guantes" | "vaporub" | "chancla" }> = ({ t, t0, t1, texto = "¡TOMA, MIJO!", objeto = "moneda" }) => {
   if (t < t0 || t > t1 + 0.4) return null;
   const k = easeOut(prog(t, t0, t0 + 0.35)) * (1 - easeOut(prog(t, t1, t1 + 0.35)));
   const g = sp(t, t0 + 0.2, POP) * (1 - prog(t, t1, t1 + 0.2));
@@ -356,6 +360,12 @@ export const Mama: React.FC<{ t: number; t0: number; t1: number; texto?: string;
               <circle cx={660} cy={1030} r={34} fill="#F2C744" {...L} />
               <text x={660} y={1043} textAnchor="middle" fontFamily={FUENTE} fontSize={38} fill="#9C7A16">$</text>
             </>
+          ) : objeto === "chancla" ? (
+            <g transform="rotate(-25 650 1030)">
+              {/* chancla de goma levantada */}
+              <path d="M 560 990 Q 560 960 600 958 L 720 962 Q 760 966 760 1000 Q 760 1034 720 1038 L 600 1042 Q 560 1040 560 1010 Z" fill="#3B8BEB" {...L} />
+              <path d="M 620 960 Q 650 1000 690 962" fill="none" stroke="#F2F2F2" strokeWidth={14} strokeLinecap="round" />
+            </g>
           ) : objeto === "vaporub" ? (
             <g>
               {/* frasco azul de pomada mentolada */}

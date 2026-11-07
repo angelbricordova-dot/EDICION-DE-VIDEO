@@ -1,0 +1,120 @@
+{
+  "audio": "public/glowup/dia3/voz.mp3",
+  "duracion": 49.36,
+  "lineas": [
+    {
+      "texto": "Toño: veinticinco años, treinta dólares… y doce días para juntar mil antes de GTA seis.",
+      "t": 0.0,
+      "fin": 5.44,
+      "t2": 0.0,
+      "fin2": 5.44
+    },
+    {
+      "texto": "¡Ustedes votaron… y Toño limpia el garaje!",
+      "t": 5.48,
+      "fin": 8.04,
+      "t2": 5.73,
+      "fin2": 8.29
+    },
+    {
+      "texto": "Día tres.",
+      "t": 8.14,
+      "fin": 8.88,
+      "t2": 8.54,
+      "fin2": 9.28
+    },
+    {
+      "texto": "Tres horas de polvo, arañas… y cajas que no abría desde niño.",
+      "t": 8.92,
+      "fin": 12.48,
+      "t2": 9.32,
+      "fin2": 12.88
+    },
+    {
+      "texto": "En una chaqueta vieja… ¡encuentra diez dólares! Ya tiene cuarenta.",
+      "t": 12.507,
+      "fin": 16.0,
+      "t2": 13.107,
+      "fin2": 16.6
+    },
+    {
+      "texto": "Saca fotos y lo publica todo en internet.",
+      "t": 16.04,
+      "fin": 18.24,
+      "t2": 16.89,
+      "fin2": 19.09
+    },
+    {
+      "texto": "La bici vieja se vende en una hora: treinta y cinco dólares.",
+      "t": 18.267,
+      "fin": 21.04,
+      "t2": 19.367,
+      "fin2": 22.14
+    },
+    {
+      "texto": "Y su consola vieja… se la vende a su primo Brayan por diez.",
+      "t": 21.08,
+      "fin": 24.0,
+      "t2": 22.48,
+      "fin2": 25.4
+    },
+    {
+      "texto": "Al día siguiente, Brayan la publica… en sesenta.",
+      "t": 24.027,
+      "fin": 26.56,
+      "t2": 25.727,
+      "fin2": 28.26
+    },
+    {
+      "texto": "Toño se emociona… y publica la lavadora.",
+      "t": 26.587,
+      "fin": 29.04,
+      "t2": 28.587,
+      "fin2": 31.04
+    },
+    {
+      "texto": "Error. Era de su mamá.",
+      "t": 29.093,
+      "fin": 30.28,
+      "t2": 31.243,
+      "fin2": 32.43
+    },
+    {
+      "texto": "Al final del día: ochenta y cinco dólares. Su mejor día hasta ahora.",
+      "t": 30.32,
+      "fin": 33.84,
+      "t2": 32.87,
+      "fin2": 36.39
+    },
+    {
+      "texto": "Lección del día: lo que no usas vale dinero… pero averigua el precio antes de vender.",
+      "t": 33.893,
+      "fin": 38.0,
+      "t2": 36.793,
+      "fin2": 40.9
+    },
+    {
+      "texto": "Brayan ganó cincuenta sin trabajar… y Toño quiere aprender a hacer lo mismo.",
+      "t": 38.027,
+      "fin": 41.52,
+      "t2": 41.227,
+      "fin2": 44.72
+    },
+    {
+      "texto": "Comenta: gastar todo su dinero en el curso de un gurú que promete hacerlo millonario antes de GTA seis… o aprender gratis en YouTube.",
+      "t": 41.56,
+      "fin": 48.08,
+      "t2": 44.96,
+      "fin2": 51.48
+    },
+    {
+      "texto": "Sígueme para el día cuatro.",
+      "t": 48.12,
+      "fin": 49.36,
+      "t2": 51.87,
+      "fin2": 53.11
+    }
+  ],
+  "audio_pausas": "public/glowup/dia3/voz-pausas.wav",
+  "duracion2": 53.11
+}

@@ -118,6 +118,47 @@ EPISODIOS = {
             ("sigueme", 0.1, "clic-2.mp3", -8),
         ],
     },
+    3: {
+        "claves": ["toño", "votaron", "garaje", "tres", "3", "polvo", "arañas", "chaqueta", "internet", "bici", "consola", "brayan", "lavadora", "error", "mamá", "lección", "precio", "gurú", "millonario", "youtube", "gratis", "sígueme", "cuatro", "4", "12", "días", "gta", "vi"],
+        "dinero": ["30", "treinta", "dólares", "10", "40", "35", "60", "85", "50", "mil", "dinero"],
+        "cola": 1.2,
+        "musica": ("fun-and-games.mp3", 0.0),
+        "reemplazos": {"brian": "Brayan"},
+        "efectos": [
+            ("resumen", 0.0, "barrido-5.mp3", -14),
+            ("@30", -0.03, "golpe-1.mp3", -11),
+            ("@12", -0.03, "golpe-1.mp3", -10),
+            ("@mil", -0.03, "golpe-3.mp3", -9),
+            ("@mil", 0.05, "../chaching.mp3", -12),
+            ("votaron", -0.05, "golpe-2.mp3", -8),
+            ("dia", -0.05, "barrido-1.mp3", -12),
+            ("polvo", 0.0, "aire-1.mp3", -12),
+            ("@arañas", -0.05, "boing.mp3", -12),
+            ("@cajas", -0.05, "barrido-3.mp3", -13),
+            ("@encuentra", -0.05, "acierto.mp3", -12),
+            ("@40", -0.3, "../chaching.mp3", -9),
+            ("@fotos", -0.05, "clic-3.mp3", -8),
+            ("@publica", 0.0, "pop-1.mp3", -11),
+            ("@publica", 0.35, "pop-2.mp3", -11),
+            ("@publica", 0.7, "pop-3.mp3", -11),
+            ("@bici", -0.05, "barrido-2.mp3", -14),
+            ("@35", -0.05, "../chaching.mp3", -8),
+            ("consola", 0.3, "notificacion.mp3", -9),
+            ("@10#2", -0.05, "pop-4.mp3", -10),
+            ("@60", -0.05, "golpe-3.mp3", -8),
+            ("@60", 0.35, "trombon-triste.mp3", -13),
+            ("@lavadora", -0.05, "pop-duro.mp3", -11),
+            ("@error", -0.03, "fracaso-grave.mp3", -10),
+            ("@mamá", 0.1, "golpe-1.mp3", -8),
+            ("@85", -0.05, "../chaching.mp3", -8),
+            ("@85", 0.25, "acierto.mp3", -13),
+            ("leccion", 0.0, "pop-1.mp3", -12),
+            ("@50", -0.05, "../monedas.mp3", -12),
+            ("@gastar", -0.05, "pop-3.mp3", -10),
+            ("@aprender", -0.05, "pop-4.mp3", -10),
+            ("sigueme", 0.1, "clic-2.mp3", -8),
+        ],
+    },
 }
 
 
@@ -125,6 +166,23 @@ def leer(ruta, mono=True):
     crudo = subprocess.run(["ffmpeg", "-v", "error", "-i", str(ruta), "-f", "f32le", "-ac", "1" if mono else "2", "-ar", str(SR), "-"],
                            capture_output=True, check=True).stdout
     return np.frombuffer(crudo, dtype=np.float32).astype(float)
+
+
+DECENAS = {"veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"}
+UNIDADES = {"uno", "un", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"}
+
+
+def unir_numeros(ps):
+    """'treinta y cinco' → una sola palabra (como la escribe whisper: '35')."""
+    out, i = [], 0
+    while i < len(ps):
+        if i + 2 < len(ps) and limpio(ps[i]) in DECENAS and limpio(ps[i + 1]) == "y" and limpio(ps[i + 2]) in UNIDADES:
+            out.append(" ".join(ps[i:i + 3]))
+            i += 3
+        else:
+            out.append(ps[i])
+            i += 1
+    return out
 
 
 def limpio(p):
@@ -140,12 +198,18 @@ def main():
     crudas = json.loads((RAIZ / f"public/glowup/dia{n}/palabras.json").read_text())["palabras"]
 
     frases = [{"id": i, "texto": l["texto"], "t": l["t2"], "fin": l["fin2"]} for i, l in zip(ids, lineas)]
+    # A qué frase pertenece cada palabra: contando palabras del guion (los números de varias
+    # palabras, "treinta y cinco", whisper los escribe en una: "35"). Si no cuadra, por tiempo.
+    por_frase = [len(unir_numeros(l["texto"].split())) for l in lineas]
+    duenos = [i for i, k in enumerate(por_frase) for _ in range(k)] if sum(por_frase) == len(crudas) else None
     palabras, anterior = [], ""
-    for w in crudas:
-        # la frase a la que pertenece (por tiempo en la voz sin pausas) da el desplazamiento
-        # (la última que ya empezó, con 0,2 s de margen: whisper marca algo antes que ElevenLabs)
-        l = max((l for l in lineas if l["t"] - 0.2 <= w["ini"]), key=lambda l: l["t"], default=lineas[0])
+    for j, w in enumerate(crudas):
+        if duenos:
+            l = lineas[duenos[j]]
+        else:  # la última frase que ya empezó, con 0,2 s de margen (whisper marca algo antes)
+            l = max((l for l in lineas if l["t"] - 0.2 <= w["ini"]), key=lambda l: l["t"], default=lineas[0])
         d = l["t2"] - l["t"]
+        w = {**w, "ini": max(w["ini"], l["t"]), "fin": max(w["fin"], l["t"] + 0.05)}  # nunca antes de su frase
         p = w["p"].replace("¿", "").replace("¡", "").replace("?", "").replace("!", "")
         rep = cfg.get("reemplazos", {}).get(limpio(p))
         if rep:  # whisper escribe distinto un nombre propio

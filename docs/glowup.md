@@ -168,3 +168,17 @@ se repita el mismo fondo. Escenas nuevas en `src/glowup/escenas2.tsx`:
   ticket largo a un lado mientras él lo mira. **Sin la mamá** en esa parte (no tenía sentido).
 Regla para los próximos días: un fondo distinto por cada momento de la historia, y que el lugar
 cuadre con lo que dice la voz.
+
+## Día 3 (hecho): "Toño limpia el garaje y vende" (12 días, $30 → $40 → $75 → $85)
+- Ganó ORDENAR EL GARAJE. Polvo y araña, $10 en una chaqueta vieja, publica todo en "MERCADITO"
+  (app propia), un comprador se lleva la bici ($35), le vende la consola a Brayan por $10 y Brayan
+  la revende en $60, publica la lavadora… era de su mamá (chancla). Mejor día: $85.
+  Lección: lo que no usas vale dinero, pero averigua el precio antes de vender.
+- Votación (idea de Angel): CURSO DEL GURÚ (gastar todo, "millonario antes de GTA VI") vs
+  YOUTUBE GRATIS. Si gana el gurú → Día 4 con estafa y lección sobre "gurús".
+- Voz 376 créditos. Escenas en `src/glowup/escenas3.tsx` (Trastos, Polvo, Arana, Brillos, Chaqueta,
+  Telefono, Porche con el comprador en bici, ChatBrayan, AnuncioBrayan, Lavanderia, ChanclaVuela,
+  BrayanPresume, TonoAsoma, íconos). `Cuarto limpio` quita la basura del garaje.
+- `montar_dia.py` ahora asigna cada palabra a su frase **contando palabras** ("treinta y cinco" = "35"
+  para whisper); antes, por tiempo, una palabra temprana de whisper caía en la frase anterior.
+- Captura de la encuesta: prop `encuesta` de `GlowupDia3` (falta la de Angel; mientras, sello "¡GANÓ EL GARAJE!").
