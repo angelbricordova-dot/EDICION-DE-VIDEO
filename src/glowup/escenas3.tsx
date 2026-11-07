@@ -294,7 +294,7 @@ export const Porche: React.FC<{ t: number; t0: number; tPaga: number; children?:
 
 /* ───────────── chat con Brayan ───────────── */
 
-export type Mensaje = { de: "brayan" | "tono"; texto: string; t0: number };
+export type Mensaje = { de: "brayan" | "tono"; texto: string; t0: number; foto?: string };
 /** Chat con el primo Brayan; los mensajes entran uno a uno. */
 export const ChatBrayan: React.FC<{ t: number; mensajes: Mensaje[]; sello?: { texto: string; t0: number } }> = ({ t, mensajes, sello }) => {
   const g = sello ? clamp01((t - sello.t0) / 0.14) : 0;
@@ -314,6 +314,7 @@ export const ChatBrayan: React.FC<{ t: number; mensajes: Mensaje[]; sello?: { te
             const yo = m.de === "tono";
             return t < m.t0 - 0.05 ? null : (
               <div key={i} style={{ alignSelf: yo ? "flex-end" : "flex-start", maxWidth: 480, background: yo ? "#D9FDD3" : "#fff", borderRadius: 24, padding: "16px 22px", fontSize: 40, fontWeight: 700, color: "#222", boxShadow: "0 2px 4px rgba(0,0,0,0.12)", scale: String(lerp(0.4, 1, k)), opacity: clamp01(k * 2), transformOrigin: yo ? "100% 50%" : "0% 50%" }}>
+                {m.foto ? <Img src={staticFile(m.foto)} style={{ width: 400, height: 440, objectFit: "cover", borderRadius: 16, display: "block", marginBottom: m.texto ? 10 : 0 }} /> : null}
                 {m.texto}
               </div>
             );
@@ -330,7 +331,7 @@ export const ChatBrayan: React.FC<{ t: number; mensajes: Mensaje[]; sello?: { te
 /* ───────────── anuncio de Brayan ───────────── */
 
 /** El anuncio de Brayan revendiendo la consola en $60, con el precio que golpea. */
-export const AnuncioBrayan: React.FC<{ t: number; t0: number; tPrecio: number }> = ({ t, t0, tPrecio }) => {
+export const AnuncioBrayan: React.FC<{ t: number; t0: number; tPrecio: number; foto?: string }> = ({ t, t0, tPrecio, foto }) => {
   const k = sp(t, t0, POP);
   const p = sp(t, tPrecio, POP);
   return (
@@ -347,7 +348,7 @@ export const AnuncioBrayan: React.FC<{ t: number; t0: number; tPrecio: number }>
           Brayan vende
         </div>
         <div style={{ height: 400, background: "#E7ECEF", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-          <Dibujo que="consola" tam={360} />
+          {foto ? <Img src={staticFile(foto)} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : <Dibujo que="consola" tam={360} />}
           <div style={{ position: "absolute", right: 24, top: 24, background: "#E5484D", color: "#fff", fontWeight: 900, fontSize: 30, padding: "8px 18px", borderRadius: 14, border: `4px solid ${COL.linea}` }}>RETRO ✨</div>
         </div>
         <div style={{ padding: "18px 30px 26px" }}>

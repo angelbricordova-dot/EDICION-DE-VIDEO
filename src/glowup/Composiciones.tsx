@@ -4,6 +4,7 @@ import { Dia1, DIA1, PropsDia1 } from "./Dia1";
 import { Dia2, DIA2, PropsDia2 } from "./Dia2";
 import { Dia3, DIA3, PropsDia3 } from "./Dia3";
 import { Ficha } from "./Ficha";
+import { Hoja } from "./Hoja";
 
 // Canal glow-up de Angel: Toño y GTA VI (docs/glowup.md).
 export const ComposicionesGlowup: React.FC = () => (
@@ -42,8 +43,9 @@ export const ComposicionesGlowup: React.FC = () => (
       fps={30}
       width={1080}
       height={1920}
-      defaultProps={{ audio: "glowup/dia3/mezcla.wav", encuesta: null } satisfies PropsDia3}
+      defaultProps={{ audio: "glowup/dia3/mezcla.wav", encuesta: "glowup/dia3/encuesta.png" } satisfies PropsDia3}
     />
+    <Still id="GlowupHoja" component={Hoja} width={3200} height={1300} />
     <Still id="GlowupFicha" component={Ficha} width={1800} height={1200} />
   </Folder>
 );

@@ -182,3 +182,20 @@ cuadre con lo que dice la voz.
 - `montar_dia.py` ahora asigna cada palabra a su frase **contando palabras** ("treinta y cinco" = "35"
   para whisper); antes, por tiempo, una palabra temprana de whisper caía en la frase anterior.
 - Captura de la encuesta: prop `encuesta` de `GlowupDia3` (falta la de Angel; mientras, sello "¡GANÓ EL GARAJE!").
+
+## Corrección Día 3 (v2) — reglas nuevas de Angel para TODOS los episodios
+- **Dinamismo y retención**: muchos cambios de plano (general, medio, primer plano de la cara, detalle
+  de manos/objetos) y de escenario **dentro del mismo entorno** (otro lado del garaje, el portón por
+  fuera, la lavandería). Nunca más de ~2 s en el mismo plano. `Camara` (en `escenas3b.tsx`) hace los
+  cortes: lista de planos `{t, s, x, y}` + empuje + temblor; flash blanco suave en cada corte.
+- **Acciones de verdad, con poses**: si la voz dice "busca", se le ve buscando (caja de la que salen
+  cosas); si dice "encuentra en la chaqueta", la muestra a cámara y se ve la mano sacando el billete.
+  Poses nuevas de Toño: `sostiene`, `celebra`, `ofrece`, `telefono` (brazos articulados `Brazo`).
+- **Nada superpuesto** a Toño por error (las cajas del fondo van detrás de él).
+- **Personajes secundarios con el mismo detalle que Toño** (`Nino.tsx`: el niño de la bici).
+  El lugar tiene que cuadrar: la bici se entrega en el portón grande del garaje.
+- **Fotos reales que manda Angel** cuando las pide (la consola: `public/glowup/dia3/consola.jpg`).
+- **El objeto importante en grande** (el anuncio de la lavadora llena el teléfono: `AnuncioGrande`).
+- **Mamá**: no se le ve ni el brazo; solo la chancla volando con fuerza (`ChanclaFuerte`).
+- Siempre poner la **captura de la encuesta** (`CapturaEncuesta` con `marca` = la fila ganadora).
+- Hoja de personajes para revisar poses: Still `GlowupHoja` (`src/glowup/Hoja.tsx`).

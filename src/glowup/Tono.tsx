@@ -7,7 +7,7 @@ import React, { useId } from "react";
 // barba recortada a la cara, manos con dedos).
 
 export type Expresion = "aburrido" | "shock" | "llora" | "feliz";
-export type Pose = "normal" | "bolsillos";
+export type Pose = "normal" | "bolsillos" | "sostiene" | "celebra" | "ofrece" | "telefono";
 export type Ropa = "sudadera" | "lavaplatos";
 export type PropsTono = {
   expresion?: Expresion;
@@ -209,13 +209,38 @@ export const Cabeza: React.FC<PropsTono & { uid: string; gorro?: boolean }> = ({
 };
 
 /** Mano con dedos (cx, cy = centro de la palma). */
-const Mano: React.FC<{ x: number; y: number; giro?: number; espejo?: boolean }> = ({ x, y, giro = 0, espejo }) => (
+export const Mano: React.FC<{ x: number; y: number; giro?: number; espejo?: boolean }> = ({ x, y, giro = 0, espejo }) => (
   <g transform={`translate(${x} ${y}) rotate(${giro}) scale(${espejo ? -1 : 1} 1)`}>
     <path d="M -22 -24 Q -28 10 -20 30 Q -16 44 -6 46 L 0 46 Q 4 50 10 46 Q 16 48 20 40 Q 26 38 26 28 L 24 -24 Z" fill={C.piel} {...L} strokeWidth={5} />
     <path d="M -4 20 L -4 40 M 8 20 L 9 40 M 18 16 L 20 32" stroke={C.pielSombra} strokeWidth={3} strokeLinecap="round" />
     <path d="M -22 -6 Q -36 0 -32 16 Q -28 22 -20 16" fill={C.piel} {...L} strokeWidth={5} />
   </g>
 );
+
+/** Brazo con manga de la sudadera articulado: hombro → codo → mano (puño elástico y mano con dedos). */
+const Brazo: React.FC<{ h: [number, number]; c: [number, number]; m: [number, number]; giro?: number; espejo?: boolean }> = ({ h, c, m, giro = 0, espejo }) => {
+  const d = `M ${h[0]} ${h[1]} L ${c[0]} ${c[1]} L ${m[0]} ${m[1]}`;
+  const ang = (Math.atan2(m[1] - c[1], m[0] - c[0]) * 180) / Math.PI;
+  return (
+    <g>
+      <path d={d} fill="none" stroke={C.linea} strokeWidth={76} strokeLinecap="round" strokeLinejoin="round" />
+      <path d={d} fill="none" stroke={C.rojo} strokeWidth={64} strokeLinecap="round" strokeLinejoin="round" />
+      <path d={`M ${h[0]} ${h[1] + 16} L ${c[0] + 8} ${c[1]}`} fill="none" stroke={C.rojoLuz} strokeWidth={10} strokeLinecap="round" opacity={0.5} />
+      <g transform={`translate(${m[0]} ${m[1]}) rotate(${ang - 90})`}>
+        <rect x={-34} y={-30} width={68} height={30} rx={12} fill={C.rojoSombra} {...L} />
+      </g>
+      <Mano x={m[0] + Math.cos((ang * Math.PI) / 180) * 30} y={m[1] + Math.sin((ang * Math.PI) / 180) * 30} giro={ang - 90 + giro} espejo={espejo} />
+    </g>
+  );
+};
+
+/** Posición de los brazos por pose: [hombro, codo, mano] izquierdo y derecho (caja 600 × 1300). */
+const BRAZOS: Partial<Record<Pose, [[number, number], [number, number], [number, number]][]>> = {
+  sostiene: [[[182, 480], [128, 650], [214, 560]], [[418, 480], [472, 650], [386, 560]]],
+  celebra: [[[182, 480], [92, 380], [110, 220]], [[418, 480], [508, 380], [490, 220]]],
+  ofrece: [[[182, 480], [140, 620], [150, 760]], [[418, 480], [520, 640], [630, 740]]],
+  telefono: [[[182, 480], [140, 660], [248, 620]], [[418, 480], [460, 660], [352, 620]]],
+};
 
 /** Uniforme de lavaplatos: camisa blanca de manga corta, delantal azul con su nombre y guantes
  * amarillos de goma (sin sudadera ni audífonos). Las piernas y pantuflas son las mismas. */
@@ -321,7 +346,13 @@ const Cuerpo: React.FC<{ pose: Pose; t: number; ropa: Ropa }> = ({ pose, t, ropa
         </g>
       ))}
 
-      {bolsillos ? (
+      {BRAZOS[pose] ? (
+        <g>
+          {BRAZOS[pose]!.map(([h, c, m], i) => (
+            <Brazo key={i} h={h} c={c} m={m} espejo={i === 1} />
+          ))}
+        </g>
+      ) : bolsillos ? (
         <g>
           {/* brazos abiertos hacia afuera, sacando los bolsillos del pantalón */}
           <path d="M 180 466 Q 132 482 118 560 L 104 700 Q 100 740 128 748 L 158 752 L 182 600 Z" fill={C.rojo} {...L} />
@@ -388,7 +419,7 @@ export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "nor
       <Cabeza uid={uid} {...p} />
     </svg>
   ) : (
-    <svg width={ancho} height={ancho * (1300 / 600)} viewBox="0 0 600 1300">
+    <svg width={ancho} height={ancho * (1300 / 600)} viewBox="0 0 600 1300" style={{ overflow: "visible" }}>
       <Cuerpo pose={pose} t={p.t ?? 0} ropa={ropa} />
       <Cabeza uid={uid} gorro={ropa === "lavaplatos"} {...p} />
     </svg>

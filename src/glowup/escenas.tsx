@@ -324,7 +324,7 @@ export const IconoReventa: React.FC = () => (
 );
 
 /** Captura real de la encuesta del episodio anterior, con la opción ganadora resaltada. */
-export const CapturaEncuesta: React.FC<{ t: number; t0: number; t1: number; src: string }> = ({ t, t0, t1, src }) => {
+export const CapturaEncuesta: React.FC<{ t: number; t0: number; t1: number; src: string; marca?: { left: string; right: string; top: string; height: string } }> = ({ t, t0, t1, src, marca = { left: "9%", right: "5%", top: "72%", height: "22%" } }) => {
   if (t < t0 || t > t1 + 0.3) return null;
   const k = sp(t, t0, POP) * (1 - prog(t, t1, t1 + 0.3));
   const brillo = 0.5 + 0.5 * Math.sin((t - t0) * 8);
@@ -333,7 +333,7 @@ export const CapturaEncuesta: React.FC<{ t: number; t0: number; t1: number; src:
       <div style={{ fontFamily: GTA, fontSize: 70, color: "#fff", textAlign: "center", WebkitTextStroke: "8px #000", paintOrder: "stroke fill", marginBottom: 10 }}>USTEDES VOTARON:</div>
       <div style={{ position: "relative", borderRadius: 28, overflow: "hidden", border: `7px solid ${COL.linea}`, boxShadow: "0 18px 36px rgba(0,0,0,0.45)" }}>
         <Img src={staticFile(src)} style={{ width: "100%", display: "block" }} />
-        <div style={{ position: "absolute", left: "9%", right: "5%", top: "72%", height: "22%", borderRadius: 20, border: `8px solid ${COL.verde}`, boxShadow: `0 0 ${30 * brillo}px ${COL.verde}` }} />
+        <div style={{ position: "absolute", ...marca, borderRadius: 20, border: `8px solid ${COL.verde}`, boxShadow: `0 0 ${30 * brillo}px ${COL.verde}` }} />
       </div>
     </div>
   );
