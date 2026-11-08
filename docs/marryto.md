@@ -96,6 +96,9 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 
 - 7-nov-2026: videos 15–19.
 
+- 8-nov-2026: videos 27 (japones-amarillo.jpg), 28 (cuarto-objeto-sala.jpg, "Toca 2 veces para encontrar
+  el 4° objeto"), 29–30 (pastillas "Dale like a este video sin utilizar:"), 31–32 (iq-test.jpg; el 32 con
+  cámara rápida), 33 (sopa-manzana.jpg). Instrucciones del 27 y 33: "igual pero con otro color".
 - 8-nov-2026: videos 20 (moais.jpg, "Cuántos 🗿 ves? Yo 11"), 21–22 (princess-hd.jpg, texto amarillo
   "*Yo luego de darme cuenta:💀*", `textoColor`), 23–24 (barcos-hd.jpg, "Toca 2 veces y cierra los ojos al 80%").
 - 7-nov-2026: videos 25 y 26 ("tu próximo viaje": etiqueta + lista, sin imagen; el 25 con cámara rápida).
@@ -105,6 +108,8 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   (subcarpeta del día, p. ej. "11 NOVIEMBRE" → `Video N/`). Las instrucciones ahora son **documentos
   de Google**: gdown.download_folder falla con ellos → listar con `_download_and_parse_google_drive_link`
   y exportarlos con `https://docs.google.com/document/d/<id>/export?format=txt`.
+- Formato "pastillas" (p. ej. "Dale like a este video sin utilizar:"): `pastillas` [[izq], [der]],
+  `pastillasY`, `pastillasPaso`, `pastillasMargen` (≥ 140, zona segura). Sin imagen ni miniatura de fondo.
 - Formato "lista" (Shorts sin imagen): `etiqueta`, `etiquetaY`, `lista` [[col1], [col2]], `listaY`.
 
 ## Notas técnicas
@@ -114,4 +119,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- Videos 27–40 (carpeta "11 NOVIEMBRE" del Drive).
+- Videos 34–40 (carpeta "11 NOVIEMBRE" del Drive).

@@ -696,5 +696,213 @@
   "listaY": 1290,
   "listaMargen": 150,
   "listaTam": 56
+ },
+ "27": {
+  "inicio": 3.2,
+  "fin": 9.75,
+  "caraX": 497,
+  "caraY": 914,
+  "caraAncho": 286,
+  "estilo": "superpuesto",
+  "short": "DWFHTOh5szU",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/japones-amarillo.jpg",
+  "caja": [
+   80,
+   60,
+   920
+  ],
+  "sinTexto": true,
+  "titulo": "",
+  "imgAspecto": 0.6661
+ },
+ "28": {
+  "inicio": 4.45,
+  "fin": 13.0,
+  "caraX": 512,
+  "caraY": 926,
+  "caraAncho": 288,
+  "estilo": "superpuesto",
+  "short": "Zw41Hqagiz0",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/cuarto-objeto-sala.jpg",
+  "caja": [
+   160,
+   0,
+   760
+  ],
+  "sinTexto": false,
+  "titulo": "Toca 2 veces para\nencontrar el 4° objeto",
+  "textoY": 710,
+  "textoTam": 66,
+  "imgAspecto": 0.8767
+ },
+ "29": {
+  "inicio": 2.1,
+  "fin": 10.0,
+  "caraX": 550,
+  "caraY": 834,
+  "caraAncho": 244,
+  "estilo": "superpuesto",
+  "short": "lg627nVLeqg",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "Dale like a este video\nsin utilizar:",
+  "textoY": 300,
+  "textoTam": 64,
+  "pastillas": [
+   [
+    "Pies",
+    "Rodillas",
+    "Orejas",
+    "Dedos",
+    "Boca",
+    "Nariz"
+   ],
+   [
+    "Codo",
+    "Dientes",
+    "Lengua",
+    "Barbilla",
+    "Hombro",
+    "Mano"
+   ]
+  ],
+  "pastillasY": 520,
+  "pastillasPaso": 175
+ },
+ "30": {
+  "inicio": 3.7,
+  "fin": 11.5,
+  "caraX": 526,
+  "caraY": 856,
+  "caraAncho": 294,
+  "estilo": "superpuesto",
+  "short": "lg627nVLeqg",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "Dale like a este video\nsin utilizar:",
+  "textoY": 300,
+  "textoTam": 64,
+  "pastillas": [
+   [
+    "Pies",
+    "Rodillas",
+    "Orejas",
+    "Dedos",
+    "Boca",
+    "Nariz"
+   ],
+   [
+    "Codo",
+    "Dientes",
+    "Lengua",
+    "Barbilla",
+    "Hombro",
+    "Mano"
+   ]
+  ],
+  "pastillasY": 520,
+  "pastillasPaso": 175
+ },
+ "31": {
+  "inicio": 3.45,
+  "fin": 11.25,
+  "caraX": 502,
+  "caraY": 878,
+  "caraAncho": 276,
+  "estilo": "superpuesto",
+  "short": "dWsrISSATVQ",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/iq-test.jpg",
+  "caja": [
+   240,
+   50,
+   600
+  ],
+  "sinTexto": true,
+  "titulo": "",
+  "imgAspecto": 1.0254
+ },
+ "32": {
+  "inicio": 3.95,
+  "fin": 12.5,
+  "caraX": 547,
+  "caraY": 874,
+  "caraAncho": 320,
+  "estilo": "superpuesto",
+  "short": "dWsrISSATVQ",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/iq-test.jpg",
+  "caja": [
+   240,
+   50,
+   600
+  ],
+  "sinTexto": true,
+  "titulo": "",
+  "rapido": true,
+  "imgAspecto": 1.0254
+ },
+ "33": {
+  "inicio": 3.7,
+  "fin": 9.75,
+  "caraX": 512,
+  "caraY": 904,
+  "caraAncho": 352,
+  "estilo": "superpuesto",
+  "short": "azTc8A5smog",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "imagen": "marryto/material/sopa-manzana.jpg",
+  "caja": [
+   240,
+   40,
+   600
+  ],
+  "sinTexto": true,
+  "titulo": "",
+  "imgAspecto": 1.2023
  }
 }

@@ -23,6 +23,8 @@ export type Video = {
   // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
   etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number; listaMargen?: number; // distancia de la lista a los bordes (zona segura de las redes)
+  // pastillas amarillas a los dos lados (p. ej. "Dale like sin utilizar: Pies, Codo…"), en zigzag
+  pastillas?: [string[], string[]]; pastillasY?: number; pastillasPaso?: number; pastillasMargen?: number;
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
 
@@ -105,7 +107,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
           <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
         </div>
-      ) : v.etiqueta ? null : (
+      ) : v.etiqueta || v.pastillas ? null : (
         // sin imagen aparte: se recorta de la miniatura del Short
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: ((v.caja?.[2] ?? 900) * v.recorte[3]) / v.recorte[2], overflow: "hidden" }}>
           <Img
@@ -127,6 +129,31 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
               ))}
             </div>
           ))
+        : null}
+      {v.pastillas
+        ? v.pastillas.map((col, i) =>
+            col.map((x, k) => (
+              <div
+                key={`${i}-${k}`}
+                style={{
+                  position: "absolute",
+                  top: (v.pastillasY ?? 480) + k * (v.pastillasPaso ?? 170) + (i === 1 ? (v.pastillasPaso ?? 170) * 0.35 : 0),
+                  left: i === 0 ? (v.pastillasMargen ?? 140) + (k % 2) * 30 : undefined,
+                  right: i === 1 ? (v.pastillasMargen ?? 140) + ((k + 1) % 2) * 30 : undefined,
+                  background: "#FCE7A2",
+                  color: "#B9771A",
+                  fontFamily: FUENTE,
+                  fontWeight: 700,
+                  fontSize: 56,
+                  padding: "8px 26px",
+                  borderRadius: 16,
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.18)",
+                }}
+              >
+                {x}
+              </div>
+            )),
+          )
         : null}
       {v.sinTexto ? null : (
         <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{v.titulo}</div>
