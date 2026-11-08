@@ -22,7 +22,7 @@ export type Video = {
   // Shorts sin imagen (p. ej. "tu próximo viaje"): etiqueta blanca redondeada arriba y una lista en
   // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
-  etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number;
+  etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number; listaMargen?: number; // distancia de la lista a los bordes (zona segura de las redes)
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
 
@@ -121,7 +121,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
       ) : null}
       {v.lista
         ? v.lista.map((col, i) => (
-            <div key={i} style={{ position: "absolute", top: v.listaY ?? 1180, left: i === 0 ? 40 : undefined, right: i === 1 ? 40 : undefined, fontFamily: FUENTE, fontWeight: 700, fontSize: v.listaTam ?? 60, lineHeight: 1.22, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textAlign: "left" }}>
+            <div key={i} style={{ position: "absolute", top: v.listaY ?? 1180, left: i === 0 ? (v.listaMargen ?? 40) : undefined, right: i === 1 ? (v.listaMargen ?? 40) : undefined, fontFamily: FUENTE, fontWeight: 700, fontSize: v.listaTam ?? 60, lineHeight: 1.22, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textAlign: "left" }}>
               {col.map((x) => (
                 <div key={x}>{x}</div>
               ))}

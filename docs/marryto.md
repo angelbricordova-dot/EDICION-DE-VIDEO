@@ -65,7 +65,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 4. **Imágenes con IA de él** (diferencias): que no sean iguales entre videos: **otra pose, otra
    camiseta (p. ej. rosa), otro estadio/lugar, otro todo**. Avisar a Angel al pedirlas.
 5. Cambiar siempre la imagen del Short (en el 10 quedó la captura original; lo aceptó esta vez).
-6. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+6. **Zona segura de las redes** (corrección del 25–26, 8-nov): nada de texto pegado a los bordes
+   izquierdo/derecho (al subirlo se recorta un poco). Dejar ≥ 150 px a cada lado; puede tocar
+   cuello y cuerpo, nunca los ojos. Lista: `listaMargen: 150`, `listaY` a la altura del cuello.
+7. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)

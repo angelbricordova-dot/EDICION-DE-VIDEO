@@ -653,8 +653,10 @@
     "9. Egipto"
    ]
   ],
-  "listaY": 1150,
-  "rapido": true
+  "listaY": 1290,
+  "rapido": true,
+  "listaMargen": 150,
+  "listaTam": 56
  },
  "26": {
   "inicio": 4.6,
@@ -691,6 +693,8 @@
     "9. Egipto"
    ]
   ],
-  "listaY": 1150
+  "listaY": 1290,
+  "listaMargen": 150,
+  "listaTam": 56
  }
 }
