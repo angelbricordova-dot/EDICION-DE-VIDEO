@@ -21,6 +21,7 @@ export type Video = {
   rapido?: boolean; // cámara rápida (solo ~20 % de los videos, cuando toque: reunión del 7-nov)
   // Shorts sin imagen (p. ej. "tu próximo viaje"): etiqueta blanca redondeada arriba y una lista en
   // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
+  textoColor?: string; // color del texto (por defecto blanco con borde negro)
   etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number;
 };
 export const VIDEOS = videos as unknown as Record<string, Video>;
@@ -91,7 +92,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   // libres (reunión 7-nov: el texto o la imagen pueden tapar el pelo, nunca los ojos). Los ojos
   // quedan ~0,12 del ancho de la cara por encima de su centro (detector de caras de analizar.py).
   let s = Math.min(1.25, Math.max(1, 360 / v.caraAncho));
-  const centro = Math.max(1080, finEncima(v) + 50 + 0.12 * v.caraAncho * s);
+  const centro = Math.max(1080, finEncima(v) + 90 + 0.12 * v.caraAncho * s);
   s = Math.max(s, centro / v.caraY); // si hay que bajarle, se amplía para que no quede hueco arriba
   const vw = 1080 * s;
   const vh = 1920 * s;
@@ -128,7 +129,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           ))
         : null}
       {v.sinTexto ? null : (
-        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{v.titulo}</div>
+        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{v.titulo}</div>
       )}
     </AbsoluteFill>
   );

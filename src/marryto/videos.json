@@ -495,7 +495,18 @@
    1920
   ],
   "rojo": "",
-  "titulo": ""
+  "titulo": "Cuántos 🗿 ves? Yo 11",
+  "estilo": "superpuesto",
+  "sinTexto": false,
+  "imagen": "marryto/material/moais.jpg",
+  "caja": [
+   220,
+   70,
+   640
+  ],
+  "textoY": 690,
+  "textoTam": 68,
+  "imgAspecto": 0.9126
  },
  "21": {
   "inicio": 3.5,
@@ -511,7 +522,19 @@
    1920
   ],
   "rojo": "",
-  "titulo": ""
+  "titulo": "*Yo luego de darme\ncuenta:💀*",
+  "estilo": "superpuesto",
+  "sinTexto": false,
+  "imagen": "marryto/material/princess-hd.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "textoY": 905,
+  "textoTam": 70,
+  "textoColor": "#FFE600",
+  "imgAspecto": 0.8256
  },
  "22": {
   "inicio": 3.2,
@@ -527,7 +550,19 @@
    1920
   ],
   "rojo": "",
-  "titulo": ""
+  "titulo": "*Yo luego de darme\ncuenta:💀*",
+  "estilo": "superpuesto",
+  "sinTexto": false,
+  "imagen": "marryto/material/princess-hd.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "textoY": 905,
+  "textoTam": 70,
+  "textoColor": "#FFE600",
+  "imgAspecto": 0.8256
  },
  "23": {
   "inicio": 2.0,
@@ -543,7 +578,18 @@
    1920
   ],
   "rojo": "",
-  "titulo": ""
+  "titulo": "Toca 2 veces y\ncierra los ojos al 80%",
+  "estilo": "superpuesto",
+  "sinTexto": false,
+  "imagen": "marryto/material/barcos-hd.jpg",
+  "caja": [
+   160,
+   40,
+   760
+  ],
+  "textoY": 600,
+  "textoTam": 66,
+  "imgAspecto": 0.6857
  },
  "24": {
   "inicio": 3.2,
@@ -559,7 +605,18 @@
    1920
   ],
   "rojo": "",
-  "titulo": ""
+  "titulo": "Toca 2 veces y\ncierra los ojos al 80%",
+  "estilo": "superpuesto",
+  "sinTexto": false,
+  "imagen": "marryto/material/barcos-hd.jpg",
+  "caja": [
+   160,
+   40,
+   760
+  ],
+  "textoY": 600,
+  "textoTam": 66,
+  "imgAspecto": 0.6857
  },
  "25": {
   "inicio": 2.0,
