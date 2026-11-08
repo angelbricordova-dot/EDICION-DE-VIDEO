@@ -93,6 +93,8 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 
 - 7-nov-2026: videos 15–19.
 
+- 8-nov-2026: videos 20 (moais.jpg, "Cuántos 🗿 ves? Yo 11"), 21–22 (princess-hd.jpg, texto amarillo
+  "*Yo luego de darme cuenta:💀*", `textoColor`), 23–24 (barcos-hd.jpg, "Toca 2 veces y cierra los ojos al 80%").
 - 7-nov-2026: videos 25 y 26 ("tu próximo viaje": etiqueta + lista, sin imagen; el 25 con cámara rápida).
 
 ## Drive y descarga
@@ -109,5 +111,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- Videos 20–22 (proxies y cortes listos): faltan las imágenes. 21 y 22 usan el mismo Short (9zB4fWcv46U).
-- Videos 23–40.
+- Videos 27–40 (carpeta "11 NOVIEMBRE" del Drive).
