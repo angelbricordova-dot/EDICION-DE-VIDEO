@@ -21,6 +21,7 @@ export type Video = {
   rapido?: boolean; // cámara rápida (solo ~20 % de los videos, cuando toque: reunión del 7-nov)
   // Shorts sin imagen (p. ej. "tu próximo viaje"): etiqueta blanca redondeada arriba y una lista en
   // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
+  sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
   etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number; listaMargen?: number; // distancia de la lista a los bordes (zona segura de las redes)
   // pastillas amarillas a los dos lados (p. ej. "Dale like sin utilizar: Pies, Codo…"), en zigzag
@@ -107,7 +108,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
           <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
         </div>
-      ) : v.etiqueta || v.pastillas ? null : (
+      ) : v.etiqueta || v.pastillas || v.sinImagen ? null : (
         // sin imagen aparte: se recorta de la miniatura del Short
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: ((v.caja?.[2] ?? 900) * v.recorte[3]) / v.recorte[2], overflow: "hidden" }}>
           <Img

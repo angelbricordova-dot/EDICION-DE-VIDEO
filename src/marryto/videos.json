@@ -904,5 +904,187 @@
   "sinTexto": true,
   "titulo": "",
   "imgAspecto": 1.2023
+ },
+ "34": {
+  "inicio": 4.1,
+  "fin": 11.75,
+  "caraX": 512,
+  "caraY": 930,
+  "caraAncho": 344,
+  "estilo": "superpuesto",
+  "short": "_xpi672XXmA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "Cuántas 🐔 ves? Yo 9",
+  "imagen": "marryto/material/gallinas.jpg",
+  "caja": [
+   200,
+   50,
+   680
+  ],
+  "textoY": 770,
+  "textoTam": 68,
+  "imgAspecto": 1.0407
+ },
+ "35": {
+  "inicio": 4.1,
+  "fin": 11.75,
+  "caraX": 504,
+  "caraY": 946,
+  "caraAncho": 396,
+  "estilo": "superpuesto",
+  "short": "7bZb-cZQQb4",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": true,
+  "titulo": "",
+  "imagen": "marryto/material/lupita.jpg",
+  "caja": [
+   180,
+   60,
+   720
+  ],
+  "imgAspecto": 0.7703
+ },
+ "36": {
+  "inicio": 4.5,
+  "fin": 11.0,
+  "caraX": 515,
+  "caraY": 890,
+  "caraAncho": 292,
+  "estilo": "superpuesto",
+  "short": "OwsKWpvoodQ",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "💛 ARRYT 💛",
+  "textoY": 420,
+  "textoTam": 84,
+  "sinImagen": true
+ },
+ "37": {
+  "inicio": 2.9,
+  "fin": 10.0,
+  "caraX": 538,
+  "caraY": 946,
+  "caraAncho": 468,
+  "estilo": "superpuesto",
+  "short": "Xpe9i0M0o0w",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
+  "imagen": "marryto/material/ciudad.jpg",
+  "caja": [
+   190,
+   30,
+   700
+  ],
+  "textoY": 620,
+  "textoTam": 64,
+  "rapido": true,
+  "imgAspecto": 0.814
+ },
+ "38": {
+  "inicio": 3.5,
+  "fin": 10.0,
+  "caraX": 530,
+  "caraY": 878,
+  "caraAncho": 276,
+  "estilo": "superpuesto",
+  "short": "z45cd6hBGK0",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "Cuál es el tuyo?",
+  "imagen": "marryto/material/senales-redes.jpg",
+  "caja": [
+   140,
+   40,
+   800
+  ],
+  "textoY": 540,
+  "textoTam": 68,
+  "imgAspecto": 0.6283
+ },
+ "39": {
+  "inicio": 1.9,
+  "fin": 9.75,
+  "caraX": 510,
+  "caraY": 836,
+  "caraAncho": 332,
+  "estilo": "superpuesto",
+  "short": "L2D6JkCgmPA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "Cuántos 🧻 ves? Yo 11",
+  "imagen": "marryto/material/papel.jpg",
+  "caja": [
+   230,
+   50,
+   620
+  ],
+  "textoY": 700,
+  "textoTam": 68,
+  "imgAspecto": 1.0078
+ },
+ "40": {
+  "inicio": 2.2,
+  "fin": 9.25,
+  "caraX": 532,
+  "caraY": 957,
+  "caraAncho": 406,
+  "estilo": "superpuesto",
+  "short": "qkLHdmCvZFE",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "sinTexto": false,
+  "titulo": "Cuántas 🍉 ves? Yo 10",
+  "imagen": "marryto/material/sandias-40.jpg",
+  "caja": [
+   150,
+   60,
+   780
+  ],
+  "textoY": 670,
+  "textoTam": 68,
+  "imgAspecto": 0.7479
  }
 }
