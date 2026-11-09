@@ -930,7 +930,8 @@
   ],
   "textoY": 770,
   "textoTam": 68,
-  "imgAspecto": 1.0407
+  "imgAspecto": 1.0407,
+  "bajar": 220
  },
  "35": {
   "inicio": 4.1,
@@ -955,7 +956,8 @@
    60,
    720
   ],
-  "imgAspecto": 0.7703
+  "imgAspecto": 0.7703,
+  "bajar": 220
  },
  "36": {
   "inicio": 4.5,
@@ -976,7 +978,8 @@
   "titulo": "💛 ARRYT 💛",
   "textoY": 420,
   "textoTam": 84,
-  "sinImagen": true
+  "sinImagen": true,
+  "bajar": 220
  },
  "37": {
   "inicio": 2.9,
@@ -1004,7 +1007,8 @@
   "textoY": 620,
   "textoTam": 64,
   "rapido": true,
-  "imgAspecto": 0.814
+  "imgAspecto": 0.814,
+  "bajar": 220
  },
  "38": {
   "inicio": 3.5,
@@ -1031,7 +1035,8 @@
   ],
   "textoY": 540,
   "textoTam": 68,
-  "imgAspecto": 0.6283
+  "imgAspecto": 0.6283,
+  "bajar": 220
  },
  "39": {
   "inicio": 1.9,
@@ -1058,7 +1063,8 @@
   ],
   "textoY": 700,
   "textoTam": 68,
-  "imgAspecto": 1.0078
+  "imgAspecto": 1.0078,
+  "bajar": 220
  },
  "40": {
   "inicio": 2.2,
@@ -1085,6 +1091,7 @@
   ],
   "textoY": 670,
   "textoTam": 68,
-  "imgAspecto": 0.7479
+  "imgAspecto": 0.7479,
+  "bajar": 220
  }
 }

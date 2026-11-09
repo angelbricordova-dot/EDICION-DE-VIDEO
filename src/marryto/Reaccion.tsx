@@ -21,6 +21,7 @@ export type Video = {
   rapido?: boolean; // cámara rápida (solo ~20 % de los videos, cuando toque: reunión del 7-nov)
   // Shorts sin imagen (p. ej. "tu próximo viaje"): etiqueta blanca redondeada arriba y una lista en
   // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
+  bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
   etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number; listaMargen?: number; // distancia de la lista a los bordes (zona segura de las redes)
@@ -50,7 +51,7 @@ export const finEncima = (v: Video) => {
   const lineas = v.sinTexto ? 0 : (v.titulo.match(/\n/g)?.length ?? 0) + 1;
   const texto = v.sinTexto ? 0 : (v.textoY ?? 560) + lineas * (v.textoTam ?? 64) * 1.12 + 8;
   const etiqueta = v.etiqueta ? (v.etiquetaY ?? 300) + 2 * 58 * 1.15 + 40 : 0;
-  return Math.max(img, texto, etiqueta);
+  return Math.max(img, texto, etiqueta) + (v.bajar ?? 0);
 };
 export type PropsReaccion = { n: string };
 
@@ -104,6 +105,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+      <AbsoluteFill style={{ translate: `0 ${v.bajar ?? 0}px` }}>
       {v.imagen ? (
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
           <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
@@ -159,6 +161,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
       {v.sinTexto ? null : (
         <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{v.titulo}</div>
       )}
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };

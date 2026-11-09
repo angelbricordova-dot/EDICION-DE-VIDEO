@@ -68,7 +68,11 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 6. **Zona segura de las redes** (corrección del 25–26, 8-nov): nada de texto pegado a los bordes
    izquierdo/derecho (al subirlo se recorta un poco). Dejar ≥ 150 px a cada lado; puede tocar
    cuello y cuerpo, nunca los ojos. Lista: `listaMargen: 150`, `listaY` a la altura del cuello.
-7. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+7. **Imagen y texto NO tan arriba** (audio del 8-nov sobre el video 33, "anótalo para los siguientes"):
+   bajarlos hasta más o menos la mitad de las placas de YouTube (pueden taparlas), nunca taparle los
+   ojos. `"bajar": 220` en `videos.json` (mueve imagen + texto juntos; la cara se recoloca sola).
+   Aplicado desde el 34.
+8. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)
@@ -96,6 +100,9 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 
 - 7-nov-2026: videos 15–19.
 
+- 9-nov-2026: videos 34 (gallinas.jpg, "Cuántas 🐔 ves? Yo 9"), 35 (lupita.jpg), 36 (solo texto
+  "💛 ARRYT 💛", `sinImagen`), 37 (ciudad.jpg, cámara rápida), 38 (senales-redes.jpg, "Cuál es el tuyo?"),
+  39 (papel.jpg, "Cuántos 🧻 ves? Yo 11"), 40 (sandias-40.jpg, "Cuántas 🍉 ves? Yo 10").
 - 8-nov-2026: videos 27 (japones-amarillo.jpg), 28 (cuarto-objeto-sala.jpg, "Toca 2 veces para encontrar
   el 4° objeto"), 29–30 (pastillas "Dale like a este video sin utilizar:"), 31–32 (iq-test.jpg; el 32 con
   cámara rápida), 33 (sopa-manzana.jpg). Instrucciones del 27 y 33: "igual pero con otro color".
@@ -119,4 +126,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- Videos 34–40 (carpeta "11 NOVIEMBRE" del Drive).
+- Nada de la carpeta "11 NOVIEMBRE" (1–40 hechos). Esperar el próximo lote.
