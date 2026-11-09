@@ -20,6 +20,8 @@ export type PropsTono = {
   t?: number; // segundos (lágrimas, bolsillos que se mecen)
   ancho?: number;
   soloCabeza?: boolean;
+  corte?: boolean; // pelo recién cortado en la barbería (Día 4): corto, ordenado y con degradado
+  barriga?: boolean; // barriga que asoma bajo la sudadera (Día 4, el espejo)
 };
 
 const C = {
@@ -86,7 +88,7 @@ const Ojo: React.FC<{ id: string; cx: number; cy: number; abierto: number; mira:
   );
 };
 
-export const Cabeza: React.FC<PropsTono & { uid: string; gorro?: boolean }> = ({ uid, gorro = false, expresion = "aburrido", boca = 0, parpadeo = 0, mirada = 0, t = 0 }) => {
+export const Cabeza: React.FC<PropsTono & { uid: string; gorro?: boolean }> = ({ uid, gorro = false, corte = false, expresion = "aburrido", boca = 0, parpadeo = 0, mirada = 0, t = 0 }) => {
   const shock = expresion === "shock";
   const feliz = expresion === "feliz";
   const llora = expresion === "llora";
@@ -191,6 +193,14 @@ export const Cabeza: React.FC<PropsTono & { uid: string; gorro?: boolean }> = ({
           <path d="M 206 236 Q 200 270 210 300 L 222 296 Q 216 266 222 240 Z M 394 236 Q 400 270 390 300 L 378 296 Q 384 266 378 240 Z" fill={C.pelo} {...L} strokeWidth={3} />
           <Gorro />
         </>
+      ) : corte ? (
+        <>
+          {/* corte de barbería: laterales degradados (casi piel) y arriba corto y peinado */}
+          <path d="M 204 300 C 196 260 198 228 206 206 L 222 214 C 216 236 216 268 220 296 Z M 396 300 C 404 260 402 228 394 206 L 378 214 C 384 236 384 268 380 296 Z" fill={C.pelo} opacity={0.45} />
+          <path d="M 206 214 C 204 168 236 132 290 126 C 346 122 390 150 394 210 C 380 196 360 188 336 186 C 312 184 300 198 280 190 C 258 182 236 190 222 206 Z" fill={C.pelo} {...L} strokeWidth={4} />
+          <path d="M 240 150 Q 290 130 350 146 M 252 168 Q 296 152 344 164" fill="none" stroke={C.peloLuz} strokeWidth={6} strokeLinecap="round" />
+          <path d="M 300 128 Q 330 140 344 168" fill="none" stroke="#2C2826" strokeWidth={3} strokeLinecap="round" />
+        </>
       ) : (
         <>
       {/* pelo: masa, brillos y mechones sueltos */}
@@ -286,7 +296,7 @@ const Gorro: React.FC = () => (
   </g>
 );
 
-const Cuerpo: React.FC<{ pose: Pose; t: number; ropa: Ropa }> = ({ pose, t, ropa }) => {
+const Cuerpo: React.FC<{ pose: Pose; t: number; ropa: Ropa; barriga?: boolean }> = ({ pose, t, ropa, barriga }) => {
   const bolsillos = pose === "bolsillos";
   const mece = Math.sin(t * 9) * 6;
   if (ropa === "lavaplatos") {
@@ -332,6 +342,16 @@ const Cuerpo: React.FC<{ pose: Pose; t: number; ropa: Ropa }> = ({ pose, t, ropa
       <path d="M 226 652 L 374 652 L 394 736 L 206 736 Z" fill={C.rojoSombra} opacity={0.35} />
       <path d="M 226 652 L 374 652 L 394 736 L 206 736 Z" fill="none" {...L} strokeWidth={5} />
       <path d="M 232 662 L 368 662" stroke={C.rojoLuz} strokeWidth={4} opacity={0.7} />
+      {barriga ? (
+        <g>
+          {/* barriga que estira la sudadera y asoma por debajo */}
+          <path d="M 176 600 Q 140 700 178 790 L 422 790 Q 460 700 424 600 Z" fill={C.rojo} {...L} />
+          <path d="M 400 620 Q 440 700 410 786 L 388 786 Q 418 700 380 620 Z" fill={C.rojoSombra} />
+          <path d="M 214 806 Q 300 850 386 806 L 380 790 L 220 790 Z" fill={C.piel} {...L} strokeWidth={5} />
+          <ellipse cx={300} cy={812} rx={7} ry={4} fill={C.pielSombra} />
+          <path d="M 226 652 L 374 652" stroke={C.rojoSombra} strokeWidth={5} />
+        </g>
+      ) : null}
       {[
         [248, 560, 14, 10],
         [356, 600, 11, 8],
@@ -412,7 +432,7 @@ const Cuerpo: React.FC<{ pose: Pose; t: number; ropa: Ropa }> = ({ pose, t, ropa
 };
 
 /** Toño completo (o solo la cabeza). `ancho` en píxeles; la caja es 600 × 1300. */
-export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "normal", ropa = "sudadera", ...p }) => {
+export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "normal", ropa = "sudadera", barriga, ...p }) => {
   const uid = useId().replace(/[^a-zA-Z0-9]/g, "");
   return soloCabeza ? (
     <svg width={ancho} height={ancho * (330 / 300)} viewBox="150 80 300 330">
@@ -420,7 +440,7 @@ export const Tono: React.FC<PropsTono> = ({ ancho = 600, soloCabeza, pose = "nor
     </svg>
   ) : (
     <svg width={ancho} height={ancho * (1300 / 600)} viewBox="0 0 600 1300" style={{ overflow: "visible" }}>
-      <Cuerpo pose={pose} t={p.t ?? 0} ropa={ropa} />
+      <Cuerpo pose={pose} t={p.t ?? 0} ropa={ropa} barriga={barriga} />
       <Cabeza uid={uid} gorro={ropa === "lavaplatos"} {...p} />
     </svg>
   );

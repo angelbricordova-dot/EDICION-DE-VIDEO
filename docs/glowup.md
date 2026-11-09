@@ -199,3 +199,18 @@ cuadre con lo que dice la voz.
 - **Mamá**: no se le ve ni el brazo; solo la chancla volando con fuerza (`ChanclaFuerte`).
 - Siempre poner la **captura de la encuesta** (`CapturaEncuesta` con `marca` = la fila ganadora).
 - Hoja de personajes para revisar poses: Still `GlowupHoja` (`src/glowup/Hoja.tsx`).
+
+## Día 4 (hecho): "Toño aprende gratis en YouTube" (11 días, $85 → $135)
+- Ganó YOUTUBE GRATIS (84 %). Gurús en Lamborghini (HUMO) → baja hasta la página 5 → Sofi (2 mil
+  suscriptores, webs para negocios con IA, gratis) → pizarra "NO VENDAS UNA WEB / VENDE MÁS CLIENTES"
+  → de noche hace la web de la BARBERÍA DON CHUCHO → don Chucho la mira, la mira… paga $50 → le corta
+  el pelo → en el espejo se ve (ojeras, sudadera, barriga) → quiere cambiar. **Desde aquí el arco es el
+  físico** (pedido de Angel): las decisiones salen de ahí.
+- Lección: hay muchísimo contenido gratis que vale oro; solo hay que tomarse el tiempo de buscarlo.
+- Votación: DEJAR LA CHATARRA (y ahorrar lo de la pizza) vs EJERCICIO CADA MAÑANA.
+- Voz 442 créditos. Escenas en `src/glowup/escenas4.tsx` (TelefonoVideos, Sofi, CanalSofi, WebArmandose,
+  Pizarra, EscritorioNoche, Barberia, DonChucho, Sillon, Capa, PeloCae, IconoChatarra). Toño: `corte`
+  (pelo de barbería, se mantiene desde el Día 4) y `barriga`.
+- Tras el reinicio del entorno: `bash scripts/comun/mixkit.sh` recupera efectos y música; fuentes con
+  fontsource + Pricedown (Typodermic, paquete gratuito); póster de GTA VI desde Wikipedia (282 px, ampliado).
+  Faltan (si se vuelven a necesitar): `glowup/dia1/brayan.png`, `reserva.png`, `gta/logo.png`.

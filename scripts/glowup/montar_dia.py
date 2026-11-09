@@ -165,6 +165,47 @@ EPISODIOS = {
             ("sigueme", 0.1, "clic-2.mp3", -8),
         ],
     },
+    4: {
+        "claves": ["toño", "votaron", "youtube", "gratis", "cuatro", "4", "lamborghini", "cursos", "página", "5", "sofi", "web", "ia", "vender", "clientes", "barbería", "chucho", "pelo", "espejo", "cambiar", "lección", "oro", "buscarlo", "físico", "chatarra", "pizza", "ejercicio", "sígueme", "11", "días", "gta", "vi"],
+        "dinero": ["85", "dólares", "50", "135", "mil", "dinero"],
+        "cola": 1.2,
+        "musica": ("playful.mp3", 0.0),
+        "reemplazos": {},
+        "partir": {"ahorrarlo": ["ahorrar", "lo"]},
+        "efectos": [
+            ("resumen", 0.0, "barrido-5.mp3", -14),
+            ("@85", -0.03, "golpe-1.mp3", -11),
+            ("@11", -0.03, "golpe-1.mp3", -10),
+            ("@mil", -0.03, "golpe-3.mp3", -9),
+            ("@mil", 0.05, "../chaching.mp3", -12),
+            ("votaron", -0.05, "golpe-2.mp3", -8),
+            ("dia", -0.05, "barrido-1.mp3", -12),
+            ("gurus", 0.0, "clic-4.mp3", -10),
+            ("@lamborghini", -0.05, "barrido-4.mp3", -13),
+            ("@cursos", 0.1, "fracaso-grave.mp3", -13),
+            ("baja", 0.0, "barrido-2.mp3", -13),
+            ("@bajando#2", -0.05, "barrido-3.mp3", -13),
+            ("@5", -0.03, "golpe-1.mp3", -10),
+            ("@sofi", -0.05, "acierto.mp3", -12),
+            ("@ia", -0.05, "aire-2.mp3", -13),
+            ("vender", 0.0, "pop-2.mp3", -11),
+            ("@clientes", -0.03, "pop-duro.mp3", -11),
+            ("noche", 0.0, "teclado.mp3", -16),
+            ("@barbería", -0.05, "pop-3.mp3", -11),
+            ("chucho", 0.0, "barrido-1.mp3", -13),
+            ("@50", -0.03, "../chaching.mp3", -8),
+            ("@135", -0.03, "golpe-3.mp3", -10),
+            ("@135", 0.05, "../monedas.mp3", -14),
+            ("@regalo", -0.05, "pop-4.mp3", -11),
+            ("@espejo", -0.1, "aire-1.mp3", -14),
+            ("cambiar", 0.0, "golpe-2.mp3", -12),
+            ("leccion", 0.0, "pop-1.mp3", -12),
+            ("pregunta", 0.0, "barrido-3.mp3", -13),
+            ("@dejar", -0.03, "pop-3.mp3", -10),
+            ("@hacer", -0.03, "pop-4.mp3", -10),
+            ("sigueme", 0.1, "clic-2.mp3", -8),
+        ],
+    },
 }
 
 
@@ -182,7 +223,10 @@ def unir_numeros(ps):
     """'treinta y cinco' → una sola palabra (como la escribe whisper: '35')."""
     out, i = [], 0
     while i < len(ps):
-        if i + 2 < len(ps) and limpio(ps[i]) in DECENAS and limpio(ps[i + 1]) == "y" and limpio(ps[i + 2]) in UNIDADES:
+        if i + 3 < len(ps) and limpio(ps[i]) == "ciento" and limpio(ps[i + 1]) in DECENAS and limpio(ps[i + 2]) == "y" and limpio(ps[i + 3]) in UNIDADES:
+            out.append(" ".join(ps[i:i + 4]))
+            i += 4
+        elif i + 2 < len(ps) and limpio(ps[i]) in DECENAS and limpio(ps[i + 1]) == "y" and limpio(ps[i + 2]) in UNIDADES:
             out.append(" ".join(ps[i:i + 3]))
             i += 3
         else:
@@ -202,6 +246,17 @@ def main():
     lineas = voz_json["lineas"]
     ids = [f["id"] for f in json.loads((RAIZ / f"src/glowup/dia{n}-guion.json").read_text())["frases"]]
     crudas = json.loads((RAIZ / f"public/glowup/dia{n}/palabras.json").read_text())["palabras"]
+    # palabras que whisper junta y el guion separa ("ahorrarlo" → "ahorrar lo"): se parten en el tiempo
+    partidas = []
+    for w in crudas:
+        trozos = cfg.get("partir", {}).get(limpio(w["p"]))
+        if not trozos:
+            partidas.append(w)
+            continue
+        paso = (w["fin"] - w["ini"]) / len(trozos)
+        for i, t in enumerate(trozos):
+            partidas.append({**w, "p": t, "ini": round(w["ini"] + i * paso, 3), "fin": round(w["ini"] + (i + 1) * paso, 3)})
+    crudas = partidas
 
     frases = [{"id": i, "texto": l["texto"], "t": l["t2"], "fin": l["fin2"]} for i, l in zip(ids, lineas)]
     # A qué frase pertenece cada palabra: contando palabras del guion (los números de varias

@@ -3,6 +3,7 @@ import { Dia0, DIA0, PropsDia } from "./Dia0";
 import { Dia1, DIA1, PropsDia1 } from "./Dia1";
 import { Dia2, DIA2, PropsDia2 } from "./Dia2";
 import { Dia3, DIA3, PropsDia3 } from "./Dia3";
+import { Dia4, DIA4, PropsDia4 } from "./Dia4";
 import { Ficha } from "./Ficha";
 import { Hoja } from "./Hoja";
 
@@ -44,6 +45,15 @@ export const ComposicionesGlowup: React.FC = () => (
       width={1080}
       height={1920}
       defaultProps={{ audio: "glowup/dia3/mezcla.wav", encuesta: "glowup/dia3/encuesta.png" } satisfies PropsDia3}
+    />
+    <Composition
+      id="GlowupDia4"
+      component={Dia4}
+      durationInFrames={Math.round(DIA4.duracion * 30)}
+      fps={30}
+      width={1080}
+      height={1920}
+      defaultProps={{ audio: "glowup/dia4/mezcla.wav", encuesta: "glowup/dia4/encuesta.png" } satisfies PropsDia4}
     />
     <Still id="GlowupHoja" component={Hoja} width={3200} height={1300} />
     <Still id="GlowupFicha" component={Ficha} width={1800} height={1200} />
