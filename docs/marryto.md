@@ -70,9 +70,20 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
    cuello y cuerpo, nunca los ojos. Lista: `listaMargen: 150`, `listaY` a la altura del cuello.
 7. **Imagen y texto NO tan arriba** (audio del 8-nov sobre el video 33, "anótalo para los siguientes"):
    bajarlos hasta más o menos la mitad de las placas de YouTube (pueden taparlas), nunca taparle los
-   ojos. `"bajar": 220` en `videos.json` (mueve imagen + texto juntos; la cara se recoloca sola).
+   ojos. `"bajar": 160` en `videos.json` (mueve imagen + texto juntos; la cara se recoloca sola).
    Aplicado desde el 34.
-8. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+8. **Correcciones del 9-nov (molesto por repetirlas: revisar SIEMPRE antes de entregar):**
+   - **Ojos nunca tapados y con SEPARACIÓN de la frente** en TODO el video, no solo en el primer
+     cuadro: él levanta la cabeza y se acerca. `scripts/marryto/ojos.py` (MediaPipe) mide cuadro a
+     cuadro lo más alto que llegan ojos y frente (`ojosY`, `frenteY`, `ojosX`); la plantilla deja 60 px
+     de separación, zoom máx. 1,35 y, si no cabe, encoge un poco lo de arriba. Revisar 3 cuadros por video.
+   - **Imágenes hechas desde cero en HD**: nunca una captura del Short (las sandías del 40 eran captura
+     y se veía mal). Si la imagen que llega es una captura o se ve borrosa → pedir a Angel que la rehaga.
+   - **Arranque**: empezar cuando está a punto de apuntar arriba o de hacer una acción (el 38 tardaba).
+   - Si las instrucciones traen **audio** (el 36: "What would yours look like"), va sincronizado con el
+     sonido que suena en el bruto (correlación con el audio del .mov) y el video empieza cuando arranca
+     el sonido. `"audio"` en `videos.json` y se exporta sin `--muted`.
+9. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)
@@ -126,4 +137,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- Nada de la carpeta "11 NOVIEMBRE" (1–40 hechos). Esperar el próximo lote.
+- 34 y 40: esperar imágenes nuevas hechas desde cero en HD (Angel). 35 y 39 aprobados.

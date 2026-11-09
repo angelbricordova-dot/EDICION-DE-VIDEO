@@ -931,7 +931,10 @@
   "textoY": 770,
   "textoTam": 68,
   "imgAspecto": 1.0407,
-  "bajar": 220
+  "bajar": 160,
+  "ojosY": 793,
+  "frenteY": 725,
+  "ojosX": 507
  },
  "35": {
   "inicio": 4.1,
@@ -957,11 +960,14 @@
    720
   ],
   "imgAspecto": 0.7703,
-  "bajar": 220
+  "bajar": 160,
+  "ojosY": 807,
+  "frenteY": 715,
+  "ojosX": 512
  },
  "36": {
-  "inicio": 4.5,
-  "fin": 11.0,
+  "inicio": 3.39,
+  "fin": 9.6,
   "caraX": 515,
   "caraY": 890,
   "caraAncho": 292,
@@ -979,7 +985,12 @@
   "textoY": 420,
   "textoTam": 84,
   "sinImagen": true,
-  "bajar": 220
+  "bajar": 160,
+  "ojosY": 799,
+  "frenteY": 731,
+  "ojosX": 522,
+  "audio": "marryto/audio/v36.mp3",
+  "audioDesde": 0
  },
  "37": {
   "inicio": 2.9,
@@ -1008,10 +1019,13 @@
   "textoTam": 64,
   "rapido": true,
   "imgAspecto": 0.814,
-  "bajar": 220
+  "bajar": 160,
+  "ojosY": 787,
+  "frenteY": 706,
+  "ojosX": 527
  },
  "38": {
-  "inicio": 3.5,
+  "inicio": 4.05,
   "fin": 10.0,
   "caraX": 530,
   "caraY": 878,
@@ -1036,7 +1050,10 @@
   "textoY": 540,
   "textoTam": 68,
   "imgAspecto": 0.6283,
-  "bajar": 220
+  "bajar": 160,
+  "ojosY": 749,
+  "frenteY": 659,
+  "ojosX": 509
  },
  "39": {
   "inicio": 1.9,
@@ -1064,7 +1081,10 @@
   "textoY": 700,
   "textoTam": 68,
   "imgAspecto": 1.0078,
-  "bajar": 220
+  "bajar": 160,
+  "ojosY": 759,
+  "frenteY": 677,
+  "ojosX": 525
  },
  "40": {
   "inicio": 2.2,
@@ -1092,6 +1112,9 @@
   "textoY": 670,
   "textoTam": 68,
   "imgAspecto": 0.7479,
-  "bajar": 220
+  "bajar": 160,
+  "ojosY": 807,
+  "frenteY": 733,
+  "ojosX": 533
  }
 }

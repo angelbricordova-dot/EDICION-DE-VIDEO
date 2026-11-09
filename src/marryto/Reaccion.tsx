@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Img, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Img, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { clamp01, easeOut, lerp } from "../comun/animacion";
 import videos from "./videos.json";
@@ -21,6 +21,8 @@ export type Video = {
   rapido?: boolean; // cámara rápida (solo ~20 % de los videos, cuando toque: reunión del 7-nov)
   // Shorts sin imagen (p. ej. "tu próximo viaje"): etiqueta blanca redondeada arriba y una lista en
   // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
+  ojosY?: number; frenteY?: number; ojosX?: number; // scripts/marryto/ojos.py: lo más alto que llegan ojos y frente en el tramo
+  audio?: string; audioDesde?: number; // audio sincronizado (p. ej. el 36); por defecto los videos van sin sonido
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -44,14 +46,15 @@ export const tiempo = (v: Video) => {
 };
 
 /** Dónde acaba lo de arriba (imagen y texto), en píxeles de 1080 × 1920. */
-export const finEncima = (v: Video) => {
+export const finEncima = (v: Video) => finEncimaBruto(v) + (v.bajar ?? 0);
+const finEncimaBruto = (v: Video) => {
   const ancho = v.caja?.[2] ?? 900;
   const arriba = v.caja?.[1] ?? 40;
   const img = v.imagen ? arriba + (v.cajaAlto ?? (v.imgAspecto ? ancho * v.imgAspecto : 0)) : 0;
   const lineas = v.sinTexto ? 0 : (v.titulo.match(/\n/g)?.length ?? 0) + 1;
   const texto = v.sinTexto ? 0 : (v.textoY ?? 560) + lineas * (v.textoTam ?? 64) * 1.12 + 8;
   const etiqueta = v.etiqueta ? (v.etiquetaY ?? 300) + 2 * 58 * 1.15 + 40 : 0;
-  return Math.max(img, texto, etiqueta) + (v.bajar ?? 0);
+  return Math.max(img, texto, etiqueta);
 };
 export type PropsReaccion = { n: string };
 
@@ -96,16 +99,37 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   // libres (reunión 7-nov: el texto o la imagen pueden tapar el pelo, nunca los ojos). Los ojos
   // quedan ~0,12 del ancho de la cara por encima de su centro (detector de caras de analizar.py).
   let s = Math.min(1.25, Math.max(1, 360 / v.caraAncho));
-  const centro = Math.max(1080, finEncima(v) + 90 + 0.12 * v.caraAncho * s);
-  s = Math.max(s, centro / v.caraY); // si hay que bajarle, se amplía para que no quede hueco arriba
+  let k = 1; // escala de lo de arriba (imagen + texto) si no cabe con la separación
+  let x: number;
+  let y: number;
+  const bajar = v.bajar ?? 0;
+  if (v.frenteY) {
+    // 9-nov: nunca tapar ojos y SEPARACIÓN con la frente, medido cuadro a cuadro (lo más alto que llega)
+    const SEP = 60;
+    const SMAX = 1.35;
+    const bruto = finEncimaBruto(v);
+    const limite = v.frenteY * SMAX - SEP; // lo más abajo que puede acabar lo de arriba
+    k = Math.max(0.6, Math.min(1, (limite - bajar) / bruto));
+    const fin = bajar + k * bruto;
+    s = Math.min(SMAX, Math.max(s, (fin + SEP) / v.frenteY));
+    const vh0 = 1920 * s;
+    const yCara = 1080 - v.caraY * s; // su cara hacia el centro, como en la referencia
+    const yMin = fin + SEP - v.frenteY * s; // la frente por debajo de lo de arriba
+    y = Math.min(0, Math.max(1920 - vh0, Math.max(yCara, yMin)));
+    x = Math.min(0, Math.max(1080 - 1080 * s, 540 - (v.ojosX ?? v.caraX) * s));
+  } else {
+    const centro = Math.max(1080, finEncima(v) + 90 + 0.12 * v.caraAncho * s);
+    s = Math.max(s, centro / v.caraY); // si hay que bajarle, se amplía para que no quede hueco arriba
+    x = Math.min(0, Math.max(1080 - 1080 * s, 540 - v.caraX * s));
+    y = Math.min(0, Math.max(1920 - 1920 * s, centro - v.caraY * s));
+  }
   const vw = 1080 * s;
   const vh = 1920 * s;
-  const x = Math.min(0, Math.max(1080 - vw, 540 - v.caraX * s));
-  const y = Math.min(0, Math.max(1920 - vh, centro - v.caraY * s));
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
-      <AbsoluteFill style={{ translate: `0 ${v.bajar ?? 0}px` }}>
+      {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} /> : null}
+      <AbsoluteFill style={{ translate: `0 ${bajar}px`, scale: String(k), transformOrigin: "50% 0" }}>
       {v.imagen ? (
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
           <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
