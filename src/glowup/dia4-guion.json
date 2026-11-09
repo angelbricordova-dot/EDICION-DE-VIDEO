@@ -1,0 +1,22 @@
+{
+  "episodio": 4,
+  "frases": [
+    { "id": "resumen", "texto": "Toño: veinticinco años, ochenta y cinco dólares… y once días para juntar mil antes de GTA seis." },
+    { "id": "votaron", "texto": "¡Ustedes votaron… y Toño aprende gratis en YouTube!" },
+    { "id": "dia", "texto": "Día cuatro." },
+    { "id": "gurus", "texto": "Busca 'cómo ganar dinero'… y le salen tipos en Lamborghini vendiendo cursos." },
+    { "id": "baja", "texto": "Así que sigue bajando… y bajando… hasta la página cinco." },
+    { "id": "sofi", "texto": "Ahí encuentra a Sofi: dos mil suscriptores… y enseña gratis a hacer páginas web para negocios con IA." },
+    { "id": "vender", "texto": "Y otro canal le enseña a vender: no vendas una web… vende más clientes." },
+    { "id": "noche", "texto": "Esa noche hace su primera web… para la barbería de la esquina." },
+    { "id": "chucho", "texto": "Al día siguiente se la enseña a don Chucho, el barbero." },
+    { "id": "paga", "texto": "La mira… la mira… y le paga cincuenta dólares. Ya tiene ciento treinta y cinco." },
+    { "id": "corte", "texto": "Y de regalo… le corta el pelo." },
+    { "id": "espejo", "texto": "Pero en el espejo… Toño se ve de verdad." },
+    { "id": "cambiar", "texto": "Ojeras, la sudadera de hace tres días, la barriga… y por primera vez, quiere cambiar." },
+    { "id": "leccion", "texto": "Lección del día: hay muchísimo contenido gratis que vale oro… solo hay que tomarse el tiempo de buscarlo." },
+    { "id": "pregunta", "texto": "Ahora Toño quiere cambiar su físico. ¿Por dónde empieza?" },
+    { "id": "opciones", "texto": "Comenta: dejar la comida chatarra y ahorrar lo de la pizza… o hacer ejercicio cada mañana." },
+    { "id": "sigueme", "texto": "Sígueme para el día cinco." }
+  ]
+}

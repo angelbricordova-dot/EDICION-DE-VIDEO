@@ -1,0 +1,127 @@
+{
+  "audio": "public/glowup/dia4/voz.mp3",
+  "duracion": 55.52,
+  "lineas": [
+    {
+      "texto": "Toño: veinticinco años, ochenta y cinco dólares… y once días para juntar mil antes de GTA seis.",
+      "t": 0.0,
+      "fin": 5.44,
+      "t2": 0.0,
+      "fin2": 5.44
+    },
+    {
+      "texto": "¡Ustedes votaron… y Toño aprende gratis en YouTube!",
+      "t": 5.48,
+      "fin": 8.16,
+      "t2": 5.73,
+      "fin2": 8.41
+    },
+    {
+      "texto": "Día cuatro.",
+      "t": 8.2,
+      "fin": 8.96,
+      "t2": 8.6,
+      "fin2": 9.36
+    },
+    {
+      "texto": "Busca 'cómo ganar dinero'… y le salen tipos en Lamborghini vendiendo cursos.",
+      "t": 9.0,
+      "fin": 12.56,
+      "t2": 9.4,
+      "fin2": 12.96
+    },
+    {
+      "texto": "Así que sigue bajando… y bajando… hasta la página cinco.",
+      "t": 12.613,
+      "fin": 15.68,
+      "t2": 13.213,
+      "fin2": 16.28
+    },
+    {
+      "texto": "Ahí encuentra a Sofi: dos mil suscriptores… y enseña gratis a hacer páginas web para negocios con IA.",
+      "t": 15.707,
+      "fin": 20.72,
+      "t2": 16.557,
+      "fin2": 21.57
+    },
+    {
+      "texto": "Y otro canal le enseña a vender: no vendas una web… vende más clientes.",
+      "t": 20.76,
+      "fin": 24.48,
+      "t2": 21.86,
+      "fin2": 25.58
+    },
+    {
+      "texto": "Esa noche hace su primera web… para la barbería de la esquina.",
+      "t": 24.52,
+      "fin": 27.2,
+      "t2": 25.92,
+      "fin2": 28.6
+    },
+    {
+      "texto": "Al día siguiente se la enseña a don Chucho, el barbero.",
+      "t": 27.253,
+      "fin": 29.84,
+      "t2": 28.903,
+      "fin2": 31.49
+    },
+    {
+      "texto": "La mira… la mira… y le paga cincuenta dólares. Ya tiene ciento treinta y cinco.",
+      "t": 29.867,
+      "fin": 34.04,
+      "t2": 31.717,
+      "fin2": 35.89
+    },
+    {
+      "texto": "Y de regalo… le corta el pelo.",
+      "t": 34.1,
+      "fin": 35.68,
+      "t2": 36.2,
+      "fin2": 37.78
+    },
+    {
+      "texto": "Pero en el espejo… Toño se ve de verdad.",
+      "t": 35.712,
+      "fin": 37.76,
+      "t2": 38.162,
+      "fin2": 40.21
+    },
+    {
+      "texto": "Ojeras, la sudadera de hace tres días, la barriga… y por primera vez, quiere cambiar.",
+      "t": 37.8,
+      "fin": 42.12,
+      "t2": 40.45,
+      "fin2": 44.77
+    },
+    {
+      "texto": "Lección del día: hay muchísimo contenido gratis que vale oro… solo hay que tomarse el tiempo de buscarlo.",
+      "t": 42.16,
+      "fin": 46.96,
+      "t2": 45.21,
+      "fin2": 50.01
+    },
+    {
+      "texto": "Ahora Toño quiere cambiar su físico. ¿Por dónde empieza?",
+      "t": 47.013,
+      "fin": 49.68,
+      "t2": 50.413,
+      "fin2": 53.08
+    },
+    {
+      "texto": "Comenta: dejar la comida chatarra y ahorrar lo de la pizza… o hacer ejercicio cada mañana.",
+      "t": 49.72,
+      "fin": 54.16,
+      "t2": 53.32,
+      "fin2": 57.76
+    },
+    {
+      "texto": "Sígueme para el día cinco.",
+      "t": 54.2,
+      "fin": 55.52,
+      "t2": 58.15,
+      "fin2": 59.47
+    }
+  ],
+  "audio_pausas": "public/glowup/dia4/voz-pausas.wav",
+  "duracion2": 59.47
+}
