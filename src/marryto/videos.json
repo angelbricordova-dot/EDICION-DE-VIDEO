@@ -1133,11 +1133,20 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces\npara descubrirlo:",
+  "sinTexto": false,
   "ojosY": 956,
   "frenteY": 857,
-  "ojosX": 529
+  "ojosX": 529,
+  "imagen": "marryto/material/cubo-pieza.jpg",
+  "caja": [
+   230,
+   30,
+   620
+  ],
+  "textoY": 730,
+  "textoTam": 62,
+  "imgAspecto": 1.1004
  },
  "42": {
   "inicio": 2.5,
@@ -1155,11 +1164,20 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces\npara descubrirlo:",
+  "sinTexto": false,
   "ojosY": 989,
   "frenteY": 871,
-  "ojosX": 585
+  "ojosX": 585,
+  "imagen": "marryto/material/cubo-pieza.jpg",
+  "caja": [
+   230,
+   30,
+   620
+  ],
+  "textoY": 730,
+  "textoTam": 62,
+  "imgAspecto": 1.1004
  },
  "43": {
   "inicio": 2.5,
@@ -1177,11 +1195,20 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces\npara descubrirlo:",
+  "sinTexto": false,
   "ojosY": 938,
   "frenteY": 795,
-  "ojosX": 513
+  "ojosX": 513,
+  "imagen": "marryto/material/cubo-pieza.jpg",
+  "caja": [
+   230,
+   30,
+   620
+  ],
+  "textoY": 730,
+  "textoTam": 62,
+  "imgAspecto": 1.1004
  },
  "44": {
   "inicio": 2.1,
@@ -1299,7 +1326,9 @@
   ],
   "textoY": 700,
   "textoTam": 76,
-  "imgAspecto": 1.0
+  "imgAspecto": 1.0,
+  "audio": "marryto/audio/v47.mp3",
+  "audioDesde": 0
  },
  "48": {
   "inicio": 1.8,
@@ -1559,11 +1588,20 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Yo veo 5 hámsters... y tú?",
+  "sinTexto": false,
   "ojosY": 849,
   "frenteY": 741,
-  "ojosX": 528
+  "ojosX": 528,
+  "imagen": "marryto/material/arbol-hamsters.jpg",
+  "caja": [
+   90,
+   50,
+   900
+  ],
+  "textoY": 560,
+  "textoTam": 64,
+  "imgAspecto": 0.5296
  },
  "57": {
   "inicio": 3.6,
@@ -1581,11 +1619,20 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Yo veo 6 perros... y tú?",
+  "sinTexto": false,
   "ojosY": 889,
   "frenteY": 790,
-  "ojosX": 530
+  "ojosX": 530,
+  "imagen": "marryto/material/arbol-perros.jpg",
+  "caja": [
+   90,
+   50,
+   900
+  ],
+  "textoY": 560,
+  "textoTam": 64,
+  "imgAspecto": 0.5296
  },
  "58": {
   "inicio": 2.9,
@@ -1603,12 +1650,21 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Yo veo 6 gatos... y tú?",
+  "sinTexto": false,
   "rapido": true,
   "ojosY": 927,
   "frenteY": 826,
-  "ojosX": 543
+  "ojosX": 543,
+  "imagen": "marryto/material/arbol-gatos.jpg",
+  "caja": [
+   90,
+   50,
+   900
+  ],
+  "textoY": 560,
+  "textoTam": 64,
+  "imgAspecto": 0.5296
  },
  "59": {
   "inicio": 1.4,
@@ -1626,11 +1682,20 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces para\nencontrar el 4° objeto",
+  "sinTexto": false,
   "ojosY": 946,
   "frenteY": 835,
-  "ojosX": 471
+  "ojosX": 471,
+  "imagen": "marryto/material/sala-objeto.png",
+  "caja": [
+   150,
+   40,
+   780
+  ],
+  "textoY": 685,
+  "textoTam": 60,
+  "imgAspecto": 0.7948
  },
  "60": {
   "inicio": 2.9,
@@ -1648,10 +1713,19 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces para\nencontrar el 4° objeto",
+  "sinTexto": false,
   "ojosY": 1010,
   "frenteY": 887,
-  "ojosX": 532
+  "ojosX": 532,
+  "imagen": "marryto/material/cocina-objeto.jpg",
+  "caja": [
+   150,
+   40,
+   780
+  ],
+  "textoY": 720,
+  "textoTam": 60,
+  "imgAspecto": 0.8421
  }
 }
