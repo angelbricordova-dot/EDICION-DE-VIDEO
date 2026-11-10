@@ -111,6 +111,15 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 
 - 7-nov-2026: videos 15–19.
 
+- 10-nov-2026: 34 y 40 rehechos con imágenes HD nuevas (gallinas-hd, sandias-hd). Videos 41–60:
+  41–43 cubo-pieza.jpg ("Toca 2 veces para descubrirlo:"), 44–46 numeros-16.png, 47 triangulos-amarillo.png
+  + canción (`audio/v47.mp3`, desde el primer cuadro; su grabación no tiene sonido), 48 teclado-nombre.png,
+  49–51 calculo-17.png, 52 dos-ceros.png ("La respuesta es D"), 53–55 libro-edad.png, 56 árbol de
+  hámsters / 57 perros / 58 gatos (Angel: "distintas imágenes y cambia el texto según la imagen"; el
+  número = animales que se ven), 59 sala-objeto.png (llegó dañada en el .rar: reparada, cojín más
+  pequeño), 60 cocina-objeto.jpg. Cámara rápida: 48, 52, 58.
+- **Gráficos sencillos dibujados por Claude** desde cero en HD: `scripts/marryto/graficos.mjs`
+  (HTML → Chromium 2×, fuentes incrustadas en base64, otros colores que el original).
 - 9-nov-2026: videos 34 (gallinas.jpg, "Cuántas 🐔 ves? Yo 9"), 35 (lupita.jpg), 36 (solo texto
   "💛 ARRYT 💛", `sinImagen`), 37 (ciudad.jpg, cámara rápida), 38 (senales-redes.jpg, "Cuál es el tuyo?"),
   39 (papel.jpg, "Cuántos 🧻 ves? Yo 11"), 40 (sandias-40.jpg, "Cuántas 🍉 ves? Yo 10").
@@ -137,4 +146,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- 34 y 40: esperar imágenes nuevas hechas desde cero en HD (Angel). 35 y 39 aprobados.
+- Videos 61–99 (carpeta "11 NOVIEMBRE").
