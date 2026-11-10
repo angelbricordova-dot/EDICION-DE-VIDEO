@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Audio, Img, OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/fonts";
 import { clamp01, easeOut, lerp } from "../comun/animacion";
 import videos from "./videos.json";
@@ -23,6 +23,12 @@ export type Video = {
   // dos columnas a los lados del cuerpo (por debajo de la cara, nunca sobre los ojos)
   ojosY?: number; frenteY?: number; ojosX?: number; // scripts/marryto/ojos.py: lo más alto que llegan ojos y frente en el tramo
   audio?: string; audioDesde?: number; // audio sincronizado (p. ej. el 36); por defecto los videos van sin sonido
+  // Varias tomas seguidas con corte seco (como el Short original, 47 y 52): cada una desde `desde` del
+  // bruto durante `dur` s, con su texto. `fundido` (48): a partir de `t` la escena se funde en `dur` s
+  // con la habitación vacía (el plano del bruto en `desde`), "para que desaparezca".
+  tomas?: { desde: number; dur: number; titulo?: string }[];
+  fundido?: { desde: number; t: number; dur: number };
+  duracion?: number; // fija la duración (p. ej. la de la canción)
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -39,6 +45,8 @@ export const OBJETIVO = 6.5;
 export const OBJETIVO_NORMAL = 7;
 export const MAX_VEL = 1.5;
 export const tiempo = (v: Video) => {
+  if (v.tomas) return { vel: 1, usado: 0, dur: v.duracion ?? v.tomas.reduce((a, b) => a + b.dur, 0) };
+  if (v.duracion) return { vel: 1, usado: v.duracion, dur: v.duracion };
   const bruto = v.fin - v.inicio;
   const vel = v.rapido ? Math.min(MAX_VEL, Math.max(1, bruto / OBJETIVO)) : 1;
   const usado = Math.min(bruto, (v.rapido ? OBJETIVO : OBJETIVO_NORMAL) * vel);
@@ -95,6 +103,15 @@ const Titulo: React.FC<{ texto: string; rojo: string }> = ({ texto, rojo }) => {
 const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const { fps } = useVideoConfig();
   const { vel } = tiempo(v);
+  const t = useCurrentFrame() / fps;
+  let tituloAhora = v.titulo;
+  if (v.tomas) {
+    let acum = 0;
+    for (const tm of v.tomas) {
+      if (t >= acum && tm.titulo !== undefined) tituloAhora = tm.titulo;
+      acum += tm.dur;
+    }
+  }
   // su cara un poco por debajo del texto, como las caras en la referencia; y SIEMPRE con los ojos
   // libres (reunión 7-nov: el texto o la imagen pueden tapar el pelo, nunca los ojos). Los ojos
   // quedan ~0,12 del ancho de la cara por encima de su centro (detector de caras de analizar.py).
@@ -127,7 +144,25 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const vh = 1920 * s;
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+      {v.tomas ? (
+        v.tomas.map((tm, i) => {
+          const desde = v.tomas!.slice(0, i).reduce((a, b) => a + b.dur, 0);
+          return (
+            <Sequence key={i} from={Math.round(desde * fps)} durationInFrames={Math.round(tm.dur * fps)} layout="none">
+              <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(tm.desde * fps)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+            </Sequence>
+          );
+        })
+      ) : (
+        <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+      )}
+      {v.fundido ? (
+        <Sequence from={Math.round(v.fundido.t * fps)} layout="none">
+          <AbsoluteFill style={{ opacity: Math.min(1, Math.max(0, (t - v.fundido.t) / v.fundido.dur)) }}>
+            <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.fundido.desde * fps)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+          </AbsoluteFill>
+        </Sequence>
+      ) : null}
       {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} /> : null}
       <AbsoluteFill style={{ translate: `0 ${bajar}px`, scale: String(k), transformOrigin: "50% 0" }}>
       {v.imagen ? (
@@ -183,7 +218,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           )
         : null}
       {v.sinTexto ? null : (
-        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{v.titulo}</div>
+        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{tituloAhora}</div>
       )}
       </AbsoluteFill>
     </AbsoluteFill>

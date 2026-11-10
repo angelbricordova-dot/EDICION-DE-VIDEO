@@ -26,6 +26,15 @@ OJOS = [33, 133, 159, 145, 362, 263, 386, 374]  # contornos de los dos ojos
 FRENTE = 10  # punto alto de la frente
 
 
+def tramos(v):
+    """Trozos del bruto que se ven: las tomas (si hay) o el tramo normal."""
+    if v.get("tomas"):
+        return [(tm["desde"], tm["dur"]) for tm in v["tomas"]]
+    if v.get("duracion"):
+        return [(v["inicio"], v["duracion"])]
+    return [tramo(v)]
+
+
 def tramo(v):
     bruto = v["fin"] - v["inicio"]
     vel = min(1.5, max(1, bruto / 6.5)) if v.get("rapido") else 1
@@ -41,10 +50,12 @@ def main():
     det = mp.tasks.vision.FaceLandmarker.create_from_options(opts)
     for n in nums:
         v = d[n]
-        t0, dur = tramo(v)
-        crudo = subprocess.run(["ffmpeg", "-v", "error", "-ss", str(t0), "-t", str(dur), "-i", str(RAIZ / f"public/marryto/proxies/v{n}.mp4"),
-                                "-vf", f"fps={FPS},scale={W}:{H}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True, check=True).stdout
-        cuadros = np.frombuffer(crudo, np.uint8).reshape(-1, H, W, 3)
+        partes = []
+        for t0, dur in tramos(v):
+            crudo = subprocess.run(["ffmpeg", "-v", "error", "-ss", str(t0), "-t", str(dur), "-i", str(RAIZ / f"public/marryto/proxies/v{n}.mp4"),
+                                    "-vf", f"fps={FPS},scale={W}:{H}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True, check=True).stdout
+            partes.append(np.frombuffer(crudo, np.uint8).reshape(-1, H, W, 3))
+        cuadros = np.concatenate(partes)
         ojos, frentes, xs = [], [], []
         for c in cuadros:
             r = det.detect(mp.Image(image_format=mp.ImageFormat.SRGB, data=np.ascontiguousarray(c)))

@@ -1315,9 +1315,9 @@
   "bajar": 160,
   "titulo": "No, es 21",
   "sinTexto": false,
-  "ojosY": 889,
-  "frenteY": 805,
-  "ojosX": 592,
+  "ojosY": 907,
+  "frenteY": 810,
+  "ojosX": 534,
   "imagen": "marryto/material/triangulos-amarillo.png",
   "caja": [
    220,
@@ -1328,10 +1328,23 @@
   "textoTam": 76,
   "imgAspecto": 1.0,
   "audio": "marryto/audio/v47.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "tomas": [
+   {
+    "desde": 2.55,
+    "dur": 2.47,
+    "titulo": "Es 20"
+   },
+   {
+    "desde": 14.4,
+    "dur": 2.57,
+    "titulo": "No, es 21"
+   }
+  ],
+  "duracion": 5.04
  },
  "48": {
-  "inicio": 1.8,
+  "inicio": 5.3,
   "fin": 12.0,
   "caraX": 534,
   "caraY": 926,
@@ -1346,23 +1359,32 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
+  "titulo": "Santi:",
   "sinTexto": true,
-  "rapido": true,
-  "ojosY": 825,
-  "frenteY": 749,
-  "ojosX": 534,
+  "ojosY": 824,
+  "frenteY": 748,
+  "ojosX": 522,
   "imagen": "marryto/material/teclado-nombre.png",
   "caja": [
    140,
    40,
    800
   ],
-  "imgAspecto": 0.72
+  "imgAspecto": 0.72,
+  "duracion": 7.44,
+  "fundido": {
+   "desde": 15.5,
+   "t": 4.9,
+   "dur": 1.7
+  },
+  "audio": "marryto/audio/v48.mp3",
+  "audioDesde": 0,
+  "textoY": 560,
+  "textoTam": 72
  },
  "49": {
-  "inicio": 1.8,
-  "fin": 8.0,
+  "inicio": 2.25,
+  "fin": 8.9,
   "caraX": 508,
   "caraY": 986,
   "caraAncho": 360,
@@ -1378,9 +1400,9 @@
   "bajar": 160,
   "titulo": "Toca 2 veces\npara ver la respuesta",
   "sinTexto": false,
-  "ojosY": 851,
+  "ojosY": 854,
   "frenteY": 772,
-  "ojosX": 501,
+  "ojosX": 500,
   "imagen": "marryto/material/calculo-17.png",
   "caja": [
    220,
@@ -1471,10 +1493,9 @@
   "bajar": 160,
   "titulo": "La respuesta es D",
   "sinTexto": false,
-  "rapido": true,
-  "ojosY": 846,
-  "frenteY": 741,
-  "ojosX": 509,
+  "ojosY": 872,
+  "frenteY": 789,
+  "ojosX": 503,
   "imagen": "marryto/material/dos-ceros.png",
   "caja": [
    220,
@@ -1483,7 +1504,22 @@
   ],
   "textoY": 700,
   "textoTam": 70,
-  "imgAspecto": 1.0
+  "imgAspecto": 1.0,
+  "tomas": [
+   {
+    "desde": 6.8,
+    "dur": 3.2,
+    "titulo": "La respuesta es D"
+   },
+   {
+    "desde": 16.2,
+    "dur": 3.41,
+    "titulo": "No, es la A"
+   }
+  ],
+  "duracion": 6.61,
+  "audio": "marryto/audio/v52.mp3",
+  "audioDesde": 0
  },
  "53": {
   "inicio": 2.3,
@@ -1515,7 +1551,7 @@
   "imgAspecto": 0.66
  },
  "54": {
-  "inicio": 3.0,
+  "inicio": 3.52,
   "fin": 10.75,
   "caraX": 528,
   "caraY": 935,
@@ -1532,9 +1568,9 @@
   "bajar": 160,
   "titulo": "",
   "sinTexto": true,
-  "ojosY": 821,
-  "frenteY": 730,
-  "ojosX": 508,
+  "ojosY": 822,
+  "frenteY": 729,
+  "ojosX": 506,
   "imagen": "marryto/material/libro-edad.png",
   "caja": [
    160,
@@ -1544,7 +1580,7 @@
   "imgAspecto": 0.66
  },
  "55": {
-  "inicio": 6.3,
+  "inicio": 7.05,
   "fin": 14.25,
   "caraX": 516,
   "caraY": 930,
@@ -1563,7 +1599,7 @@
   "sinTexto": true,
   "ojosY": 849,
   "frenteY": 742,
-  "ojosX": 510,
+  "ojosX": 507,
   "imagen": "marryto/material/libro-edad.png",
   "caja": [
    160,
