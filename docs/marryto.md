@@ -83,7 +83,14 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
    - Si las instrucciones traen **audio** (el 36: "What would yours look like"), va sincronizado con el
      sonido que suena en el bruto (correlación con el audio del .mov) y el video empieza cuando arranca
      el sonido. `"audio"` en `videos.json` y se exporta sin `--muted`.
-9. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+9. **Cambios de escena como el Short original** (correcciones del 10-nov, 47 y 52): cuando él graba
+   dos tomas (cambia de camiseta), el video corta de una a otra en el MISMO segundo que el original
+   (medirlo en la referencia) y cada toma lleva su texto ("Es 20" → "No, es 21"). `"tomas"` en
+   `videos.json` + `"duracion"` = la de la canción. Audio de la referencia sincronizado.
+   Si en su grabación DICE lo que hay que hacer (48: "pon el audio… y ahí haces la transición para que
+   desaparezca"), hacerlo como la referencia (`"fundido"`: se funde con la habitación vacía).
+   Transcribir siempre el audio del bruto: a veces trae instrucciones.
+10. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)
