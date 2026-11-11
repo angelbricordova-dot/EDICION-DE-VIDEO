@@ -118,6 +118,13 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 
 - 7-nov-2026: videos 15–19.
 
+- 11-nov-2026: lote 61–99 (carpeta "11 NOVIEMBRE"). Entregados 62, 63, 67–69, 73–75, 79–99. Imágenes
+  dibujadas por Claude (`scripts/marryto/graficos.mjs`, `scripts/marryto/lote61.py`): letras RAMO/COLA
+  (63: "otras letras"), ochos (14), palabras PERRO/GATO/LIBRO (74–75: "no PERRO") y CERDO/CIERVO/
+  CANGURO (79–81: "no COCO"), alfabeto sin Q, tono de piel, nombre japonés, pilares, perrito; listas de
+  Navidad (82) y trabajos (94). Vacas (88–90) de Angel. Arranques afinados a 10 fps.
+  Pendientes por imagen: 61 (supermercado), 64–66 (camiones), 70–72 (loros + número), 76–78 (túnel).
+  Las imágenes pegadas en el chat no llegan como archivo: pedirlas en .rar/Drive o una por mensaje.
 - 10-nov-2026: 34 y 40 rehechos con imágenes HD nuevas (gallinas-hd, sandias-hd). Videos 41–60:
   41–43 cubo-pieza.jpg ("Toca 2 veces para descubrirlo:"), 44–46 numeros-16.png, 47 triangulos-amarillo.png
   + canción (`audio/v47.mp3`, desde el primer cuadro; su grabación no tiene sonido), 48 teclado-nombre.png,
@@ -153,4 +160,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- Videos 61–99 (carpeta "11 NOVIEMBRE").
+- 61, 64–66, 70–72, 76–78: esperar imágenes de Angel.
