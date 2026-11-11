@@ -90,7 +90,18 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
    Si en su grabación DICE lo que hay que hacer (48: "pon el audio… y ahí haces la transición para que
    desaparezca"), hacerlo como la referencia (`"fundido"`: se funde con la habitación vacía).
    Transcribir siempre el audio del bruto: a veces trae instrucciones.
-10. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+10. **Correcciones del 11-nov (audio de Fernando: "fíjate en los ejemplos")**:
+   - **Exportar en 1080×1920 a 60 fps** (ya no 4K): `render1080.sh` (`--scale=1`).
+   - **Tamaño de la imagen = el de la referencia.** Si en el Short la imagen ocupa media pantalla desde
+     arriba, igual (`caja: [0, 0, 1080]`, `bajar: 0`); si es pequeña, pequeña. Medirlo en la miniatura
+     antes de montar. Para que la cara quepa: `zoomMax` (hasta ~1,75), `separacion` y `proxyHD`
+     (proxy 1440×2560 `v<n>-hd.mp4`, para que el zoom no se vea borroso). Nada cortado (piezas A/B/C).
+   - **Nunca la misma imagen en los videos de un mismo Short** (3.ª vez que lo pide): en las de cálculo
+     o "mueve tres números", cambiar el resultado, los números y los colores en cada video.
+   - **Conteos: SIEMPRE uno MÁS de los que hay** ("si hay 5, pon que yo veo 6") para provocar comentarios.
+   - **Copiar los textos de la referencia** (48: llevaba "Santi:"; ponerlo). Mínimo 6 s (47 quedó en 5).
+   - Antes de seguir con videos nuevos, terminar sus correcciones.
+11. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)
