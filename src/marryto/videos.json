@@ -2484,13 +2484,25 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
+  "sinTexto": false,
   "inicio": 2.4,
   "fin": 8.45,
   "caraX": 566,
   "caraY": 1069,
-  "caraAncho": 454
+  "caraAncho": 454,
+  "imagen": "marryto/material/vacas.jpg",
+  "caja": [
+   110,
+   40,
+   860
+  ],
+  "imgAspecto": 0.558,
+  "textoY": 534,
+  "textoTam": 62,
+  "ojosY": 975,
+  "frenteY": 855,
+  "ojosX": 537
  },
  "89": {
   "estilo": "superpuesto",
@@ -2503,13 +2515,25 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
+  "sinTexto": false,
   "inicio": 2.0,
   "fin": 9.0,
   "caraX": 525,
   "caraY": 1049,
-  "caraAncho": 360
+  "caraAncho": 360,
+  "imagen": "marryto/material/vacas.jpg",
+  "caja": [
+   110,
+   40,
+   860
+  ],
+  "imgAspecto": 0.558,
+  "textoY": 534,
+  "textoTam": 62,
+  "ojosY": 891,
+  "frenteY": 738,
+  "ojosX": 517
  },
  "90": {
   "estilo": "superpuesto",
@@ -2522,13 +2546,25 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
+  "sinTexto": false,
   "inicio": 2.55,
   "fin": 9.25,
   "caraX": 529,
   "caraY": 1101,
-  "caraAncho": 550
+  "caraAncho": 550,
+  "imagen": "marryto/material/vacas.jpg",
+  "caja": [
+   110,
+   40,
+   860
+  ],
+  "imgAspecto": 0.558,
+  "textoY": 534,
+  "textoTam": 62,
+  "ojosY": 962,
+  "frenteY": 840,
+  "ojosX": 505
  },
  "91": {
   "estilo": "superpuesto",
