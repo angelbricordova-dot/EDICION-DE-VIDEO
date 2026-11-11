@@ -16,8 +16,11 @@ const css = `
 @font-face{font-family:M;font-weight:900;src:url(${F("montserrat/files/montserrat-latin-900-normal.woff2")})}
 @font-face{font-family:M;font-weight:800;src:url(${F("montserrat/files/montserrat-latin-ext-800-normal.woff2")});unicode-range:U+0100-024F}
 @font-face{font-family:C;font-weight:700;src:url(${F("caveat/files/caveat-latin-700-normal.woff2")})}
+@font-face{font-family:M;font-weight:700;src:url(${F("montserrat/files/montserrat-latin-700-normal.woff2")})}
+@font-face{font-family:L;src:url(${F("lilita-one/files/lilita-one-latin-400-normal.woff2")})}
+@font-face{font-family:B;src:url(${F("bebas-neue/files/bebas-neue-latin-400-normal.woff2")})}
 @font-face{font-family:C;font-weight:700;src:url(${F("caveat/files/caveat-latin-ext-700-normal.woff2")});unicode-range:U+0100-024F}
-*{margin:0;box-sizing:border-box} body{width:var(--w);height:var(--h);overflow:hidden;font-family:M,sans-serif}`;
+*{margin:0;box-sizing:border-box} body{width:var(--w);height:var(--h);overflow:hidden;font-family:M,"Noto Color Emoji",sans-serif}`;
 
 const circulo = (t, fondo, borde, color, tam = 150, fs = 80) =>
   `<div style="width:${tam}px;height:${tam}px;border-radius:50%;background:${fondo};border:8px solid ${borde};display:flex;align-items:center;justify-content:center;font-weight:900;font-size:${fs}px;color:${color};box-shadow:inset 0 -10px 0 rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.25)">${t}</div>`;
@@ -116,6 +119,130 @@ const IMAGENES = {
       <div style="font-size:92px;line-height:1.22">Un libro tiene <span style="color:#D6336C">96</span> páginas, resta tu edad a este número y suma <span style="color:#D6336C">1930</span>.<br>Encontrarás el año en que naciste. 📖</div>
     </div>`,
   },
+  // ── lote 61–99 ──
+  ...(() => {
+    const out = {};
+    // 62–63: "DESCUBRE 2 PALABRAS" (63: otras letras, instrucciones)
+    const letras = (ls, fondo, titulo, acento) => ({
+      w: 1000, h: 1000,
+      html: `<div style="width:1000px;height:1000px;background:${fondo};position:relative;font-family:L">
+        <div style="position:absolute;left:0;right:0;top:60px;text-align:center;font-size:110px;color:${titulo};line-height:1">DESCUBRE</div>
+        <div style="position:absolute;left:0;right:0;top:180px;text-align:center;font-size:80px;color:#1C1A1A"><span style="color:${acento}">2</span> PALABRAS</div>
+        ${ls.map((l, i) => `<div style="position:absolute;${i % 2 ? "right" : "left"}:110px;top:${i < 2 ? 390 : 730}px;font-family:'Noto Serif',Georgia,serif;font-weight:900;font-size:190px;color:#1C1A1A;line-height:1;transform:scaleX(1.35)">${l}</div>`).join("")}
+      </div>`,
+    });
+    out["letras-ramo"] = letras(["R", "A", "M", "O"], "#FFF8E7", "#1F6FEB", "#1F6FEB");
+    out["letras-cola"] = letras(["C", "O", "L", "A"], "#EAF7EF", "#2B8A3E", "#E8590C");
+    // 67–69: 13 ochos pequeños formando un 8 grande (con el grande, 14)
+    {
+      const pts = [];
+      for (let i = 0; i < 13; i++) {
+        const a = (i / 13) * Math.PI * 2;
+        pts.push([500 + Math.sin(a) * 230, 500 - Math.sin(2 * a) * -0 + Math.cos(a) * 0]);
+      }
+      // 13 ochos pequeños formando un 8 grande: 5 en la vuelta de arriba, 1 en la cintura y 7 abajo (con el grande, 14)
+      const ocho = [[500, 452]];
+      for (const g of [-90, -30, 30, 150, 210]) { const u = (g * Math.PI) / 180; ocho.push([500 + Math.cos(u) * 180, 255 + Math.sin(u) * 180]); }
+      for (let k = 0; k < 8; k++) { if (k === 4) continue; const u = ((90 + k * 45) * Math.PI) / 180; ocho.push([500 + Math.cos(u) * 210, 665 + Math.sin(u) * 210]); }
+      out["ochos"] = {
+        w: 1000, h: 1000,
+        html: `<div style="width:1000px;height:1000px;background:radial-gradient(circle at 50% 40%,#1E3A8A,#0B1533);position:relative;font-family:M">
+          ${ocho.map(([x, y], i) => `<div style="position:absolute;left:${x - 50}px;top:${y - 70}px;width:100px;text-align:center;font-weight:900;font-size:120px;line-height:140px;color:${["#FFD43B", "#FF8787", "#69DB7C", "#74C0FC"][i % 4]};text-shadow:0 6px 0 rgba(0,0,0,.35)">8</div>`).join("")}
+        </div>`,
+      };
+    }
+    // 73–75 y 79–81: "La mía es: …  SI REPITES, PIERDES · ¿Qué palabra puedes formar?"
+    const palabra = (pal, emoji, huecos, fondo, marco, acento) => ({
+      w: 1200, h: 820,
+      html: `<div style="width:1200px;height:820px;background:${fondo};padding:40px;font-family:L">
+        <div style="width:100%;height:100%;border-radius:50px;background:#fff;border:12px solid ${marco};position:relative;display:flex;align-items:center;gap:30px;padding:0 50px">
+          <div style="font-size:300px;line-height:1">${emoji}</div>
+          <div style="flex:1;text-align:center">
+            <div style="font-size:70px;color:#1C1A1A">La mía es:</div>
+            <div style="font-size:${pal.length > 6 ? 130 : 160}px;line-height:1;color:${acento};-webkit-text-stroke:8px #1C1A1A;paint-order:stroke fill">${pal}</div>
+            <div style="font-family:M;font-weight:900;font-size:44px;color:#1C1A1A;margin-top:10px">SI REPITES, PIERDES</div>
+            <div style="font-family:M;font-weight:800;font-size:38px;color:#555;margin-top:8px">¿Qué palabra puedes formar?</div>
+            <div style="display:flex;gap:14px;justify-content:center;margin-top:24px">${huecos.split("").map((c) => `<div style="width:${huecos.length > 6 ? 80 : 96}px;height:110px;border-radius:14px;border:7px solid #1C1A1A;background:${c === "_" ? "#F1F3F5" : "#FFF3BF"};font-size:84px;line-height:96px;text-align:center;color:#1C1A1A">${c === "_" ? "" : c}</div>`).join("")}</div>
+          </div>
+        </div></div>`,
+    });
+    out["palabra-perro"] = palabra("PERRO", "🐶", "P___O", "#FFE8CC", "#F76707", "#FFA94D");
+    out["palabra-gato"] = palabra("GATO", "🐱", "G__O", "#E5DBFF", "#7048E8", "#B197FC");
+    out["palabra-libro"] = palabra("LIBRO", "📚", "L___O", "#D3F9D8", "#2B8A3E", "#69DB7C");
+    out["palabra-cerdo"] = palabra("CERDO", "🐷", "C___O", "#FFDEEB", "#D6336C", "#F783AC");
+    out["palabra-ciervo"] = palabra("CIERVO", "🦌", "C____O", "#FFF3BF", "#E67700", "#FFD43B");
+    out["palabra-canguro"] = palabra("CANGURO", "🦘", "C_____O", "#D0EBFF", "#1971C2", "#74C0FC");
+    // 83–84: "¿Qué está mal?" (falta la Q)
+    out["alfabeto-error"] = {
+      w: 1000, h: 900,
+      html: `<div style="width:1000px;height:900px;background:#FFF9DB;background-image:linear-gradient(transparent 78px,#C5D9F2 78px,#C5D9F2 81px,transparent 81px);background-size:100% 82px;padding:50px 60px;border-left:16px solid #FF8787;text-align:center">
+        <div style="font-family:L;font-size:100px;color:#E03131;line-height:1.1">¿Qué está mal?</div>
+        <div style="font-family:M;font-weight:800;font-size:82px;letter-spacing:10px;color:#1C1A1A;line-height:1.35;margin-top:30px">ABCDEFGHIJ<br>KLMNÑOPRST<br>UVWXYZ</div>
+        <div style="font-family:C;font-weight:700;font-size:64px;color:#364FC7;line-height:1.15;margin-top:40px">Mientras más tranquilo estás, más fácil es encontrar el error.</div>
+      </div>`,
+    };
+    // 85–87: "¿Cuál es tu tono de piel?"
+    {
+      const tonos = [["🏻", ["#F8DCC8", "#F2CDB4", "#EBC0A4"]], ["🏼", ["#E8BE98", "#DFAE86", "#D49F74"]], ["🏽", ["#C68E62", "#B97F54", "#AA7046"]], ["🏾", ["#8D5A36", "#7E4D2D", "#6E4125"]], ["🏿", ["#5A3A24", "#4B2F1C", "#3C2415"]]];
+      out["tono-piel"] = {
+        w: 1100, h: 1000,
+        html: `<div style="width:1100px;height:1000px;background:linear-gradient(#F8F9FA,#E9ECEF);padding:40px;text-align:center">
+          <div style="font-family:L;font-size:88px;color:#1C1A1A">¿Cuál es tu tono de piel?</div>
+          <div style="display:flex;justify-content:space-around;margin-top:40px">${tonos.map(([m, cs]) => `<div style="display:flex;flex-direction:column;align-items:center;gap:14px"><div style="font-size:150px;line-height:1">✊${m}</div>${cs.map((c) => `<div style="width:150px;height:110px;border-radius:24px;background:${c};border:5px solid rgba(0,0,0,.15)"></div>`).join("")}</div>`).join("")}</div>
+        </div>`,
+      };
+    }
+    // 91–93: "¿Cómo sería tu nombre japonés?"
+    {
+      const m = "A=ka B=tu C=mi D=te E=ku F=lu G=ji H=ri I=ki J=zu K=me L=ta M=rin N=to O=mo P=no Q=ke R=shi S=ari T=chi U=do V=ru W=mei X=na Y=fu Z=zi".split(" ");
+      out["nombre-japones"] = {
+        w: 1100, h: 900,
+        html: `<div style="width:1100px;height:900px;background:#FFF5F5;padding:40px;position:relative;overflow:hidden">
+          <div style="position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:#E03131;opacity:.18"></div>
+          <div style="font-family:L;font-size:62px;color:#C92A2A;text-align:center;margin-bottom:22px">¿Cómo sería tu nombre japonés? 🇯🇵</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px 16px;font-family:M;font-weight:800;font-size:40px;color:#1C1A1A">${m.map((x) => { const [l, r] = x.split("="); return `<div style="background:#fff;border:4px solid #FFC9C9;border-radius:18px;padding:5px 12px"><span style="color:#C92A2A">${l}</span> = ${r}</div>`; }).join("")}</div>
+        </div>`,
+      };
+    }
+    // 95–97: pilares imposibles (arriba 4, abajo 3)
+    {
+      const xs = Array.from({ length: 8 }, (_, i) => 180 + i * 92);
+      const arriba = [[0, 1], [2, 3], [4, 5], [6, 7]].map(([a, b]) => `<rect x="${xs[a]}" y="230" width="${xs[b] - xs[a]}" height="260" fill="url(#g1)"/><rect x="${xs[a] - 12}" y="200" width="${xs[b] - xs[a] + 24}" height="34" rx="6" fill="#DEE2E6" stroke="#212529" stroke-width="6"/>`).join("");
+      const abajo = [[1, 2], [3, 4], [5, 6]].map(([a, b]) => `<rect x="${xs[a]}" y="560" width="${xs[b] - xs[a]}" height="240" fill="url(#g2)"/><rect x="${xs[a] - 14}" y="796" width="${xs[b] - xs[a] + 28}" height="38" rx="6" fill="#DEE2E6" stroke="#212529" stroke-width="6"/>`).join("");
+      out["pilares"] = {
+        w: 1000, h: 1000,
+        html: `<div style="width:1000px;height:1000px;background:#F1F3F5;text-align:center;padding-top:40px">
+          <div style="font-family:L;font-size:90px;color:#1971C2;background:#fff;display:inline-block;padding:4px 30px;border-radius:20px;border:6px solid #1971C2">¿Cuántos pilares hay?</div>
+          <svg width="1000" height="860" viewBox="0 0 1000 860" style="display:block;margin-top:-60px">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ADB5BD"/><stop offset=".5" stop-color="#F8F9FA"/><stop offset="1" stop-color="#ADB5BD"/></linearGradient>
+              <linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#868E96"/><stop offset=".5" stop-color="#E9ECEF"/><stop offset="1" stop-color="#868E96"/></linearGradient>
+            </defs>
+            ${arriba}${abajo}
+            ${xs.map((x) => `<line x1="${x}" y1="230" x2="${x}" y2="800" stroke="#212529" stroke-width="7"/>`).join("")}
+          </svg></div>`,
+      };
+    }
+    // 98–99: "¿De dónde está amarrado el perrito?" (correa enredada, la buena va al poste 2)
+    {
+      const postes = [250, 500, 750];
+      const correa = (x, d) => `<path d="${d}" fill="none" stroke="#C92A2A" stroke-width="12" stroke-linecap="round"/>`;
+      out["perrito"] = {
+        w: 1000, h: 1200,
+        html: `<div style="width:1000px;height:1200px;background:#FFF9F0;text-align:center;padding-top:40px;position:relative">
+          <div style="font-family:L;font-size:78px;color:#1C1A1A;line-height:1.05">¿De dónde está amarrado<br>el perrito?</div>
+          <div style="position:absolute;left:0;right:0;top:215px;font-size:260px;line-height:1;text-align:center">🐕</div>
+          <svg width="1000" height="1200" viewBox="0 0 1000 1200" style="position:absolute;left:0;top:0">
+            ${correa(0, "M 470 420 C 300 470 760 560 620 640 S 200 700 330 800 S 760 840 640 920 S 470 960 500 1010")}
+            ${correa(0, "M 250 1010 C 230 900 520 880 440 780 S 760 700 700 600 S 380 560 430 480")}
+            ${correa(0, "M 750 1010 C 800 900 330 900 380 820 S 160 700 300 620 S 640 520 560 470")}
+            ${postes.map((x, i) => `<rect x="${x - 26}" y="1000" width="52" height="110" rx="10" fill="#8B5A2B" stroke="#1C1A1A" stroke-width="6"/><circle cx="${x}" cy="1010" r="16" fill="#ADB5BD" stroke="#1C1A1A" stroke-width="5"/><circle cx="${x}" cy="1160" r="34" fill="#E03131"/><text x="${x}" y="1174" text-anchor="middle" font-family="L" font-size="42" fill="#fff">${i + 1}</text>`).join("")}
+          </svg></div>`,
+      };
+    }
+    return out;
+  })(),
+
 };
 
 const nombres = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(IMAGENES);

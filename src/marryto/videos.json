@@ -1763,5 +1763,779 @@
   "textoY": 720,
   "textoTam": 60,
   "imgAspecto": 0.8421
+ },
+ "61": {
+  "estilo": "superpuesto",
+  "short": "MeJHmajqBPA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "62": {
+  "estilo": "superpuesto",
+  "short": "K1lZBfNW-cE",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/letras-ramo.png",
+  "caja": [
+   240,
+   40,
+   600
+  ],
+  "imgAspecto": 1.0
+ },
+ "63": {
+  "estilo": "superpuesto",
+  "short": "K1lZBfNW-cE",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/letras-cola.png",
+  "caja": [
+   240,
+   40,
+   600
+  ],
+  "imgAspecto": 1.0
+ },
+ "64": {
+  "estilo": "superpuesto",
+  "short": "Jf_1xReE0eo",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "65": {
+  "estilo": "superpuesto",
+  "short": "Jf_1xReE0eo",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "66": {
+  "estilo": "superpuesto",
+  "short": "Jf_1xReE0eo",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "67": {
+  "estilo": "superpuesto",
+  "short": "073aklHRtFY",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Cuántos 8 ves? Yo 14",
+  "sinTexto": false,
+  "imagen": "marryto/material/ochos.png",
+  "caja": [
+   260,
+   40,
+   560
+  ],
+  "imgAspecto": 1.0,
+  "textoY": 614,
+  "textoTam": 66
+ },
+ "68": {
+  "estilo": "superpuesto",
+  "short": "073aklHRtFY",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Cuántos 8 ves? Yo 14",
+  "sinTexto": false,
+  "imagen": "marryto/material/ochos.png",
+  "caja": [
+   260,
+   40,
+   560
+  ],
+  "imgAspecto": 1.0,
+  "textoY": 614,
+  "textoTam": 66
+ },
+ "69": {
+  "estilo": "superpuesto",
+  "short": "073aklHRtFY",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Cuántos 8 ves? Yo 14",
+  "sinTexto": false,
+  "imagen": "marryto/material/ochos.png",
+  "caja": [
+   260,
+   40,
+   560
+  ],
+  "imgAspecto": 1.0,
+  "textoY": 614,
+  "textoTam": 66
+ },
+ "70": {
+  "estilo": "superpuesto",
+  "short": "LAz95_PqDN0",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "71": {
+  "estilo": "superpuesto",
+  "short": "LAz95_PqDN0",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "72": {
+  "estilo": "superpuesto",
+  "short": "LAz95_PqDN0",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "73": {
+  "estilo": "superpuesto",
+  "short": "A9BRfa7C4mk",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/palabra-perro.png",
+  "caja": [
+   130,
+   40,
+   820
+  ],
+  "imgAspecto": 0.6833
+ },
+ "74": {
+  "estilo": "superpuesto",
+  "short": "A9BRfa7C4mk",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/palabra-gato.png",
+  "caja": [
+   130,
+   40,
+   820
+  ],
+  "imgAspecto": 0.6833
+ },
+ "75": {
+  "estilo": "superpuesto",
+  "short": "A9BRfa7C4mk",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/palabra-libro.png",
+  "caja": [
+   130,
+   40,
+   820
+  ],
+  "imgAspecto": 0.6833
+ },
+ "76": {
+  "estilo": "superpuesto",
+  "short": "19eD-qIsHZw",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "77": {
+  "estilo": "superpuesto",
+  "short": "19eD-qIsHZw",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "78": {
+  "estilo": "superpuesto",
+  "short": "19eD-qIsHZw",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "79": {
+  "estilo": "superpuesto",
+  "short": "eCDGOWY2OnA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/palabra-cerdo.png",
+  "caja": [
+   130,
+   40,
+   820
+  ],
+  "imgAspecto": 0.6833
+ },
+ "80": {
+  "estilo": "superpuesto",
+  "short": "eCDGOWY2OnA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/palabra-ciervo.png",
+  "caja": [
+   130,
+   40,
+   820
+  ],
+  "imgAspecto": 0.6833
+ },
+ "81": {
+  "estilo": "superpuesto",
+  "short": "eCDGOWY2OnA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/palabra-canguro.png",
+  "caja": [
+   130,
+   40,
+   820
+  ],
+  "imgAspecto": 0.6833
+ },
+ "82": {
+  "estilo": "superpuesto",
+  "short": "-bCb5LbdNoo",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "listaMargen": 150,
+  "listaY": 1290,
+  "listaTam": 52,
+  "etiquetaY": 330,
+  "etiqueta": "El último número que te salga después de dar like será tu próximo regalo de Navidad 🤫🎄",
+  "lista": [
+   [
+    "0. Bici",
+    "1. Peluche",
+    "2. Videojuego",
+    "3. Lego",
+    "4. Pijama"
+   ],
+   [
+    "5. Tablet",
+    "6. Patines",
+    "7. Cascos",
+    "8. Consola",
+    "9. Carbón"
+   ]
+  ]
+ },
+ "83": {
+  "estilo": "superpuesto",
+  "short": "EW5NA1kblfA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/alfabeto-error.png",
+  "caja": [
+   220,
+   40,
+   640
+  ],
+  "imgAspecto": 0.9
+ },
+ "84": {
+  "estilo": "superpuesto",
+  "short": "EW5NA1kblfA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/alfabeto-error.png",
+  "caja": [
+   220,
+   40,
+   640
+  ],
+  "imgAspecto": 0.9
+ },
+ "85": {
+  "estilo": "superpuesto",
+  "short": "xHVqZt-sozM",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Toca 2 veces en tu tono 👀",
+  "sinTexto": false,
+  "imagen": "marryto/material/tono-piel.png",
+  "caja": [
+   200,
+   40,
+   680
+  ],
+  "imgAspecto": 0.9091,
+  "textoY": 672,
+  "textoTam": 64
+ },
+ "86": {
+  "estilo": "superpuesto",
+  "short": "xHVqZt-sozM",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Toca 2 veces en tu tono 👀",
+  "sinTexto": false,
+  "imagen": "marryto/material/tono-piel.png",
+  "caja": [
+   200,
+   40,
+   680
+  ],
+  "imgAspecto": 0.9091,
+  "textoY": 672,
+  "textoTam": 64
+ },
+ "87": {
+  "estilo": "superpuesto",
+  "short": "xHVqZt-sozM",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Toca 2 veces en tu tono 👀",
+  "sinTexto": false,
+  "imagen": "marryto/material/tono-piel.png",
+  "caja": [
+   200,
+   40,
+   680
+  ],
+  "imgAspecto": 0.9091,
+  "textoY": 672,
+  "textoTam": 64
+ },
+ "88": {
+  "estilo": "superpuesto",
+  "short": "ecYOpjOO4iM",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "89": {
+  "estilo": "superpuesto",
+  "short": "ecYOpjOO4iM",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "90": {
+  "estilo": "superpuesto",
+  "short": "ecYOpjOO4iM",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true
+ },
+ "91": {
+  "estilo": "superpuesto",
+  "short": "JPpnrLi92nA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/nombre-japones.png",
+  "caja": [
+   160,
+   40,
+   760
+  ],
+  "imgAspecto": 0.8182
+ },
+ "92": {
+  "estilo": "superpuesto",
+  "short": "JPpnrLi92nA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/nombre-japones.png",
+  "caja": [
+   160,
+   40,
+   760
+  ],
+  "imgAspecto": 0.8182
+ },
+ "93": {
+  "estilo": "superpuesto",
+  "short": "JPpnrLi92nA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/nombre-japones.png",
+  "caja": [
+   160,
+   40,
+   760
+  ],
+  "imgAspecto": 0.8182
+ },
+ "94": {
+  "estilo": "superpuesto",
+  "short": "CuPK_ZEjr28",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "listaMargen": 150,
+  "listaY": 1290,
+  "listaTam": 52,
+  "etiquetaY": 330,
+  "etiqueta": "El número que te salga después de dar like será tu próximo trabajo 😉",
+  "lista": [
+   [
+    "0. Astronauta",
+    "1. Chef",
+    "2. Piloto",
+    "3. Youtuber",
+    "4. Veterinario"
+   ],
+   [
+    "5. Futbolista",
+    "6. Abogado",
+    "7. Bombero",
+    "8. DJ",
+    "9. Payaso"
+   ]
+  ]
+ },
+ "95": {
+  "estilo": "superpuesto",
+  "short": "b5d7NQf5dBI",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Solo un 10% lo adivina 💀",
+  "sinTexto": false,
+  "imagen": "marryto/material/pilares.png",
+  "caja": [
+   240,
+   40,
+   600
+  ],
+  "imgAspecto": 1.0,
+  "textoY": 654,
+  "textoTam": 64
+ },
+ "96": {
+  "estilo": "superpuesto",
+  "short": "b5d7NQf5dBI",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Solo un 10% lo adivina 💀",
+  "sinTexto": false,
+  "imagen": "marryto/material/pilares.png",
+  "caja": [
+   240,
+   40,
+   600
+  ],
+  "imgAspecto": 1.0,
+  "textoY": 654,
+  "textoTam": 64
+ },
+ "97": {
+  "estilo": "superpuesto",
+  "short": "b5d7NQf5dBI",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "Solo un 10% lo adivina 💀",
+  "sinTexto": false,
+  "imagen": "marryto/material/pilares.png",
+  "caja": [
+   240,
+   40,
+   600
+  ],
+  "imgAspecto": 1.0,
+  "textoY": 654,
+  "textoTam": 64
+ },
+ "98": {
+  "estilo": "superpuesto",
+  "short": "yHJyKaMjxA8",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/perrito.png",
+  "caja": [
+   280,
+   40,
+   520
+  ],
+  "imgAspecto": 1.2
+ },
+ "99": {
+  "estilo": "superpuesto",
+  "short": "yHJyKaMjxA8",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 160,
+  "titulo": "",
+  "sinTexto": true,
+  "imagen": "marryto/material/perrito.png",
+  "caja": [
+   280,
+   40,
+   520
+  ],
+  "imgAspecto": 1.2
  }
 }
