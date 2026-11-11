@@ -104,9 +104,9 @@ const IMAGENES = {
   },
   // 52: "¿Cuál tiene dos cero y dos seis?" (original libreta blanca → nota adhesiva amarilla)
   "dos-ceros": {
-    w: 1000, h: 1000,
-    html: `<div style="width:1000px;height:1000px;background:#E9ECEF;display:flex;align-items:center;justify-content:center">
-      <div style="width:820px;height:860px;background:#FFE877;rotate:-2deg;box-shadow:0 30px 40px rgba(0,0,0,.25);padding:70px 80px;font-family:C;font-weight:700;color:#1A2B6B;position:relative">
+    w: 1000, h: 900,
+    html: `<div style="width:1000px;height:900px;background:#E9ECEF;display:flex;align-items:center;justify-content:center">
+      <div style="width:900px;height:800px;background:#FFE877;rotate:-2deg;box-shadow:0 30px 40px rgba(0,0,0,.25);padding:70px 80px;font-family:C;font-weight:700;color:#1A2B6B;position:relative">
         <div style="position:absolute;left:330px;top:-30px;width:170px;height:60px;background:rgba(255,255,255,.6);rotate:3deg"></div>
         <div style="font-size:92px;line-height:1.05">¿CUÁL TIENE DOS CEROS Y DOS SEIS?</div>
         <div style="font-size:92px;line-height:1.22;margin-top:30px;padding-left:30px">A.) 2026<br>B.) 2066<br>C.) 0026<br>D.) 0066</div>
@@ -240,6 +240,76 @@ const IMAGENES = {
           </svg></div>`,
       };
     }
+    return out;
+  })(),
+  // ── correcciones del 11-nov: imágenes grandes (ancho completo, como las referencias) y distintas en cada video ──
+  ...(() => {
+    const out = {};
+    // 41–43: cubo 3×3 con la esquina que falta; opciones A, B, C enteras (nada cortado); colores distintos al original
+    const cubo = (top, izq, der, correcta, fondo, cabecera) => {
+      const s = 105, cx = 500, cy = 330;
+      const P = (x, y, z) => [cx + (x - y) * s * 0.866, cy + (x + y) * s * 0.5 - z * s];
+      const poly = (pts, fill, extra = "") => `<polygon points="${pts.map((q) => q.join(",")).join(" ")}" fill="${fill}" stroke="#111" stroke-width="7" stroke-linejoin="round" ${extra}/>`;
+      let g = "";
+      for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) {
+        if (!(i === 2 && j === 2)) g += poly([P(i, j, 3), P(i + 1, j, 3), P(i + 1, j + 1, 3), P(i, j + 1, 3)], top); // arriba
+        if (!(i === 2 && j === 0)) g += poly([P(3, i, 3 - j), P(3, i + 1, 3 - j), P(3, i + 1, 2 - j), P(3, i, 2 - j)], der); // derecha (x=3)
+        if (!(i === 2 && j === 0)) g += poly([P(i, 3, 3 - j), P(i + 1, 3, 3 - j), P(i + 1, 3, 2 - j), P(i, 3, 2 - j)], izq); // izquierda (y=3)
+      }
+      // hueco de la esquina: suelo y dos paredes interiores
+      g += poly([P(2, 2, 2), P(3, 2, 2), P(3, 3, 2), P(2, 3, 2)], "#E9ECEF");
+      g += poly([P(2, 2, 3), P(2, 3, 3), P(2, 3, 2), P(2, 2, 2)], "#CED4DA");
+      g += poly([P(2, 2, 3), P(3, 2, 3), P(3, 2, 2), P(2, 2, 2)], "#ADB5BD");
+      const pieza = (t, l, r, x) => {
+        const q = 78, Q = (a, b, c) => [x + (a - b) * q * 0.866, 870 + (a + b) * q * 0.5 - c * q];
+        const pp = (pts, f) => `<polygon points="${pts.map((v) => v.join(",")).join(" ")}" fill="${f}" stroke="#111" stroke-width="6" stroke-linejoin="round"/>`;
+        return pp([Q(0, 0, 1), Q(1, 0, 1), Q(1, 1, 1), Q(0, 1, 1)], t) + pp([Q(1, 0, 1), Q(1, 1, 1), Q(1, 1, 0), Q(1, 0, 0)], r) + pp([Q(0, 1, 1), Q(1, 1, 1), Q(1, 1, 0), Q(0, 1, 0)], l);
+      };
+      const ops = { A: [izq, top, der], B: [top, der, izq], C: [der, izq, top] };
+      ops[correcta] = [top, izq, der];
+      const xs = { A: 230, B: 500, C: 770 };
+      const piezas = Object.entries(ops).map(([k, [t, l, r]]) => `<text x="${xs[k]}" y="745" text-anchor="middle" font-family="L" font-size="80" fill="#111">${k}</text>` + pieza(t, l, r, xs[k])).join("");
+      return {
+        w: 1000, h: 1110,
+        html: `<div style="width:1000px;height:1110px;background:${fondo};position:relative">
+          <div style="height:150px;background:${cabecera};display:flex;align-items:center;justify-content:center;text-align:center;font-family:L;font-size:62px;line-height:1.05;color:#fff;padding:0 30px">¿QUÉ PIEZA ENCAJA<br>CORRECTAMENTE?</div>
+          <svg width="1000" height="1110" viewBox="0 -150 1000 1110" style="position:absolute;left:0;top:0;overflow:visible">${g}${piezas}</svg>
+        </div>`,
+      };
+    };
+    out["cubo-a"] = cubo("#FFD43B", "#7048E8", "#F76707", "B", "#FFF9DB", "#5F3DC4");
+    out["cubo-b"] = cubo("#F8F9FA", "#E64980", "#12B886", "C", "#E6FCF5", "#C2255C");
+    out["cubo-c"] = cubo("#FF922B", "#1C7ED6", "#FAB005", "A", "#E7F5FF", "#1864AB");
+    // 44–46: "Mueve tres números…" con distinto resultado, números y colores
+    const numeros = (obj, nums, fondo1, fondo2, borde, acento, bolas) => ({
+      w: 1000, h: 940,
+      html: `<div style="width:1000px;height:940px;background:linear-gradient(160deg,${fondo1},${fondo2});padding:34px 40px;display:flex;flex-direction:column;align-items:center;gap:30px">
+        <div style="font-weight:900;font-size:60px;line-height:1.08;color:#fff;text-align:center">Mueve tres números para que el resultado sea <span style="color:${acento}">${obj}</span></div>
+        <div style="display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.08);border:6px solid ${borde};border-radius:40px;padding:22px 30px">
+          ${hueco(130, borde)}${signo("+", borde)}${hueco(130, borde)}${signo("+", borde)}${hueco(130, borde)}${signo("=", borde)}${circulo(String(obj), acento, "#1C1A1A", "#1C1A1A", 150, 72)}
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,170px);gap:30px;background:rgba(0,0,0,.25);border-radius:44px;padding:34px 44px;border:6px solid ${borde}">
+          ${nums.map((n, i) => circulo(String(n), bolas[i % bolas.length], "#1C1A1A", "#1C1A1A", 170, String(n).length > 1 ? 72 : 86)).join("")}
+        </div></div>`,
+    });
+    out["numeros-16"] = numeros(16, [7, 3, 10, 6, 4, 9, 5, 8], "#5B2A86", "#2E1A5C", "#8EF0C8", "#FFD43B", ["#FF6B6B", "#4DABF7", "#FFD43B", "#69DB7C"]);
+    out["numeros-20"] = numeros(20, [11, 2, 9, 5, 14, 1, 6, 12], "#0B7285", "#0B3D4A", "#FFC9C9", "#FF8787", ["#FFD8A8", "#B2F2BB", "#FFF3BF", "#D0BFFF"]);
+    out["numeros-18"] = numeros(18, [4, 13, 7, 2, 15, 8, 3, 10], "#C92A2A", "#5C0F0F", "#FFE066", "#FFE066", ["#A5D8FF", "#FFFFFF", "#FFC078", "#96F2D7"]);
+    // 49–51: "El 99% falla este cálculo" con distinto resultado, números y color de bolas
+    const calculo = (obj, nums, c1, c2, c3, fondo) => {
+      const bola = (n) => `<div style="width:230px;height:230px;border-radius:50%;background:radial-gradient(circle at 35% 30%,${c1} 0%,${c2} 45%,${c3} 100%);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:125px;color:#fff;text-shadow:0 6px 0 rgba(0,0,0,.3);box-shadow:0 18px 24px rgba(0,0,0,.25)">${n}</div>`;
+      return {
+        w: 1000, h: 880,
+        html: `<div style="width:1000px;height:880px;background:${fondo};display:flex;flex-direction:column;align-items:center;padding-top:34px;gap:34px">
+          <div style="font-weight:900;font-size:72px;color:#1C1A1A">El 99% falla este cálculo:</div>
+          <div style="display:flex;align-items:center;gap:18px">${hueco(140, "#1C1A1A")}${signo("+", "#1C1A1A", 100)}${hueco(140, "#1C1A1A")}${signo("+", "#1C1A1A", 100)}${hueco(140, "#1C1A1A")}${signo("= " + obj, "#1C1A1A", 96)}</div>
+          <div style="display:grid;grid-template-columns:repeat(3,230px);gap:34px 80px">${nums.map(bola).join("")}</div>
+        </div>`,
+      };
+    };
+    out["calculo-17"] = calculo(17, [3, 4, 9, 8, 7, 2], "#9BD4FF", "#1971C2", "#0B3D75", "linear-gradient(#F4F7FB,#DCE6F2)");
+    out["calculo-20"] = calculo(20, [5, 11, 6, 3, 14, 8], "#B2F2BB", "#2B8A3E", "#0B4A1E", "linear-gradient(#F4FCE3,#D8F5A2)");
+    out["calculo-13"] = calculo(13, [2, 7, 1, 9, 4, 6], "#FFD8A8", "#E8590C", "#7A2A04", "linear-gradient(#FFF4E6,#FFE8CC)");
     return out;
   })(),
 

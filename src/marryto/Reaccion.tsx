@@ -29,6 +29,8 @@ export type Video = {
   tomas?: { desde: number; dur: number; titulo?: string }[];
   fundido?: { desde: number; t: number; dur: number };
   duracion?: number; // fija la duración (p. ej. la de la canción)
+  zoomMax?: number; separacion?: number; // 11-nov: imagen grande como la referencia → su cara más abajo y con más zoom
+  proxyHD?: boolean; // con mucho zoom: proxy 1440×2560 (v<n>-hd.mp4) para que no se vea borroso
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -122,8 +124,8 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const bajar = v.bajar ?? 0;
   if (v.frenteY) {
     // 9-nov: nunca tapar ojos y SEPARACIÓN con la frente, medido cuadro a cuadro (lo más alto que llega)
-    const SEP = 60;
-    const SMAX = 1.35;
+    const SEP = v.separacion ?? 60;
+    const SMAX = v.zoomMax ?? 1.35;
     const bruto = finEncimaBruto(v);
     const limite = v.frenteY * SMAX - SEP; // lo más abajo que puede acabar lo de arriba
     k = Math.max(0.6, Math.min(1, (limite - bajar) / bruto));
@@ -149,17 +151,17 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           const desde = v.tomas!.slice(0, i).reduce((a, b) => a + b.dur, 0);
           return (
             <Sequence key={i} from={Math.round(desde * fps)} durationInFrames={Math.round(tm.dur * fps)} layout="none">
-              <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(tm.desde * fps)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+              <OffthreadVideo src={staticFile(`marryto/proxies/v${n}${v.proxyHD ? "-hd" : ""}.mp4`)} startFrom={Math.round(tm.desde * fps)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
             </Sequence>
           );
         })
       ) : (
-        <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+        <OffthreadVideo src={staticFile(`marryto/proxies/v${n}${v.proxyHD ? "-hd" : ""}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
       )}
       {v.fundido ? (
         <Sequence from={Math.round(v.fundido.t * fps)} layout="none">
           <AbsoluteFill style={{ opacity: Math.min(1, Math.max(0, (t - v.fundido.t) / v.fundido.dur)) }}>
-            <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.fundido.desde * fps)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+            <OffthreadVideo src={staticFile(`marryto/proxies/v${n}${v.proxyHD ? "-hd" : ""}.mp4`)} startFrom={Math.round(v.fundido.desde * fps)} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
           </AbsoluteFill>
         </Sequence>
       ) : null}
@@ -248,7 +250,7 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
   return (
     <AbsoluteFill style={{ background: "#fff" }}>
       <div style={{ position: "absolute", left: 0, top: arriba, width: 1080, height: alto, overflow: "hidden", background: "#000" }}>
-        <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
+        <OffthreadVideo src={staticFile(`marryto/proxies/v${n}${v.proxyHD ? "-hd" : ""}.mp4`)} startFrom={Math.round(v.inicio * fps)} playbackRate={vel} muted style={{ position: "absolute", left: x, top: y, width: vw, height: vh }} />
       </div>
       {/* Imagen del Short original (recortada de la miniatura 1080 × 1920) */}
       <div style={{ position: "absolute", left: 0, top: TITULO_H, width: 1080, height: imgH, overflow: "hidden" }}>

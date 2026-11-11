@@ -921,7 +921,7 @@
    1920
   ],
   "sinTexto": false,
-  "titulo": "Cuántas 🐔 ves? Yo 9",
+  "titulo": "Cuántas 🐔 ves? Yo 16",
   "imagen": "marryto/material/gallinas-hd.jpg",
   "caja": [
    220,
@@ -1132,21 +1132,24 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces\npara descubrirlo:",
   "sinTexto": false,
   "ojosY": 956,
   "frenteY": 857,
   "ojosX": 529,
-  "imagen": "marryto/material/cubo-pieza.jpg",
+  "imagen": "marryto/material/cubo-a.png",
   "caja": [
-   230,
-   30,
-   620
+   120,
+   0,
+   840
   ],
-  "textoY": 730,
-  "textoTam": 62,
-  "imgAspecto": 1.1004
+  "textoY": 936,
+  "textoTam": 60,
+  "imgAspecto": 1.11,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "42": {
   "inicio": 2.5,
@@ -1163,21 +1166,24 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces\npara descubrirlo:",
   "sinTexto": false,
   "ojosY": 989,
   "frenteY": 871,
   "ojosX": 585,
-  "imagen": "marryto/material/cubo-pieza.jpg",
+  "imagen": "marryto/material/cubo-b.png",
   "caja": [
-   230,
-   30,
-   620
+   120,
+   0,
+   840
   ],
-  "textoY": 730,
-  "textoTam": 62,
-  "imgAspecto": 1.1004
+  "textoY": 936,
+  "textoTam": 60,
+  "imgAspecto": 1.11,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "43": {
   "inicio": 2.5,
@@ -1194,21 +1200,24 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces\npara descubrirlo:",
   "sinTexto": false,
   "ojosY": 938,
   "frenteY": 795,
   "ojosX": 513,
-  "imagen": "marryto/material/cubo-pieza.jpg",
+  "imagen": "marryto/material/cubo-c.png",
   "caja": [
-   230,
-   30,
-   620
+   120,
+   0,
+   840
   ],
-  "textoY": 730,
-  "textoTam": 62,
-  "imgAspecto": 1.1004
+  "textoY": 936,
+  "textoTam": 60,
+  "imgAspecto": 1.11,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "44": {
   "inicio": 2.1,
@@ -1225,7 +1234,7 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
   "ojosY": 860,
@@ -1233,11 +1242,14 @@
   "ojosX": 499,
   "imagen": "marryto/material/numeros-16.png",
   "caja": [
-   200,
-   40,
-   680
+   0,
+   0,
+   1080
   ],
-  "imgAspecto": 1.0
+  "imgAspecto": 0.94,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "45": {
   "inicio": 7.3,
@@ -1254,19 +1266,22 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
   "ojosY": 818,
   "frenteY": 736,
   "ojosX": 491,
-  "imagen": "marryto/material/numeros-16.png",
+  "imagen": "marryto/material/numeros-20.png",
   "caja": [
-   200,
-   40,
-   680
+   0,
+   0,
+   1080
   ],
-  "imgAspecto": 1.0
+  "imgAspecto": 0.94,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "46": {
   "inicio": 2.3,
@@ -1283,19 +1298,22 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
   "ojosY": 871,
   "frenteY": 799,
   "ojosX": 521,
-  "imagen": "marryto/material/numeros-16.png",
+  "imagen": "marryto/material/numeros-18.png",
   "caja": [
-   200,
-   40,
-   680
+   0,
+   0,
+   1080
   ],
-  "imgAspecto": 1.0
+  "imgAspecto": 0.94,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "47": {
   "inicio": 2.3,
@@ -1397,7 +1415,7 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces\npara ver la respuesta",
   "sinTexto": false,
   "ojosY": 854,
@@ -1405,13 +1423,16 @@
   "ojosX": 500,
   "imagen": "marryto/material/calculo-17.png",
   "caja": [
-   220,
-   40,
-   640
+   0,
+   0,
+   1080
   ],
-  "textoY": 700,
-  "textoTam": 60,
-  "imgAspecto": 1.0
+  "textoY": 954,
+  "textoTam": 58,
+  "imgAspecto": 0.88,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "50": {
   "inicio": 2.7,
@@ -1428,21 +1449,24 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces\npara ver la respuesta",
   "sinTexto": false,
   "ojosY": 876,
   "frenteY": 767,
   "ojosX": 508,
-  "imagen": "marryto/material/calculo-17.png",
+  "imagen": "marryto/material/calculo-20.png",
   "caja": [
-   220,
-   40,
-   640
+   0,
+   0,
+   1080
   ],
-  "textoY": 700,
-  "textoTam": 60,
-  "imgAspecto": 1.0
+  "textoY": 954,
+  "textoTam": 58,
+  "imgAspecto": 0.88,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "51": {
   "inicio": 2.4,
@@ -1459,21 +1483,24 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces\npara ver la respuesta",
   "sinTexto": false,
   "ojosY": 957,
   "frenteY": 838,
   "ojosX": 507,
-  "imagen": "marryto/material/calculo-17.png",
+  "imagen": "marryto/material/calculo-13.png",
   "caja": [
-   220,
-   40,
-   640
+   0,
+   0,
+   1080
   ],
-  "textoY": 700,
-  "textoTam": 60,
-  "imgAspecto": 1.0
+  "textoY": 954,
+  "textoTam": 58,
+  "imgAspecto": 0.88,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "52": {
   "inicio": 6.8,
@@ -1490,7 +1517,7 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "La respuesta es D",
   "sinTexto": false,
   "ojosY": 872,
@@ -1498,13 +1525,13 @@
   "ojosX": 503,
   "imagen": "marryto/material/dos-ceros.png",
   "caja": [
-   220,
-   40,
-   640
+   0,
+   0,
+   1080
   ],
-  "textoY": 700,
-  "textoTam": 70,
-  "imgAspecto": 1.0,
+  "textoY": 976,
+  "textoTam": 66,
+  "imgAspecto": 0.9,
   "tomas": [
    {
     "desde": 6.8,
@@ -1519,7 +1546,10 @@
   ],
   "duracion": 6.61,
   "audio": "marryto/audio/v52.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "zoomMax": 1.75,
+  "separacion": 50,
+  "proxyHD": true
  },
  "53": {
   "inicio": 2.3,
@@ -1624,7 +1654,7 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "Yo veo 5 hámsters... y tú?",
+  "titulo": "Yo veo 6 hámsters... y tú?",
   "sinTexto": false,
   "ojosY": 849,
   "frenteY": 741,
@@ -1655,7 +1685,7 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "Yo veo 6 perros... y tú?",
+  "titulo": "Yo veo 7 perros... y tú?",
   "sinTexto": false,
   "ojosY": 889,
   "frenteY": 790,
@@ -1686,7 +1716,7 @@
    1920
   ],
   "bajar": 160,
-  "titulo": "Yo veo 6 gatos... y tú?",
+  "titulo": "Yo veo 7 gatos... y tú?",
   "sinTexto": false,
   "rapido": true,
   "ojosY": 927,
