@@ -89,6 +89,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Shimon Geek (YouTube, anime, cliente nuevo) | `src/shimon/` (por crear) | `docs/shimon.md` | videos largos 16:9 de opinión de anime, poca cámara, escenas/imágenes del anime, memes, fondos de papel y cuadros, su avatar Itadori |
 | Katia (agencia, España): reels de coach de fuerza | `src/katia/` | `docs/katia.md` | coach a cámara, un corte por frase, subtítulo de una palabra Montserrat, rosa #AD3158 y azul #8AD2D1, títulos de lista, cierre RESET |
 | Marryto Show: shorts de reacción en serie (10–15 al día) | `src/marryto/` | `docs/marryto.md` | título blanco arriba, imagen del Short original (miniatura de YouTube), su reacción con "YO:", sin audio |
+| César: videos de reacción (cliente nuevo, prueba) | `src/cesar/` | `docs/cesar.md` | horizontal 1920×1080 60 fps, video a pantalla completa, su cámara arriba a la izquierda sincronizada por audio, zooms suaves, subtítulos sencillos bajo su ventana |
 
 ### Separación por cliente (obligatoria)
 
