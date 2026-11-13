@@ -150,6 +150,27 @@ const IMAGENES = {
           ${ocho.map(([x, y], i) => `<div style="position:absolute;left:${x - 50}px;top:${y - 70}px;width:100px;text-align:center;font-weight:900;font-size:120px;line-height:140px;color:${["#FFD43B", "#FF8787", "#69DB7C", "#74C0FC"][i % 4]};text-shadow:0 6px 0 rgba(0,0,0,.35)">8</div>`).join("")}
         </div>`,
       };
+      // 68 y 69: otras versiones (distinta cantidad y colores; Fernando: nunca la misma imagen)
+      const variante = (arriba, abajo, fondo, colores) => {
+        // `arriba` ochos en la vuelta de arriba, `abajo` en la de abajo y 1 en la cintura, repartidos por igual
+        const pts = [[500, 452]];
+        for (let k = 1; k <= arriba; k++) { const u = ((90 + (k * 360) / (arriba + 1)) * Math.PI) / 180; pts.push([500 + Math.cos(u) * 180, 255 + Math.sin(u) * 180]); }
+        for (let k = 1; k <= abajo; k++) { const u = ((-90 + (k * 360) / (abajo + 1)) * Math.PI) / 180; pts.push([500 + Math.cos(u) * 210, 665 + Math.sin(u) * 210]); }
+        return {
+          n: pts.length,
+          img: {
+            w: 1000, h: 1000,
+            html: `<div style="width:1000px;height:1000px;background:${fondo};position:relative;font-family:M">
+              ${pts.map(([x, y], i) => `<div style="position:absolute;left:${x - 50}px;top:${y - 70}px;width:100px;text-align:center;font-weight:900;font-size:120px;line-height:140px;color:${colores[i % colores.length]};text-shadow:0 6px 0 rgba(0,0,0,.25)">8</div>`).join("")}
+            </div>`,
+          },
+        };
+      };
+      const vb = variante(6, 8, "radial-gradient(circle at 50% 40%,#FFF4E6,#FFD8A8)", ["#C2255C", "#5F3DC4", "#087F5B", "#E8590C"]);
+      const vc = variante(4, 6, "radial-gradient(circle at 50% 40%,#2B8A3E,#0B3D1A)", ["#FFFFFF", "#FFE066", "#FFC9C9"]);
+      out["ochos-b"] = vb.img;
+      out["ochos-c"] = vc.img;
+      console.error("ochos-b:", vb.n, "ochos-c:", vc.n);
     }
     // 73–75 y 79–81: "La mía es: …  SI REPITES, PIERDES · ¿Qué palabra puedes formar?"
     const palabra = (pal, emoji, huecos, fondo, marco, acento) => ({

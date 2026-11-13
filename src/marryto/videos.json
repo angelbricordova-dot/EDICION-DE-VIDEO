@@ -1802,14 +1802,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces para\nencontrar el 4° objeto",
+  "sinTexto": false,
   "inicio": 3.05,
   "fin": 10.05,
   "caraX": 512,
   "caraY": 1086,
-  "caraAncho": 452
+  "caraAncho": 452,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/sala-vela.jpg",
+  "caja": [
+   180,
+   40,
+   720
+  ],
+  "imgAspecto": 0.8633,
+  "textoY": 668,
+  "textoTam": 62,
+  "ojosY": 981,
+  "frenteY": 846,
+  "ojosX": 477
  },
  "62": {
   "estilo": "superpuesto",
@@ -1821,14 +1835,13 @@
    1080,
    1920
   ],
-  "bajar": 160,
   "titulo": "",
   "sinTexto": true,
   "imagen": "marryto/material/letras-ramo.png",
   "caja": [
-   240,
+   230,
    40,
-   600
+   620
   ],
   "imgAspecto": 1.0,
   "inicio": 4.2,
@@ -1838,7 +1851,12 @@
   "caraAncho": 564,
   "ojosY": 984,
   "frenteY": 876,
-  "ojosX": 599
+  "ojosX": 599,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "textoY": 666,
+  "textoTam": 64
  },
  "63": {
   "estilo": "superpuesto",
@@ -1850,14 +1868,13 @@
    1080,
    1920
   ],
-  "bajar": 160,
   "titulo": "",
   "sinTexto": true,
   "imagen": "marryto/material/letras-cola.png",
   "caja": [
-   240,
+   230,
    40,
-   600
+   620
   ],
   "imgAspecto": 1.0,
   "inicio": 4.4,
@@ -1867,7 +1884,12 @@
   "caraAncho": 564,
   "ojosY": 1028,
   "frenteY": 885,
-  "ojosX": 576
+  "ojosX": 576,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "textoY": 666,
+  "textoTam": 64
  },
  "64": {
   "estilo": "superpuesto",
@@ -1879,14 +1901,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces y cierra\nlos ojos un 80%",
+  "sinTexto": false,
   "inicio": 3.3,
   "fin": 10.3,
   "caraX": 546,
   "caraY": 1119,
-  "caraAncho": 556
+  "caraAncho": 556,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/camiones.jpg",
+  "caja": [
+   195,
+   40,
+   690
+  ],
+  "imgAspecto": 0.7742,
+  "textoY": 580,
+  "textoTam": 62,
+  "ojosY": 953,
+  "frenteY": 828,
+  "ojosX": 550
  },
  "65": {
   "estilo": "superpuesto",
@@ -1898,14 +1934,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces y cierra\nlos ojos un 80%",
+  "sinTexto": false,
   "inicio": 4.65,
   "fin": 11.65,
   "caraX": 504,
   "caraY": 1042,
-  "caraAncho": 390
+  "caraAncho": 390,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/calle.jpg",
+  "caja": [
+   195,
+   40,
+   690
+  ],
+  "imgAspecto": 0.7467,
+  "textoY": 561,
+  "textoTam": 62,
+  "ojosY": 921,
+  "frenteY": 820,
+  "ojosX": 501
  },
  "66": {
   "estilo": "superpuesto",
@@ -1917,14 +1967,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces y cierra\nlos ojos un 80%",
+  "sinTexto": false,
   "inicio": 2.45,
   "fin": 9.45,
   "caraX": 533,
   "caraY": 1101,
-  "caraAncho": 534
+  "caraAncho": 534,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/gatitos-foto.jpg",
+  "caja": [
+   195,
+   40,
+   690
+  ],
+  "imgAspecto": 0.8347,
+  "textoY": 622,
+  "textoTam": 62,
+  "ojosY": 929,
+  "frenteY": 817,
+  "ojosX": 539
  },
  "67": {
   "estilo": "superpuesto",
@@ -1936,18 +2000,17 @@
    1080,
    1920
   ],
-  "bajar": 160,
   "titulo": "Cuántos 8 ves? Yo 14",
   "sinTexto": false,
   "imagen": "marryto/material/ochos.png",
   "caja": [
-   260,
+   230,
    40,
-   560
+   620
   ],
   "imgAspecto": 1.0,
-  "textoY": 614,
-  "textoTam": 66,
+  "textoY": 666,
+  "textoTam": 64,
   "inicio": 2.15,
   "fin": 9.15,
   "caraX": 523,
@@ -1955,7 +2018,10 @@
   "caraAncho": 368,
   "ojosY": 859,
   "frenteY": 775,
-  "ojosX": 511
+  "ojosX": 511,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40
  },
  "68": {
   "estilo": "superpuesto",
@@ -1967,18 +2033,17 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "Cuántos 8 ves? Yo 14",
+  "titulo": "Cuántos 8 ves? Yo 16",
   "sinTexto": false,
-  "imagen": "marryto/material/ochos.png",
+  "imagen": "marryto/material/ochos-b.png",
   "caja": [
-   260,
+   230,
    40,
-   560
+   620
   ],
   "imgAspecto": 1.0,
-  "textoY": 614,
-  "textoTam": 66,
+  "textoY": 666,
+  "textoTam": 64,
   "inicio": 6.65,
   "fin": 14.0,
   "caraX": 516,
@@ -1986,7 +2051,10 @@
   "caraAncho": 432,
   "ojosY": 818,
   "frenteY": 722,
-  "ojosX": 517
+  "ojosX": 517,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40
  },
  "69": {
   "estilo": "superpuesto",
@@ -1998,18 +2066,17 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "Cuántos 8 ves? Yo 14",
+  "titulo": "Cuántos 8 ves? Yo 12",
   "sinTexto": false,
-  "imagen": "marryto/material/ochos.png",
+  "imagen": "marryto/material/ochos-c.png",
   "caja": [
-   260,
+   230,
    40,
-   560
+   620
   ],
   "imgAspecto": 1.0,
-  "textoY": 614,
-  "textoTam": 66,
+  "textoY": 666,
+  "textoTam": 64,
   "inicio": 2.9,
   "fin": 10.5,
   "caraX": 511,
@@ -2017,7 +2084,10 @@
   "caraAncho": 450,
   "ojosY": 966,
   "frenteY": 865,
-  "ojosX": 521
+  "ojosX": 521,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40
  },
  "70": {
   "estilo": "superpuesto",
@@ -2029,14 +2099,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
-  "inicio": 1.8,
-  "fin": 6.63,
+  "titulo": "Cuántos 🐱 ves? Yo 16",
+  "sinTexto": false,
+  "inicio": 1.75,
+  "fin": 6.7,
   "caraX": 490,
   "caraY": 964,
-  "caraAncho": 360
+  "caraAncho": 360,
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/gatos-collage.jpg",
+  "caja": [
+   250,
+   40,
+   580
+  ],
+  "imgAspecto": 1.0156,
+  "textoY": 635,
+  "textoTam": 64,
+  "ojosY": 906,
+  "frenteY": 812,
+  "ojosX": 489
  },
  "71": {
   "estilo": "superpuesto",

@@ -161,6 +161,13 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const vh = 1920 * s;
   return (
     <AbsoluteFill style={{ background: "#000" }}>
+      {v.desplazar && y > 0 ? (
+        // la imagen no llega a los bordes: lo que queda arriba del video bajado se rellena con el mismo
+        // video ampliado y desenfocado (no se ve una franja negra)
+        <AbsoluteFill style={{ filter: "blur(28px) brightness(0.92)", transform: "scale(1.25)", transformOrigin: "50% 0%" }}>
+          <OffthreadVideo src={staticFile(`marryto/proxies/v${n}.mp4`)} startFrom={Math.round((v.tomas?.[0]?.desde ?? v.inicio) * fps)} playbackRate={vel} muted style={{ width: "100%", height: "100%" }} />
+        </AbsoluteFill>
+      ) : null}
       {v.tomas ? (
         v.tomas.map((tm, i) => {
           const desde = v.tomas!.slice(0, i).reduce((a, b) => a + b.dur, 0);
