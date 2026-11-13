@@ -2737,26 +2737,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
   "sinTexto": false,
   "inicio": 2.0,
-  "fin": 9.0,
+  "fin": 8.95,
   "caraX": 525,
   "caraY": 1049,
   "caraAncho": 360,
-  "imagen": "marryto/material/vacas.jpg",
+  "imagen": "marryto/material/vacas-prado.jpg",
   "caja": [
-   110,
-   40,
-   860
+   220,
+   50,
+   640
   ],
-  "imgAspecto": 0.558,
-  "textoY": 534,
-  "textoTam": 62,
+  "imgAspecto": 0.8429,
+  "textoY": 535,
+  "textoTam": 66,
   "ojosY": 891,
   "frenteY": 738,
-  "ojosX": 517
+  "ojosX": 517,
+  "desplazar": true,
+  "separacion": 40
  },
  "90": {
   "estilo": "superpuesto",
@@ -2768,7 +2770,7 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
   "sinTexto": false,
   "inicio": 2.55,
@@ -2776,18 +2778,20 @@
   "caraX": 529,
   "caraY": 1101,
   "caraAncho": 550,
-  "imagen": "marryto/material/vacas.jpg",
+  "imagen": "marryto/material/vacas-granja.jpg",
   "caja": [
-   110,
-   40,
-   860
+   220,
+   50,
+   640
   ],
-  "imgAspecto": 0.558,
-  "textoY": 534,
-  "textoTam": 62,
+  "imgAspecto": 0.9865,
+  "textoY": 685,
+  "textoTam": 66,
   "ojosY": 962,
   "frenteY": 840,
-  "ojosX": 505
+  "ojosX": 505,
+  "desplazar": true,
+  "separacion": 40
  },
  "91": {
   "estilo": "superpuesto",
