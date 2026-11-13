@@ -2132,14 +2132,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Cuántos 🐱 ves? Yo 18",
+  "sinTexto": false,
   "inicio": 3.55,
-  "fin": 10.55,
+  "fin": 10.5,
   "caraX": 516,
   "caraY": 1024,
-  "caraAncho": 472
+  "caraAncho": 472,
+  "desplazar": true,
+  "separacion": 40,
+  "imagen": "marryto/material/gatos-blancos.jpg",
+  "caja": [
+   260,
+   40,
+   560
+  ],
+  "imgAspecto": 1.0437,
+  "textoY": 630,
+  "textoTam": 64,
+  "ojosY": 914,
+  "frenteY": 802,
+  "ojosX": 501
  },
  "72": {
   "estilo": "superpuesto",
@@ -2151,14 +2165,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Cuántas 🐢 ves? Yo 30",
+  "sinTexto": false,
   "inicio": 1.7,
   "fin": 8.25,
   "caraX": 522,
   "caraY": 1047,
-  "caraAncho": 424
+  "caraAncho": 424,
+  "desplazar": true,
+  "separacion": 40,
+  "imagen": "marryto/material/tortugas.jpg",
+  "caja": [
+   260,
+   40,
+   560
+  ],
+  "imgAspecto": 0.95,
+  "textoY": 578,
+  "textoTam": 64,
+  "ojosY": 943,
+  "frenteY": 856,
+  "ojosX": 514
  },
  "73": {
   "estilo": "superpuesto",
@@ -2170,24 +2198,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
-  "imagen": "marryto/material/palabra-perro.png",
+  "imagen": "marryto/material/deco-perro.png",
   "caja": [
-   130,
+   220,
    40,
-   820
+   640
   ],
-  "imgAspecto": 0.6833,
+  "imgAspecto": 0.6667,
   "inicio": 1.75,
-  "fin": 8.75,
+  "fin": 8.5,
   "caraX": 483,
   "caraY": 1013,
   "caraAncho": 276,
   "ojosY": 925,
   "frenteY": 858,
-  "ojosX": 482
+  "ojosX": 482,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 473,
+  "textoTam": 64
  },
  "74": {
   "estilo": "superpuesto",
@@ -2199,16 +2231,16 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
-  "imagen": "marryto/material/palabra-gato.png",
+  "imagen": "marryto/material/deco-gato.png",
   "caja": [
-   130,
+   220,
    40,
-   820
+   640
   ],
-  "imgAspecto": 0.6833,
+  "imgAspecto": 0.6667,
   "inicio": 2.6,
   "fin": 9.6,
   "caraX": 490,
@@ -2216,7 +2248,11 @@
   "caraAncho": 304,
   "ojosY": 905,
   "frenteY": 822,
-  "ojosX": 493
+  "ojosX": 493,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 473,
+  "textoTam": 64
  },
  "75": {
   "estilo": "superpuesto",
@@ -2228,24 +2264,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
-  "imagen": "marryto/material/palabra-libro.png",
+  "imagen": "marryto/material/deco-libro.png",
   "caja": [
-   130,
+   220,
    40,
-   820
+   640
   ],
-  "imgAspecto": 0.6833,
+  "imgAspecto": 0.6667,
   "inicio": 1.45,
-  "fin": 8.45,
+  "fin": 8.3,
   "caraX": 584,
   "caraY": 1036,
   "caraAncho": 416,
   "ojosY": 941,
   "frenteY": 843,
-  "ojosX": 581
+  "ojosX": 581,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 473,
+  "textoTam": 64
  },
  "76": {
   "estilo": "superpuesto",
@@ -2257,14 +2297,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Toca 2 veces y cierra\nlos ojos un 80%",
+  "sinTexto": false,
   "inicio": 2.0,
-  "fin": 8.72,
+  "fin": 8.6,
   "caraX": 516,
   "caraY": 985,
-  "caraAncho": 344
+  "caraAncho": 344,
+  "desplazar": true,
+  "separacion": 40,
+  "imagen": "marryto/material/tunel-a.png",
+  "caja": [
+   180,
+   40,
+   720
+  ],
+  "imgAspecto": 0.76,
+  "textoY": 593,
+  "textoTam": 62,
+  "ojosY": 843,
+  "frenteY": 731,
+  "ojosX": 512
  },
  "77": {
   "estilo": "superpuesto",
@@ -2276,14 +2330,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Toca 2 veces y cierra\nlos ojos un 80%",
+  "sinTexto": false,
   "inicio": 3.05,
-  "fin": 10.05,
+  "fin": 10.0,
   "caraX": 534,
   "caraY": 1004,
-  "caraAncho": 424
+  "caraAncho": 424,
+  "desplazar": true,
+  "separacion": 40,
+  "imagen": "marryto/material/tunel-b.png",
+  "caja": [
+   180,
+   40,
+   720
+  ],
+  "imgAspecto": 0.76,
+  "textoY": 593,
+  "textoTam": 62,
+  "ojosY": 867,
+  "frenteY": 770,
+  "ojosX": 518
  },
  "78": {
   "estilo": "superpuesto",
@@ -2295,14 +2363,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Toca 2 veces y cierra\nlos ojos un 80%",
+  "sinTexto": false,
   "inicio": 3.0,
-  "fin": 10.0,
+  "fin": 9.95,
   "caraX": 536,
   "caraY": 1082,
-  "caraAncho": 428
+  "caraAncho": 428,
+  "desplazar": true,
+  "separacion": 40,
+  "imagen": "marryto/material/tunel-c.png",
+  "caja": [
+   180,
+   40,
+   720
+  ],
+  "imgAspecto": 0.76,
+  "textoY": 593,
+  "textoTam": 62,
+  "ojosY": 945,
+  "frenteY": 838,
+  "ojosX": 534
  },
  "79": {
   "estilo": "superpuesto",
@@ -2314,24 +2396,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
-  "imagen": "marryto/material/palabra-cerdo.png",
+  "imagen": "marryto/material/deco-cerdo.png",
   "caja": [
-   130,
+   220,
    40,
-   820
+   640
   ],
-  "imgAspecto": 0.6833,
+  "imgAspecto": 0.6667,
   "inicio": 2.5,
-  "fin": 8.65,
+  "fin": 8.5,
   "caraX": 498,
   "caraY": 952,
   "caraAncho": 300,
   "ojosY": 889,
   "frenteY": 805,
-  "ojosX": 524
+  "ojosX": 524,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 473,
+  "textoTam": 64
  },
  "80": {
   "estilo": "superpuesto",
@@ -2343,16 +2429,16 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
-  "imagen": "marryto/material/palabra-ciervo.png",
+  "imagen": "marryto/material/deco-ciervo.png",
   "caja": [
-   130,
+   220,
    40,
-   820
+   640
   ],
-  "imgAspecto": 0.6833,
+  "imgAspecto": 0.6667,
   "inicio": 2.0,
   "fin": 8.7,
   "caraX": 536,
@@ -2360,7 +2446,11 @@
   "caraAncho": 280,
   "ojosY": 859,
   "frenteY": 771,
-  "ojosX": 541
+  "ojosX": 541,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 473,
+  "textoTam": 64
  },
  "81": {
   "estilo": "superpuesto",

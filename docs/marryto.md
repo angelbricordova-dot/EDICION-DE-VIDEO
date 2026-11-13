@@ -107,7 +107,9 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
     parte de arriba del video, y su frente queda bajo el título con separación. Nunca encoger la imagen.
     No tocar los videos que ya tienen ✅ (41 y 42 se quedan como estaban). **Siempre un título** bajo la imagen ("Toca 2 veces para saber
     el resultado", "Yo:", …), variando entre videos del mismo Short.
-12. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+12. **Revisar SIEMPRE el último segundo** (13-nov, video 70): el final se corta justo antes de que se
+    incline o se acerque a la cámara para apagarla. Mirar el último segundo a 10 fps en cada video.
+13. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)

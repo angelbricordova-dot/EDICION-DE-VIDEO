@@ -334,6 +334,65 @@ const IMAGENES = {
     return out;
   })(),
 
+  // ── lote 71–80 ──
+  ...(() => {
+    const out = {};
+    // 76–78: túnel de ilusión con un número escondido (se lee entrecerrando los ojos)
+    // Túnel de casillas finas (alto contraste a pequeña escala) y el número como una MANCHA de tono:
+    // dentro del número todas las casillas se oscurecen. De cerca domina el patrón; entrecerrando los ojos
+    // (o en pequeño) el patrón se promedia y aparece el número.
+    const tunel = (num, c1, c2, d1, d2) => {
+      const anillos = 26, sect = 48;
+      let g = "";
+      for (let r = anillos; r >= 1; r--) {
+        const R = 22 * Math.pow(1.13, r), rot = r * 3.75;
+        for (let k = 0; k < sect; k++) {
+          const a0 = ((k * 360) / sect + rot) * Math.PI / 180, a1 = (((k + 1) * 360) / sect + rot) * Math.PI / 180;
+          const R0 = R / 1.13;
+          const pts = [[Math.cos(a0) * R, Math.sin(a0) * R], [Math.cos(a1) * R, Math.sin(a1) * R], [Math.cos(a1) * R0, Math.sin(a1) * R0], [Math.cos(a0) * R0, Math.sin(a0) * R0]];
+          g += `<polygon points="${pts.map(([x, y]) => `${(500 + x).toFixed(1)},${(380 + y * 0.8).toFixed(1)}`).join(" ")}" fill="${(k + r) % 2 ? "A" : "B"}"/>`;
+        }
+      }
+      const txt = (f) => `<text x="500" y="505" text-anchor="middle" font-family="M" font-weight="900" font-size="380" letter-spacing="10" fill="${f}">${num}</text>`;
+      return {
+        w: 1000, h: 760,
+        html: `<div style="width:1000px;height:760px;position:relative;overflow:hidden;background:${c2}">
+          <svg width="1000" height="760" style="position:absolute;inset:0"><defs>
+            <mask id="n"><rect width="1000" height="760" fill="black"/>${txt("white")}</mask>
+            <mask id="nn"><rect width="1000" height="760" fill="white"/>${txt("black")}</mask></defs>
+            <g mask="url(#nn)">${g.replaceAll('"A"', `"${c1}"`).replaceAll('"B"', `"${c2}"`)}</g>
+            <g mask="url(#n)">${g.replaceAll('"A"', `"${d1}"`).replaceAll('"B"', `"${d2}"`)}</g>
+          </svg>
+        </div>`,
+      };
+    };
+    out["tunel-a"] = tunel("527", "#0B7285", "#C3FAE8", "#063B45", "#6FB8B0");
+    out["tunel-b"] = tunel("839", "#C2255C", "#FFDEEB", "#5E0F2C", "#C9729A");
+    out["tunel-c"] = tunel("164", "#E67700", "#FFF3BF", "#6E3A00", "#D9A24F");
+    // 73–75 y 79–80: "La mía es:" con más dibujo (estrellas, corazones, emojis alrededor, como el original)
+    const palabraDeco = (pal, emoji, huecos, fondo, marco, acento, deco) => ({
+      w: 1200, h: 800,
+      html: `<div style="width:1200px;height:800px;background:${fondo};position:relative;overflow:hidden;font-family:L">
+        ${[[10,0],[280,-6],[560,0],[840,-4],[1110,4],[1120,280],[1120,560],[1100,720],[820,730],[540,736],[260,730],[0,720],[-6,470],[0,230]].map(([x, y], i) => `<div style="position:absolute;left:${x}px;top:${y}px;font-size:${58 + (i % 3) * 10}px;rotate:${(i * 37) % 60 - 30}deg">${deco[i % deco.length]}</div>`).join("")}
+        <div style="position:absolute;left:90px;top:80px;right:90px;bottom:90px;border-radius:50px;background:#fff;border:12px solid ${marco};box-shadow:0 14px 0 ${marco};display:flex;align-items:center;gap:20px;padding:0 50px">
+          <div style="font-size:260px;line-height:1;filter:drop-shadow(0 10px 0 rgba(0,0,0,.12))">${emoji}</div>
+          <div style="flex:1;text-align:center">
+            <div style="font-size:74px;color:#1C1A1A">La mía es:</div>
+            <div style="font-size:${pal.length > 6 ? 128 : 158}px;line-height:1;color:${acento};-webkit-text-stroke:9px #1C1A1A;paint-order:stroke fill;text-shadow:0 8px 0 #1C1A1A">${pal}</div>
+            <div style="display:inline-block;margin-top:14px;background:${marco};color:#fff;font-family:M;font-weight:900;font-size:40px;padding:6px 22px;border-radius:14px">SI REPITES, PIERDES</div>
+            <div style="font-family:M;font-weight:800;font-size:36px;color:#444;margin-top:10px">¿Qué palabra puedes formar?</div>
+            <div style="display:flex;gap:14px;justify-content:center;margin-top:20px">${huecos.split("").map((c) => `<div style="width:${huecos.length > 6 ? 80 : 96}px;height:110px;border-radius:14px;border:7px solid #1C1A1A;background:${c === "_" ? "#F1F3F5" : "#FFF3BF"};font-size:84px;line-height:96px;text-align:center;color:#1C1A1A">${c === "_" ? "" : c}</div>`).join("")}</div>
+          </div>
+        </div></div>`,
+    });
+    out["deco-perro"] = palabraDeco("PERRO", "🐶", "P___O", "#D0EBFF", "#1971C2", "#74C0FC", ["🦴", "⭐", "🐾", "💙", "✨"]);
+    out["deco-gato"] = palabraDeco("GATO", "🐱", "G__O", "#F3D9FA", "#9C36B5", "#E599F7", ["🐟", "🧶", "🐾", "💜", "✨"]);
+    out["deco-libro"] = palabraDeco("LIBRO", "📚", "L___O", "#D3F9D8", "#2B8A3E", "#8CE99A", ["✏️", "📖", "⭐", "💚", "✨"]);
+    out["deco-cerdo"] = palabraDeco("CERDO", "🐷", "C___O", "#FFDEEB", "#D6336C", "#FAA2C1", ["🌸", "💗", "⭐", "🐽", "✨"]);
+    out["deco-ciervo"] = palabraDeco("CIERVO", "🦌", "C____O", "#FFF3BF", "#E67700", "#FFD43B", ["🍂", "🌲", "⭐", "🧡", "✨"]);
+    return out;
+  })(),
+
 };
 
 const nombres = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(IMAGENES);
