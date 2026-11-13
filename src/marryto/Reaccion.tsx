@@ -33,7 +33,7 @@ export type Video = {
   proxyHD?: boolean; // con mucho zoom: proxy 1440×2560 (v<n>-hd.mp4) para que no se vea borroso
   // 13-nov (referencia del 43): SIN zoom, el video se DESPLAZA hacia abajo y la imagen va grande a todo
   // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
-  desplazar?: boolean;
+  desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -126,14 +126,15 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   let y: number;
   const bajar = v.bajar ?? 0;
   if (v.desplazar && v.frenteY) {
-    s = 1;
+    s = v.escalaVideo ?? 1; // < 1 aleja el video (cuando en el bruto está muy pegado a la cámara)
     const ancho = v.caja?.[2] ?? 1080;
     const finImg = (v.caja?.[1] ?? 0) + ancho * (v.imgAspecto ?? 0);
     const finTodo = finEncimaBruto(v);
     const SEP = v.separacion ?? 40;
     // bajar lo justo para que la frente quede bajo el texto, sin dejar hueco negro entre imagen y video
-    y = Math.min(finImg, Math.max(0, finTodo + SEP - v.frenteY));
-    x = 0;
+    y = Math.min(finImg, Math.max(0, finTodo + SEP - v.frenteY * s));
+    if (s < 1) y = Math.max(y, 1920 - 1920 * s); // pegado abajo: nunca queda hueco debajo
+    x = (1080 - 1080 * s) / 2;
   } else if (v.frenteY) {
     // 9-nov: nunca tapar ojos y SEPARACIÓN con la frente, medido cuadro a cuadro (lo más alto que llega)
     const SEP = v.separacion ?? 60;
@@ -161,7 +162,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const vh = 1920 * s;
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      {v.desplazar && y > 0 ? (
+      {v.desplazar && (y > 0 || s < 1) ? (
         // la imagen no llega a los bordes: lo que queda arriba del video bajado se rellena con el mismo
         // video ampliado y desenfocado (no se ve una franja negra)
         <AbsoluteFill style={{ filter: "blur(28px) brightness(0.92)", transform: "scale(1.25)", transformOrigin: "50% 0%" }}>

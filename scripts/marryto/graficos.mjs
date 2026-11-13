@@ -381,7 +381,7 @@ const IMAGENES = {
             <div style="font-size:${pal.length > 6 ? 128 : 158}px;line-height:1;color:${acento};-webkit-text-stroke:9px #1C1A1A;paint-order:stroke fill;text-shadow:0 8px 0 #1C1A1A">${pal}</div>
             <div style="display:inline-block;margin-top:14px;background:${marco};color:#fff;font-family:M;font-weight:900;font-size:40px;padding:6px 22px;border-radius:14px">SI REPITES, PIERDES</div>
             <div style="font-family:M;font-weight:800;font-size:36px;color:#444;margin-top:10px">¿Qué palabra puedes formar?</div>
-            <div style="display:flex;gap:14px;justify-content:center;margin-top:20px">${huecos.split("").map((c) => `<div style="width:${huecos.length > 6 ? 80 : 96}px;height:110px;border-radius:14px;border:7px solid #1C1A1A;background:${c === "_" ? "#F1F3F5" : "#FFF3BF"};font-size:84px;line-height:96px;text-align:center;color:#1C1A1A">${c === "_" ? "" : c}</div>`).join("")}</div>
+            <div style="display:flex;gap:14px;justify-content:center;margin-top:20px">${huecos.split("").map((c) => `<div style="width:${huecos.length > 5 ? 64 : 92}px;height:${huecos.length > 5 ? 86 : 108}px;border-radius:12px;border:6px solid #1C1A1A;background:${c === "_" ? "#F1F3F5" : "#FFF3BF"};font-size:${huecos.length > 5 ? 64 : 82}px;line-height:${huecos.length > 5 ? 74 : 94}px;text-align:center;color:#1C1A1A">${c === "_" ? "" : c}</div>`).join("")}</div>
           </div>
         </div></div>`,
     });
