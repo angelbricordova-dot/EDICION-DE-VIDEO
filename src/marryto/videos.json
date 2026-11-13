@@ -1208,16 +1208,16 @@
   "ojosX": 513,
   "imagen": "marryto/material/cubo-c.png",
   "caja": [
-   70,
+   170,
    0,
-   940
+   740
   ],
-  "textoY": 1013,
-  "textoTam": 72,
+  "textoY": 825,
+  "textoTam": 60,
   "imgAspecto": 1.11,
-  "separacion": 30,
-  "desplazar": true,
-  "escalaVideo": 0.8
+  "separacion": 50,
+  "zoomMax": 1.35,
+  "proxyHD": true
  },
  "44": {
   "inicio": 2.1,
