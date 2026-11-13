@@ -389,7 +389,38 @@ const IMAGENES = {
     out["deco-gato"] = palabraDeco("GATO", "🐱", "G__O", "#F3D9FA", "#9C36B5", "#E599F7", ["🐟", "🧶", "🐾", "💜", "✨"]);
     out["deco-libro"] = palabraDeco("LIBRO", "📚", "L___O", "#D3F9D8", "#2B8A3E", "#8CE99A", ["✏️", "📖", "⭐", "💚", "✨"]);
     out["deco-cerdo"] = palabraDeco("CERDO", "🐷", "C___O", "#FFDEEB", "#D6336C", "#FAA2C1", ["🌸", "💗", "⭐", "🐽", "✨"]);
+    out["deco-canguro"] = palabraDeco("CANGURO", "🦘", "C_____O", "#D0EBFF", "#1971C2", "#74C0FC", ["🌵", "☀️", "⭐", "💙", "✨"]);
     out["deco-ciervo"] = palabraDeco("CIERVO", "🦌", "C____O", "#FFF3BF", "#E67700", "#FFD43B", ["🍂", "🌲", "⭐", "🧡", "✨"]);
+    return out;
+  })(),
+
+  // ── lote 81–90: versiones distintas por video (Fernando: nunca la misma imagen) ──
+  ...(() => {
+    const out = {};
+    // 84: "¿Qué está mal?" con otro error (falta la H) y otros colores
+    out["alfabeto-b"] = {
+      w: 1000, h: 900,
+      html: `<div style="width:1000px;height:900px;background:#E7F5FF;background-image:linear-gradient(transparent 78px,#A5D8FF 78px,#A5D8FF 81px,transparent 81px);background-size:100% 82px;padding:50px 60px;border-left:16px solid #4DABF7;text-align:center">
+        <div style="font-family:L;font-size:100px;color:#1864AB;line-height:1.1">¿Qué está mal?</div>
+        <div style="font-family:M;font-weight:800;font-size:82px;letter-spacing:10px;color:#1C1A1A;line-height:1.35;margin-top:30px">ABCDEFGIJK<br>LMNÑOPQRST<br>UVWXYZ</div>
+        <div style="font-family:C;font-weight:700;font-size:64px;color:#C2255C;line-height:1.15;margin-top:40px">Solo el 3% lo encuentra a la primera.</div>
+      </div>`,
+    };
+    // 85–87: "¿Cuál es tu tono de piel?" en tres versiones (brazos con escala numerada, como el original)
+    const brazos = (fondo, titulo, tonos, numerar) => ({
+      w: 1000, h: 1000,
+      html: `<div style="width:1000px;height:1000px;background:${fondo};padding:36px 40px;text-align:center">
+        <div style="font-family:L;font-size:78px;color:${titulo}">¿Cuál es tu tono de piel?</div>
+        <div style="display:flex;justify-content:center;gap:34px;margin-top:30px">${tonos.map((cs, j) => `
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <div style="font-size:140px;line-height:1;filter:saturate(0.9)">${["✊🏻", "✊🏼", "✊🏽", "✊🏾", "✊🏿"][cs.e]}</div>
+            <div style="width:170px;border-radius:0 0 40px 40px;overflow:hidden;border:5px solid rgba(0,0,0,.12)">${cs.c.map((c, i) => `<div style="height:104px;background:${c};display:flex;align-items:center;justify-content:${j % 2 ? "flex-end" : "flex-start"};padding:0 14px;font-family:M;font-weight:800;font-size:30px;color:rgba(0,0,0,.45)">${numerar ? j * cs.c.length + i + 1 : ""}</div>`).join("")}</div>
+          </div>`).join("")}</div>
+      </div>`,
+    });
+    out["piel-a"] = brazos("linear-gradient(#FFF9DB,#FFE8CC)", "#1C1A1A", [{ e: 0, c: ["#FBE3D2", "#F6D2B8", "#EEC1A1", "#E5B08B", "#DBA076", "#D09063"] }, { e: 2, c: ["#C68E62", "#B97F54", "#AA7046", "#9C623B", "#8D5532", "#7E4A2A"] }, { e: 4, c: ["#6E4125", "#5F3820", "#52301B", "#462816", "#3A2112", "#2E1A0E"] }], true);
+    out["piel-b"] = brazos("linear-gradient(#E6FCF5,#C3FAE8)", "#087F5B", [{ e: 1, c: ["#F2D1B5", "#EBC2A1", "#E2B38D", "#D9A47B", "#CF956A", "#C4875B"] }, { e: 3, c: ["#A8714A", "#99643F", "#8A5835", "#7B4C2C", "#6C4124", "#5D371D"] }, { e: 4, c: ["#503019", "#442915", "#382211", "#2D1B0D", "#24150A", "#1C1008"] }], true);
+    out["piel-c"] = brazos("linear-gradient(#F3F0FF,#E5DBFF)", "#5F3DC4", [{ e: 0, c: ["#FFEADB", "#F8DCC8", "#F0CDB4", "#E8BFA1", "#DFB08E"] }, { e: 2, c: ["#C99A70", "#BB8A60", "#AC7B52", "#9D6D45", "#8E6039"] }, { e: 3, c: ["#7E5232", "#70472B", "#623D24", "#55341E", "#482B18"] }], true);
     return out;
   })(),
 

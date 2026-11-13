@@ -2463,24 +2463,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
-  "imagen": "marryto/material/palabra-canguro.png",
+  "imagen": "marryto/material/deco-canguro.png",
   "caja": [
-   130,
-   40,
-   820
+   120,
+   150,
+   840
   ],
-  "imgAspecto": 0.6833,
+  "imgAspecto": 0.6667,
   "inicio": 3.8,
-  "fin": 10.5,
+  "fin": 10.1,
   "caraX": 532,
   "caraY": 1008,
   "caraAncho": 276,
-  "ojosY": 927,
+  "ojosY": 926,
   "frenteY": 854,
-  "ojosX": 547
+  "ojosX": 552,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 716,
+  "textoTam": 64
  },
  "82": {
   "estilo": "superpuesto",
@@ -2517,13 +2521,13 @@
    ]
   ],
   "inicio": 5.9,
-  "fin": 12.9,
+  "fin": 12.6,
   "caraX": 544,
   "caraY": 916,
   "caraAncho": 276,
   "ojosY": 811,
   "frenteY": 740,
-  "ojosX": 523
+  "ojosX": 519
  },
  "83": {
   "estilo": "superpuesto",
@@ -2535,24 +2539,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
   "imagen": "marryto/material/alfabeto-error.png",
   "caja": [
-   220,
-   40,
-   640
+   200,
+   60,
+   680
   ],
   "imgAspecto": 0.9,
   "inicio": 2.45,
-  "fin": 8.67,
+  "fin": 8.4,
   "caraX": 516,
   "caraY": 1032,
   "caraAncho": 476,
   "ojosY": 883,
   "frenteY": 799,
-  "ojosX": 550
+  "ojosX": 552,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 678,
+  "textoTam": 64
  },
  "84": {
   "estilo": "superpuesto",
@@ -2564,24 +2572,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
-  "imagen": "marryto/material/alfabeto-error.png",
+  "imagen": "marryto/material/alfabeto-b.png",
   "caja": [
-   220,
-   40,
-   640
+   200,
+   60,
+   680
   ],
   "imgAspecto": 0.9,
   "inicio": 2.9,
-  "fin": 9.27,
+  "fin": 8.9,
   "caraX": 512,
   "caraY": 967,
   "caraAncho": 348,
-  "ojosY": 772,
-  "frenteY": 671,
-  "ojosX": 504
+  "ojosY": 771,
+  "frenteY": 683,
+  "ojosX": 502,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 678,
+  "textoTam": 64
  },
  "85": {
   "estilo": "superpuesto",
@@ -2593,26 +2605,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces en tu tono 👀",
   "sinTexto": false,
-  "imagen": "marryto/material/tono-piel.png",
+  "imagen": "marryto/material/piel-a.png",
   "caja": [
    200,
    40,
    680
   ],
-  "imgAspecto": 0.9091,
-  "textoY": 672,
-  "textoTam": 64,
+  "imgAspecto": 1.0,
+  "textoY": 686,
+  "textoTam": 66,
   "inicio": 1.25,
-  "fin": 8.23,
+  "fin": 8.0,
   "caraX": 429,
   "caraY": 995,
   "caraAncho": 320,
   "ojosY": 874,
   "frenteY": 783,
-  "ojosX": 448
+  "ojosX": 447,
+  "desplazar": true,
+  "separacion": 40
  },
  "86": {
   "estilo": "superpuesto",
@@ -2624,26 +2638,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces en tu tono 👀",
   "sinTexto": false,
-  "imagen": "marryto/material/tono-piel.png",
+  "imagen": "marryto/material/piel-b.png",
   "caja": [
    200,
    40,
    680
   ],
-  "imgAspecto": 0.9091,
-  "textoY": 672,
-  "textoTam": 64,
+  "imgAspecto": 1.0,
+  "textoY": 686,
+  "textoTam": 66,
   "inicio": 2.95,
-  "fin": 9.95,
+  "fin": 9.8,
   "caraX": 474,
   "caraY": 984,
   "caraAncho": 316,
   "ojosY": 781,
   "frenteY": 702,
-  "ojosX": 477
+  "ojosX": 476,
+  "desplazar": true,
+  "separacion": 40
  },
  "87": {
   "estilo": "superpuesto",
@@ -2655,26 +2671,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces en tu tono 👀",
   "sinTexto": false,
-  "imagen": "marryto/material/tono-piel.png",
+  "imagen": "marryto/material/piel-c.png",
   "caja": [
    200,
    40,
    680
   ],
-  "imgAspecto": 0.9091,
-  "textoY": 672,
-  "textoTam": 64,
+  "imgAspecto": 1.0,
+  "textoY": 686,
+  "textoTam": 66,
   "inicio": 5.0,
-  "fin": 12.0,
+  "fin": 12.1,
   "caraX": 506,
   "caraY": 966,
   "caraAncho": 272,
   "ojosY": 826,
   "frenteY": 749,
-  "ojosX": 503
+  "ojosX": 503,
+  "desplazar": true,
+  "separacion": 40
  },
  "88": {
   "estilo": "superpuesto",
@@ -2686,26 +2704,28 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
   "sinTexto": false,
   "inicio": 2.4,
-  "fin": 8.45,
+  "fin": 8.3,
   "caraX": 566,
   "caraY": 1069,
   "caraAncho": 454,
   "imagen": "marryto/material/vacas.jpg",
   "caja": [
-   110,
-   40,
-   860
+   150,
+   60,
+   780
   ],
   "imgAspecto": 0.558,
-  "textoY": 534,
-  "textoTam": 62,
+  "textoY": 441,
+  "textoTam": 66,
   "ojosY": 975,
-  "frenteY": 855,
-  "ojosX": 537
+  "frenteY": 861,
+  "ojosX": 534,
+  "desplazar": true,
+  "separacion": 40
  },
  "89": {
   "estilo": "superpuesto",
