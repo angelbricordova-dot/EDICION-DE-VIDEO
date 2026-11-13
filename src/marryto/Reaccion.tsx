@@ -31,6 +31,9 @@ export type Video = {
   duracion?: number; // fija la duración (p. ej. la de la canción)
   zoomMax?: number; separacion?: number; // 11-nov: imagen grande como la referencia → su cara más abajo y con más zoom
   proxyHD?: boolean; // con mucho zoom: proxy 1440×2560 (v<n>-hd.mp4) para que no se vea borroso
+  // 13-nov (referencia del 43): SIN zoom, el video se DESPLAZA hacia abajo y la imagen va grande a todo
+  // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
+  desplazar?: boolean;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -122,7 +125,16 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   let x: number;
   let y: number;
   const bajar = v.bajar ?? 0;
-  if (v.frenteY) {
+  if (v.desplazar && v.frenteY) {
+    s = 1;
+    const ancho = v.caja?.[2] ?? 1080;
+    const finImg = (v.caja?.[1] ?? 0) + ancho * (v.imgAspecto ?? 0);
+    const finTodo = finEncimaBruto(v);
+    const SEP = v.separacion ?? 40;
+    // bajar lo justo para que la frente quede bajo el texto, sin dejar hueco negro entre imagen y video
+    y = Math.min(finImg, Math.max(0, finTodo + SEP - v.frenteY));
+    x = 0;
+  } else if (v.frenteY) {
     // 9-nov: nunca tapar ojos y SEPARACIÓN con la frente, medido cuadro a cuadro (lo más alto que llega)
     const SEP = v.separacion ?? 60;
     // 13-nov: SIN zoom ("queda raro, se ve demasiado cerca"): por defecto el video a tamaño normal y

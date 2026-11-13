@@ -1145,9 +1145,11 @@
    840
   ],
   "textoY": 936,
-  "textoTam": 76,
+  "textoTam": 60,
   "imgAspecto": 1.11,
-  "separacion": 60
+  "separacion": 50,
+  "zoomMax": 1.75,
+  "proxyHD": true
  },
  "42": {
   "inicio": 2.5,
@@ -1177,9 +1179,11 @@
    840
   ],
   "textoY": 936,
-  "textoTam": 76,
+  "textoTam": 60,
   "imgAspecto": 1.11,
-  "separacion": 60
+  "separacion": 50,
+  "zoomMax": 1.75,
+  "proxyHD": true
  },
  "43": {
   "inicio": 2.5,
@@ -1204,14 +1208,15 @@
   "ojosX": 513,
   "imagen": "marryto/material/cubo-c.png",
   "caja": [
-   120,
    0,
-   840
+   0,
+   1080
   ],
-  "textoY": 936,
-  "textoTam": 76,
+  "textoY": 1193,
+  "textoTam": 72,
   "imgAspecto": 1.11,
-  "separacion": 60
+  "separacion": 40,
+  "desplazar": true
  },
  "44": {
   "inicio": 2.1,
@@ -1241,9 +1246,10 @@
    1080
   ],
   "imgAspecto": 0.94,
-  "separacion": 60,
-  "textoY": 1019,
-  "textoTam": 76
+  "separacion": 40,
+  "textoY": 1009,
+  "textoTam": 72,
+  "desplazar": true
  },
  "45": {
   "inicio": 7.3,
@@ -1273,9 +1279,10 @@
    1080
   ],
   "imgAspecto": 0.94,
-  "separacion": 60,
-  "textoY": 1019,
-  "textoTam": 96
+  "separacion": 40,
+  "textoY": 1009,
+  "textoTam": 92,
+  "desplazar": true
  },
  "46": {
   "inicio": 2.3,
@@ -1305,9 +1312,10 @@
    1080
   ],
   "imgAspecto": 0.94,
-  "separacion": 60,
-  "textoY": 1019,
-  "textoTam": 76
+  "separacion": 40,
+  "textoY": 1009,
+  "textoTam": 72,
+  "desplazar": true
  },
  "47": {
   "inicio": 2.3,
@@ -1421,12 +1429,11 @@
    0,
    1080
   ],
-  "textoY": 954,
-  "textoTam": 58,
+  "textoY": 944,
+  "textoTam": 68,
   "imgAspecto": 0.88,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 40,
+  "desplazar": true
  },
  "50": {
   "inicio": 2.7,
@@ -1487,10 +1494,11 @@
    0,
    1080
   ],
-  "textoY": 954,
-  "textoTam": 76,
+  "textoY": 944,
+  "textoTam": 68,
   "imgAspecto": 0.88,
-  "separacion": 60
+  "separacion": 40,
+  "desplazar": true
  },
  "52": {
   "inicio": 6.8,

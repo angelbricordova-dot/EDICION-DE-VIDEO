@@ -102,8 +102,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
    - **Copiar los textos de la referencia** (48: llevaba "Santi:"; ponerlo). Mínimo 6 s (47 quedó en 5).
    - Antes de seguir con videos nuevos, terminar sus correcciones.
 11. **Sin zoom en el video** (13-nov: "queda raro, se ve demasiado cerca"): el video de él siempre a
-    tamaño normal (`zoomMax` por defecto 1). La imagen y el texto se encogen lo justo para caber
-    encima de su frente con separación. **Siempre un título** bajo la imagen ("Toca 2 veces para saber
+    tamaño normal. Para que la imagen se vea GRANDE como en la referencia, **el video se desplaza hacia
+    abajo** (`"desplazar": true`, `caja: [0, 0, 1080]`): la imagen va a todo el ancho arriba, tapa la
+    parte de arriba del video, y su frente queda bajo el título con separación. Nunca encoger la imagen.
+    No tocar los videos que ya tienen ✅ (41 y 42 se quedan como estaban). **Siempre un título** bajo la imagen ("Toca 2 veces para saber
     el resultado", "Yo:", …), variando entre videos del mismo Short.
 12. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
