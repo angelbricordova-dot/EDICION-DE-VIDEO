@@ -101,7 +101,11 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
    - **Conteos: SIEMPRE uno MÁS de los que hay** ("si hay 5, pon que yo veo 6") para provocar comentarios.
    - **Copiar los textos de la referencia** (48: llevaba "Santi:"; ponerlo). Mínimo 6 s (47 quedó en 5).
    - Antes de seguir con videos nuevos, terminar sus correcciones.
-11. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+11. **Sin zoom en el video** (13-nov: "queda raro, se ve demasiado cerca"): el video de él siempre a
+    tamaño normal (`zoomMax` por defecto 1). La imagen y el texto se encogen lo justo para caber
+    encima de su frente con separación. **Siempre un título** bajo la imagen ("Toca 2 veces para saber
+    el resultado", "Yo:", …), variando entre videos del mismo Short.
+12. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)

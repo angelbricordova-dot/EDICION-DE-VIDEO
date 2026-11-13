@@ -1145,11 +1145,9 @@
    840
   ],
   "textoY": 936,
-  "textoTam": 60,
+  "textoTam": 76,
   "imgAspecto": 1.11,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60
  },
  "42": {
   "inicio": 2.5,
@@ -1179,11 +1177,9 @@
    840
   ],
   "textoY": 936,
-  "textoTam": 60,
+  "textoTam": 76,
   "imgAspecto": 1.11,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60
  },
  "43": {
   "inicio": 2.5,
@@ -1213,11 +1209,9 @@
    840
   ],
   "textoY": 936,
-  "textoTam": 60,
+  "textoTam": 76,
   "imgAspecto": 1.11,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60
  },
  "44": {
   "inicio": 2.1,
@@ -1235,8 +1229,8 @@
    1920
   ],
   "bajar": 0,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces para\nsaber el resultado",
+  "sinTexto": false,
   "ojosY": 860,
   "frenteY": 760,
   "ojosX": 499,
@@ -1247,9 +1241,9 @@
    1080
   ],
   "imgAspecto": 0.94,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60,
+  "textoY": 1019,
+  "textoTam": 76
  },
  "45": {
   "inicio": 7.3,
@@ -1267,8 +1261,8 @@
    1920
   ],
   "bajar": 0,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Yo:",
+  "sinTexto": false,
   "ojosY": 818,
   "frenteY": 736,
   "ojosX": 491,
@@ -1279,9 +1273,9 @@
    1080
   ],
   "imgAspecto": 0.94,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60,
+  "textoY": 1019,
+  "textoTam": 96
  },
  "46": {
   "inicio": 2.3,
@@ -1299,8 +1293,8 @@
    1920
   ],
   "bajar": 0,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces para\nsaber el resultado",
+  "sinTexto": false,
   "ojosY": 871,
   "frenteY": 799,
   "ojosX": 521,
@@ -1311,9 +1305,9 @@
    1080
   ],
   "imgAspecto": 0.94,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60,
+  "textoY": 1019,
+  "textoTam": 76
  },
  "47": {
   "inicio": 2.3,
@@ -1462,11 +1456,9 @@
    1080
   ],
   "textoY": 954,
-  "textoTam": 58,
+  "textoTam": 76,
   "imgAspecto": 0.88,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60
  },
  "51": {
   "inicio": 2.4,
@@ -1496,11 +1488,9 @@
    1080
   ],
   "textoY": 954,
-  "textoTam": 58,
+  "textoTam": 76,
   "imgAspecto": 0.88,
-  "zoomMax": 1.75,
-  "separacion": 50,
-  "proxyHD": true
+  "separacion": 60
  },
  "52": {
   "inicio": 6.8,

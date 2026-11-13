@@ -125,10 +125,13 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   if (v.frenteY) {
     // 9-nov: nunca tapar ojos y SEPARACIÓN con la frente, medido cuadro a cuadro (lo más alto que llega)
     const SEP = v.separacion ?? 60;
-    const SMAX = v.zoomMax ?? 1.35;
+    // 13-nov: SIN zoom ("queda raro, se ve demasiado cerca"): por defecto el video a tamaño normal y
+    // la imagen se encoge lo necesario para caber encima de su frente
+    const SMAX = v.zoomMax ?? 1;
+    s = Math.min(s, SMAX);
     const bruto = finEncimaBruto(v);
     const limite = v.frenteY * SMAX - SEP; // lo más abajo que puede acabar lo de arriba
-    k = Math.max(0.6, Math.min(1, (limite - bajar) / bruto));
+    k = Math.max(0.5, Math.min(1, (limite - bajar) / bruto));
     const fin = bajar + k * bruto;
     s = Math.min(SMAX, Math.max(s, (fin + SEP) / v.frenteY));
     const vh0 = 1920 * s;
