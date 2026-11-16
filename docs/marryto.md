@@ -146,6 +146,22 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 | 19 | yate-diferencias.jpg (Marryto con IA en un puerto, 3 diferencias) | Encuentra las 3 diferencias |
 
 ## Hechos
+- 16-nov-2026: lote 104–135 (carpetas "Video 104-107" … "Video 134-135", una toma por camiseta).
+  - Tomas separadas por color de camiseta; inicio = cuando ya actúa (revisado a 5 fps los 2 primeros
+    segundos), final antes de acercarse a la cámara (ancho de la cara con MediaPipe). Si arranca quieto,
+    Angel lo corrige: 105 "ya con el teléfono", 106 "ya acercándose con el dedo", 107 "teléfono en la mano sorprendido".
+  - 104–107: arriba va el **video** del Short (no una foto): `imagen` puede ser un `.mp4` (se reproduce
+    sin sonido). 104 original, 105 espejo, 106–107 foto de calle de Angel. Música = audio del propio Short.
+  - 115–117: sin imagen, textos libres encima del video con `capa` (PNG transparente 1080 × 1920, no
+    mueve nada); años alternando edades de niños (2016/2017, 2015/2018, 2014/2019).
+  - Imágenes hechas aquí (`graficos.mjs`): piel11-a/b/c, dos-seis, examen-a/b/c, ok-a…d, funciono-a/b,
+    borroso-a/b/c, anios-115…117. De Angel (Gemini): obj-garaje/jardin/cocina (+ tienda de repuesto),
+    obj-gatos (+ b/c/d espejo y encuadre), obj-dona (135), obj-spiderman (134).
+  - Música: Angel manda los Shorts bajados (savetube) y se empareja el audio con las canciones completas
+    por correlación espectral (`scratchpad`, probando atempo 0.909/1/1.1): wrap slowed (atempo 0.909,
+    desde 130.65 s) → 108–114; "Dame hombro" desde 10.08 s → 115–117, 122–124, 127–130, 134–135;
+    "Celular do vovô" desde 16.81 s → 118–121, 125–126, 131–133. Volumen medio −12 dB.
+  - 111 trae 2 tomas (amarilla y morada) para un solo video: se usó la morada.
 - 6-nov-2026: videos 1–14 entregados; rehechos el mismo día en 4K 60 fps, 6,5 s, con las imágenes nuevas.
 
 - 7-nov-2026: videos 15–19.
@@ -192,4 +208,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- 61, 64–66, 70–72, 76–78: esperar imágenes de Angel.
+- Siguiente carpeta: "Video 136-138" en adelante (hasta 185-186 en "11 NOVIEMBRE").
