@@ -424,6 +424,136 @@ const IMAGENES = {
     return out;
   })(),
 
+  // ── lote 104–135 (16-nov): variantes por video del mismo Short ──
+  ...(() => {
+    const out = {};
+    // 108–110: "¿Qué número es tu tono de piel?" — 11 brazos con la mano abierta, numerados
+    const brazo = (c, n, x) => {
+      const d = "rgba(0,0,0,.18)";
+      return `<g transform="translate(${x},0)">
+        <rect x="-34" y="300" width="68" height="420" rx="30" fill="${c}"/>
+        <rect x="-44" y="200" width="88" height="120" rx="34" fill="${c}"/>
+        ${[-33, -12, 9, 30].map((fx, i) => `<rect x="${fx - 9}" y="${[118, 100, 104, 126][i]}" width="20" height="${[110, 128, 124, 100][i]}" rx="10" fill="${c}"/>`).join("")}
+        <rect x="38" y="230" width="20" height="78" rx="10" fill="${c}" transform="rotate(32 48 270)"/>
+        <rect x="-34" y="300" width="68" height="420" rx="30" fill="none" stroke="${d}" stroke-width="3"/>
+        <circle cx="0" cy="60" r="27" fill="#fff" stroke="#1C1A1A" stroke-width="4"/>
+        <text x="0" y="72" text-anchor="middle" font-family="M" font-weight="800" font-size="32" fill="#1C1A1A">${n}</text>
+      </g>`;
+    };
+    const pieles = (fondo, barra, txt, tonos) => ({
+      w: 1080, h: 900,
+      html: `<div style="width:1080px;height:900px;background:${fondo};position:relative;overflow:hidden">
+        <div style="height:150px;background:${barra};color:${txt};font-family:M;font-weight:800;font-size:60px;display:flex;align-items:center;justify-content:center">¿Qué número es tu tono de piel?</div>
+        <svg width="1080" height="750" viewBox="0 0 1080 750">${tonos.map((c, i) => brazo(c, i + 1, 70 + i * 94)).join("")}</svg>
+      </div>`,
+    });
+    const T1 = ["#3B2214", "#5A3520", "#73452A", "#8C5A36", "#A87046", "#C08A5E", "#D4A47A", "#E3BC98", "#EFD2B6", "#F7E3D0", "#E9CBB5"];
+    out["piel11-a"] = pieles("linear-gradient(#ECEFF3,#D9DEE5)", "#111", "#fff", T1);
+    out["piel11-b"] = pieles("linear-gradient(#E3FAF2,#BDEFDC)", "#0B4F3C", "#fff", [...T1].reverse());
+    out["piel11-c"] = pieles("linear-gradient(#FFF1E6,#FFD8BF)", "#5C2A86", "#fff", ["#F9E6D6", "#F1D3BA", "#E6BE9E", "#D8A781", "#C79068", "#B27A52", "#9A6440", "#7F4F31", "#653D25", "#4B2D1B", "#331E12"]);
+
+    // 111: "¿Cuál tiene dos cero y dos seis?" — hoja de libreta con bolígrafo
+    out["dos-seis"] = {
+      w: 1080, h: 860,
+      html: `<div style="width:1080px;height:860px;background:#fff;position:relative;overflow:hidden;background-image:linear-gradient(transparent 96px,#BFD7F2 96px,#BFD7F2 99px,transparent 99px);background-size:100% 100px;background-position:0 40px">
+        <div style="position:absolute;left:120px;top:0;bottom:0;width:4px;background:#F08C8C"></div>
+        <div style="position:absolute;left:160px;top:40px;font-family:C;font-weight:700;color:#1B2A5E;font-size:104px;line-height:100px">¿CUÁL TIENE<br>DOS CERO Y<br>DOS SEIS?<div style="padding-left:20px">A.) 2026<br>B.) 2066<br>C.) 0026<br>D.) 0066</div></div>
+        <svg width="1080" height="860" style="position:absolute;left:0;top:0"><g transform="rotate(16 900 430) translate(0 -60)">
+          <rect x="878" y="140" width="46" height="560" rx="10" fill="#E9ECEF" stroke="#868E96" stroke-width="4"/>
+          <rect x="874" y="140" width="54" height="130" rx="12" fill="#1C1A1A"/>
+          <rect x="920" y="160" width="14" height="190" rx="6" fill="#343A40"/>
+          <polygon points="878,700 924,700 908,760 894,760" fill="#ADB5BD" stroke="#868E96" stroke-width="3"/>
+          <polygon points="894,760 908,760 901,790" fill="#1C1A1A"/>
+        </g></svg>
+      </div>`,
+    };
+
+    // 112–114: el examen de "El Alumno" (respuestas absurdas), papel y tinta distintos en cada video
+    const examen = (papel, tinta, nota, rojo) => {
+      const caja = (extra = "") => `<span style="display:inline-block;width:52px;height:44px;border:4px solid #222;vertical-align:middle;${extra}"></span>`;
+      const celda = (q, si, no) => `<div style="border:4px solid #222;padding:30px 30px 34px;position:relative;font-family:M;font-weight:700;font-size:48px;color:#222">
+          <div style="text-align:center;margin-bottom:22px">${q}</div>
+          <div style="display:flex;align-items:center;gap:30px;margin:0 0 20px 40px">${si}<span>Sí</span></div>
+          <div style="display:flex;align-items:center;gap:30px;margin-left:40px">${no}</div></div>`;
+      const casa = `<svg width="90" height="80" viewBox="0 0 90 80" style="margin:-20px -18px -16px -20px"><path d="M10 40 L45 8 L80 40 M18 34 V74 H72 V34 M38 74 V54 H52 V74" fill="none" stroke="${tinta}" stroke-width="4" stroke-linejoin="round"/><circle cx="8" cy="58" r="8" fill="none" stroke="${tinta}" stroke-width="3"/></svg>`;
+      const garabato = `<svg width="80" height="70" viewBox="0 0 80 70" style="margin:-14px -14px"><path d="M10 35 C 20 0 70 5 66 35 C 62 65 10 66 14 34 C 18 6 60 10 60 36 C 60 58 20 58 24 34 C 28 16 54 18 52 38 M12 20 L66 56 M14 54 L64 14" fill="none" stroke="${tinta}" stroke-width="5"/></svg>`;
+      const cruces = `<span style="position:relative;display:inline-block">${caja()}<span style="position:absolute;left:-36px;top:-26px;font-family:C;font-size:44px;color:${tinta};letter-spacing:6px;line-height:.9">x x<br>x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x<br>&nbsp;x x x</span></span>`;
+      const circulo = `<span style="display:inline-block;width:62px;height:48px;border:4px solid #222;border-radius:50%;vertical-align:middle"></span>`;
+      return {
+        w: 1080, h: 1000,
+        html: `<div style="width:1080px;height:1000px;background:#fff;padding:96px 40px 40px;position:relative">
+          <div style="position:absolute;left:60px;top:8px;font-family:C;font-weight:700;font-size:84px;color:${rojo};rotate:-5deg">${nota}</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;background:${papel}">
+            ${celda("¿Eres infantil?", caja(), `${casa}<span>No</span>`)}
+            ${celda("¿Estás nervioso?", caja(), `${garabato}<span>No</span>`)}
+            ${celda("¿Eres paranoico?", caja(), `${caja()}<span>No <span style="font-family:C;font-size:44px;color:${tinta}">¿por qué?</span></span>`)}
+            ${celda("¿Eres racista?", caja(), `${caja(`background:${tinta === "#1C3FAA" ? "#0B1A55" : "#111"}`)}<span>No</span><span style="position:absolute;right:16px;bottom:-30px;font-family:C;font-weight:700;font-size:50px;color:${rojo};rotate:-8deg;line-height:.9;text-align:center">+10 por<br>creatividad</span>`)}
+            ${celda("¿Has bebido?", caja(), `${cruces}<span>No</span>`)}
+            ${celda("¿Eres tonto?", caja(), `${circulo}<span>No</span>`)}
+          </div></div>`,
+      };
+    };
+    out["examen-a"] = examen("linear-gradient(135deg,#FFF4E6,#FFE3E3)", "#1C3FAA", "Suspenso", "#C92A2A");
+    out["examen-b"] = examen("linear-gradient(135deg,#EDF2FF,#E6FCF5)", "#2B2B2B", "0/10", "#D6336C");
+    out["examen-c"] = examen("linear-gradient(135deg,#FFF9DB,#F3F0FF)", "#0B7285", "Muy mal", "#E8590C");
+
+    // 118–121: "el OK es un muñequito acostado"
+    const ok = (fondo, color, acento) => ({
+      w: 1080, h: 640,
+      html: `<div style="width:1080px;height:640px;background:${fondo};text-align:center;padding-top:34px;font-family:M;color:${color}">
+        <div style="font-weight:800;font-size:58px">Me acabo de dar cuenta que el</div>
+        <div style="font-weight:700;font-size:330px;line-height:1;letter-spacing:-6px;color:${acento};margin:8px 0 10px">OK</div>
+        <div style="font-weight:800;font-size:58px">Es un muñequito acostado</div></div>`,
+    });
+    out["ok-a"] = ok("#fff", "#111", "#111");
+    out["ok-b"] = ok("#111", "#fff", "#fff");
+    out["ok-c"] = ok("#FFE066", "#1C1A1A", "#1C1A1A");
+    out["ok-d"] = ok("#E7F5FF", "#0B3D91", "#0B3D91");
+
+    // 125–126: "¿Funcionó?" (lista con iconos)
+    const funciono = (fondo, pastillas, titulo) => {
+      const filas = [["👄", "Muerde tus labios una vez"], ["🧠", "Rasca tu cabeza"], ["👁️", "Parpadea 5 veces"], ["🫁", "Aguanta la respiración<br>hasta que te guste y compartas"], ["🤧", "¿Estornudaste?"]];
+      return {
+        w: 1080, h: 1150,
+        html: `<div style="width:1080px;height:1150px;background:${fondo};padding:40px 50px;font-family:M">
+          <div style="text-align:center"><span style="display:inline-block;font-family:L;font-size:110px;color:${titulo};background:#fff;border:8px solid #1C1A1A;border-radius:60px;padding:4px 50px">¿FUNCIONÓ?</span></div>
+          <div style="display:flex;flex-direction:column;gap:26px;margin-top:44px">${filas.map(([e, t], i) => `
+            <div style="display:flex;align-items:center;gap:22px">
+              <div style="width:150px;height:150px;border-radius:50%;background:${pastillas[i]};display:flex;align-items:center;justify-content:center;font-size:96px;border:5px solid rgba(0,0,0,.08)">${e}</div>
+              <div style="flex:1;min-height:130px;border-radius:30px;background:${pastillas[i]};display:flex;align-items:center;padding:0 34px;font-weight:800;font-size:${i === 4 ? 66 : t.includes("<br>") ? 40 : 50}px;color:#1C1A1A;line-height:1.15;border:5px solid rgba(0,0,0,.08)">${t}</div>
+            </div>`).join("")}</div></div>`,
+      };
+    };
+    out["funciono-a"] = funciono("#fff", ["#FFD6E0", "#E5DBFF", "#D0EBFF", "#D3F9D8", "#FFF3BF"], "#7048E8");
+    out["funciono-b"] = funciono("#1F1B2E", ["#FFC9C9", "#FFD8A8", "#C5F6FA", "#B2F2BB", "#FFEC99"], "#E8590C");
+
+    // 131–133: palabra borrosa que se lee cerrando los ojos (contornos concéntricos + desenfoque)
+    const borroso = (l1, l2, color, fondo) => {
+      const capa = (t, y) => [46, 38, 30, 22, 14, 6].map((w, i) => `<text x="540" y="${y}" text-anchor="middle" font-family="B" font-size="340" letter-spacing="18" fill="${i === 5 ? fondo : "none"}" stroke="${i % 2 ? fondo : color}" stroke-width="${w}" stroke-linejoin="round">${t}</text>`).join("");
+      return {
+        w: 1080, h: 900,
+        html: `<div style="width:1080px;height:900px;background:${fondo}"><svg width="1080" height="900" viewBox="0 0 1080 900"><defs><filter id="b"><feGaussianBlur stdDeviation="4.5"/></filter></defs>
+          <g filter="url(#b)">${capa(l1, 400)}${capa(l2, 780)}</g></svg></div>`,
+      };
+    };
+    out["borroso-a"] = borroso("ORDER", "PIZZA", "#222", "#fff");
+    out["borroso-b"] = borroso("ORDER", "PIZZA", "#7A1020", "#FFF5F5");
+    out["borroso-c"] = borroso("PIDE", "PIZZA", "#0B3D91", "#F1F7FF");
+
+    // 115–117: textos sobre el video (sin imagen): "Las personas más guapas nacieron en:" + dos años
+    const anios = (a, b) => ({
+      w: 1080, h: 1920, transparente: true,
+      html: `<div style="width:1080px;height:1920px;position:relative;font-family:M;font-weight:700;color:#fff;text-align:center;text-shadow:0 0 6px rgba(0,0,0,.9),0 3px 10px rgba(0,0,0,.6);-webkit-text-stroke:2px rgba(0,0,0,.55);paint-order:stroke fill">
+        <div style="position:absolute;left:0;right:0;top:300px;font-size:64px;line-height:1.15">Las personas más guapas<br>nacieron en:</div>
+        <div style="position:absolute;left:110px;top:620px;font-size:82px">${a}</div>
+        <div style="position:absolute;right:110px;top:560px;font-size:82px">${b}</div></div>`,
+    });
+    out["anios-115"] = anios(2016, 2017);
+    out["anios-116"] = anios(2015, 2018);
+    out["anios-117"] = anios(2014, 2019);
+    return out;
+  })(),
+
 };
 
 const nombres = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(IMAGENES);
@@ -435,7 +565,7 @@ for (const n of nombres) {
   await pag.evaluate(() => document.fonts.ready);
   await pag.waitForTimeout(300);
   const salida = path.join(RAIZ, "public/marryto/material", `${n}.png`);
-  await pag.screenshot({ path: salida });
+  await pag.screenshot({ path: salida, omitBackground: !!im.transparente });
   console.log(salida);
   await pag.close();
 }

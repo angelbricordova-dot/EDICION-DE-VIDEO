@@ -35,6 +35,7 @@ export type Video = {
   // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
+  capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
   etiqueta?: string; etiquetaY?: number; lista?: [string[], string[]]; listaY?: number; listaTam?: number; listaMargen?: number; // distancia de la lista a los bordes (zona segura de las redes)
@@ -192,7 +193,12 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
       <AbsoluteFill style={{ translate: `0 ${bajar}px`, scale: String(k), transformOrigin: "50% 0" }}>
       {v.imagen ? (
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
-          <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
+          {v.imagen.endsWith(".mp4") ? (
+            // el Short de referencia trae un video arriba (p. ej. 104–107): se reproduce, no es una foto
+            <OffthreadVideo src={staticFile(v.imagen)} muted style={{ width: "100%", height: "auto", display: "block" }} />
+          ) : (
+            <Img src={staticFile(v.imagen)} style={{ width: "100%", height: v.cajaFoto ? "100%" : "auto", objectFit: v.cajaFoto ? "cover" : undefined, display: "block" }} />
+          )}
         </div>
       ) : v.etiqueta || v.pastillas || v.sinImagen ? null : (
         // sin imagen aparte: se recorta de la miniatura del Short
@@ -246,6 +252,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{tituloAhora}</div>
       )}
       </AbsoluteFill>
+      {v.capa ? <Img src={staticFile(v.capa)} style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920 }} /> : null}
     </AbsoluteFill>
   );
 };
