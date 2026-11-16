@@ -2808,11 +2808,11 @@
   "sinTexto": false,
   "imagen": "marryto/material/nombre-japones.png",
   "caja": [
-   0,
-   0,
-   1080
+   40,
+   150,
+   1000
   ],
-  "imgAspecto": 0.8182,
+  "imgAspecto": 0.6909,
   "inicio": 1.3,
   "fin": 8.3,
   "caraX": 514,
@@ -2823,7 +2823,7 @@
   "ojosX": 508,
   "desplazar": true,
   "separacion": 40,
-  "textoY": 890,
+  "textoY": 851,
   "textoTam": 62,
   "audio": "marryto/audio/m91-93.mp3",
   "audioDesde": 0
@@ -2843,11 +2843,11 @@
   "sinTexto": false,
   "imagen": "marryto/material/nombre-japones.png",
   "caja": [
-   0,
-   0,
-   1080
+   40,
+   150,
+   1000
   ],
-  "imgAspecto": 0.8182,
+  "imgAspecto": 0.6909,
   "inicio": 3.3,
   "fin": 9.6,
   "caraX": 501,
@@ -2858,7 +2858,7 @@
   "ojosX": 500,
   "desplazar": true,
   "separacion": 40,
-  "textoY": 890,
+  "textoY": 851,
   "textoTam": 62,
   "audio": "marryto/audio/m91-93.mp3",
   "audioDesde": 0
@@ -2878,11 +2878,11 @@
   "sinTexto": false,
   "imagen": "marryto/material/nombre-japones.png",
   "caja": [
-   0,
-   0,
-   1080
+   40,
+   150,
+   1000
   ],
-  "imgAspecto": 0.8182,
+  "imgAspecto": 0.6909,
   "inicio": 3.7,
   "fin": 9.58,
   "caraX": 527,
@@ -2893,7 +2893,7 @@
   "ojosX": 544,
   "desplazar": true,
   "separacion": 40,
-  "textoY": 890,
+  "textoY": 851,
   "textoTam": 62,
   "audio": "marryto/audio/m91-93.mp3",
   "audioDesde": 0
@@ -3063,9 +3063,9 @@
   "sinTexto": true,
   "imagen": "marryto/material/perrito.png",
   "caja": [
-   150,
-   0,
-   780
+   230,
+   160,
+   620
   ],
   "imgAspecto": 1.2,
   "inicio": 2.3,
@@ -3098,9 +3098,9 @@
   "sinTexto": true,
   "imagen": "marryto/material/perrito.png",
   "caja": [
-   150,
-   0,
-   780
+   230,
+   160,
+   620
   ],
   "imgAspecto": 1.2,
   "inicio": 3.9,
@@ -3224,8 +3224,8 @@
   "audioDesde": 0
  },
  "103": {
-  "inicio": 35.7,
-  "fin": 42.7,
+  "inicio": 37.0,
+  "fin": 44.0,
   "short": "zWOmtVobxw0",
   "caraX": 540,
   "caraY": 900,
@@ -3252,9 +3252,9 @@
    1080,
    1920
   ],
-  "ojosY": 784,
+  "ojosY": 785,
   "frenteY": 718,
-  "ojosX": 530,
+  "ojosX": 542,
   "audio": "marryto/audio/m100-103.mp3",
   "audioDesde": 0
  }

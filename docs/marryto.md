@@ -117,7 +117,12 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
     - **Todos los videos llevan la música del Short de referencia** (`"audio"` en `videos.json`;
       `render1080.sh` exporta con sonido si lo tiene). YouTube bloquea la descarga desde aquí ("Sign in to
       confirm you're not a bot"): Angel pasa los mp3 de cada Short.
-14. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+14. **Zona segura arriba** (16-nov): TikTok/IG/YouTube tapan ~150 px de arriba → la imagen empieza en
+    `caja[1] ≥ 150` y sin huecos vacíos dentro de la imagen (recortarla al contenido).
+    **Música**: buscar el tramo del Short en la canción completa (palabras de whisper en inglés/español);
+    si el Short va "slowed", medir la velocidad con dos palabras (p. ej. 100–103: ×0,909 con `atempo`)
+    y nivelar el volumen (~ −12,5 dB de media).
+15. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)

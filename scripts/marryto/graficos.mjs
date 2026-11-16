@@ -217,11 +217,11 @@ const IMAGENES = {
     {
       const m = "A=ka B=tu C=mi D=te E=ku F=lu G=ji H=ri I=ki J=zu K=me L=ta M=rin N=to O=mo P=no Q=ke R=shi S=ari T=chi U=do V=ru W=mei X=na Y=fu Z=zi".split(" ");
       out["nombre-japones"] = {
-        w: 1100, h: 900,
-        html: `<div style="width:1100px;height:900px;background:#FFF5F5;padding:40px;position:relative;overflow:hidden">
+        w: 1100, h: 760,
+        html: `<div style="width:1100px;height:760px;background:#FFF5F5;padding:34px 40px;position:relative;overflow:hidden">
           <div style="position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:#E03131;opacity:.18"></div>
-          <div style="font-family:L;font-size:62px;color:#C92A2A;text-align:center;margin-bottom:22px">¿Cómo sería tu nombre japonés? 🇯🇵</div>
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px 16px;font-family:M;font-weight:800;font-size:40px;color:#1C1A1A">${m.map((x) => { const [l, r] = x.split("="); return `<div style="background:#fff;border:4px solid #FFC9C9;border-radius:18px;padding:5px 12px"><span style="color:#C92A2A">${l}</span> = ${r}</div>`; }).join("")}</div>
+          <div style="font-family:L;font-size:66px;color:#C92A2A;text-align:center;margin-bottom:20px">¿Cómo sería tu nombre japonés? 🇯🇵</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px 16px;font-family:M;font-weight:800;font-size:44px;color:#1C1A1A">${m.map((x) => { const [l, r] = x.split("="); return `<div style="background:#fff;border:4px solid #FFC9C9;border-radius:18px;padding:5px 12px"><span style="color:#C92A2A">${l}</span> = ${r}</div>`; }).join("")}</div>
         </div>`,
       };
     }
