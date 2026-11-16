@@ -4305,14 +4305,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
-  "pendiente": "imagen Spider-Man",
+  "titulo": "Encuentra las 3 diferencias",
+  "sinTexto": false,
   "ojosY": 918,
   "frenteY": 840,
   "ojosX": 562,
   "audio": "marryto/audio/m134-135.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "imagen": "marryto/material/obj-spiderman.jpg",
+  "caja": [
+   0,
+   150,
+   1080
+  ],
+  "imgAspecto": 0.7465,
+  "textoY": 968,
+  "textoTam": 64
  },
  "135": {
   "estilo": "superpuesto",
@@ -4332,7 +4340,7 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Encuentra las 3 diferencias",
+  "titulo": "¿Ves las 3 diferencias?",
   "sinTexto": false,
   "ojosY": 880,
   "frenteY": 823,
