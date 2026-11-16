@@ -109,7 +109,15 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
     el resultado", "Yo:", …), variando entre videos del mismo Short.
 12. **Revisar SIEMPRE el último segundo** (13-nov, video 70): el final se corta justo antes de que se
     incline o se acerque a la cámara para apagarla. Mirar el último segundo a 10 fps en cada video.
-13. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
+13. **Cambios del 16-nov**:
+    - Las carpetas nuevas traen **un bruto con 3–4 tomas** del mismo Short, cada una con otra camiseta
+      (p. ej. "Video 100-103"). Se separan por el cambio de color de la camiseta y cada toma es un video;
+      el proxy se enlaza como `v100.mp4 … v103.mp4` (`ln`, mismo archivo).
+    - **Imágenes más grandes** en general (media pantalla si hace falta).
+    - **Todos los videos llevan la música del Short de referencia** (`"audio"` en `videos.json`;
+      `render1080.sh` exporta con sonido si lo tiene). YouTube bloquea la descarga desde aquí ("Sign in to
+      confirm you're not a bot"): Angel pasa los mp3 de cada Short.
+14. Su Drive: cuando marca un video como hecho (✔ en WhatsApp) lo borra; **los que quedan en la
    carpeta son los únicos pendientes**.
 
 ## Imágenes y textos por video (lote del 6-nov)

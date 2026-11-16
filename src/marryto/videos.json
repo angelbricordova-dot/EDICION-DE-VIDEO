@@ -2803,14 +2803,14 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Cómo sería tu nombre japonés? 🇯🇵",
+  "sinTexto": false,
   "imagen": "marryto/material/nombre-japones.png",
   "caja": [
-   160,
-   40,
-   760
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.8182,
   "inicio": 1.3,
@@ -2820,7 +2820,11 @@
   "caraAncho": 448,
   "ojosY": 984,
   "frenteY": 900,
-  "ojosX": 508
+  "ojosX": 508,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 890,
+  "textoTam": 62
  },
  "92": {
   "estilo": "superpuesto",
@@ -2832,14 +2836,14 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Cómo sería tu nombre japonés? 🇯🇵",
+  "sinTexto": false,
   "imagen": "marryto/material/nombre-japones.png",
   "caja": [
-   160,
-   40,
-   760
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.8182,
   "inicio": 3.3,
@@ -2849,7 +2853,11 @@
   "caraAncho": 382,
   "ojosY": 910,
   "frenteY": 827,
-  "ojosX": 500
+  "ojosX": 500,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 890,
+  "textoTam": 62
  },
  "93": {
   "estilo": "superpuesto",
@@ -2861,14 +2869,14 @@
    1080,
    1920
   ],
-  "bajar": 160,
-  "titulo": "",
-  "sinTexto": true,
+  "bajar": 0,
+  "titulo": "Cómo sería tu nombre japonés? 🇯🇵",
+  "sinTexto": false,
   "imagen": "marryto/material/nombre-japones.png",
   "caja": [
-   160,
-   40,
-   760
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.8182,
   "inicio": 3.7,
@@ -2878,7 +2886,11 @@
   "caraAncho": 398,
   "ojosY": 948,
   "frenteY": 859,
-  "ojosX": 544
+  "ojosX": 544,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 890,
+  "textoTam": 62
  },
  "94": {
   "estilo": "superpuesto",
@@ -2894,9 +2906,9 @@
   "titulo": "",
   "sinTexto": true,
   "listaMargen": 150,
-  "listaY": 1290,
-  "listaTam": 52,
-  "etiquetaY": 330,
+  "listaY": 1180,
+  "listaTam": 56,
+  "etiquetaY": 200,
   "etiqueta": "El número que te salga después de dar like será tu próximo trabajo 😉",
   "lista": [
    [
@@ -2933,18 +2945,18 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Solo un 10% lo adivina 💀",
   "sinTexto": false,
   "imagen": "marryto/material/pilares.png",
   "caja": [
-   240,
-   40,
-   600
+   60,
+   0,
+   960
   ],
   "imgAspecto": 1.0,
-  "textoY": 654,
-  "textoTam": 64,
+  "textoY": 926,
+  "textoTam": 68,
   "inicio": 2.55,
   "fin": 9.55,
   "caraX": 512,
@@ -2952,7 +2964,9 @@
   "caraAncho": 488,
   "ojosY": 933,
   "frenteY": 865,
-  "ojosX": 501
+  "ojosX": 501,
+  "desplazar": true,
+  "separacion": 40
  },
  "96": {
   "estilo": "superpuesto",
@@ -2964,18 +2978,18 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Solo un 10% lo adivina 💀",
   "sinTexto": false,
   "imagen": "marryto/material/pilares.png",
   "caja": [
-   240,
-   40,
-   600
+   60,
+   0,
+   960
   ],
   "imgAspecto": 1.0,
-  "textoY": 654,
-  "textoTam": 64,
+  "textoY": 926,
+  "textoTam": 68,
   "inicio": 2.55,
   "fin": 10.0,
   "caraX": 508,
@@ -2983,7 +2997,9 @@
   "caraAncho": 508,
   "ojosY": 1038,
   "frenteY": 928,
-  "ojosX": 492
+  "ojosX": 492,
+  "desplazar": true,
+  "separacion": 40
  },
  "97": {
   "estilo": "superpuesto",
@@ -2995,18 +3011,18 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "Solo un 10% lo adivina 💀",
   "sinTexto": false,
   "imagen": "marryto/material/pilares.png",
   "caja": [
-   240,
-   40,
-   600
+   60,
+   0,
+   960
   ],
   "imgAspecto": 1.0,
-  "textoY": 654,
-  "textoTam": 64,
+  "textoY": 926,
+  "textoTam": 68,
   "inicio": 7.0,
   "fin": 13.5,
   "caraX": 568,
@@ -3014,7 +3030,9 @@
   "caraAncho": 520,
   "ojosY": 982,
   "frenteY": 869,
-  "ojosX": 578
+  "ojosX": 578,
+  "desplazar": true,
+  "separacion": 40
  },
  "98": {
   "estilo": "superpuesto",
@@ -3026,14 +3044,14 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
   "imagen": "marryto/material/perrito.png",
   "caja": [
-   280,
-   40,
-   520
+   150,
+   0,
+   780
   ],
   "imgAspecto": 1.2,
   "inicio": 2.3,
@@ -3043,7 +3061,11 @@
   "caraAncho": 276,
   "ojosY": 837,
   "frenteY": 751,
-  "ojosX": 577
+  "ojosX": 577,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 942,
+  "textoTam": 64
  },
  "99": {
   "estilo": "superpuesto",
@@ -3055,14 +3077,14 @@
    1080,
    1920
   ],
-  "bajar": 160,
+  "bajar": 0,
   "titulo": "",
   "sinTexto": true,
   "imagen": "marryto/material/perrito.png",
   "caja": [
-   280,
-   40,
-   520
+   150,
+   0,
+   780
   ],
   "imgAspecto": 1.2,
   "inicio": 3.9,
@@ -3072,6 +3094,142 @@
   "caraAncho": 264,
   "ojosY": 820,
   "frenteY": 752,
-  "ojosX": 528
+  "ojosX": 528,
+  "desplazar": true,
+  "separacion": 40,
+  "textoY": 942,
+  "textoTam": 64
+ },
+ "100": {
+  "inicio": 4.7,
+  "fin": 11.7,
+  "short": "zWOmtVobxw0",
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 400,
+  "estilo": "superpuesto",
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/senas.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "imgAspecto": 0.7467,
+  "sinTexto": false,
+  "titulo": "Dale 2 veces en la\n1ra letra de tu nombre",
+  "textoY": 812,
+  "textoTam": 70,
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "ojosY": 768,
+  "frenteY": 701,
+  "ojosX": 524
+ },
+ "101": {
+  "inicio": 14.5,
+  "fin": 21.5,
+  "short": "zWOmtVobxw0",
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 400,
+  "estilo": "superpuesto",
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/senas.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "imgAspecto": 0.7467,
+  "sinTexto": false,
+  "titulo": "Dale 2 veces en la\n1ra letra de tu nombre",
+  "textoY": 812,
+  "textoTam": 70,
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "ojosY": 811,
+  "frenteY": 718,
+  "ojosX": 533
+ },
+ "102": {
+  "inicio": 26.3,
+  "fin": 33.3,
+  "short": "zWOmtVobxw0",
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 400,
+  "estilo": "superpuesto",
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/senas.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "imgAspecto": 0.7467,
+  "sinTexto": false,
+  "titulo": "Dale 2 veces en la\n1ra letra de tu nombre",
+  "textoY": 812,
+  "textoTam": 70,
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "ojosY": 797,
+  "frenteY": 713,
+  "ojosX": 475
+ },
+ "103": {
+  "inicio": 35.7,
+  "fin": 42.7,
+  "short": "zWOmtVobxw0",
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 400,
+  "estilo": "superpuesto",
+  "desplazar": true,
+  "bajar": 0,
+  "separacion": 40,
+  "imagen": "marryto/material/senas.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "imgAspecto": 0.7467,
+  "sinTexto": false,
+  "titulo": "Dale 2 veces en la\n1ra letra de tu nombre",
+  "textoY": 812,
+  "textoTam": 70,
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "ojosY": 784,
+  "frenteY": 718,
+  "ojosX": 530
  }
 }
