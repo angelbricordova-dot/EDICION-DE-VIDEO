@@ -106,7 +106,7 @@ const Titulo: React.FC<{ texto: string; rojo: string }> = ({ texto, rojo }) => {
 
 /** Como el Short original: reacción a pantalla completa, imagen arriba y texto blanco con borde. */
 const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const { vel } = tiempo(v);
   const t = useCurrentFrame() / fps;
   let tituloAhora = v.titulo;
@@ -188,7 +188,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           </AbsoluteFill>
         </Sequence>
       ) : null}
-      {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} /> : null}
+      {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={(f) => Math.min(1, Math.max(0, (durationInFrames - f) / (0.25 * fps)))} /> : null}
       <AbsoluteFill style={{ translate: `0 ${bajar}px`, scale: String(k), transformOrigin: "50% 0" }}>
       {v.imagen ? (
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
