@@ -2824,7 +2824,9 @@
   "desplazar": true,
   "separacion": 40,
   "textoY": 890,
-  "textoTam": 62
+  "textoTam": 62,
+  "audio": "marryto/audio/m91-93.mp3",
+  "audioDesde": 0
  },
  "92": {
   "estilo": "superpuesto",
@@ -2857,7 +2859,9 @@
   "desplazar": true,
   "separacion": 40,
   "textoY": 890,
-  "textoTam": 62
+  "textoTam": 62,
+  "audio": "marryto/audio/m91-93.mp3",
+  "audioDesde": 0
  },
  "93": {
   "estilo": "superpuesto",
@@ -2890,7 +2894,9 @@
   "desplazar": true,
   "separacion": 40,
   "textoY": 890,
-  "textoTam": 62
+  "textoTam": 62,
+  "audio": "marryto/audio/m91-93.mp3",
+  "audioDesde": 0
  },
  "94": {
   "estilo": "superpuesto",
@@ -2933,7 +2939,9 @@
   "caraAncho": 330,
   "ojosY": 1078,
   "frenteY": 991,
-  "ojosX": 520
+  "ojosX": 520,
+  "audio": "marryto/audio/m94.mp3",
+  "audioDesde": 0
  },
  "95": {
   "estilo": "superpuesto",
@@ -2966,7 +2974,9 @@
   "frenteY": 865,
   "ojosX": 501,
   "desplazar": true,
-  "separacion": 40
+  "separacion": 40,
+  "audio": "marryto/audio/m95-97.mp3",
+  "audioDesde": 0
  },
  "96": {
   "estilo": "superpuesto",
@@ -2999,7 +3009,9 @@
   "frenteY": 928,
   "ojosX": 492,
   "desplazar": true,
-  "separacion": 40
+  "separacion": 40,
+  "audio": "marryto/audio/m95-97.mp3",
+  "audioDesde": 0
  },
  "97": {
   "estilo": "superpuesto",
@@ -3032,7 +3044,9 @@
   "frenteY": 869,
   "ojosX": 578,
   "desplazar": true,
-  "separacion": 40
+  "separacion": 40,
+  "audio": "marryto/audio/m95-97.mp3",
+  "audioDesde": 0
  },
  "98": {
   "estilo": "superpuesto",
@@ -3065,7 +3079,9 @@
   "desplazar": true,
   "separacion": 40,
   "textoY": 942,
-  "textoTam": 64
+  "textoTam": 64,
+  "audio": "marryto/audio/m98-99.mp3",
+  "audioDesde": 0
  },
  "99": {
   "estilo": "superpuesto",
@@ -3098,7 +3114,9 @@
   "desplazar": true,
   "separacion": 40,
   "textoY": 942,
-  "textoTam": 64
+  "textoTam": 64,
+  "audio": "marryto/audio/m98-99.mp3",
+  "audioDesde": 0
  },
  "100": {
   "inicio": 4.7,
@@ -3131,7 +3149,9 @@
   ],
   "ojosY": 768,
   "frenteY": 701,
-  "ojosX": 524
+  "ojosX": 524,
+  "audio": "marryto/audio/m100-103.mp3",
+  "audioDesde": 0
  },
  "101": {
   "inicio": 14.5,
@@ -3164,7 +3184,9 @@
   ],
   "ojosY": 811,
   "frenteY": 718,
-  "ojosX": 533
+  "ojosX": 533,
+  "audio": "marryto/audio/m100-103.mp3",
+  "audioDesde": 0
  },
  "102": {
   "inicio": 26.3,
@@ -3177,7 +3199,7 @@
   "desplazar": true,
   "bajar": 0,
   "separacion": 40,
-  "imagen": "marryto/material/senas.jpg",
+  "imagen": "marryto/material/senas-azul.jpg",
   "caja": [
    0,
    0,
@@ -3197,7 +3219,9 @@
   ],
   "ojosY": 797,
   "frenteY": 713,
-  "ojosX": 475
+  "ojosX": 475,
+  "audio": "marryto/audio/m100-103.mp3",
+  "audioDesde": 0
  },
  "103": {
   "inicio": 35.7,
@@ -3210,7 +3234,7 @@
   "desplazar": true,
   "bajar": 0,
   "separacion": 40,
-  "imagen": "marryto/material/senas.jpg",
+  "imagen": "marryto/material/senas-azul.jpg",
   "caja": [
    0,
    0,
@@ -3230,6 +3254,8 @@
   ],
   "ojosY": 784,
   "frenteY": 718,
-  "ojosX": 530
+  "ojosX": 530,
+  "audio": "marryto/audio/m100-103.mp3",
+  "audioDesde": 0
  }
 }
