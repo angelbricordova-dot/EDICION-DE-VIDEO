@@ -3416,16 +3416,16 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "imagen": "marryto/material/piel11-a.png",
+  "imagen": "marryto/material/piel-foto-a.png",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.8333,
+  "imgAspecto": 0.704,
   "titulo": "Toca 2 veces en el tuyo:",
   "sinTexto": false,
-  "textoY": 995,
+  "textoY": 922,
   "textoTam": 64,
   "ojosY": 899,
   "frenteY": 827,
@@ -3451,16 +3451,16 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "imagen": "marryto/material/piel11-b.png",
+  "imagen": "marryto/material/piel-foto-b.png",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.8333,
+  "imgAspecto": 0.627,
   "titulo": "Dale 2 toques en el tuyo:",
   "sinTexto": false,
-  "textoY": 995,
+  "textoY": 839,
   "textoTam": 64,
   "ojosY": 921,
   "frenteY": 817,
@@ -3486,16 +3486,16 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "imagen": "marryto/material/piel11-c.png",
+  "imagen": "marryto/material/piel-foto-c.png",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.8333,
+  "imgAspecto": 0.697,
   "titulo": "Toca 2 veces en tu número:",
   "sinTexto": false,
-  "textoY": 995,
+  "textoY": 915,
   "textoTam": 64,
   "ojosY": 895,
   "frenteY": 816,
@@ -4262,14 +4262,14 @@
   "ojosY": 885,
   "frenteY": 775,
   "ojosX": 494,
-  "imagen": "marryto/material/obj-gatos-b.jpg",
+  "imagen": "marryto/material/vacas-ilusion-a.jpg",
   "caja": [
    40,
    150,
    1000
   ],
-  "imgAspecto": 0.8347,
-  "textoY": 997,
+  "imgAspecto": 0.843,
+  "textoY": 1005,
   "textoTam": 64,
   "audio": "marryto/audio/m127-130.mp3",
   "audioDesde": 0
@@ -4297,14 +4297,14 @@
   "ojosY": 973,
   "frenteY": 887,
   "ojosX": 471,
-  "imagen": "marryto/material/obj-gatos-c.jpg",
+  "imagen": "marryto/material/vacas-ilusion-b.jpg",
   "caja": [
-   40,
+   90,
    150,
-   1000
+   900
   ],
-  "imgAspecto": 0.8338,
-  "textoY": 996,
+  "imgAspecto": 0.9865,
+  "textoY": 1050,
   "textoTam": 64,
   "audio": "marryto/audio/m127-130.mp3",
   "audioDesde": 0

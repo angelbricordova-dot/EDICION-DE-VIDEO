@@ -554,6 +554,29 @@ const IMAGENES = {
     return out;
   })(),
 
+  // ── 108–110 (17-nov): fotos de Gemini de Angel + barra de título y números 1–11 en HD ──
+  ...(() => {
+    const out = {};
+    const foto = (archivo, x0, x1, puntas, barra) => {
+      const b64 = "data:image/jpeg;base64," + fs.readFileSync(path.join(RAIZ, "public/marryto/material", archivo)).toString("base64");
+      const arriba = puntas - 190; // recorte: deja sitio a los números sobre los dedos
+      const alto = 1493 - arriba;
+      const xs = Array.from({ length: 11 }, (_, i) => x0 + ((x1 - x0) * i) / 10);
+      return {
+        w: 1000, h: Math.round((alto + 220) / 2),
+        html: `<div style="width:1000px;position:relative;overflow:hidden">
+          <div style="height:110px;background:${barra};color:#fff;font-family:M;font-weight:800;font-size:56px;display:flex;align-items:center;justify-content:center">¿Qué número es tu tono de piel?</div>
+          <div style="position:relative;width:1000px;height:${alto / 2}px;background:url(${b64}) 0 ${-arriba / 2}px / 1000px auto no-repeat">
+            ${xs.map((x, i) => `<div style="position:absolute;left:${x / 2 - 30}px;top:${(puntas - arriba) / 2 - 78}px;width:60px;height:60px;border-radius:50%;background:#fff;border:4px solid #1C1A1A;display:flex;align-items:center;justify-content:center;font-family:M;font-weight:800;font-size:${i < 9 ? 32 : 27}px;color:#1C1A1A;box-shadow:0 3px 8px rgba(0,0,0,.2)">${i + 1}</div>`).join("")}
+          </div></div>`,
+      };
+    };
+    out["piel-foto-a"] = foto("piel-foto-a.jpg", 128, 1868, 495, "#111");
+    out["piel-foto-b"] = foto("piel-foto-b.jpg", 150, 1858, 650, "#3B2414");
+    out["piel-foto-c"] = foto("piel-foto-c.jpg", 128, 1878, 510, "#0B3D91");
+    return out;
+  })(),
+
 };
 
 const nombres = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(IMAGENES);
