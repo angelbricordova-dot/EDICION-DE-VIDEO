@@ -3670,16 +3670,16 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 2.6,
-  "fin": 9.6,
+  "inicio": 2.5,
+  "fin": 12.2,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "",
   "sinTexto": true,
-  "ojosY": 877,
-  "frenteY": 809,
-  "ojosX": 542,
+  "ojosY": 879,
+  "frenteY": 810,
+  "ojosX": 527,
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
@@ -3726,7 +3726,8 @@
     "texto": "2013",
     "tam": 84
    }
-  ]
+  ],
+  "duracion": 9.7
  },
  "116": {
   "estilo": "superpuesto",
@@ -3741,16 +3742,16 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 14.3,
-  "fin": 21.3,
+  "inicio": 14.0,
+  "fin": 23.5,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "",
   "sinTexto": true,
-  "ojosY": 871,
-  "frenteY": 797,
-  "ojosX": 516,
+  "ojosY": 872,
+  "frenteY": 799,
+  "ojosX": 524,
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
@@ -3804,7 +3805,8 @@
     "texto": "2010",
     "tam": 84
    }
-  ]
+  ],
+  "duracion": 9.5
  },
  "117": {
   "estilo": "superpuesto",
@@ -3820,15 +3822,15 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 26.6,
-  "fin": 33.6,
+  "fin": 36.7,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "",
   "sinTexto": true,
-  "ojosY": 876,
-  "frenteY": 792,
-  "ojosX": 598,
+  "ojosY": 877,
+  "frenteY": 797,
+  "ojosX": 606,
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
@@ -3875,7 +3877,8 @@
     "texto": "2015",
     "tam": 84
    }
-  ]
+  ],
+  "duracion": 10.1
  },
  "118": {
   "estilo": "superpuesto",
