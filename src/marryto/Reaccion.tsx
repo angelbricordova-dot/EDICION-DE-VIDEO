@@ -259,7 +259,10 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
       {(v.textos ?? []).map((x, i) => {
         const k = t >= x.t ? 1 : 0; // como la referencia: aparece de golpe donde señala (sin animación)
         return k <= 0 ? null : (
-          <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", scale: String(0.6 + 0.4 * k), opacity: k, fontFamily: FUENTE, fontWeight: 600, fontSize: x.tam ?? 64, color: "#fff", whiteSpace: "pre", textAlign: "center", lineHeight: 1.12, textShadow: "0 1px 4px rgba(0,0,0,.55)" }}>{x.texto}</div>
+          <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", opacity: k, fontFamily: FUENTE, fontWeight: 600, fontSize: x.tam ?? 64, whiteSpace: "pre", textAlign: "center", lineHeight: 1.42 }}>
+            {/* estilo TikTok (17-nov): cada línea con su fondo blanco redondeado y letra negra */}
+            <span style={{ background: "#fff", color: "#111", padding: "0.04em 0.28em", borderRadius: "0.22em", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{x.texto}</span>
+          </div>
         );
       })}
       {v.capa ? <Img src={staticFile(v.capa)} style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920 }} /> : null}

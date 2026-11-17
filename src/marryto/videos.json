@@ -3671,7 +3671,7 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 2.5,
-  "fin": 12.2,
+  "fin": 12.0,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -3683,51 +3683,44 @@
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
-  "textos_quitados": [
+  "duracion": 9.5,
+  "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 350,
+    "y": 380,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 64
+    "tam": 58
    },
    {
-    "t": 2.1,
-    "x": 250,
-    "y": 810,
-    "texto": "2017",
-    "tam": 84
-   },
-   {
-    "t": 3.0,
-    "x": 150,
-    "y": 960,
-    "texto": "2016",
-    "tam": 84
-   },
-   {
-    "t": 3.6,
-    "x": 820,
-    "y": 770,
+    "t": 2.37,
+    "x": 144,
+    "y": 916,
     "texto": "2015",
-    "tam": 84
+    "tam": 72
    },
    {
-    "t": 5.6,
-    "x": 160,
-    "y": 1250,
-    "texto": "2014",
-    "tam": 84
-   },
-   {
-    "t": 6.8,
-    "x": 860,
-    "y": 1170,
+    "t": 3.9,
+    "x": 820,
+    "y": 776,
     "texto": "2013",
-    "tam": 84
+    "tam": 72
+   },
+   {
+    "t": 5.43,
+    "x": 152,
+    "y": 1264,
+    "texto": "2012",
+    "tam": 72
+   },
+   {
+    "t": 6.87,
+    "x": 808,
+    "y": 1096,
+    "texto": "2011",
+    "tam": 72
    }
-  ],
-  "duracion": 9.7
+  ]
  },
  "116": {
   "estilo": "superpuesto",
@@ -3755,58 +3748,44 @@
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
-  "textos_quitados": [
+  "duracion": 9.5,
+  "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 350,
+    "y": 380,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 64
+    "tam": 58
    },
    {
-    "t": 1.9,
-    "x": 790,
-    "y": 770,
+    "t": 2.83,
+    "x": 144,
+    "y": 916,
+    "texto": "2017",
+    "tam": 72
+   },
+   {
+    "t": 2.83,
+    "x": 764,
+    "y": 880,
+    "texto": "2016",
+    "tam": 72
+   },
+   {
+    "t": 4.7,
+    "x": 252,
+    "y": 1464,
     "texto": "2015",
-    "tam": 84
+    "tam": 72
    },
    {
-    "t": 2.0,
-    "x": 290,
-    "y": 770,
+    "t": 8.1,
+    "x": 788,
+    "y": 1468,
     "texto": "2014",
-    "tam": 84
-   },
-   {
-    "t": 2.7,
-    "x": 150,
-    "y": 900,
-    "texto": "2013",
-    "tam": 84
-   },
-   {
-    "t": 2.8,
-    "x": 920,
-    "y": 890,
-    "texto": "2012",
-    "tam": 84
-   },
-   {
-    "t": 4.6,
-    "x": 880,
-    "y": 1380,
-    "texto": "2011",
-    "tam": 84
-   },
-   {
-    "t": 5.8,
-    "x": 160,
-    "y": 1050,
-    "texto": "2010",
-    "tam": 84
+    "tam": 72
    }
-  ],
-  "duracion": 9.5
+  ]
  },
  "117": {
   "estilo": "superpuesto",
@@ -3834,51 +3813,44 @@
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
-  "textos_quitados": [
+  "duracion": 10.1,
+  "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 350,
+    "y": 380,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 64
+    "tam": 58
    },
    {
-    "t": 1.8,
-    "x": 810,
-    "y": 870,
-    "texto": "2019",
-    "tam": 84
-   },
-   {
-    "t": 1.9,
-    "x": 320,
-    "y": 870,
-    "texto": "2018",
-    "tam": 84
-   },
-   {
-    "t": 2.6,
-    "x": 930,
-    "y": 1000,
+    "t": 2.23,
+    "x": 220,
+    "y": 956,
     "texto": "2017",
-    "tam": 84
+    "tam": 72
    },
    {
-    "t": 2.7,
-    "x": 160,
-    "y": 1010,
+    "t": 2.23,
+    "x": 840,
+    "y": 980,
     "texto": "2016",
-    "tam": 84
+    "tam": 72
    },
    {
-    "t": 5.4,
-    "x": 200,
-    "y": 1390,
+    "t": 5.1,
+    "x": 272,
+    "y": 1476,
     "texto": "2015",
-    "tam": 84
+    "tam": 72
+   },
+   {
+    "t": 8.4,
+    "x": 812,
+    "y": 1416,
+    "texto": "2012",
+    "tam": 72
    }
-  ],
-  "duracion": 10.1
+  ]
  },
  "118": {
   "estilo": "superpuesto",
