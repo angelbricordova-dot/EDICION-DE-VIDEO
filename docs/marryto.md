@@ -145,6 +145,19 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 | 18 | error-dias.jpg (¿puedes encontrar el error?), pequeña arriba | — |
 | 19 | yate-diferencias.jpg (Marryto con IA en un puerto, 3 diferencias) | Encuentra las 3 diferencias |
 
+
+## Reglas nuevas (17-nov)
+- **Música en bucle:** el Short se repite al terminar, así que la música **no puede acabar a mitad de
+  frase ni de golpe**: el video termina en un **hueco** de la canción (pausa entre frases). Buscar los
+  huecos con `python3 scripts/marryto/huecos.py <música> 5.5 10.5` (y la letra con whisper) y fijar
+  `duracion` para que el corte caiga ahí, sin pasar del momento en que se acerca a la cámara.
+- **Títulos que piden interacción:** siempre del tipo "Toca 2 veces para verlo", "Dale 2 toques y
+  compártelo", "Dale like si…" (engagement), nunca solo una pregunta.
+- Si la referencia lleva un **video** arriba, todos los videos de esa carpeta llevan video (variantes:
+  espejo, otro encuadre, color), nunca una foto fija.
+- Duración: la de la referencia si su coreografía es más larga (115–117 ≈ 10 s, incluye el "esperen"
+  y el señalar abajo).
+
 ## Hechos
 - 16-nov-2026: lote 104–135 (carpetas "Video 104-107" … "Video 134-135", una toma por camiseta).
   - Tomas separadas por color de camiseta; inicio = cuando ya actúa (revisado a 5 fps los 2 primeros

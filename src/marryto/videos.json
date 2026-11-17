@@ -3353,14 +3353,14 @@
   "ojosY": 896,
   "frenteY": 791,
   "ojosX": 516,
-  "imagen": "marryto/material/obj-calle.jpg",
+  "imagen": "marryto/material/multitud-c.mp4",
   "caja": [
    0,
    150,
    1080
   ],
-  "imgAspecto": 0.7467,
-  "textoY": 968,
+  "imgAspecto": 0.7093,
+  "textoY": 928,
   "textoTam": 64,
   "audio": "marryto/audio/m104-107.mp3",
   "audioDesde": 0
@@ -3388,14 +3388,14 @@
   "ojosY": 919,
   "frenteY": 847,
   "ojosX": 483,
-  "imagen": "marryto/material/obj-calle-b.jpg",
+  "imagen": "marryto/material/multitud-d.mp4",
   "caja": [
    0,
    150,
    1080
   ],
-  "imgAspecto": 0.7458,
-  "textoY": 968,
+  "imgAspecto": 0.7093,
+  "textoY": 928,
   "textoTam": 64,
   "audio": "marryto/audio/m104-107.mp3",
   "audioDesde": 0
@@ -3894,7 +3894,7 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 1.2,
-  "fin": 8.2,
+  "fin": 7.14,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -3905,7 +3905,7 @@
    1000
   ],
   "imgAspecto": 0.5926,
-  "titulo": "¿Te habías dado cuenta?",
+  "titulo": "Toca 2 veces para verlo",
   "sinTexto": false,
   "textoY": 755,
   "textoTam": 64,
@@ -3913,7 +3913,8 @@
   "frenteY": 816,
   "ojosX": 542,
   "audio": "marryto/audio/m118-121.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "duracion": 5.94
  },
  "119": {
   "estilo": "superpuesto",
@@ -3929,7 +3930,7 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 10.6,
-  "fin": 17.6,
+  "fin": 18.54,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -3940,15 +3941,16 @@
    1000
   ],
   "imgAspecto": 0.5926,
-  "titulo": "Ya no lo puedes desver 😳",
+  "titulo": "Dale 2 toques y compártelo\ncon tus amigos",
   "sinTexto": false,
   "textoY": 755,
   "textoTam": 64,
-  "ojosY": 890,
-  "frenteY": 821,
-  "ojosX": 538,
+  "ojosY": 889,
+  "frenteY": 824,
+  "ojosX": 535,
   "audio": "marryto/audio/m118-121.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "duracion": 7.94
  },
  "120": {
   "estilo": "superpuesto",
@@ -3964,7 +3966,7 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 22.8,
-  "fin": 29.8,
+  "fin": 30.74,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -3975,15 +3977,16 @@
    1000
   ],
   "imgAspecto": 0.5926,
-  "titulo": "¿Lo habías visto?",
+  "titulo": "Toca 2 veces si no\nlo sabías",
   "sinTexto": false,
   "textoY": 755,
   "textoTam": 64,
-  "ojosY": 879,
-  "frenteY": 806,
-  "ojosX": 540,
+  "ojosY": 880,
+  "frenteY": 807,
+  "ojosX": 541,
   "audio": "marryto/audio/m118-121.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "duracion": 7.94
  },
  "121": {
   "estilo": "superpuesto",
@@ -3999,7 +4002,7 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 33.1,
-  "fin": 40.1,
+  "fin": 39.04,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -4010,7 +4013,7 @@
    1000
   ],
   "imgAspecto": 0.5926,
-  "titulo": "Ahora no lo puedes desver",
+  "titulo": "Dale like si te\nsorprendió",
   "sinTexto": false,
   "textoY": 755,
   "textoTam": 64,
@@ -4018,7 +4021,8 @@
   "frenteY": 856,
   "ojosX": 561,
   "audio": "marryto/audio/m118-121.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "duracion": 5.94
  },
  "122": {
   "estilo": "superpuesto",
