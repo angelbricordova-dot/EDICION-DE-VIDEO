@@ -84,6 +84,7 @@ const cargarFuentes = () => {
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-800-normal.woff2"), weight: "800" });
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-ext-800-normal.woff2"), weight: "800" });
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-700-normal.woff2"), weight: "700" });
+  loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-600-normal.woff2"), weight: "600" }); // textos tipo TikTok (115–117)
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-ext-700-normal.woff2"), weight: "700" });
 };
 
