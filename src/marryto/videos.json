@@ -3528,15 +3528,27 @@
    1000
   ],
   "imgAspecto": 0.7963,
-  "titulo": "La respuesta es D",
+  "titulo": "La respuesta es *D*",
   "sinTexto": false,
   "textoY": 958,
-  "textoTam": 64,
-  "ojosY": 953,
-  "frenteY": 881,
-  "ojosX": 610,
+  "textoTam": 70,
+  "ojosY": 916,
+  "frenteY": 839,
+  "ojosX": 541,
   "audio": "marryto/audio/m111.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "tomas": [
+   {
+    "desde": 3.6,
+    "dur": 3.2,
+    "titulo": "La respuesta es *D*"
+   },
+   {
+    "desde": 14.2,
+    "dur": 3.8,
+    "titulo": "No, es la *A*"
+   }
+  ]
  },
  "112": {
   "estilo": "superpuesto",
@@ -3663,13 +3675,63 @@
   "caraAncho": 300,
   "titulo": "",
   "sinTexto": true,
-  "capa": "marryto/material/anios-115.png",
   "ojosY": 877,
   "frenteY": 809,
   "ojosX": 542,
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 330,
+    "texto": "Las personas más guapas\nnacieron en:",
+    "tam": 58
+   },
+   {
+    "t": 0.3,
+    "x": 830,
+    "y": 590,
+    "texto": "2017",
+    "tam": 66
+   },
+   {
+    "t": 1.6,
+    "x": 260,
+    "y": 630,
+    "texto": "2016",
+    "tam": 66
+   },
+   {
+    "t": 2.8,
+    "x": 810,
+    "y": 980,
+    "texto": "2015",
+    "tam": 66
+   },
+   {
+    "t": 3.9,
+    "x": 250,
+    "y": 1020,
+    "texto": "2014",
+    "tam": 66
+   },
+   {
+    "t": 5.0,
+    "x": 810,
+    "y": 1320,
+    "texto": "2013",
+    "tam": 66
+   },
+   {
+    "t": 6.1,
+    "x": 250,
+    "y": 1310,
+    "texto": "2012",
+    "tam": 66
+   }
+  ]
  },
  "116": {
   "estilo": "superpuesto",
@@ -3691,13 +3753,63 @@
   "caraAncho": 300,
   "titulo": "",
   "sinTexto": true,
-  "capa": "marryto/material/anios-116.png",
   "ojosY": 871,
   "frenteY": 797,
   "ojosX": 516,
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 330,
+    "texto": "Las personas más guapas\nnacieron en:",
+    "tam": 58
+   },
+   {
+    "t": 0.3,
+    "x": 830,
+    "y": 590,
+    "texto": "2015",
+    "tam": 66
+   },
+   {
+    "t": 1.6,
+    "x": 260,
+    "y": 630,
+    "texto": "2014",
+    "tam": 66
+   },
+   {
+    "t": 2.8,
+    "x": 810,
+    "y": 980,
+    "texto": "2013",
+    "tam": 66
+   },
+   {
+    "t": 3.9,
+    "x": 250,
+    "y": 1020,
+    "texto": "2012",
+    "tam": 66
+   },
+   {
+    "t": 5.0,
+    "x": 810,
+    "y": 1320,
+    "texto": "2011",
+    "tam": 66
+   },
+   {
+    "t": 6.1,
+    "x": 250,
+    "y": 1310,
+    "texto": "2010",
+    "tam": 66
+   }
+  ]
  },
  "117": {
   "estilo": "superpuesto",
@@ -3719,13 +3831,63 @@
   "caraAncho": 300,
   "titulo": "",
   "sinTexto": true,
-  "capa": "marryto/material/anios-117.png",
   "ojosY": 876,
   "frenteY": 792,
   "ojosX": 598,
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
-  "audioDesde": 0
+  "audioDesde": 0,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 330,
+    "texto": "Las personas más guapas\nnacieron en:",
+    "tam": 58
+   },
+   {
+    "t": 0.3,
+    "x": 830,
+    "y": 590,
+    "texto": "2019",
+    "tam": 66
+   },
+   {
+    "t": 1.6,
+    "x": 260,
+    "y": 630,
+    "texto": "2018",
+    "tam": 66
+   },
+   {
+    "t": 2.8,
+    "x": 810,
+    "y": 980,
+    "texto": "2017",
+    "tam": 66
+   },
+   {
+    "t": 3.9,
+    "x": 250,
+    "y": 1020,
+    "texto": "2016",
+    "tam": 66
+   },
+   {
+    "t": 5.0,
+    "x": 810,
+    "y": 1320,
+    "texto": "2015",
+    "tam": 66
+   },
+   {
+    "t": 6.1,
+    "x": 250,
+    "y": 1310,
+    "texto": "2014",
+    "tam": 66
+   }
+  ]
  },
  "118": {
   "estilo": "superpuesto",
@@ -4200,16 +4362,16 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "imagen": "marryto/material/borroso-a.png",
+  "imagen": "marryto/material/order-pizza.jpg",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.8333,
+  "imgAspecto": 0.671,
   "titulo": "Toca 2 veces y cierra\nlos ojos al 80%",
   "sinTexto": false,
-  "textoY": 995,
+  "textoY": 887,
   "textoTam": 64,
   "ojosY": 951,
   "frenteY": 871,
@@ -4235,16 +4397,16 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "imagen": "marryto/material/borroso-b.png",
+  "imagen": "marryto/material/sorry-robot.jpg",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.8333,
+  "imgAspecto": 0.671,
   "titulo": "Cierra los ojos al 80%\ny toca 2 veces",
   "sinTexto": false,
-  "textoY": 995,
+  "textoY": 887,
   "textoTam": 64,
   "ojosY": 930,
   "frenteY": 793,
@@ -4270,16 +4432,16 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "imagen": "marryto/material/borroso-c.png",
+  "imagen": "marryto/material/order-pizza.jpg",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.8333,
+  "imgAspecto": 0.671,
   "titulo": "Entrecierra los ojos\ny dale 2 toques",
   "sinTexto": false,
-  "textoY": 995,
+  "textoY": 887,
   "textoTam": 64,
   "ojosY": 921,
   "frenteY": 816,

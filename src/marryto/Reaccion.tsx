@@ -35,6 +35,7 @@ export type Video = {
   // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
+  textos?: { t: number; x: number; y: number; texto: string; tam?: number }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -72,6 +73,8 @@ const finEncimaBruto = (v: Video) => {
 };
 export type PropsReaccion = { n: string };
 
+/** "La respuesta es *D*": lo que va entre asteriscos sale en amarillo (como en las referencias). */
+const conAcento = (x: string) => x.split(/\*([^*]+)\*/).map((p, i) => (i % 2 ? <span key={i} style={{ color: "#FFD43B" }}>{p}</span> : p));
 const FUENTE = '"Montserrat", "Arial", sans-serif';
 const TITULO_H = 190;
 let fuentes = false;
@@ -249,9 +252,15 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           )
         : null}
       {v.sinTexto ? null : (
-        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{tituloAhora}</div>
+        <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{conAcento(tituloAhora)}</div>
       )}
       </AbsoluteFill>
+      {(v.textos ?? []).map((x, i) => {
+        const k = Math.min(1, Math.max(0, (t - x.t) / 0.18));
+        return k <= 0 ? null : (
+          <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", scale: String(0.6 + 0.4 * k), opacity: k, fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, color: "#fff", whiteSpace: "pre", textAlign: "center", lineHeight: 1.12, textShadow: "0 2px 8px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.9)" }}>{x.texto}</div>
+        );
+      })}
       {v.capa ? <Img src={staticFile(v.capa)} style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920 }} /> : null}
     </AbsoluteFill>
   );
