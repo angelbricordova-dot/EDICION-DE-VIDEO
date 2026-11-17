@@ -256,7 +256,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
       )}
       </AbsoluteFill>
       {(v.textos ?? []).map((x, i) => {
-        const k = Math.min(1, Math.max(0, (t - x.t) / 0.18));
+        const k = x.t <= 0 ? 1 : Math.min(1, Math.max(0, (t - x.t) / 0.18)); // lo de t = 0 está siempre (sin animación)
         return k <= 0 ? null : (
           <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", scale: String(0.6 + 0.4 * k), opacity: k, fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, color: "#fff", whiteSpace: "pre", textAlign: "center", lineHeight: 1.12, textShadow: "0 2px 8px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.9)" }}>{x.texto}</div>
         );
