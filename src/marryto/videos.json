@@ -2527,7 +2527,9 @@
   "caraAncho": 276,
   "ojosY": 811,
   "frenteY": 740,
-  "ojosX": 519
+  "ojosX": 519,
+  "audio": "marryto/audio/m82.mp3",
+  "audioDesde": 0
  },
  "83": {
   "estilo": "superpuesto",
