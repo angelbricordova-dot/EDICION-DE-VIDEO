@@ -3683,7 +3683,7 @@
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
-  "textos": [
+  "textos_quitados": [
    {
     "t": 0,
     "x": 540,
@@ -3754,7 +3754,7 @@
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
-  "textos": [
+  "textos_quitados": [
    {
     "t": 0,
     "x": 540,
@@ -3832,7 +3832,7 @@
   "sinImagen": true,
   "audio": "marryto/audio/m115-117.mp3",
   "audioDesde": 0,
-  "textos": [
+  "textos_quitados": [
    {
     "t": 0,
     "x": 540,
