@@ -153,7 +153,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `duracion` para que el corte caiga ahí, sin pasar del momento en que se acerca a la cámara.
 - **Sin fundido final (18-nov):** la música suena hasta el último cuadro (el Short se repite en bucle);
   la pista siempre más larga que el video.
-- **Textos con fondo (115–117):** letra blanca con borde negro sobre la pastilla de color (estilo TikTok).
+- **Textos (corrección de Fernando, 18-nov):** el título como "Adivina el personaje": recuadro blanco por línea,
+  **pegadas sin hueco**, letra blanca con borde negro. Los números/opciones en pastillas como "Dale like a
+  este vídeo sin usar", **del color de su ropa** (camiseta roja → pastilla roja y letra blanca; amarilla →
+  amarilla y letra negra; verde → verde). Que se vea muy llamativo y jugar con esto en cada video sin que lo pidan.
 - **Títulos que piden interacción:** siempre del tipo "Toca 2 veces para verlo", "Dale 2 toques y
   compártelo", "Dale like si…" (engagement), nunca solo una pregunta.
 - Si la referencia lleva un **video** arriba, todos los videos de esa carpeta llevan video (variantes:

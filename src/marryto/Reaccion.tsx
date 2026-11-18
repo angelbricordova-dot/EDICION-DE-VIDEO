@@ -35,7 +35,7 @@ export type Video = {
   // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
-  textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
+  textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -257,12 +257,20 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
       )}
       </AbsoluteFill>
       {(v.textos ?? []).map((x, i) => {
-        const k = t >= x.t ? 1 : 0; // como la referencia: aparece de golpe donde señala (sin animación)
-        return k <= 0 ? null : (
-          <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", opacity: k, fontFamily: FUENTE, fontWeight: 600, fontSize: x.tam ?? 64, whiteSpace: "pre", textAlign: "center", lineHeight: 1.42 }}>
-            {/* estilo TikTok (17-nov): cada línea con su fondo blanco redondeado y letra negra */}
-            <span style={{ background: x.fondo ?? "#fff", color: "#fff", WebkitTextStroke: "0.09em #000", paintOrder: "stroke fill", padding: "0.04em 0.28em", borderRadius: "0.22em", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{x.texto}</span>
-          </div>
+        if (t < x.t) return null;
+        if (x.estilo === "titulo")
+          // título estilo "Adivina el personaje" (reunión 18-nov): cada línea en su recuadro blanco, pegadas
+          // (sin hueco entre líneas), letra blanca con borde negro
+          return (
+            <div key={i} style={{ position: "absolute", left: 0, right: 0, top: x.y, display: "flex", flexDirection: "column", alignItems: "center" }}>
+              {x.texto.split("\n").map((l, k) => (
+                <div key={k} style={{ background: "#fff", padding: "0.02em 0.32em 0.08em", borderRadius: "0.2em", marginTop: k ? "-0.06em" : 0, fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "0.13em #000", paintOrder: "stroke fill", whiteSpace: "pre" }}>{l}</div>
+              ))}
+            </div>
+          );
+        // pastilla como "Dale like a este vídeo sin usar": rectángulo redondeado del color de su camiseta
+        return (
+          <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", background: x.fondo ?? "#8BE9F3", color: x.color ?? "#111", borderRadius: "0.22em", padding: "0.1em 0.42em 0.12em", fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, lineHeight: 1.1, whiteSpace: "pre", boxShadow: "0 3px 10px rgba(0,0,0,.25)" }}>{x.texto}</div>
         );
       })}
       {v.capa ? <Img src={staticFile(v.capa)} style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920 }} /> : null}

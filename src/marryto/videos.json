@@ -3688,37 +3688,46 @@
    {
     "t": 0,
     "x": 540,
-    "y": 380,
+    "y": 300,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 58
+    "tam": 70,
+    "estilo": "titulo"
    },
    {
     "t": 2.37,
     "x": 144,
     "y": 916,
     "texto": "2015",
-    "tam": 72
+    "tam": 70,
+    "fondo": "#FFD21F",
+    "color": "#111"
    },
    {
     "t": 3.9,
     "x": 820,
     "y": 776,
     "texto": "2013",
-    "tam": 72
+    "tam": 70,
+    "fondo": "#FFD21F",
+    "color": "#111"
    },
    {
     "t": 5.43,
     "x": 152,
     "y": 1264,
     "texto": "2012",
-    "tam": 72
+    "tam": 70,
+    "fondo": "#FFD21F",
+    "color": "#111"
    },
    {
     "t": 6.87,
     "x": 808,
     "y": 1096,
     "texto": "2011",
-    "tam": 72
+    "tam": 70,
+    "fondo": "#FFD21F",
+    "color": "#111"
    }
   ]
  },
@@ -3753,42 +3762,46 @@
    {
     "t": 0,
     "x": 540,
-    "y": 380,
+    "y": 300,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 58,
-    "fondo": "#8BE9F3"
+    "tam": 70,
+    "estilo": "titulo"
    },
    {
     "t": 2.83,
     "x": 144,
     "y": 916,
     "texto": "2017",
-    "tam": 72,
-    "fondo": "#8BE9F3"
+    "tam": 70,
+    "fondo": "#E3121B",
+    "color": "#fff"
    },
    {
     "t": 2.83,
     "x": 764,
     "y": 880,
     "texto": "2016",
-    "tam": 72,
-    "fondo": "#8BE9F3"
+    "tam": 70,
+    "fondo": "#E3121B",
+    "color": "#fff"
    },
    {
     "t": 4.7,
     "x": 252,
     "y": 1464,
     "texto": "2015",
-    "tam": 72,
-    "fondo": "#8BE9F3"
+    "tam": 70,
+    "fondo": "#E3121B",
+    "color": "#fff"
    },
    {
     "t": 8.1,
     "x": 788,
     "y": 1468,
     "texto": "2014",
-    "tam": 72,
-    "fondo": "#8BE9F3"
+    "tam": 70,
+    "fondo": "#E3121B",
+    "color": "#fff"
    }
   ]
  },
@@ -3823,42 +3836,46 @@
    {
     "t": 0,
     "x": 540,
-    "y": 380,
+    "y": 300,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 58,
-    "fondo": "#FFE37A"
+    "tam": 70,
+    "estilo": "titulo"
    },
    {
     "t": 2.23,
     "x": 220,
     "y": 956,
     "texto": "2017",
-    "tam": 72,
-    "fondo": "#FFE37A"
+    "tam": 70,
+    "fondo": "#E5157A",
+    "color": "#fff"
    },
    {
     "t": 2.23,
     "x": 840,
     "y": 980,
     "texto": "2016",
-    "tam": 72,
-    "fondo": "#FFE37A"
+    "tam": 70,
+    "fondo": "#E5157A",
+    "color": "#fff"
    },
    {
     "t": 5.1,
     "x": 272,
     "y": 1476,
     "texto": "2015",
-    "tam": 72,
-    "fondo": "#FFE37A"
+    "tam": 70,
+    "fondo": "#E5157A",
+    "color": "#fff"
    },
    {
     "t": 8.4,
     "x": 812,
     "y": 1416,
     "texto": "2012",
-    "tam": 72,
-    "fondo": "#FFE37A"
+    "tam": 70,
+    "fondo": "#E5157A",
+    "color": "#fff"
    }
   ]
  },
