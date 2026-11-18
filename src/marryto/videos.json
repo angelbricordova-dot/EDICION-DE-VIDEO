@@ -3755,35 +3755,40 @@
     "x": 540,
     "y": 380,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 58
+    "tam": 58,
+    "fondo": "#8BE9F3"
    },
    {
     "t": 2.83,
     "x": 144,
     "y": 916,
     "texto": "2017",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#8BE9F3"
    },
    {
     "t": 2.83,
     "x": 764,
     "y": 880,
     "texto": "2016",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#8BE9F3"
    },
    {
     "t": 4.7,
     "x": 252,
     "y": 1464,
     "texto": "2015",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#8BE9F3"
    },
    {
     "t": 8.1,
     "x": 788,
     "y": 1468,
     "texto": "2014",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#8BE9F3"
    }
   ]
  },
@@ -3820,35 +3825,40 @@
     "x": 540,
     "y": 380,
     "texto": "Las personas más guapas\nnacieron en:",
-    "tam": 58
+    "tam": 58,
+    "fondo": "#FFE37A"
    },
    {
     "t": 2.23,
     "x": 220,
     "y": 956,
     "texto": "2017",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#FFE37A"
    },
    {
     "t": 2.23,
     "x": 840,
     "y": 980,
     "texto": "2016",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#FFE37A"
    },
    {
     "t": 5.1,
     "x": 272,
     "y": 1476,
     "texto": "2015",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#FFE37A"
    },
    {
     "t": 8.4,
     "x": 812,
     "y": 1416,
     "texto": "2012",
-    "tam": 72
+    "tam": 72,
+    "fondo": "#FFE37A"
    }
   ]
  },
@@ -3913,7 +3923,7 @@
    1000
   ],
   "imgAspecto": 0.5926,
-  "titulo": "Dale 2 toques y compártelo\ncon tus amigos",
+  "titulo": "Toca 2 veces para verlo",
   "sinTexto": false,
   "textoY": 755,
   "textoTam": 64,
@@ -3985,7 +3995,7 @@
    1000
   ],
   "imgAspecto": 0.5926,
-  "titulo": "Dale like si te\nsorprendió",
+  "titulo": "Toca 2 veces para verlo",
   "sinTexto": false,
   "textoY": 755,
   "textoTam": 64,

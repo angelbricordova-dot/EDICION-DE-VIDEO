@@ -35,7 +35,7 @@ export type Video = {
   // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
-  textos?: { t: number; x: number; y: number; texto: string; tam?: number }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
+  textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -261,7 +261,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         return k <= 0 ? null : (
           <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", opacity: k, fontFamily: FUENTE, fontWeight: 600, fontSize: x.tam ?? 64, whiteSpace: "pre", textAlign: "center", lineHeight: 1.42 }}>
             {/* estilo TikTok (17-nov): cada línea con su fondo blanco redondeado y letra negra */}
-            <span style={{ background: "#fff", color: "#111", padding: "0.04em 0.28em", borderRadius: "0.22em", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{x.texto}</span>
+            <span style={{ background: x.fondo ?? "#fff", color: "#111", padding: "0.04em 0.28em", borderRadius: "0.22em", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{x.texto}</span>
           </div>
         );
       })}
