@@ -1,0 +1,149 @@
+{
+ "fuente": "public/vicens/material/avion.mp4 (parte 09 del 18-nov, desde 11:55)",
+ "tramos": [
+  [
+   21.0,
+   36.0
+  ],
+  [
+   40.4,
+   48.3
+  ],
+  [
+   79.5,
+   94.5
+  ],
+  [
+   110.0,
+   124.4
+  ]
+ ],
+ "duracion": 52.3,
+ "cartel": [
+  "HUYE EN AVIÓN CON 4 ESTRELLAS",
+  "Y LE MANDAN LOS CAZAS"
+ ],
+ "cartelHasta": 2.6,
+ "subs": [
+  {
+   "ini": 0.0,
+   "fin": 1.3,
+   "t": "¡Chavales!"
+  },
+  {
+   "ini": 1.5,
+   "fin": 3.4,
+   "t": "What the fuck"
+  },
+  {
+   "ini": 3.9,
+   "fin": 5.4,
+   "t": "¡Se nos lió!"
+  },
+  {
+   "ini": 6.3,
+   "fin": 7.4,
+   "t": "¡Se nos lió!"
+  },
+  {
+   "ini": 7.5,
+   "fin": 10.1,
+   "t": "¡Vamos para el cielo!"
+  },
+  {
+   "ini": 13.6,
+   "fin": 14.95,
+   "t": "¡Se nos lió!"
+  },
+  {
+   "ini": 15.3,
+   "fin": 16.5,
+   "t": "Bro, clean"
+  },
+  {
+   "ini": 16.5,
+   "fin": 18.2,
+   "t": "Clean, bro"
+  },
+  {
+   "ini": 19.2,
+   "fin": 20.4,
+   "t": "Mira toda la ciudad"
+  },
+  {
+   "ini": 20.4,
+   "fin": 21.9,
+   "t": "4 estrellas, pero"
+  },
+  {
+   "ini": 21.9,
+   "fin": 22.9,
+   "t": "¿a qué costo?"
+  },
+  {
+   "ini": 25.4,
+   "fin": 26.9,
+   "t": "Tengo los cazas"
+  },
+  {
+   "ini": 28.0,
+   "fin": 29.4,
+   "t": "Señores, tengo los cazas"
+  },
+  {
+   "ini": 29.5,
+   "fin": 30.4,
+   "t": "Gente..."
+  },
+  {
+   "ini": 39.4,
+   "fin": 40.4,
+   "t": "¿Pero el caza se habrá"
+  },
+  {
+   "ini": 40.4,
+   "fin": 41.5,
+   "t": "reventado también?"
+  },
+  {
+   "ini": 43.1,
+   "fin": 44.0,
+   "t": "El caza se tiene"
+  },
+  {
+   "ini": 44.0,
+   "fin": 44.8,
+   "t": "que haber reventado"
+  },
+  {
+   "ini": 44.8,
+   "fin": 46.1,
+   "t": "Si me ha chocado"
+  },
+  {
+   "ini": 46.7,
+   "fin": 48.0,
+   "t": "Y me quitan todo el dinero"
+  },
+  {
+   "ini": 48.0,
+   "fin": 48.9,
+   "t": "Bro, cuando te mueres"
+  },
+  {
+   "ini": 48.9,
+   "fin": 50.3,
+   "t": "te quedas pelado"
+  },
+  {
+   "ini": 50.3,
+   "fin": 51.5,
+   "t": "Te quedas a cero, señores"
+  },
+  {
+   "ini": 51.5,
+   "fin": 52.29,
+   "t": "cuando te mueres"
+  }
+ ]
+}

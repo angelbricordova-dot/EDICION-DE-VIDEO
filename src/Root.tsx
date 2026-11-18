@@ -1,6 +1,7 @@
 import { ComposicionesCamis11 } from "./camis11/Composiciones";
 import { ComposicionesCesar } from "./cesar/Composiciones";
 import { ComposicionesSanti } from "./santi/Composiciones";
+import { ComposicionesVicens } from "./vicens/Composiciones";
 import { ComposicionesGlowup } from "./glowup/Composiciones";
 import { ComposicionesInmobiliaria } from "./inmobiliaria/Composiciones";
 import { ComposicionesKatia } from "./katia/Composiciones";
@@ -28,6 +29,7 @@ export const RemotionRoot: React.FC = () => (
     <ComposicionesTuBodega />
     <ComposicionesCesar />
       <ComposicionesSanti />
+      <ComposicionesVicens />
       <ComposicionesCamis11 />
     <ComposicionesTucacas />
     <ComposicionesPulpo />

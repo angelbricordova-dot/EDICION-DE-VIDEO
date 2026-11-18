@@ -90,7 +90,8 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Katia (agencia, España): reels de coach de fuerza | `src/katia/` | `docs/katia.md` | coach a cámara, un corte por frase, subtítulo de una palabra Montserrat, rosa #AD3158 y azul #8AD2D1, títulos de lista, cierre RESET |
 | Marryto Show: shorts de reacción en serie (10–15 al día) | `src/marryto/` | `docs/marryto.md` | título blanco arriba, imagen del Short original (miniatura de YouTube), su reacción con "YO:", sin audio |
 | César: videos de reacción (cliente nuevo, prueba) | `src/cesar/` | `docs/cesar.md` | horizontal 1920×1080 60 fps, video a pantalla completa, su cámara arriba a la izquierda sincronizada por audio, zooms suaves, subtítulos sencillos bajo su ventana |
-| Santi: anuncio DTC de suplementos estilo Pixar (prueba) | `src/santi/` (por crear) | `docs/santi.md` | réplica de su anuncio (jaguar + lobo en cantina mexicana), imágenes Gemini + video Veo/Flow con diálogo, voces unificadas, subtítulos mayúsculas con palabra amarilla, 5 hooks |
+| Santi: anuncio DTC de suplementos estilo Pixar (prueba) | `src/santi/` | `docs/santi.md` | réplica de su anuncio (jaguar + lobo en cantina mexicana), imágenes Gemini + video Veo/Flow con diálogo, voces unificadas, subtítulos mayúsculas con palabra amarilla, 5 hooks |
+| Vicens · GTA 6 (Clipeamos): clips de sus directos | `src/vicens/` | `docs/vicens.md` | vertical: su cámara arriba a todo el ancho + gameplay abajo, cartel blanco de 2 líneas al inicio, subtítulos blancos con trazo negro, marca oficial |
 
 ### Separación por cliente (obligatoria)
 
