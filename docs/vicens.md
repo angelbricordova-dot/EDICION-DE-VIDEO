@@ -28,6 +28,12 @@ TikTok y YouTube Shorts. Brief: `Brief_Vicens_Streams_Material_Directo.pdf` (Cli
   justo encima y marca debajo; al quitar el cartel (2,6 s) el subtítulo baja al borde y la marca justo debajo.
 - Entrega < 30 MB: `-crf 21 -maxrate 4.3M` y `loudnorm` a −14 LUFS.
 
+## Exportar a Premiere
+Premiere no deja crear `.prproj` desde fuera; se entrega un **XML de secuencia** (FCP 7, Archivo → Importar)
++ `.srt`: `scripts/vicens/premiere_xml.py`. Capas PNG transparentes con
+`npx remotion still VicensAvion <png> --props='{"capa":"cartel"|"marca"|"marca-cartel"|"sub-N"}' --image-format=png`;
+tramos con 2 s de margen a cada lado. Rutas pensadas para `C:/Users/Administrador/Downloads/<clip>/`.
+
 ## Hechos
 - 18-nov-2026: «Vicens huye en avión con 4 estrellas en GTA 6 y le mandan los cazas» (parte 09, 11:55–13:55;
   52 s en 4 tramos: despegue, «4 estrellas, pero ¿a qué costo?», «tengo los cazas» + derribo, «te quedas pelado»).

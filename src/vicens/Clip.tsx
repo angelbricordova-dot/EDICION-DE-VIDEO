@@ -26,21 +26,24 @@ const F = '"Montserrat", sans-serif';
 
 export const DURACION_VICENS = G.duracion;
 
-export const ClipVicens: React.FC = () => {
+// `capa` (exportar a Premiere): pinta solo una capa sobre fondo transparente, en el tiempo pedido
+export type PropsVicens = { capa?: "cartel" | "marca-cartel" | "marca" | `sub-${number}` };
+
+export const ClipVicens: React.FC<PropsVicens> = ({ capa }) => {
   cargar();
   const { fps } = useVideoConfig();
   const t = useCurrentFrame() / fps;
-  const conCartel = t < G.cartelHasta;
+  const conCartel = capa ? capa === "cartel" || capa === "marca-cartel" || (capa.startsWith("sub-") && G.subs[Number(capa.slice(4))].ini < G.cartelHasta) : t < G.cartelHasta;
   const CARTEL_H = 140;
-  const sub = G.subs.find((s) => t >= s.ini && t < s.fin);
-  const k = sub ? Math.min(1, (t - sub.ini) / 0.08) : 0;
+  const sub = capa?.startsWith("sub-") ? G.subs[Number(capa.slice(4))] : capa ? undefined : G.subs.find((s) => t >= s.ini && t < s.fin);
+  const k = capa ? 1 : sub ? Math.min(1, (t - sub.ini) / 0.08) : 0;
   // con cartel: subtítulo encima del cartel y marca debajo; sin cartel: subtítulo en el borde y marca debajo
   const subY = conCartel ? BORDE - CARTEL_H / 2 - 62 : BORDE;
   const marcaY = conCartel ? BORDE + CARTEL_H / 2 + 22 : BORDE + 62;
   return (
-    <AbsoluteFill style={{ background: "#000", fontFamily: F }}>
-      <OffthreadVideo src={staticFile("vicens/material/base.mp4")} />
-      {conCartel ? (
+    <AbsoluteFill style={{ background: capa ? "transparent" : "#000", fontFamily: F }}>
+      {capa ? null : <OffthreadVideo src={staticFile("vicens/material/base.mp4")} />}
+      {conCartel && (!capa || capa === "cartel") ? (
         <div style={{ position: "absolute", left: 0, right: 0, top: BORDE, translate: "0 -50%", display: "flex", justifyContent: "center" }}>
           <div style={{ background: "#fff", color: "#000", borderRadius: 18, padding: "16px 28px", fontWeight: 900, fontSize: 46, lineHeight: 1.15, textAlign: "center", whiteSpace: "nowrap", boxShadow: "0 6px 20px rgba(0,0,0,.35)" }}>
             {G.cartel.map((l) => (
@@ -55,7 +58,7 @@ export const ClipVicens: React.FC = () => {
         </div>
       ) : null}
       {/* marca oficial de Vicens al 100 % de opacidad */}
-      <Img src={staticFile("vicens/material/marca-logo.png")} style={{ position: "absolute", left: (1080 - 560) / 2, top: marcaY, width: 560 }} />
+      {capa && !capa.startsWith("marca") ? null : <Img src={staticFile("vicens/material/marca-logo.png")} style={{ position: "absolute", left: (1080 - 560) / 2, top: marcaY, width: 560 }} />}
     </AbsoluteFill>
   );
 };
