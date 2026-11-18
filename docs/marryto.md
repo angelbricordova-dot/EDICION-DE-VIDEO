@@ -151,6 +151,9 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   frase ni de golpe**: el video termina en un **hueco** de la canción (pausa entre frases). Buscar los
   huecos con `python3 scripts/marryto/huecos.py <música> 5.5 10.5` (y la letra con whisper) y fijar
   `duracion` para que el corte caiga ahí, sin pasar del momento en que se acerca a la cámara.
+- **Sin fundido final (18-nov):** la música suena hasta el último cuadro (el Short se repite en bucle);
+  la pista siempre más larga que el video.
+- **Textos con fondo (115–117):** letra blanca con borde negro sobre la pastilla de color (estilo TikTok).
 - **Títulos que piden interacción:** siempre del tipo "Toca 2 veces para verlo", "Dale 2 toques y
   compártelo", "Dale like si…" (engagement), nunca solo una pregunta.
 - Si la referencia lleva un **video** arriba, todos los videos de esa carpeta llevan video (variantes:

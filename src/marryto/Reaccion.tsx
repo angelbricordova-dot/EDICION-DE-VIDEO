@@ -111,7 +111,7 @@ const Titulo: React.FC<{ texto: string; rojo: string }> = ({ texto, rojo }) => {
 
 /** Como el Short original: reacción a pantalla completa, imagen arriba y texto blanco con borde. */
 const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
-  const { fps, durationInFrames } = useVideoConfig();
+  const { fps } = useVideoConfig();
   const { vel } = tiempo(v);
   const t = useCurrentFrame() / fps;
   let tituloAhora = v.titulo;
@@ -193,7 +193,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           </AbsoluteFill>
         </Sequence>
       ) : null}
-      {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={(f) => Math.min(1, Math.max(0, (durationInFrames - f) / (0.25 * fps)))} /> : null}
+      {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={1} /* 18-nov: sin fundido al final; el Short se repite en bucle y la música sigue hasta el último cuadro */ /> : null}
       <AbsoluteFill style={{ translate: `0 ${bajar}px`, scale: String(k), transformOrigin: "50% 0" }}>
       {v.imagen ? (
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
@@ -261,7 +261,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         return k <= 0 ? null : (
           <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", opacity: k, fontFamily: FUENTE, fontWeight: 600, fontSize: x.tam ?? 64, whiteSpace: "pre", textAlign: "center", lineHeight: 1.42 }}>
             {/* estilo TikTok (17-nov): cada línea con su fondo blanco redondeado y letra negra */}
-            <span style={{ background: x.fondo ?? "#fff", color: "#111", padding: "0.04em 0.28em", borderRadius: "0.22em", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{x.texto}</span>
+            <span style={{ background: x.fondo ?? "#fff", color: "#fff", WebkitTextStroke: "0.09em #000", paintOrder: "stroke fill", padding: "0.04em 0.28em", borderRadius: "0.22em", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{x.texto}</span>
           </div>
         );
       })}
