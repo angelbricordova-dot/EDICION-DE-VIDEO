@@ -1,7 +1,7 @@
 # Edición de video con Remotion: contexto, gustos del cliente y forma de trabajar
 
 Este archivo resume todo lo aprendido editando con Angel (Venezuela, escribe en español
-informal). Claude Code lo lee solo al abrir un chat en este repo. Si se abre otro repo,
+informal). **Su nombre es Alejandro Lamont** (la cuenta dice Angel): llamarle Alejandro. Claude Code lo lee solo al abrir un chat en este repo. Si se abre otro repo,
 copiar este archivo y la carpeta `.claude/skills/` allá.
 
 ## 1. Cómo trabaja Angel
@@ -92,6 +92,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | César: videos de reacción (cliente nuevo, prueba) | `src/cesar/` | `docs/cesar.md` | horizontal 1920×1080 60 fps, video a pantalla completa, su cámara arriba a la izquierda sincronizada por audio, zooms suaves, subtítulos sencillos bajo su ventana |
 | Santi: anuncio DTC de suplementos estilo Pixar (prueba, **pausada**) | `src/santi/` | `docs/santi.md` | réplica de su anuncio (jaguar + lobo en cantina mexicana), imágenes Gemini + video Veo/Flow con diálogo, voces unificadas, subtítulos mayúsculas con palabra amarilla, 5 hooks |
 | Vicens · GTA 6 (Clipeamos): clips de sus directos | `src/vicens/` | `docs/vicens.md` | vertical: su cámara arriba a todo el ancho + gameplay abajo, cartel blanco de 2 líneas al inicio, subtítulos blancos con trazo negro, marca oficial |
+| Proyecto personal: video ensayo de cumpleaños para Angelica (22-nov) | `src/angelica/` (por crear) | `docs/angelica.md` | video ensayo íntimo estilo Atherion, voz de Alejandro, la luz como hilo, montaje en Premiere + escenas mías |
 
 ### Separación por cliente (obligatoria)
 
