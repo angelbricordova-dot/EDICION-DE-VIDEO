@@ -157,6 +157,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   **pegadas sin hueco**, letra blanca con borde negro. Los números/opciones en pastillas como "Dale like a
   este vídeo sin usar", **del color de su ropa** (camiseta roja → pastilla roja y letra blanca; amarilla →
   amarilla y letra negra; verde → verde). Que se vea muy llamativo y jugar con esto en cada video sin que lo pidan.
+- **Si la referencia muestra primero un video y después la reacción (159–160), copiar esa estructura** (`intro`:
+  video del Short a pantalla con su texto, luego la reacción con sus textos por toma; la música sigue).
+- **Inicio:** empezar en el gesto clave (apuntando arriba, acercándose a la cámara, tocándose la barba),
+  no cuando se acomoda el pelo o se prepara.
 - **Títulos que piden interacción:** siempre del tipo "Toca 2 veces para verlo", "Dale 2 toques y
   compártelo", "Dale like si…" (engagement), nunca solo una pregunta.
 - Si la referencia lleva un **video** arriba, todos los videos de esa carpeta llevan video (variantes:

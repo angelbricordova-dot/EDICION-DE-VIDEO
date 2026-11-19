@@ -37,6 +37,7 @@ export type Video = {
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
+  intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
@@ -304,6 +305,26 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
 export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
   cargarFuentes();
   const v = VIDEOS[n];
+  if (v.estilo === "superpuesto" && v.intro) {
+    // como el Short original: primero el video de arriba solo, con su texto; luego la reacción (la música sigue)
+    const { fps } = useVideoConfig();
+    const ini = Math.round(v.intro.dur * fps);
+    const sinAudio = { ...v, audio: undefined };
+    return (
+      <AbsoluteFill style={{ background: "#000" }}>
+        <Sequence durationInFrames={ini}>
+          <AbsoluteFill style={{ background: "#000" }}>
+            <OffthreadVideo src={staticFile(v.intro.video)} muted style={{ position: "absolute", left: 0, top: v.intro.videoY ?? 380, width: 1080, height: v.intro.videoAlto ?? 990 }} />
+            <div style={{ position: "absolute", left: 40, right: 40, top: (v.intro.videoY ?? 380) - 150, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", whiteSpace: "pre-line" }}>{v.intro.titulo}</div>
+          </AbsoluteFill>
+        </Sequence>
+        <Sequence from={ini}>
+          <Superpuesto n={n} v={sinAudio} />
+        </Sequence>
+        {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={1} /> : null}
+      </AbsoluteFill>
+    );
+  }
   if (v.estilo === "superpuesto") return <Superpuesto n={n} v={v} />;
   const { fps } = useVideoConfig();
   const t = useCurrentFrame() / fps;
