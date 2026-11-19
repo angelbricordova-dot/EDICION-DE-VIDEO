@@ -36,6 +36,7 @@ export type Video = {
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
+  rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -273,6 +274,27 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           <div key={i} style={{ position: "absolute", left: x.x, top: x.y, translate: "-50% -50%", background: x.fondo ?? "#8BE9F3", color: x.color ?? "#111", borderRadius: "0.22em", padding: "0.1em 0.42em 0.12em", fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, lineHeight: 1.1, whiteSpace: "pre", boxShadow: "0 3px 10px rgba(0,0,0,.25)" }}>{x.texto}</div>
         );
       })}
+      {v.rsvp ? (() => {
+        const palabras = v.rsvp.texto.split(/\s+/);
+        const ppm = v.rsvp.ppm ?? 300;
+        const k = Math.floor(Math.max(0, t - (v.rsvp.desde ?? 0)) * ppm / 60);
+        const w = palabras[Math.min(palabras.length - 1, k)];
+        const limpio = w.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ]/g, "");
+        const piv = Math.max(0, Math.min(w.length - 1, w.indexOf(limpio[0] ?? "") + Math.floor((limpio.length - 1) / 3)));
+        const Y = v.rsvp.y ?? 620;
+        return (
+          <>
+            <div style={{ position: "absolute", left: 60, right: 60, top: Y, height: 150, background: "#0B0B0D", borderTop: "4px solid #fff", borderBottom: "4px solid #fff" }}>
+              <div style={{ position: "absolute", left: "50%", top: 0, width: 4, height: 18, background: "#fff" }} />
+              <div style={{ position: "absolute", left: "50%", bottom: 0, width: 4, height: 18, background: "#fff" }} />
+              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 78, color: "#fff", whiteSpace: "pre" }}>
+                {w.slice(0, piv)}<span style={{ color: "#FF7A1A" }}>{w[piv]}</span>{w.slice(piv + 1)}
+              </div>
+            </div>
+            <div style={{ position: "absolute", left: 0, right: 0, top: Y + 170, textAlign: "center", fontFamily: FUENTE, fontWeight: 800, fontSize: 66, color: "#FF7A1A", WebkitTextStroke: "3px #7A2E00", paintOrder: "stroke fill" }}>{ppm}PPM</div>
+          </>
+        );
+      })() : null}
       {v.capa ? <Img src={staticFile(v.capa)} style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920 }} /> : null}
     </AbsoluteFill>
   );
