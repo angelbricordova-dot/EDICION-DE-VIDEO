@@ -577,6 +577,90 @@ const IMAGENES = {
     return out;
   })(),
 
+  // ── lote 136–200 (19-nov) ──
+  ...(() => {
+    const out = {};
+    // 147–148: tenedor imposible ("¿cuántas puntas ves?"), números en globos a cada lado
+    const tenedor = (fondo, trazo, cIzq, cDer, nIzq, nDer) => {
+      // ilusión clásica: a la izquierda 3 puntas redondas, a la derecha 2 puntas cuadradas que se unen al mango
+      const L = [170, 250, 300, 380, 430, 510]; // bordes de las 3 puntas (y)
+      const xa = 160, xm = 440, xr = 790, xf = 900, dx = 46, dy = -34;
+      const lin = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+      let g = "";
+      [L[0], L[2], L[3], L[5]].forEach((y) => (g += lin(xa, y, y === L[0] || y === L[5] ? xf : xr, y)));
+      [L[1], L[4]].forEach((y) => (g += lin(xa, y, xm, y)));
+      g += lin(xr, L[2], xr, L[3]); // fondo de la ranura
+      g += lin(xf, L[0], xf, L[5]) + lin(xf, L[0], xf + dx, L[0] + dy) + lin(xf + dx, L[0] + dy, xf + dx, L[5] + dy) + lin(xf, L[5], xf + dx, L[5] + dy);
+      g += lin(xr, L[0], xr + dx, L[0] + dy) + lin(xr + dx, L[0] + dy, xf + dx, L[0] + dy) + lin(xr, L[3], xr + dx * 0.6, L[3] + dy * 0.6);
+      [0, 2, 4].forEach((k) => (g += `<ellipse cx="${xa}" cy="${(L[k] + L[k + 1]) / 2}" rx="16" ry="${(L[k + 1] - L[k]) / 2}"/>`));
+      return {
+        w: 1000, h: 640,
+        html: `<div style="width:1000px;height:640px;background:${fondo}"><svg width="1000" height="640" viewBox="0 0 1000 640">
+          <g fill="none" stroke="${trazo}" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">${g}</g>
+          <circle cx="90" cy="110" r="54" fill="${cIzq}" stroke="#111" stroke-width="6"/><text x="90" y="134" text-anchor="middle" font-family="M" font-weight="900" font-size="64" fill="#fff">${nIzq}</text>
+          <circle cx="880" cy="70" r="54" fill="${cDer}" stroke="#111" stroke-width="6"/><text x="880" y="94" text-anchor="middle" font-family="M" font-weight="900" font-size="64" fill="#fff">${nDer}</text>
+        </svg></div>`,
+      };
+    };
+    out["tenedor-a"] = tenedor("#fff", "#111", "#1971C2", "#E03131", 4, 2);
+    out["tenedor-b"] = tenedor("#FFF9DB", "#3B2A10", "#2B8A3E", "#7048E8", 3, 2);
+    // 149–151: lápices en abanico (cuántos hay) — distinto número en cada video
+    const lapices = (n, fondo, cuerpo, borra) => {
+      const lap = (i) => {
+        const a = -38 + (i - (n - 1) / 2) * 6.5, dx = (i - (n - 1) / 2) * 34;
+        return `<g transform="translate(${500 + dx},${430 - Math.abs(i - (n - 1) / 2) * 6}) rotate(${a})">
+          <rect x="-26" y="-330" width="52" height="470" rx="6" fill="${cuerpo}" stroke="#7A5A00" stroke-width="3"/>
+          <rect x="-26" y="-330" width="17" height="470" fill="rgba(255,255,255,.28)"/><rect x="9" y="-330" width="17" height="470" fill="rgba(0,0,0,.12)"/>
+          <rect x="-28" y="-372" width="56" height="44" fill="#C9CED6" stroke="#666" stroke-width="3"/>
+          <rect x="-26" y="-420" width="52" height="50" rx="12" fill="${borra}" stroke="#8A3B4A" stroke-width="3"/>
+          <polygon points="-26,140 26,140 0,230" fill="#E9C89A" stroke="#8A6A3A" stroke-width="3"/>
+          <polygon points="-9,198 9,198 0,230" fill="#222"/></g>`;
+      };
+      return { w: 1000, h: 860, html: `<div style="width:1000px;height:860px;background:${fondo}"><svg width="1000" height="860" viewBox="0 0 1000 860">${Array.from({ length: n }, (_, i) => lap(i)).join("")}</svg></div>` };
+    };
+    out["lapices-7"] = lapices(7, "#fff", "#F5C518", "#F28CA0");
+    out["lapices-8"] = lapices(8, "#F1F7FF", "#2F7DE1", "#F7A8B8");
+    out["lapices-6"] = lapices(6, "#FFF4E6", "#E8590C", "#FFC9C9");
+    // 155–156: acertijo de texto "¿Cuántas personas hay?"
+    const personas = (txt, ops, fondo) => ({
+      w: 1000, h: 640,
+      html: `<div style="width:1000px;height:640px;background:${fondo};padding:36px 56px;font-family:M;color:#111">
+        <div style="font-weight:900;font-size:66px;margin-bottom:24px">¿Cuántas personas hay?</div>
+        <div style="font-weight:800;font-size:52px;line-height:1.28">${txt}</div>
+        <div style="font-weight:800;font-size:54px;line-height:1.35;margin-top:22px">${ops.map((o, i) => `${"abcd"[i]}) ${o}`).join("<br>")}</div></div>`,
+    });
+    out["personas-a"] = personas("Luis, mi primo; Carla, mi abuela; Sofía, mi madre y yo.", [6, 4, 3, 5], "#fff");
+    out["personas-b"] = personas("Andrés, mi padre; Lucía, mi tía; Marta, mi hermana y yo.", [4, 7, 3, 5], "#FFF9DB");
+    // 170–172: muñequitos de colores por día ("Solo unos pocos lo entenderán")
+    const dias = (fondo, cols) => {
+      const D = ["LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO", "DOMINGO"];
+      const cara = (i) => i === 0 ? `<path d="M-14 4 Q0 -6 14 4" stroke="#111" stroke-width="5" fill="none"/>` : i === 6 ? `<path d="M-14 8 Q0 -2 14 8" stroke="#111" stroke-width="5" fill="none"/><circle cx="14" cy="-8" r="4" fill="#4DABF7"/>` : `<path d="M-14 0 Q0 ${4 + i * 2} 14 0" stroke="#111" stroke-width="5" fill="none"/>`;
+      const fig = (i) => {
+        const x = 75 + i * 140, salta = i === 5, y = salta ? 190 : 330;
+        return `<g transform="translate(${x},${y})" fill="${cols[i]}">
+          <circle cx="0" cy="-70" r="${salta ? 48 : 40}"/><circle cx="-13" cy="-78" r="5" fill="#111"/><circle cx="13" cy="-78" r="5" fill="#111"/><g transform="translate(0,-62)">${salta ? `<path d="M-18 -2 Q0 22 18 -2 Z" fill="#7a1020"/>` : cara(i)}</g>
+          <rect x="-32" y="-28" width="64" height="${salta ? 110 : 120}" rx="28"/>
+          ${salta ? `<rect x="-58" y="-80" width="18" height="80" rx="9" transform="rotate(-25)"/><rect x="40" y="-80" width="18" height="80" rx="9" transform="rotate(25)"/><rect x="-30" y="70" width="18" height="90" rx="9" transform="rotate(20)"/><rect x="12" y="70" width="18" height="90" rx="9" transform="rotate(-20)"/>`
+                  : `<rect x="-50" y="-20" width="16" height="85" rx="8"/><rect x="34" y="-20" width="16" height="85" rx="8"/><rect x="-24" y="80" width="18" height="70" rx="9"/><rect x="6" y="80" width="18" height="70" rx="9"/>`}
+          <text x="0" y="${(salta ? 330 : 330) - y + 200}" text-anchor="middle" font-family="M" font-weight="800" font-size="23" fill="#222">${D[i]}</text></g>`;
+      };
+      return { w: 1000, h: 620, html: `<div style="width:1000px;height:620px;background:${fondo}"><div style="font-family:M;font-weight:900;font-size:52px;color:#111;padding:26px 0 0 40px">Solo unos pocos lo entenderán 🗿</div><svg width="1000" height="540" viewBox="0 0 1000 540">${D.map((_, i) => fig(i)).join("")}</svg></div>` };
+    };
+    out["dias-a"] = dias("#fff", ["#E03131", "#F76707", "#FAB005", "#82C91E", "#40C057", "#F06595", "#3BC9DB"]);
+    out["dias-b"] = dias("#F8F0FC", ["#495057", "#6741D9", "#1C7ED6", "#0CA678", "#F59F00", "#E64980", "#868E96"]);
+    out["dias-c"] = dias("#FFF9DB", ["#5C940D", "#2B8A3E", "#1098AD", "#4263EB", "#AE3EC9", "#F03E3E", "#ADB5BD"]);
+    // 185–186: ¿Funcionó? (lista de la referencia, otra estética que la del 125)
+    const fun = (fondo, borde, titulo) => {
+      const filas = [["😮‍💨", "Mira hacia arriba."], ["👃", "Respira lentamente<br>por la nariz."], ["🤏", "Masajea suavemente<br>el puente de tu nariz."], ["🫁", "Aguanta la respiración hasta que toques 2 veces la pantalla y compartas este vídeo."], ["🤧", "¿Estornudaste?"]];
+      return { w: 1000, h: 1080, html: `<div style="width:1000px;height:1080px;background:${fondo};padding:34px 46px;font-family:M">
+        <div style="text-align:center;font-family:L;font-size:104px;color:${titulo};-webkit-text-stroke:6px #111;paint-order:stroke fill">¿FUNCIONÓ?</div>
+        <div style="display:flex;flex-direction:column;gap:22px;margin-top:26px">${filas.map(([e, t], i) => `<div style="display:flex;align-items:center;gap:18px"><div style="width:130px;height:130px;border-radius:50%;background:#fff;border:6px solid ${borde[i]};display:flex;align-items:center;justify-content:center;font-size:76px">${e}</div><div style="flex:1;min-height:118px;border-radius:26px;border:5px solid ${borde[i]};background:#fff;display:flex;align-items:center;padding:0 28px;font-weight:800;font-size:${i === 3 ? 36 : 46}px;line-height:1.15;color:#1C1A1A">${t}</div></div>`).join("")}</div></div>` };
+    };
+    out["funciono-c"] = fun("linear-gradient(#FFF0F6,#E5DBFF)", ["#9775FA", "#F783AC", "#748FFC", "#F06595", "#FCC419"], "#FFD43B");
+    out["funciono-d"] = fun("linear-gradient(#E6FCF5,#D0EBFF)", ["#20C997", "#339AF0", "#51CF66", "#22B8CF", "#FF922B"], "#69DB7C");
+    return out;
+  })(),
+
 };
 
 const nombres = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(IMAGENES);
