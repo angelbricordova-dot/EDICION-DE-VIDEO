@@ -4,19 +4,24 @@ Regalo para el cumpleaños de Angelica (**22-nov-2026**); pronto cumplen un año
 al estilo de Atherion ("cine en un minuto": lo pequeño, lo cotidiano, voz en off poética). **Voz: Alejandro**
 (él graba todo el guion). Montaje en Premiere (Alejandro) + escenas que hago yo en Remotion.
 
-## Idea: "La luz"
-Hilo visual y de guion: antes de ella todo estaba en penumbra; ella trajo luz. Cada bloque se abre con una
-fuente de luz distinta (una vela, el sol por la ventana, luces de la calle, su sonrisa) y el video va de
-tonos fríos y oscuros a cálidos y dorados. Cierre: la luz más grande, su día.
+## Formato y tono
+- **4:3** (1440 × 1080) para verlo en el móvil. Sin capítulos: un solo hilo continuo, voz en off de Alejandro.
+- Hilo: la luz (de penumbra fría a cálido y dorado). Fe compartida: se conocieron por la iglesia, ella le
+  regaló una Biblia, Eclesiastés 4:9-12 ("la cuerda de tres hilos no se rompe fácilmente").
+- Material (`public/angelica/fotos/14 DE FEBRERO/`): fotos, capturas de chats, videos cortos, su primer
+  audio ("En un rato te respondo, es que ya no tengo batería…"), música (`musica/musica para el video.mp3`, 2:20).
 
-Bloques (≈ 2:30–3:00):
-1. **Penumbra** (0:00–0:25): planos oscuros, una luz que se enciende. Antes de ella.
-2. **La luz que trajo** (0:25–1:05): recuerdos concretos (fotos y videos de ellos).
-3. **Lo hermosa que es** (1:05–1:40): ella; por fuera y por dentro.
-4. **La verdad** (1:40–2:20): "me encantaría regalarte el mundo… todavía me estoy construyendo… gracias por
-   confiar en mí".
-5. **Casi un año** (2:20–2:45): contador de días juntos.
-6. **Su día** (2:45–3:00): "Feliz cumpleaños, Angelica."
+## Datos reales (de las capturas)
+- 16-oct-2025: primer mensaje de él por Instagram ("Creo que te he visto en la iglesia…"); ella: "también te
+  vi la última vez creo". Bio de ella: "Levántate y come, porque largo camino te resta" (estudia Farmacia).
+- 19-oct-2025: primera llamada. 22-oct: llamada de 8 h. 26-oct: llamada de 10 h. Llamadas por Discord viendo
+  Lupin y Malcolm. Chats: "Ven" / "No mentira, cuando Dios quiera"; "Quiero verte jugar fútbol con tus
+  amigos"; ella le regaña por comprarle a todos antes que a él; él en la UCV.
+- Primera salida (foto con Mickey, flores), iglesia, su bautizo, comidas, Tucacas, piscina, pool, MK, su
+  "cuñi" y "mis amadas", fotos de pequeños.
+
+## Guion v2 (continuo, ≈ 4:30)
+Ver el texto aprobado en el chat del 19-nov; se guarda aquí cuando Alejandro lo confirme.
 
 ## Lo que hago yo (Remotion → archivos para Premiere)
 - Títulos de capítulo y frases en pantalla (tipografía serif fina, entrada lenta, grano).
