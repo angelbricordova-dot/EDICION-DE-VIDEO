@@ -37,6 +37,7 @@ export type Video = {
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
+  pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -238,8 +239,8 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
                   top: (v.pastillasY ?? 480) + k * (v.pastillasPaso ?? 170) + (i === 1 ? (v.pastillasPaso ?? 170) * 0.35 : 0),
                   left: i === 0 ? (v.pastillasMargen ?? 140) + (k % 2) * 30 : undefined,
                   right: i === 1 ? (v.pastillasMargen ?? 140) + ((k + 1) % 2) * 30 : undefined,
-                  background: "#FCE7A2",
-                  color: "#B9771A",
+                  background: v.pastillasFondo ?? "#FCE7A2",
+                  color: v.pastillasColor ?? "#B9771A",
                   fontFamily: FUENTE,
                   fontWeight: 700,
                   fontSize: 56,
