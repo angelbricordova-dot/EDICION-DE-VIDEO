@@ -93,6 +93,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Santi: anuncio DTC de suplementos estilo Pixar (prueba, **pausada**) | `src/santi/` | `docs/santi.md` | réplica de su anuncio (jaguar + lobo en cantina mexicana), imágenes Gemini + video Veo/Flow con diálogo, voces unificadas, subtítulos mayúsculas con palabra amarilla, 5 hooks |
 | Vicens · GTA 6 (Clipeamos): clips de sus directos | `src/vicens/` | `docs/vicens.md` | vertical: su cámara arriba a todo el ancho + gameplay abajo, cartel blanco de 2 líneas al inicio, subtítulos blancos con trazo negro, marca oficial |
 | Proyecto personal: video ensayo de cumpleaños para Angelica (22-nov) | `src/angelica/` (por crear) | `docs/angelica.md` | video ensayo íntimo estilo Atherion, voz de Alejandro, la luz como hilo, montaje en Premiere + escenas mías |
+| Jordan (amigo de The Fezz): vídeos largos de YouTube | `src/jordan/` (por crear) | `docs/jordan.md` | 4 vídeos/mes por 100 USD con escalado; acuerdo en PDF (`scripts/jordan/`) |
 
 ### Separación por cliente (obligatoria)
 
