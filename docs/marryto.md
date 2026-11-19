@@ -165,6 +165,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   y el señalar abajo).
 
 ## Hechos
+- 19-nov-2026: lote 136–160 (25 videos). Imágenes de Angel (Gemini) + propias (tenedor, lápices, personas,
+  días, ¿Funcionó? c/d). 157–158 pastillas del color de la camiseta (`pastillasFondo`/`pastillasColor`).
+  159–160 video de los pisos arriba (solo los primeros 6,8 s del Short; después sale la reacción del otro).
+  Música: 136–138 y 141–143 con Farruko a falta de sus Shorts (confirmar). Sin fundido final, corte en hueco.
 - 16-nov-2026: lote 104–135 (carpetas "Video 104-107" … "Video 134-135", una toma por camiseta).
   - Tomas separadas por color de camiseta; inicio = cuando ya actúa (revisado a 5 fps los 2 primeros
     segundos), final antes de acercarse a la cámara (ancho de la cara con MediaPipe). Si arranca quieto,
@@ -227,4 +231,4 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `uv cache clean`) antes de borrar nada de clientes.
 
 ## Pendiente
-- Siguiente carpeta: "Video 136-138" en adelante (hasta 185-186 en "11 NOVIEMBRE").
+- Siguiente carpeta: "Video 161" en adelante (hasta 205-206 en el Drive).
