@@ -1,5 +1,9 @@
 # Santi (marca DTC de suplementos): anuncio animado estilo Pixar — PRUEBA
 
+> **PAUSADO (19-nov-2026):** Angel descartó la prueba por ahora. Quedan hechas las fichas (jaguar, lobo,
+> cantina, maestra v1 en `public/santi/fichas/`) y la tarjeta de oferta (`SantiOferta`). Pendiente si se
+> retoma: corregir rosetas del jaguar en la maestra y seguir el plan de 30 s (10 clips).
+
 Cliente nuevo (18-nov-2026), vía X @DailyEcomGrit: busca editores que dominen IA de video, marca de
 suplementos para el mercado hispano. **Prueba:** replicar su anuncio de referencia (león + cebra en una
 cantina, producto UVOLA Tart Cherry) cambiando **león → JAGUAR** y **cebra → LOBO gris/blanco**, mismo
