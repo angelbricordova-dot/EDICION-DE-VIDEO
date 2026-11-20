@@ -4923,8 +4923,8 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 4.75,
-  "fin": 11.87,
-  "duracion": 7.12,
+  "fin": 10.37,
+  "duracion": 5.62,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5463,9 +5463,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 13.6,
-  "fin": 26.3,
-  "duracion": 12.7,
+  "inicio": 15.6,
+  "fin": 27.3,
+  "duracion": 11.7,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5487,14 +5487,14 @@
    "videoAlto": 990,
    "partes": [
     {
-     "desde": 13.6,
-     "dur": 2.5,
+     "desde": 15.6,
+     "dur": 2.0,
      "titulo": "Pensaba que...",
      "imagen": "marryto/material/adoquin.jpg"
     },
     {
-     "desde": 16.9,
-     "dur": 3.1,
+     "desde": 17.6,
+     "dur": 2.6,
      "titulo": "Así lo hacían...",
      "imagen": "marryto/material/adoquin-poniendo.jpg"
     }
