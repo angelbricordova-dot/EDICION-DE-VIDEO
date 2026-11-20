@@ -169,6 +169,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   y el señalar abajo).
 
 ## Hechos
+- 20-nov-2026: lote 161–190 (menos 181). Música sacada de cada Short (Jingle Bell Rock, Jumper, wrap slowed,
+  Run it back, audio propio). `outro` (Reaccion.tsx): tras su reacción, el video del Short a pantalla con su
+  audio (189–190 rayo, 179–180 slideshow niños/padres). No voltear imágenes con texto o logos (Tangled).
+  Pendiente: 181 con otras fotos niños/padres.
 - 19-nov-2026: lote 136–160 (25 videos). Imágenes de Angel (Gemini) + propias (tenedor, lápices, personas,
   días, ¿Funcionó? c/d). 157–158 pastillas del color de la camiseta (`pastillasFondo`/`pastillasColor`).
   159–160 video de los pisos arriba (solo los primeros 6,8 s del Short; después sale la reacción del otro).
