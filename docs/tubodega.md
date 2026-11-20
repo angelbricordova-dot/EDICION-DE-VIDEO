@@ -49,3 +49,14 @@ las originales a 36,50 quedan en `public/tubodega/originales-tasa-36.50/`). Las 
 - **Cierre:** transición en círculo al verde de la marca, confeti en "7 días gratis", WhatsApp
   que late, el teléfono flota y pasa por venta → venta registrada → cuadre, e insignias
   (Escanea, $ y Bs, Fiado, Ticket, Sin internet) cuando termina la voz.
+
+
+## Video de presentación (PROMPT_VIDEO_PRESENTACION.md, 20-nov-2026)
+- Material del ZIP en `public/tubodega/{clips,screens,brand}` (no usar screens 25–29). Fuentes variables en `public/tubodega/fuentes/`.
+- Voz Richard (eleven_v3, `[cercano, sonriendo]`): `src/tubodega/locucion-presentacion.json` → `public/tubodega/voz/presentacion.mp3`.
+- Música ElevenLabs Music 60 s (pop latino, marimba, 105 BPM): `public/tubodega/musica/presentacion.mp3`.
+- `scripts/tubodega/guion_presentacion.py`: pausas entre frases, mezcla con ducking −18 dB y subida en el cierre (−14 LUFS),
+  variante solo música → `src/tubodega/guion-presentacion.json` (59,8 s).
+- Efectos con **earshot** (`pip install "earshot @ git+https://github.com/Leonxlnx/earshot"`): `public/tubodega/sfx/`.
+- `src/tubodega/Presentacion.tsx`: composiciones TuBodegaPresA (vertical), PresB (horizontal), PresCv/PresCh (corta 28 s),
+  portadas PresPortadaV/H. Render: render una vez por variante de audio (props `audio`).
