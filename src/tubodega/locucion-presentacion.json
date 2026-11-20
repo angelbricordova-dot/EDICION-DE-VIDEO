@@ -1,0 +1,43 @@
+{
+  "frases": [
+    {
+      "texto": "¿Todavía llevas tu bodega en un cuaderno?"
+    },
+    {
+      "texto": "Los fiados se olvidan, la caja no cuadra y la tasa cambia todos los días."
+    },
+    {
+      "texto": "Por eso existe Tu Bodega.",
+      "pantalla": "Por eso existe TuBodega."
+    },
+    {
+      "texto": "Apuntas la cámara al código y el producto entra solo. Y lo que no tiene código, como el hielo, lo vendes como venta libre."
+    },
+    {
+      "texto": "Tocas el billete que te dieron y te dice el vuelto en dólares y en bolívares."
+    },
+    {
+      "texto": "Vendes queso por peso, huevos por cartón y cobras con Pago Móvil."
+    },
+    {
+      "texto": "Los fiados quedan anotados, con cada abono, y le recuerdas al cliente por WhatsApp."
+    },
+    {
+      "texto": "Te avisa lo que se está acabando y crea el código de barras para los productos que no traen."
+    },
+    {
+      "texto": "Y al final del día sabes cuánto vendiste, cuánto ganaste y si te cuadra la caja."
+    },
+    {
+      "texto": "Funciona sin internet. Y si tienes empleado, cada uno vende en su teléfono y tú lo ves todo desde tu casa."
+    },
+    {
+      "texto": "Desde diez dólares al mes. Y primero la pruebas siete días gratis: yo voy y te la instalo.",
+      "pantalla": "Desde $10 al mes. Y primero la pruebas 7 días gratis: yo voy y te la instalo."
+    },
+    {
+      "texto": "Tu Bodega. Pruébala siete días gratis. Escríbenos.",
+      "pantalla": "TuBodega. Pruébala 7 días gratis. Escríbenos."
+    }
+  ]
+}

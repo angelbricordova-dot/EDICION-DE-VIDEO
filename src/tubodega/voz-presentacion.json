@@ -1,0 +1,66 @@
+{
+  "audio": "public/tubodega/voz/presentacion.mp3",
+  "duracion": 51.76,
+  "lineas": [
+    {
+      "texto": "¿Todavía llevas tu bodega en un cuaderno?",
+      "t": 0.068,
+      "fin": 2.001
+    },
+    {
+      "texto": "Los fiados se olvidan, la caja no cuadra y la tasa cambia todos los días.",
+      "t": 2.12,
+      "fin": 6.72
+    },
+    {
+      "texto": "Por eso existe Tu Bodega.",
+      "t": 6.74,
+      "fin": 8.32
+    },
+    {
+      "texto": "Apuntas la cámara al código y el producto entra solo. Y lo que no tiene código, como el hielo, lo vendes como venta libre.",
+      "t": 8.373,
+      "fin": 14.8
+    },
+    {
+      "texto": "Tocas el billete que te dieron y te dice el vuelto en dólares y en bolívares.",
+      "t": 14.96,
+      "fin": 18.96
+    },
+    {
+      "texto": "Vendes queso por peso, huevos por cartón y cobras con Pago Móvil.",
+      "t": 19.008,
+      "fin": 22.88
+    },
+    {
+      "texto": "Los fiados quedan anotados, con cada abono, y le recuerdas al cliente por WhatsApp.",
+      "t": 22.98,
+      "fin": 27.52
+    },
+    {
+      "texto": "Te avisa lo que se está acabando y crea el código de barras para los productos que no traen.",
+      "t": 27.6,
+      "fin": 32.08
+    },
+    {
+      "texto": "Y al final del día sabes cuánto vendiste, cuánto ganaste y si te cuadra la caja.",
+      "t": 32.2,
+      "fin": 36.72
+    },
+    {
+      "texto": "Funciona sin internet. Y si tienes empleado, cada uno vende en su teléfono y tú lo ves todo desde tu casa.",
+      "t": 36.816,
+      "fin": 43.28
+    },
+    {
+      "texto": "Desde diez dólares al mes. Y primero la pruebas siete días gratis: yo voy y te la instalo.",
+      "t": 43.32,
+      "fin": 48.4
+    },
+    {
+      "texto": "Tu Bodega. Pruébala siete días gratis. Escríbenos.",
+      "t": 48.453,
+      "fin": 51.76
+    }
+  ]
+}
