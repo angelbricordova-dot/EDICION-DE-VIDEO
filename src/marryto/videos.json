@@ -5311,7 +5311,7 @@
     "Pies"
    ]
   ],
-  "pastillasY": 600,
+  "pastillasY": 620,
   "pastillasPaso": 185,
   "pastillasMargen": 140,
   "pastillasFondo": "#E3121B",
@@ -5320,9 +5320,9 @@
    {
     "t": 0,
     "x": 540,
-    "y": 380,
+    "y": 330,
     "texto": "Dale like a este vídeo\nsin utilizar:",
-    "tam": 56,
+    "tam": 74,
     "estilo": "titulo"
    }
   ],
@@ -5372,7 +5372,7 @@
     "Barbilla"
    ]
   ],
-  "pastillasY": 600,
+  "pastillasY": 620,
   "pastillasPaso": 185,
   "pastillasMargen": 140,
   "pastillasFondo": "#FFD21F",
@@ -5381,9 +5381,9 @@
    {
     "t": 0,
     "x": 540,
-    "y": 380,
+    "y": 330,
     "texto": "Dale like a este vídeo\nsin utilizar:",
-    "tam": 56,
+    "tam": 74,
     "estilo": "titulo"
    }
   ],
