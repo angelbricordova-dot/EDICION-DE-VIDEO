@@ -5558,14 +5558,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "¿Son 1 o 2 imágenes?\nToca 2 veces y descúbrelo",
+  "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 976,
   "frenteY": 896,
-  "ojosX": 511
+  "ojosX": 511,
+  "imagen": "marryto/material/dos-img.jpg",
+  "caja": [
+   0,
+   150,
+   1080
+  ],
+  "imgAspecto": 0.6296,
+  "textoY": 842,
+  "textoTam": 64
  },
  "163": {
   "estilo": "superpuesto",
@@ -5586,14 +5594,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "¿1 o 2 imágenes?\nDale 2 toques y descúbrelo",
+  "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 857,
   "frenteY": 739,
-  "ojosX": 502
+  "ojosX": 502,
+  "imagen": "marryto/material/dos-img-b.jpg",
+  "caja": [
+   0,
+   150,
+   1080
+  ],
+  "imgAspecto": 0.6296,
+  "textoY": 842,
+  "textoTam": 64
  },
  "164": {
   "estilo": "superpuesto",
@@ -5614,14 +5630,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces si ves\n1 sola imagen",
+  "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 950,
   "frenteY": 873,
-  "ojosX": 489
+  "ojosX": 489,
+  "imagen": "marryto/material/dos-img-c.jpg",
+  "caja": [
+   0,
+   150,
+   1080
+  ],
+  "imgAspecto": 0.6296,
+  "textoY": 842,
+  "textoTam": 64
  },
  "165": {
   "estilo": "superpuesto",
@@ -5642,14 +5666,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca DOBLE y\npodrás verlo 😱",
+  "sinTexto": false,
   "audio": "marryto/audio/m165-167.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 855,
   "frenteY": 772,
-  "ojosX": 541
+  "ojosX": 541,
+  "imagen": "marryto/material/patron.jpg",
+  "caja": [
+   140,
+   150,
+   800
+  ],
+  "imgAspecto": 1.2508,
+  "textoY": 1163,
+  "textoTam": 64
  },
  "166": {
   "estilo": "superpuesto",
@@ -5670,14 +5702,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Dale 2 toques y\npodrás verlo 😱",
+  "sinTexto": false,
   "audio": "marryto/audio/m165-167.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 869,
   "frenteY": 783,
-  "ojosX": 515
+  "ojosX": 515,
+  "imagen": "marryto/material/patron-b.jpg",
+  "caja": [
+   90,
+   150,
+   900
+  ],
+  "imgAspecto": 0.7991,
+  "textoY": 881,
+  "textoTam": 64
  },
  "167": {
   "estilo": "superpuesto",
@@ -5698,14 +5738,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces y\nverás lo escondido 😱",
+  "sinTexto": false,
   "audio": "marryto/audio/m165-167.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 897,
   "frenteY": 811,
-  "ojosX": 533
+  "ojosX": 533,
+  "imagen": "marryto/material/patron-c.jpg",
+  "caja": [
+   140,
+   150,
+   800
+  ],
+  "imgAspecto": 1.2508,
+  "textoY": 1163,
+  "textoTam": 64
  },
  "168": {
   "estilo": "superpuesto",
@@ -5904,14 +5952,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca dos veces para\n\"encontrar\" el 4 objeto",
+  "sinTexto": false,
   "audio": "marryto/audio/m173-175.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 917,
   "frenteY": 828,
-  "ojosX": 510
+  "ojosX": 510,
+  "imagen": "marryto/material/cuarto-a0.jpg",
+  "caja": [
+   40,
+   150,
+   1000
+  ],
+  "imgAspecto": 0.8913,
+  "textoY": 1053,
+  "textoTam": 64
  },
  "174": {
   "estilo": "superpuesto",
@@ -5932,14 +5988,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Dale 2 toques y\n\"encuentra\" el 4 objeto",
+  "sinTexto": false,
   "audio": "marryto/audio/m173-175.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 956,
   "frenteY": 860,
-  "ojosX": 517
+  "ojosX": 517,
+  "imagen": "marryto/material/cuarto-a1.jpg",
+  "caja": [
+   40,
+   150,
+   1000
+  ],
+  "imgAspecto": 0.8913,
+  "textoY": 1053,
+  "textoTam": 64
  },
  "175": {
   "estilo": "superpuesto",
@@ -5960,14 +6024,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces si\nencontraste el 4 objeto",
+  "sinTexto": false,
   "audio": "marryto/audio/m173-175.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 948,
   "frenteY": 835,
-  "ojosX": 503
+  "ojosX": 503,
+  "imagen": "marryto/material/cuarto-a2.jpg",
+  "caja": [
+   40,
+   150,
+   1000
+  ],
+  "imgAspecto": 0.7467,
+  "textoY": 909,
+  "textoTam": 64
  },
  "176": {
   "estilo": "superpuesto",
@@ -5988,14 +6060,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Yo viendo 12",
+  "sinTexto": false,
   "audio": "marryto/audio/m176-178.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 939,
   "frenteY": 865,
-  "ojosX": 540
+  "ojosX": 540,
+  "imagen": "marryto/material/ochos-g0.jpg",
+  "caja": [
+   90,
+   150,
+   900
+  ],
+  "imgAspecto": 1.0146,
+  "textoY": 1075,
+  "textoTam": 64
  },
  "177": {
   "estilo": "superpuesto",
@@ -6016,14 +6096,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Yo solo veo 12",
+  "sinTexto": false,
   "audio": "marryto/audio/m176-178.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 926,
   "frenteY": 846,
-  "ojosX": 491
+  "ojosX": 491,
+  "imagen": "marryto/material/ochos-g1.jpg",
+  "caja": [
+   90,
+   150,
+   900
+  ],
+  "imgAspecto": 1.0146,
+  "textoY": 1075,
+  "textoTam": 64
  },
  "178": {
   "estilo": "superpuesto",
@@ -6044,14 +6132,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Yo viendo 13",
+  "sinTexto": false,
   "audio": "marryto/audio/m176-178.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 998,
   "frenteY": 909,
-  "ojosX": 492
+  "ojosX": 492,
+  "imagen": "marryto/material/ochos-g2.jpg",
+  "caja": [
+   90,
+   150,
+   900
+  ],
+  "imgAspecto": 1.0146,
+  "textoY": 1075,
+  "textoTam": 64
  },
  "179": {
   "estilo": "superpuesto",
@@ -6064,22 +6160,30 @@
    1920
   ],
   "bajar": 0,
-  "desplazar": true,
+  "desplazar": false,
   "separacion": 40,
   "inicio": 2.2,
-  "fin": 7.2,
-  "duracion": 5.0,
+  "fin": 6.6,
+  "duracion": 19.8,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Lo que ven los niños\nvs\nlo que ven los padres",
+  "sinTexto": false,
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
-  "ojosY": 911,
-  "frenteY": 844,
-  "ojosX": 552
+  "ojosY": 859,
+  "frenteY": 761,
+  "ojosX": 542,
+  "sinImagen": true,
+  "textoY": 300,
+  "textoTam": 62,
+  "outro": {
+   "video": "marryto/material/ninos.mp4",
+   "desde": 4.4,
+   "dur": 15.4,
+   "audio": "marryto/audio/m179-181-sl.mp3"
+  }
  },
  "180": {
   "estilo": "superpuesto",
@@ -6092,22 +6196,30 @@
    1920
   ],
   "bajar": 0,
-  "desplazar": true,
+  "desplazar": false,
   "separacion": 40,
-  "inicio": 9.1,
-  "fin": 14.6,
-  "duracion": 5.5,
+  "inicio": 9.3,
+  "fin": 13.7,
+  "duracion": 19.8,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Lo que ven los niños\nvs\nlo que ven los padres",
+  "sinTexto": false,
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
-  "ojosY": 909,
-  "frenteY": 816,
-  "ojosX": 514
+  "ojosY": 850,
+  "frenteY": 690,
+  "ojosX": 539,
+  "sinImagen": true,
+  "textoY": 300,
+  "textoTam": 62,
+  "outro": {
+   "video": "marryto/material/ninos-b.mp4",
+   "desde": 4.4,
+   "dur": 15.4,
+   "audio": "marryto/audio/m179-181-sl.mp3"
+  }
  },
  "181": {
   "estilo": "superpuesto",
@@ -6156,14 +6268,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca dos veces y\n\"encuentra\" el 4 objeto",
+  "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 947,
   "frenteY": 868,
-  "ojosX": 500
+  "ojosX": 500,
+  "imagen": "marryto/material/cuarto-b0.jpg",
+  "caja": [
+   60,
+   150,
+   960
+  ],
+  "imgAspecto": 0.9262,
+  "textoY": 1051,
+  "textoTam": 64
  },
  "183": {
   "estilo": "superpuesto",
@@ -6184,14 +6304,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Dale 2 toques y\nbusca el 4 objeto",
+  "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 957,
   "frenteY": 877,
-  "ojosX": 497
+  "ojosX": 497,
+  "imagen": "marryto/material/cuarto-b1.jpg",
+  "caja": [
+   60,
+   150,
+   960
+  ],
+  "imgAspecto": 0.9262,
+  "textoY": 1051,
+  "textoTam": 64
  },
  "184": {
   "estilo": "superpuesto",
@@ -6212,14 +6340,22 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "Toca 2 veces si\nencontraste el 4 objeto",
+  "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 891,
   "frenteY": 788,
-  "ojosX": 488
+  "ojosX": 488,
+  "imagen": "marryto/material/cuarto-b2.jpg",
+  "caja": [
+   60,
+   150,
+   960
+  ],
+  "imgAspecto": 0.9262,
+  "textoY": 1051,
+  "textoTam": 64
  },
  "185": {
   "estilo": "superpuesto",
@@ -6312,14 +6448,33 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "No me digan que soy el único\nque se dio cuenta de esto… 😳",
+  "sinTexto": false,
   "audio": "marryto/audio/m187-188.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 928,
   "frenteY": 830,
-  "ojosX": 511
+  "ojosX": 511,
+  "imagen": "marryto/material/enredados.jpg",
+  "caja": [
+   0,
+   150,
+   1080
+  ],
+  "imgAspecto": 0.75,
+  "textoY": 972,
+  "textoTam": 64,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 1500,
+    "texto": "Pista: Fíjense en el cabello",
+    "tam": 54,
+    "fondo": "#fff",
+    "color": "#111"
+   }
+  ]
  },
  "188": {
   "estilo": "superpuesto",
@@ -6340,14 +6495,33 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "",
-  "sinTexto": true,
+  "titulo": "¿Soy el único que se\ndio cuenta? 😳",
+  "sinTexto": false,
   "audio": "marryto/audio/m187-188.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
   "ojosY": 1015,
   "frenteY": 903,
-  "ojosX": 538
+  "ojosX": 538,
+  "imagen": "marryto/material/enredados-b.jpg",
+  "caja": [
+   0,
+   150,
+   1080
+  ],
+  "imgAspecto": 0.75,
+  "textoY": 972,
+  "textoTam": 64,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 1500,
+    "texto": "Pista: Mirad el cabello",
+    "tam": 54,
+    "fondo": "#fff",
+    "color": "#111"
+   }
+  ]
  },
  "189": {
   "estilo": "superpuesto",
