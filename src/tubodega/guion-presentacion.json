@@ -1,0 +1,77 @@
+{
+ "duracion": 59.81,
+ "frases": [
+  {
+   "desde": 0.31,
+   "hasta": 2.243,
+   "texto": "¿Todavía llevas tu bodega en un cuaderno?",
+   "clave": "cuaderno"
+  },
+  {
+   "desde": 2.763,
+   "hasta": 7.363,
+   "texto": "Los fiados se olvidan, la caja no cuadra y la tasa cambia todos los días.",
+   "clave": "tasa"
+  },
+  {
+   "desde": 7.883,
+   "hasta": 9.463,
+   "texto": "Por eso existe TuBodega.",
+   "clave": "Tu Bodega"
+  },
+  {
+   "desde": 10.333,
+   "hasta": 16.76,
+   "texto": "Apuntas la cámara al código y el producto entra solo. Y lo que no tiene código, como el hielo, lo vendes como venta libre.",
+   "clave": "cámara"
+  },
+  {
+   "desde": 17.28,
+   "hasta": 21.28,
+   "texto": "Tocas el billete que te dieron y te dice el vuelto en dólares y en bolívares.",
+   "clave": "vuelto"
+  },
+  {
+   "desde": 21.8,
+   "hasta": 25.672,
+   "texto": "Vendes queso por peso, huevos por cartón y cobras con Pago Móvil.",
+   "clave": "Pago Móvil"
+  },
+  {
+   "desde": 26.192,
+   "hasta": 30.732,
+   "texto": "Los fiados quedan anotados, con cada abono, y le recuerdas al cliente por WhatsApp.",
+   "clave": "fiados"
+  },
+  {
+   "desde": 31.252,
+   "hasta": 35.732,
+   "texto": "Te avisa lo que se está acabando y crea el código de barras para los productos que no traen.",
+   "clave": "código de barras"
+  },
+  {
+   "desde": 36.252,
+   "hasta": 40.772,
+   "texto": "Y al final del día sabes cuánto vendiste, cuánto ganaste y si te cuadra la caja.",
+   "clave": "cuadra la caja"
+  },
+  {
+   "desde": 41.292,
+   "hasta": 47.756,
+   "texto": "Funciona sin internet. Y si tienes empleado, cada uno vende en su teléfono y tú lo ves todo desde tu casa.",
+   "clave": "sin internet"
+  },
+  {
+   "desde": 48.276,
+   "hasta": 53.356,
+   "texto": "Desde $10 al mes. Y primero la pruebas 7 días gratis: yo voy y te la instalo.",
+   "clave": "siete días gratis"
+  },
+  {
+   "desde": 54.226,
+   "hasta": 57.533,
+   "texto": "TuBodega. Pruébala 7 días gratis. Escríbenos.",
+   "clave": "Escríbenos"
+  }
+ ]
+}
