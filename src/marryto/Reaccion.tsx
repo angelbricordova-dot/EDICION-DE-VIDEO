@@ -35,9 +35,9 @@ export type Video = {
   // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
-  textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
+  textos?: { t: number; hasta?: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" | "plano" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
-  outro?: { video: string; desde: number; dur: number; titulo?: string; audio?: string }; // 189–190: tras su reacción, el video del Short a pantalla con su sonido
+  outro?: { video: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string }; // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
@@ -261,7 +261,12 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
       )}
       </AbsoluteFill>
       {(v.textos ?? []).map((x, i) => {
-        if (t < x.t) return null;
+        if (t < x.t || (x.hasta !== undefined && t >= x.hasta)) return null;
+        if (x.estilo === "plano")
+          // texto blanco con borde negro, sin fondo (pista del 187–188, días del 170–172)
+          return (
+            <div key={i} style={{ position: "absolute", left: 40, right: 40, top: x.y, translate: "0 -50%", textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, lineHeight: 1.12, color: x.color ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", whiteSpace: "pre-line" }}>{x.texto}</div>
+          );
         if (x.estilo === "titulo")
           // título estilo "Adivina el personaje" (reunión 18-nov): cada línea en su recuadro blanco, pegadas
           // (sin hueco entre líneas), letra blanca con borde negro
@@ -345,8 +350,9 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
     return (
       <AbsoluteFill style={{ background: "#000" }}>
         <Sequence durationInFrames={ini}>
-          <Superpuesto n={n} v={v} />
+          <Superpuesto n={n} v={v.outro.audioTodo ? { ...v, audio: undefined } : v} />
         </Sequence>
+        {v.outro.audioTodo ? <Audio src={staticFile(v.outro.audioTodo)} volume={1} /> : null}
         <Sequence from={ini} durationInFrames={Math.round(v.outro.dur * fps)}>
           <AbsoluteFill>
             <OffthreadVideo src={staticFile(v.outro.video)} muted style={{ width: 1080, height: 1920 }} />

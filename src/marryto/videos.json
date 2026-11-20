@@ -5522,8 +5522,8 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 1.9,
-  "fin": 8.9,
+  "inicio": 4.2,
+  "fin": 11.2,
   "duracion": 7.0,
   "caraX": 540,
   "caraY": 900,
@@ -5535,9 +5535,9 @@
   "sinImagen": true,
   "textoY": 300,
   "textoTam": 62,
-  "ojosY": 869,
-  "frenteY": 804,
-  "ojosX": 558
+  "ojosY": 868,
+  "frenteY": 798,
+  "ojosX": 542
  },
  "162": {
   "estilo": "superpuesto",
@@ -5552,8 +5552,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 1.1,
-  "fin": 8.02,
+  "inicio": 3.6,
+  "fin": 10.52,
   "duracion": 6.92,
   "caraX": 540,
   "caraY": 900,
@@ -5562,9 +5562,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
-  "ojosY": 976,
-  "frenteY": 896,
-  "ojosX": 511,
+  "ojosY": 977,
+  "frenteY": 895,
+  "ojosX": 513,
   "imagen": "marryto/material/dos-img.jpg",
   "caja": [
    0,
@@ -5588,8 +5588,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 11.6,
-  "fin": 18.52,
+  "inicio": 14.4,
+  "fin": 21.32,
   "duracion": 6.92,
   "caraX": 540,
   "caraY": 900,
@@ -5598,9 +5598,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
-  "ojosY": 857,
-  "frenteY": 739,
-  "ojosX": 502,
+  "ojosY": 914,
+  "frenteY": 845,
+  "ojosX": 507,
   "imagen": "marryto/material/dos-img-b.jpg",
   "caja": [
    0,
@@ -5624,8 +5624,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 26.9,
-  "fin": 33.82,
+  "inicio": 27.3,
+  "fin": 34.22,
   "duracion": 6.92,
   "caraX": 540,
   "caraY": 900,
@@ -5634,9 +5634,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
-  "ojosY": 950,
-  "frenteY": 873,
-  "ojosX": 489,
+  "ojosY": 992,
+  "frenteY": 888,
+  "ojosX": 490,
   "imagen": "marryto/material/dos-img-c.jpg",
   "caja": [
    0,
@@ -5660,8 +5660,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 0.5,
-  "fin": 6.53,
+  "inicio": 3.6,
+  "fin": 9.63,
   "duracion": 6.03,
   "caraX": 540,
   "caraY": 900,
@@ -5670,17 +5670,17 @@
   "sinTexto": false,
   "audio": "marryto/audio/m165-167.mp3",
   "audioDesde": 0,
-  "ojosY": 855,
-  "frenteY": 772,
-  "ojosX": 541,
-  "imagen": "marryto/material/patron.jpg",
+  "ojosY": 890,
+  "frenteY": 806,
+  "ojosX": 523,
+  "imagen": "marryto/material/patron-sq.jpg",
   "caja": [
-   140,
+   195,
    150,
-   800
+   690
   ],
-  "imgAspecto": 1.2508,
-  "textoY": 1163,
+  "imgAspecto": 0.8,
+  "textoY": 714,
   "textoTam": 64
  },
  "166": {
@@ -5696,8 +5696,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 11.6,
-  "fin": 17.63,
+  "inicio": 13.6,
+  "fin": 19.63,
   "duracion": 6.03,
   "caraX": 540,
   "caraY": 900,
@@ -5706,17 +5706,17 @@
   "sinTexto": false,
   "audio": "marryto/audio/m165-167.mp3",
   "audioDesde": 0,
-  "ojosY": 869,
-  "frenteY": 783,
-  "ojosX": 515,
+  "ojosY": 949,
+  "frenteY": 836,
+  "ojosX": 531,
   "imagen": "marryto/material/patron-b.jpg",
   "caja": [
-   90,
+   195,
    150,
-   900
+   690
   ],
-  "imgAspecto": 0.7991,
-  "textoY": 881,
+  "imgAspecto": 0.8,
+  "textoY": 714,
   "textoTam": 64
  },
  "167": {
@@ -5732,8 +5732,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 22.5,
-  "fin": 29.53,
+  "inicio": 23.4,
+  "fin": 30.43,
   "duracion": 7.03,
   "caraX": 540,
   "caraY": 900,
@@ -5742,17 +5742,17 @@
   "sinTexto": false,
   "audio": "marryto/audio/m165-167.mp3",
   "audioDesde": 0,
-  "ojosY": 897,
-  "frenteY": 811,
+  "ojosY": 941,
+  "frenteY": 867,
   "ojosX": 533,
-  "imagen": "marryto/material/patron-c.jpg",
+  "imagen": "marryto/material/patron-c-sq.jpg",
   "caja": [
-   140,
+   195,
    150,
-   800
+   690
   ],
-  "imgAspecto": 1.2508,
-  "textoY": 1163,
+  "imgAspecto": 0.8,
+  "textoY": 714,
   "textoTam": 64
  },
  "168": {
@@ -5779,12 +5779,12 @@
   "audio": "marryto/audio/m168-169.mp3",
   "audioDesde": 0,
   "sinImagen": true,
-  "textoY": 250,
+  "textoY": 470,
   "textoTam": 62,
   "rsvp": {
-   "texto": "Si estás leyendo esto rápido toca dos veces la pantalla y comparte este vídeo con alguien que lea más lento que tú",
+   "texto": "Si estás leyendo esto rápido toca dos veces la pantalla y comparte este vídeo con alguien que lea más lento que tú porque está comprobado que solo el uno por ciento de las personas consigue leer a esta velocidad sin perderse ninguna palabra y tú eres una de ellas si sigues aquí todavía felicidades ahora escribe en comentarios cuál fue la última palabra que viste antes de que terminara el vídeo",
    "ppm": 300,
-   "y": 540
+   "y": 720
   },
   "ojosY": 927,
   "frenteY": 853,
@@ -5803,27 +5803,27 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 29.7,
-  "fin": 37.7,
+  "inicio": 28.6,
+  "fin": 36.6,
   "duracion": 8.0,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Toca 2 veces si\nlo leíste todo",
+  "titulo": "¿Cuánto te concentras\ncuando lees?",
   "sinTexto": false,
   "audio": "marryto/audio/m168-169.mp3",
   "audioDesde": 0,
   "sinImagen": true,
-  "textoY": 250,
+  "textoY": 470,
   "textoTam": 62,
   "rsvp": {
-   "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí",
+   "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí porque casi nadie llega hasta el final de este texto sin parpadear y si lo consigues significa que tu cerebro procesa la información más rápido que la mayoría de la gente así que comparte este vídeo y reta a tus amigos a ver quién aguanta más",
    "ppm": 350,
-   "y": 540
+   "y": 720
   },
   "ojosY": 883,
   "frenteY": 796,
-  "ojosX": 553
+  "ojosX": 536
  },
  "170": {
   "estilo": "superpuesto",
@@ -5838,9 +5838,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 2.0,
-  "fin": 9.0,
-  "duracion": 7.0,
+  "inicio": 7.5,
+  "fin": 15.9,
+  "duracion": 8.4,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5848,18 +5848,48 @@
   "sinTexto": false,
   "audio": "marryto/audio/m170-172.mp3",
   "audioDesde": 0,
-  "imagen": "marryto/material/dias-a.png",
+  "imagen": "marryto/material/dias-ref.jpg",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.62,
-  "textoY": 782,
+  "imgAspecto": 0.5383,
+  "textoY": 743,
   "textoTam": 64,
-  "ojosY": 943,
-  "frenteY": 863,
-  "ojosX": 532
+  "ojosY": 815,
+  "frenteY": 733,
+  "ojosX": 558,
+  "textos": [
+   {
+    "t": 0,
+    "hasta": 1.9,
+    "x": 540,
+    "y": 1250,
+    "texto": "Lunes-Miércoles",
+    "tam": 72,
+    "estilo": "plano"
+   },
+   {
+    "t": 1.9,
+    "hasta": 4.9,
+    "x": 540,
+    "y": 1250,
+    "texto": "Sábado:",
+    "tam": 76,
+    "estilo": "plano",
+    "color": "#BDE7FF"
+   },
+   {
+    "t": 4.9,
+    "x": 540,
+    "y": 1250,
+    "texto": "Domingo:",
+    "tam": 76,
+    "estilo": "plano",
+    "color": "#FFD0D0"
+   }
+  ]
  },
  "171": {
   "estilo": "superpuesto",
@@ -5874,9 +5904,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 26.5,
-  "fin": 33.5,
-  "duracion": 7.0,
+  "inicio": 35.5,
+  "fin": 44.0,
+  "duracion": 8.5,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5884,18 +5914,48 @@
   "sinTexto": false,
   "audio": "marryto/audio/m170-172.mp3",
   "audioDesde": 0,
-  "imagen": "marryto/material/dias-b.png",
+  "imagen": "marryto/material/dias-ref.jpg",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.62,
-  "textoY": 782,
+  "imgAspecto": 0.5383,
+  "textoY": 743,
   "textoTam": 64,
-  "ojosY": 947,
-  "frenteY": 859,
-  "ojosX": 522
+  "ojosY": 838,
+  "frenteY": 764,
+  "ojosX": 524,
+  "textos": [
+   {
+    "t": 0,
+    "hasta": 2.0,
+    "x": 540,
+    "y": 1250,
+    "texto": "Lunes-Miércoles",
+    "tam": 72,
+    "estilo": "plano"
+   },
+   {
+    "t": 2.0,
+    "hasta": 5.0,
+    "x": 540,
+    "y": 1250,
+    "texto": "Sábado:",
+    "tam": 76,
+    "estilo": "plano",
+    "color": "#BDE7FF"
+   },
+   {
+    "t": 5.0,
+    "x": 540,
+    "y": 1250,
+    "texto": "Domingo:",
+    "tam": 76,
+    "estilo": "plano",
+    "color": "#FFD0D0"
+   }
+  ]
  },
  "172": {
   "estilo": "superpuesto",
@@ -5910,9 +5970,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 51.4,
-  "fin": 58.4,
-  "duracion": 7.0,
+  "inicio": 57.5,
+  "fin": 65.0,
+  "duracion": 7.5,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5920,18 +5980,48 @@
   "sinTexto": false,
   "audio": "marryto/audio/m170-172.mp3",
   "audioDesde": 0,
-  "imagen": "marryto/material/dias-c.png",
+  "imagen": "marryto/material/dias-ref.jpg",
   "caja": [
-   40,
+   0,
    150,
-   1000
+   1080
   ],
-  "imgAspecto": 0.62,
-  "textoY": 782,
+  "imgAspecto": 0.5383,
+  "textoY": 743,
   "textoTam": 64,
-  "ojosY": 790,
-  "frenteY": 543,
-  "ojosX": 529
+  "ojosY": 824,
+  "frenteY": 755,
+  "ojosX": 564,
+  "textos": [
+   {
+    "t": 0,
+    "hasta": 2.0,
+    "x": 540,
+    "y": 1250,
+    "texto": "Lunes-Miércoles",
+    "tam": 72,
+    "estilo": "plano"
+   },
+   {
+    "t": 2.0,
+    "hasta": 4.0,
+    "x": 540,
+    "y": 1250,
+    "texto": "Sábado:",
+    "tam": 76,
+    "estilo": "plano",
+    "color": "#BDE7FF"
+   },
+   {
+    "t": 4.0,
+    "x": 540,
+    "y": 1250,
+    "texto": "Domingo:",
+    "tam": 76,
+    "estilo": "plano",
+    "color": "#FFD0D0"
+   }
+  ]
  },
  "173": {
   "estilo": "superpuesto",
@@ -5946,8 +6036,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 0.3,
-  "fin": 7.49,
+  "inicio": 2.2,
+  "fin": 9.39,
   "duracion": 7.19,
   "caraX": 540,
   "caraY": 900,
@@ -5956,9 +6046,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m173-175.mp3",
   "audioDesde": 0,
-  "ojosY": 917,
-  "frenteY": 828,
-  "ojosX": 510,
+  "ojosY": 993,
+  "frenteY": 873,
+  "ojosX": 494,
   "imagen": "marryto/material/cuarto-a0.jpg",
   "caja": [
    40,
@@ -5982,8 +6072,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 11.1,
-  "fin": 18.29,
+  "inicio": 13.3,
+  "fin": 20.49,
   "duracion": 7.19,
   "caraX": 540,
   "caraY": 900,
@@ -5992,9 +6082,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m173-175.mp3",
   "audioDesde": 0,
-  "ojosY": 956,
-  "frenteY": 860,
-  "ojosX": 517,
+  "ojosY": 971,
+  "frenteY": 852,
+  "ojosX": 528,
   "imagen": "marryto/material/cuarto-a1.jpg",
   "caja": [
    40,
@@ -6018,8 +6108,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 25.6,
-  "fin": 32.79,
+  "inicio": 25.9,
+  "fin": 33.09,
   "duracion": 7.19,
   "caraX": 540,
   "caraY": 900,
@@ -6054,8 +6144,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 0.8,
-  "fin": 7.8,
+  "inicio": 4.5,
+  "fin": 11.5,
   "duracion": 7.0,
   "caraX": 540,
   "caraY": 900,
@@ -6064,9 +6154,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m176-178.mp3",
   "audioDesde": 0,
-  "ojosY": 939,
-  "frenteY": 865,
-  "ojosX": 540,
+  "ojosY": 829,
+  "frenteY": 691,
+  "ojosX": 528,
   "imagen": "marryto/material/ochos-g0.jpg",
   "caja": [
    90,
@@ -6090,8 +6180,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 11.6,
-  "fin": 18.6,
+  "inicio": 14.2,
+  "fin": 21.2,
   "duracion": 7.0,
   "caraX": 540,
   "caraY": 900,
@@ -6102,7 +6192,7 @@
   "audioDesde": 0,
   "ojosY": 926,
   "frenteY": 846,
-  "ojosX": 491,
+  "ojosX": 497,
   "imagen": "marryto/material/ochos-g1.jpg",
   "caja": [
    90,
@@ -6126,8 +6216,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 26.9,
-  "fin": 33.9,
+  "inicio": 26.8,
+  "fin": 33.8,
   "duracion": 7.0,
   "caraX": 540,
   "caraY": 900,
@@ -6136,8 +6226,8 @@
   "sinTexto": false,
   "audio": "marryto/audio/m176-178.mp3",
   "audioDesde": 0,
-  "ojosY": 998,
-  "frenteY": 909,
+  "ojosY": 991,
+  "frenteY": 912,
   "ojosX": 492,
   "imagen": "marryto/material/ochos-g2.jpg",
   "caja": [
@@ -6162,28 +6252,38 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 2.2,
-  "fin": 6.6,
-  "duracion": 19.8,
+  "inicio": 2.5,
+  "fin": 6.9,
+  "duracion": 19.65,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Lo que ven los niños\nvs\nlo que ven los padres",
-  "sinTexto": false,
+  "titulo": "",
+  "sinTexto": true,
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
   "ojosY": 859,
-  "frenteY": 761,
+  "frenteY": 760,
   "ojosX": 542,
   "sinImagen": true,
   "textoY": 300,
   "textoTam": 62,
   "outro": {
-   "video": "marryto/material/ninos.mp4",
+   "video": "marryto/material/ninos-c.mp4",
    "desde": 4.4,
-   "dur": 15.4,
+   "dur": 15.25,
    "audio": "marryto/audio/m179-181-sl.mp3"
-  }
+  },
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 420,
+    "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
+    "tam": 74,
+    "estilo": "titulo"
+   }
+  ]
  },
  "180": {
   "estilo": "superpuesto",
@@ -6198,28 +6298,38 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 9.3,
-  "fin": 13.7,
-  "duracion": 19.8,
+  "inicio": 10.2,
+  "fin": 14.2,
+  "duracion": 19.25,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Lo que ven los niños\nvs\nlo que ven los padres",
-  "sinTexto": false,
+  "titulo": "",
+  "sinTexto": true,
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
   "ojosY": 850,
-  "frenteY": 690,
-  "ojosX": 539,
+  "frenteY": 685,
+  "ojosX": 541,
   "sinImagen": true,
   "textoY": 300,
   "textoTam": 62,
   "outro": {
-   "video": "marryto/material/ninos-b.mp4",
-   "desde": 4.4,
-   "dur": 15.4,
-   "audio": "marryto/audio/m179-181-sl.mp3"
-  }
+   "video": "marryto/material/ninos.mp4",
+   "desde": 4.0,
+   "dur": 15.25,
+   "audioTodo": "marryto/audio/m180-voz.mp3"
+  },
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 420,
+    "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
+    "tam": 74,
+    "estilo": "titulo"
+   }
+  ]
  },
  "181": {
   "estilo": "superpuesto",
@@ -6232,11 +6342,11 @@
    1920
   ],
   "bajar": 0,
-  "desplazar": true,
+  "desplazar": false,
   "separacion": 40,
-  "inicio": 17.1,
-  "fin": 23.1,
-  "duracion": 6.0,
+  "inicio": 18.9,
+  "fin": 22.2,
+  "duracion": 18.55,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6244,10 +6354,26 @@
   "sinTexto": true,
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
-  "pendiente": "imagen",
-  "ojosY": 856,
-  "frenteY": 766,
-  "ojosX": 547
+  "ojosY": 848,
+  "frenteY": 685,
+  "ojosX": 549,
+  "sinImagen": true,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 420,
+    "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
+    "tam": 74,
+    "estilo": "titulo"
+   }
+  ],
+  "outro": {
+   "video": "marryto/material/ninos.mp4",
+   "desde": 3.3,
+   "dur": 15.25,
+   "audioTodo": "marryto/audio/m181-voz.mp3"
+  }
  },
  "182": {
   "estilo": "superpuesto",
@@ -6262,8 +6388,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 0.3,
-  "fin": 7.49,
+  "inicio": 4.0,
+  "fin": 11.19,
   "duracion": 7.19,
   "caraX": 540,
   "caraY": 900,
@@ -6272,9 +6398,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
-  "ojosY": 947,
-  "frenteY": 868,
-  "ojosX": 500,
+  "ojosY": 1046,
+  "frenteY": 888,
+  "ojosX": 504,
   "imagen": "marryto/material/cuarto-b0.jpg",
   "caja": [
    60,
@@ -6298,8 +6424,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 11.8,
-  "fin": 18.99,
+  "inicio": 13.5,
+  "fin": 20.69,
   "duracion": 7.19,
   "caraX": 540,
   "caraY": 900,
@@ -6308,9 +6434,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
-  "ojosY": 957,
-  "frenteY": 877,
-  "ojosX": 497,
+  "ojosY": 1031,
+  "frenteY": 889,
+  "ojosX": 513,
   "imagen": "marryto/material/cuarto-b1.jpg",
   "caja": [
    60,
@@ -6334,8 +6460,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 23.0,
-  "fin": 30.19,
+  "inicio": 24.9,
+  "fin": 32.09,
   "duracion": 7.19,
   "caraX": 540,
   "caraY": 900,
@@ -6344,9 +6470,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
-  "ojosY": 891,
-  "frenteY": 788,
-  "ojosX": 488,
+  "ojosY": 1014,
+  "frenteY": 859,
+  "ojosX": 472,
   "imagen": "marryto/material/cuarto-b2.jpg",
   "caja": [
    60,
@@ -6370,9 +6496,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 1.1,
-  "fin": 8.13,
-  "duracion": 7.03,
+  "inicio": 0.9,
+  "fin": 11.1,
+  "duracion": 10.2,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6389,9 +6515,9 @@
   "imgAspecto": 1.08,
   "textoY": 1026,
   "textoTam": 60,
-  "ojosY": 957,
-  "frenteY": 840,
-  "ojosX": 538
+  "ojosY": 941,
+  "frenteY": 842,
+  "ojosX": 541
  },
  "186": {
   "estilo": "superpuesto",
@@ -6406,9 +6532,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 15.9,
-  "fin": 22.93,
-  "duracion": 7.03,
+  "inicio": 15.4,
+  "fin": 25.6,
+  "duracion": 10.2,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6426,8 +6552,8 @@
   "textoY": 1026,
   "textoTam": 60,
   "ojosY": 968,
-  "frenteY": 883,
-  "ojosX": 550
+  "frenteY": 880,
+  "ojosX": 540
  },
  "187": {
   "estilo": "superpuesto",
@@ -6457,22 +6583,21 @@
   "ojosX": 511,
   "imagen": "marryto/material/enredados.jpg",
   "caja": [
-   0,
+   140,
    150,
-   1080
+   800
   ],
   "imgAspecto": 0.75,
-  "textoY": 972,
+  "textoY": 762,
   "textoTam": 64,
   "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 1500,
+    "y": 1560,
     "texto": "Pista: Fíjense en el cabello",
-    "tam": 54,
-    "fondo": "#fff",
-    "color": "#111"
+    "tam": 56,
+    "estilo": "plano"
    }
   ]
  },
@@ -6504,22 +6629,21 @@
   "ojosX": 538,
   "imagen": "marryto/material/enredados-b.jpg",
   "caja": [
-   0,
+   140,
    150,
-   1080
+   800
   ],
   "imgAspecto": 0.75,
-  "textoY": 972,
+  "textoY": 762,
   "textoTam": 64,
   "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 1500,
+    "y": 1560,
     "texto": "Pista: Mirad el cabello",
-    "tam": 54,
-    "fondo": "#fff",
-    "color": "#111"
+    "tam": 56,
+    "estilo": "plano"
    }
   ]
  },
@@ -6536,8 +6660,8 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 0.9,
-  "fin": 5.75,
+  "inicio": 1.3,
+  "fin": 6.15,
   "duracion": 16.55,
   "caraX": 540,
   "caraY": 900,
@@ -6547,7 +6671,7 @@
   "audio": "marryto/audio/m189-190-intro.mp3",
   "audioDesde": 0,
   "sinImagen": true,
-  "textoY": 300,
+  "textoY": 520,
   "textoTam": 62,
   "outro": {
    "video": "marryto/material/rayo.mp4",
@@ -6557,7 +6681,7 @@
   },
   "ojosY": 871,
   "frenteY": 728,
-  "ojosX": 533
+  "ojosX": 532
  },
  "190": {
   "estilo": "superpuesto",
@@ -6572,8 +6696,8 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 12.9,
-  "fin": 17.75,
+  "inicio": 13.4,
+  "fin": 18.25,
   "duracion": 16.55,
   "caraX": 540,
   "caraY": 900,
@@ -6583,16 +6707,16 @@
   "audio": "marryto/audio/m189-190-intro.mp3",
   "audioDesde": 0,
   "sinImagen": true,
-  "textoY": 300,
+  "textoY": 520,
   "textoTam": 62,
   "outro": {
-   "video": "marryto/material/rayo-b.mp4",
+   "video": "marryto/material/rayo.mp4",
    "desde": 4.85,
    "dur": 11.7,
    "audio": "marryto/audio/m189-190-rayo.mp3"
   },
-  "ojosY": 880,
-  "frenteY": 780,
-  "ojosX": 520
+  "ojosY": 879,
+  "frenteY": 779,
+  "ojosX": 522
  }
 }
