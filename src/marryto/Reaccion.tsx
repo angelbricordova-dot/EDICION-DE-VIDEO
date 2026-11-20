@@ -37,6 +37,7 @@ export type Video = {
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
+  outro?: { video: string; desde: number; dur: number; titulo?: string; audio?: string }; // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
@@ -335,6 +336,26 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
           </Sequence>
         )}
         {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={1} /> : null}
+      </AbsoluteFill>
+    );
+  }
+  if (v.estilo === "superpuesto" && v.outro) {
+    const { fps } = useVideoConfig();
+    const ini = Math.round(v.outro.desde * fps);
+    return (
+      <AbsoluteFill style={{ background: "#000" }}>
+        <Sequence durationInFrames={ini}>
+          <Superpuesto n={n} v={v} />
+        </Sequence>
+        <Sequence from={ini} durationInFrames={Math.round(v.outro.dur * fps)}>
+          <AbsoluteFill>
+            <OffthreadVideo src={staticFile(v.outro.video)} muted style={{ width: 1080, height: 1920 }} />
+            {v.outro.titulo ? (
+              <div style={{ position: "absolute", left: 60, right: 60, top: 250, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 62, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", whiteSpace: "pre-line" }}>{v.outro.titulo}</div>
+            ) : null}
+          </AbsoluteFill>
+          {v.outro.audio ? <Audio src={staticFile(v.outro.audio)} volume={1} /> : null}
+        </Sequence>
       </AbsoluteFill>
     );
   }
