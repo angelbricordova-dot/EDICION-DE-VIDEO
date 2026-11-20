@@ -37,7 +37,7 @@ export type Video = {
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
-  intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
+  intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
@@ -318,9 +318,22 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
             <div style={{ position: "absolute", left: 40, right: 40, top: (v.intro.videoY ?? 380) - 150, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", whiteSpace: "pre-line" }}>{v.intro.titulo}</div>
           </AbsoluteFill>
         </Sequence>
-        <Sequence from={ini}>
-          <Superpuesto n={n} v={sinAudio} />
-        </Sequence>
+        {v.intro.partes ? (
+          // después del video: la reacción por partes, cada una con su foto y su texto (como el Short)
+          v.intro.partes.map((pt, i) => {
+            const desde = ini + Math.round(v.intro!.partes!.slice(0, i).reduce((a, b) => a + b.dur, 0) * fps);
+            const vp: Video = { ...sinAudio, tomas: undefined, inicio: pt.desde, fin: pt.desde + pt.dur, duracion: pt.dur, titulo: pt.titulo, imagen: pt.imagen, sinImagen: false, desplazar: true };
+            return (
+              <Sequence key={i} from={desde} durationInFrames={Math.round(pt.dur * fps)}>
+                <Superpuesto n={n} v={vp} />
+              </Sequence>
+            );
+          })
+        ) : (
+          <Sequence from={ini}>
+            <Superpuesto n={n} v={sinAudio} />
+          </Sequence>
+        )}
         {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={1} /> : null}
       </AbsoluteFill>
     );

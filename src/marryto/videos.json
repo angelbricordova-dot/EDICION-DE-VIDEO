@@ -4670,8 +4670,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 12.5,
-  "fin": 19.53,
+  "inicio": 13.05,
+  "fin": 20.08,
   "duracion": 7.03,
   "caraX": 540,
   "caraY": 900,
@@ -4681,8 +4681,8 @@
   "audio": "marryto/audio/m139-140.mp3",
   "audioDesde": 0,
   "ojosY": 917,
-  "frenteY": 846,
-  "ojosX": 478,
+  "frenteY": 853,
+  "ojosX": 481,
   "imagen": "marryto/material/nueves-mbappe.jpg",
   "caja": [
    140,
@@ -4922,8 +4922,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 3.2,
-  "fin": 10.32,
+  "inicio": 4.75,
+  "fin": 11.87,
   "duracion": 7.12,
   "caraX": 540,
   "caraY": 900,
@@ -4932,9 +4932,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m147-148.mp3",
   "audioDesde": 0,
-  "ojosY": 943,
-  "frenteY": 866,
-  "ojosX": 533,
+  "ojosY": 945,
+  "frenteY": 872,
+  "ojosX": 509,
   "imagen": "marryto/material/tenedor-ref.jpg",
   "caja": [
    40,
@@ -5030,8 +5030,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 12.9,
-  "fin": 19.93,
+  "inicio": 13.15,
+  "fin": 20.18,
   "duracion": 7.03,
   "caraX": 540,
   "caraY": 900,
@@ -5049,9 +5049,9 @@
   "imgAspecto": 0.7042,
   "textoY": 866,
   "textoTam": 64,
-  "ojosY": 929,
-  "frenteY": 861,
-  "ojosX": 510
+  "ojosY": 934,
+  "frenteY": 862,
+  "ojosX": 512
  },
  "151": {
   "estilo": "superpuesto",
@@ -5138,8 +5138,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 10.7,
-  "fin": 17.73,
+  "inicio": 12.85,
+  "fin": 19.88,
   "duracion": 7.03,
   "caraX": 540,
   "caraY": 900,
@@ -5157,9 +5157,9 @@
   "imgAspecto": 0.6709,
   "textoY": 887,
   "textoTam": 64,
-  "ojosY": 941,
-  "frenteY": 870,
-  "ojosX": 500
+  "ojosY": 940,
+  "frenteY": 852,
+  "ojosX": 516
  },
  "154": {
   "estilo": "superpuesto",
@@ -5246,8 +5246,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 12.8,
-  "fin": 19.92,
+  "inicio": 12.95,
+  "fin": 20.07,
   "duracion": 7.12,
   "caraX": 540,
   "caraY": 900,
@@ -5265,8 +5265,8 @@
   "imgAspecto": 0.64,
   "textoY": 802,
   "textoTam": 64,
-  "ojosY": 938,
-  "frenteY": 824,
+  "ojosY": 941,
+  "frenteY": 821,
   "ojosX": 501
  },
  "157": {
@@ -5311,8 +5311,8 @@
     "Pies"
    ]
   ],
-  "pastillasY": 480,
-  "pastillasPaso": 150,
+  "pastillasY": 600,
+  "pastillasPaso": 185,
   "pastillasMargen": 140,
   "pastillasFondo": "#E3121B",
   "pastillasColor": "#fff",
@@ -5320,7 +5320,7 @@
    {
     "t": 0,
     "x": 540,
-    "y": 300,
+    "y": 380,
     "texto": "Dale like a este vídeo\nsin utilizar:",
     "tam": 56,
     "estilo": "titulo"
@@ -5372,8 +5372,8 @@
     "Barbilla"
    ]
   ],
-  "pastillasY": 480,
-  "pastillasPaso": 150,
+  "pastillasY": 600,
+  "pastillasPaso": 185,
   "pastillasMargen": 140,
   "pastillasFondo": "#FFD21F",
   "pastillasColor": "#111",
@@ -5381,7 +5381,7 @@
    {
     "t": 0,
     "x": 540,
-    "y": 300,
+    "y": 380,
     "texto": "Dale like a este vídeo\nsin utilizar:",
     "tam": 56,
     "estilo": "titulo"
@@ -5402,11 +5402,11 @@
    1920
   ],
   "bajar": 0,
-  "desplazar": false,
+  "desplazar": true,
   "separacion": 40,
-  "inicio": 1.4,
-  "fin": 7.32,
-  "duracion": 12.72,
+  "inicio": 1.8,
+  "fin": 14.5,
+  "duracion": 12.7,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5414,31 +5414,41 @@
   "sinTexto": false,
   "audio": "marryto/audio/m159-160.mp3",
   "audioDesde": 0,
-  "textoY": 230,
-  "textoTam": 72,
+  "textoY": 582,
+  "textoTam": 64,
   "ojosY": 901,
   "frenteY": 835,
   "ojosX": 567,
-  "sinImagen": true,
-  "tomas": [
-   {
-    "desde": 1.4,
-    "dur": 3.2,
-    "titulo": "Creía que..."
-   },
-   {
-    "desde": 4.6,
-    "dur": 2.72,
-    "titulo": "Así lo ponían..."
-   }
-  ],
+  "sinImagen": false,
   "intro": {
    "video": "marryto/material/pisos.mp4",
-   "dur": 6.8,
+   "dur": 7.1,
    "titulo": "Yo viendo como\nhacen estos pisos:",
    "videoY": 400,
-   "videoAlto": 990
-  }
+   "videoAlto": 990,
+   "partes": [
+    {
+     "desde": 1.8,
+     "dur": 2.5,
+     "titulo": "Creía que...",
+     "imagen": "marryto/material/adoquin.jpg"
+    },
+    {
+     "desde": 6.0,
+     "dur": 3.1,
+     "titulo": "Así lo ponían...",
+     "imagen": "marryto/material/adoquin-poniendo.jpg"
+    }
+   ]
+  },
+  "caja": [
+   240,
+   150,
+   600
+  ],
+  "cajaAlto": 420,
+  "cajaFoto": true,
+  "imgAspecto": 0.7
  },
  "160": {
   "estilo": "superpuesto",
@@ -5451,11 +5461,11 @@
    1920
   ],
   "bajar": 0,
-  "desplazar": false,
+  "desplazar": true,
   "separacion": 40,
-  "inicio": 13.2,
-  "fin": 19.12,
-  "duracion": 12.72,
+  "inicio": 13.6,
+  "fin": 26.3,
+  "duracion": 12.7,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5463,30 +5473,40 @@
   "sinTexto": false,
   "audio": "marryto/audio/m159-160.mp3",
   "audioDesde": 0,
-  "textoY": 230,
-  "textoTam": 72,
+  "textoY": 582,
+  "textoTam": 64,
   "ojosY": 906,
   "frenteY": 845,
   "ojosX": 537,
-  "sinImagen": true,
-  "tomas": [
-   {
-    "desde": 13.2,
-    "dur": 3.2,
-    "titulo": "Pensaba que..."
-   },
-   {
-    "desde": 16.4,
-    "dur": 2.72,
-    "titulo": "Así lo hacían..."
-   }
-  ],
+  "sinImagen": false,
   "intro": {
    "video": "marryto/material/pisos-b.mp4",
-   "dur": 6.8,
+   "dur": 7.1,
    "titulo": "Yo viendo cómo\nponen estos pisos:",
    "videoY": 400,
-   "videoAlto": 990
-  }
+   "videoAlto": 990,
+   "partes": [
+    {
+     "desde": 13.6,
+     "dur": 2.5,
+     "titulo": "Pensaba que...",
+     "imagen": "marryto/material/adoquin.jpg"
+    },
+    {
+     "desde": 16.9,
+     "dur": 3.1,
+     "titulo": "Así lo hacían...",
+     "imagen": "marryto/material/adoquin-poniendo.jpg"
+    }
+   ]
+  },
+  "caja": [
+   240,
+   150,
+   600
+  ],
+  "cajaAlto": 420,
+  "cajaFoto": true,
+  "imgAspecto": 0.7
  }
 }
