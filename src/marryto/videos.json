@@ -5858,8 +5858,8 @@
   "textoY": 743,
   "textoTam": 64,
   "ojosY": 815,
-  "frenteY": 733,
-  "ojosX": 534,
+  "frenteY": 732,
+  "ojosX": 536,
   "textos": [
    {
     "t": 0,
@@ -5900,7 +5900,7 @@
     "dur": 2.6
    },
    {
-    "desde": 18.0,
+    "desde": 20.0,
     "dur": 3.45
    }
   ]
@@ -5937,9 +5937,9 @@
   "imgAspecto": 0.5383,
   "textoY": 743,
   "textoTam": 64,
-  "ojosY": 837,
-  "frenteY": 763,
-  "ojosX": 521,
+  "ojosY": 855,
+  "frenteY": 778,
+  "ojosX": 529,
   "textos": [
    {
     "t": 0,
@@ -5980,7 +5980,7 @@
     "dur": 2.6
    },
    {
-    "desde": 41.0,
+    "desde": 43.6,
     "dur": 3.45
    }
   ]
@@ -6019,7 +6019,7 @@
   "textoTam": 64,
   "ojosY": 846,
   "frenteY": 776,
-  "ojosX": 561,
+  "ojosX": 554,
   "textos": [
    {
     "t": 0,
@@ -6060,7 +6060,7 @@
     "dur": 2.6
    },
    {
-    "desde": 66.0,
+    "desde": 66.6,
     "dur": 3.45
    }
   ]
@@ -6187,8 +6187,8 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 4.5,
-  "fin": 10.53,
-  "duracion": 6.03,
+  "fin": 9.67,
+  "duracion": 5.17,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6538,9 +6538,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 8.5,
-  "fin": 13.67,
-  "duracion": 5.17,
+  "inicio": 2.9,
+  "fin": 12.19,
+  "duracion": 9.29,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6557,9 +6557,9 @@
   "imgAspecto": 1.08,
   "textoY": 1026,
   "textoTam": 60,
-  "ojosY": 936,
-  "frenteY": 876,
-  "ojosX": 587
+  "ojosY": 940,
+  "frenteY": 841,
+  "ojosX": 543
  },
  "186": {
   "estilo": "superpuesto",
@@ -6702,8 +6702,8 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 1.7,
-  "fin": 18.25,
+  "inicio": 2.0,
+  "fin": 6.85,
   "duracion": 16.55,
   "caraX": 540,
   "caraY": 900,
@@ -6721,9 +6721,9 @@
    "dur": 11.7,
    "audio": "marryto/audio/m189-190-rayo.mp3"
   },
-  "ojosY": 872,
-  "frenteY": 729,
-  "ojosX": 533
+  "ojosY": 873,
+  "frenteY": 730,
+  "ojosX": 532
  },
  "190": {
   "estilo": "superpuesto",
