@@ -17,23 +17,27 @@
   .caja b { font-family: "Inter", sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #2a4dbb; display: block; margin-bottom: 1.5mm; }
   .hueco { display: inline-block; min-width: 42mm; border-bottom: 1px solid #888; height: 1em; vertical-align: -2px; }
   .hueco.c { min-width: 22mm; }
+  .r { display: inline-block; min-width: 16mm; border-bottom: 1px solid #888; text-align: center; font-family: "Inter", sans-serif; font-weight: 600; padding: 0 2mm; }
+  .tramos td:last-child { font-weight: 700; }
+  .firma { position: relative; }
+  .firma img { position: absolute; left: 12mm; top: -21mm; height: 25mm; }
   table { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 10pt; }
   td, th { border: 1px solid #d5d8e0; padding: 2mm 3mm; text-align: left; vertical-align: top; }
   th { font-family: "Inter", sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.06em; background: #f2f4fa; color: #333; }
-  .firmas { display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; margin-top: 12mm; break-inside: avoid; }
+  .firmas { display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; margin-top: 30mm; break-inside: avoid; }
   .firma { border-top: 1px solid #333; padding-top: 2mm; font-size: 9.5pt; }
   .nota { font-family: "Inter", sans-serif; font-size: 8pt; color: #888; margin-top: 10mm; }
 </style>
 </head>
 <body>
   <h1>Acuerdo de servicios de edición de vídeo</h1>
-  <div class="sub">Edición mensual de vídeos para YouTube · Fecha: <span class="hueco"></span></div>
+  <div class="sub">Edición mensual de vídeos para YouTube · Fecha: <span class="r">{{fecha}}</span></div>
 
   <div class="partes">
     <div class="caja"><b>El editor</b>
       Alejandro Gabriel Lamont Bencomo<br>
-      Documento de identidad: <span class="hueco c"></span><br>
-      Contacto: <span class="hueco c"></span>
+      Documento de identidad: {{id}}<br>
+      Contacto: {{contacto}}
     </div>
     <div class="caja"><b>El cliente</b>
       Nombre: <span class="hueco"></span><br>
@@ -54,17 +58,20 @@
   </ul>
 
   <h2>3. Precio y escalado</h2>
+  <p>El precio de inicio es de <b>100 USD al mes</b> por los cuatro vídeos. Las partes acuerdan que el precio subirá según los suscriptores del canal, con estas cantidades fijas:</p>
+  <table class="tramos">
+    <tr><th>Suscriptores del canal</th><th>Precio mensual (4 vídeos)</th></tr>
+    <tr><td>Menos de 35.000 (actual: 27.600)</td><td>100 USD</td></tr>
+    <tr><td>35.000</td><td>130 USD</td></tr>
+    <tr><td>50.000</td><td>160 USD</td></tr>
+    <tr><td>75.000</td><td>200 USD</td></tr>
+    <tr><td>100.000</td><td>250 USD</td></tr>
+  </table>
   <ul>
-    <li>El precio de inicio es de <b>100 USD al mes</b> por los cuatro vídeos.</li>
-    <li>El cliente reconoce que es un precio reducido de arranque y <b>se compromete a aumentar la cantidad mensual a medida que el canal crezca</b> y genere más ingresos.</li>
-    <li>Las partes <b>revisarán el precio cada mes</b>, al empezar el mes nuevo. El cliente se compromete a subir la cantidad mensual cuando el canal alcance cualquiera de estos hitos:
-      <ul>
-        <li>El canal pasa de los 27.600 suscriptores actuales a <b>35.000</b>, y de nuevo al llegar a <b>50.000, 75.000 y 100.000</b>.</li>
-        <li>Las visualizaciones mensuales del canal crecen un <b>25 %</b> o más respecto al mes en que empieza este acuerdo.</li>
-        <li>Un vídeo editado por el editor supera las <b>100.000 visualizaciones</b>.</li>
-        <li>El canal cierra un patrocinio o acuerdo con una marca que aparezca en los vídeos editados.</li>
-      </ul>
-    </li>
+    <li>El nuevo precio se aplica <b>desde el mes siguiente</b> a alcanzar el hito. Las subidas no se suman entre sí: se paga el precio del tramo actual.</li>
+    <li>Si un vídeo editado por el editor supera las <b>100.000 visualizaciones</b>, el cliente le pagará un <b>bonus único de 20 USD</b> por ese vídeo.</li>
+    <li>Si las visualizaciones mensuales crecen un <b>25 %</b> o más respecto al mes de inicio, las partes hablarán de buena fe sobre un ajuste del precio, sin obligación de subirlo.</li>
+    <li>Los ingresos por patrocinios y acuerdos con marcas son del cliente y no afectan al precio.</li>
   </ul>
 
   <h2>4. Forma de pago</h2>
@@ -74,17 +81,23 @@
     <li>Las partes acuerdan el pago por adelantado como respaldo para el editor, dado el precio reducido de arranque.</li>
     <li>Métodos aceptados: <b>Wise, PayPal o Binance</b>. Las comisiones del método elegido las asume quien envía el pago.</li>
     <li>Si el pago de un mes no llega, el editor no empezará los vídeos de ese mes, sin que eso cuente como incumplimiento.</li>
+    <li>Si el editor no entrega alguno de los vídeos pagados de un mes por causas propias, ese vídeo pasará al mes siguiente sin coste o se devolverá su parte proporcional (<b>25 USD por vídeo</b>), a elección del cliente.</li>
+    <li>Si el acuerdo termina, el editor devolverá la parte proporcional de los vídeos pagados que no se hayan empezado.</li>
   </ul>
 
   <h2>5. Material y entregas</h2>
   <ul>
     <li>El cliente enviará el material en bruto organizado por vídeo, junto con el orden de las escenas, el título y, si los hay, los voice overs grabados por él.</li>
-    <li>El editor entregará cada vídeo en un plazo de <span class="hueco c"></span> días desde que reciba todo el material de ese vídeo.</li>
+    <li>El editor entregará cada vídeo largo en un plazo máximo de <span class="r">6</span> días, y cada edición de directo de Twitch en un máximo de <span class="r">3</span> días, contados desde que reciba todo el material de ese vídeo.</li>
     <li>Los efectos de sonido y la música libre de derechos los aporta el editor.</li>
+    <li>Si el cliente no envía el material de algún vídeo dentro del mes, ese vídeo pasará al mes siguiente y no se pierde.</li>
   </ul>
 
+  <h2>5 bis. Música y derechos de autor</h2>
+  <p>El editor garantiza que la música y los efectos de sonido que aporta tienen licencia para usarse en vídeos monetizados de YouTube. Si un vídeo recibe una reclamación de Content ID o de derechos de autor por ese material, el editor sustituirá el audio y volverá a entregar el vídeo sin coste, en un máximo de <span class="r">2</span> días.</p>
+
   <h2>6. Correcciones</h2>
-  <p>Cada vídeo incluye <b><span class="hueco c"></span> rondas de correcciones</b>. Los cambios que impliquen rehacer el vídeo o cambiar el material después de la entrega se consideran un vídeo nuevo.</p>
+  <p>Cada vídeo incluye <b><span class="r">2</span> rondas de correcciones</b>. Los cambios que impliquen rehacer el vídeo o cambiar el material después de la entrega se consideran un vídeo nuevo y se presupuestarán aparte, sin contar como uno de los cuatro vídeos del mes, salvo que el cliente prefiera que cuente como uno de ellos.</p>
 
   <h2>7. Derechos</h2>
   <p>Una vez pagado, el vídeo final pertenece al cliente. El editor podrá mostrar fragmentos de su trabajo en su portafolio, salvo que el cliente indique lo contrario por escrito.</p>
@@ -93,18 +106,19 @@
   <p>El editor no compartirá el material en bruto ni publicará ningún vídeo antes de que lo haga el cliente.</p>
 
   <h2>9. Duración y finalización</h2>
-  <p>El acuerdo empieza el <span class="hueco c"></span>, se renueva cada mes de forma automática y cualquiera de las partes puede terminarlo avisando con <span class="hueco c"></span> días de antelación. Los vídeos ya empezados se terminan y se pagan.</p>
+  <p>El acuerdo empieza el <span class="r">{{inicio}}</span>, se renueva cada mes de forma automática y cualquiera de las partes puede terminarlo avisando con <span class="r">{{preaviso}}</span> días de antelación. Los vídeos ya empezados se terminan y se pagan. Los vídeos pagados que no se hayan empezado se devuelven según la cláusula 4. Al terminar el acuerdo, el editor entregará al cliente los archivos finales de todos los vídeos pagados.</p>
 
   <table>
     <tr><th>Resumen</th><th></th></tr>
     <tr><td>Vídeos al mes</td><td>4 vídeos largos de YouTube (1 por semana)</td></tr>
-    <tr><td>Precio de inicio</td><td>100 USD al mes, revisado cada mes, con compromiso de aumento según los hitos del canal</td></tr>
+    <tr><td>Precio</td><td>100 USD al mes; sube por tramos de suscriptores (130 / 160 / 200 / 250 USD) + bonus de 20 USD por vídeo de más de 100.000 visualizaciones</td></tr>
+    <tr><td>Entregas</td><td>Vídeo largo en 6 días · directo de Twitch en 3 días · 2 rondas de correcciones</td></tr>
     <tr><td>Pago</td><td>100 % por adelantado (al firmar y al inicio de cada mes) · Wise, PayPal o Binance</td></tr>
     <tr><td>No incluido</td><td>Vídeos extra, shorts/reels y miniaturas (se presupuestan aparte)</td></tr>
   </table>
 
   <div class="firmas">
-    <div class="firma">El editor<br><br>Alejandro Gabriel Lamont Bencomo<br>Fecha:</div>
+    <div class="firma">{{firma}}El editor<br><br>Alejandro Gabriel Lamont Bencomo<br>Fecha: {{fecha}}</div>
     <div class="firma">El cliente<br><br>Nombre:<br>Fecha:</div>
   </div>
 

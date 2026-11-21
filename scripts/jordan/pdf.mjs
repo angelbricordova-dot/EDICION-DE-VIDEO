@@ -13,11 +13,15 @@ const fuentes = `<style>
 @font-face{font-family:"Inter";font-weight:600;src:url(${F("inter/files/inter-latin-600-normal.woff2")})}
 @font-face{font-family:"Inter";font-weight:700;src:url(${F("inter/files/inter-latin-700-normal.woff2")})}
 </style>`;
-const html = fs.readFileSync(path.join(RAIZ, "scripts/jordan/acuerdo.html"), "utf8").replace("</head>", fuentes + "</head>");
+// Los datos personales (documento, contacto, firma) NO van en git: out/jordan/datos.json y out/jordan/firma.png
+const datos = JSON.parse(fs.readFileSync(path.join(RAIZ, "out/jordan/datos.json"), "utf8"));
+const firma = fs.existsSync(path.join(RAIZ, "out/jordan/firma.png")) ? `<img src="data:image/png;base64,${fs.readFileSync(path.join(RAIZ, "out/jordan/firma.png")).toString("base64")}">` : "";
+let html = fs.readFileSync(path.join(RAIZ, "scripts/jordan/acuerdo.html"), "utf8").replace("</head>", fuentes + "</head>");
+for (const [k, v] of Object.entries({ ...datos, firma })) html = html.replaceAll(`{{${k}}}`, v);
 const nav = await chromium.launch();
 const pag = await nav.newPage();
 await pag.setContent(html);
 await pag.evaluate(() => document.fonts.ready);
-await pag.pdf({ path: path.join(RAIZ, "out/jordan/enviar/Acuerdo-edicion-video.pdf"), format: "A4", printBackground: true, preferCSSPageSize: true });
+await pag.pdf({ path: path.join(RAIZ, "out/jordan/enviar/ACUERDO_DE_VIDEOS_JORDAN.pdf"), format: "A4", printBackground: true, preferCSSPageSize: true });
 await nav.close();
 console.log("listo");
