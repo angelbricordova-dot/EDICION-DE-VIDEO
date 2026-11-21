@@ -6311,7 +6311,7 @@
   "textoY": 300,
   "textoTam": 62,
   "outro": {
-   "video": "marryto/material/ninos-c.mp4",
+   "video": "marryto/material/ninos-179.mp4",
    "desde": 4.4,
    "dur": 15.25,
    "audio": "marryto/audio/m179-181-sl.mp3"
@@ -6411,7 +6411,7 @@
    }
   ],
   "outro": {
-   "video": "marryto/material/ninos.mp4",
+   "video": "marryto/material/ninos-181.mp4",
    "desde": 3.05,
    "dur": 15.25,
    "audioTodo": "marryto/audio/m181-voz.mp3"
