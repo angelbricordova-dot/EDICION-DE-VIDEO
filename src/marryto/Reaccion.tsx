@@ -3,6 +3,7 @@ import { AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, staticFile, useCurr
 import { loadFont } from "@remotion/fonts";
 import { clamp01, easeOut, lerp } from "../comun/animacion";
 import videos from "./videos.json";
+import emojisApple from "./emojis.json";
 
 // Shorts de reacción de Marryto (docs/marryto.md), copiando su formato: franja blanca arriba con el
 // título del Short original (la parte clave en rojo), debajo la imagen del Short (de su miniatura de
@@ -40,6 +41,8 @@ export type Video = {
   outro?: { video: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string }; // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
+  coco?: boolean; // 21-nov: letras Cocogoose llamativas, emojis de iPhone y banda negra detrás de la imagen (sin cortes arriba)
+  rsvpCuenta?: boolean;
   capa?: string; // PNG transparente 1080 × 1920 encima de todo (textos libres sobre el video, p. ej. 115–117); no mueve nada
   sinImagen?: boolean; // solo texto: ni imagen ni miniatura del Short (p. ej. "💛 ARRYT 💛")
   textoColor?: string; // color del texto (por defecto blanco con borde negro)
@@ -80,11 +83,48 @@ export type PropsReaccion = { n: string };
 /** "La respuesta es *D*": lo que va entre asteriscos sale en amarillo (como en las referencias). */
 const conAcento = (x: string) => x.split(/\*([^*]+)\*/).map((p, i) => (i % 2 ? <span key={i} style={{ color: "#FFD43B" }}>{p}</span> : p));
 const FUENTE = '"Montserrat", "Arial", sans-serif';
+const COCO = '"Cocogoose", "CocoNum", sans-serif';
+
+// Emojis de iPhone (corrección de Fernando, 21-nov): cada emoji se pinta con el PNG de Apple (public/marryto/emoji)
+const HAY = new Set(emojisApple as string[]);
+const RE_EMOJI = /(\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier}|\u200D\p{Extended_Pictographic}\uFE0F?)*|[\u{1F1E6}-\u{1F1FF}]{2})/gu;
+const nombreEmoji = (e: string) => {
+  const cps = [...e].map((c) => c.codePointAt(0)!.toString(16));
+  const con = cps.join("-");
+  if (HAY.has(con)) return con;
+  const sin = cps.filter((c) => c !== "fe0f").join("-");
+  return HAY.has(sin) ? sin : null;
+};
+const conEmojis = (x: React.ReactNode, tam: number): React.ReactNode => {
+  if (typeof x !== "string") return x;
+  return x.split(RE_EMOJI).map((p, i) => {
+    if (i % 2 === 0) return p;
+    const n = nombreEmoji(p);
+    return n ? <Img key={i} src={staticFile(`marryto/emoji/${n}.png`)} style={{ width: tam * 1.05, height: tam * 1.05, verticalAlign: "-0.18em", margin: "0 0.04em", filter: "drop-shadow(0 3px 0 rgba(0,0,0,0.8))" }} /> : p;
+  });
+};
+/** Texto con emojis de iPhone y acentos de color (*palabra*). */
+const rico = (x: string, tam: number) => conAcento(x).map((p, i) => <React.Fragment key={i}>{conEmojis(p, tam)}</React.Fragment>);
+/** Estilo de letra llamativo (Cocogoose gordita, trazo negro, sombra dura y halo) para los videos con `coco`. */
+const estiloCoco = (tam: number, color = "#fff"): React.CSSProperties => ({
+  fontFamily: COCO,
+  fontWeight: 400,
+  fontSize: tam,
+  lineHeight: 1.18,
+  color,
+  letterSpacing: "0.01em",
+  WebkitTextStroke: `${(tam * 0.15).toFixed(1)}px #000`,
+  paintOrder: "stroke fill",
+  textShadow: `0 ${(tam * 0.1).toFixed(1)}px 0 #000, 0 ${(tam * 0.14).toFixed(1)}px ${(tam * 0.22).toFixed(1)}px rgba(0,0,0,0.6), 0 0 ${(tam * 0.3).toFixed(1)}px rgba(255,255,255,0.25)`,
+});
 const TITULO_H = 190;
 let fuentes = false;
 const cargarFuentes = () => {
   if (fuentes) return;
   fuentes = true;
+  // la versión de prueba de Cocogoose no trae números ni %: esos caracteres salen de Montserrat ExtraBold
+  loadFont({ family: "Cocogoose", url: staticFile("marryto/fuentes/cocogoose.ttf"), weight: "400", unicodeRange: "U+0000-0024, U+0026-002F, U+003A-FFFF" });
+  loadFont({ family: "CocoNum", url: staticFile("marryto/fuentes/montserrat-latin-800-normal.woff2"), weight: "400" });
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-800-normal.woff2"), weight: "800" });
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-ext-800-normal.woff2"), weight: "800" });
   loadFont({ family: "Montserrat", url: staticFile("marryto/fuentes/montserrat-latin-700-normal.woff2"), weight: "700" });
@@ -171,7 +211,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
   const vh = 1920 * s;
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      {v.desplazar && (y > 0 || s < 1) ? (
+      {v.desplazar && !v.coco && (y > 0 || s < 1) ? (
         // la imagen no llega a los bordes: lo que queda arriba del video bajado se rellena con el mismo
         // video ampliado y desenfocado (no se ve una franja negra)
         <AbsoluteFill style={{ filter: "blur(28px) brightness(0.92)", transform: "scale(1.25)", transformOrigin: "50% 0%" }}>
@@ -198,6 +238,10 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         </Sequence>
       ) : null}
       {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={1} /* 18-nov: sin fundido al final; el Short se repite en bucle y la música sigue hasta el último cuadro */ /> : null}
+      {v.coco && v.imagen ? (
+        // banda negra de arriba hasta el final de la imagen: no se ve el video cortado por encima ni a los lados
+        <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: bajar + k * ((v.caja?.[1] ?? 40) + (v.cajaAlto ?? (v.caja?.[2] ?? 900) * (v.imgAspecto ?? 0))), background: "#000" }} />
+      ) : null}
       <AbsoluteFill style={{ translate: `0 ${bajar}px`, scale: String(k), transformOrigin: "50% 0" }}>
       {v.imagen ? (
         <div style={{ position: "absolute", left: v.caja?.[0] ?? 90, top: v.caja?.[1] ?? 40, width: v.caja?.[2] ?? 900, height: v.cajaAlto, background: v.cajaAlto && !v.cajaFoto ? "#fff" : undefined, overflow: "hidden", display: "flex", alignItems: "center" }}>
@@ -257,7 +301,11 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           )
         : null}
       {v.sinTexto ? null : (
+        v.coco ? (
+          <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", whiteSpace: "pre-line", ...estiloCoco(v.textoTam ?? 64, v.textoColor ?? "#fff") }}>{rico(tituloAhora, v.textoTam ?? 64)}</div>
+        ) : (
         <div style={{ position: "absolute", left: 40, right: 40, top: v.textoY ?? 560, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: v.textoTam ?? 64, lineHeight: 1.12, color: v.textoColor ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", textWrap: "balance", whiteSpace: "pre-line" }}>{conAcento(tituloAhora)}</div>
+        )
       )}
       </AbsoluteFill>
       {(v.textos ?? []).map((x, i) => {
@@ -265,7 +313,11 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         if (x.estilo === "plano")
           // texto blanco con borde negro, sin fondo (pista del 187–188, días del 170–172)
           return (
+            v.coco ? (
+              <div key={i} style={{ position: "absolute", left: 40, right: 40, top: x.y, translate: "0 -50%", textAlign: "center", whiteSpace: "pre-line", ...estiloCoco(x.tam ?? 64, x.color ?? "#fff") }}>{rico(x.texto, x.tam ?? 64)}</div>
+            ) : (
             <div key={i} style={{ position: "absolute", left: 40, right: 40, top: x.y, translate: "0 -50%", textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, lineHeight: 1.12, color: x.color ?? "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", whiteSpace: "pre-line" }}>{x.texto}</div>
+            )
           );
         if (x.estilo === "titulo")
           // título estilo "Adivina el personaje" (reunión 18-nov): cada línea en su recuadro blanco, pegadas
@@ -290,16 +342,25 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         const limpio = w.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ]/g, "");
         const piv = Math.max(0, Math.min(w.length - 1, w.indexOf(limpio[0] ?? "") + Math.floor((limpio.length - 1) / 3)));
         const Y = v.rsvp.y ?? 620;
+        const d0 = v.rsvp.desde ?? 0;
+        if (v.coco && t < d0)
+          // cuenta atrás como el Short: "¡Empezamos en..." 3, 2, 1
+          return (
+            <div style={{ position: "absolute", left: 40, right: 40, top: Y - 10, textAlign: "center" }}>
+              <div style={estiloCoco(70)}>¡Empezamos en...</div>
+              <div style={{ ...estiloCoco(150, "#FFD43B"), marginTop: 10 }}>{Math.max(1, Math.ceil(d0 - t))}</div>
+            </div>
+          );
         return (
           <>
             <div style={{ position: "absolute", left: 60, right: 60, top: Y, height: 150, background: "#0B0B0D", borderTop: "4px solid #fff", borderBottom: "4px solid #fff" }}>
               <div style={{ position: "absolute", left: "50%", top: 0, width: 4, height: 18, background: "#fff" }} />
               <div style={{ position: "absolute", left: "50%", bottom: 0, width: 4, height: 18, background: "#fff" }} />
-              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 78, color: "#fff", whiteSpace: "pre" }}>
+              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", whiteSpace: "pre", ...(v.coco ? { fontFamily: COCO, fontSize: 80, color: "#fff" } : { fontFamily: FUENTE, fontWeight: 700, fontSize: 78, color: "#fff" }) }}>
                 {w.slice(0, piv)}<span style={{ color: "#FF7A1A" }}>{w[piv]}</span>{w.slice(piv + 1)}
               </div>
             </div>
-            <div style={{ position: "absolute", left: 0, right: 0, top: Y + 170, textAlign: "center", fontFamily: FUENTE, fontWeight: 800, fontSize: 66, color: "#FF7A1A", WebkitTextStroke: "3px #7A2E00", paintOrder: "stroke fill" }}>{ppm}PPM</div>
+            <div style={{ position: "absolute", left: 0, right: 0, top: Y + 170, textAlign: "center", ...(v.coco ? estiloCoco(70, "#FF8A1F") : { fontFamily: FUENTE, fontWeight: 800, fontSize: 66, color: "#FF7A1A", WebkitTextStroke: "3px #7A2E00", paintOrder: "stroke fill" }) }}>{ppm}PPM</div>
           </>
         );
       })() : null}
@@ -321,7 +382,7 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
         <Sequence durationInFrames={ini}>
           <AbsoluteFill style={{ background: "#000" }}>
             <OffthreadVideo src={staticFile(v.intro.video)} muted style={{ position: "absolute", left: 0, top: v.intro.videoY ?? 380, width: 1080, height: v.intro.videoAlto ?? 990 }} />
-            <div style={{ position: "absolute", left: 40, right: 40, top: (v.intro.videoY ?? 380) - 150, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", whiteSpace: "pre-line" }}>{v.intro.titulo}</div>
+            <div style={{ position: "absolute", left: 40, right: 40, top: (v.intro.videoY ?? 380) - 150, textAlign: "center", whiteSpace: "pre-line", ...(v.coco ? estiloCoco(64) : { fontFamily: FUENTE, fontWeight: 700, fontSize: 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill" }) }}>{v.coco ? rico(v.intro.titulo, 64) : v.intro.titulo}</div>
           </AbsoluteFill>
         </Sequence>
         {v.intro.partes ? (
@@ -357,7 +418,7 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
           <AbsoluteFill>
             <OffthreadVideo src={staticFile(v.outro.video)} muted style={{ width: 1080, height: 1920 }} />
             {v.outro.titulo ? (
-              <div style={{ position: "absolute", left: 60, right: 60, top: 250, textAlign: "center", fontFamily: FUENTE, fontWeight: 700, fontSize: 62, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill", whiteSpace: "pre-line" }}>{v.outro.titulo}</div>
+              <div style={{ position: "absolute", left: 60, right: 60, top: 250, textAlign: "center", whiteSpace: "pre-line", ...(v.coco ? estiloCoco(62) : { fontFamily: FUENTE, fontWeight: 700, fontSize: 62, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill" }) }}>{v.coco ? rico(v.outro.titulo, 62) : v.outro.titulo}</div>
             ) : null}
           </AbsoluteFill>
           {v.outro.audio ? <Audio src={staticFile(v.outro.audio)} volume={1} /> : null}

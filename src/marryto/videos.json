@@ -5528,16 +5528,17 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Vengo a recordarles que faltan\n5 lunes para Navidad 🎄🎁",
+  "titulo": "Vengo a recordarles\nque faltan 5 lunes para\nNavidad 🎄🎁",
   "sinTexto": false,
   "audio": "marryto/audio/m161.mp3",
-  "audioDesde": 0,
+  "audioDesde": 0.22,
   "sinImagen": true,
-  "textoY": 300,
-  "textoTam": 62,
+  "textoY": 290,
+  "textoTam": 66,
   "ojosY": 869,
   "frenteY": 797,
-  "ojosX": 543
+  "ojosX": 543,
+  "coco": true
  },
  "162": {
   "estilo": "superpuesto",
@@ -5552,9 +5553,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 3.6,
-  "fin": 8.79,
-  "duracion": 5.19,
+  "inicio": 2.9,
+  "fin": 9.46,
+  "duracion": 6.56,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5564,7 +5565,7 @@
   "audioDesde": 0,
   "ojosY": 976,
   "frenteY": 896,
-  "ojosX": 509,
+  "ojosX": 510,
   "imagen": "marryto/material/dos-img.jpg",
   "caja": [
    0,
@@ -5573,7 +5574,8 @@
   ],
   "imgAspecto": 0.6296,
   "textoY": 842,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "163": {
   "estilo": "superpuesto",
@@ -5609,7 +5611,8 @@
   ],
   "imgAspecto": 0.6296,
   "textoY": 842,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "164": {
   "estilo": "superpuesto",
@@ -5645,7 +5648,8 @@
   ],
   "imgAspecto": 0.6296,
   "textoY": 842,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "165": {
   "estilo": "superpuesto",
@@ -5681,7 +5685,8 @@
   ],
   "imgAspecto": 0.8,
   "textoY": 714,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "166": {
   "estilo": "superpuesto",
@@ -5711,13 +5716,14 @@
   "ojosX": 531,
   "imagen": "marryto/material/patron-b.jpg",
   "caja": [
-   195,
+   90,
    150,
-   690
+   900
   ],
   "imgAspecto": 0.8,
-  "textoY": 714,
-  "textoTam": 64
+  "textoY": 882,
+  "textoTam": 64,
+  "coco": true
  },
  "167": {
   "estilo": "superpuesto",
@@ -5747,13 +5753,14 @@
   "ojosX": 519,
   "imagen": "marryto/material/patron-c-sq.jpg",
   "caja": [
-   195,
+   90,
    150,
-   690
+   900
   ],
   "imgAspecto": 0.8,
-  "textoY": 714,
-  "textoTam": 64
+  "textoY": 882,
+  "textoTam": 64,
+  "coco": true
  },
  "168": {
   "estilo": "superpuesto",
@@ -5768,27 +5775,29 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 1.6,
-  "fin": 9.6,
-  "duracion": 8.0,
+  "inicio": 1.0,
+  "fin": 26.6,
+  "duracion": 25.6,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "¿Cuánto te concentras\ncuando lees?",
   "sinTexto": false,
   "audio": "marryto/audio/m168-169.mp3",
-  "audioDesde": 0,
+  "audioDesde": 9.39,
   "sinImagen": true,
-  "textoY": 230,
+  "textoY": 200,
   "textoTam": 62,
   "rsvp": {
-   "texto": "Si estás leyendo esto rápido toca dos veces la pantalla y comparte este vídeo con alguien que lea más lento que tú porque está comprobado que solo el uno por ciento de las personas consigue leer a esta velocidad sin perderse ninguna palabra y tú eres una de ellas si sigues aquí todavía felicidades ahora escribe en comentarios cuál fue la última palabra que viste antes de que terminara el vídeo",
+   "texto": "Si estás leyendo esto rápido toca dos veces la pantalla y comparte este vídeo con alguien que lea más lento que tú. Se dice que solo el uno por ciento de las personas consigue leer a esta velocidad sin perderse ni una sola palabra. Mientras lees tu cerebro trabaja muchísimo para entender cada palabra que aparece en el centro de la pantalla. Si has llegado hasta aquí sin parpadear eres una persona con una concentración increíble. Ahora la velocidad sigue igual pero tu cerebro empieza a cansarse poco a poco y es normal que te cueste un poco más. No te rindas todavía porque falta muy poco para terminar este reto de lectura rápida. Cuando acabe escribe en los comentarios cuál fue la última palabra que viste y si conseguiste leerlo todo sin perderte. Comparte este vídeo con tus amigos y descubre quién de ellos tiene la mejor concentración del grupo. Gracias por leer hasta el final",
    "ppm": 300,
-   "y": 390
+   "y": 420,
+   "desde": 3.0
   },
-  "ojosY": 927,
-  "frenteY": 853,
-  "ojosX": 538
+  "ojosY": 928,
+  "frenteY": 848,
+  "ojosX": 539,
+  "coco": true
  },
  "169": {
   "estilo": "superpuesto",
@@ -5804,26 +5813,28 @@
   "desplazar": false,
   "separacion": 40,
   "inicio": 29.9,
-  "fin": 37.9,
-  "duracion": 8.0,
+  "fin": 58.1,
+  "duracion": 28.2,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "¿Cuánto te concentras\ncuando lees?",
   "sinTexto": false,
   "audio": "marryto/audio/m168-169.mp3",
-  "audioDesde": 0,
+  "audioDesde": 10.15,
   "sinImagen": true,
-  "textoY": 230,
+  "textoY": 200,
   "textoTam": 62,
   "rsvp": {
-   "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí porque casi nadie llega hasta el final de este texto sin parpadear y si lo consigues significa que tu cerebro procesa la información más rápido que la mayoría de la gente así que comparte este vídeo y reta a tus amigos a ver quién aguanta más",
+   "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí. Casi nadie llega hasta el final de este texto sin parpadear y si lo consigues significa que tu cerebro procesa la información más rápido que la mayoría. Los estudios dicen que una persona normal lee unas doscientas palabras por minuto pero tú ahora mismo estás leyendo muchas más. Intenta no mover los ojos y concéntrate solo en la letra naranja del centro porque así tu cerebro reconoce cada palabra mucho más rápido. Si te has perdido en algún momento no pasa nada vuelve a ver el vídeo desde el principio y prueba otra vez. Pero si sigues aquí felicidades porque estás entre las pocas personas que lo consiguen. Reta a tus amigos a hacer lo mismo y mira quién aguanta más tiempo sin perderse. Escribe en los comentarios hasta dónde llegaste y cuántas veces lo intentaste. Ya casi terminamos así que respira y lee estas últimas palabras con calma. Lo has conseguido",
    "ppm": 350,
-   "y": 390
+   "y": 420,
+   "desde": 3.0
   },
   "ojosY": 883,
   "frenteY": 796,
-  "ojosX": 554
+  "ojosX": 539,
+  "coco": true
  },
  "170": {
   "estilo": "superpuesto",
@@ -5867,7 +5878,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Lunes-Miércoles",
-    "tam": 74,
+    "tam": 84,
     "estilo": "plano"
    },
    {
@@ -5876,7 +5887,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Sábado:",
-    "tam": 80,
+    "tam": 84,
     "estilo": "plano",
     "color": "#BDE7FF"
    },
@@ -5885,7 +5896,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Domingo:",
-    "tam": 80,
+    "tam": 84,
     "estilo": "plano",
     "color": "#FFD0D0"
    }
@@ -5903,7 +5914,8 @@
     "desde": 20.0,
     "dur": 3.45
    }
-  ]
+  ],
+  "coco": true
  },
  "171": {
   "estilo": "superpuesto",
@@ -5947,7 +5959,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Lunes-Miércoles",
-    "tam": 74,
+    "tam": 84,
     "estilo": "plano"
    },
    {
@@ -5956,7 +5968,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Sábado:",
-    "tam": 80,
+    "tam": 84,
     "estilo": "plano",
     "color": "#BDE7FF"
    },
@@ -5965,7 +5977,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Domingo:",
-    "tam": 80,
+    "tam": 84,
     "estilo": "plano",
     "color": "#FFD0D0"
    }
@@ -5983,7 +5995,8 @@
     "desde": 44.6,
     "dur": 3.45
    }
-  ]
+  ],
+  "coco": true
  },
  "172": {
   "estilo": "superpuesto",
@@ -6027,7 +6040,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Lunes-Miércoles",
-    "tam": 74,
+    "tam": 84,
     "estilo": "plano"
    },
    {
@@ -6036,7 +6049,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Sábado:",
-    "tam": 80,
+    "tam": 84,
     "estilo": "plano",
     "color": "#BDE7FF"
    },
@@ -6045,7 +6058,7 @@
     "x": 540,
     "y": 1640,
     "texto": "Domingo:",
-    "tam": 80,
+    "tam": 84,
     "estilo": "plano",
     "color": "#FFD0D0"
    }
@@ -6063,7 +6076,8 @@
     "desde": 66.6,
     "dur": 3.45
    }
-  ]
+  ],
+  "coco": true
  },
  "173": {
   "estilo": "superpuesto",
@@ -6099,7 +6113,8 @@
   ],
   "imgAspecto": 0.8913,
   "textoY": 1053,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "174": {
   "estilo": "superpuesto",
@@ -6135,7 +6150,8 @@
   ],
   "imgAspecto": 0.8913,
   "textoY": 1053,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "175": {
   "estilo": "superpuesto",
@@ -6171,7 +6187,8 @@
   ],
   "imgAspecto": 0.7467,
   "textoY": 909,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "176": {
   "estilo": "superpuesto",
@@ -6207,7 +6224,8 @@
   ],
   "imgAspecto": 1.0146,
   "textoY": 872,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "177": {
   "estilo": "superpuesto",
@@ -6243,7 +6261,8 @@
   ],
   "imgAspecto": 1.0146,
   "textoY": 1075,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "178": {
   "estilo": "superpuesto",
@@ -6279,7 +6298,8 @@
   ],
   "imgAspecto": 1.0146,
   "textoY": 1075,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "179": {
   "estilo": "superpuesto",
@@ -6325,7 +6345,8 @@
     "tam": 74,
     "estilo": "titulo"
    }
-  ]
+  ],
+  "coco": true
  },
  "180": {
   "estilo": "superpuesto",
@@ -6371,7 +6392,8 @@
     "tam": 74,
     "estilo": "titulo"
    }
-  ]
+  ],
+  "coco": true
  },
  "181": {
   "estilo": "superpuesto",
@@ -6415,7 +6437,8 @@
    "desde": 3.05,
    "dur": 15.25,
    "audioTodo": "marryto/audio/m181-voz.mp3"
-  }
+  },
+  "coco": true
  },
  "182": {
   "estilo": "superpuesto",
@@ -6451,7 +6474,8 @@
   ],
   "imgAspecto": 0.9262,
   "textoY": 1051,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "183": {
   "estilo": "superpuesto",
@@ -6487,7 +6511,8 @@
   ],
   "imgAspecto": 0.9262,
   "textoY": 1051,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "184": {
   "estilo": "superpuesto",
@@ -6523,7 +6548,8 @@
   ],
   "imgAspecto": 0.9262,
   "textoY": 1051,
-  "textoTam": 64
+  "textoTam": 64,
+  "coco": true
  },
  "185": {
   "estilo": "superpuesto",
@@ -6559,7 +6585,8 @@
   "textoTam": 60,
   "ojosY": 940,
   "frenteY": 841,
-  "ojosX": 543
+  "ojosX": 543,
+  "coco": true
  },
  "186": {
   "estilo": "superpuesto",
@@ -6595,7 +6622,8 @@
   "textoTam": 60,
   "ojosY": 966,
   "frenteY": 878,
-  "ojosX": 560
+  "ojosX": 560,
+  "coco": true
  },
  "187": {
   "estilo": "superpuesto",
@@ -6641,7 +6669,8 @@
     "tam": 56,
     "estilo": "plano"
    }
-  ]
+  ],
+  "coco": true
  },
  "188": {
   "estilo": "superpuesto",
@@ -6687,7 +6716,8 @@
     "tam": 56,
     "estilo": "plano"
    }
-  ]
+  ],
+  "coco": true
  },
  "189": {
   "estilo": "superpuesto",
@@ -6723,7 +6753,8 @@
   },
   "ojosY": 873,
   "frenteY": 730,
-  "ojosX": 532
+  "ojosX": 532,
+  "coco": true
  },
  "190": {
   "estilo": "superpuesto",
@@ -6759,6 +6790,7 @@
   },
   "ojosY": 879,
   "frenteY": 778,
-  "ojosX": 523
+  "ojosX": 523,
+  "coco": true
  }
 }
