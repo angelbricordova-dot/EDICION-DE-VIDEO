@@ -5523,8 +5523,8 @@
   "desplazar": false,
   "separacion": 40,
   "inicio": 4.2,
-  "fin": 11.2,
-  "duracion": 7.0,
+  "fin": 12.3,
+  "duracion": 8.1,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5535,9 +5535,9 @@
   "sinImagen": true,
   "textoY": 300,
   "textoTam": 62,
-  "ojosY": 868,
-  "frenteY": 798,
-  "ojosX": 542
+  "ojosY": 869,
+  "frenteY": 797,
+  "ojosX": 543
  },
  "162": {
   "estilo": "superpuesto",
@@ -5553,8 +5553,8 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 3.6,
-  "fin": 10.52,
-  "duracion": 6.92,
+  "fin": 8.79,
+  "duracion": 5.19,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5562,9 +5562,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
-  "ojosY": 977,
-  "frenteY": 895,
-  "ojosX": 513,
+  "ojosY": 976,
+  "frenteY": 896,
+  "ojosX": 509,
   "imagen": "marryto/material/dos-img.jpg",
   "caja": [
    0,
@@ -5732,8 +5732,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 23.4,
-  "fin": 30.43,
+  "inicio": 24.6,
+  "fin": 31.63,
   "duracion": 7.03,
   "caraX": 540,
   "caraY": 900,
@@ -5742,9 +5742,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m165-167.mp3",
   "audioDesde": 0,
-  "ojosY": 941,
-  "frenteY": 867,
-  "ojosX": 533,
+  "ojosY": 1016,
+  "frenteY": 921,
+  "ojosX": 519,
   "imagen": "marryto/material/patron-c-sq.jpg",
   "caja": [
    195,
@@ -5779,12 +5779,12 @@
   "audio": "marryto/audio/m168-169.mp3",
   "audioDesde": 0,
   "sinImagen": true,
-  "textoY": 470,
+  "textoY": 230,
   "textoTam": 62,
   "rsvp": {
    "texto": "Si estás leyendo esto rápido toca dos veces la pantalla y comparte este vídeo con alguien que lea más lento que tú porque está comprobado que solo el uno por ciento de las personas consigue leer a esta velocidad sin perderse ninguna palabra y tú eres una de ellas si sigues aquí todavía felicidades ahora escribe en comentarios cuál fue la última palabra que viste antes de que terminara el vídeo",
    "ppm": 300,
-   "y": 720
+   "y": 390
   },
   "ojosY": 927,
   "frenteY": 853,
@@ -5803,8 +5803,8 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 28.6,
-  "fin": 36.6,
+  "inicio": 29.9,
+  "fin": 37.9,
   "duracion": 8.0,
   "caraX": 540,
   "caraY": 900,
@@ -5814,16 +5814,16 @@
   "audio": "marryto/audio/m168-169.mp3",
   "audioDesde": 0,
   "sinImagen": true,
-  "textoY": 470,
+  "textoY": 230,
   "textoTam": 62,
   "rsvp": {
    "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí porque casi nadie llega hasta el final de este texto sin parpadear y si lo consigues significa que tu cerebro procesa la información más rápido que la mayoría de la gente así que comparte este vídeo y reta a tus amigos a ver quién aguanta más",
    "ppm": 350,
-   "y": 720
+   "y": 390
   },
   "ojosY": 883,
   "frenteY": 796,
-  "ojosX": 536
+  "ojosX": 554
  },
  "170": {
   "estilo": "superpuesto",
@@ -5838,9 +5838,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 7.5,
-  "fin": 15.9,
-  "duracion": 8.4,
+  "inicio": 6.0,
+  "fin": 14.05,
+  "duracion": 8.05,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5859,35 +5859,49 @@
   "textoTam": 64,
   "ojosY": 815,
   "frenteY": 733,
-  "ojosX": 558,
+  "ojosX": 534,
   "textos": [
    {
     "t": 0,
-    "hasta": 1.9,
+    "hasta": 2.0,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Lunes-Miércoles",
-    "tam": 72,
+    "tam": 74,
     "estilo": "plano"
    },
    {
-    "t": 1.9,
-    "hasta": 4.9,
+    "t": 2.0,
+    "hasta": 4.6,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Sábado:",
-    "tam": 76,
+    "tam": 80,
     "estilo": "plano",
     "color": "#BDE7FF"
    },
    {
-    "t": 4.9,
+    "t": 4.6,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Domingo:",
-    "tam": 76,
+    "tam": 80,
     "estilo": "plano",
     "color": "#FFD0D0"
+   }
+  ],
+  "tomas": [
+   {
+    "desde": 6.0,
+    "dur": 2.0
+   },
+   {
+    "desde": 9.0,
+    "dur": 2.6
+   },
+   {
+    "desde": 18.0,
+    "dur": 3.45
    }
   ]
  },
@@ -5904,9 +5918,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 35.5,
-  "fin": 44.0,
-  "duracion": 8.5,
+  "inicio": 30.0,
+  "fin": 38.05,
+  "duracion": 8.05,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5923,37 +5937,51 @@
   "imgAspecto": 0.5383,
   "textoY": 743,
   "textoTam": 64,
-  "ojosY": 838,
-  "frenteY": 764,
-  "ojosX": 524,
+  "ojosY": 837,
+  "frenteY": 763,
+  "ojosX": 521,
   "textos": [
    {
     "t": 0,
     "hasta": 2.0,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Lunes-Miércoles",
-    "tam": 72,
+    "tam": 74,
     "estilo": "plano"
    },
    {
     "t": 2.0,
-    "hasta": 5.0,
+    "hasta": 4.6,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Sábado:",
-    "tam": 76,
+    "tam": 80,
     "estilo": "plano",
     "color": "#BDE7FF"
    },
    {
-    "t": 5.0,
+    "t": 4.6,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Domingo:",
-    "tam": 76,
+    "tam": 80,
     "estilo": "plano",
     "color": "#FFD0D0"
+   }
+  ],
+  "tomas": [
+   {
+    "desde": 30.0,
+    "dur": 2.0
+   },
+   {
+    "desde": 37.0,
+    "dur": 2.6
+   },
+   {
+    "desde": 41.0,
+    "dur": 3.45
    }
   ]
  },
@@ -5970,9 +5998,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 57.5,
-  "fin": 65.0,
-  "duracion": 7.5,
+  "inicio": 54.0,
+  "fin": 62.05,
+  "duracion": 8.05,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5989,37 +6017,51 @@
   "imgAspecto": 0.5383,
   "textoY": 743,
   "textoTam": 64,
-  "ojosY": 824,
-  "frenteY": 755,
-  "ojosX": 564,
+  "ojosY": 846,
+  "frenteY": 776,
+  "ojosX": 561,
   "textos": [
    {
     "t": 0,
     "hasta": 2.0,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Lunes-Miércoles",
-    "tam": 72,
+    "tam": 74,
     "estilo": "plano"
    },
    {
     "t": 2.0,
-    "hasta": 4.0,
+    "hasta": 4.6,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Sábado:",
-    "tam": 76,
+    "tam": 80,
     "estilo": "plano",
     "color": "#BDE7FF"
    },
    {
-    "t": 4.0,
+    "t": 4.6,
     "x": 540,
-    "y": 1250,
+    "y": 1640,
     "texto": "Domingo:",
-    "tam": 76,
+    "tam": 80,
     "estilo": "plano",
     "color": "#FFD0D0"
+   }
+  ],
+  "tomas": [
+   {
+    "desde": 54.0,
+    "dur": 2.0
+   },
+   {
+    "desde": 59.8,
+    "dur": 2.6
+   },
+   {
+    "desde": 66.0,
+    "dur": 3.45
    }
   ]
  },
@@ -6072,8 +6114,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 13.3,
-  "fin": 20.49,
+  "inicio": 14.2,
+  "fin": 21.39,
   "duracion": 7.19,
   "caraX": 540,
   "caraY": 900,
@@ -6145,8 +6187,8 @@
   "desplazar": true,
   "separacion": 40,
   "inicio": 4.5,
-  "fin": 11.5,
-  "duracion": 7.0,
+  "fin": 10.53,
+  "duracion": 6.03,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6154,17 +6196,17 @@
   "sinTexto": false,
   "audio": "marryto/audio/m176-178.mp3",
   "audioDesde": 0,
-  "ojosY": 829,
-  "frenteY": 691,
-  "ojosX": 528,
+  "ojosY": 968,
+  "frenteY": 891,
+  "ojosX": 533,
   "imagen": "marryto/material/ochos-g0.jpg",
   "caja": [
-   90,
+   190,
    150,
-   900
+   700
   ],
   "imgAspecto": 1.0146,
-  "textoY": 1075,
+  "textoY": 872,
   "textoTam": 64
  },
  "177": {
@@ -6216,8 +6258,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 26.8,
-  "fin": 33.8,
+  "inicio": 27.6,
+  "fin": 34.6,
   "duracion": 7.0,
   "caraX": 540,
   "caraY": 900,
@@ -6226,9 +6268,9 @@
   "sinTexto": false,
   "audio": "marryto/audio/m176-178.mp3",
   "audioDesde": 0,
-  "ojosY": 991,
-  "frenteY": 912,
-  "ojosX": 492,
+  "ojosY": 982,
+  "frenteY": 872,
+  "ojosX": 483,
   "imagen": "marryto/material/ochos-g2.jpg",
   "caja": [
    90,
@@ -6278,7 +6320,7 @@
    {
     "t": 0,
     "x": 540,
-    "y": 420,
+    "y": 300,
     "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
     "tam": 74,
     "estilo": "titulo"
@@ -6298,9 +6340,9 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 10.2,
+  "inicio": 10.7,
   "fin": 14.2,
-  "duracion": 19.25,
+  "duracion": 18.75,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6309,14 +6351,14 @@
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
   "ojosY": 850,
-  "frenteY": 685,
-  "ojosX": 541,
+  "frenteY": 682,
+  "ojosX": 542,
   "sinImagen": true,
   "textoY": 300,
   "textoTam": 62,
   "outro": {
    "video": "marryto/material/ninos.mp4",
-   "desde": 4.0,
+   "desde": 3.5,
    "dur": 15.25,
    "audioTodo": "marryto/audio/m180-voz.mp3"
   },
@@ -6324,7 +6366,7 @@
    {
     "t": 0,
     "x": 540,
-    "y": 420,
+    "y": 300,
     "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
     "tam": 74,
     "estilo": "titulo"
@@ -6344,9 +6386,9 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 18.9,
+  "inicio": 19.15,
   "fin": 22.2,
-  "duracion": 18.55,
+  "duracion": 18.3,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6354,15 +6396,15 @@
   "sinTexto": true,
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
-  "ojosY": 848,
-  "frenteY": 685,
+  "ojosY": 842,
+  "frenteY": 664,
   "ojosX": 549,
   "sinImagen": true,
   "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 420,
+    "y": 300,
     "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
     "tam": 74,
     "estilo": "titulo"
@@ -6370,7 +6412,7 @@
   ],
   "outro": {
    "video": "marryto/material/ninos.mp4",
-   "desde": 3.3,
+   "desde": 3.05,
    "dur": 15.25,
    "audioTodo": "marryto/audio/m181-voz.mp3"
   }
@@ -6496,9 +6538,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 0.9,
-  "fin": 11.1,
-  "duracion": 10.2,
+  "inicio": 8.5,
+  "fin": 13.67,
+  "duracion": 5.17,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6515,9 +6557,9 @@
   "imgAspecto": 1.08,
   "textoY": 1026,
   "textoTam": 60,
-  "ojosY": 941,
-  "frenteY": 842,
-  "ojosX": 541
+  "ojosY": 936,
+  "frenteY": 876,
+  "ojosX": 587
  },
  "186": {
   "estilo": "superpuesto",
@@ -6532,9 +6574,9 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 15.4,
-  "fin": 25.6,
-  "duracion": 10.2,
+  "inicio": 17.9,
+  "fin": 27.19,
+  "duracion": 9.29,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6551,9 +6593,9 @@
   "imgAspecto": 1.08,
   "textoY": 1026,
   "textoTam": 60,
-  "ojosY": 968,
-  "frenteY": 880,
-  "ojosX": 540
+  "ojosY": 966,
+  "frenteY": 878,
+  "ojosX": 560
  },
  "187": {
   "estilo": "superpuesto",
@@ -6660,43 +6702,7 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 1.3,
-  "fin": 6.15,
-  "duracion": 16.55,
-  "caraX": 540,
-  "caraY": 900,
-  "caraAncho": 300,
-  "titulo": "Los peores vídeos jamás\npublicados en YouTube… 😔💔",
-  "sinTexto": false,
-  "audio": "marryto/audio/m189-190-intro.mp3",
-  "audioDesde": 0,
-  "sinImagen": true,
-  "textoY": 520,
-  "textoTam": 62,
-  "outro": {
-   "video": "marryto/material/rayo.mp4",
-   "desde": 4.85,
-   "dur": 11.7,
-   "audio": "marryto/audio/m189-190-rayo.mp3"
-  },
-  "ojosY": 871,
-  "frenteY": 728,
-  "ojosX": 532
- },
- "190": {
-  "estilo": "superpuesto",
-  "short": "V3JAhWuDyOI",
-  "rojo": "",
-  "recorte": [
-   0,
-   0,
-   1080,
-   1920
-  ],
-  "bajar": 0,
-  "desplazar": false,
-  "separacion": 40,
-  "inicio": 13.4,
+  "inicio": 1.7,
   "fin": 18.25,
   "duracion": 16.55,
   "caraX": 540,
@@ -6715,8 +6721,44 @@
    "dur": 11.7,
    "audio": "marryto/audio/m189-190-rayo.mp3"
   },
+  "ojosY": 872,
+  "frenteY": 729,
+  "ojosX": 533
+ },
+ "190": {
+  "estilo": "superpuesto",
+  "short": "V3JAhWuDyOI",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "inicio": 14.2,
+  "fin": 30.75,
+  "duracion": 16.55,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "titulo": "Los peores vídeos jamás\npublicados en YouTube… 😔💔",
+  "sinTexto": false,
+  "audio": "marryto/audio/m189-190-intro.mp3",
+  "audioDesde": 0,
+  "sinImagen": true,
+  "textoY": 520,
+  "textoTam": 62,
+  "outro": {
+   "video": "marryto/material/rayo.mp4",
+   "desde": 4.85,
+   "dur": 11.7,
+   "audio": "marryto/audio/m189-190-rayo.mp3"
+  },
   "ojosY": 879,
-  "frenteY": 779,
-  "ojosX": 522
+  "frenteY": 778,
+  "ojosX": 523
  }
 }
