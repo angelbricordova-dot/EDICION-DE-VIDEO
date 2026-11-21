@@ -146,6 +146,22 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 | 19 | yate-diferencias.jpg (Marryto con IA en un puerto, 3 diferencias) | Encuentra las 3 diferencias |
 
 
+
+## Reglas de Fernando (21-nov-2026) — OBLIGATORIAS, avisó que no las repetirá
+- **Calidad antes que cantidad:** máximo **10 videos al día** (contrato 10–15), revisados uno por uno. Prefiere 10
+  bien que 30 con 28 mal.
+- **Letras:** nada de letra simple. Fuente **Cocogoose** (la de sus retos/entrevistas), gordita, con **trazo
+  (borde) + sombra + resplandor**, muy llamativa y legible (son para niños). Referencia: "ESPERA A VER ESTO".
+  En su Premiere: trazo, sombra paralela, resplandor, sombra blanca, temblor de entrada y desfase rojo/azul.
+- **Emojis de iPhone** (Apple), nunca los de Google/Noto.
+- **Nada de cortes feos arriba:** prohibido ver su fondo/la imagen encima y arriba la franja del video. Si la
+  imagen no llega arriba: imagen completa a todo lo ancho arriba y abajo su cara SIN cortes; el sobrante en
+  **negro** o zoom. Igualar o mejorar la referencia, nunca peor.
+- **Duración y ritmo como el ejemplo** (168–169 duran lo del Short; 161 al ritmo de la música; 179–181 las
+  transiciones al beat).
+- **Leer bien las instrucciones** (p. ej. cámara lenta en 187–188).
+- Si el video de arriba es de mala calidad, rehacer sus letras por encima (189–190).
+
 ## Reglas nuevas (17-nov)
 - **Música en bucle:** el Short se repite al terminar, así que la música **no puede acabar a mitad de
   frase ni de golpe**: el video termina en un **hueco** de la canción (pausa entre frases). Buscar los
