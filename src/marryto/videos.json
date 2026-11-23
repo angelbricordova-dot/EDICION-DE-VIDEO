@@ -5523,8 +5523,8 @@
   "desplazar": false,
   "separacion": 40,
   "inicio": 4.2,
-  "fin": 12.3,
-  "duracion": 8.1,
+  "fin": 12.04,
+  "duracion": 7.84,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -5559,7 +5559,7 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "¿Son 1 o 2 imágenes?\nToca 2 veces y descúbrelo",
+  "titulo": "TOCA 2 VECES Y\nDESCUBRELO",
   "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
@@ -5569,13 +5569,23 @@
   "imagen": "marryto/material/dos-img.jpg",
   "caja": [
    0,
-   0,
+   240,
    1080
   ],
   "imgAspecto": 0.6296,
-  "textoY": 694,
+  "textoY": 900,
   "textoTam": 64,
-  "coco": true
+  "coco": true,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 122,
+    "texto": "SON 1 O 2 IMAGENES??",
+    "tam": 70,
+    "estilo": "plano"
+   }
+  ]
  },
  "163": {
   "estilo": "superpuesto",
@@ -5596,7 +5606,7 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "¿1 o 2 imágenes?\nDale 2 toques y descúbrelo",
+  "titulo": "TOCA 2 VECES Y\nDESCUBRELO",
   "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
@@ -5606,13 +5616,23 @@
   "imagen": "marryto/material/dos-img-b.jpg",
   "caja": [
    0,
-   0,
+   240,
    1080
   ],
   "imgAspecto": 0.6296,
-  "textoY": 694,
+  "textoY": 900,
   "textoTam": 64,
-  "coco": true
+  "coco": true,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 122,
+    "texto": "SON 1 O 2 IMAGENES??",
+    "tam": 70,
+    "estilo": "plano"
+   }
+  ]
  },
  "164": {
   "estilo": "superpuesto",
@@ -5633,7 +5653,7 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Toca 2 veces si ves\n1 sola imagen",
+  "titulo": "TOCA 2 VECES Y\nDESCUBRELO",
   "sinTexto": false,
   "audio": "marryto/audio/m162-164.mp3",
   "audioDesde": 0,
@@ -5643,13 +5663,23 @@
   "imagen": "marryto/material/dos-img-c.jpg",
   "caja": [
    0,
-   0,
+   240,
    1080
   ],
   "imgAspecto": 0.6296,
-  "textoY": 694,
+  "textoY": 900,
   "textoTam": 64,
-  "coco": true
+  "coco": true,
+  "textos": [
+   {
+    "t": 0,
+    "x": 540,
+    "y": 122,
+    "texto": "SON 1 O 2 IMAGENES??",
+    "tam": 70,
+    "estilo": "plano"
+   }
+  ]
  },
  "165": {
   "estilo": "superpuesto",
@@ -5775,28 +5805,29 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 1.6,
-  "fin": 25.1,
-  "duracion": 23.5,
+  "inicio": 0.0,
+  "fin": 58.9,
+  "duracion": 58.9,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "¿Cuánto te concentras\ncuando lees?",
   "sinTexto": false,
   "audio": "marryto/audio/m168-169.mp3",
-  "audioDesde": 9.99,
+  "audioDesde": 0,
   "sinImagen": true,
   "textoY": 200,
   "textoTam": 62,
   "rsvp": {
-   "texto": "Si estás leyendo esto rápido toca dos veces la pantalla y comparte este vídeo con alguien que lea más lento que tú. Se dice que solo el uno por ciento de las personas consigue leer a esta velocidad sin perderse ni una sola palabra. Mientras lees tu cerebro trabaja muchísimo para entender cada palabra que aparece en el centro de la pantalla. Si has llegado hasta aquí sin parpadear eres una persona con una concentración increíble. Ahora la velocidad sigue igual pero tu cerebro empieza a cansarse poco a poco y es normal que te cueste un poco más. No te rindas todavía porque falta muy poco para terminar este reto de lectura rápida. Cuando acabe escribe en los comentarios cuál fue la última palabra que viste y si conseguiste leerlo todo sin perderte. Comparte este vídeo con tus amigos y descubre quién de ellos tiene la mejor concentración del grupo. Gracias por leer hasta el final",
-   "ppm": 300,
+   "texto": "¡Bienvenido a este test de lectura donde pondremos a prueba tu capacidad de concentración al leer! No se trata de un test de lectura rápida, por lo tanto, estaremos leyendo a una velocidad de 300 palabras por minuto. El objetivo es que centres tu atención en la letra naranja y comprendas el texto a la perfección. Hablando de la capacidad de concentración al leer, es interesante destacar que las personas difieren en su habilidad para mantener la atención durante la lectura. Algunos pueden enfocarse durante largos períodos de tiempo sin distraerse, mientras que otros pueden encontrar dificultades para mantener la concentración. Según estudios sobre el tema, la gran mayoría de las personas tiene una capacidad de concentración promedio que oscila entre 15 y 20 minutos al leer. Esto significa que, en promedio, después de ese tiempo, es posible que comiencen a experimentar una disminución en su atención y puedan distraerse más fácilmente. Sin embargo, es importante tener en cuenta que la capacidad de concentración puede variar según diversos factores, como el nivel de interés en el contenido, la fatiga, el entorno en el que se encuentra la persona, entre otros. Algunas personas pueden concentrarse durante períodos más largos si están altamente motivadas o si están leyendo algo que les resulta especialmente interesante. Curiosamente, el cerebro humano tiene una capacidad de procesamiento increíblemente rápida. Aunque leas a 300 palabras por minuto, tu mente es capaz de captar y comprender una cantidad significativa de información en ese corto lapso de tiempo. La lectura es una habilidad asombrosa que nos permite adquirir conocimiento y sumergirnos en diferentes mundos a través de las palabras. Ahora, si llegaste hasta esta parte del video sin perderte ni un segundo del texto, ¡te felicito! Tienes una capacidad de concentración increíble. No tendrás problema para escribir algún dato acerca del texto en los comentarios. Y si te desconcentraste un poco, vuelve a ver el video hasta que comprendas TODO.",
+   "ppm": 356.0,
    "y": 420,
-   "desde": 3.0
+   "desde": 4.53,
+   "rotulo": "300PPM"
   },
-  "ojosY": 928,
-  "frenteY": 850,
-  "ojosX": 539,
+  "ojosY": 885,
+  "frenteY": 791,
+  "ojosX": 538,
   "coco": true
  },
  "169": {
@@ -5812,29 +5843,40 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 29.9,
-  "fin": 58.1,
-  "duracion": 28.2,
+  "inicio": 27.55,
+  "fin": 58.9,
+  "duracion": 58.9,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "¿Cuánto te concentras\ncuando lees?",
   "sinTexto": false,
   "audio": "marryto/audio/m168-169.mp3",
-  "audioDesde": 10.15,
+  "audioDesde": 0,
   "sinImagen": true,
   "textoY": 200,
   "textoTam": 62,
   "rsvp": {
-   "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí. Casi nadie llega hasta el final de este texto sin parpadear y si lo consigues significa que tu cerebro procesa la información más rápido que la mayoría. Los estudios dicen que una persona normal lee unas doscientas palabras por minuto pero tú ahora mismo estás leyendo muchas más. Intenta no mover los ojos y concéntrate solo en la letra naranja del centro porque así tu cerebro reconoce cada palabra mucho más rápido. Si te has perdido en algún momento no pasa nada vuelve a ver el vídeo desde el principio y prueba otra vez. Pero si sigues aquí felicidades porque estás entre las pocas personas que lo consiguen. Reta a tus amigos a hacer lo mismo y mira quién aguanta más tiempo sin perderse.",
-   "ppm": 350,
+   "texto": "¡Bienvenido a este test de lectura donde pondremos a prueba tu capacidad de concentración al leer! No se trata de un test de lectura rápida, por lo tanto, estaremos leyendo a una velocidad de 300 palabras por minuto. El objetivo es que centres tu atención en la letra naranja y comprendas el texto a la perfección. Hablando de la capacidad de concentración al leer, es interesante destacar que las personas difieren en su habilidad para mantener la atención durante la lectura. Algunos pueden enfocarse durante largos períodos de tiempo sin distraerse, mientras que otros pueden encontrar dificultades para mantener la concentración. Según estudios sobre el tema, la gran mayoría de las personas tiene una capacidad de concentración promedio que oscila entre 15 y 20 minutos al leer. Esto significa que, en promedio, después de ese tiempo, es posible que comiencen a experimentar una disminución en su atención y puedan distraerse más fácilmente. Sin embargo, es importante tener en cuenta que la capacidad de concentración puede variar según diversos factores, como el nivel de interés en el contenido, la fatiga, el entorno en el que se encuentra la persona, entre otros. Algunas personas pueden concentrarse durante períodos más largos si están altamente motivadas o si están leyendo algo que les resulta especialmente interesante. Curiosamente, el cerebro humano tiene una capacidad de procesamiento increíblemente rápida. Aunque leas a 300 palabras por minuto, tu mente es capaz de captar y comprender una cantidad significativa de información en ese corto lapso de tiempo. La lectura es una habilidad asombrosa que nos permite adquirir conocimiento y sumergirnos en diferentes mundos a través de las palabras. Ahora, si llegaste hasta esta parte del video sin perderte ni un segundo del texto, ¡te felicito! Tienes una capacidad de concentración increíble. No tendrás problema para escribir algún dato acerca del texto en los comentarios. Y si te desconcentraste un poco, vuelve a ver el video hasta que comprendas TODO.",
+   "ppm": 356.0,
    "y": 420,
-   "desde": 3.0
+   "desde": 4.53,
+   "rotulo": "300PPM"
   },
-  "ojosY": 883,
-  "frenteY": 796,
-  "ojosX": 539,
-  "coco": true
+  "ojosY": 885,
+  "frenteY": 794,
+  "ojosX": 538,
+  "coco": true,
+  "tomas": [
+   {
+    "desde": 27.55,
+    "dur": 31.35
+   },
+   {
+    "desde": 0.0,
+    "dur": 27.55
+   }
+  ]
  },
  "170": {
   "estilo": "superpuesto",
@@ -5862,11 +5904,11 @@
   "imagen": "marryto/material/dias-ref.jpg",
   "caja": [
    0,
-   0,
+   210,
    1080
   ],
   "imgAspecto": 0.5383,
-  "textoY": 595,
+  "textoY": 803,
   "textoTam": 64,
   "ojosY": 815,
   "frenteY": 732,
@@ -5943,11 +5985,11 @@
   "imagen": "marryto/material/dias-ref.jpg",
   "caja": [
    0,
-   0,
+   210,
    1080
   ],
   "imgAspecto": 0.5383,
-  "textoY": 595,
+  "textoY": 803,
   "textoTam": 64,
   "ojosY": 855,
   "frenteY": 778,
@@ -6024,11 +6066,11 @@
   "imagen": "marryto/material/dias-ref.jpg",
   "caja": [
    0,
-   0,
+   210,
    1080
   ],
   "imgAspecto": 0.5383,
-  "textoY": 595,
+  "textoY": 803,
   "textoTam": 64,
   "ojosY": 846,
   "frenteY": 776,

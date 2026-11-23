@@ -37,7 +37,7 @@ export type Video = {
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; hasta?: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" | "plano" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
-  rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
+  rsvp?: { texto: string; ppm?: number; y?: number; desde?: number; rotulo?: string }; // rotulo: lo que pone debajo (el Short dice "300PPM" aunque va a ~355) // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
   outro?: { video?: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string; fotos?: { src: string; t: number; texto: string }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
@@ -139,7 +139,16 @@ const estiloCoco = (tam: number, color = "#fff"): React.CSSProperties => ({
   letterSpacing: "0.01em",
   WebkitTextStroke: `${(tam * 0.15).toFixed(1)}px #000`,
   paintOrder: "stroke fill",
-  textShadow: `0 ${(tam * 0.1).toFixed(1)}px 0 #000, 0 ${(tam * 0.14).toFixed(1)}px ${(tam * 0.22).toFixed(1)}px rgba(0,0,0,0.6), 0 0 ${(tam * 0.3).toFixed(1)}px rgba(255,255,255,0.25)`,
+  // 24-nov (Fernando, "5ª vez"): sombra que SE VEA: sombra paralela abajo-derecha más allá del trazo + halo oscuro difuso
+  textShadow: [
+    `${(tam * 0.09).toFixed(1)}px ${(tam * 0.13).toFixed(1)}px 0 rgba(0,0,0,0.95)`,
+    `${(tam * 0.12).toFixed(1)}px ${(tam * 0.18).toFixed(1)}px ${(tam * 0.1).toFixed(1)}px rgba(0,0,0,0.8)`,
+    `0 0 ${(tam * 0.22).toFixed(1)}px rgba(0,0,0,1)`,
+    `0 0 ${(tam * 0.22).toFixed(1)}px rgba(0,0,0,1)`,
+    `0 ${(tam * 0.06).toFixed(1)}px ${(tam * 0.45).toFixed(1)}px rgba(0,0,0,0.9)`,
+    `0 ${(tam * 0.06).toFixed(1)}px ${(tam * 0.45).toFixed(1)}px rgba(0,0,0,0.9)`,
+    `0 ${(tam * 0.1).toFixed(1)}px ${(tam * 0.8).toFixed(1)}px rgba(0,0,0,0.7)`,
+  ].join(", "),
 });
 const TITULO_H = 190;
 let fuentes = false;
@@ -372,7 +381,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           return (
             <div style={{ position: "absolute", left: 40, right: 40, top: Y - 10, textAlign: "center" }}>
               <div style={estiloCoco(70)}>¡Empezamos en...</div>
-              <div style={{ ...estiloCoco(150, "#FFD43B"), marginTop: 10 }}>{Math.max(1, Math.ceil(d0 - t))}</div>
+              <div style={{ ...estiloCoco(150, "#FFD43B"), marginTop: 10 }}>{Math.max(1, 3 - Math.floor(t / (d0 / 3)))}</div>
             </div>
           );
         return (
@@ -384,7 +393,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
                 {w.slice(0, piv)}<span style={{ color: "#FF7A1A" }}>{w[piv]}</span>{w.slice(piv + 1)}
               </div>
             </div>
-            <div style={{ position: "absolute", left: 0, right: 0, top: Y + 170, textAlign: "center", ...(v.coco ? estiloCoco(70, "#FF8A1F") : { fontFamily: FUENTE, fontWeight: 800, fontSize: 66, color: "#FF7A1A", WebkitTextStroke: "3px #7A2E00", paintOrder: "stroke fill" }) }}>{ppm}PPM</div>
+            <div style={{ position: "absolute", left: 0, right: 0, top: Y + 170, textAlign: "center", ...(v.coco ? estiloCoco(70, "#FF8A1F") : { fontFamily: FUENTE, fontWeight: 800, fontSize: 66, color: "#FF7A1A", WebkitTextStroke: "3px #7A2E00", paintOrder: "stroke fill" }) }}>{v.rsvp.rotulo ?? `${ppm}PPM`}</div>
           </>
         );
       })() : null}
