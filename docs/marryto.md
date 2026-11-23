@@ -155,8 +155,11 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   En su Premiere: trazo, sombra paralela, resplandor, sombra blanca, temblor de entrada y desfase rojo/azul.
 - **Emojis de iPhone** (Apple), nunca los de Google/Noto.
 - **Nada de cortes feos arriba:** prohibido ver su fondo/la imagen encima y arriba la franja del video. Si la
-  imagen no llega arriba: imagen completa a todo lo ancho arriba y abajo su cara SIN cortes; el sobrante en
-  **negro** o zoom. Igualar o mejorar la referencia, nunca peor.
+  imagen no llega arriba: imagen completa a todo lo ancho **pegada arriba (y=0)** y abajo su cara SIN cortes.
+  **Corrección 23-nov: tampoco franja negra arriba** (162–167, 170): `caja=[0,0,1080]`,
+  `textoY = 1080·imgAspecto + 14`, `bajar=0`. Igualar o mejorar la referencia, nunca peor.
+- **Duración (23-nov):** los de imagen + reacción, **6–7 s**. 168 empieza cuando apunta arriba con el dedo
+  (≈23,5 s); 169: el texto rápido del medio termina en "perderse." 
 - **Duración y ritmo como el ejemplo** (168–169 duran lo del Short; 161 al ritmo de la música; 179–181 las
   transiciones al beat).
 - **Leer bien las instrucciones** (p. ej. cámara lenta en 187–188).
