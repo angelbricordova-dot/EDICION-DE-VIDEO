@@ -38,7 +38,7 @@ export type Video = {
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; hasta?: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" | "plano" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number }; // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
-  outro?: { video: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string }; // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
+  outro?: { video?: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string; fotos?: { src: string; t: number; texto: string }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   coco?: boolean; // 21-nov: letras Cocogoose llamativas, emojis de iPhone y banda negra detrás de la imagen (sin cortes arriba)
@@ -68,6 +68,30 @@ export const tiempo = (v: Video) => {
 };
 
 /** Dónde acaba lo de arriba (imagen y texto), en píxeles de 1080 × 1920. */
+/** Pase de fotos "Niños: / Padres:" (179-181): cada foto a todo lo ancho, su etiqueta encima y un
+ * fundido rápido a negro en cada cambio, como el Short original (los cambios caen en el golpe de la música). */
+const Diapos: React.FC<{ fotos: { src: string; t: number; texto: string }[]; coco: boolean }> = ({ fotos, coco }) => {
+  const { fps } = useVideoConfig();
+  const t = useCurrentFrame() / fps;
+  let i = 0;
+  for (let k = 0; k < fotos.length; k++) if (t >= fotos[k].t) i = k;
+  const f = fotos[i];
+  const sig = fotos[i + 1]?.t ?? 1e9;
+  const FUN = 0.14; // medio fundido a negro, en segundos
+  const op = Math.min(1, (t - f.t) / FUN, (sig - t) / FUN);
+  const p = clamp01((t - f.t) / Math.max(0.5, sig - f.t));
+  return (
+    <AbsoluteFill style={{ background: "#000" }}>
+      <AbsoluteFill style={{ opacity: clamp01(op) }}>
+        <div style={{ position: "absolute", left: 0, width: 1080, top: 560, height: 806, overflow: "hidden" }}>
+          <Img src={staticFile(f.src)} style={{ width: 1080, height: 806, objectFit: "cover", scale: String(1 + 0.04 * p) }} />
+        </div>
+        <div style={{ position: "absolute", left: 40, right: 40, top: 410, textAlign: "center", ...(coco ? estiloCoco(96) : {}) }}>{f.texto}</div>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
 export const finEncima = (v: Video) => finEncimaBruto(v) + (v.bajar ?? 0);
 const finEncimaBruto = (v: Video) => {
   const ancho = v.caja?.[2] ?? 900;
@@ -416,7 +440,7 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
         {v.outro.audioTodo ? <Audio src={staticFile(v.outro.audioTodo)} volume={1} /> : null}
         <Sequence from={ini} durationInFrames={Math.round(v.outro.dur * fps)}>
           <AbsoluteFill>
-            <OffthreadVideo src={staticFile(v.outro.video)} muted style={{ width: 1080, height: 1920 }} />
+            {v.outro.fotos ? <Diapos fotos={v.outro.fotos} coco={!!v.coco} /> : <OffthreadVideo src={staticFile(v.outro.video!)} muted style={{ width: 1080, height: 1920 }} />}
             {v.outro.titulo ? (
               <div style={{ position: "absolute", left: 60, right: 60, top: 250, textAlign: "center", whiteSpace: "pre-line", ...(v.coco ? estiloCoco(62) : { fontFamily: FUENTE, fontWeight: 700, fontSize: 62, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill" }) }}>{v.coco ? rico(v.outro.titulo, 62) : v.outro.titulo}</div>
             ) : null}
