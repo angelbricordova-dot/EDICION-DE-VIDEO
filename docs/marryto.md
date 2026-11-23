@@ -165,7 +165,7 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - **Leer bien las instrucciones** (p. ej. cámara lenta en 187–188).
 - Si el video de arriba es de mala calidad, rehacer sus letras por encima (189–190).
 
-## Correcciones de Fernando (24-nov) — "HAZLO IGUAL QUE EL EJEMPLO"
+## Correcciones de Fernando (23-nov, tarde) — "HAZLO IGUAL QUE EL EJEMPLO"
 - **Sombra que se vea** (lo pidió 5 veces): `estiloCoco` lleva sombra paralela abajo-derecha más allá del trazo
   + halo oscuro difuso doble (como el ejemplo del 161). Comprobar a tamaño real que se note.
 - **Copiar el ejemplo tal cual:** mismos textos (también el de arriba de la imagen, con su ortografía),

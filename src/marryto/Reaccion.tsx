@@ -139,7 +139,7 @@ const estiloCoco = (tam: number, color = "#fff"): React.CSSProperties => ({
   letterSpacing: "0.01em",
   WebkitTextStroke: `${(tam * 0.15).toFixed(1)}px #000`,
   paintOrder: "stroke fill",
-  // 24-nov (Fernando, "5ª vez"): sombra que SE VEA: sombra paralela abajo-derecha más allá del trazo + halo oscuro difuso
+  // 23-nov (Fernando, "5ª vez"): sombra que SE VEA: sombra paralela abajo-derecha más allá del trazo + halo oscuro difuso
   textShadow: [
     `${(tam * 0.09).toFixed(1)}px ${(tam * 0.13).toFixed(1)}px 0 rgba(0,0,0,0.95)`,
     `${(tam * 0.12).toFixed(1)}px ${(tam * 0.18).toFixed(1)}px ${(tam * 0.1).toFixed(1)}px rgba(0,0,0,0.8)`,
