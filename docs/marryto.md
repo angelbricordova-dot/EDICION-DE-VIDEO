@@ -165,6 +165,19 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - **Leer bien las instrucciones** (p. ej. cámara lenta en 187–188).
 - Si el video de arriba es de mala calidad, rehacer sus letras por encima (189–190).
 
+## Correcciones de Fernando (24-nov) — "HAZLO IGUAL QUE EL EJEMPLO"
+- **Sombra que se vea** (lo pidió 5 veces): `estiloCoco` lleva sombra paralela abajo-derecha más allá del trazo
+  + halo oscuro difuso doble (como el ejemplo del 161). Comprobar a tamaño real que se note.
+- **Copiar el ejemplo tal cual:** mismos textos (también el de arriba de la imagen, con su ortografía),
+  misma composición. 162–164: franja negra arriba CON el título "SON 1 O 2 IMAGENES??", imagen a todo lo
+  ancho y "TOCA 2 VECES Y DESCUBRELO" abajo. 170–172: franja negra arriba (la imagen no llega arriba).
+  Esto manda sobre la regla del 23-nov de quitar la franja: la franja negra vale si el ejemplo la tiene.
+- **168–169:** duración del ejemplo (58,9 s) y **el mismo texto** (`scripts/marryto/texto_168.txt`, 321
+  palabras sacadas cuadro a cuadro del Short). El Short pone "300PPM" pero va a ~356 ppm: se copia igual
+  (cuenta atrás 3-2-1 hasta 4,53 s). Su bruto tiene dos tomas de ~28–31 s (camiseta amarilla y roja): 168 =
+  amarilla + roja, 169 = roja + amarilla.
+- **161:** la canción es el audio del Short (8,06 s): el video no puede pasar de ahí o vuelve a empezar.
+
 ## Reglas nuevas (17-nov)
 - **Música en bucle:** el Short se repite al terminar, así que la música **no puede acabar a mitad de
   frase ni de golpe**: el video termina en un **hueco** de la canción (pausa entre frases). Buscar los
