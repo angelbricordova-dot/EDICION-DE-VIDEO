@@ -5569,11 +5569,11 @@
   "imagen": "marryto/material/dos-img.jpg",
   "caja": [
    0,
-   150,
+   0,
    1080
   ],
   "imgAspecto": 0.6296,
-  "textoY": 842,
+  "textoY": 694,
   "textoTam": 64,
   "coco": true
  },
@@ -5606,11 +5606,11 @@
   "imagen": "marryto/material/dos-img-b.jpg",
   "caja": [
    0,
-   150,
+   0,
    1080
   ],
   "imgAspecto": 0.6296,
-  "textoY": 842,
+  "textoY": 694,
   "textoTam": 64,
   "coco": true
  },
@@ -5643,11 +5643,11 @@
   "imagen": "marryto/material/dos-img-c.jpg",
   "caja": [
    0,
-   150,
+   0,
    1080
   ],
   "imgAspecto": 0.6296,
-  "textoY": 842,
+  "textoY": 694,
   "textoTam": 64,
   "coco": true
  },
@@ -5679,12 +5679,12 @@
   "ojosX": 523,
   "imagen": "marryto/material/patron-sq.jpg",
   "caja": [
-   195,
-   150,
-   690
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.8,
-  "textoY": 714,
+  "textoY": 878,
   "textoTam": 64,
   "coco": true
  },
@@ -5716,12 +5716,12 @@
   "ojosX": 531,
   "imagen": "marryto/material/patron-b.jpg",
   "caja": [
-   90,
-   150,
-   900
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.8,
-  "textoY": 882,
+  "textoY": 878,
   "textoTam": 64,
   "coco": true
  },
@@ -5753,12 +5753,12 @@
   "ojosX": 519,
   "imagen": "marryto/material/patron-c-sq.jpg",
   "caja": [
-   90,
-   150,
-   900
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.8,
-  "textoY": 882,
+  "textoY": 878,
   "textoTam": 64,
   "coco": true
  },
@@ -5775,16 +5775,16 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 1.0,
-  "fin": 26.6,
-  "duracion": 25.6,
+  "inicio": 1.6,
+  "fin": 25.1,
+  "duracion": 23.5,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
   "titulo": "¿Cuánto te concentras\ncuando lees?",
   "sinTexto": false,
   "audio": "marryto/audio/m168-169.mp3",
-  "audioDesde": 9.39,
+  "audioDesde": 9.99,
   "sinImagen": true,
   "textoY": 200,
   "textoTam": 62,
@@ -5795,7 +5795,7 @@
    "desde": 3.0
   },
   "ojosY": 928,
-  "frenteY": 848,
+  "frenteY": 850,
   "ojosX": 539,
   "coco": true
  },
@@ -5826,7 +5826,7 @@
   "textoY": 200,
   "textoTam": 62,
   "rsvp": {
-   "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí. Casi nadie llega hasta el final de este texto sin parpadear y si lo consigues significa que tu cerebro procesa la información más rápido que la mayoría. Los estudios dicen que una persona normal lee unas doscientas palabras por minuto pero tú ahora mismo estás leyendo muchas más. Intenta no mover los ojos y concéntrate solo en la letra naranja del centro porque así tu cerebro reconoce cada palabra mucho más rápido. Si te has perdido en algún momento no pasa nada vuelve a ver el vídeo desde el principio y prueba otra vez. Pero si sigues aquí felicidades porque estás entre las pocas personas que lo consiguen. Reta a tus amigos a hacer lo mismo y mira quién aguanta más tiempo sin perderse. Escribe en los comentarios hasta dónde llegaste y cuántas veces lo intentaste. Ya casi terminamos así que respira y lee estas últimas palabras con calma. Lo has conseguido",
+   "texto": "Si eres capaz de leer todo esto sin perderte dale like y escribe en comentarios la última palabra que viste aquí. Casi nadie llega hasta el final de este texto sin parpadear y si lo consigues significa que tu cerebro procesa la información más rápido que la mayoría. Los estudios dicen que una persona normal lee unas doscientas palabras por minuto pero tú ahora mismo estás leyendo muchas más. Intenta no mover los ojos y concéntrate solo en la letra naranja del centro porque así tu cerebro reconoce cada palabra mucho más rápido. Si te has perdido en algún momento no pasa nada vuelve a ver el vídeo desde el principio y prueba otra vez. Pero si sigues aquí felicidades porque estás entre las pocas personas que lo consiguen. Reta a tus amigos a hacer lo mismo y mira quién aguanta más tiempo sin perderse.",
    "ppm": 350,
    "y": 420,
    "desde": 3.0
@@ -5862,11 +5862,11 @@
   "imagen": "marryto/material/dias-ref.jpg",
   "caja": [
    0,
-   150,
+   0,
    1080
   ],
   "imgAspecto": 0.5383,
-  "textoY": 743,
+  "textoY": 595,
   "textoTam": 64,
   "ojosY": 815,
   "frenteY": 732,

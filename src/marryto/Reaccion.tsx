@@ -238,7 +238,7 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
         </Sequence>
       ) : null}
       {v.audio ? <Audio src={staticFile(v.audio)} trimBefore={Math.round((v.audioDesde ?? 0) * fps)} volume={1} /* 18-nov: sin fundido al final; el Short se repite en bucle y la música sigue hasta el último cuadro */ /> : null}
-      {v.coco && v.imagen ? (
+      {v.coco && v.imagen && ((v.caja?.[1] ?? 40) > 0 || (v.caja?.[2] ?? 900) < 1080) ? (
         // banda negra de arriba hasta el final de la imagen: no se ve el video cortado por encima ni a los lados
         <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: bajar + k * ((v.caja?.[1] ?? 40) + (v.cajaAlto ?? (v.caja?.[2] ?? 900) * (v.imgAspecto ?? 0))), background: "#000" }} />
       ) : null}
