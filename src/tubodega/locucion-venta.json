@@ -1,0 +1,18 @@
+{
+  "nota": "Guion de VENTA (25-nov, borrador para aprobar). Solo versión A vertical. Voz Richard (eleven_v3, [cercano, sonriendo]).",
+  "frases": [
+    {"texto": "¿Cuánto ganaste hoy en tu bodega?"},
+    {"texto": "Si no lo sabes, no es tu culpa. El cuaderno no te lo dice."},
+    {"texto": "Con Tu Bodega, tu bodega entera cabe en tu teléfono.", "pantalla": "Con TuBodega, tu bodega entera cabe en tu teléfono."},
+    {"texto": "Cobras en segundos: escaneas y listo."},
+    {"texto": "El vuelto te sale solo, en dólares y en bolívares."},
+    {"texto": "Cada fiado queda anotado. Y cuando te digan \"yo ya te pagué\", ahí está el abono."},
+    {"texto": "Sabes qué se te está acabando antes de que te lo pidan."},
+    {"texto": "Y al cerrar, sabes cuánto vendiste, cuánto ganaste y la caja te cuadra."},
+    {"texto": "Aunque se vaya el internet, sigues vendiendo."},
+    {"texto": "¿Tienes empleado? Ves cada venta desde tu casa."},
+    {"texto": "Todo por diez dólares al mes. Menos de lo que vale una malta al día.", "pantalla": "Todo por $10 al mes. Menos de lo que vale una malta al día."},
+    {"texto": "Pruébala siete días gratis. Yo voy y te la instalo.", "pantalla": "Pruébala 7 días gratis. Yo voy y te la instalo."},
+    {"texto": "Tu Bodega. Escríbenos por WhatsApp.", "pantalla": "TuBodega. Escríbenos por WhatsApp."}
+  ]
+}

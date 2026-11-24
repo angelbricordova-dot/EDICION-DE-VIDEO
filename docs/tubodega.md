@@ -60,3 +60,12 @@ las originales a 36,50 quedan en `public/tubodega/originales-tasa-36.50/`). Las 
 - Efectos con **earshot** (`pip install "earshot @ git+https://github.com/Leonxlnx/earshot"`): `public/tubodega/sfx/`.
 - `src/tubodega/Presentacion.tsx`: composiciones TuBodegaPresA (vertical), PresB (horizontal), PresCv/PresCh (corta 28 s),
   portadas PresPortadaV/H. Render: render una vez por variante de audio (props `audio`).
+
+## Versión A de venta (25-nov-2026) — la única que se hace ahora
+- Alejandro: **solo la versión A vertical** (nada de B, C ni variantes). Más **comercial, limpia y suave**.
+- **Guion nuevo que VENDA** (beneficios, no cómo se usa; el tutorial va después): `src/tubodega/locucion-venta.json`.
+- Subtítulos con la letra de Marryto (Cocogoose) por pedido de Alejandro. Ojo: los archivos que hay son la
+  versión de prueba (sin números ni %, uso no comercial): falta decidir licencia o alternativa.
+- Dirección visual: teléfono grande y protagonista, un solo mensaje por pantalla, movimientos de cámara
+  suaves (con desenfoque de movimiento), transiciones de deslizamiento/escala, fondo verde degradado limpio,
+  sin cajas ni pastillas de más.
