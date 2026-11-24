@@ -98,9 +98,21 @@ def generar(timeline, voz, salida, estabilidad, similitud, estilo, modelo, prefi
         b = min(a + len(linea) - 1, len(fines) - 1)
         resultado.append({"texto": linea, "t": round(inicios[a], 3), "fin": round(fines[b], 3)})
         pos = b + 1
+    # Tiempos de cada palabra (para subtítulos palabra por palabra).
+    palabras, ini = [], None
+    for i, c in enumerate(chars + " "):
+        if c.isspace():
+            if ini is not None:
+                w = chars[ini:i]
+                if not (w.startswith("[") and w.endswith("]")) and "[" not in w and "]" not in w:
+                    palabras.append({"p": w, "t": round(inicios[ini], 3), "fin": round(fines[i - 1], 3)})
+                ini = None
+        elif ini is None:
+            ini = i
     destino = Path(destino) if destino else Path(timeline).with_name("voz.json")
     destino.write_text(
-        json.dumps({"audio": str(salida), "duracion": round(fines[-1], 3), "lineas": resultado}, indent=2, ensure_ascii=False)
+        json.dumps({"audio": str(salida), "duracion": round(fines[-1], 3), "lineas": resultado, "palabras": palabras},
+                   indent=2, ensure_ascii=False)
         + "\n"
     )
     print(f"Voz: {salida} ({fines[-1]:.1f} s). Tiempos por frase en {destino}:")

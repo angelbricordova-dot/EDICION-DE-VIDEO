@@ -69,3 +69,10 @@ las originales a 36,50 quedan en `public/tubodega/originales-tasa-36.50/`). Las 
 - Dirección visual: teléfono grande y protagonista, un solo mensaje por pantalla, movimientos de cámara
   suaves (con desenfoque de movimiento), transiciones de deslizamiento/escala, fondo verde degradado limpio,
   sin cajas ni pastillas de más.
+- **Hecho (25-nov):** voz Richard toma 1 de 3 (`public/tubodega/voz/venta-1.mp3`; la 3 dice "acaba" y "Prueba las").
+  `python3 scripts/tubodega/guion_venta.py 1` → pausas, tiempos por palabra (`$10` = "diez dólares",
+  `TuBodega` = "Tu Bodega") y mezcla (música −16 dB bajo la voz, recortada por el principio para que su
+  final caiga al final del video, −14 LUFS). Composición `TuBodegaVenta` (48,5 s) en `src/tubodega/Venta.tsx`
+  y portada `TuBodegaVentaPortada`. Letra **Lexend ExtraBold** (opción b: libre y parecida a Cocogoose);
+  cuaderno en Caveat. Entrega: `out/tubodega/venta/enviar/tubodega-venta-A.mp4` (12 MB) + portada.
+- Ojo en el código: `prog(t, a, b)` ya suaviza (easeOut); no envolverlo en otra curva o el movimiento sale brusco.
