@@ -5825,9 +5825,9 @@
    "desde": 4.53,
    "rotulo": "300PPM"
   },
-  "ojosY": 885,
-  "frenteY": 791,
-  "ojosX": 538,
+  "ojosY": 883,
+  "frenteY": 799,
+  "ojosX": 537,
   "coco": true
  },
  "169": {
@@ -5843,7 +5843,7 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 27.55,
+  "inicio": 0.0,
   "fin": 58.9,
   "duracion": 58.9,
   "caraX": 540,
@@ -5863,20 +5863,10 @@
    "desde": 4.53,
    "rotulo": "300PPM"
   },
-  "ojosY": 885,
-  "frenteY": 794,
-  "ojosX": 538,
-  "coco": true,
-  "tomas": [
-   {
-    "desde": 27.55,
-    "dur": 31.35
-   },
-   {
-    "desde": 0.0,
-    "dur": 27.55
-   }
-  ]
+  "ojosY": 915,
+  "frenteY": 831,
+  "ojosX": 540,
+  "coco": true
  },
  "170": {
   "estilo": "superpuesto",
@@ -6357,8 +6347,8 @@
   "desplazar": false,
   "separacion": 40,
   "inicio": 2.5,
-  "fin": 6.97,
-  "duracion": 19.65,
+  "fin": 6.7,
+  "duracion": 19.55,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6372,9 +6362,9 @@
   "textoY": 300,
   "textoTam": 62,
   "outro": {
-   "desde": 4.47,
-   "dur": 15.18,
-   "audioTodo": "marryto/audio/m179-181.mp3",
+   "desde": 4.2,
+   "dur": 15.35,
+   "audioTodo": "marryto/audio/m179-golpes.mp3",
    "fotos": [
     {
      "src": "marryto/material/ninos/f08.jpg",
@@ -6383,27 +6373,27 @@
     },
     {
      "src": "marryto/material/ninos/f00.jpg",
-     "t": 2.1,
+     "t": 2.05,
      "texto": "Padres:"
     },
     {
      "src": "marryto/material/ninos/f05.jpg",
-     "t": 4.26,
+     "t": 4.11,
      "texto": "Niños:"
     },
     {
      "src": "marryto/material/ninos/f11.jpg",
-     "t": 7.26,
+     "t": 7.19,
      "texto": "Padres:"
     },
     {
      "src": "marryto/material/ninos/f03.jpg",
-     "t": 9.43,
+     "t": 9.24,
      "texto": "Niños:"
     },
     {
      "src": "marryto/material/ninos/f09.jpg",
-     "t": 12.43,
+     "t": 12.83,
      "texto": "Padres:"
     }
    ]
@@ -6436,7 +6426,7 @@
   "separacion": 40,
   "inicio": 10.7,
   "fin": 14.2,
-  "duracion": 18.75,
+  "duracion": 18.85,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6451,10 +6441,47 @@
   "textoY": 300,
   "textoTam": 62,
   "outro": {
-   "video": "marryto/material/ninos.mp4",
    "desde": 3.5,
-   "dur": 15.25,
-   "audioTodo": "marryto/audio/m180-voz2.mp3"
+   "dur": 15.35,
+   "audioTodo": "marryto/audio/m180-golpes.mp3",
+   "fotos": [
+    {
+     "src": "marryto/material/ninos/o0.jpg",
+     "t": 0.0,
+     "texto": "Niños:",
+     "asp": 0.6676
+    },
+    {
+     "src": "marryto/material/ninos/o1.jpg",
+     "t": 2.05,
+     "texto": "Padres:",
+     "asp": 0.5648
+    },
+    {
+     "src": "marryto/material/ninos/o2.jpg",
+     "t": 4.11,
+     "texto": "Niños:",
+     "asp": 0.8741
+    },
+    {
+     "src": "marryto/material/ninos/o3.jpg",
+     "t": 7.19,
+     "texto": "Padres:",
+     "asp": 1.0407
+    },
+    {
+     "src": "marryto/material/ninos/o4.jpg",
+     "t": 9.24,
+     "texto": "Niños:",
+     "asp": 0.7519
+    },
+    {
+     "src": "marryto/material/ninos/o5.jpg",
+     "t": 12.83,
+     "texto": "Padres:",
+     "asp": 0.7509
+    }
+   ]
   },
   "textos": [
    {
@@ -6481,9 +6508,9 @@
   "bajar": 0,
   "desplazar": false,
   "separacion": 40,
-  "inicio": 19.15,
-  "fin": 22.2,
-  "duracion": 18.3,
+  "inicio": 18.95,
+  "fin": 22.35,
+  "duracion": 18.75,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6491,9 +6518,9 @@
   "sinTexto": true,
   "audio": "marryto/audio/m179-181.mp3",
   "audioDesde": 0,
-  "ojosY": 842,
-  "frenteY": 664,
-  "ojosX": 549,
+  "ojosY": 844,
+  "frenteY": 666,
+  "ojosX": 550,
   "sinImagen": true,
   "textos": [
    {
@@ -6506,10 +6533,42 @@
    }
   ],
   "outro": {
-   "video": "marryto/material/ninos-181.mp4",
-   "desde": 3.05,
-   "dur": 15.25,
-   "audioTodo": "marryto/audio/m181-voz.mp3"
+   "desde": 3.4,
+   "dur": 15.35,
+   "audioTodo": "marryto/audio/m181-golpes.mp3",
+   "fotos": [
+    {
+     "src": "marryto/material/ninos/f01.jpg",
+     "t": 0.0,
+     "texto": "Niños:"
+    },
+    {
+     "src": "marryto/material/ninos/f10.jpg",
+     "t": 2.05,
+     "texto": "Padres:",
+     "asp": 0.69
+    },
+    {
+     "src": "marryto/material/ninos/f06.jpg",
+     "t": 4.11,
+     "texto": "Niños:"
+    },
+    {
+     "src": "marryto/material/ninos/f07.jpg",
+     "t": 7.19,
+     "texto": "Padres:"
+    },
+    {
+     "src": "marryto/material/ninos/f04.jpg",
+     "t": 9.24,
+     "texto": "Niños:"
+    },
+    {
+     "src": "marryto/material/ninos/f02.jpg",
+     "t": 12.83,
+     "texto": "Padres:"
+    }
+   ]
   },
   "coco": true
  },
