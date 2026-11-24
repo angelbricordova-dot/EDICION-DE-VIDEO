@@ -5827,7 +5827,7 @@
   },
   "ojosY": 883,
   "frenteY": 799,
-  "ojosX": 537,
+  "ojosX": 539,
   "coco": true
  },
  "169": {
@@ -5863,8 +5863,8 @@
    "desde": 4.53,
    "rotulo": "300PPM"
   },
-  "ojosY": 915,
-  "frenteY": 831,
+  "ojosY": 930,
+  "frenteY": 846,
   "ojosX": 540,
   "coco": true
  },
