@@ -38,7 +38,7 @@ export type Video = {
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; hasta?: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" | "plano" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number; rotulo?: string }; // rotulo: lo que pone debajo (el Short dice "300PPM" aunque va a ~355) // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
-  outro?: { video?: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string; fotos?: { src: string; t: number; texto: string; asp?: number }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
+  outro?: { video?: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string; fotos?: { src: string; t: number; texto: string; asp?: number; color?: string }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   coco?: boolean; // 21-nov: letras Cocogoose llamativas, emojis de iPhone y banda negra detrás de la imagen (sin cortes arriba)
@@ -70,7 +70,7 @@ export const tiempo = (v: Video) => {
 /** Dónde acaba lo de arriba (imagen y texto), en píxeles de 1080 × 1920. */
 /** Pase de fotos "Niños: / Padres:" (179-181): cada foto a todo lo ancho, su etiqueta encima y un
  * fundido rápido a negro en cada cambio, como el Short original (los cambios caen en el golpe de la música). */
-const Diapos: React.FC<{ fotos: { src: string; t: number; texto: string; asp?: number }[]; coco: boolean }> = ({ fotos, coco }) => {
+const Diapos: React.FC<{ fotos: { src: string; t: number; texto: string; asp?: number; color?: string }[]; coco: boolean }> = ({ fotos, coco }) => {
   // 24-nov: cada cambio cae JUSTO en el golpe de la música: la foto nueva entra de golpe en el tiempo
   // marcado (con un pequeño "punch" de zoom) y la anterior se apaga a negro en los 0,12 s de antes.
   const { fps } = useVideoConfig();
@@ -90,7 +90,7 @@ const Diapos: React.FC<{ fotos: { src: string; t: number; texto: string; asp?: n
         <div style={{ position: "absolute", left: 0, width: 1080, top, height: h, overflow: "hidden" }}>
           <Img src={staticFile(f.src)} style={{ width: 1080, height: h, objectFit: "cover", scale: String(1.07 - 0.07 * golpe + 0.03 * p) }} />
         </div>
-        <div style={{ position: "absolute", left: 40, right: 40, top: top - 150, textAlign: "center", scale: String(1.12 - 0.12 * golpe), ...(coco ? estiloCoco(96) : {}) }}>{f.texto}</div>
+        <div style={{ position: "absolute", left: 40, right: 40, top: top - 150, textAlign: "center", scale: String(1.12 - 0.12 * golpe), ...(coco ? estiloCoco(96, f.color) : { color: f.color }) }}>{f.texto}</div>
       </AbsoluteFill>
     </AbsoluteFill>
   );

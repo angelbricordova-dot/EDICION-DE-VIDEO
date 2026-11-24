@@ -6348,7 +6348,7 @@
   "separacion": 40,
   "inicio": 2.5,
   "fin": 6.7,
-  "duracion": 19.55,
+  "duracion": 17.5,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6363,38 +6363,44 @@
   "textoTam": 62,
   "outro": {
    "desde": 4.2,
-   "dur": 15.35,
+   "dur": 13.3,
    "audioTodo": "marryto/audio/m179-golpes.mp3",
    "fotos": [
     {
      "src": "marryto/material/ninos/f08.jpg",
      "t": 0.0,
-     "texto": "Niños:"
+     "texto": "Niños:",
+     "color": "#3AA0FF"
     },
     {
      "src": "marryto/material/ninos/f00.jpg",
      "t": 2.05,
-     "texto": "Padres:"
+     "texto": "Padres:",
+     "color": "#FF3B3B"
     },
     {
      "src": "marryto/material/ninos/f05.jpg",
      "t": 4.11,
-     "texto": "Niños:"
+     "texto": "Niños:",
+     "color": "#3AA0FF"
     },
     {
      "src": "marryto/material/ninos/f11.jpg",
-     "t": 7.19,
-     "texto": "Padres:"
+     "t": 6.16,
+     "texto": "Padres:",
+     "color": "#FF3B3B"
     },
     {
      "src": "marryto/material/ninos/f03.jpg",
-     "t": 9.24,
-     "texto": "Niños:"
+     "t": 8.22,
+     "texto": "Niños:",
+     "color": "#3AA0FF"
     },
     {
      "src": "marryto/material/ninos/f09.jpg",
-     "t": 12.83,
-     "texto": "Padres:"
+     "t": 10.27,
+     "texto": "Padres:",
+     "color": "#FF3B3B"
     }
    ]
   },
@@ -6426,7 +6432,7 @@
   "separacion": 40,
   "inicio": 10.7,
   "fin": 14.2,
-  "duracion": 18.85,
+  "duracion": 16.8,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6442,43 +6448,49 @@
   "textoTam": 62,
   "outro": {
    "desde": 3.5,
-   "dur": 15.35,
+   "dur": 13.3,
    "audioTodo": "marryto/audio/m180-golpes.mp3",
    "fotos": [
     {
      "src": "marryto/material/ninos/o0.jpg",
      "t": 0.0,
      "texto": "Niños:",
+     "color": "#3AA0FF",
      "asp": 0.6676
     },
     {
      "src": "marryto/material/ninos/o1.jpg",
      "t": 2.05,
      "texto": "Padres:",
+     "color": "#FF3B3B",
      "asp": 0.5648
     },
     {
      "src": "marryto/material/ninos/o2.jpg",
      "t": 4.11,
      "texto": "Niños:",
+     "color": "#3AA0FF",
      "asp": 0.8741
     },
     {
      "src": "marryto/material/ninos/o3.jpg",
-     "t": 7.19,
+     "t": 6.16,
      "texto": "Padres:",
+     "color": "#FF3B3B",
      "asp": 1.0407
     },
     {
      "src": "marryto/material/ninos/o4.jpg",
-     "t": 9.24,
+     "t": 8.22,
      "texto": "Niños:",
+     "color": "#3AA0FF",
      "asp": 0.7519
     },
     {
      "src": "marryto/material/ninos/o5.jpg",
-     "t": 12.83,
+     "t": 10.27,
      "texto": "Padres:",
+     "color": "#FF3B3B",
      "asp": 0.7509
     }
    ]
@@ -6510,7 +6522,7 @@
   "separacion": 40,
   "inicio": 18.95,
   "fin": 22.35,
-  "duracion": 18.75,
+  "duracion": 16.7,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6534,39 +6546,45 @@
   ],
   "outro": {
    "desde": 3.4,
-   "dur": 15.35,
+   "dur": 13.3,
    "audioTodo": "marryto/audio/m181-golpes.mp3",
    "fotos": [
     {
      "src": "marryto/material/ninos/f01.jpg",
      "t": 0.0,
-     "texto": "Niños:"
+     "texto": "Niños:",
+     "color": "#3AA0FF"
     },
     {
      "src": "marryto/material/ninos/f10.jpg",
      "t": 2.05,
      "texto": "Padres:",
+     "color": "#FF3B3B",
      "asp": 0.69
     },
     {
      "src": "marryto/material/ninos/f06.jpg",
      "t": 4.11,
-     "texto": "Niños:"
+     "texto": "Niños:",
+     "color": "#3AA0FF"
     },
     {
      "src": "marryto/material/ninos/f07.jpg",
-     "t": 7.19,
-     "texto": "Padres:"
+     "t": 6.16,
+     "texto": "Padres:",
+     "color": "#FF3B3B"
     },
     {
      "src": "marryto/material/ninos/f04.jpg",
-     "t": 9.24,
-     "texto": "Niños:"
+     "t": 8.22,
+     "texto": "Niños:",
+     "color": "#3AA0FF"
     },
     {
      "src": "marryto/material/ninos/f02.jpg",
-     "t": 12.83,
-     "texto": "Padres:"
+     "t": 10.27,
+     "texto": "Padres:",
+     "color": "#FF3B3B"
     }
    ]
   },

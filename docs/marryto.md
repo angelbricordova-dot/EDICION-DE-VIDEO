@@ -177,8 +177,9 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   (cuenta atrás 3-2-1 hasta 4,53 s). Su bruto son **2 videos en uno**: **168 = camiseta roja** (28,2–58,2 s
   del bruto; 24-nov: desde 30,05, cuando ya apunta arriba) y **169 = amarilla** (1,95–26,9 s, ya apuntando), cada uno **en cámara lenta** hasta durar 58,9 s (proxies
   `v168.mp4`/`v169.mp4` hechos con `setpts` + `framerate` a 60 fps; ya no son enlaces al bruto).
-- **179–181: cada cambio de foto en el golpe de la música** (`scripts/marryto/ninos_179_181.py`): golpes a
-  4,20 6,25 8,31 11,39 13,44 17,03 s de la canción (116,8 BPM); la foto entra de golpe con un "punch" de zoom.
+- **179–181: cada cambio de foto en el INICIO DE COMPÁS** (`scripts/marryto/ninos_179_181.py`): compases de
+  2,055 s (bombo + palmada) en 6,25 8,30 10,36 12,41 14,47 16,52 s de la canción; la foto entra de golpe con un
+  "punch" de zoom. (25-nov: a mitad de compás no vale, Fernando lo nota.) "Niños:" en **azul**, "Padres:" en **rojo**.
   180 usa las mismas fotos del Short original (recortadas, etiquetas en Cocogoose).
 - **161:** la canción es el audio del Short (8,06 s): el video no puede pasar de ahí o vuelve a empezar.
 
