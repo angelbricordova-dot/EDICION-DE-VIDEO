@@ -4,8 +4,10 @@ JUSTO en el golpe de la música (corrección de Fernando, 24-nov).
 La canción (public/marryto/audio/m179-181.mp3) es el audio del Short, a 116,8 BPM, en compases de 2,055 s:
 el bombo y la palmada juntos marcan el inicio de cada compás en 2,14 4,19 6,25 8,30 10,36 12,41 14,47 16,52 s
 (luego un corte suave hasta el golpe grande de 19,59). 25-nov: TODOS los cambios en el inicio de un compás
-(antes 3 caían a mitad de compás y Fernando lo notó). Cada video: su reacción hasta el primer compás y luego
-las 6 fotos, una por compás; la última aguanta el corte y el video acaba justo antes del golpe de 19,59.
+(antes 3 caían a mitad de compás y Fernando lo notó). 26-nov: la canción vuelve a empezar desde el principio,
+como en la versión anterior (gustaba más): su reacción hasta el compás de 4,19 y luego las 6 fotos, una por
+compás; la última aguanta la parte suave de la canción y el video acaba justo antes del golpe de 19,59.
+El título de arriba lleva "niños" en azul y "padres" en rojo.
 En 180 y 181 habla él: su voz de la toma encima y la música más baja mientras habla.
 Etiquetas: "Niños:" en azul y "Padres:" en rojo (pedido de Fernando).
 
@@ -18,14 +20,14 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 P = RAIZ / "public/marryto"
 MUSICA = P / "audio/m179-181.mp3"
-GOLPES = [6.25, 8.30, 10.36, 12.41, 14.47, 16.52]  # inicio de compás, en tiempo de la canción
+GOLPES = [4.19, 6.25, 8.30, 10.36, 12.41, 14.47]  # inicio de compás, en tiempo de la canción
 FIN_MUSICA = 19.55  # justo antes del golpe grande de 19,6 s (el Short se repite en bucle)
 
 N, PA = "Niños:", "Padres:"
 AZUL, ROJO = "#3AA0FF", "#FF3B3B"
 VIDEOS = {
     # n: (inicio de su toma, segundos de reacción, ¿su voz?, fotos)
-    "179": (2.5, 4.20, False, [("f08", N), ("f00", PA), ("f05", N), ("f11", PA), ("f03", N), ("f09", PA)]),
+    "179": (2.5, 4.19, False, [("f08", N), ("f00", PA), ("f05", N), ("f11", PA), ("f03", N), ("f09", PA)]),
     "180": (10.7, 3.5, True, [(f"o{i}", N if i % 2 == 0 else PA) for i in range(6)]),  # las del Short original
     "181": (18.95, 3.4, True, [("f01", N), ("f10", PA), ("f06", N), ("f07", PA), ("f04", N), ("f02", PA)]),
 }
@@ -59,6 +61,9 @@ def main():
                        "color": AZUL if tx == N else ROJO,
                        **({"asp": ASP[f]} if f in ASP else {})} for g, (f, tx) in zip(GOLPES, fotos)],
         }
+        for x in v.get("textos", []):
+            if x.get("estilo") == "titulo":
+                x["colores"] = {"niños": AZUL, "padres": ROJO}
         print(n, "reacción", reac, "s · canción +", off, "s · dura", dur, "s · cambios en",
               [round(reac + g - GOLPES[0], 2) for g in GOLPES])
     (RAIZ / "src/marryto/videos.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))

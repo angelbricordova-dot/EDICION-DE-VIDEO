@@ -6347,8 +6347,8 @@
   "desplazar": false,
   "separacion": 40,
   "inicio": 2.5,
-  "fin": 6.7,
-  "duracion": 17.5,
+  "fin": 6.69,
+  "duracion": 19.55,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6362,8 +6362,8 @@
   "textoY": 300,
   "textoTam": 62,
   "outro": {
-   "desde": 4.2,
-   "dur": 13.3,
+   "desde": 4.19,
+   "dur": 15.36,
    "audioTodo": "marryto/audio/m179-golpes.mp3",
    "fotos": [
     {
@@ -6374,7 +6374,7 @@
     },
     {
      "src": "marryto/material/ninos/f00.jpg",
-     "t": 2.05,
+     "t": 2.06,
      "texto": "Padres:",
      "color": "#FF3B3B"
     },
@@ -6386,7 +6386,7 @@
     },
     {
      "src": "marryto/material/ninos/f11.jpg",
-     "t": 6.16,
+     "t": 6.17,
      "texto": "Padres:",
      "color": "#FF3B3B"
     },
@@ -6398,7 +6398,7 @@
     },
     {
      "src": "marryto/material/ninos/f09.jpg",
-     "t": 10.27,
+     "t": 10.28,
      "texto": "Padres:",
      "color": "#FF3B3B"
     }
@@ -6411,7 +6411,11 @@
     "y": 300,
     "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
     "tam": 74,
-    "estilo": "titulo"
+    "estilo": "titulo",
+    "colores": {
+     "niños": "#3AA0FF",
+     "padres": "#FF3B3B"
+    }
    }
   ],
   "coco": true,
@@ -6432,7 +6436,7 @@
   "separacion": 40,
   "inicio": 10.7,
   "fin": 14.2,
-  "duracion": 16.8,
+  "duracion": 18.86,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6448,7 +6452,7 @@
   "textoTam": 62,
   "outro": {
    "desde": 3.5,
-   "dur": 13.3,
+   "dur": 15.36,
    "audioTodo": "marryto/audio/m180-golpes.mp3",
    "fotos": [
     {
@@ -6460,7 +6464,7 @@
     },
     {
      "src": "marryto/material/ninos/o1.jpg",
-     "t": 2.05,
+     "t": 2.06,
      "texto": "Padres:",
      "color": "#FF3B3B",
      "asp": 0.5648
@@ -6474,7 +6478,7 @@
     },
     {
      "src": "marryto/material/ninos/o3.jpg",
-     "t": 6.16,
+     "t": 6.17,
      "texto": "Padres:",
      "color": "#FF3B3B",
      "asp": 1.0407
@@ -6488,7 +6492,7 @@
     },
     {
      "src": "marryto/material/ninos/o5.jpg",
-     "t": 10.27,
+     "t": 10.28,
      "texto": "Padres:",
      "color": "#FF3B3B",
      "asp": 0.7509
@@ -6502,7 +6506,11 @@
     "y": 300,
     "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
     "tam": 74,
-    "estilo": "titulo"
+    "estilo": "titulo",
+    "colores": {
+     "niños": "#3AA0FF",
+     "padres": "#FF3B3B"
+    }
    }
   ],
   "coco": true
@@ -6522,7 +6530,7 @@
   "separacion": 40,
   "inicio": 18.95,
   "fin": 22.35,
-  "duracion": 16.7,
+  "duracion": 18.76,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
@@ -6541,12 +6549,16 @@
     "y": 300,
     "texto": "Lo que ven los niños\nvs\nlo que ven los padres",
     "tam": 74,
-    "estilo": "titulo"
+    "estilo": "titulo",
+    "colores": {
+     "niños": "#3AA0FF",
+     "padres": "#FF3B3B"
+    }
    }
   ],
   "outro": {
    "desde": 3.4,
-   "dur": 13.3,
+   "dur": 15.36,
    "audioTodo": "marryto/audio/m181-golpes.mp3",
    "fotos": [
     {
@@ -6557,7 +6569,7 @@
     },
     {
      "src": "marryto/material/ninos/f10.jpg",
-     "t": 2.05,
+     "t": 2.06,
      "texto": "Padres:",
      "color": "#FF3B3B",
      "asp": 0.69
@@ -6570,7 +6582,7 @@
     },
     {
      "src": "marryto/material/ninos/f07.jpg",
-     "t": 6.16,
+     "t": 6.17,
      "texto": "Padres:",
      "color": "#FF3B3B"
     },
@@ -6582,7 +6594,7 @@
     },
     {
      "src": "marryto/material/ninos/f02.jpg",
-     "t": 10.27,
+     "t": 10.28,
      "texto": "Padres:",
      "color": "#FF3B3B"
     }

@@ -180,6 +180,8 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - **179–181: cada cambio de foto en el INICIO DE COMPÁS** (`scripts/marryto/ninos_179_181.py`): compases de
   2,055 s (bombo + palmada) en 6,25 8,30 10,36 12,41 14,47 16,52 s de la canción; la foto entra de golpe con un
   "punch" de zoom. (25-nov: a mitad de compás no vale, Fernando lo nota.) "Niños:" en **azul**, "Padres:" en **rojo**.
+  26-nov: la canción **desde el principio** como en la versión anterior (gustaba más) y cambios en 4,19 6,25 8,30
+  10,36 12,41 14,47; el título de arriba también con "niños" azul y "padres" rojo (`textos[].colores`).
   180 usa las mismas fotos del Short original (recortadas, etiquetas en Cocogoose).
 - **161:** la canción es el audio del Short (8,06 s): el video no puede pasar de ahí o vuelve a empezar.
 

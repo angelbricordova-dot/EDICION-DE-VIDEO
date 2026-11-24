@@ -36,7 +36,7 @@ export type Video = {
   // el ancho arriba (tapa la parte de arriba del video); su frente queda debajo del texto con separación
   desplazar?: boolean; escalaVideo?: number;
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
-  textos?: { t: number; hasta?: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" | "plano" }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
+  textos?: { t: number; hasta?: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" | "plano"; colores?: Record<string, string> }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number; rotulo?: string }; // rotulo: lo que pone debajo (el Short dice "300PPM" aunque va a ~355) // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
   outro?: { video?: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string; fotos?: { src: string; t: number; texto: string; asp?: number; color?: string }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
@@ -362,7 +362,15 @@ const Superpuesto: React.FC<{ n: string; v: Video }> = ({ n, v }) => {
           return (
             <div key={i} style={{ position: "absolute", left: 0, right: 0, top: x.y, display: "flex", flexDirection: "column", alignItems: "center" }}>
               {x.texto.split("\n").map((l, k) => (
-                <div key={k} style={{ background: "#fff", padding: "0.02em 0.32em 0.08em", borderRadius: "0.2em", marginTop: k ? "-0.06em" : 0, fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "0.13em #000", paintOrder: "stroke fill", whiteSpace: "pre" }}>{l}</div>
+                <div key={k} style={{ background: "#fff", padding: "0.02em 0.32em 0.08em", borderRadius: "0.2em", marginTop: k ? "-0.06em" : 0, fontFamily: FUENTE, fontWeight: 700, fontSize: x.tam ?? 64, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "0.13em #000", paintOrder: "stroke fill", whiteSpace: "pre" }}>
+                  {/* colores: palabra → color (25-nov: "niños" azul y "padres" rojo en el título del 179–181) */}
+                  {x.colores
+                    ? l.split(/(\s+)/).map((w, j) => {
+                        const c = x.colores![w.toLowerCase().replace(/[^a-záéíóúñü]/g, "")];
+                        return c ? <span key={j} style={{ color: c }}>{w}</span> : <React.Fragment key={j}>{w}</React.Fragment>;
+                      })
+                    : l}
+                </div>
               ))}
             </div>
           );
