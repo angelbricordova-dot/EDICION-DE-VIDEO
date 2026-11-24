@@ -174,8 +174,12 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   Esto manda sobre la regla del 23-nov de quitar la franja: la franja negra vale si el ejemplo la tiene.
 - **168–169:** duración del ejemplo (58,9 s) y **el mismo texto** (`scripts/marryto/texto_168.txt`, 321
   palabras sacadas cuadro a cuadro del Short). El Short pone "300PPM" pero va a ~356 ppm: se copia igual
-  (cuenta atrás 3-2-1 hasta 4,53 s). Su bruto tiene dos tomas de ~28–31 s (camiseta amarilla y roja): 168 =
-  amarilla + roja, 169 = roja + amarilla.
+  (cuenta atrás 3-2-1 hasta 4,53 s). Su bruto son **2 videos en uno**: **168 = camiseta roja** (28,2–58,2 s
+  del bruto) y **169 = amarilla** (0–26,9 s), cada uno **en cámara lenta** hasta durar 58,9 s (proxies
+  `v168.mp4`/`v169.mp4` hechos con `setpts` + `framerate` a 60 fps; ya no son enlaces al bruto).
+- **179–181: cada cambio de foto en el golpe de la música** (`scripts/marryto/ninos_179_181.py`): golpes a
+  4,20 6,25 8,31 11,39 13,44 17,03 s de la canción (116,8 BPM); la foto entra de golpe con un "punch" de zoom.
+  180 usa las mismas fotos del Short original (recortadas, etiquetas en Cocogoose).
 - **161:** la canción es el audio del Short (8,06 s): el video no puede pasar de ahí o vuelve a empezar.
 
 ## Reglas nuevas (17-nov)
