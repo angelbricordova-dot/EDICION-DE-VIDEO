@@ -38,7 +38,11 @@ export type Video = {
   bajar?: number; // baja imagen y texto juntos (8-nov: "no tan arriba", hacia media altura de las placas de YouTube)
   textos?: { t: number; hasta?: number; x: number; y: number; texto: string; tam?: number; fondo?: string; color?: string; estilo?: "titulo" | "plano"; colores?: Record<string, string> }[]; // textos libres que aparecen en su segundo (centro x, y), p. ej. los años del 115–117
   rsvp?: { texto: string; ppm?: number; y?: number; desde?: number; rotulo?: string }; // rotulo: lo que pone debajo (el Short dice "300PPM" aunque va a ~355) // lectura rápida (168–169): una palabra cada 60/ppm s, letra central en naranja
-  outro?: { video?: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string; fotos?: { src: string; t: number; texto: string; asp?: number; color?: string }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
+  outro?: { video?: string; desde: number; dur: number; titulo?: string; audio?: string; audioTodo?: string; fotos?: { src: string; t: number; texto: string; asp?: number; color?: string }[];
+    // 189–190 (video de arriba en mala calidad): sus letras rehechas en Cocogoose. `tapar`: zonas del video
+    // (x, y, ancho, alto en 1080 × 1920) que se tapan con el propio video muy desenfocado mientras dure [t, hasta).
+    tapar?: { t: number; hasta?: number; x: number; y: number; w: number; h: number }[];
+    letras?: { t: number; hasta?: number; y: number; texto: string; tam?: number; pastilla?: boolean }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   coco?: boolean; // 21-nov: letras Cocogoose llamativas, emojis de iPhone y banda negra detrás de la imagen (sin cortes arriba)
@@ -92,6 +96,43 @@ const Diapos: React.FC<{ fotos: { src: string; t: number; texto: string; asp?: n
         </div>
         <div style={{ position: "absolute", left: 40, right: 40, top: top - 150, textAlign: "center", scale: String(1.12 - 0.12 * golpe), ...(coco ? estiloCoco(96, f.color) : { color: f.color }) }}>{f.texto}</div>
       </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+/** Letras rehechas encima de un video ajeno (189–190): tapa las originales con el video desenfocado y
+ * pone las nuevas en Cocogoose con borde y sombra (la "pastilla" en recuadro blanco y letra negra). */
+const LetrasEncima: React.FC<{ outro: NonNullable<Video["outro"]> }> = ({ outro }) => {
+  const { fps } = useVideoConfig();
+  const t = useCurrentFrame() / fps;
+  const activa = (x: { t: number; hasta?: number }) => t >= x.t && (x.hasta === undefined || t < x.hasta);
+  const zonas = (outro.tapar ?? []).filter(activa);
+  return (
+    <AbsoluteFill>
+      {outro.video
+        ? zonas.map((z, i) => {
+            // bordes difuminados (40 px) para que la zona tapada se funda con el video
+            const m = "linear-gradient(to right, transparent, #000 40px, #000 calc(100% - 40px), transparent), linear-gradient(to bottom, transparent, #000 34px, #000 calc(100% - 34px), transparent)";
+            return (
+              <div key={i} style={{ position: "absolute", left: z.x - 30, top: z.y - 24, width: z.w + 60, height: z.h + 48, overflow: "hidden", maskImage: m, WebkitMaskImage: m, maskComposite: "intersect", WebkitMaskComposite: "source-in" }}>
+                <OffthreadVideo src={staticFile(outro.video!)} muted style={{ position: "absolute", left: -(z.x - 30), top: -(z.y - 24), width: 1080, height: 1920, filter: "blur(34px) brightness(0.93)" }} />
+              </div>
+            );
+          })
+        : null}
+      {(outro.letras ?? []).filter(activa).map((l, i) => {
+        const tam = l.tam ?? 60;
+        const p = clamp01((t - l.t) / 0.15);
+        return (
+          <div key={i} style={{ position: "absolute", left: 50, right: 50, top: l.y, translate: "0 -50%", display: "flex", justifyContent: "center", textAlign: "center", whiteSpace: "pre-line", opacity: p, scale: String(0.9 + 0.1 * p) }}>
+            {l.pastilla ? (
+              <div style={{ background: "#fff", borderRadius: tam * 0.25, padding: `${tam * 0.12}px ${tam * 0.4}px ${tam * 0.16}px`, fontFamily: COCO, fontSize: tam, lineHeight: 1.15, color: "#111", boxShadow: "0 6px 18px rgba(0,0,0,0.45)" }}>{rico(l.texto, tam)}</div>
+            ) : (
+              <div style={estiloCoco(tam)}>{rico(l.texto, tam)}</div>
+            )}
+          </div>
+        );
+      })}
     </AbsoluteFill>
   );
 };
@@ -462,6 +503,7 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
         <Sequence from={ini} durationInFrames={Math.round(v.outro.dur * fps)}>
           <AbsoluteFill>
             {v.outro.fotos ? <Diapos fotos={v.outro.fotos} coco={!!v.coco} /> : <OffthreadVideo src={staticFile(v.outro.video!)} muted style={{ width: 1080, height: 1920 }} />}
+            {v.outro.tapar || v.outro.letras ? <LetrasEncima outro={v.outro} /> : null}
             {v.outro.titulo ? (
               <div style={{ position: "absolute", left: 60, right: 60, top: 250, textAlign: "center", whiteSpace: "pre-line", ...(v.coco ? estiloCoco(62) : { fontFamily: FUENTE, fontWeight: 700, fontSize: 62, lineHeight: 1.12, color: "#fff", WebkitTextStroke: "7px #000", paintOrder: "stroke fill" }) }}>{v.coco ? rico(v.outro.titulo, 62) : v.outro.titulo}</div>
             ) : null}

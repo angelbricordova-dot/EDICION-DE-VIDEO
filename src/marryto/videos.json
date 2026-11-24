@@ -6630,12 +6630,12 @@
   "ojosX": 504,
   "imagen": "marryto/material/cuarto-b0.jpg",
   "caja": [
-   60,
-   150,
-   960
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.9262,
-  "textoY": 1051,
+  "textoY": 1014,
   "textoTam": 64,
   "coco": true
  },
@@ -6658,7 +6658,7 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Dale 2 toques y\nbusca el 4 objeto",
+  "titulo": "Toca dos veces y\n\"encuentra\" el 4 objeto",
   "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
@@ -6667,12 +6667,12 @@
   "ojosX": 513,
   "imagen": "marryto/material/cuarto-b1.jpg",
   "caja": [
-   60,
-   150,
-   960
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.9262,
-  "textoY": 1051,
+  "textoY": 1014,
   "textoTam": 64,
   "coco": true
  },
@@ -6695,7 +6695,7 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Toca 2 veces si\nencontraste el 4 objeto",
+  "titulo": "Toca dos veces y\n\"encuentra\" el 4 objeto",
   "sinTexto": false,
   "audio": "marryto/audio/m182-184.mp3",
   "audioDesde": 0,
@@ -6704,12 +6704,12 @@
   "ojosX": 472,
   "imagen": "marryto/material/cuarto-b2.jpg",
   "caja": [
-   60,
-   150,
-   960
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.9262,
-  "textoY": 1051,
+  "textoY": 1014,
   "textoTam": 64,
   "coco": true
  },
@@ -6732,19 +6732,19 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Toca 2 veces y prueba",
+  "titulo": "Toca 2 veces y\nprueba",
   "sinTexto": false,
   "audio": "marryto/audio/m185-186.mp3",
   "audioDesde": 0,
   "imagen": "marryto/material/funciono-c.png",
   "caja": [
-   140,
-   150,
-   800
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 1.08,
-  "textoY": 1026,
-  "textoTam": 60,
+  "textoY": 1180,
+  "textoTam": 64,
   "ojosY": 940,
   "frenteY": 841,
   "ojosX": 543,
@@ -6769,19 +6769,19 @@
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "Dale 2 toques si\nte funcionó",
+  "titulo": "Toca 2 veces y\nprueba",
   "sinTexto": false,
   "audio": "marryto/audio/m185-186.mp3",
   "audioDesde": 0,
   "imagen": "marryto/material/funciono-d.png",
   "caja": [
-   140,
-   150,
-   800
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 1.08,
-  "textoY": 1026,
-  "textoTam": 60,
+  "textoY": 1180,
+  "textoTam": 64,
   "ojosY": 966,
   "frenteY": 878,
   "ojosX": 560,
@@ -6800,35 +6800,35 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 0.8,
-  "fin": 8.01,
-  "duracion": 7.21,
+  "inicio": 0.0,
+  "fin": 9.98,
+  "duracion": 9.98,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "No me digan que soy el único\nque se dio cuenta de esto… 😳",
+  "titulo": "No me digan que soy\nel único que se dio\ncuenta de esto… 😭",
   "sinTexto": false,
   "audio": "marryto/audio/m187-188.mp3",
   "audioDesde": 0,
-  "ojosY": 928,
-  "frenteY": 830,
-  "ojosX": 511,
+  "ojosY": 930,
+  "frenteY": 831,
+  "ojosX": 510,
   "imagen": "marryto/material/enredados.jpg",
   "caja": [
-   140,
-   150,
-   800
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.75,
-  "textoY": 762,
-  "textoTam": 64,
+  "textoY": 824,
+  "textoTam": 60,
   "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 1560,
-    "texto": "Pista: Fíjense en el cabello",
-    "tam": 56,
+    "y": 1640,
+    "texto": "Pista: Fíjense en\nel cabello.",
+    "tam": 58,
     "estilo": "plano"
    }
   ],
@@ -6847,35 +6847,35 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 12.3,
-  "fin": 19.51,
-  "duracion": 7.21,
+  "inicio": 0.0,
+  "fin": 9.98,
+  "duracion": 9.98,
   "caraX": 540,
   "caraY": 900,
   "caraAncho": 300,
-  "titulo": "¿Soy el único que se\ndio cuenta? 😳",
+  "titulo": "No me digan que soy\nel único que se dio\ncuenta de esto… 😭",
   "sinTexto": false,
   "audio": "marryto/audio/m187-188.mp3",
   "audioDesde": 0,
-  "ojosY": 1015,
-  "frenteY": 903,
-  "ojosX": 538,
+  "ojosY": 1036,
+  "frenteY": 917,
+  "ojosX": 539,
   "imagen": "marryto/material/enredados-b.jpg",
   "caja": [
-   140,
-   150,
-   800
+   0,
+   0,
+   1080
   ],
   "imgAspecto": 0.75,
-  "textoY": 762,
-  "textoTam": 64,
+  "textoY": 824,
+  "textoTam": 60,
   "textos": [
    {
     "t": 0,
     "x": 540,
-    "y": 1560,
-    "texto": "Pista: Mirad el cabello",
-    "tam": 56,
+    "y": 1640,
+    "texto": "Pista: Fíjense en\nel cabello.",
+    "tam": 58,
     "estilo": "plano"
    }
   ],
@@ -6911,7 +6911,201 @@
    "video": "marryto/material/rayo.mp4",
    "desde": 4.85,
    "dur": 11.7,
-   "audio": "marryto/audio/m189-190-rayo.mp3"
+   "audio": "marryto/audio/m189-190-rayo.mp3",
+   "tapar": [
+    {
+     "t": 0,
+     "x": 160,
+     "y": 215,
+     "w": 760,
+     "h": 225
+    },
+    {
+     "t": 0,
+     "x": 160,
+     "y": 1105,
+     "w": 760,
+     "h": 200
+    },
+    {
+     "t": 0,
+     "hasta": 0.9,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 0.9,
+     "hasta": 1.5,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 1.5,
+     "hasta": 2.05,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 2.05,
+     "hasta": 2.68,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 2.68,
+     "hasta": 2.95,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 2.95,
+     "hasta": 4.28,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 4.28,
+     "hasta": 5.08,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 5.08,
+     "hasta": 5.68,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 5.68,
+     "hasta": 6.85,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 9.58,
+     "hasta": 10.48,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 10.48,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    }
+   ],
+   "letras": [
+    {
+     "t": 0,
+     "y": 328,
+     "texto": "Influencer es alcanzado\npor un rayo frente a la\ncámara 🕊️",
+     "tam": 56
+    },
+    {
+     "t": 0,
+     "y": 1205,
+     "texto": "Le dieron una oportunidad\n💀",
+     "tam": 48,
+     "pastilla": true
+    },
+    {
+     "t": 0,
+     "hasta": 0.9,
+     "y": 965,
+     "texto": "Yo nunca he vapeado",
+     "tam": 64
+    },
+    {
+     "t": 0.9,
+     "hasta": 1.5,
+     "y": 965,
+     "texto": "en mi vida",
+     "tam": 64
+    },
+    {
+     "t": 1.5,
+     "hasta": 2.05,
+     "y": 965,
+     "texto": "Lo juro",
+     "tam": 64
+    },
+    {
+     "t": 2.05,
+     "hasta": 2.68,
+     "y": 965,
+     "texto": "- Nahaa 🥱",
+     "tam": 64
+    },
+    {
+     "t": 2.68,
+     "hasta": 2.95,
+     "y": 965,
+     "texto": "Hey",
+     "tam": 64
+    },
+    {
+     "t": 2.95,
+     "hasta": 4.28,
+     "y": 965,
+     "texto": "Que el mismísimo Zeus",
+     "tam": 64
+    },
+    {
+     "t": 4.28,
+     "hasta": 5.08,
+     "y": 965,
+     "texto": "Me derribe",
+     "tam": 64
+    },
+    {
+     "t": 5.08,
+     "hasta": 5.68,
+     "y": 965,
+     "texto": "si miento",
+     "tam": 64
+    },
+    {
+     "t": 5.68,
+     "hasta": 6.85,
+     "y": 965,
+     "texto": "💀⚡",
+     "tam": 64
+    },
+    {
+     "t": 9.58,
+     "hasta": 10.48,
+     "y": 965,
+     "texto": "Hey",
+     "tam": 64
+    },
+    {
+     "t": 10.48,
+     "y": 965,
+     "texto": "Pero no me cayó",
+     "tam": 64
+    }
+   ]
   },
   "ojosY": 873,
   "frenteY": 730,
@@ -6948,7 +7142,201 @@
    "video": "marryto/material/rayo.mp4",
    "desde": 4.85,
    "dur": 11.7,
-   "audio": "marryto/audio/m189-190-rayo.mp3"
+   "audio": "marryto/audio/m189-190-rayo.mp3",
+   "tapar": [
+    {
+     "t": 0,
+     "x": 160,
+     "y": 215,
+     "w": 760,
+     "h": 225
+    },
+    {
+     "t": 0,
+     "x": 160,
+     "y": 1105,
+     "w": 760,
+     "h": 200
+    },
+    {
+     "t": 0,
+     "hasta": 0.9,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 0.9,
+     "hasta": 1.5,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 1.5,
+     "hasta": 2.05,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 2.05,
+     "hasta": 2.68,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 2.68,
+     "hasta": 2.95,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 2.95,
+     "hasta": 4.28,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 4.28,
+     "hasta": 5.08,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 5.08,
+     "hasta": 5.68,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 5.68,
+     "hasta": 6.85,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 9.58,
+     "hasta": 10.48,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    },
+    {
+     "t": 10.48,
+     "x": 110,
+     "y": 905,
+     "w": 860,
+     "h": 115
+    }
+   ],
+   "letras": [
+    {
+     "t": 0,
+     "y": 328,
+     "texto": "Influencer es alcanzado\npor un rayo frente a la\ncámara 🕊️",
+     "tam": 56
+    },
+    {
+     "t": 0,
+     "y": 1205,
+     "texto": "Le dieron una oportunidad\n💀",
+     "tam": 48,
+     "pastilla": true
+    },
+    {
+     "t": 0,
+     "hasta": 0.9,
+     "y": 965,
+     "texto": "Yo nunca he vapeado",
+     "tam": 64
+    },
+    {
+     "t": 0.9,
+     "hasta": 1.5,
+     "y": 965,
+     "texto": "en mi vida",
+     "tam": 64
+    },
+    {
+     "t": 1.5,
+     "hasta": 2.05,
+     "y": 965,
+     "texto": "Lo juro",
+     "tam": 64
+    },
+    {
+     "t": 2.05,
+     "hasta": 2.68,
+     "y": 965,
+     "texto": "- Nahaa 🥱",
+     "tam": 64
+    },
+    {
+     "t": 2.68,
+     "hasta": 2.95,
+     "y": 965,
+     "texto": "Hey",
+     "tam": 64
+    },
+    {
+     "t": 2.95,
+     "hasta": 4.28,
+     "y": 965,
+     "texto": "Que el mismísimo Zeus",
+     "tam": 64
+    },
+    {
+     "t": 4.28,
+     "hasta": 5.08,
+     "y": 965,
+     "texto": "Me derribe",
+     "tam": 64
+    },
+    {
+     "t": 5.08,
+     "hasta": 5.68,
+     "y": 965,
+     "texto": "si miento",
+     "tam": 64
+    },
+    {
+     "t": 5.68,
+     "hasta": 6.85,
+     "y": 965,
+     "texto": "💀⚡",
+     "tam": 64
+    },
+    {
+     "t": 9.58,
+     "hasta": 10.48,
+     "y": 965,
+     "texto": "Hey",
+     "tam": 64
+    },
+    {
+     "t": 10.48,
+     "y": 965,
+     "texto": "Pero no me cayó",
+     "tam": 64
+    }
+   ]
   },
   "ojosY": 879,
   "frenteY": 778,
