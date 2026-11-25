@@ -76,3 +76,35 @@ las originales a 36,50 quedan en `public/tubodega/originales-tasa-36.50/`). Las 
   y portada `TuBodegaVentaPortada`. Letra **Lexend ExtraBold** (opción b: libre y parecida a Cocogoose);
   cuaderno en Caveat. Entrega: `out/tubodega/venta/enviar/tubodega-venta-A.mp4` (12 MB) + portada.
 - Ojo en el código: `prog(t, a, b)` ya suaviza (easeOut); no envolverlo en otra curva o el movimiento sale brusco.
+
+## Referencia de movimiento para la campaña (25-nov): vídeo "Allo" de Bitmap Studio (X)
+Analizado cuadro a cuadro con ffmpeg (no se ha hecho ningún vídeo aún). 4 s, 1080×1098, 30 fps, **sin audio**.
+- **Formato bento:** 2 columnas × 3 filas de tarjetas (504×284 px, esquinas casi rectas, 9 px de separación),
+  tarjeta `#F7F8FD` sobre blanco, la última en degradado oscuro (`#000400` → `#0C5A3B`) con un brillo que se mueve.
+- **El truco:** es UNA historia de 24 s partida en 6 trozos de 4 s que se ven a la vez: el final de cada tarjeta es
+  exactamente el principio de la siguiente (lees la historia en Z y en bucle).
+- **Protagonista:** una mascota (bolita negra con ojos) que conecta todo: cae, se pone los auriculares, entra en
+  el teléfono (se mete en la isla dinámica y se convierte en el avatar de la llamada), escribe en el chat, etc.
+  Para TuBodega: el ícono de la bolsa o un personaje-bolsa haría ese papel.
+- **Curvas medidas:**
+  - Entrada con arco + **squash & stretch**: aterriza aplastado (52×38) y rebota estirado (48×54); se asienta
+    en ~0,35 s con easeOut (muelle sin rebote visible).
+  - **"Pop" al completar algo:** escala ×1,85 en 1–2 cuadros con un pequeño exceso y asiento lento (0,3 s).
+  - Caída de 40 px en 0,2 s con rebote del ~25 % y asiento en 0,4 s (muelle damping medio).
+  - **Anticipación:** sube 20 px justo antes de que le lleguen los auriculares; parpadeo y mirada hacia lo que
+    aparece (acción secundaria).
+  - **Texto palabra a palabra cada 0,13 s** (4 cuadros), en su sitio, sin deslizar.
+  - **Elemento que se abre entre palabras** (pastilla verde con el número): crece de un punto a 99 px en 0,6 s
+    (80 % en los primeros 0,3 s) y **empuja las palabras** a los lados, el centro no se mueve.
+  - Burbujas de chat: puntos de "escribiendo" → la burbuja se ensancha con el texto letra a letra; tarjeta que
+    entra desde abajo con opacidad; la conversación sube cuando llega un mensaje nuevo.
+  - **Cambio de escena:** el texto sale hacia arriba en ~0,1 s y lo nuevo (el teléfono) sube desde abajo con
+    easeOut en ~0,4 s; la cámara acompaña. Zoom de cámara rápido (0,2 s) hacia el chat en la ventana del Mac.
+  - Logo: corte seco a oscuro, el ícono crece despacio y las letras aparecen una a una con desenfoque y el
+    espaciado cerrándose; luego el logo se encoge y se vuelve parte de la frase ("Connect allo to ● Grok Bot",
+    donde el punto crece y se convierte en el avatar).
+- **Tipografía y color:** sans tipo Inter/SF, peso medio, pequeña y negra; verde de marca `#0A8C57`; mucho aire.
+  Nada de trazos ni sombras: el lujo está en el movimiento, no en los efectos.
+- **Para aplicarlo a TuBodega:** bento de 6 escenas (cobrar → vuelto → fiado → avisos → caja → logo), la bolsa
+  como protagonista que salta de tarjeta en tarjeta, palabras clave que se abren con una pastilla verde
+  ("Vuelto en [$ · Bs]"), pantallas reales de la app en el teléfono, y versión 9:16 para Reels además del bento.
