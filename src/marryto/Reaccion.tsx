@@ -42,7 +42,7 @@ export type Video = {
     // 189–190 (video de arriba en mala calidad): sus letras rehechas en Cocogoose. `tapar`: zonas del video
     // (x, y, ancho, alto en 1080 × 1920) que se tapan con el propio video muy desenfocado mientras dure [t, hasta).
     tapar?: { t: number; hasta?: number; x: number; y: number; w: number; h: number }[];
-    letras?: { t: number; hasta?: number; y: number; texto: string; tam?: number; pastilla?: boolean }[] }; // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
+    letras?: { t: number; hasta?: number; y: number; texto: string; tam?: number; pastilla?: boolean; caja?: [number, number, number, number] }[] }; // caja [x, y, ancho, alto]: recuadro blanco que tapa la etiqueta del video (191–192) // fotos: pase de fotos (t desde el inicio del outro) con fundido a negro en cada cambio, como el Short 179-181 // audioTodo: una pista para todo el video (su voz + música) // 189–190: tras su reacción, el video del Short a pantalla con su sonido
   intro?: { video: string; dur: number; titulo: string; videoY?: number; videoAlto?: number; partes?: { desde: number; dur: number; titulo: string; imagen: string }[] }; // 159–160: primero el video del Short a pantalla (como la referencia) y después su reacción
   pastillasFondo?: string; pastillasColor?: string; // color de las pastillas (157–158: el de su camiseta)
   coco?: boolean; // 21-nov: letras Cocogoose llamativas, emojis de iPhone y banda negra detrás de la imagen (sin cortes arriba)
@@ -122,6 +122,13 @@ const LetrasEncima: React.FC<{ outro: NonNullable<Video["outro"]> }> = ({ outro 
         : null}
       {(outro.letras ?? []).filter(activa).map((l, i) => {
         const tam = l.tam ?? 60;
+        if (l.caja)
+          // etiqueta del video tapada por la nuestra: recuadro blanco del mismo sitio y letra Cocogoose negra
+          return (
+            <div key={i} style={{ position: "absolute", left: l.caja[0], top: l.caja[1], width: l.caja[2], height: l.caja[3], background: "#fff", borderRadius: 30, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", whiteSpace: "pre-line", fontFamily: COCO, fontSize: tam, lineHeight: 1.15, color: "#111", padding: "0 20px", boxShadow: "0 6px 18px rgba(0,0,0,0.25)" }}>
+              <div>{rico(l.texto, tam)}</div>
+            </div>
+          );
         const p = clamp01((t - l.t) / 0.15);
         return (
           <div key={i} style={{ position: "absolute", left: 50, right: 50, top: l.y, translate: "0 -50%", display: "flex", justifyContent: "center", textAlign: "center", whiteSpace: "pre-line", opacity: p, scale: String(0.9 + 0.1 * p) }}>
@@ -496,9 +503,11 @@ export const Reaccion: React.FC<PropsReaccion> = ({ n }) => {
     const ini = Math.round(v.outro.desde * fps);
     return (
       <AbsoluteFill style={{ background: "#000" }}>
-        <Sequence durationInFrames={ini}>
-          <Superpuesto n={n} v={v.outro.audioTodo ? { ...v, audio: undefined } : v} />
-        </Sequence>
+        {ini > 0 ? (
+          <Sequence durationInFrames={ini}>
+            <Superpuesto n={n} v={v.outro.audioTodo ? { ...v, audio: undefined } : v} />
+          </Sequence>
+        ) : null}
         {v.outro.audioTodo ? <Audio src={staticFile(v.outro.audioTodo)} volume={1} /> : null}
         <Sequence from={ini} durationInFrames={Math.round(v.outro.dur * fps)}>
           <AbsoluteFill>

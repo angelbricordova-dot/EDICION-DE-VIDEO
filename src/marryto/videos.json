@@ -7342,5 +7342,672 @@
   "frenteY": 778,
   "ojosX": 523,
   "coco": true
+ },
+ "191": {
+  "estilo": "superpuesto",
+  "short": "ssWWsUyM75Y",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": false,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 1.1,
+  "fin": 8.4,
+  "duracion": 41.23,
+  "titulo": "Lugares abandonados\nantes VS ahora 😳",
+  "textoY": 330,
+  "textoTam": 68,
+  "outro": {
+   "desde": 7.3,
+   "dur": 33.93,
+   "video": "marryto/material/lugares.mp4",
+   "audioTodo": "marryto/audio/m191-192.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 0,
+     "texto": "Rosie el tiburón antes 🦈",
+     "tam": 62,
+     "caja": [
+      60,
+      428,
+      960,
+      180
+     ],
+     "hasta": 2.467
+    },
+    {
+     "t": 2.467,
+     "y": 0,
+     "texto": "Rosie el tiburón ahora 😳",
+     "tam": 62,
+     "caja": [
+      60,
+      428,
+      960,
+      180
+     ],
+     "hasta": 5.9
+    },
+    {
+     "t": 5.9,
+     "y": 0,
+     "texto": "Parque acuático Wild Waters\nAntes 🛝",
+     "tam": 50,
+     "caja": [
+      48,
+      402,
+      984,
+      222
+     ],
+     "hasta": 8.233
+    },
+    {
+     "t": 8.233,
+     "y": 0,
+     "texto": "Parque acuático Wild Waters\nAhora 😳",
+     "tam": 50,
+     "caja": [
+      48,
+      362,
+      984,
+      226
+     ],
+     "hasta": 11.267
+    },
+    {
+     "t": 11.267,
+     "y": 0,
+     "texto": "SS Ayrfield 🛳️\nAntes",
+     "tam": 80,
+     "caja": [
+      160,
+      284,
+      760,
+      334
+     ],
+     "hasta": 14.3
+    },
+    {
+     "t": 14.3,
+     "y": 0,
+     "texto": "SS Ayrfield 🛳️\nAhora 😳",
+     "tam": 80,
+     "caja": [
+      192,
+      108,
+      700,
+      304
+     ],
+     "hasta": 18.2
+    },
+    {
+     "t": 18.2,
+     "y": 0,
+     "texto": "Estadio Silverdome 🏟️\nAntes",
+     "tam": 66,
+     "caja": [
+      48,
+      276,
+      984,
+      286
+     ],
+     "hasta": 23.033
+    },
+    {
+     "t": 23.033,
+     "y": 0,
+     "texto": "Estadio Silverdome 🏟️\nAhora",
+     "tam": 66,
+     "caja": [
+      48,
+      276,
+      984,
+      286
+     ],
+     "hasta": 26.533
+    },
+    {
+     "t": 26.533,
+     "y": 0,
+     "texto": "Parque de atracciones 🎢\nJet Star Antes…",
+     "tam": 60,
+     "caja": [
+      52,
+      355,
+      976,
+      252
+     ],
+     "hasta": 28.533
+    },
+    {
+     "t": 28.533,
+     "y": 0,
+     "texto": "Parque de atracciones 🎢\nJet Star ahora…",
+     "tam": 60,
+     "caja": [
+      52,
+      296,
+      976,
+      252
+     ]
+    }
+   ]
+  },
+  "ojosY": 870,
+  "frenteY": 771,
+  "ojosX": 529
+ },
+ "192": {
+  "estilo": "superpuesto",
+  "short": "ssWWsUyM75Y",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": false,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 11.6,
+  "fin": 18.9,
+  "duracion": 41.23,
+  "titulo": "Lugares abandonados\nantes VS ahora 😳",
+  "textoY": 330,
+  "textoTam": 68,
+  "outro": {
+   "desde": 7.3,
+   "dur": 33.93,
+   "video": "marryto/material/lugares.mp4",
+   "audioTodo": "marryto/audio/m191-192.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 0,
+     "texto": "Rosie el tiburón antes 🦈",
+     "tam": 62,
+     "caja": [
+      60,
+      428,
+      960,
+      180
+     ],
+     "hasta": 2.467
+    },
+    {
+     "t": 2.467,
+     "y": 0,
+     "texto": "Rosie el tiburón ahora 😳",
+     "tam": 62,
+     "caja": [
+      60,
+      428,
+      960,
+      180
+     ],
+     "hasta": 5.9
+    },
+    {
+     "t": 5.9,
+     "y": 0,
+     "texto": "Parque acuático Wild Waters\nAntes 🛝",
+     "tam": 50,
+     "caja": [
+      48,
+      402,
+      984,
+      222
+     ],
+     "hasta": 8.233
+    },
+    {
+     "t": 8.233,
+     "y": 0,
+     "texto": "Parque acuático Wild Waters\nAhora 😳",
+     "tam": 50,
+     "caja": [
+      48,
+      362,
+      984,
+      226
+     ],
+     "hasta": 11.267
+    },
+    {
+     "t": 11.267,
+     "y": 0,
+     "texto": "SS Ayrfield 🛳️\nAntes",
+     "tam": 80,
+     "caja": [
+      160,
+      284,
+      760,
+      334
+     ],
+     "hasta": 14.3
+    },
+    {
+     "t": 14.3,
+     "y": 0,
+     "texto": "SS Ayrfield 🛳️\nAhora 😳",
+     "tam": 80,
+     "caja": [
+      192,
+      108,
+      700,
+      304
+     ],
+     "hasta": 18.2
+    },
+    {
+     "t": 18.2,
+     "y": 0,
+     "texto": "Estadio Silverdome 🏟️\nAntes",
+     "tam": 66,
+     "caja": [
+      48,
+      276,
+      984,
+      286
+     ],
+     "hasta": 23.033
+    },
+    {
+     "t": 23.033,
+     "y": 0,
+     "texto": "Estadio Silverdome 🏟️\nAhora",
+     "tam": 66,
+     "caja": [
+      48,
+      276,
+      984,
+      286
+     ],
+     "hasta": 26.533
+    },
+    {
+     "t": 26.533,
+     "y": 0,
+     "texto": "Parque de atracciones 🎢\nJet Star Antes…",
+     "tam": 60,
+     "caja": [
+      52,
+      355,
+      976,
+      252
+     ],
+     "hasta": 28.533
+    },
+    {
+     "t": 28.533,
+     "y": 0,
+     "texto": "Parque de atracciones 🎢\nJet Star ahora…",
+     "tam": 60,
+     "caja": [
+      52,
+      296,
+      976,
+      252
+     ]
+    }
+   ]
+  },
+  "ojosY": 888,
+  "frenteY": 801,
+  "ojosX": 530
+ },
+ "193": {
+  "estilo": "superpuesto",
+  "short": "WUfzs1jp7C8",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": false,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 1.6,
+  "duracion": 6.95,
+  "fin": 8.55,
+  "titulo": "“Científicos confirmaron\nque nuestros sueños son\nreales en otro universo”",
+  "textoY": 330,
+  "textoTam": 62,
+  "audio": "marryto/audio/m193-194.mp3",
+  "audioDesde": 0,
+  "ojosY": 908,
+  "frenteY": 810,
+  "ojosX": 478
+ },
+ "194": {
+  "estilo": "superpuesto",
+  "short": "WUfzs1jp7C8",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": false,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 13.2,
+  "duracion": 6.95,
+  "fin": 20.15,
+  "titulo": "“Científicos confirmaron\nque nuestros sueños son\nreales en otro universo”",
+  "textoY": 330,
+  "textoTam": 62,
+  "audio": "marryto/audio/m193-194.mp3",
+  "audioDesde": 0,
+  "ojosY": 867,
+  "frenteY": 768,
+  "ojosX": 432
+ },
+ "195": {
+  "estilo": "superpuesto",
+  "short": "JPmxfjNL6AA",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 6.0,
+  "duracion": 12.7,
+  "fin": 18.7,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 908,
+  "frenteY": 810,
+  "ojosX": 478,
+  "outro": {
+   "desde": 0,
+   "dur": 12.7,
+   "video": "marryto/material/m195-comp.mp4",
+   "audioTodo": "marryto/audio/m195.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 300,
+     "texto": "Espera a ver el final 😯",
+     "tam": 70
+    }
+   ]
+  }
+ },
+ "198": {
+  "estilo": "superpuesto",
+  "short": "1O0iPW9g2cs",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 3.8,
+  "duracion": 11.5,
+  "fin": 15.3,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 908,
+  "frenteY": 810,
+  "ojosX": 478,
+  "outro": {
+   "desde": 0,
+   "dur": 11.5,
+   "video": "marryto/material/m198-comp.mp4",
+   "audioTodo": "marryto/audio/m198.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "hasta": 6.833,
+     "y": 0,
+     "texto": "Niños ahora:",
+     "tam": 76,
+     "caja": [
+      136,
+      188,
+      808,
+      200
+     ]
+    },
+    {
+     "t": 6.833,
+     "y": 0,
+     "texto": "Yo de niño:",
+     "tam": 76,
+     "caja": [
+      136,
+      152,
+      628,
+      180
+     ]
+    }
+   ]
+  }
+ },
+ "199": {
+  "estilo": "superpuesto",
+  "short": "sGP-DaeUXxk",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 3.0,
+  "duracion": 7.45,
+  "fin": 10.45,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 908,
+  "frenteY": 810,
+  "ojosX": 478,
+  "outro": {
+   "desde": 0,
+   "dur": 7.45,
+   "video": "marryto/material/m199-comp.mp4",
+   "audioTodo": "marryto/audio/m199-200.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 120,
+     "texto": "Engaña a tu cerebro! 🧠",
+     "tam": 70
+    },
+    {
+     "t": 0,
+     "y": 1030,
+     "texto": "Puedes hacer que el\nbailarín del medio\ncambie de dirección",
+     "tam": 64
+    }
+   ]
+  }
+ },
+ "200": {
+  "estilo": "superpuesto",
+  "short": "sGP-DaeUXxk",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 17.5,
+  "duracion": 7.45,
+  "fin": 24.95,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 908,
+  "frenteY": 810,
+  "ojosX": 478,
+  "outro": {
+   "desde": 0,
+   "dur": 7.45,
+   "video": "marryto/material/m200-comp.mp4",
+   "audioTodo": "marryto/audio/m199-200.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 120,
+     "texto": "Engaña a tu cerebro! 🧠",
+     "tam": 70
+    },
+    {
+     "t": 0,
+     "y": 1030,
+     "texto": "Puedes hacer que el\nbailarín del medio\ncambie de dirección",
+     "tam": 64
+    }
+   ]
+  }
+ },
+ "196": {
+  "estilo": "superpuesto",
+  "short": "CdoIYONwl14",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": false,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 0.8,
+  "duracion": 12.77,
+  "fin": 5.6,
+  "titulo": "Éramos demasiado jóvenes\npara darnos cuenta 💀",
+  "textoY": 330,
+  "textoTam": 60,
+  "ojosY": 844,
+  "frenteY": 736,
+  "ojosX": 533,
+  "outro": {
+   "desde": 4.8,
+   "dur": 7.97,
+   "video": "marryto/material/moana.mp4",
+   "audioTodo": "marryto/audio/m196-197.mp3"
+  }
+ },
+ "197": {
+  "estilo": "superpuesto",
+  "short": "CdoIYONwl14",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": false,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 8.2,
+  "duracion": 12.77,
+  "fin": 13.0,
+  "titulo": "Éramos demasiado jóvenes\npara darnos cuenta 💀",
+  "textoY": 330,
+  "textoTam": 60,
+  "ojosY": 841,
+  "frenteY": 724,
+  "ojosX": 498,
+  "outro": {
+   "desde": 4.8,
+   "dur": 7.97,
+   "video": "marryto/material/moana.mp4",
+   "audioTodo": "marryto/audio/m196-197.mp3"
+  }
  }
 }

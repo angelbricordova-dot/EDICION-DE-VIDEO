@@ -288,3 +288,14 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   `v187.mp4` (amarilla, 1,1–7,1 s del bruto) y `v188.mp4` (roja, 12,2–18,2 s).
 - 189–190: el video del rayo con sus letras rehechas en Cocogoose (`outro.letras`); las originales se tapan con
   el propio video desenfocado y bordes difuminados (`outro.tapar`). Tiempos de cada subtítulo sacados cuadro a cuadro.
+
+## 191–200 (26-nov) — copiados del ejemplo
+- Instrucciones de los Docs revisadas enteras (texto, imágenes, formato): solo el enlace, y en 195 el título
+  "Espera a ver el final 😯". Máximo 10 por día: 191–200 primero; 201–205 después (faltan sus Shorts de ejemplo).
+- 191–192: su reacción con el título 7,3 s y luego el pase de fotos del ejemplo (`material/lugares.mp4`) con sus
+  etiquetas tapadas por las nuestras en Cocogoose (`outro.letras[].caja`). 193–194: reacción con el título entre
+  comillas. 195: él arriba (1080 px, sigue su cara al acercarse) y el bebé abajo (`m195-comp.mp4`), título pedido.
+  196–197: reacción + Moana del ejemplo a pantalla completa. 198: niños ahora (ejemplo) → su primer plano con el
+  azúcar → él comiendo (ojos abiertos) → el salto del ejemplo, con las etiquetas en Cocogoose (`m198-comp.mp4`).
+  199–200: franja negra con el título, los bailarines del ejemplo ampliados y su reacción debajo (`m199-comp.mp4`).
+- La música de cada uno es la del Short de ejemplo, en el mismo tiempo (`audio/m<grupo>.mp3`, −12,3 dB).
