@@ -282,7 +282,7 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 
 ## Tercera tanda 182–190 (26-nov) — copiadas del ejemplo
 - 182–184: imagen a todo lo ancho pegada arriba y el mismo texto del ejemplo en los tres ("Toca dos veces y
-  "encuentra" el 4 objeto"). 185–186: tarjeta ¿FUNCIONÓ? a todo lo ancho y "Toca 2 veces y prueba".
+  "encuentra" el 4 objeto"). 185–186: tarjeta ¿FUNCIONÓ? arriba y "Toca 2 veces y prueba". 26-nov: imagen más baja (820 px) para que se le vea más; el fondo de la tarjeta se alarga a los lados (`funciono-c-ancho.png`) para no dejar negro.
 - 187–188: Tangled arriba a todo lo ancho, el texto del ejemplo (😭) y "Pista: Fíjense en el cabello." sin fondo;
   **todo en cámara lenta ×1,66** como el ejemplo (9,98 s, termina en el hueco de 9,99 s de la música). Proxies
   `v187.mp4` (amarilla, 1,1–7,1 s del bruto) y `v188.mp4` (roja, 12,2–18,2 s).
