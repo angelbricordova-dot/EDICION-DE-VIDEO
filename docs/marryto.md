@@ -299,3 +299,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   azúcar → él comiendo (ojos abiertos) → el salto del ejemplo, con las etiquetas en Cocogoose (`m198-comp.mp4`).
   199–200: franja negra con el título, los bailarines del ejemplo ampliados y su reacción debajo (`m199-comp.mp4`).
 - La música de cada uno es la del Short de ejemplo, en el mismo tiempo (`audio/m<grupo>.mp3`, −12,3 dB).
+
+## 201–205 (26-nov) — copiados del ejemplo (Shorts que mandó Alejandro en un .rar)
+- 201–202: ilusión arriba (del ejemplo) y su reacción abajo con "Cuál se está moviendo?". 203: su reacción a
+  pantalla completa con el recuadro de las manos y "Solo el 0.1% de la gente puede hacer esto:". 204: cartel
+  leetspeak arriba y abajo en dos mitades "Gamer" (toma azul, tranquilo) y "No Gamer" (amarilla, frustrado).
+  205 (azul) –206 (roja): el tuit de la silla arriba y "Yo después de darme cuenta:" con su reacción.
+- `outro.letras[].x` para textos no centrados (Gamer / No Gamer). Composiciones en `material/m20X-comp.mp4`.

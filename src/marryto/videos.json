@@ -8009,5 +8009,271 @@
    "video": "marryto/material/moana.mp4",
    "audioTodo": "marryto/audio/m196-197.mp3"
   }
+ },
+ "201": {
+  "estilo": "superpuesto",
+  "short": "Yh-lS4W5fr8",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 5.3,
+  "duracion": 7.2,
+  "fin": 12.5,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 990,
+  "frenteY": 902,
+  "ojosX": 534,
+  "outro": {
+   "desde": 0,
+   "dur": 7.2,
+   "video": "marryto/material/m201-comp.mp4",
+   "audioTodo": "marryto/audio/m201-202.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 1012,
+     "texto": "Cuál se está moviendo?",
+     "tam": 62
+    }
+   ]
+  }
+ },
+ "202": {
+  "estilo": "superpuesto",
+  "short": "Yh-lS4W5fr8",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 21.3,
+  "duracion": 7.2,
+  "fin": 28.5,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 980,
+  "frenteY": 892,
+  "ojosX": 512,
+  "outro": {
+   "desde": 0,
+   "dur": 7.2,
+   "video": "marryto/material/m202-comp.mp4",
+   "audioTodo": "marryto/audio/m201-202.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 1012,
+     "texto": "Cuál se está moviendo?",
+     "tam": 62
+    }
+   ]
+  }
+ },
+ "203": {
+  "estilo": "superpuesto",
+  "short": "OdbJTd8AG0E",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 1.7,
+  "duracion": 8.2,
+  "fin": 9.9,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 899,
+  "frenteY": 831,
+  "ojosX": 535,
+  "outro": {
+   "desde": 0,
+   "dur": 8.2,
+   "video": "marryto/material/m203-comp.mp4",
+   "audioTodo": "marryto/audio/m203.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 640,
+     "texto": "Solo el 0.1% de la gente\npuede hacer esto:",
+     "tam": 66
+    }
+   ]
+  }
+ },
+ "204": {
+  "estilo": "superpuesto",
+  "short": "-fCVtAjhn18",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 3.0,
+  "duracion": 7.83,
+  "fin": 10.83,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 901,
+  "frenteY": 836,
+  "ojosX": 507,
+  "outro": {
+   "desde": 0,
+   "dur": 7.83,
+   "video": "marryto/material/m204-comp.mp4",
+   "audioTodo": "marryto/audio/m204.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 1072,
+     "x": 270,
+     "texto": "Gamer",
+     "tam": 72
+    },
+    {
+     "t": 0,
+     "y": 1072,
+     "x": 810,
+     "texto": "No Gamer",
+     "tam": 72
+    }
+   ]
+  }
+ },
+ "205": {
+  "estilo": "superpuesto",
+  "short": "w5LszTDEhYo",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 2.4,
+  "duracion": 6.13,
+  "fin": 8.53,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 936,
+  "frenteY": 862,
+  "ojosX": 552,
+  "outro": {
+   "desde": 0,
+   "dur": 6.13,
+   "video": "marryto/material/m205-comp.mp4",
+   "audioTodo": "marryto/audio/m205-206.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 1105,
+     "texto": "Yo después de darme\ncuenta:",
+     "tam": 72
+    }
+   ]
+  }
+ },
+ "206": {
+  "estilo": "superpuesto",
+  "short": "w5LszTDEhYo",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": false,
+  "separacion": 40,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "sinTexto": true,
+  "sinImagen": true,
+  "coco": true,
+  "inicio": 14.0,
+  "duracion": 6.13,
+  "fin": 20.13,
+  "titulo": "",
+  "textoY": 330,
+  "textoTam": 62,
+  "ojosY": 912,
+  "frenteY": 837,
+  "ojosX": 492,
+  "outro": {
+   "desde": 0,
+   "dur": 6.13,
+   "video": "marryto/material/m206-comp.mp4",
+   "audioTodo": "marryto/audio/m205-206.mp3",
+   "letras": [
+    {
+     "t": 0,
+     "y": 1105,
+     "texto": "Yo después de darme\ncuenta:",
+     "tam": 72
+    }
+   ]
+  }
  }
 }
