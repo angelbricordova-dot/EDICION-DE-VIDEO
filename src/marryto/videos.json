@@ -7528,8 +7528,8 @@
   "sinTexto": false,
   "sinImagen": true,
   "coco": true,
-  "inicio": 11.6,
-  "fin": 18.9,
+  "inicio": 12.7,
+  "fin": 20.0,
   "duracion": 41.23,
   "titulo": "Lugares abandonados\nantes VS ahora 😳",
   "textoY": 330,
@@ -7878,15 +7878,15 @@
    "letras": [
     {
      "t": 0,
-     "y": 120,
+     "y": 100,
      "texto": "Engaña a tu cerebro! 🧠",
      "tam": 70
     },
     {
      "t": 0,
-     "y": 1030,
+     "y": 850,
      "texto": "Puedes hacer que el\nbailarín del medio\ncambie de dirección",
-     "tam": 64
+     "tam": 62
     }
    ]
   }
@@ -7910,9 +7910,9 @@
   "sinTexto": true,
   "sinImagen": true,
   "coco": true,
-  "inicio": 17.5,
+  "inicio": 18.3,
   "duracion": 7.45,
-  "fin": 24.95,
+  "fin": 25.75,
   "titulo": "",
   "textoY": 330,
   "textoTam": 62,
@@ -7927,15 +7927,15 @@
    "letras": [
     {
      "t": 0,
-     "y": 120,
+     "y": 100,
      "texto": "Engaña a tu cerebro! 🧠",
      "tam": 70
     },
     {
      "t": 0,
-     "y": 1030,
+     "y": 850,
      "texto": "Puedes hacer que el\nbailarín del medio\ncambie de dirección",
-     "tam": 64
+     "tam": 62
     }
    ]
   }
@@ -7959,9 +7959,9 @@
   "sinTexto": false,
   "sinImagen": true,
   "coco": true,
-  "inicio": 0.8,
-  "duracion": 12.77,
-  "fin": 5.6,
+  "inicio": 1.8,
+  "duracion": 12.47,
+  "fin": 6.3,
   "titulo": "Éramos demasiado jóvenes\npara darnos cuenta 💀",
   "textoY": 330,
   "textoTam": 60,
@@ -7969,10 +7969,10 @@
   "frenteY": 736,
   "ojosX": 533,
   "outro": {
-   "desde": 4.8,
+   "desde": 4.5,
    "dur": 7.97,
    "video": "marryto/material/moana.mp4",
-   "audioTodo": "marryto/audio/m196-197.mp3"
+   "audioTodo": "marryto/audio/m196.mp3"
   }
  },
  "197": {
@@ -8007,7 +8007,7 @@
    "desde": 4.8,
    "dur": 7.97,
    "video": "marryto/material/moana.mp4",
-   "audioTodo": "marryto/audio/m196-197.mp3"
+   "audioTodo": "marryto/audio/m197.mp3"
   }
  },
  "201": {

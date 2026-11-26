@@ -306,3 +306,12 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   leetspeak arriba y abajo en dos mitades "Gamer" (toma azul, tranquilo) y "No Gamer" (amarilla, frustrado).
   205 (azul) –206 (roja): el tuit de la silla arriba y "Yo después de darme cuenta:" con su reacción.
 - `outro.letras[].x` para textos no centrados (Gamer / No Gamer). Composiciones en `material/m20X-comp.mp4`.
+
+### Correcciones 191–200 (26-nov)
+- **Salieron sin sonido:** `render1080.sh` solo miraba `audio`; ahora también `outro.audioTodo`.
+- 192 empieza ya apuntando arriba (12,7 s). 196 empieza cuando él ya habla (1,8 s), con SU voz y la canción
+  "A1 – It's just a burning memory" (`audio/burning-memory.mp3`, desde el inicio como el ejemplo) por debajo.
+  197: la misma canción + una voz de IA al principio ("Éramos demasiado jóvenes para darnos cuenta", como el
+  ejemplo) — pendiente del permiso de ElevenLabs. 198: el audio original del ejemplo al principio.
+  199–200: recorte limpio de los bailarines (y 81–253 del Short a 360 px: sin restos del título ni del texto de
+  abajo); 200 empieza con la cara de confundido (18,3 s).
