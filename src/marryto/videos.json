@@ -8571,5 +8571,79 @@
   "ojosY": 846,
   "frenteY": 773,
   "ojosX": 536
+ },
+ "207": {
+  "estilo": "superpuesto",
+  "short": "FrXJEPMjqME",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": true,
+  "separacion": 40,
+  "inicio": 1.5,
+  "fin": 8.56,
+  "duracion": 7.06,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "titulo": "Encuentra las 3 diferencias",
+  "sinTexto": false,
+  "audio": "marryto/audio/m207-208.mp3",
+  "audioDesde": 0,
+  "imagen": "marryto/material/dif-gta.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "imgAspecto": 0.6204,
+  "textoY": 684,
+  "textoTam": 56,
+  "coco": true,
+  "ojosY": 885,
+  "frenteY": 809,
+  "ojosX": 487
+ },
+ "208": {
+  "estilo": "superpuesto",
+  "short": "FrXJEPMjqME",
+  "rojo": "",
+  "recorte": [
+   0,
+   0,
+   1080,
+   1920
+  ],
+  "bajar": 0,
+  "desplazar": true,
+  "separacion": 40,
+  "inicio": 12.5,
+  "fin": 19.56,
+  "duracion": 7.06,
+  "caraX": 540,
+  "caraY": 900,
+  "caraAncho": 300,
+  "titulo": "Encuentra las 3 diferencias",
+  "sinTexto": false,
+  "audio": "marryto/audio/m207-208.mp3",
+  "audioDesde": 0,
+  "imagen": "marryto/material/dif-superman.jpg",
+  "caja": [
+   0,
+   0,
+   1080
+  ],
+  "imgAspecto": 0.6204,
+  "textoY": 684,
+  "textoTam": 56,
+  "coco": true,
+  "ojosY": 902,
+  "frenteY": 815,
+  "ojosX": 528
  }
 }

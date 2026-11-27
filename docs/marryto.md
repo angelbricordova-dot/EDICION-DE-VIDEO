@@ -337,3 +337,6 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   iPhone, `material/meses.png`), 211–212 ajedrez con el título rehecho (`ajedrez-titulo.png`), 213–214 uniformes a todo lo
   ancho **sin espacio en blanco** (pedido del Doc), 215–216 cabeza + "TOCA DOS VECES Y GIRA TU TELÉFONO" (`cabeza-texto.png`).
 - 207–208: pide imágenes de IA "en otro contexto" (Marryto en GTA 6 con Lucía y vestido de Superman): prompts para Gemini.
+- 207–208 (28-nov): imágenes de Gemini de Alejandro (GTA 6 con Lucía / Superman), A a la izquierda y B a la derecha
+  (`material/dif-gta.jpg`, `dif-superman.jpg`). Gemini solo aplicó 2 diferencias de 3: la tercera la puse yo (cartel
+  pequeño de VICE CITY a verde / zapatilla de abajo a verde) para que "Encuentra las 3 diferencias" sea verdad.
