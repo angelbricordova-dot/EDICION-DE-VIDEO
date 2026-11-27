@@ -7364,15 +7364,15 @@
   "coco": true,
   "inicio": 1.1,
   "fin": 5.1,
-  "duracion": 38.38,
+  "duracion": 40.18,
   "titulo": "Lugares abandonados\nantes VS ahora 😳",
   "textoY": 330,
   "textoTam": 68,
   "outro": {
    "desde": 4.0,
-   "dur": 34.38,
-   "video": "marryto/material/lugares2.mp4",
-   "audioTodo": "marryto/audio/m191-192b.mp3",
+   "dur": 36.18,
+   "video": "marryto/material/lugares3.mp4",
+   "audioTodo": "marryto/audio/m191-192c.mp3",
    "letras": [
     {
      "t": 0.0,
@@ -7385,10 +7385,10 @@
       960,
       180
      ],
-     "hasta": 2.54
+     "hasta": 3.437
     },
     {
-     "t": 2.54,
+     "t": 3.437,
      "y": 0,
      "texto": "Rosie el tiburón ahora 😳",
      "tam": 62,
@@ -7398,10 +7398,10 @@
       960,
       180
      ],
-     "hasta": 5.95
+     "hasta": 6.837
     },
     {
-     "t": 5.95,
+     "t": 6.837,
      "y": 0,
      "texto": "Parque acuático Wild Waters\nAntes 🛝",
      "tam": 50,
@@ -7411,10 +7411,10 @@
       984,
       222
      ],
-     "hasta": 8.55
+     "hasta": 10.927
     },
     {
-     "t": 8.55,
+     "t": 10.927,
      "y": 0,
      "texto": "Parque acuático Wild Waters\nAhora 😳",
      "tam": 50,
@@ -7424,10 +7424,10 @@
       984,
       226
      ],
-     "hasta": 11.46
+     "hasta": 14.827
     },
     {
-     "t": 11.46,
+     "t": 14.827,
      "y": 0,
      "texto": "SS Ayrfield 🛳️\nAntes",
      "tam": 80,
@@ -7437,10 +7437,10 @@
       760,
       334
      ],
-     "hasta": 14.52
+     "hasta": 18.227
     },
     {
-     "t": 14.52,
+     "t": 18.227,
      "y": 0,
      "texto": "SS Ayrfield 🛳️\nAhora 😳",
      "tam": 80,
@@ -7450,10 +7450,10 @@
       700,
       304
      ],
-     "hasta": 18.4
+     "hasta": 21.627
     },
     {
-     "t": 18.4,
+     "t": 21.627,
      "y": 0,
      "texto": "Estadio Silverdome 🏟️\nAntes",
      "tam": 66,
@@ -7463,10 +7463,10 @@
       984,
       286
      ],
-     "hasta": 23.25
+     "hasta": 25.027
     },
     {
-     "t": 23.25,
+     "t": 25.027,
      "y": 0,
      "texto": "Estadio Silverdome 🏟️\nAhora",
      "tam": 66,
@@ -7476,10 +7476,10 @@
       984,
       286
      ],
-     "hasta": 26.69
+     "hasta": 28.427
     },
     {
-     "t": 26.69,
+     "t": 28.427,
      "y": 0,
      "texto": "Parque de atracciones 🎢\nJet Star Antes…",
      "tam": 60,
@@ -7489,10 +7489,10 @@
       976,
       252
      ],
-     "hasta": 29.08
+     "hasta": 32.137
     },
     {
-     "t": 29.08,
+     "t": 32.137,
      "y": 0,
      "texto": "Parque de atracciones 🎢\nJet Star ahora…",
      "tam": 60,
@@ -7530,15 +7530,15 @@
   "coco": true,
   "inicio": 12.7,
   "fin": 16.7,
-  "duracion": 38.38,
+  "duracion": 40.18,
   "titulo": "Lugares abandonados\nantes VS ahora 😳",
   "textoY": 330,
   "textoTam": 68,
   "outro": {
    "desde": 4.0,
-   "dur": 34.38,
-   "video": "marryto/material/lugares2.mp4",
-   "audioTodo": "marryto/audio/m191-192b.mp3",
+   "dur": 36.18,
+   "video": "marryto/material/lugares3.mp4",
+   "audioTodo": "marryto/audio/m191-192c.mp3",
    "letras": [
     {
      "t": 0.0,
@@ -7551,10 +7551,10 @@
       960,
       180
      ],
-     "hasta": 2.54
+     "hasta": 3.437
     },
     {
-     "t": 2.54,
+     "t": 3.437,
      "y": 0,
      "texto": "Rosie el tiburón ahora 😳",
      "tam": 62,
@@ -7564,10 +7564,10 @@
       960,
       180
      ],
-     "hasta": 5.95
+     "hasta": 6.837
     },
     {
-     "t": 5.95,
+     "t": 6.837,
      "y": 0,
      "texto": "Parque acuático Wild Waters\nAntes 🛝",
      "tam": 50,
@@ -7577,10 +7577,10 @@
       984,
       222
      ],
-     "hasta": 8.55
+     "hasta": 10.927
     },
     {
-     "t": 8.55,
+     "t": 10.927,
      "y": 0,
      "texto": "Parque acuático Wild Waters\nAhora 😳",
      "tam": 50,
@@ -7590,10 +7590,10 @@
       984,
       226
      ],
-     "hasta": 11.46
+     "hasta": 14.827
     },
     {
-     "t": 11.46,
+     "t": 14.827,
      "y": 0,
      "texto": "SS Ayrfield 🛳️\nAntes",
      "tam": 80,
@@ -7603,10 +7603,10 @@
       760,
       334
      ],
-     "hasta": 14.52
+     "hasta": 18.227
     },
     {
-     "t": 14.52,
+     "t": 18.227,
      "y": 0,
      "texto": "SS Ayrfield 🛳️\nAhora 😳",
      "tam": 80,
@@ -7616,10 +7616,10 @@
       700,
       304
      ],
-     "hasta": 18.4
+     "hasta": 21.627
     },
     {
-     "t": 18.4,
+     "t": 21.627,
      "y": 0,
      "texto": "Estadio Silverdome 🏟️\nAntes",
      "tam": 66,
@@ -7629,10 +7629,10 @@
       984,
       286
      ],
-     "hasta": 23.25
+     "hasta": 25.027
     },
     {
-     "t": 23.25,
+     "t": 25.027,
      "y": 0,
      "texto": "Estadio Silverdome 🏟️\nAhora",
      "tam": 66,
@@ -7642,10 +7642,10 @@
       984,
       286
      ],
-     "hasta": 26.69
+     "hasta": 28.427
     },
     {
-     "t": 26.69,
+     "t": 28.427,
      "y": 0,
      "texto": "Parque de atracciones 🎢\nJet Star Antes…",
      "tam": 60,
@@ -7655,10 +7655,10 @@
       976,
       252
      ],
-     "hasta": 29.08
+     "hasta": 32.137
     },
     {
-     "t": 29.08,
+     "t": 32.137,
      "y": 0,
      "texto": "Parque de atracciones 🎢\nJet Star ahora…",
      "tam": 60,

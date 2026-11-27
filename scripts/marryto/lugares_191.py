@@ -66,17 +66,36 @@ def main():
     filtros.append("".join(f"[v{i}]" for i in range(len(slots))) + f"concat=n={len(slots)}:v=1:a=0,format=yuv420p[v]")
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(SHORT), "-filter_complex", ";".join(filtros), "-map", "[v]",
                     "-an", "-c:v", "libx264", "-crf", "15", "-preset", "fast", str(S / "lugares3.mp4")], check=True)
-    # audio: voz por frases + música baja debajo (más baja cuando habla)
-    fa = []
-    for i, (tv, a, b) in enumerate(colocar):
-        ms = int(tv * 1000)
-        fa.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,adelay={ms}|{ms}[p{i}]")
-    fa.append("".join(f"[p{i}]" for i in range(len(colocar))) + f"amix=inputs={len(colocar)}:normalize=0,apad,atrim=0:{total:.3f}[voz]")
-    hablando = "+".join(f"between(t,{tv - 0.15:.2f},{tv + (b - a) + 0.15:.2f})" for tv, a, b in colocar)
-    fa.append(f"[1:a]atrim=0:{total:.3f},volume=-1.5dB,volume='if({hablando},0.42,0.85)':eval=frame[mus]")
-    fa.append("[voz]volume=4dB[voz2];[voz2][mus]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=9[a]")
-    subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(VOZ), "-i", str(MUSICA), "-filter_complex", ";".join(fa), "-map", "[a]",
-                    "-ac", "2", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "256k", str(RAIZ / "public/marryto/audio/m191-192c.mp3")], check=True)
+    # audio (mezcla con numpy): voz por frases + música baja debajo (más baja cuando habla), −14 LUFS
+    import numpy as np
+    SR = 44100
+
+    def leer(r):
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(r), "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True, check=True).stdout
+        return np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
+
+    voz_src, mus = leer(VOZ), leer(MUSICA)
+    n = int(total * SR)
+    voz = np.zeros((n, 2), np.float32)
+    for tv, a, b in colocar:
+        seg = voz_src[int(a * SR):int(b * SR)].copy()
+        f = int(0.02 * SR)
+        seg[:f] *= np.linspace(0, 1, f)[:, None]
+        seg[-f:] *= np.linspace(1, 0, f)[:, None]
+        i0 = int(tv * SR)
+        voz[i0:i0 + len(seg)] += seg[: n - i0]
+    mus = np.pad(mus[:n], ((0, max(0, n - len(mus))), (0, 0)))
+    hay = np.zeros(n, np.float32)
+    for tv, a, b in colocar:
+        hay[int((tv - 0.15) * SR):int((tv + b - a + 0.15) * SR)] = 1
+    k = int(0.2 * SR)
+    hay = np.convolve(hay, np.ones(k) / k, "same")
+    mez = voz * 1.6 + mus * (0.85 - 0.45 * hay)[:, None] * 0.84
+    tmp = RAIZ / "public/marryto/audio/_tmp191.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-", str(tmp)], input=mez.astype(np.float32).tobytes(), check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-af", "loudnorm=I=-14:TP=-1.5:LRA=9", "-ar", str(SR), "-c:a", "libmp3lame", "-b:a", "256k",
+                    str(RAIZ / "public/marryto/audio/m191-192c.mp3")], check=True)
+    tmp.unlink()
     dur = total - INTRO
     letras = []
     for i, ((t0, d), (_, _, tx, _, caja, tam)) in enumerate(zip(slots, FRASES)):
