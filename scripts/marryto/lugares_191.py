@@ -33,7 +33,71 @@ FRASES = [
 ]
 
 
+VOZ = RAIZ / "public/marryto/voz/v191-1.mp3"  # Richard (ElevenLabs, toma 1 de 2, permiso del 28-nov)
+MUSICA = RAIZ / "public/marryto/audio/burning-memory.mp3"
+FOTO = 3.4  # cada foto al menos 3,4 s; la frase entra 0,35 s después del cambio y acaba antes del siguiente
+
+
 def main():
+    """28-nov: lo rehacemos nosotros: voz propia (Richard) frase a frase sin solaparse y fotos más largas."""
+    S = RAIZ / "public/marryto/material"
+    vj = json.loads(VOZ.with_suffix(".json").read_text())
+    lineas = vj["lineas"]  # 0 = título, 1..10 = fotos
+    # pistas de voz colocadas: (t_en_video, desde, hasta) en el mp3 de la voz
+    colocar = [(0.15, lineas[0]["t"] - 0.05, lineas[0]["fin"] + 0.1)]
+    slots, t = [], INTRO
+    for k in range(1, 11):
+        a, b = lineas[k]["t"] - 0.05, lineas[k]["fin"] + 0.1
+        dur = max(FOTO, (b - a) + 0.8)
+        colocar.append((t + 0.35, a, b))
+        slots.append((t, dur))
+        t += dur
+    total = t + 0.3
+    # video: cada foto estirada o recortada a su hueco
+    filtros = []
+    for n, ((_, d), (_, _, _, (f0, f1), _, _)) in enumerate(zip(slots, FRASES)):
+        if n == len(slots) - 1:
+            d += 0.3
+        largo = f1 - f0
+        if largo >= d:
+            filtros.append(f"[0:v]trim={f0}:{f0 + d},setpts=PTS-STARTPTS,fps=60,setsar=1[v{n}]")
+        else:
+            filtros.append(f"[0:v]trim={f0}:{f1},setpts={d / largo:.4f}*(PTS-STARTPTS),fps=60,setsar=1[v{n}]")
+    filtros.append("".join(f"[v{i}]" for i in range(len(slots))) + f"concat=n={len(slots)}:v=1:a=0,format=yuv420p[v]")
+    subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(SHORT), "-filter_complex", ";".join(filtros), "-map", "[v]",
+                    "-an", "-c:v", "libx264", "-crf", "15", "-preset", "fast", str(S / "lugares3.mp4")], check=True)
+    # audio: voz por frases + música baja debajo (más baja cuando habla)
+    fa = []
+    for i, (tv, a, b) in enumerate(colocar):
+        ms = int(tv * 1000)
+        fa.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,adelay={ms}|{ms}[p{i}]")
+    fa.append("".join(f"[p{i}]" for i in range(len(colocar))) + f"amix=inputs={len(colocar)}:normalize=0,apad,atrim=0:{total:.3f}[voz]")
+    hablando = "+".join(f"between(t,{tv - 0.15:.2f},{tv + (b - a) + 0.15:.2f})" for tv, a, b in colocar)
+    fa.append(f"[1:a]atrim=0:{total:.3f},volume=-1.5dB,volume='if({hablando},0.42,0.85)':eval=frame[mus]")
+    fa.append("[voz]volume=4dB[voz2];[voz2][mus]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=9[a]")
+    subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(VOZ), "-i", str(MUSICA), "-filter_complex", ";".join(fa), "-map", "[a]",
+                    "-ac", "2", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "256k", str(RAIZ / "public/marryto/audio/m191-192c.mp3")], check=True)
+    dur = total - INTRO
+    letras = []
+    for i, ((t0, d), (_, _, tx, _, caja, tam)) in enumerate(zip(slots, FRASES)):
+        l = {"t": round(t0 - INTRO, 3), "y": 0, "texto": tx, "tam": tam, "caja": caja}
+        if i + 1 < len(slots):
+            l["hasta"] = round(t0 - INTRO + d, 3)
+        letras.append(l)
+    p = RAIZ / "src/marryto/videos.json"
+    d = json.loads(p.read_text())
+    for n_ in ("191", "192"):
+        vv = d[n_]
+        vv.update(fin=round(vv["inicio"] + INTRO, 2), duracion=round(total, 2))
+        vv.pop("audio", None)
+        vv["outro"] = {"desde": INTRO, "dur": round(dur, 2), "video": "marryto/material/lugares3.mp4", "audioTodo": "marryto/audio/m191-192c.mp3", "letras": letras}
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    print("intro", INTRO, "· fotos", round(dur, 2), "s · total", round(total, 2), "s")
+    for (t0, dd), (tv, a, b) in zip(slots, colocar[1:]):
+        print(f"  foto {t0:6.2f}–{t0 + dd:6.2f}  voz {tv:6.2f}–{tv + b - a:6.2f}")
+
+
+def main_antiguo():
     S = RAIZ / "public/marryto/material"
     # tramos de audio del Short: [voz_i, min(voz_{i+1}, fin_i + COLA)]
     # 28-nov: tramos seguidos (sin quitar silencios): cada foto va de su voz a la voz siguiente
