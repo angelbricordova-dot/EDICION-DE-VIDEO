@@ -8029,9 +8029,9 @@
   "sinTexto": true,
   "sinImagen": true,
   "coco": true,
-  "inicio": 5.3,
-  "duracion": 7.2,
-  "fin": 12.5,
+  "inicio": 6.9,
+  "duracion": 6.13,
+  "fin": 13.03,
   "titulo": "",
   "textoY": 330,
   "textoTam": 62,
@@ -8040,15 +8040,15 @@
   "ojosX": 534,
   "outro": {
    "desde": 0,
-   "dur": 7.2,
+   "dur": 6.13,
    "video": "marryto/material/m201-comp.mp4",
    "audioTodo": "marryto/audio/m201-202.mp3",
    "letras": [
     {
      "t": 0,
-     "y": 1012,
-     "texto": "Cuál se está moviendo?",
-     "tam": 62
+     "y": 1105,
+     "texto": "Yo después de darme\ncuenta:",
+     "tam": 72
     }
    ]
   }
@@ -8072,9 +8072,9 @@
   "sinTexto": true,
   "sinImagen": true,
   "coco": true,
-  "inicio": 21.3,
-  "duracion": 7.2,
-  "fin": 28.5,
+  "inicio": 21.8,
+  "duracion": 6.13,
+  "fin": 27.93,
   "titulo": "",
   "textoY": 330,
   "textoTam": 62,
@@ -8083,15 +8083,15 @@
   "ojosX": 512,
   "outro": {
    "desde": 0,
-   "dur": 7.2,
+   "dur": 6.13,
    "video": "marryto/material/m202-comp.mp4",
    "audioTodo": "marryto/audio/m201-202.mp3",
    "letras": [
     {
      "t": 0,
-     "y": 1012,
-     "texto": "Cuál se está moviendo?",
-     "tam": 62
+     "y": 1105,
+     "texto": "Yo después de darme\ncuenta:",
+     "tam": 72
     }
    ]
   }
@@ -8210,8 +8210,8 @@
   "sinImagen": true,
   "coco": true,
   "inicio": 2.4,
-  "duracion": 6.13,
-  "fin": 8.53,
+  "duracion": 7.2,
+  "fin": 9.6,
   "titulo": "",
   "textoY": 330,
   "textoTam": 62,
@@ -8220,15 +8220,15 @@
   "ojosX": 552,
   "outro": {
    "desde": 0,
-   "dur": 6.13,
+   "dur": 7.2,
    "video": "marryto/material/m205-comp.mp4",
    "audioTodo": "marryto/audio/m205-206.mp3",
    "letras": [
     {
      "t": 0,
-     "y": 1105,
-     "texto": "Yo después de darme\ncuenta:",
-     "tam": 72
+     "y": 1012,
+     "texto": "Cuál se está moviendo?",
+     "tam": 62
     }
    ]
   }
@@ -8253,8 +8253,8 @@
   "sinImagen": true,
   "coco": true,
   "inicio": 14.0,
-  "duracion": 6.13,
-  "fin": 20.13,
+  "duracion": 7.2,
+  "fin": 21.2,
   "titulo": "",
   "textoY": 330,
   "textoTam": 62,
@@ -8263,15 +8263,15 @@
   "ojosX": 492,
   "outro": {
    "desde": 0,
-   "dur": 6.13,
+   "dur": 7.2,
    "video": "marryto/material/m206-comp.mp4",
    "audioTodo": "marryto/audio/m205-206.mp3",
    "letras": [
     {
      "t": 0,
-     "y": 1105,
-     "texto": "Yo después de darme\ncuenta:",
-     "tam": 72
+     "y": 1012,
+     "texto": "Cuál se está moviendo?",
+     "tam": 62
     }
    ]
   }

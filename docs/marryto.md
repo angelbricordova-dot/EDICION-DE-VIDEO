@@ -301,7 +301,8 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - La música de cada uno es la del Short de ejemplo, en el mismo tiempo (`audio/m<grupo>.mp3`, −12,3 dB).
 
 ## 201–205 (26-nov) — copiados del ejemplo (Shorts que mandó Alejandro en un .rar)
-- 201–202: ilusión arriba (del ejemplo) y su reacción abajo con "Cuál se está moviendo?". 203: su reacción a
+- **Corregido 27-nov (me equivoqué de ejemplo):** 201–202 = el tuit de la silla con "Yo después de darme cuenta:" (toma roja 6,9 s / azul 21,8 s, se agarra la cabeza) y 205–206 = la ilusión con "Cuál se está moviendo?". Comprobar SIEMPRE el ejemplo de cada carpeta con el enlace del Doc, no adivinar por el contenido.
+- (antes) 201–202: ilusión arriba (del ejemplo) y su reacción abajo con "Cuál se está moviendo?". 203: su reacción a
   pantalla completa con el recuadro de las manos y "Solo el 0.1% de la gente puede hacer esto:". 204: cartel
   leetspeak arriba y abajo en dos mitades "Gamer" (toma azul, tranquilo) y "No Gamer" (amarilla, frustrado).
   205 (azul) –206 (roja): el tuit de la silla arriba y "Yo después de darme cuenta:" con su reacción.
