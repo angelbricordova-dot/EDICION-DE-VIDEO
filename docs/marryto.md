@@ -320,8 +320,8 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 ### Correcciones 27-nov (191–204)
 - **Letras sin desvanecimiento** (rompe el bucle): `outro.letras` aparecen de golpe.
 - 191–192: intro de 3 s y **cada foto a la par con su voz** (`scripts/marryto/lugares_191.py`: cada foto dura su
-  frase, entra cuando la voz la nombra, sin silencios largos; 27,5 s).
-- 195: su reacción (escupir) cuando el bol **cae al suelo** (toma desde 5,4 s; el video del bebé se congela 1 s al
+  frase, entra cuando la voz la nombra). 28-nov: el audio del Short sigue sin cortes (38,4 s, como el original); intro 4 s.
+- 195: su reacción cuando el bol **cae al suelo** (28-nov: el video del bebé a 1,1× para que caiga a 10,6 s; toma desde 6,45 s; dura 12,7 s como el Short, la canción NO se repite).
   final y el audio sigue con el inicio del Short, como el bucle).
 - 198: sin dejar la cuchara de vuelta (azúcar 3,8–6,25 s) y luego el azúcar que se le cae al comer (14,3–15,82 s).
 - 201–202: la reacción empieza cuando aparece la chica sentada (1,6 s): roja desde 5,66 s, azul desde 18,1 s

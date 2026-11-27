@@ -9,13 +9,14 @@ Escribe public/marryto/material/lugares2.mp4, public/marryto/audio/m191-192b.mp3
 
     python3 scripts/marryto/lugares_191.py
 """
-import json
+import json  # noqa
 import subprocess
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 SHORT = RAIZ / "public/marryto/shorts200/191-192.mp4"
-INTRO = 3.0  # su reacción con el título (la voz del título acaba en 2,6 s)
+INTRO = 4.0  # su reacción con el título (la voz del título acaba en 2,6 s)
+CORTE = 6.9  # el audio del Short sigue SIN cortes desde aquí (28-nov: que dure como el original)
 COLA = 0.45  # tras el final de cada frase, antes de la siguiente foto
 # (inicio de la voz, fin de la voz, texto, tramo de la foto en el Short, recuadro de la etiqueta, tamaño)
 FRASES = [
@@ -35,10 +36,12 @@ FRASES = [
 def main():
     S = RAIZ / "public/marryto/material"
     # tramos de audio del Short: [voz_i, min(voz_{i+1}, fin_i + COLA)]
+    # 28-nov: tramos seguidos (sin quitar silencios): cada foto va de su voz a la voz siguiente
     tramos = []
     for i, (a, fin, *_rest) in enumerate(FRASES):
-        sig = FRASES[i + 1][0] if i + 1 < len(FRASES) else fin + 1.2
-        tramos.append((a, min(sig, fin + COLA) if i + 1 < len(FRASES) else sig))
+        ini = CORTE if i == 0 else a
+        sig = FRASES[i + 1][0] if i + 1 < len(FRASES) else 41.28
+        tramos.append((ini, sig))
     # video: cada foto estirada o recortada a su tramo
     filtros, entradas, n = [], [], 0
     for (a, b), (_, _, _, (f0, f1), _, _) in zip(tramos, FRASES):
