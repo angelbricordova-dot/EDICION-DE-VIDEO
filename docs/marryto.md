@@ -327,3 +327,6 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - 201–202: la reacción empieza cuando aparece la chica sentada (1,6 s): roja desde 5,66 s, azul desde 18,1 s
   (sonríe y luego se da cuenta, como el ejemplo).
 - 204: amarilla más centrada y las dos caras un poco más abajo (más margen bajo "Gamer / No Gamer").
+- **191–192 rehechos (28-nov, a petición de Alejandro):** voz propia de Richard (ElevenLabs, `scripts/marryto/locucion_191.json`,
+  toma 1 de 2, ~700 créditos con permiso) frase a frase, cada foto ≥ 3,4 s con su frase dentro (entra 0,35 s tras el
+  cambio y acaba antes del siguiente), música "It's just a burning memory" debajo, mezcla con numpy a −14 LUFS; 40,2 s.
