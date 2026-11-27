@@ -75,7 +75,8 @@ def main():
         "goles": marca("goles"),
         "sigues": marca("si", marca("goles")),
     }
-    guion = {"duracion": round(t + 0.5, 2), "tramos": out_tramos, "palabras": palabras, "marcas": secciones}
+    # sin cola: la cámara acaba con el último tramo
+    guion = {"duracion": round(t - 0.02, 2), "tramos": out_tramos, "palabras": palabras, "marcas": secciones}
     (RAIZ / "src/pollichris/guion.json").write_text(json.dumps(guion, ensure_ascii=False, indent=1))
     print("duración", guion["duracion"], "· tramos", len(out_tramos))
     for k, v in secciones.items():
