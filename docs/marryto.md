@@ -330,3 +330,10 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - **191–192 rehechos (28-nov, a petición de Alejandro):** voz propia de Richard (ElevenLabs, `scripts/marryto/locucion_191.json`,
   toma 1 de 2, ~700 créditos con permiso) frase a frase, cada foto ≥ 3,4 s con su frase dentro (entra 0,35 s tras el
   cambio y acaba antes del siguiente), música "It's just a burning memory" debajo, mezcla con numpy a −14 LUFS; 40,2 s.
+
+## 206–230 (28-nov)
+- Ejemplos emparejados por el **título real del enlace del Doc** (oEmbed de YouTube), nunca adivinando.
+- Imágenes de arriba rehechas en alta (los Shorts vienen a 360 px): 209–210 lista de meses (Montserrat 900 + emoji 👶 de
+  iPhone, `material/meses.png`), 211–212 ajedrez con el título rehecho (`ajedrez-titulo.png`), 213–214 uniformes a todo lo
+  ancho **sin espacio en blanco** (pedido del Doc), 215–216 cabeza + "TOCA DOS VECES Y GIRA TU TELÉFONO" (`cabeza-texto.png`).
+- 207–208: pide imágenes de IA "en otro contexto" (Marryto en GTA 6 con Lucía y vestido de Superman): prompts para Gemini.
