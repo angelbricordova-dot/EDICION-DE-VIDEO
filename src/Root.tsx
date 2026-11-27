@@ -8,6 +8,7 @@ import { ComposicionesKatia } from "./katia/Composiciones";
 import { ComposicionesMarryto } from "./marryto/Composiciones";
 import { ComposicionesIvm } from "./ivm/Composiciones";
 import { ComposicionesPaul } from "./paul/Composiciones";
+import { ComposicionesPollichris } from "./pollichris/Composiciones";
 import { ComposicionesPronosticos } from "./pronosticos/Composiciones";
 import { ComposicionesPruebas } from "./prueba/Composiciones";
 import { ComposicionesShimon } from "./shimon/Composiciones";
@@ -19,6 +20,7 @@ import { ComposicionesTucacas } from "./tucacas/Composiciones";
 // sale en su propia carpeta de Remotion Studio. Un cliente nuevo: carpeta nueva + una línea aquí.
 export const RemotionRoot: React.FC = () => (
   <>
+    <ComposicionesPollichris />
     <ComposicionesMarryto />
     <ComposicionesKatia />
     <ComposicionesShimon />
