@@ -8585,8 +8585,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 1.5,
-  "fin": 8.56,
+  "inicio": 2.4,
+  "fin": 9.46,
   "duracion": 7.06,
   "caraX": 540,
   "caraY": 900,
@@ -8605,8 +8605,8 @@
   "textoY": 684,
   "textoTam": 56,
   "coco": true,
-  "ojosY": 885,
-  "frenteY": 809,
+  "ojosY": 908,
+  "frenteY": 813,
   "ojosX": 487
  },
  "208": {
@@ -8622,8 +8622,8 @@
   "bajar": 0,
   "desplazar": true,
   "separacion": 40,
-  "inicio": 12.5,
-  "fin": 19.56,
+  "inicio": 13.4,
+  "fin": 20.46,
   "duracion": 7.06,
   "caraX": 540,
   "caraY": 900,
@@ -8642,8 +8642,8 @@
   "textoY": 684,
   "textoTam": 56,
   "coco": true,
-  "ojosY": 902,
+  "ojosY": 938,
   "frenteY": 815,
-  "ojosX": 528
+  "ojosX": 524
  }
 }
