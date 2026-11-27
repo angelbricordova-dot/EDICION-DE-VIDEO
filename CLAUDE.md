@@ -95,6 +95,7 @@ copiar este archivo y la carpeta `.claude/skills/` allá.
 | Proyecto personal: video ensayo de cumpleaños para Angelica (22-nov) | `src/angelica/` (por crear) | `docs/angelica.md` | video ensayo íntimo estilo Atherion, voz de Alejandro, la luz como hilo, montaje en Premiere + escenas mías |
 | Jordan (amigo de The Fezz): vídeos largos de YouTube | `src/jordan/` (por crear) | `docs/jordan.md` | 4 vídeos/mes por 100 USD con escalado; acuerdo en PDF (`scripts/jordan/`) |
 | Pollichris (FC27, cliente nuevo): video de prueba de playstyles | `src/pollichris/` | `docs/pollichris.md` | juego arriba y él abajo, subtítulos amarillos Anton en la unión, insignias de playstyle, medallas, cartas, flechas naranjas, cierre con sus redes |
+| FX Diego (clipping, campaña): clips de mindset/día a día de un trader | `src/diego/` (por crear) | `docs/diego.md` | Montserrat 500/600, subtítulos en minúsculas sin animación, cortes secos, sin efectos ni emojis, castellano de España |
 | Laura Castillo (UGC, España): marca personal de moda + cafetería (propuesta) | `src/laura/` (por crear) | `docs/laura.md` | a cámara con stickers de prendas recortadas, logos de marcas, títulos blanco/amarillo; cafetería tipo vlog @fincarimal |
 
 ### Separación por cliente (obligatoria)
