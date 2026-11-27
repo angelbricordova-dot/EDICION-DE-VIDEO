@@ -74,9 +74,10 @@ const CLIPS = [
     { f: "trivela", desde: 19.3, hasta: 22.3 },
     { f: "trivela", desde: 23.65, hasta: 28.55 },
     { f: "trivela", desde: 28.7, hasta: 31.85 },
+    { f: "trivela", desde: 2.0, hasta: 7.4 }, // fondo del cierre (desenfocado)
   ]),
 ];
-const S_JUEGO = 1.25;
+const S_JUEGO = 1.5; // la cámara del juego deja el balón cerca del centro: ventana centrada en (900, 560)
 
 const Juego: React.FC<{ t: number }> = ({ t }) => {
   const { fps } = useVideoConfig();
@@ -84,8 +85,8 @@ const Juego: React.FC<{ t: number }> = ({ t }) => {
     <>
       {CLIPS.map((c, i) => {
         const dur = (c.hasta - c.desde) / (c.vel ?? 1);
-        const ox = c.ox ?? 640;
-        const oy = c.oy ?? 70;
+        const ox = c.ox ?? 810;
+        const oy = c.oy ?? 280;
         // empuje de cámara suave dentro de cada trozo (nunca quieto) y entrada con golpe de zoom
         const k = clamp01((t - c.t) / dur);
         const z = 1 + 0.05 * k + 0.06 * (1 - prog(t, c.t, c.t + 0.35));
@@ -131,7 +132,7 @@ const Camara: React.FC<{ t: number }> = ({ t }) => {
 // ---------------------------------------------------------------- gráficos
 
 /** Insignia de playstyle (diseño propio): rombo dorado con su icono y la etiqueta debajo. */
-const Insignia: React.FC<{ t: number; t0: number; hasta: number; icono: "tiro" | "empeine" | "revolucion"; texto: string; x?: number; y?: number; tam?: number }> = ({ t, t0, hasta, icono, texto, x = 540, y = 470, tam = 300 }) => {
+const Insignia: React.FC<{ t: number; t0: number; hasta: number; icono: "tiro" | "empeine" | "revolucion"; texto: string; x?: number; y?: number; tam?: number }> = ({ t, t0, hasta, icono, texto, x = 540, y = 470, tam = 400 }) => {
   if (t < t0 || t > hasta) return null;
   const k = sp(t, t0, { damping: 11, stiffness: 190, mass: 0.7 });
   const sale = prog(t, hasta - 0.25, hasta, easeInOut);
@@ -182,7 +183,7 @@ const Insignia: React.FC<{ t: number; t0: number; hasta: number; icono: "tiro" |
 };
 
 /** Cruz roja que se dibuja encima (dos trazos) con golpe. */
-const Cruz: React.FC<{ t: number; t0: number; hasta: number; x?: number; y?: number; tam?: number }> = ({ t, t0, hasta, x = 540, y = 470, tam = 360 }) => {
+const Cruz: React.FC<{ t: number; t0: number; hasta: number; x?: number; y?: number; tam?: number }> = ({ t, t0, hasta, x = 540, y = 470, tam = 480 }) => {
   if (t < t0 || t > hasta) return null;
   const a = prog(t, t0, t0 + 0.12);
   const b = prog(t, t0 + 0.1, t0 + 0.22);
@@ -203,7 +204,7 @@ const Medalla: React.FC<{ t: number; t0: number; hasta: number; n: number }> = (
   const sale = prog(t, hasta - 0.25, hasta);
   const balanceo = Math.sin((t - t0) * 6) * 6 * Math.exp(-(t - t0) * 2.5);
   return (
-    <div style={{ position: "absolute", left: 120, top: -40 + 200 * k - sale * 300, width: 200, height: 330, transformOrigin: "100px 0", rotate: `${balanceo}deg` }}>
+    <div style={{ position: "absolute", left: 40, top: -330 + 360 * k - sale * 400, width: 200, height: 330, transformOrigin: "100px 0", rotate: `${balanceo}deg`, scale: "1.3" }}>
       <svg width={200} height={330} viewBox="0 0 200 330" style={{ filter: "drop-shadow(0 12px 18px rgba(0,0,0,0.5))" }}>
         <path d="M60 0 L100 120 L140 0 Z" fill="#1E40AF" />
         <path d="M78 0 L100 66 L122 0 Z" fill="#fff" />
@@ -288,7 +289,7 @@ const Etiqueta: React.FC<{ t: number; t0: number; hasta: number; texto: string }
   const k = prog(t, t0, t0 + 0.35);
   const sale = prog(t, hasta - 0.2, hasta);
   return (
-    <div style={{ position: "absolute", left: 40, top: 60, translate: `${(1 - k) * -500 - sale * 500}px 0`, background: AMARILLO, borderRadius: 12, padding: "8px 22px", fontFamily: ANTON, fontSize: 44, color: "#111", textTransform: "uppercase", boxShadow: "0 6px 0 #000" }}>{texto}</div>
+    <div style={{ position: "absolute", left: 40, top: 60, translate: `${(1 - k) * -600 - sale * 600}px 0`, background: AMARILLO, borderRadius: 12, padding: "8px 24px", fontFamily: ANTON, fontSize: 56, color: "#111", textTransform: "uppercase", boxShadow: "0 6px 0 #000" }}>{texto}</div>
   );
 };
 
@@ -376,7 +377,6 @@ export const Playstyles: React.FC<PropsPlaystyles> = ({ audio }) => {
   const { fps } = useVideoConfig();
   const t = useCurrentFrame() / fps;
   const equivocado = cuando("equivocado");
-  const tiroCalidad = cuando("tiro");
   const fin = M.sigues;
   // temblor corto cuando cae la cruz
   const temblor = t > equivocado && t < equivocado + 0.3 ? Math.sin(t * 90) * 10 * (1 - (t - equivocado) / 0.3) : 0;
@@ -389,10 +389,10 @@ export const Playstyles: React.FC<PropsPlaystyles> = ({ audio }) => {
       <AbsoluteFill style={{ translate: `${temblor}px 0` }}>
         <Juego t={t} />
         {/* oscurece el juego detrás de los gráficos grandes */}
-        <AbsoluteFill style={{ height: ARRIBA, background: "rgba(0,0,0,0.45)", opacity: (t < M.primero + 2 ? 1 : 0) * (t > tiroCalidad - 0.1 ? 1 : 0) + (t > M.segundo && t < M.segundo + 2 ? 1 : 0) }} />
+        <AbsoluteFill style={{ height: ARRIBA, background: "rgba(0,0,0,0.45)", opacity: (t < M.primero + 2.1 ? 1 : 0) + (t > M.segundo && t < M.segundo + 2 ? 1 : 0) }} />
         {/* gancho: el tiro de calidad, tachado en "equivocado" */}
-        <Insignia t={t} t0={tiroCalidad - 0.05} hasta={M.primero} icono="tiro" texto="Tiro de calidad" y={430} />
-        <Cruz t={t} t0={equivocado} hasta={M.primero} y={430} />
+        <Insignia t={t} t0={0} hasta={M.primero} icono="tiro" texto="Tiro de calidad" y={460} />
+        <Cruz t={t} t0={equivocado} hasta={M.primero} y={460} />
         {/* número 1: pase de empeine */}
         <Medalla t={t} t0={M.primero} hasta={M.primero + 2.1} n={1} />
         <Insignia t={t} t0={cuando("empeine", M.primero) - 0.05} hasta={M.primero + 2.1} icono="empeine" texto="Pase de empeine" y={470} />
@@ -412,7 +412,7 @@ export const Playstyles: React.FC<PropsPlaystyles> = ({ audio }) => {
         <Flecha t={t} t0={curva - 0.2} hasta={curva + 1.3} d="M240 860 Q300 360 860 330" largo={1000} />
         <Potencia t={t} t0={potente - 0.1} hasta={potente + 1.6} />
         <Flecha t={t} t0={orientarte} hasta={orientarte + 1.5} d="M540 900 L540 360" largo={560} />
-        <Goles t={t} t0={M.goles - 0.25} hasta={fin} />
+        <Goles t={t} t0={cuando("muchos", M.orientarte) - 0.1} hasta={fin} />
         <Redes t={t} t0={fin} />
       </AbsoluteFill>
       <Camara t={t} />
@@ -422,14 +422,14 @@ export const Playstyles: React.FC<PropsPlaystyles> = ({ audio }) => {
       <Subtitulos t={t} ocultar={(x) => x >= fin + 0.2} />
       {/* sonido: su voz limpia, música (si hay) y pocos efectos que se entienden con lo que se ve */}
       <Audio src={staticFile(audio ?? "pollichris/voz.wav")} />
-      <Efecto t={tiroCalidad - 0.05} n="pop-2" v={0.45} />
+      <Efecto t={0.05} n="pop-2" v={0.45} />
       <Efecto t={equivocado} n="golpe-2" v={0.6} />
       <Efecto t={M.primero - 0.1} n="barrido-2" v={0.4} />
       <Efecto t={M.bruno} n="pop-duro" v={0.35} />
       <Efecto t={M.pedri} n="pop-duro" v={0.35} />
       <Efecto t={M.stanway} n="pop-duro" v={0.35} />
       <Efecto t={M.segundo - 0.1} n="barrido-2" v={0.4} />
-      <Efecto t={M.goles - 0.25} n="acierto" v={0.4} />
+      <Efecto t={cuando("muchos", M.orientarte) - 0.1} n="acierto" v={0.4} />
       <Efecto t={fin + 1.4} n="clic-2" v={0.6} />
     </AbsoluteFill>
   );
