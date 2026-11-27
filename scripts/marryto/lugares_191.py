@@ -1,0 +1,87 @@
+"""Marryto 191–192 ("Lugares abandonados antes VS ahora"): cada foto a la par con su voz (corrección 27-nov).
+
+En el Short original las fotos no van con la voz (unas duran poco y otras mucho). Aquí cada foto dura lo
+que dura su frase ("Rosie el tiburón, antes"…), entra justo cuando la voz la nombra, y se quitan los
+silencios largos entre frases. La intro (su reacción con el título) baja a 3 s.
+
+Tiempos de la voz (palabras de whisper; el inicio se corrige cuando whisper alarga la primera palabra) y tramos de cada foto en el Short (cortes de escena).
+Escribe public/marryto/material/lugares2.mp4, public/marryto/audio/m191-192b.mp3 y las etiquetas en videos.json.
+
+    python3 scripts/marryto/lugares_191.py
+"""
+import json
+import subprocess
+from pathlib import Path
+
+RAIZ = Path(__file__).resolve().parents[2]
+SHORT = RAIZ / "public/marryto/shorts200/191-192.mp4"
+INTRO = 3.0  # su reacción con el título (la voz del título acaba en 2,6 s)
+COLA = 0.45  # tras el final de cada frase, antes de la siguiente foto
+# (inicio de la voz, fin de la voz, texto, tramo de la foto en el Short, recuadro de la etiqueta, tamaño)
+FRASES = [
+    (7.05, 8.84, "Rosie el tiburón antes 🦈", (7.3, 9.767), [60, 428, 960, 180], 62),
+    (9.44, 11.26, "Rosie el tiburón ahora 😳", (9.767, 13.2), [60, 428, 960, 180], 62),
+    (12.85, 15.52, "Parque acuático Wild Waters\nAntes 🛝", (13.2, 15.533), [48, 402, 984, 222], 50),
+    (15.45, 17.82, "Parque acuático Wild Waters\nAhora 😳", (15.533, 18.567), [48, 362, 984, 226], 50),
+    (18.36, 20.24, "SS Ayrfield 🛳️\nAntes", (18.567, 21.6), [160, 284, 760, 334], 80),
+    (21.42, 23.16, "SS Ayrfield 🛳️\nAhora 😳", (21.6, 25.5), [192, 108, 700, 304], 80),
+    (25.3, 27.17, "Estadio Silverdome 🏟️\nAntes", (25.5, 30.333), [48, 276, 984, 286], 66),
+    (30.15, 31.89, "Estadio Silverdome 🏟️\nAhora", (30.333, 33.833), [48, 276, 984, 286], 66),
+    (33.59, 35.93, "Parque de atracciones 🎢\nJet Star Antes…", (33.833, 35.833), [52, 355, 976, 252], 60),
+    (35.98, 37.97, "Parque de atracciones 🎢\nJet Star ahora…", (35.833, 41.28), [52, 296, 976, 252], 60),
+]
+
+
+def main():
+    S = RAIZ / "public/marryto/material"
+    # tramos de audio del Short: [voz_i, min(voz_{i+1}, fin_i + COLA)]
+    tramos = []
+    for i, (a, fin, *_rest) in enumerate(FRASES):
+        sig = FRASES[i + 1][0] if i + 1 < len(FRASES) else fin + 1.2
+        tramos.append((a, min(sig, fin + COLA) if i + 1 < len(FRASES) else sig))
+    # video: cada foto estirada o recortada a su tramo
+    filtros, entradas, n = [], [], 0
+    for (a, b), (_, _, _, (f0, f1), _, _) in zip(tramos, FRASES):
+        d = b - a
+        largo = f1 - f0
+        if largo >= d:
+            filtros.append(f"[0:v]trim={f0}:{f0 + d},setpts=PTS-STARTPTS,fps=60,setsar=1[v{n}]")
+        else:
+            k = d / largo
+            filtros.append(f"[0:v]trim={f0}:{f1},setpts={k:.4f}*(PTS-STARTPTS),fps=60,setsar=1[v{n}]")
+        n += 1
+    filtros.append("".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0,format=yuv420p[v]")
+    subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(SHORT), "-filter_complex", ";".join(filtros), "-map", "[v]",
+                    "-an", "-c:v", "libx264", "-crf", "15", "-preset", "fast", str(S / "lugares2.mp4")], check=True)
+    # audio: intro (título) + cada tramo, con fundidos de 25 ms en cada unión
+    fa, m = [f"[0:a]atrim=0:{INTRO},asetpts=PTS-STARTPTS,afade=t=out:st={INTRO - 0.03}:d=0.03[a0]"], 1
+    for a, b in tramos:
+        fa.append(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.025,afade=t=out:st={b - a - 0.03:.3f}:d=0.03[a{m}]")
+        m += 1
+    v = subprocess.run(["ffmpeg", "-i", str(SHORT), "-af", "volumedetect", "-f", "null", "-"], capture_output=True, text=True).stderr
+    media = float(v.split("mean_volume:")[1].split("dB")[0])
+    fa.append("".join(f"[a{i}]" for i in range(m)) + f"concat=n={m}:v=0:a=1,volume={-12.3 - media:.1f}dB,alimiter=limit=0.95[a]")
+    subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(SHORT), "-filter_complex", ";".join(fa), "-map", "[a]",
+                    "-ac", "2", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "256k", str(RAIZ / "public/marryto/audio/m191-192b.mp3")], check=True)
+    dur = sum(b - a for a, b in tramos)
+    letras, t = [], 0.0
+    for i, ((a, b), (_, _, tx, _, caja, tam)) in enumerate(zip(tramos, FRASES)):
+        l = {"t": round(t, 3), "y": 0, "texto": tx, "tam": tam, "caja": caja}
+        t += b - a
+        if i + 1 < len(FRASES):
+            l["hasta"] = round(t, 3)
+        letras.append(l)
+    p = RAIZ / "src/marryto/videos.json"
+    d = json.loads(p.read_text())
+    for n_ in ("191", "192"):
+        vv = d[n_]
+        vv.update(fin=round(vv["inicio"] + INTRO, 2), duracion=round(INTRO + dur, 2))
+        vv["outro"] = {"desde": INTRO, "dur": round(dur, 2), "video": "marryto/material/lugares2.mp4", "audioTodo": "marryto/audio/m191-192b.mp3", "letras": letras}
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    print("intro", INTRO, "· fotos", round(dur, 2), "s · total", round(INTRO + dur, 2), "s")
+    for l in letras:
+        print(f"  {l['t']:6.2f}  {l['texto'].splitlines()[0]}")
+
+
+if __name__ == "__main__":
+    main()

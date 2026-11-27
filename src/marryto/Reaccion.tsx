@@ -129,7 +129,7 @@ const LetrasEncima: React.FC<{ outro: NonNullable<Video["outro"]> }> = ({ outro 
               <div>{rico(l.texto, tam)}</div>
             </div>
           );
-        const p = clamp01((t - l.t) / 0.15);
+        const p = 1; // 27-nov: sin desvanecimiento (rompe el bucle del Short)
         return (
           <div key={i} style={{ position: "absolute", left: l.x !== undefined ? l.x - 500 : 50, width: l.x !== undefined ? 1000 : undefined, right: l.x !== undefined ? undefined : 50, top: l.y, translate: "0 -50%", display: "flex", justifyContent: "center", textAlign: "center", whiteSpace: "pre-line", opacity: p, scale: String(0.9 + 0.1 * p) }}>
             {l.pastilla ? (

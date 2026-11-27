@@ -316,3 +316,14 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
   ejemplo) — voz Richard (eleven_v3, `[sorprendido]`, toma 1 de 2, ~100 créditos con permiso del 26-nov): `voz/v197-1.mp3`. 198: el audio original del ejemplo al principio.
   199–200: recorte limpio de los bailarines (y 81–253 del Short a 360 px: sin restos del título ni del texto de
   abajo); 200 empieza con la cara de confundido (18,3 s).
+
+### Correcciones 27-nov (191–204)
+- **Letras sin desvanecimiento** (rompe el bucle): `outro.letras` aparecen de golpe.
+- 191–192: intro de 3 s y **cada foto a la par con su voz** (`scripts/marryto/lugares_191.py`: cada foto dura su
+  frase, entra cuando la voz la nombra, sin silencios largos; 27,5 s).
+- 195: su reacción (escupir) cuando el bol **cae al suelo** (toma desde 5,4 s; el video del bebé se congela 1 s al
+  final y el audio sigue con el inicio del Short, como el bucle).
+- 198: sin dejar la cuchara de vuelta (azúcar 3,8–6,25 s) y luego el azúcar que se le cae al comer (14,3–15,82 s).
+- 201–202: la reacción empieza cuando aparece la chica sentada (1,6 s): roja desde 5,66 s, azul desde 18,1 s
+  (sonríe y luego se da cuenta, como el ejemplo).
+- 204: amarilla más centrada y las dos caras un poco más abajo (más margen bajo "Gamer / No Gamer").
