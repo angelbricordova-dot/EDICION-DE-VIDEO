@@ -343,3 +343,11 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - 217–230 (28-nov): imágenes de arriba recortadas del ejemplo y ampliadas a 1080 (`generaciones.jpg`, `teclado.jpg`,
   `duermes.jpg`, `pelucas.jpg`, `abuelos.jpg`, `patricio.jpg`) y la tarjeta de Lupita rehecha con emojis de iPhone
   (`lupita.png`). Ojo al recortar: medir el recuadro sobre el fotograma real (bbox con numpy), no a ojo sobre la hoja.
+- **Correcciones de Alejandro 209–230 (28-nov)** (`scripts/marryto/correcciones_209_230.py`):
+  - **Duración mínima ~6–7 s** por video (alguna excepción un poco más o menos). Si el audio del Short es más corto
+    (5–6 s), la canción se **empalma consigo misma** donde suena igual (±0,4 s de espectro, fundido de 40 ms): repite
+    un trozo para alargar o lo quita para acortar, y el final sigue siendo el del Short (el bucle queda natural).
+  - **Nunca mostrar sus indicaciones**: en 210 dice "…voy a poner que nazco en mayo… me voy a poner como triste"
+    (9,1–18,3 s del bruto): el video empieza después, ya actuando, y el título pasa a "MAYO:".
+  - Cortar **antes de que deje de actuar** y vaya a apagar la cámara (209, 221); empezar ya apuntando arriba
+    (222, 224) o tocándose la barbilla (221).
