@@ -55,3 +55,19 @@ Entrega: **1080p 60 fps** (horizontal), **12–15 min**, en **español** (Jay ha
   ElevenLabs lo-fi 3 min (`public/jordan/musica/vlog1.mp3`, permiso de Alejandro) a −20 dB bajo la voz, −14 LUFS.
 - Borrador 13:39 (`out/jordan/borrador.mp4`, copia de 27 MB para el móvil). Final: `montaje.py final` lee los 4K del
   transfer (subfile) → 1080p 60 fps. Falta disco (~1 GB) para el final.
+
+### Correcciones de Alejandro (28-nov) → montaje v2
+- Subtítulos **sin borde**: blancos sobre una caja oscura semitransparente (ASS BorderStyle 3), subidos al tercio
+  inferior (no pegados abajo). Textos clave arriba cuando él los dice (precios, tiendas, "yo gané", la cena).
+- Lo más **smooth** posible: empuje de cámara continuo en todos los planos (zoom 1,00↔1,05 con curva suave; escala
+  2× por fotograma + recorte fijo, sin tirones), fundido cruzado de 0,3 s entre escenas (vídeo y audio, hecho dentro
+  del segmento que entra para no recodificar todo) y micro-fundidos de audio en cada corte.
+- **Música variada**: cada escena usa otra parte de la canción (intro suave, groove A, hype, groove B, outro) con
+  fundidos; siempre por debajo del vídeo: −27 dB bajo la voz, −20 en pausas, −14 sin voz, −12 en la preview.
+- Tras el gancho ("mucha gente me llama loco…"), **preview** de 12 planos al pulso (2 pulsos de 0,743 s) con "un día
+  conmigo".
+- **1v1 más dinámico**: cada tiro 3,5 s antes y 1,2 después, zoom que avanza 1,55→1,85 al aro, y los dos mejores
+  (739,55 y 837,05) se repiten a cámara lenta con golpe.
+- Clips grabados de lado (IMG_1095, IMG_1125, IMG_1136): `transpose=2`.
+- Disco: el final escribe cada plano ya con subtítulos (`.ts` a ~5 Mbps), une el audio para la mezcla y luego une el
+  vídeo sin recodificar con la mezcla (pico ≈ 2× el tamaño final).
