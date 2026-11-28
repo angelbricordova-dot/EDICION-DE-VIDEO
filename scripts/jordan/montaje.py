@@ -140,9 +140,12 @@ def edl():
             c["zoom"] = (*c["zoom"], c["zoom"][2] + 0.08)
         c["xf"] = i > 0 and c["escena"] != cortes[i - 1]["escena"] and c["escena"] != "preview"
         if c["xf"]:
-            t -= XF
-        c["t"] = round(t, 3)
-        c["dur"] = round((c["b"] - c["a"]) / c["vel"], 3)
+            t -= XF  # 18 fotogramas
+        # duraciones exactas en fotogramas de 60 fps (si no, 200 planos se desfasan segundos)
+        nf = max(30, round((c["b"] - c["a"]) / c["vel"] * 60))
+        c["dur"] = round(nf / 60, 5)
+        c["b"] = round(c["a"] + c["dur"] * c["vel"], 5)
+        c["t"] = round(t, 5)
         t += c["dur"]
     return cortes, t
 
@@ -258,18 +261,22 @@ def main():
     fuentes = str(J / "fuentes")
     cod = ["-c:v", "libx264", "-preset", "medium" if final else "veryfast", "-crf", "21" if final else "24",
            "-maxrate", "6M" if final else "3M", "-bufsize", "12M" if final else "6M", "-pix_fmt", "yuv420p",
-           "-g", "120", "-bf", "2", "-c:a", "aac", "-b:a", "320k", "-ar", str(SR), "-ac", "2", "-f", "mpegts"]
+           "-g", "120", "-bf", "2", "-f", "mpegts"]
     lista = []
     for i, c in enumerate(cortes):
         out = seg_dir / f"{i:04d}.ts"
+        wav = out.with_suffix(".wav")
         lista.append(out)
-        if out.exists() and out.stat().st_size > 1000:
+        if out.exists() and out.stat().st_size > 1000 and wav.exists():
             continue
         sig_xf = i + 1 < len(cortes) and cortes[i + 1]["xf"]
         # este plano se corta XF antes si el siguiente entra con fundido (esa cola va en el segmento del siguiente)
         b = c["b"] - (XF * c["vel"] if sig_xf else 0.0)
         cc = dict(c)
-        sub = [f"setpts=PTS-STARTPTS+{c['t']:.4f}/TB", f"subtitles={subs}:fontsdir={fuentes}", "setpts=PTS-STARTPTS"]
+        L = round(c["dur"] - (XF if sig_xf else 0.0), 5)
+        exacto = [f"tpad=stop_mode=clone:stop_duration=0.2", f"trim=duration={L}"]
+        aexacto = f"apad=whole_dur={L},atrim=duration={L}"
+        sub = [*exacto, f"setpts=PTS-STARTPTS+{c['t']:.4f}/TB", f"subtitles={subs}:fontsdir={fuentes}", "setpts=PTS-STARTPTS"]
         if c["xf"]:
             p = cortes[i - 1]
             cola = XF * p["vel"]
@@ -278,13 +285,13 @@ def main():
                   f"[1:v]{','.join(vf_plano(cc, W, H))}[nv];"
                   f"[pv][nv]xfade=transition=fade:duration={XF}:offset=0,{','.join(sub)}[v];"
                   f"[0:a]{','.join(af_plano(p))}[pa];[1:a]{','.join(af_plano(c))}[na];"
-                  f"[pa][na]acrossfade=d={XF - 0.01}:c1=qsin:c2=qsin,afade=t=out:st={max(0, b - c['a'] - 0.03):.3f}:d=0.03[a]")
+                  f"[pa][na]acrossfade=d={XF - 0.01}:c1=qsin:c2=qsin,{aexacto},afade=t=out:st={L - 0.03:.4f}:d=0.03[a]")
         else:
             ent = entrada(c["clip"], c["a"], b - c["a"])
             fc = (f"[0:v]{','.join(vf_plano(cc, W, H) + sub)}[v];"
-                  f"[0:a]{','.join(af_plano(c))},afade=t=in:d=0.015,afade=t=out:st={max(0, (b - c['a']) / c['vel'] - 0.03):.3f}:d=0.03[a]")
-        r = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", *ent, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
-                            *cod, str(out)], capture_output=True, text=True)
+                  f"[0:a]{','.join(af_plano(c))},afade=t=in:d=0.015,{aexacto},afade=t=out:st={L - 0.03:.4f}:d=0.03[a]")
+        r = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", *ent, "-filter_complex", fc, "-map", "[v]", *cod, str(out),
+                            "-map", "[a]", "-c:a", "pcm_s16le", "-ar", str(SR), "-ac", "2", str(wav)], capture_output=True, text=True)
         if r.returncode:
             print("FALLO", i, c["clip"], r.stderr[-600:], flush=True)
             out.unlink(missing_ok=True)
@@ -294,7 +301,12 @@ def main():
     cat = J / f"_cat_{modo}.txt"
     cat.write_text("".join(f"file '{p}'\n" for p in lista))
     voz = J / "_voz.wav"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(cat), "-vn", "-ac", "2", "-ar", str(SR), str(voz)], check=True)
+    import wave
+    with wave.open(str(voz), "wb") as o:  # audio exacto: muestras seguidas, sin huecos
+        o.setnchannels(2); o.setsampwidth(2); o.setframerate(SR)
+        for p in lista:
+            with wave.open(str(p.with_suffix(".wav"))) as w_:
+                o.writeframes(w_.readframes(w_.getnframes()))
     mezcla(voz, cortes, dur, J / "mezcla.wav")
     voz.unlink()
     destino = RAIZ / "out/jordan" / ("borrador.mp4" if not final else "vlog1-final.mp4")
