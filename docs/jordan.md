@@ -71,3 +71,7 @@ Entrega: **1080p 60 fps** (horizontal), **12–15 min**, en **español** (Jay ha
 - Clips grabados de lado (IMG_1095, IMG_1125, IMG_1136): `transpose=2`.
 - Disco: el final escribe cada plano ya con subtítulos (`.ts` a ~5 Mbps), une el audio para la mezcla y luego une el
   vídeo sin recodificar con la mezcla (pico ≈ 2× el tamaño final).
+- **Final entregado (28-nov):** `out/jordan/vlog1-final.mp4` (1920×1080, 60 fps, 12:06, −14,8 LUFS, 55 min de render
+  desde los 4K del transfer). Copia móvil `out/jordan/enviar/jay-vlog1-final-movil.mp4` (480p, 28 MB) y copia de
+  calidad completa < 500 MB para enviar (`jay-vlog1-final-1080p60.mp4`, 2 pasadas a 5,15 Mbps): el envío de archivos
+  no acepta más de 500 MiB.
