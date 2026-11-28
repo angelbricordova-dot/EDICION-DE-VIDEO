@@ -35,3 +35,15 @@ Entrega: **1080p 60 fps** (horizontal), **12–15 min**, en **español** (Jay ha
 - Hora en texto fino blanco a media pantalla ("11:02am") al cambiar de lugar; a veces fecha estilo cámara
   (amarilla, "Saturday, July 25, 2026") abajo a la derecha.
 - Sin grafismos pesados; cierre con texto pequeño de agradecimiento.
+
+### Historia del día (transcripción de los 61 clips, `public/jordan/transcripcion/`)
+1. Entreno a las 5:30 de la mañana, pabellón vacío ("no tenemos competencia"): IMG_0938–0939, IMG_1070–1076
+   (sparring con Ongu, "este domingo en Barcelona").
+2. **1v1 con Ongu**: IMG_0103 (27 min, plano fijo lateral y lejano, 4K → se puede ampliar ×2 en 1080p sin perder calidad).
+3. Trabajo de repartidor ("para ser viernes tenemos poco trabajo… estoy cansado del entreno"; "mucha gente me llama
+   loco por mi rutina… hago este trabajo por el baloncesto"): IMG_1078–1079, fin de turno IMG_1086.
+4. Con Landis en bus a La Roca Village: IMG_1088–1092.
+5. Compras: Dr. Martens (90 €), Adidas "mi tienda favorita", Superstar, prueba tallas, paga 79 €, piedra-papel-tijera
+   con Landis ("Dios está conmigo, yo gané"): IMG_1093–1125.
+6. Vuelta a casa en bus: IMG_1126–1129. 7. Cena dominicana (salami, queso frito, huevo, plátano; "soy de Villa Mella"):
+   IMG_1130–1136.
