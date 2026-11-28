@@ -163,7 +163,7 @@ WrapStyle: 2
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Sub,Inter Medium,42,&H00FFFFFF,&H00FFFFFF,&H8C000000,&H00000000,0,0,0,0,100,100,0.5,0,3,9,0,2,200,200,215,1
-Style: Lugar,Inter Light,66,&H00FFFFFF,&H00FFFFFF,&H00000000,&H78000000,0,0,0,0,100,100,2,0,1,0,3,5,100,100,0,1
+Style: Lugar,Inter Medium,60,&H00FFFFFF,&H00FFFFFF,&H78000000,&H00000000,0,0,0,0,100,100,2,0,3,18,0,5,100,100,0,1
 Style: Clave,Inter Medium,58,&H00FFFFFF,&H00FFFFFF,&H8C000000,&H00000000,0,0,0,0,100,100,1,0,3,14,0,8,200,200,150,1
 
 [Events]
@@ -174,7 +174,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     for c in cortes:
         fin_c = c["t"] + c["dur"]
         if c.get("rotulo"):
-            ev.append(f"Dialogue: 2,{ts(c['t'] + 0.2)},{ts(min(fin_c, c['t'] + 2.6))},Lugar,,0,0,0,,{{\\blur2\\fad(250,300)}}{c['rotulo']}")
+            ev.append(f"Dialogue: 2,{ts(c['t'] + 0.2)},{ts(min(fin_c, c['t'] + 2.6))},Lugar,,0,0,0,,{{\\fad(250,300)\\pos(960,330)}}{c['rotulo']}")
         bloque = []
         for w, a, b in c["pal"]:
             ta, tb = c["t"] + (a - c["a"]), c["t"] + (b - c["a"])
@@ -260,7 +260,7 @@ def main():
     subs = str(J / "subs.ass").replace(":", "\\:")
     fuentes = str(J / "fuentes")
     cod = ["-c:v", "libx264", "-preset", "medium" if final else "veryfast", "-crf", "21" if final else "24",
-           "-maxrate", "6M" if final else "3M", "-bufsize", "12M" if final else "6M", "-pix_fmt", "yuv420p",
+           "-maxrate", "4800k" if final else "3M", "-bufsize", "9600k" if final else "6M", "-pix_fmt", "yuv420p",
            "-g", "120", "-bf", "2", "-f", "mpegts"]
     lista = []
     for i, c in enumerate(cortes):
@@ -307,8 +307,10 @@ def main():
         for p in lista:
             with wave.open(str(p.with_suffix(".wav"))) as w_:
                 o.writeframes(w_.readframes(w_.getnframes()))
+    for p in lista:  # ya no hacen falta (disco justo)
+        p.with_suffix(".wav").unlink()
     mezcla(voz, cortes, dur, J / "mezcla.wav")
-    voz.unlink()
+    voz.unlink(missing_ok=True)
     destino = RAIZ / "out/jordan" / ("borrador.mp4" if not final else "vlog1-final.mp4")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(cat), "-i", str(J / "mezcla.wav"),
                     "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart",
@@ -326,6 +328,7 @@ def mezcla(voz_wav, cortes, dur, ruta):
         return np.frombuffer(raw, np.float32).reshape(-1, canales).copy()
     n = int(dur * SR) + SR
     voz = leer(voz_wav)
+    Path(voz_wav).unlink()
     voz = np.pad(voz[:n], ((0, max(0, n - len(voz))), (0, 0)))
     pista = leer(J / "musica/vlog1.mp3")
     mus = np.zeros((n, 2), np.float32)
