@@ -47,3 +47,11 @@ Entrega: **1080p 60 fps** (horizontal), **12–15 min**, en **español** (Jay ha
    con Landis ("Dios está conmigo, yo gané"): IMG_1093–1125.
 6. Vuelta a casa en bus: IMG_1126–1129. 7. Cena dominicana (salami, queso frito, huevo, plátano; "soy de Villa Mella"):
    IMG_1130–1136.
+
+### Montaje (28-nov)
+- `scripts/jordan/montaje.py`: EDL desde la transcripción (presupuesto de segundos por clip, silencios > 0,45 s fuera),
+  1v1 = 12 tiros al aro detectados por el movimiento de la red (zoom ×1,6 al aro, 6 s antes y 2,5 después),
+  subtítulos ASS en minúsculas (Inter Medium 38, abajo) y rótulos de lugar (Inter Light 58, centro), música
+  ElevenLabs lo-fi 3 min (`public/jordan/musica/vlog1.mp3`, permiso de Alejandro) a −20 dB bajo la voz, −14 LUFS.
+- Borrador 13:39 (`out/jordan/borrador.mp4`, copia de 27 MB para el móvil). Final: `montaje.py final` lee los 4K del
+  transfer (subfile) → 1080p 60 fps. Falta disco (~1 GB) para el final.
