@@ -340,3 +340,6 @@ Confidencialidad 2 años; no editar para nichos que compitan con él.
 - 207–208 (28-nov): imágenes de Gemini de Alejandro (GTA 6 con Lucía / Superman), A a la izquierda y B a la derecha
   (`material/dif-gta.jpg`, `dif-superman.jpg`). Gemini solo aplicó 2 diferencias de 3: la tercera la puse yo (cartel
   pequeño de VICE CITY a verde / zapatilla de abajo a verde) para que "Encuentra las 3 diferencias" sea verdad.
+- 217–230 (28-nov): imágenes de arriba recortadas del ejemplo y ampliadas a 1080 (`generaciones.jpg`, `teclado.jpg`,
+  `duermes.jpg`, `pelucas.jpg`, `abuelos.jpg`, `patricio.jpg`) y la tarjeta de Lupita rehecha con emojis de iPhone
+  (`lupita.png`). Ojo al recortar: medir el recuadro sobre el fotograma real (bbox con numpy), no a ojo sobre la hoja.
