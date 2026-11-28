@@ -1,12 +1,12 @@
-"""Vlog Landis: copias ligeras de trabajo (960×540, 60 fps) de los clips 4K del transfer, SIN guardar los originales.
+"""Jay (IamKingJay) · vlog con Landis: copias ligeras de trabajo (960×540, 60 fps) de los clips 4K del transfer, SIN guardar los originales.
 
 El transfer es un .zip de 22,4 GB (sin comprimir, "stored"): cada clip está en un tramo fijo del zip. ffmpeg los
 lee directamente por HTTP con el protocolo `subfile` (rangos), así que nunca se guardan los 4K en disco. Escribe
-public/landis/proxies/<clip>.mp4 y public/landis/indice.json (nombre, inicio y tamaño de cada clip dentro del zip)
+public/jordan/proxies/<clip>.mp4 y public/jordan/indice.json (nombre, inicio y tamaño de cada clip dentro del zip)
 para sacar después en 1080p solo los trozos que se usen.
 
-    node scripts/landis/url_transfer.mjs | grep DESCARGA   (enlace firmado, dura 1 h)
-    python3 scripts/landis/proxies.py [url] [clip ...]   (sin url la saca sola y la renueva cada 35 min)
+    node scripts/jordan/url_transfer.mjs | grep DESCARGA   (enlace firmado, dura 1 h)
+    python3 scripts/jordan/proxies.py [url] [clip ...]   (sin url la saca sola y la renueva cada 35 min)
 """
 import json
 import struct
@@ -16,7 +16,7 @@ import urllib.request
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
-OUT = RAIZ / "public/landis"
+OUT = RAIZ / "public/jordan"
 WL = ["-protocol_whitelist", "subfile,https,http,tls,tcp,crypto,file"]
 
 
@@ -58,7 +58,7 @@ def indice(url):
 
 
 def url_nueva():
-    out = subprocess.run(["node", str(RAIZ / "scripts/landis/url_transfer.mjs")], capture_output=True, text=True, timeout=200).stdout
+    out = subprocess.run(["node", str(RAIZ / "scripts/jordan/url_transfer.mjs")], capture_output=True, text=True, timeout=200).stdout
     return next(l.split(" ", 1)[1].strip() for l in out.splitlines() if l.startswith("DESCARGA "))
 
 

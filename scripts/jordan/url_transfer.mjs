@@ -1,4 +1,4 @@
-// Saca el enlace de descarga (S3 firmado, 1 h) del transfer de SwissTransfer del vlog: node scripts/landis/url_transfer.mjs
+// Saca el enlace de descarga (S3 firmado, 1 h) del transfer de SwissTransfer del vlog: node scripts/jordan/url_transfer.mjs
 import { createRequire } from "module"; const require = createRequire(new URL("../../package.json", import.meta.url).pathname);
 const { chromium } = require("playwright");
 const b=await chromium.launch(); const ctx=await b.newContext({acceptDownloads:true}); const pg=await ctx.newPage();
